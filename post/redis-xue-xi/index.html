@@ -1,0 +1,267 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>redis学习 | Gridea</title>
+<link rel="shortcut icon" href="https://hhjoker.github.io/favicon.ico?v=1667739280354">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://hhjoker.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="redis学习 | Gridea - Atom Feed" href="https://hhjoker.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="resid和mysql都是严格有序的数据库（严格有序是指请求与返回顺序一致），而mongodb数据库请求与返回并不是严格有序的。
+取余计算的位运算操作n%size == n &amp; (size - 1)，能提升速度。
+redis 扩容
+..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://hhjoker.github.io">
+  <img class="avatar" src="https://hhjoker.github.io/images/avatar.png?v=1667739280354" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              redis学习
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-11-05
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p><strong>resid和mysql都是严格有序的数据库（严格有序是指请求与返回顺序一致），而mongodb数据库请求与返回并不是严格有序的。</strong><br>
+取余计算的位运算操作<strong>n%size == n &amp; (size - 1)</strong>，能提升速度。</p>
+<h3 id="redis-扩容">redis 扩容</h3>
+<p>扩容一般是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span></p>
+<ol>
+<li>负载因子大于1（负载因子就是哈希表中元素数量除以哈希表长度）</li>
+<li>允许被修改大小 或者 负载因子大于5<br>
+是否允许改变大小
+<ol>
+<li>是否存在活跃的子进程，存在就不让改，不存在允许改。</li>
+</ol>
+</li>
+</ol>
+<h4 id="当内存占用非常大时怎么进行扩容例如原始数据为2g">当内存占用非常大时怎么进行扩容，例如原始数据为2G</h4>
+<p>redis准备了两个数组去存储数据，如果有旧的数组要往新的数组扩容，重新哈希过程。繁忙时一步一步去重新哈希，不繁忙时以100为单位进行重新哈希，即一次挪动一百个元素。通过时间去判断是否繁忙，超过1ms就不进行重新哈希。</p>
+<h3 id="redis持久化">redis持久化</h3>
+<p>redis通常通过fork进程去进行持久化，子进程都会有一个虚拟内存去指向真实的物理内存（会发生写时复制），父进程要修改原始物理内存的化，子进程会去复制一份内存，去修改，内存占用会翻。</p>
+<h3 id="redis缩容">redis缩容</h3>
+<h4 id="什么时候引起缩容">什么时候引起缩容</h4>
+<ul>
+<li>负载因子小于0.1时进行缩容（例如哈希表长度为30，只有负载因子小于等于3的时候进行缩容）</li>
+<li>在定时器中进行
+<ul>
+<li>没有活跃子进程时进行</li>
+</ul>
+</li>
+</ul>
+<h3 id="跳表">跳表</h3>
+<ul>
+<li>时间复杂度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(log_{2}(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></li>
+<li>每隔一个节点生成一个层级节点；模拟二叉树结构</li>
+<li>理想跳表的话每次增删都会改变跳表结构，用概率去优化，每增加一个节点有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>去创建新的一层，redis用的是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{4}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>。</li>
+</ul>
+<h3 id="redis的io多线程">redis的IO多线程</h3>
+<ul>
+<li>线程池
+<ul>
+<li>线程（生产者）
+<ul>
+<li>发布任务（锁）</li>
+</ul>
+</li>
+<li>队列
+<ul>
+<li>任务
+<ul>
+<li>任务上下文</li>
+<li>任务执行函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>线程池（消费者）
+<ul>
+<li>线程
+<ul>
+<li>取出任务（锁）</li>
+<li>执行任务</li>
+<li>结果处理方式</li>
+<li>线程调度方式（锁）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>总结
+<ul>
+<li>生产者消费者模型</li>
+<li>生产线程既可以是生产者也可以是消费者</li>
+<li>消费线程既可以是消费者也可以是生产者</li>
+<li>生产者可以一个也可以是多个</li>
+<li>队列是解耦的重要媒介</li>
+<li>异步解耦</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#redis-%E6%89%A9%E5%AE%B9">redis 扩容</a>
+<ul>
+<li><a href="#%E5%BD%93%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E9%9D%9E%E5%B8%B8%E5%A4%A7%E6%97%B6%E6%80%8E%E4%B9%88%E8%BF%9B%E8%A1%8C%E6%89%A9%E5%AE%B9%E4%BE%8B%E5%A6%82%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E4%B8%BA2g">当内存占用非常大时怎么进行扩容，例如原始数据为2G</a></li>
+</ul>
+</li>
+<li><a href="#redis%E6%8C%81%E4%B9%85%E5%8C%96">redis持久化</a></li>
+<li><a href="#redis%E7%BC%A9%E5%AE%B9">redis缩容</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%BC%95%E8%B5%B7%E7%BC%A9%E5%AE%B9">什么时候引起缩容</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B7%B3%E8%A1%A8">跳表</a></li>
+<li><a href="#redis%E7%9A%84io%E5%A4%9A%E7%BA%BF%E7%A8%8B">redis的IO多线程</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://hhjoker.github.io/post/huang-hao-de-di-yi-pian-bo-ke/">
+              <h3 class="post-title">
+                黄浩的第一篇博客
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://hhjoker.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

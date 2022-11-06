@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://hhjoker.github.io</id>
+    <title>Gridea</title>
+    <updated>2022-11-06T12:54:42.801Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://hhjoker.github.io"/>
+    <link rel="self" href="https://hhjoker.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://hhjoker.github.io/images/avatar.png</logo>
+    <icon>https://hhjoker.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[redis学习]]></title>
+        <id>https://hhjoker.github.io/post/redis-xue-xi/</id>
+        <link href="https://hhjoker.github.io/post/redis-xue-xi/">
+        </link>
+        <updated>2022-11-05T10:00:57.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>resid和mysql都是严格有序的数据库（严格有序是指请求与返回顺序一致），而mongodb数据库请求与返回并不是严格有序的。</strong><br>
+取余计算的位运算操作<strong>n%size == n &amp; (size - 1)</strong>，能提升速度。</p>
+<h3 id="redis-扩容">redis 扩容</h3>
+<p>扩容一般是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span></p>
+<ol>
+<li>负载因子大于1（负载因子就是哈希表中元素数量除以哈希表长度）</li>
+<li>允许被修改大小 或者 负载因子大于5<br>
+是否允许改变大小
+<ol>
+<li>是否存在活跃的子进程，存在就不让改，不存在允许改。</li>
+</ol>
+</li>
+</ol>
+<h4 id="当内存占用非常大时怎么进行扩容例如原始数据为2g">当内存占用非常大时怎么进行扩容，例如原始数据为2G</h4>
+<p>redis准备了两个数组去存储数据，如果有旧的数组要往新的数组扩容，重新哈希过程。繁忙时一步一步去重新哈希，不繁忙时以100为单位进行重新哈希，即一次挪动一百个元素。通过时间去判断是否繁忙，超过1ms就不进行重新哈希。</p>
+<h3 id="redis持久化">redis持久化</h3>
+<p>redis通常通过fork进程去进行持久化，子进程都会有一个虚拟内存去指向真实的物理内存（会发生写时复制），父进程要修改原始物理内存的化，子进程会去复制一份内存，去修改，内存占用会翻。</p>
+<h3 id="redis缩容">redis缩容</h3>
+<h4 id="什么时候引起缩容">什么时候引起缩容</h4>
+<ul>
+<li>负载因子小于0.1时进行缩容（例如哈希表长度为30，只有负载因子小于等于3的时候进行缩容）</li>
+<li>在定时器中进行
+<ul>
+<li>没有活跃子进程时进行</li>
+</ul>
+</li>
+</ul>
+<h3 id="跳表">跳表</h3>
+<ul>
+<li>时间复杂度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mo>(</mo><mi>n</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(log_{2}(n))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></li>
+<li>每隔一个节点生成一个层级节点；模拟二叉树结构</li>
+<li>理想跳表的话每次增删都会改变跳表结构，用概率去优化，每增加一个节点有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>去创建新的一层，redis用的是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{4}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>。</li>
+</ul>
+<h3 id="redis的io多线程">redis的IO多线程</h3>
+<ul>
+<li>线程池
+<ul>
+<li>线程（生产者）
+<ul>
+<li>发布任务（锁）</li>
+</ul>
+</li>
+<li>队列
+<ul>
+<li>任务
+<ul>
+<li>任务上下文</li>
+<li>任务执行函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>线程池（消费者）
+<ul>
+<li>线程
+<ul>
+<li>取出任务（锁）</li>
+<li>执行任务</li>
+<li>结果处理方式</li>
+<li>线程调度方式（锁）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>总结
+<ul>
+<li>生产者消费者模型</li>
+<li>生产线程既可以是生产者也可以是消费者</li>
+<li>消费线程既可以是消费者也可以是生产者</li>
+<li>生产者可以一个也可以是多个</li>
+<li>队列是解耦的重要媒介</li>
+<li>异步解耦</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[黄浩的第一篇博客]]></title>
+        <id>https://hhjoker.github.io/post/huang-hao-de-di-yi-pian-bo-ke/</id>
+        <link href="https://hhjoker.github.io/post/huang-hao-de-di-yi-pian-bo-ke/">
+        </link>
+        <updated>2022-11-04T00:49:42.000Z</updated>
+        <content type="html"><![CDATA[<p>weak_ptr单独使用场景，迭代器。</p>
+]]></content>
+    </entry>
+</feed>
