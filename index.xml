@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My New Hugo Site</title>
     <link>https://HHjoker.github.io/</link>
     <description>Recent content on My New Hugo Site</description>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Feb 2025 21:43:57 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 06 Feb 2025 22:18:42 +0800</lastBuildDate>
     <atom:link href="https://HHjoker.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Test01</title>
-      <link>https://HHjoker.github.io/posts/test01/</link>
-      <pubDate>Thu, 06 Feb 2025 21:43:57 +0800</pubDate>
-      <guid>https://HHjoker.github.io/posts/test01/</guid>
-      <description>&lt;p&gt;这是我的测试博客&lt;/p&gt;</description>
+      <title>Index1</title>
+      <link>https://HHjoker.github.io/posts/index1/</link>
+      <pubDate>Thu, 06 Feb 2025 22:18:42 +0800</pubDate>
+      <guid>https://HHjoker.github.io/posts/index1/</guid>
+      <description>&lt;p&gt;test&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
