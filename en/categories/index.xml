@@ -2,10 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on Example Siteß</title>
+<<<<<<< HEAD
         <link>http://localhost:1313/en/categories/</link>
         <description>Recent content in Categories on Example Siteß</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>Huang Hao</copyright><atom:link href="http://localhost:1313/en/categories/index.xml" rel="self" type="application/rss+xml" />
+=======
+        <link>https://HHjoker.github.io/en/categories/</link>
+        <description>Recent content in Categories on Example Siteß</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Huang Hao</copyright><atom:link href="https://HHjoker.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
     </channel>
 </rss>

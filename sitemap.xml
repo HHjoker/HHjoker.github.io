@@ -2,19 +2,31 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
+<<<<<<< HEAD
     <loc>http://localhost:1313/zh-cn/sitemap.xml</loc>
+=======
+    <loc>https://HHjoker.github.io/zh-cn/sitemap.xml</loc>
+>>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
     
       <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     
   </sitemap>
   
   <sitemap>
+<<<<<<< HEAD
     <loc>http://localhost:1313/en/sitemap.xml</loc>
+=======
+    <loc>https://HHjoker.github.io/en/sitemap.xml</loc>
+>>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
     
   </sitemap>
   
   <sitemap>
+<<<<<<< HEAD
     <loc>http://localhost:1313/ar/sitemap.xml</loc>
+=======
+    <loc>https://HHjoker.github.io/ar/sitemap.xml</loc>
+>>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
     
       <lastmod>2019-03-09T00:00:00+00:00</lastmod>
     
