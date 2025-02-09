@@ -7,7 +7,16 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://HHjoker.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 09 Feb 2025 22:07:19 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Cpp</title>
+        <link>https://HHjoker.github.io/p/cpp/</link>
+        <pubDate>Sun, 09 Feb 2025 22:07:19 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/cpp/</guid>
+        <description>&lt;h1 id=&#34;cpp-note&#34;&gt;Cpp Note
+&lt;/h1&gt;</description>
+        </item>
+        <item>
         <title>Chinese Test</title>
         <link>https://HHjoker.github.io/p/test-chinese/</link>
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
@@ -325,19 +334,11 @@
         </item>
         <item>
         <title>Placeholder Text</title>
-<<<<<<< HEAD
-        <link>http://localhost:1313/p/placeholder-text/</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/placeholder-text/</guid>
-        <description>&lt;img src="http://localhost:1313/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" /&gt;&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;
-=======
         <link>https://HHjoker.github.io/p/placeholder-text/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/p/placeholder-text/</guid>
         <description>&lt;img src="https://HHjoker.github.io/p/placeholder-text/matt-le-SJSpo9hQf7s-unsplash.jpg" alt="Featured image of post Placeholder Text" /&gt;&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
 &lt;p&gt;Redit teque digerit hominumque toris verebor lumina non cervice subde tollit usus habet Arctonque, furores quas nec ferunt. Quoque montibus nunc caluere tempus inhospita parcite confusaque translucet patri vestro qui optatis lumine cognoscere flos nubis! Fronde ipsamque patulos Dryopen deorum.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Exierant elisi ambit vivere dedere&lt;/li&gt;
@@ -364,17 +365,10 @@
         </item>
         <item>
         <title>Math Typesetting</title>
-<<<<<<< HEAD
-        <link>http://localhost:1313/p/math-typesetting/</link>
-        <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/math-typesetting/</guid>
-=======
         <link>https://HHjoker.github.io/p/math-typesetting/</link>
         <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/p/math-typesetting/</guid>
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
         <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;
 &lt;p&gt;In this example we will be using &lt;a class=&#34;link&#34; href=&#34;https://katex.org/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;KaTeX&lt;/a&gt;&lt;/p&gt;
@@ -411,19 +405,11 @@ $$</description>
         </item>
         <item>
         <title>Emoji Support</title>
-<<<<<<< HEAD
-        <link>http://localhost:1313/p/emoji-support/</link>
-        <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/p/emoji-support/</guid>
-        <description>&lt;img src="http://localhost:1313/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" /&gt;&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;
-=======
         <link>https://HHjoker.github.io/p/emoji-support/</link>
         <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/p/emoji-support/</guid>
         <description>&lt;img src="https://HHjoker.github.io/p/emoji-support/the-creative-exchange-d2zvqp3fpro-unsplash.jpg" alt="Featured image of post Emoji Support" /&gt;&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
 &lt;p&gt;The &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/functions/emojify/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;&lt;code&gt;emojify&lt;/code&gt;&lt;/a&gt; function can be called directly in templates or &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/templates/shortcode-templates/#inline-shortcodes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Inline Shortcodes&lt;/a&gt;.&lt;/p&gt;

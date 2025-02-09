@@ -7,7 +7,16 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://HHjoker.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 09 Feb 2025 22:07:19 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Cpp</title>
+        <link>https://HHjoker.github.io/p/cpp/</link>
+        <pubDate>Sun, 09 Feb 2025 22:07:19 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/cpp/</guid>
+        <description>&lt;h1 id=&#34;cpp-note&#34;&gt;Cpp Note
+&lt;/h1&gt;</description>
+        </item>
+        <item>
         <title>Chinese Test</title>
         <link>https://HHjoker.github.io/p/test-chinese/</link>
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
