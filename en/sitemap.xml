@@ -2,42 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-<<<<<<< HEAD
-    <loc>http://localhost:1313/en/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://localhost:1313/categories/"
-=======
     <loc>https://HHjoker.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://HHjoker.github.io/categories/"
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-<<<<<<< HEAD
-                href="http://localhost:1313/ar/categories/"
-=======
                 href="https://HHjoker.github.io/ar/categories/"
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-<<<<<<< HEAD
-                href="http://localhost:1313/en/categories/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/en/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://localhost:1313/"
-=======
                 href="https://HHjoker.github.io/en/categories/"
                 />
   </url><url>
@@ -46,30 +24,15 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://HHjoker.github.io/"
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-<<<<<<< HEAD
-                href="http://localhost:1313/ar/"
-=======
                 href="https://HHjoker.github.io/ar/"
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-<<<<<<< HEAD
-                href="http://localhost:1313/en/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/en/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="http://localhost:1313/tags/"
-=======
                 href="https://HHjoker.github.io/en/"
                 />
   </url><url>
@@ -78,25 +41,16 @@
                 rel="alternate"
                 hreflang="zh-cn"
                 href="https://HHjoker.github.io/tags/"
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ar"
-<<<<<<< HEAD
-                href="http://localhost:1313/ar/tags/"
-=======
                 href="https://HHjoker.github.io/ar/tags/"
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-<<<<<<< HEAD
-                href="http://localhost:1313/en/tags/"
-=======
                 href="https://HHjoker.github.io/en/tags/"
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
                 />
   </url>
 </urlset>

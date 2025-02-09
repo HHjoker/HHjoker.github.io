@@ -2,120 +2,88 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on HH Blog</title>
-<<<<<<< HEAD
-        <link>http://localhost:1313/tags/</link>
-=======
         <link>https://HHjoker.github.io/tags/</link>
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
         <description>Recent content in Tags on HH Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-<<<<<<< HEAD
-        <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Css</title>
-        <link>http://localhost:1313/tags/css/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/css/</guid>
-=======
         <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Css</title>
         <link>https://HHjoker.github.io/tags/css/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/css/</guid>
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
         <description></description>
         </item>
         <item>
         <title>Html</title>
-<<<<<<< HEAD
-        <link>http://localhost:1313/tags/html/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/html/</guid>
-=======
         <link>https://HHjoker.github.io/tags/html/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/html/</guid>
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
         <description></description>
         </item>
         <item>
         <title>Markdown</title>
-<<<<<<< HEAD
-        <link>http://localhost:1313/tags/markdown/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/markdown/</guid>
-=======
         <link>https://HHjoker.github.io/tags/markdown/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/markdown/</guid>
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
         <description></description>
         </item>
         <item>
         <title>Themes</title>
-<<<<<<< HEAD
-        <link>http://localhost:1313/tags/themes/</link>
-        <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/themes/</guid>
-=======
         <link>https://HHjoker.github.io/tags/themes/</link>
         <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://HHjoker.github.io/tags/themes/</guid>
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
+        <guid>https://HHjoker.github.io/tags/themes/</guid>        <item>
+            <title>Tag With Whitespaces</title>
+            <link>https://HHjoker.github.io/tags/tag-with-whitespaces/</link>
+            <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+            
+            <guid>https://HHjoker.github.io/tags/tag-with-whitespaces/</guid>
+            <description></description>
+        </item>
+        <item>
+            <title>Text</title>
+            <link>https://HHjoker.github.io/tags/text/</link>
+            <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+            
+            <guid>https://HHjoker.github.io/tags/text/</guid>
+            <description></description>
+        </item>
+        <item>
+            <title>Emoji</title>
+            <link>https://HHjoker.github.io/tags/emoji/</link>
+            <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+            
+            <guid>https://HHjoker.github.io/tags/emoji/</guid>
+            <description></description>
+        </item>
         <description></description>
         </item>
         <item>
         <title>Tag With Whitespaces</title>
-<<<<<<< HEAD
-        <link>http://localhost:1313/tags/tag-with-whitespaces/</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/tag-with-whitespaces/</guid>
-=======
         <link>https://HHjoker.github.io/tags/tag-with-whitespaces/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/tag-with-whitespaces/</guid>
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
         <description></description>
         </item>
         <item>
         <title>Text</title>
-<<<<<<< HEAD
-        <link>http://localhost:1313/tags/text/</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/text/</guid>
-=======
         <link>https://HHjoker.github.io/tags/text/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/text/</guid>
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
         <description></description>
         </item>
         <item>
         <title>Emoji</title>
-<<<<<<< HEAD
-        <link>http://localhost:1313/tags/emoji/</link>
-        <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/tags/emoji/</guid>
-=======
         <link>https://HHjoker.github.io/tags/emoji/</link>
         <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/emoji/</guid>
->>>>>>> 6f52f6d7b0f316cfbdb12c5eaf679fbb914a7446
         <description></description>
         </item>
         
