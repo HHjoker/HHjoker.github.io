@@ -6,15 +6,6 @@
         <description>Recent content in Tags on HH Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>Huang Hao</copyright>
-        <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Emoji</title>
-        <link>https://HHjoker.github.io/tags/emoji/</link>
-        <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/emoji/</guid>
-        <description></description>
-        </item>
-        
+        <copyright>Huang Hao</copyright><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>
