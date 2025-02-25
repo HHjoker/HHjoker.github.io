@@ -34,7 +34,26 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;gtest-使用方法&#34;&gt;GTest 使用方法
-&lt;/h2&gt;</description>
+&lt;/h2&gt;&lt;h3 id=&#34;gmock&#34;&gt;GMock
+&lt;/h3&gt;&lt;h4 id=&#34;mock_method&#34;&gt;MOCK_METHOD
+&lt;/h4&gt;&lt;p&gt;MOCK_METHOD#1(#2,#3(#4))&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;#1：要mock的方法共有几个参数&lt;/li&gt;
+&lt;li&gt;#2：要mock的方法名称&lt;/li&gt;
+&lt;li&gt;#3:这个方法的返回值类型&lt;/li&gt;
+&lt;li&gt;#4:这个方法的具体参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/picture/gmock_MOCK_METHOD.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;MOCK_METHOD&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>档案</title>
