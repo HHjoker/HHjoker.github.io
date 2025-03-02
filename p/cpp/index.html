@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Cpp Note CMake 使用方法 打印详细信息 1 make VERBOSE=1 GTest 使用方法 GMock MOCK_METHOD MOCK_METHOD#1(#2,#3(#4))\n#1：要mock的方法共有几个参数 #2：要mock的方法名称 #3:这个方法的返回值类型 #4:这个方法的具体参数 ">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Cpp Note CMake 使用方法 打印详细信息 1 make VERBOSE=1 GTest 使用方法 gtest官方文档\nGTest GMock 模拟对象是预先编程的对象，这些对象构成了它们预期接收调用的规范\n原始接口 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 #ifndef _TRUTLE_H_ #define _TRUTLE_H_ class Turtle { public: Turtle() {} // 控制turtle运动是否留下痕迹 virtual void penup() = 0; virtual void pendown() = 0; // 控制turtle的运动方向 virtual void Forward(int distance) = 0; // 前进 virtual void Trun(int degrees) = 0; // 转向 virtual void GoTo(int x, int y) = 0; // 移动到指定位置 // 获取turtle的位置 virtual int getX() = 0; virtual int getY() = 0; virtual ~Turtle() {} }; #endif MOCK_METHOD MOCK_METHOD#1(#2,#3(#4))\n">
 <title>Cpp</title>
 
 <link rel='canonical' href='https://HHjoker.github.io/p/cpp/'>
 
 <link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Cpp">
-<meta property='og:description' content="Cpp Note CMake 使用方法 打印详细信息 1 make VERBOSE=1 GTest 使用方法 GMock MOCK_METHOD MOCK_METHOD#1(#2,#3(#4))\n#1：要mock的方法共有几个参数 #2：要mock的方法名称 #3:这个方法的返回值类型 #4:这个方法的具体参数 ">
+<meta property='og:description' content="Cpp Note CMake 使用方法 打印详细信息 1 make VERBOSE=1 GTest 使用方法 gtest官方文档\nGTest GMock 模拟对象是预先编程的对象，这些对象构成了它们预期接收调用的规范\n原始接口 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 #ifndef _TRUTLE_H_ #define _TRUTLE_H_ class Turtle { public: Turtle() {} // 控制turtle运动是否留下痕迹 virtual void penup() = 0; virtual void pendown() = 0; // 控制turtle的运动方向 virtual void Forward(int distance) = 0; // 前进 virtual void Trun(int degrees) = 0; // 转向 virtual void GoTo(int x, int y) = 0; // 移动到指定位置 // 获取turtle的位置 virtual int getX() = 0; virtual int getY() = 0; virtual ~Turtle() {} }; #endif MOCK_METHOD MOCK_METHOD#1(#2,#3(#4))\n">
 <meta property='og:url' content='https://HHjoker.github.io/p/cpp/'>
 <meta property='og:site_name' content='HH Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-02-09T22:07:19&#43;08:00'/><meta property='article:modified_time' content='2025-02-09T22:07:19&#43;08:00'/>
 <meta name="twitter:title" content="Cpp">
-<meta name="twitter:description" content="Cpp Note CMake 使用方法 打印详细信息 1 make VERBOSE=1 GTest 使用方法 GMock MOCK_METHOD MOCK_METHOD#1(#2,#3(#4))\n#1：要mock的方法共有几个参数 #2：要mock的方法名称 #3:这个方法的返回值类型 #4:这个方法的具体参数 ">
+<meta name="twitter:description" content="Cpp Note CMake 使用方法 打印详细信息 1 make VERBOSE=1 GTest 使用方法 gtest官方文档\nGTest GMock 模拟对象是预先编程的对象，这些对象构成了它们预期接收调用的规范\n原始接口 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 #ifndef _TRUTLE_H_ #define _TRUTLE_H_ class Turtle { public: Turtle() {} // 控制turtle运动是否留下痕迹 virtual void penup() = 0; virtual void pendown() = 0; // 控制turtle的运动方向 virtual void Forward(int distance) = 0; // 前进 virtual void Trun(int degrees) = 0; // 转向 virtual void GoTo(int x, int y) = 0; // 移动到指定位置 // 获取turtle的位置 virtual int getX() = 0; virtual int getY() = 0; virtual ~Turtle() {} }; #endif MOCK_METHOD MOCK_METHOD#1(#2,#3(#4))\n">
     </head>
     <body class="
     article-page
@@ -277,9 +277,16 @@
     </li>
     <li><a href="#gtest-使用方法">GTest 使用方法</a>
       <ol>
-        <li><a href="#gmock">GMock</a>
+        <li><a href="#gtest">GTest</a></li>
+        <li><a href="#gmock">GMock</a></li>
+        <li><a href="#原始接口">原始接口</a>
           <ol>
             <li><a href="#mock_method">MOCK_METHOD</a></li>
+          </ol>
+        </li>
+        <li><a href="#如何使用">如何使用</a>
+          <ol>
+            <li><a href="#expect_call">EXPECT_CALL</a></li>
           </ol>
         </li>
       </ol>
@@ -353,8 +360,77 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="gtest-使用方法">GTest 使用方法
-</h2><h3 id="gmock">GMock
-</h3><h4 id="mock_method">MOCK_METHOD
+</h2><p><a class="link" href="https://google.github.io/googletest/gmock_for_dummies.html"  target="_blank" rel="noopener"
+    >gtest官方文档</a></p>
+<h3 id="gtest">GTest
+</h3><h3 id="gmock">GMock
+</h3><p>模拟对象是预先编程的对象，这些对象构成了它们预期接收调用的规范</p>
+<p><img src="/what_is_mock.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="什么是mock"
+	
+	
+></p>
+<h3 id="原始接口">原始接口
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#ifndef _TRUTLE_H_
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define _TRUTLE_H_
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Turtle</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Turtle</span><span class="p">()</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 控制turtle运动是否留下痕迹
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">penup</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">pendown</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 控制turtle的运动方向
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">Forward</span><span class="p">(</span><span class="kt">int</span> <span class="n">distance</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 前进
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">Trun</span><span class="p">(</span><span class="kt">int</span> <span class="n">degrees</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 转向
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">GoTo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 移动到指定位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 获取turtle的位置
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">getX</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">getY</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="o">~</span><span class="n">Turtle</span><span class="p">()</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="mock_method">MOCK_METHOD
 </h4><p>MOCK_METHOD#1(#2,#3(#4))</p>
 <ul>
 <li>#1：要mock的方法共有几个参数</li>
@@ -362,16 +438,145 @@
 <li>#3:这个方法的返回值类型</li>
 <li>#4:这个方法的具体参数</li>
 </ul>
-<p><img src="/gmock_MOCK_METHOD.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="MOCK_METHOD"
-	
-	
-></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#ifndef _MOCK_TURTLE_H_
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define _MOCK_TURTLE_H_
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;../../src/turtle/turtle.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;gmock/gmock.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;gtest/gtest.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MockTurtle</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Turtle</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MockTurtle</span><span class="p">()</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">MockTurtle</span><span class="p">()</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">MOCK_METHOD0</span><span class="p">(</span><span class="n">penup</span><span class="p">,</span> <span class="kt">void</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MOCK_METHOD0</span><span class="p">(</span><span class="n">pendown</span><span class="p">,</span> <span class="kt">void</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MOCK_METHOD1</span><span class="p">(</span><span class="n">Forward</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="kt">int</span> <span class="n">distance</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MOCK_METHOD1</span><span class="p">(</span><span class="n">Trun</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="kt">int</span> <span class="n">degrees</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MOCK_METHOD2</span><span class="p">(</span><span class="n">GoTo</span><span class="p">,</span> <span class="kt">void</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MOCK_METHOD0</span><span class="p">(</span><span class="n">getX</span><span class="p">,</span> <span class="kt">int</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MOCK_METHOD0</span><span class="p">(</span><span class="n">getY</span><span class="p">,</span> <span class="kt">int</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="如何使用">如何使用
+</h3><h4 id="expect_call">EXPECT_CALL
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">mock_object</span><span class="p">,</span> <span class="n">method</span><span class="p">(</span><span class="n">matchers</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  		<span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="n">cardinality</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  		<span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  		<span class="p">.</span><span class="n">WillRepeatedly</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;test_turtle.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;MockTurtle.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;../../src/turtle/Painter.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;gtest/gtest.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;gmock/gmock.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 从命名空间testing导入gmock名称
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">AtLeast</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="o">::</span><span class="n">testing</span><span class="o">::</span><span class="n">Return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">TEST</span><span class="p">(</span><span class="n">PainterTest</span><span class="p">,</span> <span class="n">DrawCircleTest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 创建mock对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">MockTurtle</span> <span class="n">turtle</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// atleast(1)表示至少调用一次
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span> <span class="n">pendown</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">Times</span><span class="p">(</span><span class="n">AtLeast</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">Painter</span> <span class="nf">painter</span><span class="p">(</span><span class="o">&amp;</span><span class="n">turtle</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EXPECT_TRUE</span><span class="p">(</span><span class="n">painter</span><span class="p">.</span><span class="n">DrawCircle</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span> <span class="n">getX</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="n">EXPECT_CALL</span><span class="p">(</span><span class="n">turtle</span><span class="p">,</span> <span class="n">getY</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="n">WillOnce</span><span class="p">(</span><span class="n">Return</span><span class="p">(</span><span class="mi">20</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">EXPECT_EQ</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">painter</span><span class="p">.</span><span class="n">DrawXandY</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>注意</strong></p>
+<ol>
+<li>gMock要求在调用mock函数之前不要设置期望值，否则行为将会是未定义的</li>
+<li>不要交替使用EXPECT_CALL()和调用mock函数，也不要再讲mock传递给应用程序接口后对其设置任何期望值</li>
+</ol>
 
 </section>
 
