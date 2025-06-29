@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="CMKAE CMake 使用方法 打印详细信息 1 make VERBOSE=1 visual studio code 中使用CMake 1 vcproj2cmake.rb 可以根据 Visual Studio 的工程文件（后缀名是 .vcproj 或 .vcxproj）生成 CMakeLists.txt 文件。 基本语法 cmake 编译 一个最基本的CmakeLists.txt文件最少包含以下三行：\n">
 <title>cmake</title>
 
 <link rel='canonical' href='https://HHjoker.github.io/p/cmake/'>
 
 <link rel="stylesheet" href="/scss/style.min.a72fcd7b1eb4bfe95eed2988b4d24c728503cd94e28ace3dbbd7fa2dc6983376.css"><meta property='og:title' content="cmake">
-<meta property='og:description' content="">
+<meta property='og:description' content="CMKAE CMake 使用方法 打印详细信息 1 make VERBOSE=1 visual studio code 中使用CMake 1 vcproj2cmake.rb 可以根据 Visual Studio 的工程文件（后缀名是 .vcproj 或 .vcxproj）生成 CMakeLists.txt 文件。 基本语法 cmake 编译 一个最基本的CmakeLists.txt文件最少包含以下三行：\n">
 <meta property='og:url' content='https://HHjoker.github.io/p/cmake/'>
 <meta property='og:site_name' content='HH Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-06-04T21:11:19&#43;08:00'/><meta property='article:modified_time' content='2025-06-04T21:14:38&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-06-04T21:11:19&#43;08:00'/><meta property='article:modified_time' content='2025-06-29T22:32:29&#43;08:00'/>
 <meta name="twitter:title" content="cmake">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="CMKAE CMake 使用方法 打印详细信息 1 make VERBOSE=1 visual studio code 中使用CMake 1 vcproj2cmake.rb 可以根据 Visual Studio 的工程文件（后缀名是 .vcproj 或 .vcxproj）生成 CMakeLists.txt 文件。 基本语法 cmake 编译 一个最基本的CmakeLists.txt文件最少包含以下三行：\n">
     </head>
     <body class="
     article-page
@@ -248,7 +248,52 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#cmake-使用方法">CMake 使用方法</a>
+      <ol>
+        <li><a href="#打印详细信息">打印详细信息</a></li>
+        <li><a href="#visual-studio-code-中使用cmake">visual studio code 中使用CMake</a></li>
+      </ol>
+    </li>
+    <li><a href="#基本语法">基本语法</a>
+      <ol>
+        <li><a href="#cmake-编译">cmake 编译</a></li>
+        <li><a href="#添加版本号">添加版本号</a></li>
+        <li><a href="#构建自己的库">构建自己的库</a></li>
+        <li><a href="#构建可选选项">构建可选选项</a></li>
+        <li><a href="#设置安装规则">设置安装规则</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -294,7 +339,7 @@
 
 
                 <time>
-                    2025-06-04
+                    2025-06-29
                 </time>
             </div>
     </footer>
@@ -308,7 +353,314 @@
     <section class="article-content">
     
     
-    
+    <h1 id="cmkae">CMKAE
+</h1><h2 id="cmake-使用方法">CMake 使用方法
+</h2><h3 id="打印详细信息">打印详细信息
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">make VERBOSE=1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="visual-studio-code-中使用cmake">visual studio code 中使用CMake
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">vcproj2cmake.rb 可以根据 Visual Studio 的工程文件（后缀名是 .vcproj 或 .vcxproj）生成 CMakeLists.txt 文件。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="基本语法">基本语法
+</h2><h3 id="cmake-编译">cmake 编译
+</h3><p>一个最基本的CmakeLists.txt文件最少包含以下三行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.10</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">project</span><span class="p">(</span><span class="s">HelloWorld</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">HelloWorld</span> <span class="s">main.cpp</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># cmake_minimum_required(VERSION 3.10)：指定CMake的最低版本要求。
+</span></span></span><span class="line"><span class="cl"><span class="c"># project(HelloWorld)：指定项目的名称。
+</span></span></span><span class="line"><span class="cl"><span class="c"># add_executable(HelloWorld main.cpp)：添加可执行文件，其中HelloWorld是可执行文件的名称，main.cpp是源文件的名称。
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>cpp文件样例<code>Tutorial.cpp</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;math.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s">&#34;Usage: %s &lt;number&gt;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">number</span> <span class="o">=</span> <span class="n">atof</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">outputValue</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s">&#34;The square root of %.2f is %.2f</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">outputValue</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>注意</strong></p>
+<p>cmake中系统指令是不区分大小写的，但是变量和字符串需要区分大小写</p>
+<h3 id="添加版本号">添加版本号
+</h3><p><code> set(KEY VALUE)</code> 接受两个参数，用来声明变量，cmake中需要通过<code>${KEY}</code>来获取到VALUE。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.10</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">project</span><span class="p">(</span><span class="s">Tutorial</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># The version number.
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">set</span><span class="p">(</span><span class="s">Tutorial_VERSION_MAJOR</span> <span class="s">1</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">set</span><span class="p">(</span><span class="s">Tutorial_VERSION_MINOR</span> <span class="s">0</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># configure a header file to pass some of the CMake settings
+</span></span></span><span class="line"><span class="cl"><span class="c"># to the source code
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">configure_file</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;${PROJECT_SOURCE_DIR}/TutorialConfig.h.in&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;${PROJECT_BINARY_DIR}/TutorialConfig.h&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># add the binary tree to the search path for include files
+</span></span></span><span class="line"><span class="cl"><span class="c"># so that we will find TutorialConfig.h
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">include_directories</span><span class="p">(</span><span class="s2">&#34;${PROJECT_BINARY_DIR}&#34;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># add the executable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">Tutorial</span> <span class="s">tutorial.cpp</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置文件将会被写入到可执行文件的目录下，所以项目中必须包含这个文件夹来使用这些配置头文件。在工程目录下新建一个<code>TutorialConfig.h.in</code>，内容如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// the configuration file for the tutorial project
+</span></span></span><span class="line"><span class="cl"><span class="c1">// This file is used to generate the TutorialConfig.h file
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define TUTORIAL_VERSION_MAJOR @TUTORIAL_VERSION_MAJOR@
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define TUTORIAL_VERSION_MINOR @TUTORIAL_VERSION_MINOR@
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面的代码中的<code>@Tutorial_VERSION_MAJOR@</code>和<code>@Tutorial_VERSION_MINOR@</code>将会被替换为<code>CmakeLists.txt</code>中的0和1/然后修改<code>Tutorial.cpp</code>文件如下，用来在不输入额外参数的情况下输出版本信息</p>
+<h3 id="构建自己的库">构建自己的库
+</h3><p>新建一个目录<code>mathfunction</code>的子目录中，在该目录下新建<code>CMakeLists.txt</code>文件，包含以下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">add_library</span><span class="p">(</span><span class="s">MathFunctions</span> <span class="s">mysqrt.cpp</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>生成如下结构内容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">.
+</span></span></span><span class="line"><span class="cl"><span class="cm">├── CMakeLists.txt
+</span></span></span><span class="line"><span class="cl"><span class="cm">├── MathFunctions
+</span></span></span><span class="line"><span class="cl"><span class="cm">│   ├── CMakeLists.txt
+</span></span></span><span class="line"><span class="cl"><span class="cm">│   ├── MathFunctions.h
+</span></span></span><span class="line"><span class="cl"><span class="cm">│   └── mysqrt.cpp
+</span></span></span><span class="line"><span class="cl"><span class="cm">├── TutorialConfig.h.in
+</span></span></span><span class="line"><span class="cl"><span class="cm">└── tutorial.cpp
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// MathFunctions.h
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">double</span> <span class="nf">mysqrt</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// mysqrt.cpp
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&#34;MathFunctions.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// a hack to get around the fact that we can&#39;t #include &lt;cmath&gt;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">double</span> <span class="nf">mysqrt</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">delta</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">result</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// do ten iterations
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">result</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">result</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">delta</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="n">result</span> <span class="o">*</span> <span class="n">result</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">delta</span> <span class="o">/</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s">&#34;Iteration %d: result = %.2f</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>跟目录下CMakeLists.txt 文件添加如下内容，引入我们自定义的库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">include_directories</span> <span class="p">(</span><span class="s2">&#34;${PROJECT_SOURCE_DIR}/MathFunctions&#34;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">add_subdirectory</span> <span class="p">(</span><span class="s">MathFunctions</span><span class="p">)</span> <span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span> <span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># add the executable
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">add_executable</span> <span class="p">(</span><span class="s">Tutorial</span> <span class="s">tutorial.cxx</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">target_link_libraries</span> <span class="p">(</span><span class="s">Tutorial</span> <span class="s">MathFunctions</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="构建可选选项">构建可选选项
+</h3><p><code>MathFunctions</code>是我们自己构建的库，在构建大型项目时，有些库不需要引入，我们可以添加一个开关</p>
+<p>在源cmake文件中添加如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="nb">option</span> <span class="p">(</span><span class="s">USE_MYMATH</span>
+</span></span><span class="line"><span class="cl">				<span class="s2">&#34;Use tutorial provided math implementation&#34;</span> <span class="s">ON</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>				<span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">if</span> <span class="p">(</span><span class="s">USE_MYMATH</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>	<span class="nb">include_directories</span><span class="p">(</span><span class="s2">&#34;${PROJECT_SOURCE_DIR}/mathfunction&#34;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>	<span class="nb">add_subdirectory</span><span class="p">(</span><span class="s">mathfunction</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span>	<span class="nb">set</span><span class="p">(</span><span class="s">EXTRA_LIBS</span> <span class="o">${</span><span class="nv">EXTRA_LIBS</span><span class="o">}</span> <span class="s">MathFunctions</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="nb">endif</span> <span class="p">(</span><span class="s">USE_MYMATH</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="设置安装规则">设置安装规则
+</h3><p>通过下面两行可以引入静态库和头文件来进行安装</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="cl"><span class="c"># 安装编译生成的静态库到系统bin目录
+</span></span></span><span class="line"><span class="cl"><span class="c"># TARGETS指定要安装的目标(这里是MathFunctions库)
+</span></span></span><span class="line"><span class="cl"><span class="c"># DESTINATION指定安装路径，bin是可执行文件/库的标准安装目录
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">install</span> <span class="p">(</span><span class="s">TARGETS</span> <span class="s">MathFunctions</span> <span class="s">DESTINATION</span> <span class="s">bin</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="cl"><span class="err"></span><span class="c"># 安装头文件到系统include目录
+</span></span></span><span class="line"><span class="cl"><span class="c"># FILES指定要安装的头文件
+</span></span></span><span class="line"><span class="cl"><span class="c"># include目录是头文件的标准安装位置，便于其他项目引用
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nb">install</span> <span class="p">(</span><span class="s">FILES</span> <span class="s">MathFunctions.h</span> <span class="s">DESTINATION</span> <span class="s">include</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -325,7 +677,7 @@
 
 
         <span>
-            最后更新于 2025-06-04
+            最后更新于 2025-06-29
         </span>
     </section></footer>
 
