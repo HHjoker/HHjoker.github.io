@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head>
-	<meta name="generator" content="Hugo 0.143.1"><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="欢迎来到我的博客">
-<title>HH Blog</title>
+<title></title>
 
 <link rel='canonical' href='https://HHjoker.github.io/'>
 
@@ -11,11 +10,13 @@
 <meta property='og:description' content="欢迎来到我的博客">
 <meta property='og:url' content='https://HHjoker.github.io/'>
 <meta property='og:site_name' content='HH Blog'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-03-04T16:19:55&#43;08:00 '/>
+<meta property='og:type' content='article'><meta property='article:section' content='Page' /><meta property='article:modified_time' content='2026-03-04T16:33:08&#43;08:00'/>
 <meta name="twitter:title" content="HH Blog">
-<meta name="twitter:description" content="欢迎来到我的博客"><link rel="alternate" type="application/rss&#43;xml" href="https://HHjoker.github.io/index.xml">
+<meta name="twitter:description" content="欢迎来到我的博客">
     </head>
-    <body class="">
+    <body class="
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -97,7 +98,7 @@
         
         
         
-        <li  class='current' >
+        <li >
             <a href='/' >
                 
                 
@@ -250,110 +251,86 @@
     <aside class="sidebar right-sidebar sticky">
         
             
-                <form action="/search/" class="search-form widget" >
-        <p>
-            <label>搜索</label>
-            <input name="keyword" required placeholder="输入关键词..." />
-        
-            <button title="搜索">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="10" cy="10" r="7" />
-  <line x1="21" y1="21" x2="15" y2="15" />
-</svg>
-
-
-
-            </button>
-        </p>
-    </form>
-            
-        
-            
-                <section class="widget archives">
+                
+    <section class="widget archives">
         <div class="widget-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
 </svg>
 
 
 
         </div>
-        <h2 class="widget-title section-title">归档</h2>
-
+        <h2 class="widget-title section-title">目录</h2>
         
-        
-        
-        
-        
-        <div class="widget-archive--list">
-            <div class="archives-year">
-                    <a href="/archives/#2025">
-                        
-                            <span class="year">2025</span>
-                            <span class="count">3</span>
-                        
-                    </a> 
-                </div>
-            
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#已支持的评论系统">已支持的评论系统</a>
+      <ol>
+        <li><a href="#商业评论系统">商业评论系统</a></li>
+        <li><a href="#开源评论系统推荐">开源评论系统（推荐）</a></li>
+      </ol>
+    </li>
+    <li><a href="#推荐方案giscus已配置">推荐方案：Giscus（已配置）</a>
+      <ol>
+        <li><a href="#为什么选择-giscus">为什么选择 Giscus？</a></li>
+        <li><a href="#工作原理">工作原理</a></li>
+      </ol>
+    </li>
+    <li><a href="#配置步骤">配置步骤</a>
+      <ol>
+        <li><a href="#第一步启用-github-discussions">第一步：启用 GitHub Discussions</a></li>
+        <li><a href="#第二步安装-giscus-app">第二步：安装 Giscus App</a></li>
+        <li><a href="#第三步获取配置信息">第三步：获取配置信息</a></li>
+        <li><a href="#第四步更新-hugo-配置">第四步：更新 Hugo 配置</a></li>
+        <li><a href="#第五步验证配置">第五步：验证配置</a></li>
+      </ol>
+    </li>
+    <li><a href="#其他评论系统配置">其他评论系统配置</a>
+      <ol>
+        <li><a href="#disqus已配置但未启用">Disqus（已配置但未启用）</a></li>
+        <li><a href="#utterances基于-github-issues">Utterances（基于 GitHub Issues）</a></li>
+        <li><a href="#waline推荐中文博客">Waline（推荐中文博客）</a></li>
+      </ol>
+    </li>
+    <li><a href="#主题自定义">主题自定义</a>
+      <ol>
+        <li><a href="#修改评论位置">修改评论位置</a></li>
+        <li><a href="#自定义样式">自定义样式</a></li>
+      </ol>
+    </li>
+    <li><a href="#评论管理">评论管理</a>
+      <ol>
+        <li><a href="#在-github-上管理">在 GitHub 上管理</a></li>
+        <li><a href="#moderation-设置">moderation 设置</a></li>
+      </ol>
+    </li>
+    <li><a href="#故障排查">故障排查</a>
+      <ol>
+        <li><a href="#评论不显示">评论不显示</a></li>
+        <li><a href="#无法登录">无法登录</a></li>
+        <li><a href="#评论框是空的">评论框是空的</a></li>
+      </ol>
+    </li>
+    <li><a href="#推荐配置">推荐配置</a></li>
+    <li><a href="#参考资料">参考资料</a></li>
+  </ol>
+</nav>
         </div>
     </section>
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
-  <circle cx="9" cy="9" r="2" />
-</svg>
 
-
-
-    </div>
-    <h2 class="widget-title section-title">标签云</h2>
-
-    <div class="tagCloud-tags">
-        
-            <a href="/tags/c&#43;&#43;/" class="font_size_1">
-                C&#43;&#43;
-            </a>
-        
-            <a href="/tags/gmock/" class="font_size_1">
-                GMock
-            </a>
-        
-            <a href="/tags/gtest/" class="font_size_1">
-                GTest
-            </a>
-        
-            <a href="/tags/testing/" class="font_size_1">
-                Testing
-            </a>
-        
-            <a href="/tags/unit-test/" class="font_size_1">
-                Unit Test
-            </a>
-        
-    </div>
-</section>
             
         
     </aside>
 
 
             <main class="main full-width">
-    
-    
-    
-    
-
-    <section class="article-list">
-        
-            
-<article class="">
+    <article class="main-article">
     <header class="article-header">
 
     <div class="article-details">
@@ -361,7 +338,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/cmake/">cmake</a>
+            <a href="/"></a>
         </h2>
     
         
@@ -371,23 +348,346 @@
     
     
     
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2025-06-04</time>
-            </div>
-        
-        <div class="article-lastmod">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="hugo-博客评论系统配置指南">Hugo 博客评论系统配置指南
+</h1><h2 id="已支持的评论系统">已支持的评论系统
+</h2><p>你的博客主题 (hugo-theme-stack) 已经内置了多种评论系统支持：</p>
+<h3 id="商业评论系统">商业评论系统
+</h3><ul>
+<li><strong>Disqus</strong> - 最流行，但有广告</li>
+<li><strong>Commentix</strong></li>
+<li><strong>Hyvor Talk</strong></li>
+<li><strong>IntenseDebate</strong></li>
+</ul>
+<h3 id="开源评论系统推荐">开源评论系统（推荐）
+</h3><ul>
+<li><strong>Giscus</strong> ⭐ - 基于 GitHub Discussions，免费无广告</li>
+<li><strong>Utterances</strong> - 基于 GitHub Issues</li>
+<li><strong>Waline</strong> - 基于 LeanCloud</li>
+<li><strong>Twikoo</strong> - 基于腾讯云</li>
+<li><strong>Remark42</strong> - 自托管</li>
+<li><strong>Cactus Comments</strong> - 基于 Matrix 协议</li>
+</ul>
+<hr>
+<h2 id="推荐方案giscus已配置">推荐方案：Giscus（已配置）
+</h2><h3 id="为什么选择-giscus">为什么选择 Giscus？
+</h3><p>✅ <strong>完全免费</strong> - 无广告、无追踪<br>
+✅ <strong>无需数据库</strong> - 数据存储在 GitHub Discussions<br>
+✅ <strong>开源</strong> - 代码公开透明<br>
+✅ <strong>自定义主题</strong> - 支持多种主题<br>
+✅ <strong>多语言</strong> - 支持中文<br>
+✅ <strong>自动同步</strong> - 新评论自动显示<br>
+✅ <strong>可自托管</strong> - 数据完全可控</p>
+<h3 id="工作原理">工作原理
+</h3><ol>
+<li>访客通过 GitHub OAuth 授权在网站上留言</li>
+<li>评论以 GitHub Discussion 的形式存储</li>
+<li>你可以在 GitHub 上管理/删除评论</li>
+<li>访客也可以直接在 GitHub 上评论</li>
+</ol>
+<hr>
+<h2 id="配置步骤">配置步骤
+</h2><h3 id="第一步启用-github-discussions">第一步：启用 GitHub Discussions
+</h3><ol>
+<li>打开你的博客仓库：https://github.com/HHjoker/HHjoker.github.io</li>
+<li>点击 <strong>Settings</strong> → <strong>General</strong></li>
+<li>找到 <strong>Features</strong> 部分</li>
+<li>勾选 <strong>Discussions</strong> → 点击 <strong>Set up discussions</strong></li>
+<li>选择分类（推荐用 <strong>Announcements</strong> 类型）</li>
+</ol>
+<h3 id="第二步安装-giscus-app">第二步：安装 Giscus App
+</h3><ol>
+<li>访问 <a class="link" href="https://github.com/apps/giscus"  target="_blank" rel="noopener"
+    >https://github.com/apps/giscus</a></li>
+<li>点击 <strong>Install</strong></li>
+<li>选择你的仓库 <code>HHjoker/HHjoker.github.io</code></li>
+<li>确认安装</li>
+</ol>
+<h3 id="第三步获取配置信息">第三步：获取配置信息
+</h3><ol>
+<li>
+<p>访问 <a class="link" href="https://giscus.app/zh-CN"  target="_blank" rel="noopener"
+    >https://giscus.app/zh-CN</a></p>
+</li>
+<li>
+<p>填写配置：</p>
+<ul>
+<li><strong>仓库</strong>: <code>HHjoker/HHjoker.github.io</code></li>
+<li><strong>仓库 ID</strong>: (在仓库页面 F12 查看，或从 giscus.app 获取)</li>
+<li><strong>分类</strong>: <code>Announcements</code> (或你创建的分类名)</li>
+<li><strong>分类 ID</strong>: (在分类页面 F12 查看)</li>
+<li><strong>映射方式</strong>: <code>pathname</code> (推荐)</li>
+<li><strong>语言</strong>: <code>zh-CN</code></li>
+<li><strong>主题</strong>: <code>preferred_color_scheme</code> (跟随系统)</li>
+</ul>
+</li>
+<li>
+<p>点击 <strong>Generate</strong> 生成配置</p>
+</li>
+</ol>
+<h3 id="第四步更新-hugo-配置">第四步：更新 Hugo 配置
+</h3><p>修改 <code>hugo.yaml</code> 中的 <code>comments.giscus</code> 部分：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">comments</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l">giscus</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">giscus</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;HHjoker/HHjoker.github.io&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">repoID</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;你的仓库 ID&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Announcements&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">categoryID</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;你的分类 ID&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">mapping</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;pathname&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">lightTheme</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;light&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">darkTheme</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;dark&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">reactionsEnabled</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">emitMetadata</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="第五步验证配置">第五步：验证配置
+</h3><ol>
+<li>提交更改到 hugo-main 仓库</li>
+<li>等待自动部署到 HHjoker.github.io</li>
+<li>打开任意文章页面</li>
+<li>应该能看到评论框</li>
+</ol>
+<hr>
+<h2 id="其他评论系统配置">其他评论系统配置
+</h2><h3 id="disqus已配置但未启用">Disqus（已配置但未启用）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">comments</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l">disqus</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">disqus</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">shortname</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;你的-disqus-shortname&#34;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>步骤</strong>:</p>
+<ol>
+<li>注册 <a class="link" href="https://disqus.com/"  target="_blank" rel="noopener"
+    >https://disqus.com/</a></li>
+<li>创建站点获取 shortname</li>
+<li>填入配置</li>
+</ol>
+<h3 id="utterances基于-github-issues">Utterances（基于 GitHub Issues）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">comments</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l">utterances</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">utterances</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;HHjoker/HHjoker.github.io&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">issueTerm</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;pathname&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">label</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;comment&#34;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="waline推荐中文博客">Waline（推荐中文博客）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">comments</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l">waline</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">waline</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">serverURL</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;你的-waline-服务器地址&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">lang</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;zh-CN&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">pageview</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="主题自定义">主题自定义
+</h2><h3 id="修改评论位置">修改评论位置
+</h3><p>编辑主题布局文件（如果需要）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 位置</span>
+</span></span><span class="line"><span class="cl">hugo-main/themes/hugo-theme-stack/layouts/partials/comments.html
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="自定义样式">自定义样式
+</h3><p>在 <code>assets/scss/custom.scss</code> 添加：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-scss" data-lang="scss"><span class="line"><span class="cl"><span class="nc">.giscus</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="na">margin-top</span><span class="o">:</span> <span class="mi">2</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nc">.giscus-frame</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="na">width</span><span class="o">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="评论管理">评论管理
+</h2><h3 id="在-github-上管理">在 GitHub 上管理
+</h3><ol>
+<li>访问仓库的 <strong>Discussions</strong> 标签</li>
+<li>可以找到所有评论</li>
+<li>可以编辑、删除、隐藏评论</li>
+</ol>
+<h3 id="moderation-设置">moderation 设置
+</h3><p>在 Giscus 配置中可以设置：</p>
+<ul>
+<li>是否需要审核</li>
+<li>允许的反应类型</li>
+<li>评论排序方式</li>
+</ul>
+<hr>
+<h2 id="故障排查">故障排查
+</h2><h3 id="评论不显示">评论不显示
+</h3><ol>
+<li>检查 <code>comments.enabled</code> 是否为 <code>true</code></li>
+<li>检查 <code>provider</code> 是否正确</li>
+<li>查看浏览器控制台错误信息</li>
+<li>确认仓库是 <strong>public</strong> 的</li>
+</ol>
+<h3 id="无法登录">无法登录
+</h3><ol>
+<li>确认已安装 Giscus App</li>
+<li>确认 GitHub Discussions 已启用</li>
+<li>检查 OAuth 授权</li>
+</ol>
+<h3 id="评论框是空的">评论框是空的
+</h3><ol>
+<li>第一次评论会自动创建 Discussion</li>
+<li>检查 mapping 配置是否正确</li>
+<li>尝试刷新页面</li>
+</ol>
+<hr>
+<h2 id="推荐配置">推荐配置
+</h2><p><strong>对于个人博客，推荐使用 Giscus：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">comments</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l">giscus</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">giscus</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;HHjoker/HHjoker.github.io&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">repoID</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;R_kgDO...&#34;</span><span class="w">  </span><span class="c"># 需要填写</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">category</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Announcements&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">categoryID</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;DIC_...&#34;</span><span class="w">  </span><span class="c"># 需要填写</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">mapping</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;pathname&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">strict</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">reactionsEnabled</span><span class="p">:</span><span class="w"> </span><span class="m">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">emitMetadata</span><span class="p">:</span><span class="w"> </span><span class="m">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">inputPosition</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;bottom&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">lang</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;zh-CN&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">loading</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;lazy&#34;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="参考资料">参考资料
+</h2><ul>
+<li><a class="link" href="https://giscus.app/zh-CN"  target="_blank" rel="noopener"
+    >Giscus 官网</a></li>
+<li><a class="link" href="https://github.com/giscus/giscus"  target="_blank" rel="noopener"
+    >Giscus GitHub</a></li>
+<li><a class="link" href="https://gohugo.io/content-management/comments/"  target="_blank" rel="noopener"
+    >Hugo 官方评论文档</a></li>
+<li><a class="link" href="https://stack.jimmycai.com/"  target="_blank" rel="noopener"
+    >Theme Stack 文档</a></li>
+</ul>
+<hr>
+<p><strong>最后更新</strong>: 2026-03-04</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="12" cy="12" r="9" />
   <polyline points="12 7 12 12 15 15" />
@@ -395,145 +695,102 @@
 
 
 
-                <time>
-                    2025-06-29
-                </time>
-            </div>
-    </footer>
-    
+        <span>
+            最后更新于 2026-03-04
+        </span>
+    </section></footer>
+
 
     
-</div>
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
 
-</header>
+    
 </article>
-        
-            
-<article class="">
-    <header class="article-header">
 
-    <div class="article-details">
     
 
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/ddd/">DDD</a>
-        </h2>
+    
+
+     
     
         
-    </div>
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="HHjoker/HHjoker.github.io"
+    data-repo-id=""
+    data-category="Announcements"
+    data-category-id=""
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('preferred_color_scheme');
+            } else {
+                setGiscusTheme('preferred_color_scheme');
+            }
+        }
+    })();
+</script>
 
     
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2025-02-11</time>
-            </div>
-        
-        <div class="article-lastmod">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
 
-
-
-                <time>
-                    2025-03-05
-                </time>
-            </div>
-    </footer>
-    
-
-    
-</div>
-
-</header>
-</article>
-        
-            
-<article class="">
-    <header class="article-header">
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-            <a href="/categories/programming/" >
-                Programming
-            </a>
-        
-            <a href="/categories/c&#43;&#43;/" >
-                C&#43;&#43;
-            </a>
-        
-    </header>
-    
-
-    <div class="article-title-wrapper">
-        <h2 class="article-title">
-            <a href="/p/cpp-testing-gtest-gmock-%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97/">Cpp Testing: GTest &amp; GMock 完整指南</a>
-        </h2>
-    
-        
-    </div>
-
-    
-    
-    
-    
-    <footer class="article-time">
-        
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
-  <circle cx="18" cy="18" r="4" />
-  <path d="M15 3v4" />
-  <path d="M7 3v4" />
-  <path d="M3 11h16" />
-  <path d="M18 16.496v1.504l1 1" />
-</svg>
-                <time class="article-time--published">2025-02-09</time>
-            </div>
-        
-        <div class="article-lastmod">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-                <time>
-                    2026-03-04
-                </time>
-            </div>
-    </footer>
-    
-
-    
-</div>
-
-</header>
-</article>
-        
-    </section>
-<footer class="site-footer">
+    <footer class="site-footer">
     <section class="copyright">
         &copy; 
         
@@ -547,6 +804,85 @@
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
 </footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
 
             </main>
         </div>
