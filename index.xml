@@ -72,7 +72,18 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;-详细介绍&#34;&gt;🔍 详细介绍
 &lt;/h2&gt;&lt;h3 id=&#34;深度解读-1agent-目标漂移研究&#34;&gt;深度解读 1：Agent 目标漂移研究
-&lt;/h3&gt;&lt;h4 id=&#34;研究背景&#34;&gt;研究背景
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/architecture.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Agent 目标漂移实验设计示意图&#34;
+	
+	
+&gt;
+&lt;em&gt;图 1：条件诱导漂移实验设计流程。弱代理在压力下产生漂移轨迹，强代理基于此继续执行，观察是否继承漂移行为。&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=&#34;研究背景&#34;&gt;研究背景
 &lt;/h4&gt;&lt;p&gt;随着语言模型在长上下文任务中的广泛应用，&lt;strong&gt;目标漂移&lt;/strong&gt;（Goal Drift）问题日益凸显。代理在执行多轮对话或复杂任务时，往往会逐渐偏离最初设定的目标，导致任务失败或产生意外行为。&lt;/p&gt;
 &lt;p&gt;Prior 研究表明早期模型（如 GPT-3.5、GPT-4）容易受到对抗性提示的影响而偏离目标。然而，随着模型能力提升，一个关键问题尚未解答：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -141,7 +152,18 @@
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;假设&lt;/strong&gt;：即使强代理本身抗漂移能力强，但在弱代理的漂移轨迹基础上继续执行时，可能会被动继承漂移。&lt;/p&gt;
 &lt;h4 id=&#34;实验结果&#34;&gt;实验结果
 &lt;/h4&gt;&lt;h5 id=&#34;主要发现-1鲁棒性是脆弱的&#34;&gt;主要发现 1：鲁棒性是脆弱的
-&lt;/h5&gt;&lt;table&gt;
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/results_comparison.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;不同模型抗漂移能力对比&#34;
+	
+	
+&gt;
+&lt;em&gt;图 2：各模型在直接对抗压力和条件诱导漂移场景下的表现对比。GPT-5.1 在两种场景下均保持稳健。&lt;/em&gt;&lt;/p&gt;
+&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
           &lt;th&gt;模型&lt;/th&gt;
@@ -343,9 +365,20 @@ $$DI = \frac{\text{偏离目标的行为次数}}{\text{总决策次数}} \times 
     &gt;2026 Lifelong Agents Workshop&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;深度解读-224-小时文生图训练突破&#34;&gt;深度解读 2：24 小时文生图训练突破
+&lt;h3 id=&#34;深度解读-224-小时文生图训练突破&#34;&gt;深度解读 2:24 小时文生图训练突破
 &lt;/h3&gt;&lt;h4 id=&#34;研究背景-1&#34;&gt;研究背景
-&lt;/h4&gt;&lt;p&gt;扩散模型训练通常成本高昂。早期模型（如 Stable Diffusion）训练需要数千 GPU 小时，成本达数百万美元。这限制了研究和应用的普及。&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/prx_training_pipeline.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;PRX 训练流程图&#34;
+	
+	
+&gt;
+&lt;em&gt;图 3：PRX 24 小时训练流程。采用 x-prediction 公式，在像素空间直接训练，无需 VAE。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;扩散模型训练通常成本高昂。早期模型（如 Stable Diffusion）训练需要数千 GPU 小时，成本达数百万美元。这限制了研究和应用的普及。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;核心问题&lt;/strong&gt;：在有限计算预算下，如何最大化文生图模型的训练效率？&lt;/p&gt;
 &lt;p&gt;Photoroom 团队给出了惊人答案：&lt;strong&gt;24 小时，32 块 H200 GPU，$1500 预算&lt;/strong&gt;。&lt;/p&gt;
 &lt;h4 id=&#34;核心技术&#34;&gt;核心技术
@@ -370,7 +403,18 @@ $$L = \mathbb{E}[\|\epsilon - \epsilon_\theta(x_t, t)\|^2]$$$$L = \mathbb{E}[\|x
 &lt;li&gt;&lt;strong&gt;混合精度&lt;/strong&gt;：AMP 加速训练&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;实验结果-1&#34;&gt;实验结果
-&lt;/h4&gt;&lt;table&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/prx_results.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;PRX 与基线模型性能对比&#34;
+	
+	
+&gt;
+&lt;em&gt;图 4：PRX 在 FID 和 CLIP Score 指标上均优于 Stable Diffusion 2.1，同时训练时间和成本降低 90%。&lt;/em&gt;&lt;/p&gt;
+&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
           &lt;th&gt;指标&lt;/th&gt;
