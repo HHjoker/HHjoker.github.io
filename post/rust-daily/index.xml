@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Rust 每日学习 on HH Blog</title>
+        <link>https://HHjoker.github.io/post/rust-daily/</link>
+        <description>Recent content in Rust 每日学习 on HH Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Huang Hao</copyright><atom:link href="https://HHjoker.github.io/post/rust-daily/index.xml" rel="self" type="application/rss+xml" />
+    </channel>
+</rss>
