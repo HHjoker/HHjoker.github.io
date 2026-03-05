@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="📌 路线背景 基于 OceanBase 日志系统/高可用架构研发岗位 要求制定，目标是从通信领域 C++ 开发转型到数据库内核研发。\n目标岗位核心要求 1 2 3 4 5 1. 熟练掌握 C/C++ 语言，熟悉数据结构、算法、操作系统 2. 熟悉关系数据库和/或分布式系统的运行机制和架构体系 3. 加分项：一致性协议、分布式事务、存储引擎经验 4. 加分项：底层系统研发经验或关系数据库研发经验 5. 加分项：熟悉 Rust 语言，或有意愿使用 Rust 开发分布式系统 个人背景分析 维度 当前状态 目标状态 差距 C++ 能力 2 年半基站数据解析经验 数据库内核级 C++ ⚠️ 中等 数据库知识 应用层使用 内核研发 ⚠️ 较大 分布式系统 有限接触 Paxos、一致性协议 ⚠️ 较大 Rust 语言 0 基础 能用于系统开发 ⚠️ 从零开始 存储引擎 未涉及 WAL、日志系统 ⚠️ 较大 预计学习周期：6-12 个月（在职学习）\n">
+<title>数据库内核工程师学习路线：从 C&#43;&#43; 到分布式系统</title>
+
+<link rel='canonical' href='https://HHjoker.github.io/p/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%86%85%E6%A0%B8%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E4%BB%8E-c-%E5%88%B0%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/'>
+
+<link rel="stylesheet" href="/scss/style.min.a72fcd7b1eb4bfe95eed2988b4d24c728503cd94e28ace3dbbd7fa2dc6983376.css"><meta property='og:title' content="数据库内核工程师学习路线：从 C++ 到分布式系统">
+<meta property='og:description' content="📌 路线背景 基于 OceanBase 日志系统/高可用架构研发岗位 要求制定，目标是从通信领域 C++ 开发转型到数据库内核研发。\n目标岗位核心要求 1 2 3 4 5 1. 熟练掌握 C/C++ 语言，熟悉数据结构、算法、操作系统 2. 熟悉关系数据库和/或分布式系统的运行机制和架构体系 3. 加分项：一致性协议、分布式事务、存储引擎经验 4. 加分项：底层系统研发经验或关系数据库研发经验 5. 加分项：熟悉 Rust 语言，或有意愿使用 Rust 开发分布式系统 个人背景分析 维度 当前状态 目标状态 差距 C++ 能力 2 年半基站数据解析经验 数据库内核级 C++ ⚠️ 中等 数据库知识 应用层使用 内核研发 ⚠️ 较大 分布式系统 有限接触 Paxos、一致性协议 ⚠️ 较大 Rust 语言 0 基础 能用于系统开发 ⚠️ 从零开始 存储引擎 未涉及 WAL、日志系统 ⚠️ 较大 预计学习周期：6-12 个月（在职学习）\n">
+<meta property='og:url' content='https://HHjoker.github.io/p/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%86%85%E6%A0%B8%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E4%BB%8E-c-%E5%88%B0%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/'>
+<meta property='og:site_name' content='HH Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='学习路线' /><meta property='article:tag' content='数据库' /><meta property='article:tag' content='分布式系统' /><meta property='article:tag' content='C&#43;&#43;' /><meta property='article:tag' content='Rust' /><meta property='article:tag' content='OceanBase' /><meta property='article:published_time' content='2026-03-05T20:30:00&#43;08:00'/><meta property='article:modified_time' content='2026-03-05T20:26:27&#43;08:00'/>
+<meta name="twitter:title" content="数据库内核工程师学习路线：从 C++ 到分布式系统">
+<meta name="twitter:description" content="📌 路线背景 基于 OceanBase 日志系统/高可用架构研发岗位 要求制定，目标是从通信领域 C++ 开发转型到数据库内核研发。\n目标岗位核心要求 1 2 3 4 5 1. 熟练掌握 C/C++ 语言，熟悉数据结构、算法、操作系统 2. 熟悉关系数据库和/或分布式系统的运行机制和架构体系 3. 加分项：一致性协议、分布式事务、存储引擎经验 4. 加分项：底层系统研发经验或关系数据库研发经验 5. 加分项：熟悉 Rust 语言，或有意愿使用 Rust 开发分布式系统 个人背景分析 维度 当前状态 目标状态 差距 C++ 能力 2 年半基站数据解析经验 数据库内核级 C++ ⚠️ 中等 数据库知识 应用层使用 内核研发 ⚠️ 较大 分布式系统 有限接触 Paxos、一致性协议 ⚠️ 较大 Rust 语言 0 基础 能用于系统开发 ⚠️ 从零开始 存储引擎 未涉及 WAL、日志系统 ⚠️ 较大 预计学习周期：6-12 个月（在职学习）\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_1d1ddc0b6fcd3df4.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">HH Blog</a></h1>
+            <h2 class="site-description">欢迎来到我的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/HHjoker'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://HHjoker.github.io/en/" >English</option>
+                                
+                                    <option value="https://HHjoker.github.io/" selected>中文</option>
+                                
+                                    <option value="https://HHjoker.github.io/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#-路线背景">📌 路线背景</a>
+      <ol>
+        <li><a href="#目标岗位核心要求">目标岗位核心要求</a></li>
+        <li><a href="#个人背景分析">个人背景分析</a></li>
+      </ol>
+    </li>
+    <li><a href="#-学习路线图">🗺️ 学习路线图</a></li>
+    <li><a href="#-第一阶段c-深度提升第-1-2-月">📚 第一阶段：C++ 深度提升（第 1-2 月）</a>
+      <ol>
+        <li><a href="#目标">目标</a></li>
+        <li><a href="#学习内容">学习内容</a>
+          <ol>
+            <li><a href="#11-c-高级特性">1.1 C++ 高级特性</a></li>
+            <li><a href="#12-数据结构与算法强化">1.2 数据结构与算法强化</a></li>
+            <li><a href="#13-操作系统深入">1.3 操作系统深入</a></li>
+          </ol>
+        </li>
+        <li><a href="#推荐书籍">推荐书籍</a></li>
+        <li><a href="#实践项目">实践项目</a></li>
+      </ol>
+    </li>
+    <li><a href="#-第二阶段数据库内核原理第-3-4-月">🗄️ 第二阶段：数据库内核原理（第 3-4 月）</a>
+      <ol>
+        <li><a href="#目标-1">目标</a></li>
+        <li><a href="#学习内容-1">学习内容</a>
+          <ol>
+            <li><a href="#21-数据库架构概览">2.1 数据库架构概览</a></li>
+            <li><a href="#22-核心模块详解">2.2 核心模块详解</a></li>
+            <li><a href="#23-推荐课程">2.3 推荐课程</a></li>
+          </ol>
+        </li>
+        <li><a href="#推荐书籍-1">推荐书籍</a></li>
+        <li><a href="#实践项目-1">实践项目</a></li>
+      </ol>
+    </li>
+    <li><a href="#-第三阶段分布式系统第-5-6-月">🌐 第三阶段：分布式系统（第 5-6 月）</a>
+      <ol>
+        <li><a href="#目标-2">目标</a></li>
+        <li><a href="#学习内容-2">学习内容</a>
+          <ol>
+            <li><a href="#31-分布式系统基础">3.1 分布式系统基础</a></li>
+            <li><a href="#32-一致性协议重点">3.2 一致性协议（重点）</a></li>
+            <li><a href="#33-分布式事务">3.3 分布式事务</a></li>
+          </ol>
+        </li>
+        <li><a href="#推荐书籍-2">推荐书籍</a></li>
+        <li><a href="#实践项目-2">实践项目</a></li>
+      </ol>
+    </li>
+    <li><a href="#-第四阶段rust-语言学习第-7-8-月">🦀 第四阶段：Rust 语言学习（第 7-8 月）</a>
+      <ol>
+        <li><a href="#目标-3">目标</a></li>
+        <li><a href="#学习内容-3">学习内容</a>
+          <ol>
+            <li><a href="#41-rust-基础语法第-1-2-周">4.1 Rust 基础语法（第 1-2 周）</a></li>
+            <li><a href="#42-rust-中级特性第-3-4-周">4.2 Rust 中级特性（第 3-4 周）</a></li>
+            <li><a href="#43-rust-高级特性第-5-6-周">4.3 Rust 高级特性（第 5-6 周）</a></li>
+            <li><a href="#44-rust-系统编程第-7-8-周">4.4 Rust 系统编程（第 7-8 周）</a></li>
+          </ol>
+        </li>
+        <li><a href="#推荐书籍-3">推荐书籍</a></li>
+        <li><a href="#推荐课程">推荐课程</a></li>
+        <li><a href="#实践项目-3">实践项目</a></li>
+      </ol>
+    </li>
+    <li><a href="#-第五阶段实战项目第-9-10-月">🛠️ 第五阶段：实战项目（第 9-10 月）</a>
+      <ol>
+        <li><a href="#目标-4">目标</a></li>
+        <li><a href="#推荐项目">推荐项目</a>
+          <ol>
+            <li><a href="#项目-1用-rust-实现一个简单的-kv-存储引擎">项目 1：用 Rust 实现一个简单的 KV 存储引擎</a></li>
+            <li><a href="#项目-2用-rust-实现-raft-协议">项目 2：用 Rust 实现 Raft 协议</a></li>
+            <li><a href="#项目-3阅读并贡献开源项目">项目 3：阅读并贡献开源项目</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#-第六阶段面试准备第-11-12-月">📝 第六阶段：面试准备（第 11-12 月）</a>
+      <ol>
+        <li><a href="#目标-5">目标</a></li>
+        <li><a href="#面试知识点">面试知识点</a>
+          <ol>
+            <li><a href="#c-面试">C++ 面试</a></li>
+            <li><a href="#数据库面试">数据库面试</a></li>
+            <li><a href="#分布式系统面试">分布式系统面试</a></li>
+            <li><a href="#rust-面试">Rust 面试</a></li>
+          </ol>
+        </li>
+        <li><a href="#面试资源">面试资源</a></li>
+      </ol>
+    </li>
+    <li><a href="#-每周学习计划模板">📅 每周学习计划模板</a></li>
+    <li><a href="#-学习进度追踪">📊 学习进度追踪</a>
+      <ol>
+        <li><a href="#建议记录方式">建议记录方式</a></li>
+        <li><a href="#里程碑检查">里程碑检查</a></li>
+      </ol>
+    </li>
+    <li><a href="#-总结">🎯 总结</a>
+      <ol>
+        <li><a href="#关键成功因素">关键成功因素</a></li>
+        <li><a href="#预期成果">预期成果</a></li>
+        <li><a href="#下一步">下一步</a></li>
+      </ol>
+    </li>
+    <li><a href="#-参考资源汇总">📖 参考资源汇总</a>
+      <ol>
+        <li><a href="#书籍">书籍</a></li>
+        <li><a href="#课程">课程</a></li>
+        <li><a href="#开源项目">开源项目</a></li>
+        <li><a href="#社区">社区</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/learning-roadmap/" >
+                Learning-Roadmap
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%86%85%E6%A0%B8%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E4%BB%8E-c-%E5%88%B0%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/">数据库内核工程师学习路线：从 C&#43;&#43; 到分布式系统</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-03-05</time>
+            </div>
+        
+        <div class="article-lastmod">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time>
+                    2026-03-05
+                </time>
+            </div>
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="-路线背景">📌 路线背景
+</h2><p>基于 <strong>OceanBase 日志系统/高可用架构研发岗位</strong> 要求制定，目标是从通信领域 C++ 开发转型到数据库内核研发。</p>
+<h3 id="目标岗位核心要求">目标岗位核心要求
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">1. 熟练掌握 C/C++ 语言，熟悉数据结构、算法、操作系统
+</span></span><span class="line"><span class="cl">2. 熟悉关系数据库和/或分布式系统的运行机制和架构体系
+</span></span><span class="line"><span class="cl">3. 加分项：一致性协议、分布式事务、存储引擎经验
+</span></span><span class="line"><span class="cl">4. 加分项：底层系统研发经验或关系数据库研发经验
+</span></span><span class="line"><span class="cl">5. 加分项：熟悉 Rust 语言，或有意愿使用 Rust 开发分布式系统
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="个人背景分析">个人背景分析
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>当前状态</th>
+          <th>目标状态</th>
+          <th>差距</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>C++ 能力</strong></td>
+          <td>2 年半基站数据解析经验</td>
+          <td>数据库内核级 C++</td>
+          <td>⚠️ 中等</td>
+      </tr>
+      <tr>
+          <td><strong>数据库知识</strong></td>
+          <td>应用层使用</td>
+          <td>内核研发</td>
+          <td>⚠️ 较大</td>
+      </tr>
+      <tr>
+          <td><strong>分布式系统</strong></td>
+          <td>有限接触</td>
+          <td>Paxos、一致性协议</td>
+          <td>⚠️ 较大</td>
+      </tr>
+      <tr>
+          <td><strong>Rust 语言</strong></td>
+          <td>0 基础</td>
+          <td>能用于系统开发</td>
+          <td>⚠️ 从零开始</td>
+      </tr>
+      <tr>
+          <td><strong>存储引擎</strong></td>
+          <td>未涉及</td>
+          <td>WAL、日志系统</td>
+          <td>⚠️ 较大</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>预计学习周期</strong>：6-12 个月（在职学习）</p>
+<hr>
+<h2 id="-学习路线图">🗺️ 学习路线图
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">第 1-2 月：C++ 深度提升 + 数据库基础
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">第 3-4 月：数据库内核原理 + 存储引擎
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">第 5-6 月：分布式系统 + 一致性协议
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">第 7-8 月：Rust 语言基础 + 系统编程
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">第 9-10 月：实战项目 + 源码阅读
+</span></span><span class="line"><span class="cl">    ↓
+</span></span><span class="line"><span class="cl">第 11-12 月：面试准备 + 知识体系化
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="-第一阶段c-深度提升第-1-2-月">📚 第一阶段：C++ 深度提升（第 1-2 月）
+</h2><h3 id="目标">目标
+</h3><p>达到数据库内核研发要求的 C++ 水平，超越应用层开发。</p>
+<h3 id="学习内容">学习内容
+</h3><h4 id="11-c-高级特性">1.1 C++ 高级特性
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>主题</th>
+          <th>具体内容</th>
+          <th>资源推荐</th>
+          <th>耗时</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>内存管理</strong></td>
+          <td>智能指针、自定义分配器、内存池</td>
+          <td>《Effective C++》第 1-3 章</td>
+          <td>1 周</td>
+      </tr>
+      <tr>
+          <td><strong>模板编程</strong></td>
+          <td>模板元编程、SFINAE、constexpr</td>
+          <td>《C++ Templates》前 8 章</td>
+          <td>2 周</td>
+      </tr>
+      <tr>
+          <td><strong>移动语义</strong></td>
+          <td>右值引用、完美转发、移动优化</td>
+          <td>《Effective Modern C++》</td>
+          <td>1 周</td>
+      </tr>
+      <tr>
+          <td><strong>并发编程</strong></td>
+          <td>线程、锁、原子操作、无锁数据结构</td>
+          <td>《C++ Concurrency in Action》</td>
+          <td>2 周</td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="12-数据结构与算法强化">1.2 数据结构与算法强化
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>主题</th>
+          <th>具体内容</th>
+          <th>练习平台</th>
+          <th>目标</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>高级数据结构</strong></td>
+          <td>B/B+ 树、跳表、哈希表、布隆过滤器</td>
+          <td>LeetCode</td>
+          <td>50 题</td>
+      </tr>
+      <tr>
+          <td><strong>字符串算法</strong></td>
+          <td>KMP、Trie、后缀数组</td>
+          <td>LeetCode</td>
+          <td>20 题</td>
+      </tr>
+      <tr>
+          <td><strong>图算法</strong></td>
+          <td>最短路径、拓扑排序、并查集</td>
+          <td>LeetCode</td>
+          <td>30 题</td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="13-操作系统深入">1.3 操作系统深入
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>主题</th>
+          <th>具体内容</th>
+          <th>资源推荐</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>进程/线程</strong></td>
+          <td>调度、上下文切换、线程池</td>
+          <td>《操作系统导论》</td>
+      </tr>
+      <tr>
+          <td><strong>内存管理</strong></td>
+          <td>虚拟内存、页表、TLB</td>
+          <td>《深入理解计算机系统》</td>
+      </tr>
+      <tr>
+          <td><strong>I/O 系统</strong></td>
+          <td>缓冲、异步 I/O、mmap</td>
+          <td>《Linux/UNIX 系统编程手册》</td>
+      </tr>
+      <tr>
+          <td><strong>文件系统</strong></td>
+          <td>日志文件系统、写时复制</td>
+          <td>阅读 ext4 文档</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="推荐书籍">推荐书籍
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">必读：
+</span></span><span class="line"><span class="cl">- 《Effective C++》（第 3 版）- Scott Meyers
+</span></span><span class="line"><span class="cl">- 《Effective Modern C++》- Scott Meyers
+</span></span><span class="line"><span class="cl">- 《深入理解计算机系统》（CSAPP）- 第 3 版
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">选读：
+</span></span><span class="line"><span class="cl">- 《C++ Templates 完整版》- David Vandevoorde
+</span></span><span class="line"><span class="cl">- 《C++ Concurrency in Action》- Anthony Williams
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="实践项目">实践项目
+</h3><ol>
+<li><strong>实现一个内存池</strong> - 支持定长/变长对象分配</li>
+<li><strong>实现一个线程池</strong> - 支持任务提交、优雅关闭</li>
+<li><strong>实现一个 B+ 树</strong> - 支持插入、删除、范围查询</li>
+</ol>
+<hr>
+<h2 id="-第二阶段数据库内核原理第-3-4-月">🗄️ 第二阶段：数据库内核原理（第 3-4 月）
+</h2><h3 id="目标-1">目标
+</h3><p>理解数据库内核核心模块，掌握存储引擎工作原理。</p>
+<h3 id="学习内容-1">学习内容
+</h3><h4 id="21-数据库架构概览">2.1 数据库架构概览
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌─────────────────────────────────────────────────────┐
+</span></span><span class="line"><span class="cl">│                    SQL Layer                        │
+</span></span><span class="line"><span class="cl">│  (Parser, Optimizer, Executor, Planner)            │
+</span></span><span class="line"><span class="cl">├─────────────────────────────────────────────────────┤
+</span></span><span class="line"><span class="cl">│                 Transaction Layer                   │
+</span></span><span class="line"><span class="cl">│  (Concurrency Control, Lock Manager, MVCC)         │
+</span></span><span class="line"><span class="cl">├─────────────────────────────────────────────────────┤
+</span></span><span class="line"><span class="cl">│                  Storage Engine                     │
+</span></span><span class="line"><span class="cl">│  (WAL, Buffer Pool, B+ Tree, Page Manager)         │
+</span></span><span class="line"><span class="cl">├─────────────────────────────────────────────────────┤
+</span></span><span class="line"><span class="cl">│                    OS / Disk                        │
+</span></span><span class="line"><span class="cl">└─────────────────────────────────────────────────────┘
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="22-核心模块详解">2.2 核心模块详解
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>模块</th>
+          <th>学习内容</th>
+          <th>资源推荐</th>
+          <th>耗时</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>SQL 解析</strong></td>
+          <td>词法分析、语法分析、AST</td>
+          <td>《数据库系统概念》Ch3</td>
+          <td>1 周</td>
+      </tr>
+      <tr>
+          <td><strong>查询优化</strong></td>
+          <td>规则优化、代价优化、执行计划</td>
+          <td>《数据库系统实现》Ch15-16</td>
+          <td>2 周</td>
+      </tr>
+      <tr>
+          <td><strong>事务管理</strong></td>
+          <td>ACID、隔离级别、锁、MVCC</td>
+          <td>《数据库系统概念》Ch17</td>
+          <td>2 周</td>
+      </tr>
+      <tr>
+          <td><strong>存储引擎</strong></td>
+          <td>页管理、缓冲池、B+ 树索引</td>
+          <td>《数据库系统实现》Ch7-8</td>
+          <td>2 周</td>
+      </tr>
+      <tr>
+          <td><strong>WAL 日志</strong></td>
+          <td>Write-Ahead Logging、预写式日志</td>
+          <td>CMU 15-445</td>
+          <td>1 周</td>
+      </tr>
+      <tr>
+          <td><strong>恢复系统</strong></td>
+          <td>Checkpoint、ARIES 算法</td>
+          <td>《数据库系统实现》Ch18</td>
+          <td>1 周</td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="23-推荐课程">2.3 推荐课程
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>课程</th>
+          <th>平台</th>
+          <th>难度</th>
+          <th>链接</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>CMU 15-445</strong></td>
+          <td>YouTube/B 站</td>
+          <td>⭐⭐⭐⭐</td>
+          <td><a class="link" href="https://www.youtube.com/results?search_query=cmu&#43;15-445"  target="_blank" rel="noopener"
+    >链接</a></td>
+      </tr>
+      <tr>
+          <td><strong>CS346</strong></td>
+          <td>Stanford</td>
+          <td>⭐⭐⭐⭐⭐</td>
+          <td><a class="link" href="https://web.stanford.edu/class/cs346/2015/"  target="_blank" rel="noopener"
+    >链接</a></td>
+      </tr>
+      <tr>
+          <td><strong>MIT 6.830</strong></td>
+          <td>MIT OCW</td>
+          <td>⭐⭐⭐⭐</td>
+          <td><a class="link" href="https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/"  target="_blank" rel="noopener"
+    >链接</a></td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="推荐书籍-1">推荐书籍
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">必读：
+</span></span><span class="line"><span class="cl">- 《数据库系统概念》（第 7 版）- Abraham Silberschatz
+</span></span><span class="line"><span class="cl">- 《数据库系统实现》- Hector Garcia-Molina
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">选读：
+</span></span><span class="line"><span class="cl">- 《Readings in Database Systems》（Red Book）- 论文合集
+</span></span><span class="line"><span class="cl">- 《Designing Data-Intensive Applications》- Martin Kleppmann
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="实践项目-1">实践项目
+</h3><ol>
+<li>
+<p><strong>实现一个简单的存储引擎</strong></p>
+<ul>
+<li>支持页管理（Page Manager）</li>
+<li>实现 B+ 树索引</li>
+<li>支持简单的 CRUD 操作</li>
+</ul>
+</li>
+<li>
+<p><strong>实现 WAL 日志系统</strong></p>
+<ul>
+<li>预写式日志</li>
+<li>支持崩溃恢复</li>
+<li>Checkpoint 机制</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="-第三阶段分布式系统第-5-6-月">🌐 第三阶段：分布式系统（第 5-6 月）
+</h2><h3 id="目标-2">目标
+</h3><p>掌握分布式系统核心原理，理解一致性协议。</p>
+<h3 id="学习内容-2">学习内容
+</h3><h4 id="31-分布式系统基础">3.1 分布式系统基础
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>主题</th>
+          <th>具体内容</th>
+          <th>资源推荐</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>分布式基础</strong></td>
+          <td>CAP 定理、BASE 理论、一致性模型</td>
+          <td>《分布式系统原理与范型》</td>
+      </tr>
+      <tr>
+          <td><strong>时间与时钟</strong></td>
+          <td>逻辑时钟、向量时钟、混合逻辑时钟</td>
+          <td>论文阅读</td>
+      </tr>
+      <tr>
+          <td><strong>分布式共识</strong></td>
+          <td>两阶段提交、三阶段提交</td>
+          <td>《DDIA》Ch9</td>
+      </tr>
+      <tr>
+          <td><strong>复制技术</strong></td>
+          <td>主从复制、多主复制、无主复制</td>
+          <td>《DDIA》Ch5</td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="32-一致性协议重点">3.2 一致性协议（重点）
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>协议</th>
+          <th>学习内容</th>
+          <th>难度</th>
+          <th>资源</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Paxos</strong></td>
+          <td>Basic Paxos、Multi-Paxos</td>
+          <td>⭐⭐⭐⭐⭐</td>
+          <td><a class="link" href="https://lamport.azurewebsites.net/pubs/pubs.html#lamport-paxos"  target="_blank" rel="noopener"
+    >Paxos 论文</a></td>
+      </tr>
+      <tr>
+          <td><strong>Raft</strong></td>
+          <td>Leader 选举、日志复制、安全性</td>
+          <td>⭐⭐⭐⭐</td>
+          <td><a class="link" href="https://raft.github.io/"  target="_blank" rel="noopener"
+    >Raft 官网</a></td>
+      </tr>
+      <tr>
+          <td><strong>ZAB</strong></td>
+          <td>ZooKeeper 原子广播协议</td>
+          <td>⭐⭐⭐⭐</td>
+          <td>ZooKeeper 源码</td>
+      </tr>
+      <tr>
+          <td><strong>Gossip</strong></td>
+          <td>病毒式传播、最终一致性</td>
+          <td>⭐⭐⭐</td>
+          <td>Dynamo 论文</td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="33-分布式事务">3.3 分布式事务
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>主题</th>
+          <th>具体内容</th>
+          <th>资源</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>2PC/3PC</strong></td>
+          <td>两阶段/三阶段提交协议</td>
+          <td>《DDIA》Ch9</td>
+      </tr>
+      <tr>
+          <td><strong>TCC</strong></td>
+          <td>Try-Confirm-Cancel 模式</td>
+          <td>阿里文档</td>
+      </tr>
+      <tr>
+          <td><strong>Saga</strong></td>
+          <td>长事务编排</td>
+          <td>论文阅读</td>
+      </tr>
+      <tr>
+          <td><strong>Percolator</strong></td>
+          <td>Google 分布式事务模型</td>
+          <td>论文阅读</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="推荐书籍-2">推荐书籍
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">必读：
+</span></span><span class="line"><span class="cl">- 《Designing Data-Intensive Applications》（DDIA）- Martin Kleppmann
+</span></span><span class="line"><span class="cl">- 《分布式系统原理与范型》- Andrew S. Tanenbaum
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">选读：
+</span></span><span class="line"><span class="cl">- 《大规模分布式存储系统》- 杨传辉
+</span></span><span class="line"><span class="cl">- 《数据密集型应用系统设计》实战解读
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="实践项目-2">实践项目
+</h3><ol>
+<li>
+<p><strong>实现 Raft 协议</strong></p>
+<ul>
+<li>Leader 选举</li>
+<li>日志复制</li>
+<li>成员变更</li>
+<li>参考：<a class="link" href="https://pdos.csail.mit.edu/6.824/labs/lab-raft.html"  target="_blank" rel="noopener"
+    >MIT 6.824 Lab2</a></li>
+</ul>
+</li>
+<li>
+<p><strong>实现一个简单的分布式 KV 存储</strong></p>
+<ul>
+<li>基于 Raft 保证一致性</li>
+<li>支持多节点部署</li>
+<li>实现基本的 PUT/GET 操作</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="-第四阶段rust-语言学习第-7-8-月">🦀 第四阶段：Rust 语言学习（第 7-8 月）
+</h2><h3 id="目标-3">目标
+</h3><p>掌握 Rust 语言基础，能够使用 Rust 进行系统编程。</p>
+<h3 id="学习内容-3">学习内容
+</h3><h4 id="41-rust-基础语法第-1-2-周">4.1 Rust 基础语法（第 1-2 周）
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>主题</th>
+          <th>具体内容</th>
+          <th>资源</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>基础语法</strong></td>
+          <td>变量、类型、函数、控制流</td>
+          <td>《The Rust Book》Ch1-6</td>
+      </tr>
+      <tr>
+          <td><strong>所有权</strong></td>
+          <td>所有权、借用、生命周期</td>
+          <td>《The Rust Book》Ch4, Ch10</td>
+      </tr>
+      <tr>
+          <td><strong>结构体与枚举</strong></td>
+          <td>struct、enum、pattern matching</td>
+          <td>《The Rust Book》Ch5-6</td>
+      </tr>
+      <tr>
+          <td><strong>错误处理</strong></td>
+          <td>Result、Option、panic!</td>
+          <td>《The Rust Book》Ch9</td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="42-rust-中级特性第-3-4-周">4.2 Rust 中级特性（第 3-4 周）
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>主题</th>
+          <th>具体内容</th>
+          <th>资源</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>泛型与 Trait</strong></td>
+          <td>泛型、Trait、泛型约束</td>
+          <td>《The Rust Book》Ch10</td>
+      </tr>
+      <tr>
+          <td><strong>测试</strong></td>
+          <td>单元测试、集成测试、文档测试</td>
+          <td>《The Rust Book》Ch11</td>
+      </tr>
+      <tr>
+          <td><strong>函数式特性</strong></td>
+          <td>闭包、迭代器</td>
+          <td>《The Rust Book》Ch13</td>
+      </tr>
+      <tr>
+          <td><strong>智能指针</strong></td>
+          <td>Box、Rc、RefCell、Arc、Mutex</td>
+          <td>《The Rust Book》Ch15-16</td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="43-rust-高级特性第-5-6-周">4.3 Rust 高级特性（第 5-6 周）
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>主题</th>
+          <th>具体内容</th>
+          <th>资源</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>unsafe Rust</strong></td>
+          <td>裸指针、unsafe 块、FFI</td>
+          <td>《The Rust Book》Ch19</td>
+      </tr>
+      <tr>
+          <td><strong>宏</strong></td>
+          <td>声明宏、过程宏</td>
+          <td>《The Rust Book》Ch19</td>
+      </tr>
+      <tr>
+          <td><strong>异步编程</strong></td>
+          <td>async/await、Future、Tokio</td>
+          <td>《Async Book》</td>
+      </tr>
+      <tr>
+          <td><strong>性能优化</strong></td>
+          <td>零成本抽象、内联、SIMD</td>
+          <td>Rust 性能手册</td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="44-rust-系统编程第-7-8-周">4.4 Rust 系统编程（第 7-8 周）
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>主题</th>
+          <th>具体内容</th>
+          <th>资源</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>并发编程</strong></td>
+          <td>线程、通道、原子操作</td>
+          <td>《Rust in Action》Ch8</td>
+      </tr>
+      <tr>
+          <td><strong>网络编程</strong></td>
+          <td>TCP/UDP、HTTP 服务器</td>
+          <td>《Rust in Action》Ch9</td>
+      </tr>
+      <tr>
+          <td><strong>文件系统</strong></td>
+          <td>文件 I/O、路径处理</td>
+          <td>标准库文档</td>
+      </tr>
+      <tr>
+          <td><strong>FFI</strong></td>
+          <td>与 C 代码交互</td>
+          <td>《The Rustonomicon》</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="推荐书籍-3">推荐书籍
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">必读：
+</span></span><span class="line"><span class="cl">- 《The Rust Programming Language》（The Book）- 官方免费
+</span></span><span class="line"><span class="cl">- 《Rust By Example》- 官方示例
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">选读：
+</span></span><span class="line"><span class="cl">- 《Rust in Action》- Tim McNamara
+</span></span><span class="line"><span class="cl">- 《Programming Rust》- Jim Blandy
+</span></span><span class="line"><span class="cl">- 《The Rustonomicon》- 高级 unsafe 编程
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="推荐课程">推荐课程
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>课程</th>
+          <th>平台</th>
+          <th>链接</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Rust 官方教程</strong></td>
+          <td>doc.rust-lang.org</td>
+          <td><a class="link" href="https://doc.rust-lang.org/book/"  target="_blank" rel="noopener"
+    >链接</a></td>
+      </tr>
+      <tr>
+          <td><strong>Rust By Example</strong></td>
+          <td>官方</td>
+          <td><a class="link" href="https://doc.rust-lang.org/rust-by-example/"  target="_blank" rel="noopener"
+    >链接</a></td>
+      </tr>
+      <tr>
+          <td><strong>B 站 Rust 教程</strong></td>
+          <td>Bilibili</td>
+          <td>搜索&quot;Rust 语言圣经&quot;</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="实践项目-3">实践项目
+</h3><ol>
+<li>
+<p><strong>实现一个简单的命令行工具</strong></p>
+<ul>
+<li>如：grep 工具、文件搜索工具</li>
+</ul>
+</li>
+<li>
+<p><strong>实现一个 HTTP 服务器</strong></p>
+<ul>
+<li>使用 hyper 或 actix-web</li>
+<li>支持基本的 REST API</li>
+</ul>
+</li>
+<li>
+<p><strong>用 Rust 重写之前的 C++ 项目</strong></p>
+<ul>
+<li>如：内存池、线程池</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="-第五阶段实战项目第-9-10-月">🛠️ 第五阶段：实战项目（第 9-10 月）
+</h2><h3 id="目标-4">目标
+</h3><p>通过实战项目整合所学知识，形成完整知识体系。</p>
+<h3 id="推荐项目">推荐项目
+</h3><h4 id="项目-1用-rust-实现一个简单的-kv-存储引擎">项目 1：用 Rust 实现一个简单的 KV 存储引擎
+</h4><p><strong>技术栈</strong>：Rust + 存储引擎 + WAL</p>
+<p><strong>功能要求</strong>：</p>
+<ul>
+<li>支持 PUT/GET/DELETE 操作</li>
+<li>基于 LSM-Tree 或 B+ 树</li>
+<li>实现 WAL 日志</li>
+<li>支持崩溃恢复</li>
+</ul>
+<p><strong>参考项目</strong>：</p>
+<ul>
+<li><a class="link" href="https://github.com/spacejam/sled"  target="_blank" rel="noopener"
+    >Sled</a> - Rust 实现的嵌入式数据库</li>
+<li><a class="link" href="https://github.com/facebook/rocksdb"  target="_blank" rel="noopener"
+    >RocksDB</a> - Facebook 的 KV 存储</li>
+</ul>
+<h4 id="项目-2用-rust-实现-raft-协议">项目 2：用 Rust 实现 Raft 协议
+</h4><p><strong>技术栈</strong>：Rust + 分布式系统 + Raft</p>
+<p><strong>功能要求</strong>：</p>
+<ul>
+<li>Leader 选举</li>
+<li>日志复制</li>
+<li>成员变更</li>
+<li>持久化</li>
+</ul>
+<p><strong>参考项目</strong>：</p>
+<ul>
+<li><a class="link" href="https://github.com/tikv/raft-rs"  target="_blank" rel="noopener"
+    >tikv/raft-rs</a> - TiKV 的 Raft 实现</li>
+<li><a class="link" href="https://github.com/async-raft/async-raft"  target="_blank" rel="noopener"
+    >async-raft</a> - 异步 Raft</li>
+</ul>
+<h4 id="项目-3阅读并贡献开源项目">项目 3：阅读并贡献开源项目
+</h4><p><strong>推荐项目</strong>：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>项目</th>
+          <th>语言</th>
+          <th>方向</th>
+          <th>难度</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>TiKV</strong></td>
+          <td>Rust</td>
+          <td>分布式 KV 存储</td>
+          <td>⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td><strong>RisingWave</strong></td>
+          <td>Rust</td>
+          <td>流式数据库</td>
+          <td>⭐⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td><strong>DataFusion</strong></td>
+          <td>Rust</td>
+          <td>查询引擎</td>
+          <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td><strong>Ballista</strong></td>
+          <td>Rust</td>
+          <td>分布式查询</td>
+          <td>⭐⭐⭐⭐</td>
+      </tr>
+      <tr>
+          <td><strong>OceanBase</strong></td>
+          <td>C++</td>
+          <td>分布式数据库</td>
+          <td>⭐⭐⭐⭐⭐</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="-第六阶段面试准备第-11-12-月">📝 第六阶段：面试准备（第 11-12 月）
+</h2><h3 id="目标-5">目标
+</h3><p>系统化整理知识体系，准备面试。</p>
+<h3 id="面试知识点">面试知识点
+</h3><h4 id="c-面试">C++ 面试
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">基础：
+</span></span><span class="line"><span class="cl">- 虚函数、多态、RTTI
+</span></span><span class="line"><span class="cl">- 智能指针、内存管理
+</span></span><span class="line"><span class="cl">- STL 容器原理
+</span></span><span class="line"><span class="cl">- 移动语义、完美转发
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">进阶：
+</span></span><span class="line"><span class="cl">- 模板元编程
+</span></span><span class="line"><span class="cl">- 并发编程（锁、无锁）
+</span></span><span class="line"><span class="cl">- 性能优化
+</span></span><span class="line"><span class="cl">- 设计模式
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="数据库面试">数据库面试
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">基础：
+</span></span><span class="line"><span class="cl">- SQL 执行流程
+</span></span><span class="line"><span class="cl">- 索引原理（B+ 树、哈希）
+</span></span><span class="line"><span class="cl">- 事务隔离级别
+</span></span><span class="line"><span class="cl">- 锁机制
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">进阶：
+</span></span><span class="line"><span class="cl">- MVCC 实现
+</span></span><span class="line"><span class="cl">- WAL 与恢复
+</span></span><span class="line"><span class="cl">- 查询优化
+</span></span><span class="line"><span class="cl">- 存储引擎对比
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="分布式系统面试">分布式系统面试
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">基础：
+</span></span><span class="line"><span class="cl">- CAP 定理
+</span></span><span class="line"><span class="cl">- 一致性模型
+</span></span><span class="line"><span class="cl">- 复制技术
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">进阶：
+</span></span><span class="line"><span class="cl">- Paxos/Raft 协议
+</span></span><span class="line"><span class="cl">- 分布式事务
+</span></span><span class="line"><span class="cl">- 分布式锁
+</span></span><span class="line"><span class="cl">- 一致性哈希
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="rust-面试">Rust 面试
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">基础：
+</span></span><span class="line"><span class="cl">- 所有权、借用
+</span></span><span class="line"><span class="cl">- 生命周期
+</span></span><span class="line"><span class="cl">- 模式匹配
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">进阶：
+</span></span><span class="line"><span class="cl">- 智能指针
+</span></span><span class="line"><span class="cl">- 并发编程
+</span></span><span class="line"><span class="cl">- unsafe Rust
+</span></span><span class="line"><span class="cl">- 异步编程
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="面试资源">面试资源
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>资源</th>
+          <th>类型</th>
+          <th>链接</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>LeetCode</strong></td>
+          <td>算法</td>
+          <td>刷题 200+</td>
+      </tr>
+      <tr>
+          <td><strong>牛客网</strong></td>
+          <td>面经</td>
+          <td>搜索&quot;数据库 面经&quot;</td>
+      </tr>
+      <tr>
+          <td><strong>GitHub</strong></td>
+          <td>知识库</td>
+          <td>搜索&quot;面试准备&quot;</td>
+      </tr>
+      <tr>
+          <td><strong>知乎</strong></td>
+          <td>经验</td>
+          <td>关注&quot;数据库开发&quot;话题</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="-每周学习计划模板">📅 每周学习计划模板
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">周一：理论学习（2 小时）
+</span></span><span class="line"><span class="cl">- 阅读书籍/论文
+</span></span><span class="line"><span class="cl">- 做笔记
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">周二：编程实践（2 小时）
+</span></span><span class="line"><span class="cl">- 实现当天学到的概念
+</span></span><span class="line"><span class="cl">- 写单元测试
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">周三：项目推进（2 小时）
+</span></span><span class="line"><span class="cl">- 推进实战项目
+</span></span><span class="line"><span class="cl">- 解决遇到的问题
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">周四：理论学习（2 小时）
+</span></span><span class="line"><span class="cl">- 继续阅读/视频课程
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">周五：编程实践（2 小时）
+</span></span><span class="line"><span class="cl">- 深化理解
+</span></span><span class="line"><span class="cl">- 优化代码
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">周六：项目推进（3 小时）
+</span></span><span class="line"><span class="cl">- 集中开发时间
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">周日：复习总结（2 小时）
+</span></span><span class="line"><span class="cl">- 整理笔记
+</span></span><span class="line"><span class="cl">- 写博客总结
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="-学习进度追踪">📊 学习进度追踪
+</h2><h3 id="建议记录方式">建议记录方式
+</h3><ol>
+<li><strong>GitHub 仓库</strong> - 存放所有代码项目</li>
+<li><strong>博客</strong> - 每周总结学习心得</li>
+<li><strong>笔记软件</strong> - Notion/Obsidian 记录知识点</li>
+<li><strong>Anki</strong> - 记忆关键概念</li>
+</ol>
+<h3 id="里程碑检查">里程碑检查
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>时间</th>
+          <th>检查点</th>
+          <th>目标</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>第 2 月末</td>
+          <td>C++ 提升</td>
+          <td>完成 3 个 C++ 项目</td>
+      </tr>
+      <tr>
+          <td>第 4 月末</td>
+          <td>数据库基础</td>
+          <td>理解存储引擎原理</td>
+      </tr>
+      <tr>
+          <td>第 6 月末</td>
+          <td>分布式系统</td>
+          <td>实现 Raft 协议</td>
+      </tr>
+      <tr>
+          <td>第 8 月末</td>
+          <td>Rust 能力</td>
+          <td>能用 Rust 开发项目</td>
+      </tr>
+      <tr>
+          <td>第 10 月末</td>
+          <td>实战项目</td>
+          <td>完成 1-2 个完整项目</td>
+      </tr>
+      <tr>
+          <td>第 12 月末</td>
+          <td>面试准备</td>
+          <td>开始投递简历</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="-总结">🎯 总结
+</h2><h3 id="关键成功因素">关键成功因素
+</h3><ol>
+<li><strong>坚持</strong> - 每天 2 小时，持续 12 个月</li>
+<li><strong>实践</strong> - 理论 + 代码，缺一不可</li>
+<li><strong>输出</strong> - 写博客、做分享，加深理解</li>
+<li><strong>社区</strong> - 加入技术社区，获取反馈</li>
+</ol>
+<h3 id="预期成果">预期成果
+</h3><ul>
+<li>✅ 掌握数据库内核核心知识</li>
+<li>✅ 能够使用 Rust 进行系统编程</li>
+<li>✅ 完成 2-3 个有竞争力的项目</li>
+<li>✅ 具备数据库内核研发岗位面试能力</li>
+</ul>
+<h3 id="下一步">下一步
+</h3><ol>
+<li>创建 GitHub 仓库，开始记录学习历程</li>
+<li>制定详细的周计划</li>
+<li>开始第一本书的阅读（推荐《Effective C++》）</li>
+<li>每天学习 Rust，记录学习心得</li>
+</ol>
+<hr>
+<p><strong>加油！12 个月后，你就是数据库内核工程师！</strong> 🚀</p>
+<hr>
+<h2 id="-参考资源汇总">📖 参考资源汇总
+</h2><h3 id="书籍">书籍
+</h3><ul>
+<li>《Effective C++》</li>
+<li>《Effective Modern C++》</li>
+<li>《深入理解计算机系统》</li>
+<li>《数据库系统概念》</li>
+<li>《数据库系统实现》</li>
+<li>《Designing Data-Intensive Applications》</li>
+<li>《The Rust Programming Language》</li>
+</ul>
+<h3 id="课程">课程
+</h3><ul>
+<li>CMU 15-445（数据库）</li>
+<li>MIT 6.824（分布式系统）</li>
+<li>Rust 官方教程</li>
+</ul>
+<h3 id="开源项目">开源项目
+</h3><ul>
+<li>TiKV</li>
+<li>RocksDB</li>
+<li>sled</li>
+<li>raft-rs</li>
+</ul>
+<h3 id="社区">社区
+</h3><ul>
+<li>Rust 中文社区</li>
+<li>数据库开发社区</li>
+<li>GitHub 开源项目</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/">学习路线</a>
+        
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+        
+            <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/">分布式系统</a>
+        
+            <a href="/tags/c&#43;&#43;/">C&#43;&#43;</a>
+        
+            <a href="/tags/rust/">Rust</a>
+        
+            <a href="/tags/oceanbase/">OceanBase</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2026-03-05
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="HHjoker/HHjoker.github.io"
+    data-repo-id="R_kgDON1Vqng"
+    data-category="Announcements"
+    data-category-id="DIC_kwDON1Vqns4C3qHd"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('preferred_color_scheme');
+            } else {
+                setGiscusTheme('preferred_color_scheme');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 Huang Hao
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+    #TableOfContents > ul ul,
+    #TableOfContents > ul ol,
+    #TableOfContents > ol ul,
+    #TableOfContents > ol ol {
+        display: none;
+    }
+    #TableOfContents > ul .open,
+    #TableOfContents > ol .open {
+        display: block;
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://HHjoker.github.io/icons/backTop.svg);
+    }
+</style>
+
+<script type="text/javascript">
+    
+
+    function initScrollTop() {
+        let rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) {
+            return;
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop
+        rightSideBar.appendChild(btn)
+        
+        window.onscroll = function() {
+            
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    }
+
+    
+
+    function backToTop(){
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    initScrollTop();
+</script>
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    let codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) {
+      return;
+    }
+    codeBlocks.forEach(codeBlock => {
+      
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+        return;
+      }
+      
+      
+      let codeMoreBox = document.createElement('div');
+      codeMoreBox.classList.add('code-more-box');
+      
+      let codeMoreBtn = document.createElement('span');
+      codeMoreBtn.classList.add('code-more-btn');
+      codeMoreBtn.addEventListener('click', () => {
+        codeBlock.classList.add('code-show');
+        codeMoreBox.style.display = 'none';
+        
+        window.dispatchEvent(new Event('resize'))
+      })
+      
+      let img = document.createElement('img');
+      img.classList.add('code-more-img');
+      img.src = "https://HHjoker.github.io/icons/codeMore.ico"
+      
+      codeMoreBtn.appendChild(img);
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox)
+    })
+  }
+  
+  initCodeMoreBox();
+</script>
+
+    </body>
+</html>

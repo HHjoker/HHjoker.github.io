@@ -1,0 +1,1158 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Rust on HH Blog</title>
+        <link>https://HHjoker.github.io/tags/rust/</link>
+        <description>Recent content in Rust on HH Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Huang Hao</copyright>
+        <lastBuildDate>Thu, 05 Mar 2026 20:26:27 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>数据库内核工程师学习路线：从 C&#43;&#43; 到分布式系统</title>
+        <link>https://HHjoker.github.io/p/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%86%85%E6%A0%B8%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E4%BB%8E-c-%E5%88%B0%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/</link>
+        <pubDate>Thu, 05 Mar 2026 20:30:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%86%85%E6%A0%B8%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%E4%BB%8E-c-%E5%88%B0%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/</guid>
+        <description>&lt;h2 id=&#34;-路线背景&#34;&gt;📌 路线背景
+&lt;/h2&gt;&lt;p&gt;基于 &lt;strong&gt;OceanBase 日志系统/高可用架构研发岗位&lt;/strong&gt; 要求制定，目标是从通信领域 C++ 开发转型到数据库内核研发。&lt;/p&gt;
+&lt;h3 id=&#34;目标岗位核心要求&#34;&gt;目标岗位核心要求
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;1. 熟练掌握 C/C++ 语言，熟悉数据结构、算法、操作系统
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;2. 熟悉关系数据库和/或分布式系统的运行机制和架构体系
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;3. 加分项：一致性协议、分布式事务、存储引擎经验
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;4. 加分项：底层系统研发经验或关系数据库研发经验
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;5. 加分项：熟悉 Rust 语言，或有意愿使用 Rust 开发分布式系统
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;个人背景分析&#34;&gt;个人背景分析
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;维度&lt;/th&gt;
+          &lt;th&gt;当前状态&lt;/th&gt;
+          &lt;th&gt;目标状态&lt;/th&gt;
+          &lt;th&gt;差距&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;C++ 能力&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;2 年半基站数据解析经验&lt;/td&gt;
+          &lt;td&gt;数据库内核级 C++&lt;/td&gt;
+          &lt;td&gt;⚠️ 中等&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;数据库知识&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;应用层使用&lt;/td&gt;
+          &lt;td&gt;内核研发&lt;/td&gt;
+          &lt;td&gt;⚠️ 较大&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;分布式系统&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;有限接触&lt;/td&gt;
+          &lt;td&gt;Paxos、一致性协议&lt;/td&gt;
+          &lt;td&gt;⚠️ 较大&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Rust 语言&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;0 基础&lt;/td&gt;
+          &lt;td&gt;能用于系统开发&lt;/td&gt;
+          &lt;td&gt;⚠️ 从零开始&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;存储引擎&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;未涉及&lt;/td&gt;
+          &lt;td&gt;WAL、日志系统&lt;/td&gt;
+          &lt;td&gt;⚠️ 较大&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;预计学习周期&lt;/strong&gt;：6-12 个月（在职学习）&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-学习路线图&#34;&gt;🗺️ 学习路线图
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;第 1-2 月：C++ 深度提升 + 数据库基础
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;第 3-4 月：数据库内核原理 + 存储引擎
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;第 5-6 月：分布式系统 + 一致性协议
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;第 7-8 月：Rust 语言基础 + 系统编程
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;第 9-10 月：实战项目 + 源码阅读
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    ↓
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;第 11-12 月：面试准备 + 知识体系化
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-第一阶段c-深度提升第-1-2-月&#34;&gt;📚 第一阶段：C++ 深度提升（第 1-2 月）
+&lt;/h2&gt;&lt;h3 id=&#34;目标&#34;&gt;目标
+&lt;/h3&gt;&lt;p&gt;达到数据库内核研发要求的 C++ 水平，超越应用层开发。&lt;/p&gt;
+&lt;h3 id=&#34;学习内容&#34;&gt;学习内容
+&lt;/h3&gt;&lt;h4 id=&#34;11-c-高级特性&#34;&gt;1.1 C++ 高级特性
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;主题&lt;/th&gt;
+          &lt;th&gt;具体内容&lt;/th&gt;
+          &lt;th&gt;资源推荐&lt;/th&gt;
+          &lt;th&gt;耗时&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;内存管理&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;智能指针、自定义分配器、内存池&lt;/td&gt;
+          &lt;td&gt;《Effective C++》第 1-3 章&lt;/td&gt;
+          &lt;td&gt;1 周&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;模板编程&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;模板元编程、SFINAE、constexpr&lt;/td&gt;
+          &lt;td&gt;《C++ Templates》前 8 章&lt;/td&gt;
+          &lt;td&gt;2 周&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;移动语义&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;右值引用、完美转发、移动优化&lt;/td&gt;
+          &lt;td&gt;《Effective Modern C++》&lt;/td&gt;
+          &lt;td&gt;1 周&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;并发编程&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;线程、锁、原子操作、无锁数据结构&lt;/td&gt;
+          &lt;td&gt;《C++ Concurrency in Action》&lt;/td&gt;
+          &lt;td&gt;2 周&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;12-数据结构与算法强化&#34;&gt;1.2 数据结构与算法强化
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;主题&lt;/th&gt;
+          &lt;th&gt;具体内容&lt;/th&gt;
+          &lt;th&gt;练习平台&lt;/th&gt;
+          &lt;th&gt;目标&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;高级数据结构&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;B/B+ 树、跳表、哈希表、布隆过滤器&lt;/td&gt;
+          &lt;td&gt;LeetCode&lt;/td&gt;
+          &lt;td&gt;50 题&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;字符串算法&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;KMP、Trie、后缀数组&lt;/td&gt;
+          &lt;td&gt;LeetCode&lt;/td&gt;
+          &lt;td&gt;20 题&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;图算法&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;最短路径、拓扑排序、并查集&lt;/td&gt;
+          &lt;td&gt;LeetCode&lt;/td&gt;
+          &lt;td&gt;30 题&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;13-操作系统深入&#34;&gt;1.3 操作系统深入
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;主题&lt;/th&gt;
+          &lt;th&gt;具体内容&lt;/th&gt;
+          &lt;th&gt;资源推荐&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;进程/线程&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;调度、上下文切换、线程池&lt;/td&gt;
+          &lt;td&gt;《操作系统导论》&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;内存管理&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;虚拟内存、页表、TLB&lt;/td&gt;
+          &lt;td&gt;《深入理解计算机系统》&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;I/O 系统&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;缓冲、异步 I/O、mmap&lt;/td&gt;
+          &lt;td&gt;《Linux/UNIX 系统编程手册》&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;文件系统&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;日志文件系统、写时复制&lt;/td&gt;
+          &lt;td&gt;阅读 ext4 文档&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;推荐书籍&#34;&gt;推荐书籍
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;必读：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《Effective C++》（第 3 版）- Scott Meyers
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《Effective Modern C++》- Scott Meyers
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《深入理解计算机系统》（CSAPP）- 第 3 版
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;选读：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《C++ Templates 完整版》- David Vandevoorde
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《C++ Concurrency in Action》- Anthony Williams
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;实践项目&#34;&gt;实践项目
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;实现一个内存池&lt;/strong&gt; - 支持定长/变长对象分配&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实现一个线程池&lt;/strong&gt; - 支持任务提交、优雅关闭&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实现一个 B+ 树&lt;/strong&gt; - 支持插入、删除、范围查询&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-第二阶段数据库内核原理第-3-4-月&#34;&gt;🗄️ 第二阶段：数据库内核原理（第 3-4 月）
+&lt;/h2&gt;&lt;h3 id=&#34;目标-1&#34;&gt;目标
+&lt;/h3&gt;&lt;p&gt;理解数据库内核核心模块，掌握存储引擎工作原理。&lt;/p&gt;
+&lt;h3 id=&#34;学习内容-1&#34;&gt;学习内容
+&lt;/h3&gt;&lt;h4 id=&#34;21-数据库架构概览&#34;&gt;2.1 数据库架构概览
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;┌─────────────────────────────────────────────────────┐
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│                    SQL Layer                        │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  (Parser, Optimizer, Executor, Planner)            │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├─────────────────────────────────────────────────────┤
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│                 Transaction Layer                   │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  (Concurrency Control, Lock Manager, MVCC)         │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├─────────────────────────────────────────────────────┤
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│                  Storage Engine                     │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│  (WAL, Buffer Pool, B+ Tree, Page Manager)         │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;├─────────────────────────────────────────────────────┤
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;│                    OS / Disk                        │
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;└─────────────────────────────────────────────────────┘
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;22-核心模块详解&#34;&gt;2.2 核心模块详解
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;模块&lt;/th&gt;
+          &lt;th&gt;学习内容&lt;/th&gt;
+          &lt;th&gt;资源推荐&lt;/th&gt;
+          &lt;th&gt;耗时&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;SQL 解析&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;词法分析、语法分析、AST&lt;/td&gt;
+          &lt;td&gt;《数据库系统概念》Ch3&lt;/td&gt;
+          &lt;td&gt;1 周&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;查询优化&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;规则优化、代价优化、执行计划&lt;/td&gt;
+          &lt;td&gt;《数据库系统实现》Ch15-16&lt;/td&gt;
+          &lt;td&gt;2 周&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;事务管理&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;ACID、隔离级别、锁、MVCC&lt;/td&gt;
+          &lt;td&gt;《数据库系统概念》Ch17&lt;/td&gt;
+          &lt;td&gt;2 周&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;存储引擎&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;页管理、缓冲池、B+ 树索引&lt;/td&gt;
+          &lt;td&gt;《数据库系统实现》Ch7-8&lt;/td&gt;
+          &lt;td&gt;2 周&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;WAL 日志&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Write-Ahead Logging、预写式日志&lt;/td&gt;
+          &lt;td&gt;CMU 15-445&lt;/td&gt;
+          &lt;td&gt;1 周&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;恢复系统&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Checkpoint、ARIES 算法&lt;/td&gt;
+          &lt;td&gt;《数据库系统实现》Ch18&lt;/td&gt;
+          &lt;td&gt;1 周&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;23-推荐课程&#34;&gt;2.3 推荐课程
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;课程&lt;/th&gt;
+          &lt;th&gt;平台&lt;/th&gt;
+          &lt;th&gt;难度&lt;/th&gt;
+          &lt;th&gt;链接&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;CMU 15-445&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;YouTube/B 站&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐⭐&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/results?search_query=cmu&amp;#43;15-445&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;链接&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;CS346&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Stanford&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐⭐⭐&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://web.stanford.edu/class/cs346/2015/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;链接&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;MIT 6.830&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;MIT OCW&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐⭐&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;链接&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;推荐书籍-1&#34;&gt;推荐书籍
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;必读：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《数据库系统概念》（第 7 版）- Abraham Silberschatz
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《数据库系统实现》- Hector Garcia-Molina
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;选读：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《Readings in Database Systems》（Red Book）- 论文合集
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《Designing Data-Intensive Applications》- Martin Kleppmann
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;实践项目-1&#34;&gt;实践项目
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;实现一个简单的存储引擎&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持页管理（Page Manager）&lt;/li&gt;
+&lt;li&gt;实现 B+ 树索引&lt;/li&gt;
+&lt;li&gt;支持简单的 CRUD 操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;实现 WAL 日志系统&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;预写式日志&lt;/li&gt;
+&lt;li&gt;支持崩溃恢复&lt;/li&gt;
+&lt;li&gt;Checkpoint 机制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-第三阶段分布式系统第-5-6-月&#34;&gt;🌐 第三阶段：分布式系统（第 5-6 月）
+&lt;/h2&gt;&lt;h3 id=&#34;目标-2&#34;&gt;目标
+&lt;/h3&gt;&lt;p&gt;掌握分布式系统核心原理，理解一致性协议。&lt;/p&gt;
+&lt;h3 id=&#34;学习内容-2&#34;&gt;学习内容
+&lt;/h3&gt;&lt;h4 id=&#34;31-分布式系统基础&#34;&gt;3.1 分布式系统基础
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;主题&lt;/th&gt;
+          &lt;th&gt;具体内容&lt;/th&gt;
+          &lt;th&gt;资源推荐&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;分布式基础&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;CAP 定理、BASE 理论、一致性模型&lt;/td&gt;
+          &lt;td&gt;《分布式系统原理与范型》&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;时间与时钟&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;逻辑时钟、向量时钟、混合逻辑时钟&lt;/td&gt;
+          &lt;td&gt;论文阅读&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;分布式共识&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;两阶段提交、三阶段提交&lt;/td&gt;
+          &lt;td&gt;《DDIA》Ch9&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;复制技术&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;主从复制、多主复制、无主复制&lt;/td&gt;
+          &lt;td&gt;《DDIA》Ch5&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;32-一致性协议重点&#34;&gt;3.2 一致性协议（重点）
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;协议&lt;/th&gt;
+          &lt;th&gt;学习内容&lt;/th&gt;
+          &lt;th&gt;难度&lt;/th&gt;
+          &lt;th&gt;资源&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Paxos&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Basic Paxos、Multi-Paxos&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐⭐⭐&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://lamport.azurewebsites.net/pubs/pubs.html#lamport-paxos&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Paxos 论文&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Raft&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Leader 选举、日志复制、安全性&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐⭐&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://raft.github.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Raft 官网&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;ZAB&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;ZooKeeper 原子广播协议&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐⭐&lt;/td&gt;
+          &lt;td&gt;ZooKeeper 源码&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Gossip&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;病毒式传播、最终一致性&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐&lt;/td&gt;
+          &lt;td&gt;Dynamo 论文&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;33-分布式事务&#34;&gt;3.3 分布式事务
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;主题&lt;/th&gt;
+          &lt;th&gt;具体内容&lt;/th&gt;
+          &lt;th&gt;资源&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;2PC/3PC&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;两阶段/三阶段提交协议&lt;/td&gt;
+          &lt;td&gt;《DDIA》Ch9&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;TCC&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Try-Confirm-Cancel 模式&lt;/td&gt;
+          &lt;td&gt;阿里文档&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Saga&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;长事务编排&lt;/td&gt;
+          &lt;td&gt;论文阅读&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Percolator&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Google 分布式事务模型&lt;/td&gt;
+          &lt;td&gt;论文阅读&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;推荐书籍-2&#34;&gt;推荐书籍
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;必读：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《Designing Data-Intensive Applications》（DDIA）- Martin Kleppmann
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《分布式系统原理与范型》- Andrew S. Tanenbaum
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;选读：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《大规模分布式存储系统》- 杨传辉
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《数据密集型应用系统设计》实战解读
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;实践项目-2&#34;&gt;实践项目
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;实现 Raft 协议&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Leader 选举&lt;/li&gt;
+&lt;li&gt;日志复制&lt;/li&gt;
+&lt;li&gt;成员变更&lt;/li&gt;
+&lt;li&gt;参考：&lt;a class=&#34;link&#34; href=&#34;https://pdos.csail.mit.edu/6.824/labs/lab-raft.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MIT 6.824 Lab2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;实现一个简单的分布式 KV 存储&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;基于 Raft 保证一致性&lt;/li&gt;
+&lt;li&gt;支持多节点部署&lt;/li&gt;
+&lt;li&gt;实现基本的 PUT/GET 操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-第四阶段rust-语言学习第-7-8-月&#34;&gt;🦀 第四阶段：Rust 语言学习（第 7-8 月）
+&lt;/h2&gt;&lt;h3 id=&#34;目标-3&#34;&gt;目标
+&lt;/h3&gt;&lt;p&gt;掌握 Rust 语言基础，能够使用 Rust 进行系统编程。&lt;/p&gt;
+&lt;h3 id=&#34;学习内容-3&#34;&gt;学习内容
+&lt;/h3&gt;&lt;h4 id=&#34;41-rust-基础语法第-1-2-周&#34;&gt;4.1 Rust 基础语法（第 1-2 周）
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;主题&lt;/th&gt;
+          &lt;th&gt;具体内容&lt;/th&gt;
+          &lt;th&gt;资源&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;基础语法&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;变量、类型、函数、控制流&lt;/td&gt;
+          &lt;td&gt;《The Rust Book》Ch1-6&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;所有权&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;所有权、借用、生命周期&lt;/td&gt;
+          &lt;td&gt;《The Rust Book》Ch4, Ch10&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;结构体与枚举&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;struct、enum、pattern matching&lt;/td&gt;
+          &lt;td&gt;《The Rust Book》Ch5-6&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;错误处理&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Result、Option、panic!&lt;/td&gt;
+          &lt;td&gt;《The Rust Book》Ch9&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;42-rust-中级特性第-3-4-周&#34;&gt;4.2 Rust 中级特性（第 3-4 周）
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;主题&lt;/th&gt;
+          &lt;th&gt;具体内容&lt;/th&gt;
+          &lt;th&gt;资源&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;泛型与 Trait&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;泛型、Trait、泛型约束&lt;/td&gt;
+          &lt;td&gt;《The Rust Book》Ch10&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;测试&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;单元测试、集成测试、文档测试&lt;/td&gt;
+          &lt;td&gt;《The Rust Book》Ch11&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;函数式特性&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;闭包、迭代器&lt;/td&gt;
+          &lt;td&gt;《The Rust Book》Ch13&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;智能指针&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Box、Rc、RefCell、Arc、Mutex&lt;/td&gt;
+          &lt;td&gt;《The Rust Book》Ch15-16&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;43-rust-高级特性第-5-6-周&#34;&gt;4.3 Rust 高级特性（第 5-6 周）
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;主题&lt;/th&gt;
+          &lt;th&gt;具体内容&lt;/th&gt;
+          &lt;th&gt;资源&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;unsafe Rust&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;裸指针、unsafe 块、FFI&lt;/td&gt;
+          &lt;td&gt;《The Rust Book》Ch19&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;宏&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;声明宏、过程宏&lt;/td&gt;
+          &lt;td&gt;《The Rust Book》Ch19&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;异步编程&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;async/await、Future、Tokio&lt;/td&gt;
+          &lt;td&gt;《Async Book》&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;性能优化&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;零成本抽象、内联、SIMD&lt;/td&gt;
+          &lt;td&gt;Rust 性能手册&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4 id=&#34;44-rust-系统编程第-7-8-周&#34;&gt;4.4 Rust 系统编程（第 7-8 周）
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;主题&lt;/th&gt;
+          &lt;th&gt;具体内容&lt;/th&gt;
+          &lt;th&gt;资源&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;并发编程&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;线程、通道、原子操作&lt;/td&gt;
+          &lt;td&gt;《Rust in Action》Ch8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;网络编程&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;TCP/UDP、HTTP 服务器&lt;/td&gt;
+          &lt;td&gt;《Rust in Action》Ch9&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;文件系统&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;文件 I/O、路径处理&lt;/td&gt;
+          &lt;td&gt;标准库文档&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;FFI&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;与 C 代码交互&lt;/td&gt;
+          &lt;td&gt;《The Rustonomicon》&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;推荐书籍-3&#34;&gt;推荐书籍
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;必读：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《The Rust Programming Language》（The Book）- 官方免费
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《Rust By Example》- 官方示例
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;选读：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《Rust in Action》- Tim McNamara
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《Programming Rust》- Jim Blandy
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 《The Rustonomicon》- 高级 unsafe 编程
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;推荐课程&#34;&gt;推荐课程
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;课程&lt;/th&gt;
+          &lt;th&gt;平台&lt;/th&gt;
+          &lt;th&gt;链接&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Rust 官方教程&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;doc.rust-lang.org&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://doc.rust-lang.org/book/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;链接&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Rust By Example&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;官方&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://doc.rust-lang.org/rust-by-example/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;链接&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;B 站 Rust 教程&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Bilibili&lt;/td&gt;
+          &lt;td&gt;搜索&amp;quot;Rust 语言圣经&amp;quot;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;实践项目-3&#34;&gt;实践项目
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;实现一个简单的命令行工具&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如：grep 工具、文件搜索工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;实现一个 HTTP 服务器&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 hyper 或 actix-web&lt;/li&gt;
+&lt;li&gt;支持基本的 REST API&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;用 Rust 重写之前的 C++ 项目&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如：内存池、线程池&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-第五阶段实战项目第-9-10-月&#34;&gt;🛠️ 第五阶段：实战项目（第 9-10 月）
+&lt;/h2&gt;&lt;h3 id=&#34;目标-4&#34;&gt;目标
+&lt;/h3&gt;&lt;p&gt;通过实战项目整合所学知识，形成完整知识体系。&lt;/p&gt;
+&lt;h3 id=&#34;推荐项目&#34;&gt;推荐项目
+&lt;/h3&gt;&lt;h4 id=&#34;项目-1用-rust-实现一个简单的-kv-存储引擎&#34;&gt;项目 1：用 Rust 实现一个简单的 KV 存储引擎
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;技术栈&lt;/strong&gt;：Rust + 存储引擎 + WAL&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;功能要求&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持 PUT/GET/DELETE 操作&lt;/li&gt;
+&lt;li&gt;基于 LSM-Tree 或 B+ 树&lt;/li&gt;
+&lt;li&gt;实现 WAL 日志&lt;/li&gt;
+&lt;li&gt;支持崩溃恢复&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;参考项目&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/spacejam/sled&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Sled&lt;/a&gt; - Rust 实现的嵌入式数据库&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/facebook/rocksdb&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RocksDB&lt;/a&gt; - Facebook 的 KV 存储&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;项目-2用-rust-实现-raft-协议&#34;&gt;项目 2：用 Rust 实现 Raft 协议
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;技术栈&lt;/strong&gt;：Rust + 分布式系统 + Raft&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;功能要求&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Leader 选举&lt;/li&gt;
+&lt;li&gt;日志复制&lt;/li&gt;
+&lt;li&gt;成员变更&lt;/li&gt;
+&lt;li&gt;持久化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;参考项目&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/tikv/raft-rs&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;tikv/raft-rs&lt;/a&gt; - TiKV 的 Raft 实现&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/async-raft/async-raft&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;async-raft&lt;/a&gt; - 异步 Raft&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;项目-3阅读并贡献开源项目&#34;&gt;项目 3：阅读并贡献开源项目
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;推荐项目&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;项目&lt;/th&gt;
+          &lt;th&gt;语言&lt;/th&gt;
+          &lt;th&gt;方向&lt;/th&gt;
+          &lt;th&gt;难度&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;TiKV&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Rust&lt;/td&gt;
+          &lt;td&gt;分布式 KV 存储&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐⭐⭐&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;RisingWave&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Rust&lt;/td&gt;
+          &lt;td&gt;流式数据库&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐⭐⭐&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;DataFusion&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Rust&lt;/td&gt;
+          &lt;td&gt;查询引擎&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐⭐&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Ballista&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Rust&lt;/td&gt;
+          &lt;td&gt;分布式查询&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐⭐&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;OceanBase&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;C++&lt;/td&gt;
+          &lt;td&gt;分布式数据库&lt;/td&gt;
+          &lt;td&gt;⭐⭐⭐⭐⭐&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-第六阶段面试准备第-11-12-月&#34;&gt;📝 第六阶段：面试准备（第 11-12 月）
+&lt;/h2&gt;&lt;h3 id=&#34;目标-5&#34;&gt;目标
+&lt;/h3&gt;&lt;p&gt;系统化整理知识体系，准备面试。&lt;/p&gt;
+&lt;h3 id=&#34;面试知识点&#34;&gt;面试知识点
+&lt;/h3&gt;&lt;h4 id=&#34;c-面试&#34;&gt;C++ 面试
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;基础：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 虚函数、多态、RTTI
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 智能指针、内存管理
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- STL 容器原理
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 移动语义、完美转发
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;进阶：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 模板元编程
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 并发编程（锁、无锁）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 性能优化
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 设计模式
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;数据库面试&#34;&gt;数据库面试
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;基础：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- SQL 执行流程
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 索引原理（B+ 树、哈希）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 事务隔离级别
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 锁机制
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;进阶：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- MVCC 实现
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- WAL 与恢复
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 查询优化
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 存储引擎对比
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;分布式系统面试&#34;&gt;分布式系统面试
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;基础：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- CAP 定理
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 一致性模型
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 复制技术
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;进阶：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- Paxos/Raft 协议
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 分布式事务
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 分布式锁
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 一致性哈希
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h4 id=&#34;rust-面试&#34;&gt;Rust 面试
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;基础：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 所有权、借用
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 生命周期
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 模式匹配
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;进阶：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 智能指针
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 并发编程
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- unsafe Rust
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 异步编程
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;面试资源&#34;&gt;面试资源
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;资源&lt;/th&gt;
+          &lt;th&gt;类型&lt;/th&gt;
+          &lt;th&gt;链接&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;LeetCode&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;算法&lt;/td&gt;
+          &lt;td&gt;刷题 200+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;牛客网&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;面经&lt;/td&gt;
+          &lt;td&gt;搜索&amp;quot;数据库 面经&amp;quot;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;GitHub&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;知识库&lt;/td&gt;
+          &lt;td&gt;搜索&amp;quot;面试准备&amp;quot;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;知乎&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;经验&lt;/td&gt;
+          &lt;td&gt;关注&amp;quot;数据库开发&amp;quot;话题&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-每周学习计划模板&#34;&gt;📅 每周学习计划模板
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;周一：理论学习（2 小时）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 阅读书籍/论文
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 做笔记
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;周二：编程实践（2 小时）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 实现当天学到的概念
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 写单元测试
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;周三：项目推进（2 小时）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 推进实战项目
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 解决遇到的问题
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;周四：理论学习（2 小时）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 继续阅读/视频课程
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;周五：编程实践（2 小时）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 深化理解
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 优化代码
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;周六：项目推进（3 小时）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 集中开发时间
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;周日：复习总结（2 小时）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 整理笔记
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;- 写博客总结
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-学习进度追踪&#34;&gt;📊 学习进度追踪
+&lt;/h2&gt;&lt;h3 id=&#34;建议记录方式&#34;&gt;建议记录方式
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;GitHub 仓库&lt;/strong&gt; - 存放所有代码项目&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;博客&lt;/strong&gt; - 每周总结学习心得&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;笔记软件&lt;/strong&gt; - Notion/Obsidian 记录知识点&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anki&lt;/strong&gt; - 记忆关键概念&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;里程碑检查&#34;&gt;里程碑检查
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;时间&lt;/th&gt;
+          &lt;th&gt;检查点&lt;/th&gt;
+          &lt;th&gt;目标&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;第 2 月末&lt;/td&gt;
+          &lt;td&gt;C++ 提升&lt;/td&gt;
+          &lt;td&gt;完成 3 个 C++ 项目&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;第 4 月末&lt;/td&gt;
+          &lt;td&gt;数据库基础&lt;/td&gt;
+          &lt;td&gt;理解存储引擎原理&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;第 6 月末&lt;/td&gt;
+          &lt;td&gt;分布式系统&lt;/td&gt;
+          &lt;td&gt;实现 Raft 协议&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;第 8 月末&lt;/td&gt;
+          &lt;td&gt;Rust 能力&lt;/td&gt;
+          &lt;td&gt;能用 Rust 开发项目&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;第 10 月末&lt;/td&gt;
+          &lt;td&gt;实战项目&lt;/td&gt;
+          &lt;td&gt;完成 1-2 个完整项目&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;第 12 月末&lt;/td&gt;
+          &lt;td&gt;面试准备&lt;/td&gt;
+          &lt;td&gt;开始投递简历&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-总结&#34;&gt;🎯 总结
+&lt;/h2&gt;&lt;h3 id=&#34;关键成功因素&#34;&gt;关键成功因素
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;坚持&lt;/strong&gt; - 每天 2 小时，持续 12 个月&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实践&lt;/strong&gt; - 理论 + 代码，缺一不可&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;输出&lt;/strong&gt; - 写博客、做分享，加深理解&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;社区&lt;/strong&gt; - 加入技术社区，获取反馈&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;预期成果&#34;&gt;预期成果
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;✅ 掌握数据库内核核心知识&lt;/li&gt;
+&lt;li&gt;✅ 能够使用 Rust 进行系统编程&lt;/li&gt;
+&lt;li&gt;✅ 完成 2-3 个有竞争力的项目&lt;/li&gt;
+&lt;li&gt;✅ 具备数据库内核研发岗位面试能力&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;下一步&#34;&gt;下一步
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;创建 GitHub 仓库，开始记录学习历程&lt;/li&gt;
+&lt;li&gt;制定详细的周计划&lt;/li&gt;
+&lt;li&gt;开始第一本书的阅读（推荐《Effective C++》）&lt;/li&gt;
+&lt;li&gt;每天学习 Rust，记录学习心得&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;加油！12 个月后，你就是数据库内核工程师！&lt;/strong&gt; 🚀&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-参考资源汇总&#34;&gt;📖 参考资源汇总
+&lt;/h2&gt;&lt;h3 id=&#34;书籍&#34;&gt;书籍
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;《Effective C++》&lt;/li&gt;
+&lt;li&gt;《Effective Modern C++》&lt;/li&gt;
+&lt;li&gt;《深入理解计算机系统》&lt;/li&gt;
+&lt;li&gt;《数据库系统概念》&lt;/li&gt;
+&lt;li&gt;《数据库系统实现》&lt;/li&gt;
+&lt;li&gt;《Designing Data-Intensive Applications》&lt;/li&gt;
+&lt;li&gt;《The Rust Programming Language》&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;课程&#34;&gt;课程
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;CMU 15-445（数据库）&lt;/li&gt;
+&lt;li&gt;MIT 6.824（分布式系统）&lt;/li&gt;
+&lt;li&gt;Rust 官方教程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;开源项目&#34;&gt;开源项目
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;TiKV&lt;/li&gt;
+&lt;li&gt;RocksDB&lt;/li&gt;
+&lt;li&gt;sled&lt;/li&gt;
+&lt;li&gt;raft-rs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;社区&#34;&gt;社区
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Rust 中文社区&lt;/li&gt;
+&lt;li&gt;数据库开发社区&lt;/li&gt;
+&lt;li&gt;GitHub 开源项目&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
