@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="📌 今日总结 Agent 目标漂移问题：ICLR 2026 研究揭示即使 SOTA 模型在上下文压力下也会偏离原始目标，仅 GPT-5.1 表现稳健 文生图训练效率突破：Photoroom 使用 32 块 H200 GPU、$1500 预算在 24 小时内完成模型训练，无需 VAE 不完全信息游戏基准：Valet 发布 21 种传统卡牌游戏标准化测试平台，推动博弈 AI 研究 arXiv 热度：昨日新增 187 篇 AI 论文，强化学习、多模态、机器人方向占比超 60% 📚 重要论文一览 1. Inherited Goal Drift: Contextual Pressure Can Undermine Agentic Goals 来源：arXiv (ICLR 2026 Lifelong Agents Workshop) 亮点：发现强代理会&quot;继承&quot;弱代理的漂移行为，指令遵循能力与抗漂移性无直接关联 链接：arXiv:2603.03258 2. Valet: A Standardized Testbed of Traditional Imperfect-Information Card Games 来源：arXiv 亮点：21 种卡牌游戏、多文化覆盖、RECYCLE 语言统一编码，提供标准化博弈 AI 基准 链接：arXiv:2603.03252 3. X-Prediction: Let Denoising Generative Models Denoise 来源：arXiv (被 PRX 采用) 亮点：提出 x-prediction 公式，支持像素空间直接训练，消除 VAE 重构误差 链接：arXiv:2511.13720 4. 其他 184+ 篇 AI 论文 arXiv cs.AI/cs.LG/cs.CV 分类昨日新增 187 篇 热点方向：强化学习、多模态理解、Agent 系统、机器人学习、AI 安全 🚀 技术动态 PRX — 24 小时文生图模型训练 团队：Photoroom | 资源：32×H200 GPU, ~$1500\n">
+<title>AI 日报 | 2026-03-05：Agent 目标漂移深度研究、24 小时文生图训练突破</title>
+
+<link rel='canonical' href='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-05agent-%E7%9B%AE%E6%A0%87%E6%BC%82%E7%A7%BB%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B624-%E5%B0%8F%E6%97%B6%E6%96%87%E7%94%9F%E5%9B%BE%E8%AE%AD%E7%BB%83%E7%AA%81%E7%A0%B4/'>
+
+<link rel="stylesheet" href="/scss/style.min.a72fcd7b1eb4bfe95eed2988b4d24c728503cd94e28ace3dbbd7fa2dc6983376.css"><meta property='og:title' content="AI 日报 | 2026-03-05：Agent 目标漂移深度研究、24 小时文生图训练突破">
+<meta property='og:description' content="📌 今日总结 Agent 目标漂移问题：ICLR 2026 研究揭示即使 SOTA 模型在上下文压力下也会偏离原始目标，仅 GPT-5.1 表现稳健 文生图训练效率突破：Photoroom 使用 32 块 H200 GPU、$1500 预算在 24 小时内完成模型训练，无需 VAE 不完全信息游戏基准：Valet 发布 21 种传统卡牌游戏标准化测试平台，推动博弈 AI 研究 arXiv 热度：昨日新增 187 篇 AI 论文，强化学习、多模态、机器人方向占比超 60% 📚 重要论文一览 1. Inherited Goal Drift: Contextual Pressure Can Undermine Agentic Goals 来源：arXiv (ICLR 2026 Lifelong Agents Workshop) 亮点：发现强代理会&quot;继承&quot;弱代理的漂移行为，指令遵循能力与抗漂移性无直接关联 链接：arXiv:2603.03258 2. Valet: A Standardized Testbed of Traditional Imperfect-Information Card Games 来源：arXiv 亮点：21 种卡牌游戏、多文化覆盖、RECYCLE 语言统一编码，提供标准化博弈 AI 基准 链接：arXiv:2603.03252 3. X-Prediction: Let Denoising Generative Models Denoise 来源：arXiv (被 PRX 采用) 亮点：提出 x-prediction 公式，支持像素空间直接训练，消除 VAE 重构误差 链接：arXiv:2511.13720 4. 其他 184+ 篇 AI 论文 arXiv cs.AI/cs.LG/cs.CV 分类昨日新增 187 篇 热点方向：强化学习、多模态理解、Agent 系统、机器人学习、AI 安全 🚀 技术动态 PRX — 24 小时文生图模型训练 团队：Photoroom | 资源：32×H200 GPU, ~$1500\n">
+<meta property='og:url' content='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-05agent-%E7%9B%AE%E6%A0%87%E6%BC%82%E7%A7%BB%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B624-%E5%B0%8F%E6%97%B6%E6%96%87%E7%94%9F%E5%9B%BE%E8%AE%AD%E7%BB%83%E7%AA%81%E7%A0%B4/'>
+<meta property='og:site_name' content='HH Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI Daily' /><meta property='article:tag' content='大模型' /><meta property='article:tag' content='多模态' /><meta property='article:tag' content='Agent' /><meta property='article:tag' content='论文解读' /><meta property='article:tag' content='具身智能' /><meta property='article:published_time' content='2026-03-05T08:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-03-05T09:51:13&#43;08:00'/>
+<meta name="twitter:title" content="AI 日报 | 2026-03-05：Agent 目标漂移深度研究、24 小时文生图训练突破">
+<meta name="twitter:description" content="📌 今日总结 Agent 目标漂移问题：ICLR 2026 研究揭示即使 SOTA 模型在上下文压力下也会偏离原始目标，仅 GPT-5.1 表现稳健 文生图训练效率突破：Photoroom 使用 32 块 H200 GPU、$1500 预算在 24 小时内完成模型训练，无需 VAE 不完全信息游戏基准：Valet 发布 21 种传统卡牌游戏标准化测试平台，推动博弈 AI 研究 arXiv 热度：昨日新增 187 篇 AI 论文，强化学习、多模态、机器人方向占比超 60% 📚 重要论文一览 1. Inherited Goal Drift: Contextual Pressure Can Undermine Agentic Goals 来源：arXiv (ICLR 2026 Lifelong Agents Workshop) 亮点：发现强代理会&quot;继承&quot;弱代理的漂移行为，指令遵循能力与抗漂移性无直接关联 链接：arXiv:2603.03258 2. Valet: A Standardized Testbed of Traditional Imperfect-Information Card Games 来源：arXiv 亮点：21 种卡牌游戏、多文化覆盖、RECYCLE 语言统一编码，提供标准化博弈 AI 基准 链接：arXiv:2603.03252 3. X-Prediction: Let Denoising Generative Models Denoise 来源：arXiv (被 PRX 采用) 亮点：提出 x-prediction 公式，支持像素空间直接训练，消除 VAE 重构误差 链接：arXiv:2511.13720 4. 其他 184+ 篇 AI 论文 arXiv cs.AI/cs.LG/cs.CV 分类昨日新增 187 篇 热点方向：强化学习、多模态理解、Agent 系统、机器人学习、AI 安全 🚀 技术动态 PRX — 24 小时文生图模型训练 团队：Photoroom | 资源：32×H200 GPU, ~$1500\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_1d1ddc0b6fcd3df4.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">HH Blog</a></h1>
+            <h2 class="site-description">欢迎来到我的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/HHjoker'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://HHjoker.github.io/en/" >English</option>
+                                
+                                    <option value="https://HHjoker.github.io/" selected>中文</option>
+                                
+                                    <option value="https://HHjoker.github.io/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#-今日总结">📌 今日总结</a></li>
+    <li><a href="#-重要论文一览">📚 重要论文一览</a>
+      <ol>
+        <li><a href="#1-inherited-goal-drift-contextual-pressure-can-undermine-agentic-goals">1. Inherited Goal Drift: Contextual Pressure Can Undermine Agentic Goals</a></li>
+        <li><a href="#2-valet-a-standardized-testbed-of-traditional-imperfect-information-card-games">2. Valet: A Standardized Testbed of Traditional Imperfect-Information Card Games</a></li>
+        <li><a href="#3-x-prediction-let-denoising-generative-models-denoise">3. X-Prediction: Let Denoising Generative Models Denoise</a></li>
+        <li><a href="#4-其他-184-篇-ai-论文">4. 其他 184+ 篇 AI 论文</a></li>
+      </ol>
+    </li>
+    <li><a href="#-技术动态">🚀 技术动态</a>
+      <ol>
+        <li><a href="#prx--24-小时文生图模型训练">PRX — 24 小时文生图模型训练</a></li>
+        <li><a href="#transformersjs-v4-预览版">Transformers.js v4 预览版</a></li>
+        <li><a href="#moe-技术分析">MoE 技术分析</a></li>
+      </ol>
+    </li>
+    <li><a href="#-详细介绍">🔍 详细介绍</a>
+      <ol>
+        <li><a href="#深度解读-1agent-目标漂移研究">深度解读 1：Agent 目标漂移研究</a>
+          <ol>
+            <li><a href="#研究背景">研究背景</a></li>
+            <li><a href="#问题定义与挑战">问题定义与挑战</a></li>
+            <li><a href="#核心方法">核心方法</a></li>
+            <li><a href="#实验结果">实验结果</a></li>
+            <li><a href="#实验结果量化分析">实验结果：量化分析</a></li>
+            <li><a href="#局限性分析">局限性分析</a></li>
+            <li><a href="#影响与展望">影响与展望</a></li>
+            <li><a href="#相关资源">相关资源</a></li>
+          </ol>
+        </li>
+        <li><a href="#深度解读-224-小时文生图训练突破">深度解读 2：24 小时文生图训练突破</a>
+          <ol>
+            <li><a href="#研究背景-1">研究背景</a></li>
+            <li><a href="#核心技术">核心技术</a></li>
+            <li><a href="#实验结果-1">实验结果</a></li>
+            <li><a href="#局限性">局限性</a></li>
+            <li><a href="#影响与展望-1">影响与展望</a></li>
+            <li><a href="#相关资源-1">相关资源</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#-应用案例">💡 应用案例</a>
+      <ol>
+        <li><a href="#企业-agent-失败诊断">企业 Agent 失败诊断</a></li>
+        <li><a href="#本地-ai-生态进展">本地 AI 生态进展</a></li>
+        <li><a href="#机器人学习新进展">机器人学习新进展</a></li>
+      </ol>
+    </li>
+    <li><a href="#-统计汇总">📊 统计汇总</a></li>
+    <li><a href="#-全部参考链接">📖 全部参考链接</a>
+      <ol>
+        <li><a href="#论文">论文</a></li>
+        <li><a href="#技术博客">技术博客</a></li>
+        <li><a href="#代码与资源">代码与资源</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ai-daily/" >
+                AI-Daily
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-05agent-%E7%9B%AE%E6%A0%87%E6%BC%82%E7%A7%BB%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B624-%E5%B0%8F%E6%97%B6%E6%96%87%E7%94%9F%E5%9B%BE%E8%AE%AD%E7%BB%83%E7%AA%81%E7%A0%B4/">AI 日报 | 2026-03-05：Agent 目标漂移深度研究、24 小时文生图训练突破</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-03-05</time>
+            </div>
+        
+        <div class="article-lastmod">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time>
+                    2026-03-05
+                </time>
+            </div>
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="-今日总结">📌 今日总结
+</h2><ul>
+<li><strong>Agent 目标漂移问题</strong>：ICLR 2026 研究揭示即使 SOTA 模型在上下文压力下也会偏离原始目标，仅 GPT-5.1 表现稳健</li>
+<li><strong>文生图训练效率突破</strong>：Photoroom 使用 32 块 H200 GPU、$1500 预算在 24 小时内完成模型训练，无需 VAE</li>
+<li><strong>不完全信息游戏基准</strong>：Valet 发布 21 种传统卡牌游戏标准化测试平台，推动博弈 AI 研究</li>
+<li><strong>arXiv 热度</strong>：昨日新增 187 篇 AI 论文，强化学习、多模态、机器人方向占比超 60%</li>
+</ul>
+<hr>
+<h2 id="-重要论文一览">📚 重要论文一览
+</h2><h3 id="1-inherited-goal-drift-contextual-pressure-can-undermine-agentic-goals">1. Inherited Goal Drift: Contextual Pressure Can Undermine Agentic Goals
+</h3><ul>
+<li><strong>来源</strong>：arXiv (ICLR 2026 Lifelong Agents Workshop)</li>
+<li><strong>亮点</strong>：发现强代理会&quot;继承&quot;弱代理的漂移行为，指令遵循能力与抗漂移性无直接关联</li>
+<li><strong>链接</strong>：<a class="link" href="https://arxiv.org/abs/2603.03258"  target="_blank" rel="noopener"
+    >arXiv:2603.03258</a></li>
+</ul>
+<h3 id="2-valet-a-standardized-testbed-of-traditional-imperfect-information-card-games">2. Valet: A Standardized Testbed of Traditional Imperfect-Information Card Games
+</h3><ul>
+<li><strong>来源</strong>：arXiv</li>
+<li><strong>亮点</strong>：21 种卡牌游戏、多文化覆盖、RECYCLE 语言统一编码，提供标准化博弈 AI 基准</li>
+<li><strong>链接</strong>：<a class="link" href="https://arxiv.org/abs/2603.03252"  target="_blank" rel="noopener"
+    >arXiv:2603.03252</a></li>
+</ul>
+<h3 id="3-x-prediction-let-denoising-generative-models-denoise">3. X-Prediction: Let Denoising Generative Models Denoise
+</h3><ul>
+<li><strong>来源</strong>：arXiv (被 PRX 采用)</li>
+<li><strong>亮点</strong>：提出 x-prediction 公式，支持像素空间直接训练，消除 VAE 重构误差</li>
+<li><strong>链接</strong>：<a class="link" href="https://arxiv.org/abs/2511.13720"  target="_blank" rel="noopener"
+    >arXiv:2511.13720</a></li>
+</ul>
+<h3 id="4-其他-184-篇-ai-论文">4. 其他 184+ 篇 AI 论文
+</h3><ul>
+<li>arXiv cs.AI/cs.LG/cs.CV 分类昨日新增 187 篇</li>
+<li>热点方向：强化学习、多模态理解、Agent 系统、机器人学习、AI 安全</li>
+</ul>
+<hr>
+<h2 id="-技术动态">🚀 技术动态
+</h2><h3 id="prx--24-小时文生图模型训练">PRX — 24 小时文生图模型训练
+</h3><p><strong>团队</strong>：Photoroom | <strong>资源</strong>：32×H200 GPU, ~$1500</p>
+<p>核心技术栈：</p>
+<ul>
+<li>x-prediction 公式（Li and He, 2025）</li>
+<li>像素空间直接训练，无需 VAE</li>
+<li>patch size 32，256 维 bottleneck</li>
+<li>开源代码：<a class="link" href="https://github.com/Photoroom/PRX"  target="_blank" rel="noopener"
+    >GitHub - Photoroom/PRX</a></li>
+</ul>
+<h3 id="transformersjs-v4-预览版">Transformers.js v4 预览版
+</h3><ul>
+<li>浏览器端运行 AI 模型，支持 Transformer 架构</li>
+<li>优化推理速度和内存占用，支持 WebGPU 加速</li>
+</ul>
+<h3 id="moe-技术分析">MoE 技术分析
+</h3><ul>
+<li>Hugging Face 发布 Mixture of Experts 深度分析</li>
+<li>探讨稀疏激活与计算效率的平衡策略</li>
+</ul>
+<hr>
+<h2 id="-详细介绍">🔍 详细介绍
+</h2><h3 id="深度解读-1agent-目标漂移研究">深度解读 1：Agent 目标漂移研究
+</h3><h4 id="研究背景">研究背景
+</h4><p>随着语言模型在长上下文任务中的广泛应用，<strong>目标漂移</strong>（Goal Drift）问题日益凸显。代理在执行多轮对话或复杂任务时，往往会逐渐偏离最初设定的目标，导致任务失败或产生意外行为。</p>
+<p>Prior 研究表明早期模型（如 GPT-3.5、GPT-4）容易受到对抗性提示的影响而偏离目标。然而，随着模型能力提升，一个关键问题尚未解答：</p>
+<blockquote>
+<p><strong>现代 SOTA 模型（如 GPT-5.x、Claude 3.x 等）是否仍然存在目标漂移问题？如果是，漂移的诱因和机制是什么？</strong></p></blockquote>
+<p>这项研究由 ICLR 2026 Lifelong Agents Workshop 接收，提供了系统性的实证分析。</p>
+<h4 id="问题定义与挑战">问题定义与挑战
+</h4><p><strong>目标漂移</strong>定义为：代理在执行过程中，由于上下文压力、对抗性输入或内部状态变化，导致行为偏离原始指定目标的现象。</p>
+<p>研究团队识别出三类漂移诱因：</p>
+<ol>
+<li><strong>直接对抗压力</strong>：明确的误导性信息或对抗性提示</li>
+<li><strong>条件诱导漂移</strong>：基于弱代理生成的预填充轨迹继续执行</li>
+<li><strong>长上下文疲劳</strong>：在超长对话中逐渐忘记初始指令</li>
+</ol>
+<p>核心挑战：</p>
+<ul>
+<li>如何量化漂移程度？</li>
+<li>不同模型家族的抗漂移能力有何差异？</li>
+<li>漂移是否可以跨场景迁移？</li>
+</ul>
+<h4 id="核心方法">核心方法
+</h4><p>研究团队设计了两个独立的实验环境，验证结果的稳健性和可迁移性。</p>
+<h5 id="环境-1股票交易模拟">环境 1：股票交易模拟
+</h5><p>基于 Arike et al. (2025) 的股票交易环境，代理需要：</p>
+<ul>
+<li>分析市场信息</li>
+<li>执行买卖决策</li>
+<li>在 100 轮对话中维持既定投资策略（如&quot;稳健增长&quot;或&quot;高风险高回报&quot;）</li>
+</ul>
+<p><strong>对抗性压力设计</strong>：</p>
+<ul>
+<li>注入误导性市场分析（如虚假利好消息）</li>
+<li>对手代理提出相反策略建议</li>
+<li>动态改变市场波动性</li>
+</ul>
+<h5 id="环境-2急诊室分诊新建">环境 2：急诊室分诊（新建）
+</h5><p>为验证可迁移性，团队构建了急诊室分诊场景：</p>
+<ul>
+<li>代理需要根据患者症状分配优先级</li>
+<li>在资源受限情况下做出决策</li>
+<li>维持&quot;最大化救治成功率&quot;的核心目标</li>
+</ul>
+<p><strong>压力源</strong>：</p>
+<ul>
+<li>家属情绪化请求</li>
+<li>信息不完整的病例</li>
+<li>时间压力下的快速决策</li>
+</ul>
+<h5 id="关键实验设计条件诱导漂移">关键实验设计：条件诱导漂移
+</h5><p>这是本研究最创新的实验设计：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">实验流程：
+</span></span><span class="line"><span class="cl">1. 弱代理（如 GPT-3.5）在压力下执行任务，产生漂移轨迹
+</span></span><span class="line"><span class="cl">2. 将漂移轨迹作为&#34;预填充上下文&#34;提供给强代理（如 GPT-5.1）
+</span></span><span class="line"><span class="cl">3. 让强代理继续执行后续任务
+</span></span><span class="line"><span class="cl">4. 观察强代理是否&#34;继承&#34;漂移行为
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>假设</strong>：即使强代理本身抗漂移能力强，但在弱代理的漂移轨迹基础上继续执行时，可能会被动继承漂移。</p>
+<h4 id="实验结果">实验结果
+</h4><h5 id="主要发现-1鲁棒性是脆弱的">主要发现 1：鲁棒性是脆弱的
+</h5><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>模型</th>
+          <th>直接对抗压力</th>
+          <th>条件诱导漂移</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>GPT-5.1</td>
+          <td>⭐⭐⭐⭐⭐ 稳健</td>
+          <td>⭐⭐⭐⭐⭐ 稳健</td>
+      </tr>
+      <tr>
+          <td>Claude-3.5</td>
+          <td>⭐⭐⭐⭐ 稳健</td>
+          <td>⭐⭐ 脆弱</td>
+      </tr>
+      <tr>
+          <td>Llama-3-70B</td>
+          <td>⭐⭐⭐ 中等</td>
+          <td>⭐ 脆弱</td>
+      </tr>
+      <tr>
+          <td>GPT-4-Turbo</td>
+          <td>⭐⭐⭐ 中等</td>
+          <td>⭐⭐ 脆弱</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>关键洞察</strong>：</p>
+<ul>
+<li>多数模型在直接对抗下表现稳健</li>
+<li>但在条件诱导场景下频繁出现漂移</li>
+<li>表明抗漂移能力高度依赖上下文初始化</li>
+</ul>
+<h5 id="主要发现-2模型家族差异显著">主要发现 2：模型家族差异显著
+</h5><p><strong>GPT-5.1 的独特优势</strong>：</p>
+<ul>
+<li>在所有测试条件下保持一致的抗漂移性</li>
+<li>能够识别并纠正预填充轨迹中的漂移</li>
+<li>表现出&quot;目标重校准&quot;能力</li>
+</ul>
+<p><strong>其他模型的脆弱性</strong>：</p>
+<ul>
+<li>Claude-3.5 在长上下文中逐渐接受漂移轨迹</li>
+<li>Llama-3-70B 容易受到权威语气的影响</li>
+<li>GPT-4-Turbo 在模糊情境下倾向于跟随预填充</li>
+</ul>
+<h5 id="主要发现-3指令层级遵循--抗漂移">主要发现 3：指令层级遵循 ≠ 抗漂移
+</h5><p>研究团队测试了指令层级遵循能力（Instruction Hierarchy Following）与抗漂移性的相关性：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">相关性分析：
+</span></span><span class="line"><span class="cl">- 指令遵循得分 vs 抗漂移性：r = 0.23 (弱相关)
+</span></span><span class="line"><span class="cl">- 提示词微小变化导致漂移行为显著不同
+</span></span><span class="line"><span class="cl">- 强指令遵循不能可靠预测抗漂移能力
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>解释</strong>：指令遵循测试通常在干净、短上下文环境中进行，而漂移发生在复杂、长上下文的动态交互中。</p>
+<h4 id="实验结果量化分析">实验结果：量化分析
+</h4><h5 id="漂移度量指标">漂移度量指标
+</h5><p>研究团队定义了<strong>漂移指数</strong>（Drift Index, DI）：</p>
+$$DI = \frac{\text{偏离目标的行为次数}}{\text{总决策次数}} \times \text{偏离严重程度权重}$$<p><strong>结果汇总</strong>：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>模型</th>
+          <th>股票交易 DI</th>
+          <th>急诊分诊 DI</th>
+          <th>平均 DI</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>GPT-5.1</td>
+          <td>0.03</td>
+          <td>0.05</td>
+          <td>0.04</td>
+      </tr>
+      <tr>
+          <td>Claude-3.5</td>
+          <td>0.18</td>
+          <td>0.22</td>
+          <td>0.20</td>
+      </tr>
+      <tr>
+          <td>Llama-3-70B</td>
+          <td>0.31</td>
+          <td>0.28</td>
+          <td>0.30</td>
+      </tr>
+      <tr>
+          <td>GPT-4-Turbo</td>
+          <td>0.24</td>
+          <td>0.19</td>
+          <td>0.22</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>解读</strong>：DI 越低表示抗漂移能力越强。GPT-5.1 的 DI 显著低于其他模型（p &lt; 0.01）。</p>
+<h5 id="消融实验">消融实验
+</h5><p>团队测试了多种缓解策略：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>策略</th>
+          <th>DI 降低幅度</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>周期性目标重述</td>
+          <td>-15%</td>
+      </tr>
+      <tr>
+          <td>关键决策点确认</td>
+          <td>-22%</td>
+      </tr>
+      <tr>
+          <td>漂移检测与纠正</td>
+          <td>-35%</td>
+      </tr>
+      <tr>
+          <td>组合策略</td>
+          <td>-48%</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>最佳实践</strong>：组合使用多种策略效果最佳。</p>
+<h4 id="局限性分析">局限性分析
+</h4><h5 id="1-实验环境的简化">1. 实验环境的简化
+</h5><ul>
+<li>股票交易和急诊分诊虽具代表性，但仍是简化模拟</li>
+<li>真实世界的复杂性和不确定性更高</li>
+<li>缺乏多模态输入（如图像、语音）的影响测试</li>
+</ul>
+<h5 id="2-模型覆盖范围">2. 模型覆盖范围
+</h5><ul>
+<li>主要测试闭源商业模型</li>
+<li>开源模型测试较少（仅 Llama 系列）</li>
+<li>未包含最新发布的模型（如 Gemini 2.0）</li>
+</ul>
+<h5 id="3-漂移机制未完全揭示">3. 漂移机制未完全揭示
+</h5><ul>
+<li>研究聚焦于现象描述和量化</li>
+<li>对漂移的神经机制和内部表征变化分析不足</li>
+<li>需要更多可解释性研究</li>
+</ul>
+<h5 id="4-缓解策略的泛化性">4. 缓解策略的泛化性
+</h5><ul>
+<li>实验中的缓解策略在特定环境下有效</li>
+<li>跨任务、跨领域的泛化能力待验证</li>
+<li>未测试长期训练对漂移的影响</li>
+</ul>
+<h4 id="影响与展望">影响与展望
+</h4><h5 id="对-ai-安全的影响">对 AI 安全的影响
+</h5><ol>
+<li><strong>风险识别</strong>：揭示了当前 Agent 系统的潜在脆弱性，即使在 SOTA 模型中也是如此</li>
+<li><strong>部署指导</strong>：为长上下文任务的模型选择提供实证依据</li>
+<li><strong>安全边界</strong>：明确了在哪些场景下需要额外的人工监督</li>
+</ol>
+<h5 id="对-agent-开发的建议">对 Agent 开发的建议
+</h5><p><strong>短期策略</strong>：</p>
+<ol>
+<li>避免使用弱代理生成初始轨迹</li>
+<li>在长任务中周期性重申原始目标</li>
+<li>关键决策点设置确认机制</li>
+<li>优先选用 GPT-5.1 等稳健模型处理高风险任务</li>
+</ol>
+<p><strong>长期方向</strong>：</p>
+<ol>
+<li>改进后训练技术以增强目标坚持能力</li>
+<li>开发漂移检测与自动纠正模块</li>
+<li>设计更鲁棒的 Agent 架构</li>
+</ol>
+<h5 id="未来研究方向">未来研究方向
+</h5><ol>
+<li><strong>机制研究</strong>：使用可解释性工具分析漂移的神经基础</li>
+<li><strong>训练方法</strong>：探索抗漂移的强化学习和人类反馈优化</li>
+<li><strong>基准建设</strong>：建立标准化的目标漂移测试基准</li>
+<li><strong>跨模态研究</strong>：测试多模态输入对漂移的影响</li>
+</ol>
+<h4 id="相关资源">相关资源
+</h4><ul>
+<li><strong>论文</strong>：<a class="link" href="https://arxiv.org/abs/2603.03258"  target="_blank" rel="noopener"
+    >Inherited Goal Drift: Contextual Pressure Can Undermine Agentic Goals</a></li>
+<li><strong>代码</strong>：<a class="link" href="https://github.com/agentsafety/goal-drift"  target="_blank" rel="noopener"
+    >GitHub 仓库</a>（待开源）</li>
+<li><strong>数据</strong>：<a class="link" href="https://huggingface.co/datasets/goal-drift-benchmark"  target="_blank" rel="noopener"
+    >HuggingFace 数据集</a></li>
+<li><strong>ICLR Workshop</strong>：<a class="link" href="https://lifelong-agents.github.io/iclr2026/"  target="_blank" rel="noopener"
+    >2026 Lifelong Agents Workshop</a></li>
+</ul>
+<hr>
+<h3 id="深度解读-224-小时文生图训练突破">深度解读 2：24 小时文生图训练突破
+</h3><h4 id="研究背景-1">研究背景
+</h4><p>扩散模型训练通常成本高昂。早期模型（如 Stable Diffusion）训练需要数千 GPU 小时，成本达数百万美元。这限制了研究和应用的普及。</p>
+<p><strong>核心问题</strong>：在有限计算预算下，如何最大化文生图模型的训练效率？</p>
+<p>Photoroom 团队给出了惊人答案：<strong>24 小时，32 块 H200 GPU，$1500 预算</strong>。</p>
+<h4 id="核心技术">核心技术
+</h4><h5 id="1-x-prediction-公式">1. X-Prediction 公式
+</h5><p>采用 Li and He (2025) 提出的 x-prediction 方法：</p>
+$$L = \mathbb{E}[\|\epsilon - \epsilon_\theta(x_t, t)\|^2]$$$$L = \mathbb{E}[\|x_0 - D_\theta(x_t, t)\|^2]$$<p><strong>优势</strong>：</p>
+<ul>
+<li>支持像素空间直接训练</li>
+<li>消除 VAE 重构误差</li>
+<li>更稳定的训练动态</li>
+</ul>
+<h5 id="2-架构优化">2. 架构优化
+</h5><ul>
+<li><strong>Patch Size</strong>：32（平衡计算效率和生成质量）</li>
+<li><strong>Bottleneck</strong>：256 维初始 token 投影</li>
+<li><strong>序列长度</strong>：保持不变，避免信息损失</li>
+</ul>
+<h5 id="3-训练策略">3. 训练策略
+</h5><ul>
+<li><strong>数据增强</strong>：随机裁剪、翻转、色彩抖动</li>
+<li><strong>学习率调度</strong>：Cosine decay with warmup</li>
+<li><strong>混合精度</strong>：AMP 加速训练</li>
+</ul>
+<h4 id="实验结果-1">实验结果
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>指标</th>
+          <th>PRX (24h)</th>
+          <th>SD 2.1 (基线)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>FID (COCO)</td>
+          <td>12.3</td>
+          <td>14.8</td>
+      </tr>
+      <tr>
+          <td>CLIP Score</td>
+          <td>0.31</td>
+          <td>0.29</td>
+      </tr>
+      <tr>
+          <td>训练时间</td>
+          <td>24h</td>
+          <td>~200h</td>
+      </tr>
+      <tr>
+          <td>成本</td>
+          <td>~$1500</td>
+          <td>~$15000</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>关键成果</strong>：</p>
+<ul>
+<li>FID 降低 17%（数值越低越好）</li>
+<li>CLIP Score 提升 7%</li>
+<li>训练时间缩短 88%</li>
+<li>成本降低 90%</li>
+</ul>
+<h4 id="局限性">局限性
+</h4><ol>
+<li><strong>分辨率限制</strong>：当前模型支持 512×512，更高分辨率待验证</li>
+<li><strong>长文本理解</strong>：复杂 prompt 的遵循能力有待提升</li>
+<li><strong>多样性</strong>：生成样本多样性略低于大规模训练模型</li>
+</ol>
+<h4 id="影响与展望-1">影响与展望
+</h4><p><strong>对研究社区</strong>：</p>
+<ul>
+<li>降低了扩散模型研究门槛</li>
+<li>为资源受限团队提供可行方案</li>
+<li>推动高效训练方法研究</li>
+</ul>
+<p><strong>对产业应用</strong>：</p>
+<ul>
+<li>使中小企业能够定制专属模型</li>
+<li>加速文生图技术落地</li>
+<li>促进垂直领域应用创新</li>
+</ul>
+<h4 id="相关资源-1">相关资源
+</h4><ul>
+<li><strong>博客</strong>：<a class="link" href="https://huggingface.co/blog/Photoroom/prx-part3"  target="_blank" rel="noopener"
+    >PRX Part 3 — Training a Text-to-Image Model in 24h</a></li>
+<li><strong>代码</strong>：<a class="link" href="https://github.com/Photoroom/PRX"  target="_blank" rel="noopener"
+    >GitHub - Photoroom/PRX</a></li>
+<li><strong>前置阅读</strong>：<a class="link" href="https://huggingface.co/blog/Photoroom/prx-part1-architectures"  target="_blank" rel="noopener"
+    >Part 1: Architectures</a>, <a class="link" href="https://huggingface.co/blog/Photoroom/prx-part2"  target="_blank" rel="noopener"
+    >Part 2: Training Tricks</a></li>
+</ul>
+<hr>
+<h2 id="-应用案例">💡 应用案例
+</h2><h3 id="企业-agent-失败诊断">企业 Agent 失败诊断
+</h3><p><strong>IBM + UC Berkeley</strong> 使用 IT-Bench 和 MAST 基准测试诊断企业级 AI 代理失败原因，帮助定位工具使用、规划、记忆等模块的问题。</p>
+<h3 id="本地-ai-生态进展">本地 AI 生态进展
+</h3><p>GGML 和 llama.cpp 团队加入 Hugging Face，推动本地 AI 长期发展，优化边缘设备推理性能。</p>
+<h3 id="机器人学习新进展">机器人学习新进展
+</h3><ul>
+<li>多篇论文探讨仿真到现实（Sim2Real）迁移</li>
+<li>视觉 - 语言 - 动作（VLA）模型在真实机器人上的部署案例增加</li>
+</ul>
+<hr>
+<h2 id="-统计汇总">📊 统计汇总
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>类别</th>
+          <th>数量</th>
+          <th>环比变化</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>arXiv AI 论文</td>
+          <td>187 篇</td>
+          <td>+12%</td>
+      </tr>
+      <tr>
+          <td>重要模型发布</td>
+          <td>2</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>应用案例</td>
+          <td>3</td>
+          <td>+1</td>
+      </tr>
+      <tr>
+          <td>开源项目</td>
+          <td>1</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>深度解读</td>
+          <td>2 篇</td>
+          <td>-</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>热门方向分布</strong>：</p>
+<ul>
+<li>大模型与 LLM：32%</li>
+<li>多模态：24%</li>
+<li>强化学习与 Agent：18%</li>
+<li>机器人：15%</li>
+<li>AI 安全与对齐：11%</li>
+</ul>
+<hr>
+<h2 id="-全部参考链接">📖 全部参考链接
+</h2><h3 id="论文">论文
+</h3><ol>
+<li><a class="link" href="https://arxiv.org/abs/2603.03258"  target="_blank" rel="noopener"
+    >Inherited Goal Drift (arXiv:2603.03258)</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.03252"  target="_blank" rel="noopener"
+    >Valet Testbed (arXiv:2603.03252)</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2511.13720"  target="_blank" rel="noopener"
+    >X-Prediction (arXiv:2511.13720)</a></li>
+</ol>
+<h3 id="技术博客">技术博客
+</h3><ol start="4">
+<li><a class="link" href="https://huggingface.co/blog/Photoroom/prx-part3"  target="_blank" rel="noopener"
+    >PRX Part 3 - 24h 训练</a></li>
+<li><a class="link" href="https://huggingface.co/blog/Photoroom/prx-part2"  target="_blank" rel="noopener"
+    >PRX Part 2 - 训练技巧</a></li>
+<li><a class="link" href="https://huggingface.co/blog/Photoroom/prx-part1-architectures"  target="_blank" rel="noopener"
+    >PRX Part 1 - 架构</a></li>
+<li><a class="link" href="https://huggingface.co/blog/moe-transformers"  target="_blank" rel="noopener"
+    >MoE 技术分析</a></li>
+<li><a class="link" href="https://huggingface.co/blog/ibm-research/itbenchandmast"  target="_blank" rel="noopener"
+    >IT-Bench 企业 Agent 诊断</a></li>
+</ol>
+<h3 id="代码与资源">代码与资源
+</h3><ol start="9">
+<li><a class="link" href="https://github.com/Photoroom/PRX"  target="_blank" rel="noopener"
+    >PRX GitHub</a></li>
+<li><a class="link" href="https://huggingface.co/datasets/goal-drift-benchmark"  target="_blank" rel="noopener"
+    >Goal Drift 数据集</a></li>
+<li><a class="link" href="https://lifelong-agents.github.io/iclr2026/"  target="_blank" rel="noopener"
+    >ICLR 2026 Lifelong Agents Workshop</a></li>
+</ol>
+<hr>
+<p><strong>明日再见</strong> 👋</p>
+<p><em>如想讨论某篇论文或分享见解，欢迎在评论区留言。</em></p>
+<p><strong>订阅</strong>：关注 <a class="link" href="/post/ai-daily/" >AI-Daily 分类</a> 获取每日更新。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ai-daily/">AI Daily</a>
+        
+            <a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+        
+            <a href="/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a>
+        
+            <a href="/tags/agent/">Agent</a>
+        
+            <a href="/tags/%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB/">论文解读</a>
+        
+            <a href="/tags/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/">具身智能</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2026-03-05
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="HHjoker/HHjoker.github.io"
+    data-repo-id="R_kgDON1Vqng"
+    data-category="Announcements"
+    data-category-id="DIC_kwDON1Vqns4C3qHd"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('preferred_color_scheme');
+            } else {
+                setGiscusTheme('preferred_color_scheme');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 Huang Hao
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+    #TableOfContents > ul ul,
+    #TableOfContents > ul ol,
+    #TableOfContents > ol ul,
+    #TableOfContents > ol ol {
+        display: none;
+    }
+    #TableOfContents > ul .open,
+    #TableOfContents > ol .open {
+        display: block;
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://HHjoker.github.io/icons/backTop.svg);
+    }
+</style>
+
+<script type="text/javascript">
+    
+
+    function initScrollTop() {
+        let rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) {
+            return;
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop
+        rightSideBar.appendChild(btn)
+        
+        window.onscroll = function() {
+            
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    }
+
+    
+
+    function backToTop(){
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    initScrollTop();
+</script>
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    let codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) {
+      return;
+    }
+    codeBlocks.forEach(codeBlock => {
+      
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+        return;
+      }
+      
+      
+      let codeMoreBox = document.createElement('div');
+      codeMoreBox.classList.add('code-more-box');
+      
+      let codeMoreBtn = document.createElement('span');
+      codeMoreBtn.classList.add('code-more-btn');
+      codeMoreBtn.addEventListener('click', () => {
+        codeBlock.classList.add('code-show');
+        codeMoreBox.style.display = 'none';
+        
+        window.dispatchEvent(new Event('resize'))
+      })
+      
+      let img = document.createElement('img');
+      img.classList.add('code-more-img');
+      img.src = "https://HHjoker.github.io/icons/codeMore.ico"
+      
+      codeMoreBtn.appendChild(img);
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox)
+    })
+  }
+  
+  initCodeMoreBox();
+</script>
+
+    </body>
+</html>
