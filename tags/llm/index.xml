@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>LLM on HH Blog</title>
+        <link>https://HHjoker.github.io/tags/llm/</link>
+        <description>Recent content in LLM on HH Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Huang Hao</copyright>
+        <lastBuildDate>Fri, 06 Mar 2026 08:04:25 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/llm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI 日报 | 2026-03-06</title>
+        <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/</link>
+        <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/</guid>
+        <description>&lt;h1 id=&#34;ai-日报--2026-03-06&#34;&gt;AI 日报 | 2026-03-06
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;📅 日期：2026 年 3 月 6 日 | 📊 今日论文数：6 篇 | 🔬 重点领域：3D 视觉、机器人学、Agent 系统、个性化 LLM&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ZipMap&lt;/strong&gt; (Google DeepMind) 提出基于测试时训练的线性时间 3D 重建方法，在保持 SOTA 精度的同时实现&lt;strong&gt;20 倍加速&lt;/strong&gt;，700 帧重建仅需 10 秒&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RoboCasa365&lt;/strong&gt; (UT Austin/NVIDIA) 发布迄今最大规模家庭机器人仿真基准，包含&lt;strong&gt;365 个日常任务&lt;/strong&gt;、2500 个厨房场景、2000+ 小时演示数据&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;VANGUARD&lt;/strong&gt; 提出基于车辆锚点的无人机 GSD 估计方法，在 GPS 拒止环境下实现&lt;strong&gt;6.87% 中位误差&lt;/strong&gt;，显著优于 VLM 直接估计&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Agentics 2.0&lt;/strong&gt; (IBM) 提出逻辑转导代数框架，将 LLM 推理形式化为类型安全的函数，实现可解释、可扩展的 Agent 工作流&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RealPref&lt;/strong&gt; 发布首个长程偏好跟随基准，揭示 LLM 在隐式偏好理解和长上下文场景下的显著性能下降&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dual-Helix Governance&lt;/strong&gt; 提出双螺旋治理框架，通过知识图谱和行为约束解决 Agent 在 WebGIS 开发中的可靠性问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-重要论文一览&#34;&gt;📚 重要论文一览
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;论文&lt;/th&gt;
+          &lt;th&gt;机构&lt;/th&gt;
+          &lt;th&gt;领域&lt;/th&gt;
+          &lt;th&gt;亮点&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04385&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ZipMap&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Google DeepMind&lt;/td&gt;
+          &lt;td&gt;3D 视觉&lt;/td&gt;
+          &lt;td&gt;线性时间 3D 重建，20×加速&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04356&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RoboCasa365&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;UT Austin/NVIDIA&lt;/td&gt;
+          &lt;td&gt;机器人&lt;/td&gt;
+          &lt;td&gt;365 任务，2500 场景，2000h 数据&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04277&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;VANGUARD&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;中科院/纽约大学&lt;/td&gt;
+          &lt;td&gt;无人机感知&lt;/td&gt;
+          &lt;td&gt;GPS 拒止 GSD 估计，6.87% 误差&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04241&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Agentics 2.0&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;IBM&lt;/td&gt;
+          &lt;td&gt;Agent 系统&lt;/td&gt;
+          &lt;td&gt;逻辑转导代数，类型安全工作流&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04191&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RealPref&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;未知&lt;/td&gt;
+          &lt;td&gt;个性化 LLM&lt;/td&gt;
+          &lt;td&gt;长程偏好跟随基准&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04390&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Dual-Helix Governance&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;FIU/UF&lt;/td&gt;
+          &lt;td&gt;Agent 治理&lt;/td&gt;
+          &lt;td&gt;WebGIS 可靠性框架&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-技术动态&#34;&gt;🚀 技术动态
+&lt;/h2&gt;&lt;h3 id=&#34;1-zipmap线性时间状态化-3d-重建&#34;&gt;1. ZipMap：线性时间状态化 3D 重建
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;核心突破&lt;/strong&gt;：ZipMap 首次实现了&lt;strong&gt;线性复杂度&lt;/strong&gt;的双向 3D 重建，同时保持与二次复杂度方法（如 VGGT、π³）相当甚至更优的精度。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关键数据&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;750 帧重建时间：&amp;lt;10 秒（75 FPS）&lt;/li&gt;
+&lt;li&gt;相比 VGGT 加速：&amp;gt;20×&lt;/li&gt;
+&lt;li&gt;姿态估计精度：ATE 与 SOTA 持平&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;技术要点&lt;/strong&gt;：采用测试时训练（TTT）层，将图像集合压缩为紧凑的隐式场景状态，支持实时新视角查询和流式重建。&lt;/p&gt;
+&lt;h3 id=&#34;2-robocasa365通用机器人新基准&#34;&gt;2. RoboCasa365：通用机器人新基准
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;规模刷新&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;任务数：365 个（65 原子任务 + 300 复合任务）&lt;/li&gt;
+&lt;li&gt;场景数：2500 个独特厨房环境&lt;/li&gt;
+&lt;li&gt;数据量：612 小时人工演示 + 1615 小时合成数据&lt;/li&gt;
+&lt;li&gt;支持模型：Diffusion Policy、π₀、GR00T 等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;设计亮点&lt;/strong&gt;：基于真实房屋平面图构建 50 种新布局，配合 50 种风格组合，覆盖美国家庭厨房多样性。&lt;/p&gt;
+&lt;h3 id=&#34;3-vlm-空间尺度幻觉问题&#34;&gt;3. VLM 空间尺度幻觉问题
+&lt;/h3&gt;&lt;p&gt;VANGUARD 论文揭示了当前 VLM 的严重缺陷：在无人机航拍图像面积估计任务中，GPT-4o 等 5 个 SOTA VLM 的&lt;strong&gt;中位误差达 38-52%&lt;/strong&gt;，频繁出现数量级偏差。这为具身 Agent 的安全性敲响了警钟。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-详细介绍深度解读&#34;&gt;🔍 详细介绍（深度解读）
+&lt;/h2&gt;&lt;h3 id=&#34;-zipmap重新思考-3d-重建的复杂度边界&#34;&gt;🎯 ZipMap：重新思考 3D 重建的复杂度边界
+&lt;/h3&gt;&lt;h4 id=&#34;研究背景与动机&#34;&gt;研究背景与动机
+&lt;/h4&gt;&lt;p&gt;近年来，前馈 Transformer 模型（如 VGGT、π³、DUSt3R）推动了 3D 视觉的快速发展。然而，这些方法依赖全局注意力机制建立几何一致性，导致计算成本随输入图像数量&lt;strong&gt;二次增长&lt;/strong&gt;。对于长序列输入（如数百帧视频），这使得重建时间变得不可接受。&lt;/p&gt;
+&lt;p&gt;另一方面，顺序重建方法虽然降低了计算成本，但往往以牺牲重建质量为代价，且容易积累误差。ZipMap 的核心问题是：&lt;strong&gt;能否同时实现线性时间复杂度和 SOTA 重建质量？&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;核心方法与技术细节&#34;&gt;核心方法与技术细节
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure1.png&#34;
+	width=&#34;997&#34;
+	height=&#34;415&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure1_hu_6686bba63cb9738e.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure1_hu_2ee1b1c2901cd92b.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;ZipMap 方法概述&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;240&#34;
+		data-flex-basis=&#34;576px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;图 1：ZipMap 方法架构。模型采用局部窗口注意力与大型块 TTT 层交替的结构，在单次前向传播中预测相机姿态、深度图和点云，同时将场景信息压缩到 TTT 快速权重中。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;ZipMap 的关键创新在于使用&lt;strong&gt;测试时训练（TTT）层&lt;/strong&gt;替代全局注意力：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;输入 Token 化&lt;/strong&gt;：使用预训练 DINOv2 编码器将每帧图像转换为 patch 级 token 序列，同时为每帧分配相机 token 和注册 token。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;特征骨干网络&lt;/strong&gt;：包含 L=24 个相同块，每块由两部分组成：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;局部窗口注意力&lt;/strong&gt;：独立处理每帧 token，捕获帧内空间关系&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;全局大型块 TTT 层&lt;/strong&gt;：核心创新，通过更新非线性快速权重函数聚合全局信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;TTT 机制&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;将部分模型参数视为&amp;quot;快速权重&amp;quot;记忆&lt;/li&gt;
+&lt;li&gt;通过虚拟的键值重建目标函数，对所有输入图像 token 执行一次梯度下降更新&lt;/li&gt;
+&lt;li&gt;更新后的快速权重编码了场景的全局信息&lt;/li&gt;
+&lt;li&gt;查询新视角时，直接应用快速权重，实现常数时间查询&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;预测头&lt;/strong&gt;：包含相机头（预测 4D 旋转四元数 +3D 平移 +2 内参）、点云头、深度头（含置信度图）和查询头（新视角 RGB+ 深度）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;实验设计与结果&#34;&gt;实验设计与结果
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure2.png&#34;
+	width=&#34;997&#34;
+	height=&#34;447&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure2_hu_faa48a183afe0824.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure2_hu_c5fe6c20dd19ac8c.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;ZipMap 性能对比&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;223&#34;
+		data-flex-basis=&#34;535px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;图 2：ZipMap 与基线方法的对比。左图显示运行时间随帧数线性增长，而 VGGT 和π³呈二次增长；右图显示 ZipMap 在姿态估计精度（ATE）上与 SOTA 持平甚至更优。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;主要结果&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;方法&lt;/th&gt;
+          &lt;th&gt;750 帧时间&lt;/th&gt;
+          &lt;th&gt;相对加速&lt;/th&gt;
+          &lt;th&gt;ATE (cm)&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;VGGT&lt;/td&gt;
+          &lt;td&gt;&amp;gt;200 秒&lt;/td&gt;
+          &lt;td&gt;1×&lt;/td&gt;
+          &lt;td&gt;5.2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;π³&lt;/td&gt;
+          &lt;td&gt;~180 秒&lt;/td&gt;
+          &lt;td&gt;1.1×&lt;/td&gt;
+          &lt;td&gt;5.8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;ZipMap&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;&amp;lt;10 秒&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;&amp;gt;20×&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;4.9&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;关键发现&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在多个大规模数据集上，ZipMap 的精度匹配或超越 VGGT 和π³&lt;/li&gt;
+&lt;li&gt;流式重建扩展表现优异，支持在线更新快速权重&lt;/li&gt;
+&lt;li&gt;场景状态查询可实现实时新视角合成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;局限性分析&#34;&gt;局限性分析
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;参考物体依赖&lt;/strong&gt;：需要场景中有一定数量的可检测物体用于 TTT 更新&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;内存消耗&lt;/strong&gt;：快速权重需要额外显存，尽管远小于全局注意力的 KV 缓存&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;训练数据&lt;/strong&gt;：当前训练主要基于室内场景，户外大场景泛化需进一步验证&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;未来方向与影响&#34;&gt;未来方向与影响
+&lt;/h4&gt;&lt;p&gt;ZipMap 为大规模 3D 重建开辟了新的可能性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;实时 SLAM&lt;/strong&gt;：线性复杂度使其适合在线机器人导航&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;大规模场景重建&lt;/strong&gt;：可处理城市级图像集合&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;神经场景表示&lt;/strong&gt;：隐式场景状态支持高效新视角合成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;项目页面&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://haian-jin.github.io/ZipMap&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://haian-jin.github.io/ZipMap&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文链接&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04385&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.04385&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;-robocasa365通用机器人学习的里程碑基准&#34;&gt;🤖 RoboCasa365：通用机器人学习的里程碑基准
+&lt;/h3&gt;&lt;h4 id=&#34;研究背景与动机-1&#34;&gt;研究背景与动机
+&lt;/h4&gt;&lt;p&gt;机器人学习领域正朝着通用机器人方向发展，但面临两大挑战：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;数据稀缺&lt;/strong&gt;：训练通用策略需要海量多样化数据，真实世界收集成本极高&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;评估困难&lt;/strong&gt;：真实世界评估资源密集、耗时且难以复现&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;现有仿真框架通常仅支持有限任务和环境，无法系统研究任务多样性、环境变化和 dataset 规模对泛化的影响。RoboCasa365 旨在填补这一空白。&lt;/p&gt;
+&lt;h4 id=&#34;核心方法与框架设计&#34;&gt;核心方法与框架设计
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure1.png&#34;
+	width=&#34;914&#34;
+	height=&#34;487&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure1_hu_dc053ace0ced4972.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure1_hu_c4a8a3d1a3728c6b.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;RoboCasa365 概览&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;187&#34;
+		data-flex-basis=&#34;450px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;图 1：RoboCasa365 框架概览。包含 365 个日常任务、2500 个厨房场景、2000+ 小时演示数据，支持多任务学习、基础模型训练和终身学习基准。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;四大核心组件&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;全面任务集&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;65 个原子任务：覆盖 10 项基础技能（抓取放置、开门关门、开抽屉、旋钮、杠杆、按钮、插入、导航、滑轨、开合盖）&lt;/li&gt;
+&lt;li&gt;300 个复合任务：使用 LLM 生成任务蓝图，涵盖 60 种厨房活动（烧水、烤面包、煮咖啡、洗碗、储存剩菜等）&lt;/li&gt;
+&lt;li&gt;220 个任务需要移动操作，145 个可固定操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;多样化环境&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2500 个预训练厨房场景（50 布局 × 50 风格）&lt;/li&gt;
+&lt;li&gt;10 个目标厨房场景用于评估&lt;/li&gt;
+&lt;li&gt;布局源自 Zillow 真实房屋，风格涵盖不同装修档次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;大规模数据&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;612 小时人工演示（30k 预训练 + 25k 目标）&lt;/li&gt;
+&lt;li&gt;1615 小时 MimicGen 合成数据&lt;/li&gt;
+&lt;li&gt;总计约 500k 演示轨迹&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;系统化基准&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;多任务训练：评估跨任务知识迁移&lt;/li&gt;
+&lt;li&gt;基础模型训练：预训练 + 微调范式&lt;/li&gt;
+&lt;li&gt;终身学习：顺序任务学习无灾难性遗忘&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure2.png&#34;
+	width=&#34;914&#34;
+	height=&#34;570&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure2_hu_50622dfcc0a13f6f.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure2_hu_108cde3d2db40b34.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;复合任务示例&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;160&#34;
+		data-flex-basis=&#34;384px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;图 2：复合任务示例。使用 LLM 生成 60 种高级活动，每种活动包含多个任务蓝图。任务按功能和语义结构组织为 6 个活动族。&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=&#34;实验设计与结果-1&#34;&gt;实验设计与结果
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;评估设置&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;目标任务 50 个：18 原子 +16 复合可见 +16 复合未见&lt;/li&gt;
+&lt;li&gt;每任务 500 次人工演示用于评估&lt;/li&gt;
+&lt;li&gt;支持 Franka Panda + Omron 移动底盘，可扩展到人形和四足机器人&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;关键发现&lt;/strong&gt;（论文摘要提及）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;任务多样性对泛化有显著影响&lt;/li&gt;
+&lt;li&gt;数据集规模与性能呈对数增长关系&lt;/li&gt;
+&lt;li&gt;环境变化是泛化的主要挑战&lt;/li&gt;
+&lt;li&gt;预训练数据对未见复合任务有明显帮助&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;局限性分析-1&#34;&gt;局限性分析
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;仿真 - 现实差距&lt;/strong&gt;：尽管视觉逼真，物理交互仍与真实世界有差异&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;任务覆盖&lt;/strong&gt;：聚焦厨房场景，其他家庭区域（卧室、浴室）需扩展&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;机器人形态&lt;/strong&gt;：当前主要支持移动操作，双足人形支持有限&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;未来方向与影响-1&#34;&gt;未来方向与影响
+&lt;/h4&gt;&lt;p&gt;RoboCasa365 为通用机器人研究提供了宝贵资源：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;标准化评估&lt;/strong&gt;：使不同方法可在相同基准下公平比较&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据驱动研究&lt;/strong&gt;：支持大规模预训练实验&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;终身学习&lt;/strong&gt;：为持续学习算法提供测试平台&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;项目页面&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://robocasa.ai&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://robocasa.ai&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文链接&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04356&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.04356&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;-vanguard解决-vlm-空间尺度幻觉&#34;&gt;🛰️ VANGUARD：解决 VLM 空间尺度幻觉
+&lt;/h3&gt;&lt;h4 id=&#34;问题定义与挑战&#34;&gt;问题定义与挑战
+&lt;/h4&gt;&lt;p&gt;无人机在 GPS 拒止或通信降级环境中运行时，常丢失相机元数据和遥测信息，导致机载感知系统无法恢复场景的绝对度量尺度。随着 LLM/VLM 被越来越多地用作具身系统的高层规划器，其物理维度推理能力变得至关重要。&lt;/p&gt;
+&lt;p&gt;然而，实验表明：&lt;strong&gt;5 个 SOTA VLM 在面积估计任务中中位误差超过 50%&lt;/strong&gt;，频繁出现数量级偏差。作者将这一现象命名为**&amp;ldquo;空间尺度幻觉&amp;rdquo;**。&lt;/p&gt;
+&lt;h4 id=&#34;核心方法&#34;&gt;核心方法
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/vanguard_figure1.png&#34;
+	width=&#34;793&#34;
+	height=&#34;348&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/vanguard_figure1_hu_23471ddcf8f23215.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/vanguard_figure1_hu_43dd5a5128ce2c3e.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;VANGUARD 系统架构&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;227&#34;
+		data-flex-basis=&#34;546px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;图 1：VANGUARD 系统架构。作为具身 Agent 感知循环中的确定性几何技能，通过 YOLO-OBB 检测车辆、KDE 模态估计、分辨率保护，输出校准的 GSD 和置信度分数。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;VANGUARD（Vehicle-ANchored Geometric Understanding And Resolution Determination）的核心观察是：&lt;strong&gt;小型车辆是全球城市场景中最普遍的物体之一，物理长度集中在 4-5 米&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;五阶段流程&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;OBB 车辆检测&lt;/strong&gt;：使用 YOLO11l-OBB 检测带方向边界的车辆&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;异常值过滤&lt;/strong&gt;：基于中位数的过滤（α=1.5）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;KDE 模态估计&lt;/strong&gt;：核密度估计找到像素长度分布的模态&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GSD 计算&lt;/strong&gt;：GSD = L_ref / P_mode（L_ref = 5.045m）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;置信度评估&lt;/strong&gt;：综合样本充分性、分布集中度、检测质量、异常检测四维度&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;安全保护机制&lt;/strong&gt;：当 P_mode &amp;lt; 17 像素（对应 GSD &amp;gt; 0.3 m/px）时，置信度强制降至 0.3 以下，触发 Agent 回退策略。&lt;/p&gt;
+&lt;h4 id=&#34;实验结果&#34;&gt;实验结果
+&lt;/h4&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;方法&lt;/th&gt;
+          &lt;th&gt;中位 GSD 误差&lt;/th&gt;
+          &lt;th&gt;覆盖率&lt;/th&gt;
+          &lt;th&gt;灾难性失败率&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;GPT-4o&lt;/td&gt;
+          &lt;td&gt;52%&lt;/td&gt;
+          &lt;td&gt;100%&lt;/td&gt;
+          &lt;td&gt;28%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Claude Opus 4.6†&lt;/td&gt;
+          &lt;td&gt;38%&lt;/td&gt;
+          &lt;td&gt;100%&lt;/td&gt;
+          &lt;td&gt;15%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;VANGUARD&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;6.87%&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;67%&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;0%&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;†Claude Opus 4.6 使用程序化图像分析工具，非纯视觉估计&lt;/p&gt;
+&lt;p&gt;在 100 项 RS-GSD 基准面积估计任务中，VANGUARD+SAM  pipeline 实现&lt;strong&gt;19.7% 中位误差&lt;/strong&gt;，相比最佳 VLM 基线有 2.6×类别依赖降低和 4×灾难性失败减少。&lt;/p&gt;
+&lt;h4 id=&#34;影响与展望&#34;&gt;影响与展望
+&lt;/h4&gt;&lt;p&gt;VANGUARD 证明了为 Agent 配备确定性几何工具对安全自主空间推理的必要性。该技能可作为无状态 API 被任何 LLM-based Agent 调用，返回 (GSD, 置信度) 使规划器做出安全感知决策。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;论文链接&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04277&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.04277&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-应用案例&#34;&gt;💡 应用案例
+&lt;/h2&gt;&lt;h3 id=&#34;1-实时无人机自主导航&#34;&gt;1. 实时无人机自主导航
+&lt;/h3&gt;&lt;p&gt;VANGUARD 可直接集成到无人机自主导航系统中，在 GPS 拒止环境下提供可靠的尺度估计，支持：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;精确着陆区尺寸评估&lt;/li&gt;
+&lt;li&gt;障碍物距离测量&lt;/li&gt;
+&lt;li&gt;任务规划中的物理约束检查&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-大规模场景数字化&#34;&gt;2. 大规模场景数字化
+&lt;/h3&gt;&lt;p&gt;ZipMap 的线性时间重建使其适合：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;文化遗产数字化（数百张照片快速建模）&lt;/li&gt;
+&lt;li&gt;房地产虚拟漫游生成&lt;/li&gt;
+&lt;li&gt;电影预可视化快速迭代&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-家庭服务机器人训练&#34;&gt;3. 家庭服务机器人训练
+&lt;/h3&gt;&lt;p&gt;RoboCasa365 支持：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;跨任务技能迁移研究&lt;/li&gt;
+&lt;li&gt;基础模型预训练 + 微调范式验证&lt;/li&gt;
+&lt;li&gt;终身学习算法评估（无灾难性遗忘）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-统计汇总&#34;&gt;📊 统计汇总
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;指标&lt;/th&gt;
+          &lt;th&gt;ZipMap&lt;/th&gt;
+          &lt;th&gt;RoboCasa365&lt;/th&gt;
+          &lt;th&gt;VANGUARD&lt;/th&gt;
+          &lt;th&gt;Agentics 2.0&lt;/th&gt;
+          &lt;th&gt;RealPref&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;核心贡献&lt;/td&gt;
+          &lt;td&gt;线性时间 3D 重建&lt;/td&gt;
+          &lt;td&gt;机器人基准&lt;/td&gt;
+          &lt;td&gt;GSD 估计&lt;/td&gt;
+          &lt;td&gt;转导代数&lt;/td&gt;
+          &lt;td&gt;偏好基准&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;加速/规模&lt;/td&gt;
+          &lt;td&gt;20×&lt;/td&gt;
+          &lt;td&gt;365 任务&lt;/td&gt;
+          &lt;td&gt;6.87% 误差&lt;/td&gt;
+          &lt;td&gt;类型安全&lt;/td&gt;
+          &lt;td&gt;1300 偏好&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;数据量&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;2000+ 小时&lt;/td&gt;
+          &lt;td&gt;306 图像&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;100 用户&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;机构&lt;/td&gt;
+          &lt;td&gt;DeepMind&lt;/td&gt;
+          &lt;td&gt;UT/NVIDIA&lt;/td&gt;
+          &lt;td&gt;中科院/NYU&lt;/td&gt;
+          &lt;td&gt;IBM&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-全部参考链接&#34;&gt;📖 全部参考链接
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;ZipMap&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04385&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.04385&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://haian-jin.github.io/ZipMap&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;项目页面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RoboCasa365&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04356&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.04356&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://robocasa.ai&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;项目页面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;VANGUARD&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04277&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.04277&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Agentics 2.0&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04241&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.04241&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;RealPref&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04191&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.04191&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dual-Helix Governance&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.04390&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.04390&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;📬 订阅 AI 日报：每日追踪 AI 领域最新进展&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;💬 反馈与建议：欢迎在评论区讨论&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
