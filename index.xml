@@ -7,6 +7,712 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright><atom:link href="https://HHjoker.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI 日报 | 2026-03-07</title>
+        <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/</link>
+        <pubDate>Sat, 07 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/</guid>
+        <description>&lt;h1 id=&#34;ai-日报--2026-年-3-月-7-日&#34;&gt;AI 日报 | 2026 年 3 月 7 日
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;📅 日期：2026 年 3 月 7 日（星期六）
+📊 今日收录：5 篇核心论文 + 2 项技术动态&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Transformer 内部机制突破&lt;/strong&gt;：新研究揭示了 Massive Activations 和 Attention Sinks 的因果关系，发现两者共现是架构 artifact 而非功能必需，为模型优化提供新方向&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;最大网页交互数据集发布&lt;/strong&gt;：WebChain 包含 31,725 条人工标注轨迹和 318k 步骤，Triple Alignment 机制实现视觉 - 结构 - 动作精准对齐&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LLM 评估可靠性提升&lt;/strong&gt;：Bias-Bounded Evaluation 框架首次为 LLM Judge 提供可证明的无偏保证，在 Arena-Hard-Auto 上保持 61-99% 排名相关性&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AI 培训系统落地&lt;/strong&gt;：PACE 系统用于 911 接线员培训，实现 19.5% 更快能力达成和 95.45% 专家判断对齐&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;医疗多 Agent 诊断&lt;/strong&gt;：MedCoRAG 框架通过多专家 Agent 协作实现可解释肝病诊断，超越现有方法和闭源模型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-重要论文一览&#34;&gt;📚 重要论文一览
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;论文&lt;/th&gt;
+          &lt;th&gt;来源&lt;/th&gt;
+          &lt;th&gt;亮点&lt;/th&gt;
+          &lt;th&gt;链接&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;The Spike, the Sparse and the Sink&lt;/td&gt;
+          &lt;td&gt;arXiv:2603.05498&lt;/td&gt;
+          &lt;td&gt;揭示 Transformer 激活机制因果关系&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05498&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;WebChain: Large-Scale Web Interaction Dataset&lt;/td&gt;
+          &lt;td&gt;arXiv:2603.05295&lt;/td&gt;
+          &lt;td&gt;31k+ 人工标注网页交互轨迹&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05295&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Towards Provably Unbiased LLM Judges&lt;/td&gt;
+          &lt;td&gt;arXiv:2603.05485&lt;/td&gt;
+          &lt;td&gt;可证明无偏的 LLM 评估框架&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05485&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;PACE: 9-1-1 Call-taker Training Engine&lt;/td&gt;
+          &lt;td&gt;arXiv:2603.05361&lt;/td&gt;
+          &lt;td&gt;个性化自适应培训课程引擎&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05361&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;MedCoRAG: Hepatology Diagnosis&lt;/td&gt;
+          &lt;td&gt;arXiv:2603.05129&lt;/td&gt;
+          &lt;td&gt;多 Agent 协作医疗诊断框架&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05129&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-技术动态&#34;&gt;🚀 技术动态
+&lt;/h2&gt;&lt;h3 id=&#34;1-nvidia-nemo-evaluator-agent-skills-发布&#34;&gt;1. NVIDIA NeMo Evaluator Agent Skills 发布
+&lt;/h3&gt;&lt;p&gt;NVIDIA 发布了 &lt;strong&gt;nel-assistant&lt;/strong&gt; Agent Skill，通过自然语言对话即可配置生产级 LLM 评估任务。该技能基于 NVIDIA NeMo Evaluator 库，支持：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;自动模型卡解析&lt;/strong&gt;：自动提取温度、top_p、上下文长度等最优参数&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;模板化配置生成&lt;/strong&gt;：通过深度合并预验证模板，确保 YAML 配置结构有效&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;三阶段执行流程&lt;/strong&gt;：Dry run → Smoke test → Full run，支持渐进式验证&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实时监控&lt;/strong&gt;：在 Cursor 等 IDE 内直接查看评估进度和指标&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/nvidia-nemo-evaluator.png&#34;
+	width=&#34;600&#34;
+	height=&#34;600&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/nvidia-nemo-evaluator_hu_e93c50190014e9d6.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/nvidia-nemo-evaluator_hu_fbf1467d1f83df81.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;NVIDIA NeMo Evaluator 工作流程&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;100&#34;
+		data-flex-basis=&#34;240px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;📖 &lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/nvidia/model-evaluation-skill&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;阅读全文&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;2-modular-diffusers-开源&#34;&gt;2. Modular Diffusers 开源
+&lt;/h3&gt;&lt;p&gt;Hugging Face 发布 &lt;strong&gt;Modular Diffusers&lt;/strong&gt;，提供可组合的扩散模型构建模块。该库支持：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;模块化管道设计，可灵活组合不同组件&lt;/li&gt;
+&lt;li&gt;支持多种扩散模型架构&lt;/li&gt;
+&lt;li&gt;简化的自定义扩散模型开发流程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;📖 &lt;a class=&#34;link&#34; href=&#34;https://github.com/huggingface/diffusers&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-详细介绍深度解读&#34;&gt;🔍 详细介绍（深度解读）
+&lt;/h2&gt;&lt;h3 id=&#34;论文一the-spike-the-sparse-and-the-sink&#34;&gt;论文一：The Spike, the Sparse and the Sink
+&lt;/h3&gt;&lt;h4 id=&#34;transformer-大规模激活与注意力汇聚的解剖学研究&#34;&gt;Transformer 大规模激活与注意力汇聚的解剖学研究
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.05498 | Jiachen Zhu et al. | 2026 年 3 月 5 日&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;研究背景与动机&#34;&gt;研究背景与动机
+&lt;/h4&gt;&lt;p&gt;Transformer 语言模型中存在两个反复出现的现象：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Massive Activations（大规模激活）&lt;/strong&gt;：少量 token 在少数通道中表现出极端异常值&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Attention Sinks（注意力汇聚）&lt;/strong&gt;：某些 token 吸引不成比例的注意力质量，无论语义相关性如何&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;先前的工作观察到这两个现象经常共现且涉及相同的 token，但它们的功能角色和因果关系尚不清楚。理解这两者的关系对于量化、剪枝、KV-cache 管理和长上下文推理等实际应用具有重要意义。&lt;/p&gt;
+&lt;h4 id=&#34;问题定义与挑战&#34;&gt;问题定义与挑战
+&lt;/h4&gt;&lt;p&gt;核心研究问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Massive Activations 和 Attention Sinks 为何经常共现？&lt;/li&gt;
+&lt;li&gt;它们是功能必需的还是架构 artifact？&lt;/li&gt;
+&lt;li&gt;能否独立抑制其中一个而不影响模型性能？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;挑战在于需要系统性地追踪激活值在 Transformer 各层中的传播路径，并分离不同架构组件的贡献。&lt;/p&gt;
+&lt;h4 id=&#34;核心方法与技术细节&#34;&gt;核心方法与技术细节
+&lt;/h4&gt;&lt;h5 id=&#34;1-massive-activations-的生命周期&#34;&gt;1. Massive Activations 的生命周期
+&lt;/h5&gt;&lt;p&gt;研究发现 Massive Activations 遵循&amp;quot;上升 - 平台 - 下降&amp;quot;的三阶段生命周期：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://arxiv.org/html/2603.05498v1/assets/img/lifecycle.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Massive Activations 生命周期&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Step-up Blocks（上升块）&lt;/strong&gt;：1-2 个早期块注入极端值到隐藏表示中&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Residual Accumulation（残差累积）&lt;/strong&gt;：中间块通过残差连接传播这些值&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Step-down Blocks（下降块）&lt;/strong&gt;：1-2 个晚期块注入相反符号的极端值，中和 Massive Activations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;表 1 显示了不同模型中 step-up 和 step-down 块的位置：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Model&lt;/th&gt;
+          &lt;th&gt;# Blocks&lt;/th&gt;
+          &lt;th&gt;Step-Up&lt;/th&gt;
+          &lt;th&gt;Step-Down&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Llama 2 7B&lt;/td&gt;
+          &lt;td&gt;64&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;62&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Llama 2 13B&lt;/td&gt;
+          &lt;td&gt;80&lt;/td&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;78, 79&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Llama 3 8B&lt;/td&gt;
+          &lt;td&gt;64&lt;/td&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;64&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Qwen2.5 7B&lt;/td&gt;
+          &lt;td&gt;56&lt;/td&gt;
+          &lt;td&gt;8, 10&lt;/td&gt;
+          &lt;td&gt;54, 55&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Qwen3 8B&lt;/td&gt;
+          &lt;td&gt;72&lt;/td&gt;
+          &lt;td&gt;14&lt;/td&gt;
+          &lt;td&gt;70, 72&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h5 id=&#34;2-feed-forward-block-作为方向性二次放大器&#34;&gt;2. Feed-Forward Block 作为方向性二次放大器
+&lt;/h5&gt;&lt;p&gt;关键发现：SwiGLU 基的 Feed-Forward Block 是 Massive Activations 的主要来源，其机制为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;近恒等门控机制&lt;/strong&gt;：SiLU 非线性在近恒等状态下运行（SiLU(x) ≈ x）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高增益二次结构&lt;/strong&gt;：输出可表示为二次形式 &lt;code&gt;hᵀ U h&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;秩一主导&lt;/strong&gt;：Spike 通道的矩阵 Sₖ 由单个特征值 λ* 主导&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://arxiv.org/html/2603.05498v1/assets/img/frobenius.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Frobenius 范数分析&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Spike 通道对应于具有异常大 Frobenius 范数的坐标，这些高范数坐标仅出现在 step-up 和 step-down 块中。&lt;/p&gt;
+&lt;h5 id=&#34;3-什么使-token-成为-spike-token&#34;&gt;3. 什么使 Token 成为 Spike Token
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;首 Token&lt;/strong&gt;：超过 98% 的词表项在位置 0 时表现为 Spike Token&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分隔符 Token&lt;/strong&gt;：句号、换行符等也表现出类似行为&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;首 Token 的行为源于注意力块退化为简单线性映射：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;F_attn(h⁽¹⁾) = W_VOᵀ h⁽¹⁾
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h5 id=&#34;4-从-spikes-到-sinks-的转换&#34;&gt;4. 从 Spikes 到 Sinks 的转换
+&lt;/h5&gt;&lt;p&gt;关键机制：&lt;strong&gt;Normalization 是连接 Massive Activations 和 Attention Sinks 的桥梁&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Massive Activations 与 RMSNorm 交互产生近乎恒定的隐藏表示&lt;/li&gt;
+&lt;li&gt;这些恒定表示作为&amp;quot;隐式参数&amp;quot;，使某些 token 持续吸引注意力&lt;/li&gt;
+&lt;li&gt;Pre-norm 配置是实现共现的关键选择&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;实验设计与结果&#34;&gt;实验设计与结果
+&lt;/h4&gt;&lt;h5 id=&#34;实验-1架构消融研究&#34;&gt;实验 1：架构消融研究
+&lt;/h5&gt;&lt;p&gt;通过改变归一化配置，研究者发现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;移除 Pre-norm 可使两个现象解耦&lt;/li&gt;
+&lt;li&gt;Massive Activations 可被抑制而保留 Attention Sinks&lt;/li&gt;
+&lt;li&gt;语言建模性能未受显著影响&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;实验-2跨模型验证&#34;&gt;实验 2：跨模型验证
+&lt;/h5&gt;&lt;p&gt;在 Llama 2/3、Qwen2.5/3 系列模型上验证了发现的普适性：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Model&lt;/th&gt;
+          &lt;th&gt;# Vocab&lt;/th&gt;
+          &lt;th&gt;# Spike Token&lt;/th&gt;
+          &lt;th&gt;Ratio&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Llama 2 7B&lt;/td&gt;
+          &lt;td&gt;32,000&lt;/td&gt;
+          &lt;td&gt;31,887&lt;/td&gt;
+          &lt;td&gt;99.65%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Llama 3 8B&lt;/td&gt;
+          &lt;td&gt;128,256&lt;/td&gt;
+          &lt;td&gt;127,956&lt;/td&gt;
+          &lt;td&gt;99.77%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Qwen3 8B&lt;/td&gt;
+          &lt;td&gt;151,936&lt;/td&gt;
+          &lt;td&gt;151,830&lt;/td&gt;
+          &lt;td&gt;99.93%&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h5 id=&#34;实验-3功能角色分析&#34;&gt;实验 3：功能角色分析
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Massive Activations&lt;/strong&gt;：全局操作，诱导跨层持久化的近乎恒定隐藏表示&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Attention Sinks&lt;/strong&gt;：局部操作，跨头调制注意力输出，偏向短程依赖&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;局限性分析&#34;&gt;局限性分析
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;模型范围&lt;/strong&gt;：主要分析 decoder-only、pre-norm Transformer，其他架构（如 post-norm、encoder-decoder）需要进一步研究&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;训练动态&lt;/strong&gt;：研究聚焦于预训练后模型，训练过程中的演化尚未完全探索&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;任务特定行为&lt;/strong&gt;：分析基于通用语言建模，特定任务下的行为可能有所不同&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;未来方向与影响&#34;&gt;未来方向与影响
+&lt;/h4&gt;&lt;h5 id=&#34;理论意义&#34;&gt;理论意义
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;澄清了 Massive Activations 和 Attention Sinks 的因果关系&lt;/li&gt;
+&lt;li&gt;表明两者的重叠反映了偶然的架构交互而非功能必需&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;实践影响&#34;&gt;实践影响
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;量化优化&lt;/strong&gt;：理解激活分布可改进量化策略&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;剪枝策略&lt;/strong&gt;：识别可安全移除的组件&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;架构设计&lt;/strong&gt;： alternative design choices 可减轻任一现象&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;长上下文推理&lt;/strong&gt;：改进 KV-cache 管理策略&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;开放问题&#34;&gt;开放问题
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;这些现象在推理模型（如 o1 系列）中如何表现？&lt;/li&gt;
+&lt;li&gt;能否设计新的架构完全消除这些现象？&lt;/li&gt;
+&lt;li&gt;它们与模型的泛化能力有何关系？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;相关资源链接&#34;&gt;相关资源链接
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;📄 &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05498&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;论文 PDF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🌐 &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/html/2603.05498v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HTML 版本&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💻 &lt;a class=&#34;link&#34; href=&#34;https://github.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;代码仓库&lt;/a&gt;（待发布）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文二webchain&#34;&gt;论文二：WebChain
+&lt;/h3&gt;&lt;h4 id=&#34;大规模人工标注真实网页交互轨迹数据集&#34;&gt;大规模人工标注真实网页交互轨迹数据集
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.05295 | Sicheng Fan et al. | Fudan University &amp;amp; IMean AI | 2026 年 3 月 5 日&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;研究背景与动机-1&#34;&gt;研究背景与动机
+&lt;/h4&gt;&lt;p&gt;征服浏览器是 GUI Agent 领域最有价值的问题之一，因为网页浏览器是绝大多数数字任务的主要界面。Vision-Language-Action (VLA) 建模的最新进展带来了希望，但存在以下挑战：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;数据稀缺&lt;/strong&gt;：现有开源数据集缺乏规模和完整性&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;合成方法局限&lt;/strong&gt;：受安全机制限制，无法捕获需要认证的高价值工作流&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;专有数据垄断&lt;/strong&gt;：关键洞察不可复现，阻碍社区共识&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;WebChain 旨在填补这一空白，提供最大规模的人工标注真实网页交互数据集。&lt;/p&gt;
+&lt;h4 id=&#34;问题定义与挑战-1&#34;&gt;问题定义与挑战
+&lt;/h4&gt;&lt;p&gt;核心挑战：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如何规模化收集高质量、多样化的网页交互数据？&lt;/li&gt;
+&lt;li&gt;如何确保数据的 multimodal 对齐（视觉、结构、动作）？&lt;/li&gt;
+&lt;li&gt;如何设计评估基准以全面衡量 Web Agent 能力？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;核心方法与技术细节-1&#34;&gt;核心方法与技术细节
+&lt;/h4&gt;&lt;h5 id=&#34;1-triple-alignment-机制&#34;&gt;1. Triple Alignment 机制
+&lt;/h5&gt;&lt;p&gt;WebChain 的核心创新是 &lt;strong&gt;Triple Alignment&lt;/strong&gt;，同步三个层次的信息：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Visual Context（视觉上下文）&lt;/strong&gt;：视口和全页截图&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Structural Context（结构上下文）&lt;/strong&gt;：Accessibility (AX) 树&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Action Alignment（动作对齐）&lt;/strong&gt;：精确像素坐标、边界框、CSS 选择器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这种多层监督使模型不仅能&amp;quot;看到&amp;quot;页面，还能理解每个像素背后的结构逻辑。&lt;/p&gt;
+&lt;h5 id=&#34;2-数据构建流程&#34;&gt;2. 数据构建流程
+&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;阶段 1：约束式任务合成&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;结构化功能提取&lt;/strong&gt;：解析网站的目标语义和交互逻辑&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Schema 约束的任务生成&lt;/strong&gt;：基于提取的功能 schema 生成可执行任务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;任务复杂度分层：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;简单信息检索（单步查询）&lt;/li&gt;
+&lt;li&gt;多约束导航（多过滤器组合）&lt;/li&gt;
+&lt;li&gt;条件依赖任务（序列逻辑导航）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;阶段 2：人在回路轨迹收集&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;使用 WebChain Builder 工具捕获：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;完整的动作前后 DOM 快照&lt;/li&gt;
+&lt;li&gt;执行的具体动作（点击、输入、滚动等）&lt;/li&gt;
+&lt;li&gt;高保真空间信息（视口坐标、目标元素边界框）&lt;/li&gt;
+&lt;li&gt;元素特定元数据（XPath、CSS 选择器、内部文本）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;阶段 3：后处理上下文增强&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;视觉接地密集化&lt;/strong&gt;：解析整个视口，提取所有交互元素的边界框和类型&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;合成理由生成（CoT）&lt;/strong&gt;：使用 VLM 为每个动作生成推理链&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;3-数据集统计&#34;&gt;3. 数据集统计
+&lt;/h5&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;指标&lt;/th&gt;
+          &lt;th&gt;数值&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;轨迹数量&lt;/td&gt;
+          &lt;td&gt;31,725&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;交互步骤&lt;/td&gt;
+          &lt;td&gt;318k&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;覆盖域名&lt;/td&gt;
+          &lt;td&gt;428&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;平均轨迹长度&lt;/td&gt;
+          &lt;td&gt;10.02 步&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;设备类型&lt;/td&gt;
+          &lt;td&gt;多 OS、多浏览器、多分辨率&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;https://arxiv.org/html/2603.05295v1/assets/img/dataset_overview.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;WebChain 数据集概览&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;4-dual-mid-training-训练范式&#34;&gt;4. Dual Mid-Training 训练范式
+&lt;/h5&gt;&lt;p&gt;提出 &lt;strong&gt;Dual Mid-Training&lt;/strong&gt; 策略，解耦空间接地和规划：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Spatial Grounding Mid-Training&lt;/strong&gt;：使用增强指令 - 坐标对训练空间感知&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CoT-SFT Mid-Training&lt;/strong&gt;：使用合成推理链训练结构化推理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LCRL Post-Training&lt;/strong&gt;：Long-Chain-oriented RLVR 优化长程规划&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;实验设计与结果-1&#34;&gt;实验设计与结果
+&lt;/h4&gt;&lt;h5 id=&#34;实验-1数据可扩展性分析&#34;&gt;实验 1：数据可扩展性分析
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://arxiv.org/html/2603.05295v1/assets/img/scaling_laws.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;WebChain 规模效应&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;在 Qwen2.5-VL-3B 上测试不同数据子集（4k、20k、全量 150k）的效果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据量与 WCB-L 基准性能呈正相关&lt;/li&gt;
+&lt;li&gt;全量数据训练的模型在成功率和命令链长度上显著优于基线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;实验-2空间接地训练范式&#34;&gt;实验 2：空间接地训练范式
+&lt;/h5&gt;&lt;p&gt;评估因素：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Reasoner Prompting (RP)&lt;/strong&gt;：引入显式推理提示&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Visual Grounding Densification (VGD)&lt;/strong&gt;：使用增强的交互元素对&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;结果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RP 和 VGD 独立产生可测量的增益&lt;/li&gt;
+&lt;li&gt;两者结合产生最强性能&lt;/li&gt;
+&lt;li&gt;VGD 增强交互元素识别召回率&lt;/li&gt;
+&lt;li&gt;RP 通过结构化推理减少空间幻觉&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;实验-3长程规划训练范式&#34;&gt;实验 3：长程规划训练范式
+&lt;/h5&gt;&lt;p&gt;关键发现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;空间接地 mid-training 策略对 RL 性能上限有重大影响&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;non-RP + VGD + LCRL&lt;/strong&gt; 范式实现最强长程规划能力&lt;/li&gt;
+&lt;li&gt;RP 在独立空间接地任务中有效，但限制了长程规划的泛化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;实验-4跨基准泛化&#34;&gt;实验 4：跨基准泛化
+&lt;/h5&gt;&lt;p&gt;在多个公共基准上评估：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Model&lt;/th&gt;
+          &lt;th&gt;AC-High&lt;/th&gt;
+          &lt;th&gt;AC-Low&lt;/th&gt;
+          &lt;th&gt;GUI-Act-Web&lt;/th&gt;
+          &lt;th&gt;GUI-Odyssey&lt;/th&gt;
+          &lt;th&gt;OA-Desktop&lt;/th&gt;
+          &lt;th&gt;OA-Web&lt;/th&gt;
+          &lt;th&gt;Overall&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Qwen2.5-VL-7B (Zero Shot)&lt;/td&gt;
+          &lt;td&gt;57.0&lt;/td&gt;
+          &lt;td&gt;72.0&lt;/td&gt;
+          &lt;td&gt;83.9&lt;/td&gt;
+          &lt;td&gt;34.7&lt;/td&gt;
+          &lt;td&gt;79.3&lt;/td&gt;
+          &lt;td&gt;70.3&lt;/td&gt;
+          &lt;td&gt;70.9&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;GUI-R1-7B&lt;/td&gt;
+          &lt;td&gt;51.7&lt;/td&gt;
+          &lt;td&gt;66.5&lt;/td&gt;
+          &lt;td&gt;80.3&lt;/td&gt;
+          &lt;td&gt;38.8&lt;/td&gt;
+          &lt;td&gt;83.3&lt;/td&gt;
+          &lt;td&gt;77.3&lt;/td&gt;
+          &lt;td&gt;74.2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;WebChain-LCRL-7B +SGRL+CoT-SFT&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;61.8&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;74.1&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;87.6&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;54.8&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;86.2&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;78.9&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;81.4&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;WebChain 训练的模型在多个基准上达到 SOTA。&lt;/p&gt;
+&lt;h4 id=&#34;局限性分析-1&#34;&gt;局限性分析
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;标注成本&lt;/strong&gt;：人工标注虽然质量高，但成本较高，限制了数据规模的进一步扩展&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;网站时效性&lt;/strong&gt;：网页结构会随时间变化，需要定期更新数据集&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;文化/语言偏差&lt;/strong&gt;：当前数据主要集中在英文网站，多语言覆盖有限&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;隐私考虑&lt;/strong&gt;：虽然避免收集敏感信息，但真实网站交互仍可能包含隐私风险&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;未来方向与影响-1&#34;&gt;未来方向与影响
+&lt;/h4&gt;&lt;h5 id=&#34;研究影响&#34;&gt;研究影响
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;打破数据垄断&lt;/strong&gt;：完全开源使社区可复现和验证缩放效应&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;标准化评估&lt;/strong&gt;：WebChainBench 提供统一的评估框架&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;训练范式洞察&lt;/strong&gt;：Dual Mid-Training 为 GUI Agent 训练提供新方向&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;实践应用&#34;&gt;实践应用
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;客服自动化&lt;/strong&gt;：训练 Agent 处理复杂网页任务&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;测试自动化&lt;/strong&gt;：生成更鲁棒的网页测试脚本&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;辅助技术&lt;/strong&gt;：帮助残障用户导航网页&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据标注工具&lt;/strong&gt;：WebChain Builder 可用于其他数据收集项目&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;开放问题-1&#34;&gt;开放问题
+&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;如何将方法扩展到其他 GUI 环境（移动应用、桌面软件）？&lt;/li&gt;
+&lt;li&gt;如何实现持续学习以适应网页结构变化？&lt;/li&gt;
+&lt;li&gt;如何平衡数据多样性和标注质量？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;相关资源链接-1&#34;&gt;相关资源链接
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;📄 &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05295&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;论文 PDF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🌐 &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/html/2603.05295v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HTML 版本&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💻 &lt;a class=&#34;link&#34; href=&#34;https://github.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub 仓库&lt;/a&gt;（待发布）&lt;/li&gt;
+&lt;li&gt;📊 &lt;a class=&#34;link&#34; href=&#34;https://github.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;WebChainBench&lt;/a&gt;（待发布）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-应用案例&#34;&gt;💡 应用案例
+&lt;/h2&gt;&lt;h3 id=&#34;1-911-接线员-ai-培训系统pace&#34;&gt;1. 911 接线员 AI 培训系统（PACE）
+&lt;/h3&gt;&lt;p&gt;PACE 系统与 Metro Nashville 紧急通信部门合作，用于培训 911 接线员：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;技能图传播&lt;/strong&gt;：在结构化技能图上加速诊断覆盖&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;情境 bandits&lt;/strong&gt;：选择针对学员准备解决的差距的场景&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;成果&lt;/strong&gt;：19.50% 更快达到能力，10.95% 更高终端掌握度，95.45% 与专家判断对齐&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-可解释肝病诊断medcorag&#34;&gt;2. 可解释肝病诊断（MedCoRAG）
+&lt;/h3&gt;&lt;p&gt;MedCoRAG 框架通过多 Agent 协作实现肝病诊断：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Router Agent&lt;/strong&gt;：根据病例复杂度动态调度 Specialist Agents&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Specialist Agents&lt;/strong&gt;：迭代推理并触发针对性再检索&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Generalist Agent&lt;/strong&gt;：综合所有审议为可追溯的共识诊断&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;成果&lt;/strong&gt;：在 MIMIC-IV 肝病病例上超越现有方法和闭源模型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-llm-评估自动化nvidia-nemo-evaluator&#34;&gt;3. LLM 评估自动化（NVIDIA NeMo Evaluator）
+&lt;/h3&gt;&lt;p&gt;通过自然语言配置 LLM 评估任务：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;用户：&amp;#34;使用 vLLM 在本地评估 NVIDIA Nemotron-3-Nano-30B-A3B，导出到 Weights &amp;amp; Biases&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Agent：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;✓ 检测到 NeMo Evaluator 26.01
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;✓ 解析模型卡：temperature=0.6, top_p=0.95, context=128K
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;✓ 最优 TP=8（基于 2x H100 配置）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;✓ 生成配置：Nemotron-3-Nano-30B-A3B.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;✓ 准备运行！
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id=&#34;-统计汇总&#34;&gt;📊 统计汇总
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;类别&lt;/th&gt;
+          &lt;th&gt;数量&lt;/th&gt;
+          &lt;th&gt;占比&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;LLM/Transformer 研究&lt;/td&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;40%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Web Agent/GUI&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;20%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;医疗 AI&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;20%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;评估/测试&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;20%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;总计&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;5&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;100%&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;机构分布&lt;/th&gt;
+          &lt;th&gt;论文数&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Fudan University&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;IMean AI&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Metro Nashville DEC&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;NVIDIA&lt;/td&gt;
+          &lt;td&gt;1 (技术动态)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Hugging Face&lt;/td&gt;
+          &lt;td&gt;1 (技术动态)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;其他&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;技术方向&lt;/th&gt;
+          &lt;th&gt;热度&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Transformer 可解释性&lt;/td&gt;
+          &lt;td&gt;🔥🔥🔥&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Web Agent&lt;/td&gt;
+          &lt;td&gt;🔥🔥🔥&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;LLM 评估&lt;/td&gt;
+          &lt;td&gt;🔥🔥&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;医疗 AI&lt;/td&gt;
+          &lt;td&gt;🔥🔥&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;多 Agent 系统&lt;/td&gt;
+          &lt;td&gt;🔥🔥&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-全部参考链接&#34;&gt;📖 全部参考链接
+&lt;/h2&gt;&lt;h3 id=&#34;论文链接&#34;&gt;论文链接
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05498&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;The Spike, the Sparse and the Sink&lt;/a&gt; - arXiv:2603.05498&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05295&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;WebChain: Large-Scale Web Interaction Dataset&lt;/a&gt; - arXiv:2603.05295&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05485&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Towards Provably Unbiased LLM Judges&lt;/a&gt; - arXiv:2603.05485&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05361&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PACE: 9-1-1 Call-taker Training Engine&lt;/a&gt; - arXiv:2603.05361&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05129&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MedCoRAG: Hepatology Diagnosis&lt;/a&gt; - arXiv:2603.05129&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;技术博客&#34;&gt;技术博客
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/nvidia/model-evaluation-skill&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NVIDIA NeMo Evaluator Agent Skills&lt;/a&gt; - Hugging Face Blog&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/modular-diffusers&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Modular Diffusers&lt;/a&gt; - Hugging Face Blog&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;相关资源&#34;&gt;相关资源
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/NVIDIA-NeMo/Evaluator&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NVIDIA NeMo Evaluator GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://agentskills.io&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Agent Skills Spec&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;本文由 AI 自动生成，内容基于 arXiv 最新论文和技术博客。如需引用，请参考原始论文。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;📬 订阅 AI 日报：关注每日 AI 领域最新进展&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Rust 每日学习 Day 2：变量与数据类型深入</title>
         <link>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-2%E5%8F%98%E9%87%8F%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%B7%B1%E5%85%A5/</link>
         <pubDate>Fri, 06 Mar 2026 21:00:00 +0800</pubDate>
