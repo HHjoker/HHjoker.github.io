@@ -8,6 +8,54 @@
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
         <lastBuildDate>Sun, 08 Mar 2026 18:16:58 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Clone</title>
+        <link>https://HHjoker.github.io/tags/clone/</link>
+        <pubDate>Sun, 08 Mar 2026 21:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/clone/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Move</title>
+        <link>https://HHjoker.github.io/tags/move/</link>
+        <pubDate>Sun, 08 Mar 2026 21:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/move/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Rust</title>
+        <link>https://HHjoker.github.io/tags/rust/</link>
+        <pubDate>Sun, 08 Mar 2026 21:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/rust/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>每日学习</title>
+        <link>https://HHjoker.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</link>
+        <pubDate>Sun, 08 Mar 2026 21:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>所有权</title>
+        <link>https://HHjoker.github.io/tags/%E6%89%80%E6%9C%89%E6%9D%83/</link>
+        <pubDate>Sun, 08 Mar 2026 21:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%89%80%E6%9C%89%E6%9D%83/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>作用域</title>
+        <link>https://HHjoker.github.io/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/</link>
+        <pubDate>Sun, 08 Mar 2026 21:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Agent</title>
         <link>https://HHjoker.github.io/tags/agent/</link>
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
@@ -56,14 +104,6 @@
         <description></description>
         </item>
         <item>
-        <title>Rust</title>
-        <link>https://HHjoker.github.io/tags/rust/</link>
-        <pubDate>Sat, 07 Mar 2026 21:00:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/rust/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>函数</title>
         <link>https://HHjoker.github.io/tags/%E5%87%BD%E6%95%B0/</link>
         <pubDate>Sat, 07 Mar 2026 21:00:00 +0800</pubDate>
@@ -77,14 +117,6 @@
         <pubDate>Sat, 07 Mar 2026 21:00:00 +0800</pubDate>
         
         <guid>https://HHjoker.github.io/tags/%E6%8E%A7%E5%88%B6%E6%B5%81/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>每日学习</title>
-        <link>https://HHjoker.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</link>
-        <pubDate>Sat, 07 Mar 2026 21:00:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</guid>
         <description></description>
         </item>
         <item>
