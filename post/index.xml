@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Sun, 08 Mar 2026 22:22:35 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 08 Mar 2026 22:48:51 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>每日动量报告 | 2026-03-08</title>
         <link>https://HHjoker.github.io/p/%E6%AF%8F%E6%97%A5%E5%8A%A8%E9%87%8F%E6%8A%A5%E5%91%8A-2026-03-08/</link>
         <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
@@ -19,9 +19,10 @@
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;今日建议：保守买入（Conservative Buy / 小仓位）&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;分析依据：&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;VIX 指数：15.2（中等波动预期）&lt;/li&gt;
-&lt;li&gt;股指期货：小幅高开 +0.3%&lt;/li&gt;
-&lt;li&gt;市场情绪：谨慎乐观，等待财报催化&lt;/li&gt;
+&lt;li&gt;VIX 指数：0（1
+低波动）&lt;/li&gt;
+&lt;li&gt;标普 500 期货：0 (0%)&lt;/li&gt;
+&lt;li&gt;市场情绪：谨慎&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;操作建议：&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -30,28 +31,28 @@
 &lt;/h2&gt;&lt;p&gt;以下 5 只股票具备日内上涨 5%+ 的潜力：&lt;/p&gt;
 &lt;h3 id=&#34;1-nvda&#34;&gt;1) NVDA
 &lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;胜率概率：78%&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;选择理由：&lt;/strong&gt; AI 芯片需求持续强劲，技术面突破 $850 阻力位，盘前成交量放大 40%。财报即将公布，预期超预期。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;胜率概率：75%&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;选择理由：&lt;/strong&gt; 近期有1条相关新闻，存在催化事件。 动量：-3.0053%&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;2-tsla&#34;&gt;2) TSLA
+&lt;h3 id=&#34;2-amd&#34;&gt;2) AMD
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;胜率概率：77%&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;选择理由：&lt;/strong&gt; 近期有1条相关新闻，存在催化事件。 动量：-3.5147%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-pltr&#34;&gt;3) PLTR
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;胜率概率：74%&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;选择理由：&lt;/strong&gt; 近期有1条相关新闻，存在催化事件。 动量：2.9475%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-coin&#34;&gt;4) COIN
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;胜率概率：80%&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;选择理由：&lt;/strong&gt; 近期有1条相关新闻，存在催化事件。 动量：-4.1223%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-tsla&#34;&gt;5) TSLA
 &lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;胜率概率：72%&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;选择理由：&lt;/strong&gt; 交付数据超预期，空头回补动能强。技术面形成双底形态，目标价 $220。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;3-amd&#34;&gt;3) AMD
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;胜率概率：68%&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;选择理由：&lt;/strong&gt; 数据中心 GPU 份额提升，MI300 系列订单饱满。突破 $180 关键阻力，量能配合良好。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;4-smci&#34;&gt;4) SMCI
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;胜率概率：65%&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;选择理由：&lt;/strong&gt; AI 服务器需求爆发，财报预期强劲。超跌反弹形态，RSI 底背离。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;5-pltr&#34;&gt;5) PLTR
-&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;胜率概率：60%&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;选择理由：&lt;/strong&gt; 政府合同续约催化，技术面突破下降趋势线。散户情绪高涨，动量充足。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;选择理由：&lt;/strong&gt; 交付数据超预期，空头回补动能强 默认&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;-风险提示&#34;&gt;⚠️ 风险提示
 &lt;/h2&gt;&lt;ol&gt;
@@ -61,8 +62,8 @@
 &lt;li&gt;&lt;strong&gt;免责声明&lt;/strong&gt;：本报告仅供参考，不构成投资建议&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;em&gt;Marcus | 华尔街高级日内交易策略师 | 15 年交易经验&lt;/em&gt;
-&lt;em&gt;数据截止时间：$(date &amp;lsquo;+%Y-%m-%d %H:%M:%S %Z&amp;rsquo;)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Marcus | 华尔街高级日内交易策略师 | 15 年交易经验&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;数据截止时间：2026-03-08 22:48:45 CST | 数据源：Finnhub API&lt;/em&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
