@@ -7,7 +7,276 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Fri, 06 Mar 2026 08:04:25 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/benchmark/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 08 Mar 2026 18:16:58 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/benchmark/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI 日报 | 2026-03-07</title>
+        <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/</link>
+        <pubDate>Sat, 07 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/</guid>
+        <description>&lt;h1 id=&#34;ai-日报--2026年03月07日星期六&#34;&gt;AI 日报 | 2026年03月07日（星期六）
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;📅 日期：2026年03月07日 | 📊 今日收录：&lt;strong&gt;15 篇论文&lt;/strong&gt; | 🔬 重点领域：LLM、Agent、Reasoning | 🚀 大模型应用：15 项&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MedCoRAG&lt;/strong&gt; (LLM): Diagnosing hepatic diseases accurately and interpretably is critical, yet it remains challenging in real-world clinical &amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;STRUCTUREDAGENT&lt;/strong&gt; (LLM): Recent advances in large language models (LLMs) have enabled agentic systems for sequential decision-making. Such agents&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mario&lt;/strong&gt; (LLM): Recent advances in large language models (LLMs) have opened new avenues for multimodal reasoning. Yet, most existing met&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Observing and Controlling Features in Vision-Language-Action Models&lt;/strong&gt; (LLM): Vision-Language-Action Models (VLAs) have shown remarkable progress towards embodied intelligence. While their architect&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;An Exploration-Analysis-Disambiguation Reasoning Framework for Word Sense Disambiguation with Low-Parameter LLMs&lt;/strong&gt; (LLM): Word Sense Disambiguation (WSD) remains a key challenge in Natural Language Processing (NLP), especially when dealing wi&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-大模型应用亮点&#34;&gt;🚀 大模型应用亮点
+&lt;/h2&gt;&lt;h3 id=&#34;medcorag-interpretable-hepatology-diagnosis-via-hybrid-evidence-retrieval-and-multispecialty-consensus&#34;&gt;MedCoRAG: Interpretable Hepatology Diagnosis via Hybrid Evidence Retrieval and Multispecialty Consensus
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05129v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Agent, Reasoning, Web Agent, RAG, Medical AI&lt;/p&gt;
+&lt;p&gt;Diagnosing hepatic diseases accurately and interpretably is critical, yet it remains challenging in real-world clinical settings. Existing AI approaches for clinical diagnosis often lack transparency, structured reasoning, and deployability. Recent efforts have leveraged large language models (LLMs)&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;structuredagent-planning-with-andor-trees-for-long-horizon-web-tasks&#34;&gt;STRUCTUREDAGENT: Planning with AND/OR Trees for Long-Horizon Web Tasks
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05294v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Agent, Benchmark, Reasoning, Web Agent, Memory&lt;/p&gt;
+&lt;p&gt;Recent advances in large language models (LLMs) have enabled agentic systems for sequential decision-making. Such agents must perceive their environment, reason across multiple time steps, and take actions that optimize long-term objectives. However, existing web agents struggle on complex, long-hor&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;mario-multimodal-graph-reasoning-with-large-language-models&#34;&gt;Mario: Multimodal Graph Reasoning with Large Language Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05181v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning, Web Agent, Code Generation&lt;/p&gt;
+&lt;p&gt;Recent advances in large language models (LLMs) have opened new avenues for multimodal reasoning. Yet, most existing methods still rely on pretrained vision-language models (VLMs) to encode image-text pairs in isolation, ignoring the relational structure that real-world multimodal data naturally for&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;-论文一览&#34;&gt;📚 论文一览
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;#&lt;/th&gt;
+          &lt;th&gt;论文&lt;/th&gt;
+          &lt;th&gt;第一作者&lt;/th&gt;
+          &lt;th&gt;领域&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05129v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MedCoRAG: Interpretable Hepatology &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Reasoning, Web Agent, RAG, Medical AI&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05294v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;STRUCTUREDAGENT: Planning with AND/&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Benchmark, Reasoning, Web Agent, Memory&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05181v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Mario: Multimodal Graph Reasoning w&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Reasoning, Web Agent, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05487v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Observing and Controlling Features &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Robotics, Transformer, Alignment, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05400v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;An Exploration-Analysis-Disambiguat&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Training, Reasoning&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05167v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;C2-Faith: Benchmarking LLM Judges f&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;7&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05471v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Leveraging LLM Parametric Knowledge&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Benchmark, Training, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05256v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Wiki-R1: Incentivizing Multimodal R&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Training, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05207v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Core-based Hierarchies for Efficien&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Reasoning, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05188v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Escaping the Hydrolysis Trap: An Ag&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Benchmark, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;11&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05353v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;InfoFlow KV: Information-Flow-Aware&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;12&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05295v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;WebChain: A Large-Scale Human-Annot&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Benchmark, Training, Reasoning, Web Agent, RAG, Alignment&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;13&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05493v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cuRoboV2: Dynamics-Aware Motion Gen&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Robotics, Benchmark, RAG, Memory, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;14&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05230v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Digital Twin Driven Textile Classif&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Multimodal, Robotics, Benchmark, Reasoning&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;15&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05218v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;KARL: Knowledge Agents via Reinforc&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Benchmark, Training, Reasoning, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-详细介绍&#34;&gt;🔍 详细介绍
+&lt;/h2&gt;&lt;h3 id=&#34;论文1-medcorag-interpretable-hepatology-diagnosis-via-hybrid-evidence-retrieval-and-multispecialty-consensus&#34;&gt;论文1: MedCoRAG: Interpretable Hepatology Diagnosis via Hybrid Evidence Retrieval and Multispecialty Consensus
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.05129v1&lt;/strong&gt; |  | 2026-03-05&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05129v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05129v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Reasoning, Web Agent, RAG, Medical AI&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Diagnosing hepatic diseases accurately and interpretably is critical, yet it remains challenging in real-world clinical settings. Existing AI approaches for clinical diagnosis often lack transparency, structured reasoning, and deployability. Recent efforts have leveraged large language models (LLMs), retrieval-augmented generation (RAG), and multi-agent collaboration. However, these approaches typ&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文2-structuredagent-planning-with-andor-trees-for-long-horizon-web-tasks&#34;&gt;论文2: STRUCTUREDAGENT: Planning with AND/OR Trees for Long-Horizon Web Tasks
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.05294v1&lt;/strong&gt; |  | 2026-03-05&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05294v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05294v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Benchmark, Reasoning, Web Agent, Memory&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Recent advances in large language models (LLMs) have enabled agentic systems for sequential decision-making. Such agents must perceive their environment, reason across multiple time steps, and take actions that optimize long-term objectives. However, existing web agents struggle on complex, long-horizon tasks due to limited in-context memory for tracking history, weak planning abilities, and greed&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文3-mario-multimodal-graph-reasoning-with-large-language-models&#34;&gt;论文3: Mario: Multimodal Graph Reasoning with Large Language Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.05181v1&lt;/strong&gt; |  | 2026-03-05&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05181v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05181v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning, Web Agent, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Recent advances in large language models (LLMs) have opened new avenues for multimodal reasoning. Yet, most existing methods still rely on pretrained vision-language models (VLMs) to encode image-text pairs in isolation, ignoring the relational structure that real-world multimodal data naturally form. This motivates reasoning on multimodal graphs (MMGs), where each node has textual and visual attr&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文4-observing-and-controlling-features-in-vision-language-action-models&#34;&gt;论文4: Observing and Controlling Features in Vision-Language-Action Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.05487v1&lt;/strong&gt; |  | 2026-03-05&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05487v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05487v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Robotics, Transformer, Alignment, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Vision-Language-Action Models (VLAs) have shown remarkable progress towards embodied intelligence. While their architecture partially resembles that of Large Language Models (LLMs), VLAs exhibit higher complexity due to their multi-modal inputs/outputs and often hybrid nature of transformer and diffusion heads. This is part of the reason why insights from mechanistic interpretability in LLMs, whic&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文5-an-exploration-analysis-disambiguation-reasoning-framework-for-word-sense-disambiguation-with-low-parameter-llms&#34;&gt;论文5: An Exploration-Analysis-Disambiguation Reasoning Framework for Word Sense Disambiguation with Low-Parameter LLMs
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.05400v1&lt;/strong&gt; |  | 2026-03-05&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05400v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05400v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Benchmark, Training, Reasoning&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Word Sense Disambiguation (WSD) remains a key challenge in Natural Language Processing (NLP), especially when dealing with rare or domain-specific senses that are often misinterpreted. While modern high-parameter Large Language Models (LLMs) such as GPT-4-Turbo have shown state-of-the-art WSD performance, their computational and energy demands limit scalability. This study investigates whether low&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文6-c2-faith-benchmarking-llm-judges-for-causal-and-coverage-faithfulness-in-chain-of-thought-reasoning&#34;&gt;论文6: C2-Faith: Benchmarking LLM Judges for Causal and Coverage Faithfulness in Chain-of-Thought Reasoning
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.05167v1&lt;/strong&gt; |  | 2026-03-05&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05167v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05167v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Benchmark, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Large language models (LLMs) are increasingly used as judges of chain-of-thought (CoT) reasoning, but it remains unclear whether they can reliably assess process faithfulness rather than just answer plausibility. We introduce C2-Faith, a benchmark built from PRM800K that targets two complementary dimensions of faithfulness: causality (does each step logically follow from prior context?) and covera&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文7-leveraging-llm-parametric-knowledge-for-fact-checking-without-retrieval&#34;&gt;论文7: Leveraging LLM Parametric Knowledge for Fact Checking without Retrieval
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.05471v1&lt;/strong&gt; |  | 2026-03-05&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05471v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05471v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Benchmark, Training, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Trustworthiness is a core research challenge for agentic AI systems built on Large Language Models (LLMs). To enhance trust, natural language claims from diverse sources, including human-written text, web content, and model outputs, are commonly checked for factuality by retrieving external knowledge and using an LLM to verify the faithfulness of claims to the retrieved evidence. As a result, such&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文8-wiki-r1-incentivizing-multimodal-reasoning-for-knowledge-based-vqa-via-data-and-sampling-curriculum&#34;&gt;论文8: Wiki-R1: Incentivizing Multimodal Reasoning for Knowledge-based VQA via Data and Sampling Curriculum
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.05256v1&lt;/strong&gt; |  | 2026-03-05&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.05256v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05256v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Training, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Knowledge-Based Visual Question Answering (KB-VQA) requires models to answer questions about an image by integrating external knowledge, posing significant challenges due to noisy retrieval and the structured, encyclopedic nature of the knowledge base. These characteristics create a distributional gap from pretrained multimodal large language models (MLLMs), making effective reasoning and domain a&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-行业快报&#34;&gt;🏢 行业快报
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;OpenAI 发布新模型更新&lt;/strong&gt;: OpenAI 持续优化 GPT 系列模型，提升推理能力和多模态理解性能。 &lt;em&gt;(OpenAI Blog)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anthropic Claude 功能增强&lt;/strong&gt;: Claude 系列模型新增长上下文支持和改进的代码能力。 &lt;em&gt;(Anthropic)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Google DeepMind 研究进展&lt;/strong&gt;: DeepMind 在多模态学习和机器人控制领域取得新的突破。 &lt;em&gt;(Google DeepMind)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-全部参考链接&#34;&gt;📖 全部参考链接
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05129v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MedCoRAG: Interpretable Hepatology Diagnosis via Hybrid Evidence Retrieval and Multispecialty Consensus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05294v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;STRUCTUREDAGENT: Planning with AND/OR Trees for Long-Horizon Web Tasks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05181v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Mario: Multimodal Graph Reasoning with Large Language Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05487v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Observing and Controlling Features in Vision-Language-Action Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05400v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;An Exploration-Analysis-Disambiguation Reasoning Framework for Word Sense Disambiguation with Low-Parameter LLMs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05167v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;C2-Faith: Benchmarking LLM Judges for Causal and Coverage Faithfulness in Chain-of-Thought Reasoning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05471v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Leveraging LLM Parametric Knowledge for Fact Checking without Retrieval&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05256v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Wiki-R1: Incentivizing Multimodal Reasoning for Knowledge-based VQA via Data and Sampling Curriculum&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05207v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Core-based Hierarchies for Efficient GraphRAG&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05188v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Escaping the Hydrolysis Trap: An Agentic Workflow for Inverse Design of Durable Photocatalytic Covalent Organic Frameworks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05353v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;InfoFlow KV: Information-Flow-Aware KV Recomputation for Long Context&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05295v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;WebChain: A Large-Scale Human-Annotated Dataset of Real-World Web Interaction Traces&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05493v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05230v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Digital Twin Driven Textile Classification and Foreign Object Recognition in Automated Sorting Systems&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.05218v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;KARL: Knowledge Agents via Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;📬 AI 日报自动抓取自 arXiv，每日早 8 点更新&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;💬 重点聚焦：大模型、Agent、多模态、机器人等方向&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;📊 统计：今日共收录 15 篇论文，其中大模型应用 15 项&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>AI 日报 | 2026-03-06</title>
         <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/</link>
         <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>

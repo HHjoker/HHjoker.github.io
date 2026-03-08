@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="AI 领域每日精选：Transformer 激活机制新发现、最大网页交互数据集 WebChain、无偏 LLM 评估框架、911 培训 AI 系统等">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="15 篇 AI 领域最新进展，含15 项大模型应用">
 <title>AI 日报 | 2026-03-07</title>
 
 <link rel='canonical' href='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/'>
 
 <link rel="stylesheet" href="/scss/style.min.a72fcd7b1eb4bfe95eed2988b4d24c728503cd94e28ace3dbbd7fa2dc6983376.css"><meta property='og:title' content="AI 日报 | 2026-03-07">
-<meta property='og:description' content="AI 领域每日精选：Transformer 激活机制新发现、最大网页交互数据集 WebChain、无偏 LLM 评估框架、911 培训 AI 系统等">
+<meta property='og:description' content="15 篇 AI 领域最新进展，含15 项大模型应用">
 <meta property='og:url' content='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/'>
 <meta property='og:site_name' content='HH Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='LLM' /><meta property='article:tag' content='Transformer' /><meta property='article:tag' content='Web Agent' /><meta property='article:tag' content='Dataset' /><meta property='article:tag' content='Evaluation' /><meta property='article:tag' content='Medical AI' /><meta property='article:tag' content='Robotics' /><meta property='article:published_time' content='2026-03-07T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-07T10:54:37&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='LLM' /><meta property='article:tag' content='Agent' /><meta property='article:tag' content='Reasoning' /><meta property='article:tag' content='Web Agent' /><meta property='article:tag' content='RAG' /><meta property='article:tag' content='Medical AI' /><meta property='article:tag' content='Benchmark' /><meta property='article:tag' content='Memory' /><meta property='article:published_time' content='2026-03-07T08:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-03-08T18:16:58&#43;08:00'/>
 <meta name="twitter:title" content="AI 日报 | 2026-03-07">
-<meta name="twitter:description" content="AI 领域每日精选：Transformer 激活机制新发现、最大网页交互数据集 WebChain、无偏 LLM 评估框架、911 培训 AI 系统等">
+<meta name="twitter:description" content="15 篇 AI 领域最新进展，含15 项大模型应用">
     </head>
     <body class="
     article-page
@@ -271,56 +271,28 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#-今日总结">📌 今日总结</a></li>
-    <li><a href="#-重要论文一览">📚 重要论文一览</a></li>
-    <li><a href="#-技术动态">🚀 技术动态</a>
+    <li><a href="#-大模型应用亮点">🚀 大模型应用亮点</a>
       <ol>
-        <li><a href="#1-nvidia-nemo-evaluator-agent-skills-发布">1. NVIDIA NeMo Evaluator Agent Skills 发布</a></li>
-        <li><a href="#2-modular-diffusers-开源">2. Modular Diffusers 开源</a></li>
+        <li><a href="#medcorag-interpretable-hepatology-diagnosis-via-hybrid-evidence-retrieval-and-multispecialty-consensus">MedCoRAG: Interpretable Hepatology Diagnosis via Hybrid Evidence Retrieval and Multispecialty Consensus</a></li>
+        <li><a href="#structuredagent-planning-with-andor-trees-for-long-horizon-web-tasks">STRUCTUREDAGENT: Planning with AND/OR Trees for Long-Horizon Web Tasks</a></li>
+        <li><a href="#mario-multimodal-graph-reasoning-with-large-language-models">Mario: Multimodal Graph Reasoning with Large Language Models</a></li>
       </ol>
     </li>
-    <li><a href="#-详细介绍深度解读">🔍 详细介绍（深度解读）</a>
+    <li><a href="#-论文一览">📚 论文一览</a></li>
+    <li><a href="#-详细介绍">🔍 详细介绍</a>
       <ol>
-        <li><a href="#论文一the-spike-the-sparse-and-the-sink">论文一：The Spike, the Sparse and the Sink</a>
-          <ol>
-            <li><a href="#transformer-大规模激活与注意力汇聚的解剖学研究">Transformer 大规模激活与注意力汇聚的解剖学研究</a></li>
-            <li><a href="#研究背景与动机">研究背景与动机</a></li>
-            <li><a href="#问题定义与挑战">问题定义与挑战</a></li>
-            <li><a href="#核心方法与技术细节">核心方法与技术细节</a></li>
-            <li><a href="#实验设计与结果">实验设计与结果</a></li>
-            <li><a href="#局限性分析">局限性分析</a></li>
-            <li><a href="#未来方向与影响">未来方向与影响</a></li>
-            <li><a href="#相关资源链接">相关资源链接</a></li>
-          </ol>
-        </li>
-        <li><a href="#论文二webchain">论文二：WebChain</a>
-          <ol>
-            <li><a href="#大规模人工标注真实网页交互轨迹数据集">大规模人工标注真实网页交互轨迹数据集</a></li>
-            <li><a href="#研究背景与动机-1">研究背景与动机</a></li>
-            <li><a href="#问题定义与挑战-1">问题定义与挑战</a></li>
-            <li><a href="#核心方法与技术细节-1">核心方法与技术细节</a></li>
-            <li><a href="#实验设计与结果-1">实验设计与结果</a></li>
-            <li><a href="#局限性分析-1">局限性分析</a></li>
-            <li><a href="#未来方向与影响-1">未来方向与影响</a></li>
-            <li><a href="#相关资源链接-1">相关资源链接</a></li>
-          </ol>
-        </li>
+        <li><a href="#论文1-medcorag-interpretable-hepatology-diagnosis-via-hybrid-evidence-retrieval-and-multispecialty-consensus">论文1: MedCoRAG: Interpretable Hepatology Diagnosis via Hybrid Evidence Retrieval and Multispecialty Consensus</a></li>
+        <li><a href="#论文2-structuredagent-planning-with-andor-trees-for-long-horizon-web-tasks">论文2: STRUCTUREDAGENT: Planning with AND/OR Trees for Long-Horizon Web Tasks</a></li>
+        <li><a href="#论文3-mario-multimodal-graph-reasoning-with-large-language-models">论文3: Mario: Multimodal Graph Reasoning with Large Language Models</a></li>
+        <li><a href="#论文4-observing-and-controlling-features-in-vision-language-action-models">论文4: Observing and Controlling Features in Vision-Language-Action Models</a></li>
+        <li><a href="#论文5-an-exploration-analysis-disambiguation-reasoning-framework-for-word-sense-disambiguation-with-low-parameter-llms">论文5: An Exploration-Analysis-Disambiguation Reasoning Framework for Word Sense Disambiguation with Low-Parameter LLMs</a></li>
+        <li><a href="#论文6-c2-faith-benchmarking-llm-judges-for-causal-and-coverage-faithfulness-in-chain-of-thought-reasoning">论文6: C2-Faith: Benchmarking LLM Judges for Causal and Coverage Faithfulness in Chain-of-Thought Reasoning</a></li>
+        <li><a href="#论文7-leveraging-llm-parametric-knowledge-for-fact-checking-without-retrieval">论文7: Leveraging LLM Parametric Knowledge for Fact Checking without Retrieval</a></li>
+        <li><a href="#论文8-wiki-r1-incentivizing-multimodal-reasoning-for-knowledge-based-vqa-via-data-and-sampling-curriculum">论文8: Wiki-R1: Incentivizing Multimodal Reasoning for Knowledge-based VQA via Data and Sampling Curriculum</a></li>
       </ol>
     </li>
-    <li><a href="#-应用案例">💡 应用案例</a>
-      <ol>
-        <li><a href="#1-911-接线员-ai-培训系统pace">1. 911 接线员 AI 培训系统（PACE）</a></li>
-        <li><a href="#2-可解释肝病诊断medcorag">2. 可解释肝病诊断（MedCoRAG）</a></li>
-        <li><a href="#3-llm-评估自动化nvidia-nemo-evaluator">3. LLM 评估自动化（NVIDIA NeMo Evaluator）</a></li>
-      </ol>
-    </li>
-    <li><a href="#-统计汇总">📊 统计汇总</a></li>
-    <li><a href="#-全部参考链接">📖 全部参考链接</a>
-      <ol>
-        <li><a href="#论文链接">论文链接</a></li>
-        <li><a href="#技术博客">技术博客</a></li>
-        <li><a href="#相关资源">相关资源</a></li>
-      </ol>
-    </li>
+    <li><a href="#-行业快报">🏢 行业快报</a></li>
+    <li><a href="#-全部参考链接">📖 全部参考链接</a></li>
   </ol>
 </nav>
         </div>
@@ -339,12 +311,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/ai/" >
-                AI
-            </a>
-        
-            <a href="/categories/research/" >
-                Research
+            <a href="/categories/ai-daily/" >
+                AI Daily
             </a>
         
     </header>
@@ -357,7 +325,7 @@
     
         
         <h3 class="article-subtitle">
-            AI 领域每日精选：Transformer 激活机制新发现、最大网页交互数据集 WebChain、无偏 LLM 评估框架、911 培训 AI 系统等
+            15 篇 AI 领域最新进展，含15 项大模型应用
         </h3>
         
     </div>
@@ -391,7 +359,7 @@
 
 
                 <time>
-                    2026-03-07
+                    2026-03-08
                 </time>
             </div>
     </footer>
@@ -405,704 +373,267 @@
     <section class="article-content">
     
     
-    <h1 id="ai-日报--2026-年-3-月-7-日">AI 日报 | 2026 年 3 月 7 日
+    <h1 id="ai-日报--2026年03月07日星期六">AI 日报 | 2026年03月07日（星期六）
 </h1><blockquote>
-<p>📅 日期：2026 年 3 月 7 日（星期六）
-📊 今日收录：5 篇核心论文 + 2 项技术动态</p></blockquote>
+<p>📅 日期：2026年03月07日 | 📊 今日收录：<strong>15 篇论文</strong> | 🔬 重点领域：LLM、Agent、Reasoning | 🚀 大模型应用：15 项</p></blockquote>
 <hr>
 <h2 id="-今日总结">📌 今日总结
 </h2><ul>
-<li><strong>Transformer 内部机制突破</strong>：新研究揭示了 Massive Activations 和 Attention Sinks 的因果关系，发现两者共现是架构 artifact 而非功能必需，为模型优化提供新方向</li>
-<li><strong>最大网页交互数据集发布</strong>：WebChain 包含 31,725 条人工标注轨迹和 318k 步骤，Triple Alignment 机制实现视觉 - 结构 - 动作精准对齐</li>
-<li><strong>LLM 评估可靠性提升</strong>：Bias-Bounded Evaluation 框架首次为 LLM Judge 提供可证明的无偏保证，在 Arena-Hard-Auto 上保持 61-99% 排名相关性</li>
-<li><strong>AI 培训系统落地</strong>：PACE 系统用于 911 接线员培训，实现 19.5% 更快能力达成和 95.45% 专家判断对齐</li>
-<li><strong>医疗多 Agent 诊断</strong>：MedCoRAG 框架通过多专家 Agent 协作实现可解释肝病诊断，超越现有方法和闭源模型</li>
+<li><strong>MedCoRAG</strong> (LLM): Diagnosing hepatic diseases accurately and interpretably is critical, yet it remains challenging in real-world clinical &hellip;</li>
+<li><strong>STRUCTUREDAGENT</strong> (LLM): Recent advances in large language models (LLMs) have enabled agentic systems for sequential decision-making. Such agents&hellip;</li>
+<li><strong>Mario</strong> (LLM): Recent advances in large language models (LLMs) have opened new avenues for multimodal reasoning. Yet, most existing met&hellip;</li>
+<li><strong>Observing and Controlling Features in Vision-Language-Action Models</strong> (LLM): Vision-Language-Action Models (VLAs) have shown remarkable progress towards embodied intelligence. While their architect&hellip;</li>
+<li><strong>An Exploration-Analysis-Disambiguation Reasoning Framework for Word Sense Disambiguation with Low-Parameter LLMs</strong> (LLM): Word Sense Disambiguation (WSD) remains a key challenge in Natural Language Processing (NLP), especially when dealing wi&hellip;</li>
 </ul>
+<h2 id="-大模型应用亮点">🚀 大模型应用亮点
+</h2><h3 id="medcorag-interpretable-hepatology-diagnosis-via-hybrid-evidence-retrieval-and-multispecialty-consensus">MedCoRAG: Interpretable Hepatology Diagnosis via Hybrid Evidence Retrieval and Multispecialty Consensus
+</h3><p><strong>机构</strong>:<br>
+<strong>链接</strong>: <a class="link" href="https://arxiv.org/pdf/2603.05129v1"  target="_blank" rel="noopener"
+    >PDF</a><br>
+<strong>标签</strong>: LLM, Agent, Reasoning, Web Agent, RAG, Medical AI</p>
+<p>Diagnosing hepatic diseases accurately and interpretably is critical, yet it remains challenging in real-world clinical settings. Existing AI approaches for clinical diagnosis often lack transparency, structured reasoning, and deployability. Recent efforts have leveraged large language models (LLMs)&hellip;</p>
 <hr>
-<h2 id="-重要论文一览">📚 重要论文一览
+<h3 id="structuredagent-planning-with-andor-trees-for-long-horizon-web-tasks">STRUCTUREDAGENT: Planning with AND/OR Trees for Long-Horizon Web Tasks
+</h3><p><strong>机构</strong>:<br>
+<strong>链接</strong>: <a class="link" href="https://arxiv.org/pdf/2603.05294v1"  target="_blank" rel="noopener"
+    >PDF</a><br>
+<strong>标签</strong>: LLM, Agent, Benchmark, Reasoning, Web Agent, Memory</p>
+<p>Recent advances in large language models (LLMs) have enabled agentic systems for sequential decision-making. Such agents must perceive their environment, reason across multiple time steps, and take actions that optimize long-term objectives. However, existing web agents struggle on complex, long-hor&hellip;</p>
+<hr>
+<h3 id="mario-multimodal-graph-reasoning-with-large-language-models">Mario: Multimodal Graph Reasoning with Large Language Models
+</h3><p><strong>机构</strong>:<br>
+<strong>链接</strong>: <a class="link" href="https://arxiv.org/pdf/2603.05181v1"  target="_blank" rel="noopener"
+    >PDF</a><br>
+<strong>标签</strong>: LLM, Multimodal, Benchmark, Reasoning, Web Agent, Code Generation</p>
+<p>Recent advances in large language models (LLMs) have opened new avenues for multimodal reasoning. Yet, most existing methods still rely on pretrained vision-language models (VLMs) to encode image-text pairs in isolation, ignoring the relational structure that real-world multimodal data naturally for&hellip;</p>
+<h2 id="-论文一览">📚 论文一览
 </h2><div class="table-wrapper"><table>
   <thead>
       <tr>
+          <th>#</th>
           <th>论文</th>
-          <th>来源</th>
-          <th>亮点</th>
-          <th>链接</th>
+          <th>第一作者</th>
+          <th>领域</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>The Spike, the Sparse and the Sink</td>
-          <td>arXiv:2603.05498</td>
-          <td>揭示 Transformer 激活机制因果关系</td>
-          <td><a class="link" href="https://arxiv.org/pdf/2603.05498"  target="_blank" rel="noopener"
-    >PDF</a></td>
+          <td>1</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05129v1"  target="_blank" rel="noopener"
+    >MedCoRAG: Interpretable Hepatology &hellip;</a></td>
+          <td>Unknown</td>
+          <td>LLM, Agent, Reasoning, Web Agent, RAG, Medical AI</td>
       </tr>
       <tr>
-          <td>WebChain: Large-Scale Web Interaction Dataset</td>
-          <td>arXiv:2603.05295</td>
-          <td>31k+ 人工标注网页交互轨迹</td>
-          <td><a class="link" href="https://arxiv.org/pdf/2603.05295"  target="_blank" rel="noopener"
-    >PDF</a></td>
-      </tr>
-      <tr>
-          <td>Towards Provably Unbiased LLM Judges</td>
-          <td>arXiv:2603.05485</td>
-          <td>可证明无偏的 LLM 评估框架</td>
-          <td><a class="link" href="https://arxiv.org/pdf/2603.05485"  target="_blank" rel="noopener"
-    >PDF</a></td>
-      </tr>
-      <tr>
-          <td>PACE: 9-1-1 Call-taker Training Engine</td>
-          <td>arXiv:2603.05361</td>
-          <td>个性化自适应培训课程引擎</td>
-          <td><a class="link" href="https://arxiv.org/pdf/2603.05361"  target="_blank" rel="noopener"
-    >PDF</a></td>
-      </tr>
-      <tr>
-          <td>MedCoRAG: Hepatology Diagnosis</td>
-          <td>arXiv:2603.05129</td>
-          <td>多 Agent 协作医疗诊断框架</td>
-          <td><a class="link" href="https://arxiv.org/pdf/2603.05129"  target="_blank" rel="noopener"
-    >PDF</a></td>
-      </tr>
-  </tbody>
-</table></div>
-<hr>
-<h2 id="-技术动态">🚀 技术动态
-</h2><h3 id="1-nvidia-nemo-evaluator-agent-skills-发布">1. NVIDIA NeMo Evaluator Agent Skills 发布
-</h3><p>NVIDIA 发布了 <strong>nel-assistant</strong> Agent Skill，通过自然语言对话即可配置生产级 LLM 评估任务。该技能基于 NVIDIA NeMo Evaluator 库，支持：</p>
-<ul>
-<li><strong>自动模型卡解析</strong>：自动提取温度、top_p、上下文长度等最优参数</li>
-<li><strong>模板化配置生成</strong>：通过深度合并预验证模板，确保 YAML 配置结构有效</li>
-<li><strong>三阶段执行流程</strong>：Dry run → Smoke test → Full run，支持渐进式验证</li>
-<li><strong>实时监控</strong>：在 Cursor 等 IDE 内直接查看评估进度和指标</li>
-</ul>
-<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/nvidia-nemo-evaluator.png"
-	width="600"
-	height="600"
-	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/nvidia-nemo-evaluator_hu_e93c50190014e9d6.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/nvidia-nemo-evaluator_hu_fbf1467d1f83df81.png 1024w"
-	loading="lazy"
-	
-		alt="NVIDIA NeMo Evaluator 工作流程"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="100"
-		data-flex-basis="240px"
-	
-></p>
-<blockquote>
-<p>📖 <a class="link" href="https://huggingface.co/blog/nvidia/model-evaluation-skill"  target="_blank" rel="noopener"
-    >阅读全文</a></p></blockquote>
-<h3 id="2-modular-diffusers-开源">2. Modular Diffusers 开源
-</h3><p>Hugging Face 发布 <strong>Modular Diffusers</strong>，提供可组合的扩散模型构建模块。该库支持：</p>
-<ul>
-<li>模块化管道设计，可灵活组合不同组件</li>
-<li>支持多种扩散模型架构</li>
-<li>简化的自定义扩散模型开发流程</li>
-</ul>
-<blockquote>
-<p>📖 <a class="link" href="https://github.com/huggingface/diffusers"  target="_blank" rel="noopener"
-    >GitHub</a></p></blockquote>
-<hr>
-<h2 id="-详细介绍深度解读">🔍 详细介绍（深度解读）
-</h2><h3 id="论文一the-spike-the-sparse-and-the-sink">论文一：The Spike, the Sparse and the Sink
-</h3><h4 id="transformer-大规模激活与注意力汇聚的解剖学研究">Transformer 大规模激活与注意力汇聚的解剖学研究
-</h4><p><strong>arXiv:2603.05498 | Jiachen Zhu et al. | 2026 年 3 月 5 日</strong></p>
-<h4 id="研究背景与动机">研究背景与动机
-</h4><p>Transformer 语言模型中存在两个反复出现的现象：</p>
-<ol>
-<li><strong>Massive Activations（大规模激活）</strong>：少量 token 在少数通道中表现出极端异常值</li>
-<li><strong>Attention Sinks（注意力汇聚）</strong>：某些 token 吸引不成比例的注意力质量，无论语义相关性如何</li>
-</ol>
-<p>先前的工作观察到这两个现象经常共现且涉及相同的 token，但它们的功能角色和因果关系尚不清楚。理解这两者的关系对于量化、剪枝、KV-cache 管理和长上下文推理等实际应用具有重要意义。</p>
-<h4 id="问题定义与挑战">问题定义与挑战
-</h4><p>核心研究问题：</p>
-<ul>
-<li>Massive Activations 和 Attention Sinks 为何经常共现？</li>
-<li>它们是功能必需的还是架构 artifact？</li>
-<li>能否独立抑制其中一个而不影响模型性能？</li>
-</ul>
-<p>挑战在于需要系统性地追踪激活值在 Transformer 各层中的传播路径，并分离不同架构组件的贡献。</p>
-<h4 id="核心方法与技术细节">核心方法与技术细节
-</h4><h5 id="1-massive-activations-的生命周期">1. Massive Activations 的生命周期
-</h5><p>研究发现 Massive Activations 遵循&quot;上升 - 平台 - 下降&quot;的三阶段生命周期：</p>
-<p><img src="https://arxiv.org/html/2603.05498v1/assets/img/lifecycle.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="Massive Activations 生命周期"
-	
-	
-></p>
-<ul>
-<li><strong>Step-up Blocks（上升块）</strong>：1-2 个早期块注入极端值到隐藏表示中</li>
-<li><strong>Residual Accumulation（残差累积）</strong>：中间块通过残差连接传播这些值</li>
-<li><strong>Step-down Blocks（下降块）</strong>：1-2 个晚期块注入相反符号的极端值，中和 Massive Activations</li>
-</ul>
-<p>表 1 显示了不同模型中 step-up 和 step-down 块的位置：</p>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Model</th>
-          <th># Blocks</th>
-          <th>Step-Up</th>
-          <th>Step-Down</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Llama 2 7B</td>
-          <td>64</td>
-          <td>4</td>
-          <td>62</td>
-      </tr>
-      <tr>
-          <td>Llama 2 13B</td>
-          <td>80</td>
-          <td>8</td>
-          <td>78, 79</td>
-      </tr>
-      <tr>
-          <td>Llama 3 8B</td>
-          <td>64</td>
-          <td>4</td>
-          <td>64</td>
-      </tr>
-      <tr>
-          <td>Qwen2.5 7B</td>
-          <td>56</td>
-          <td>8, 10</td>
-          <td>54, 55</td>
-      </tr>
-      <tr>
-          <td>Qwen3 8B</td>
-          <td>72</td>
-          <td>14</td>
-          <td>70, 72</td>
-      </tr>
-  </tbody>
-</table></div>
-<h5 id="2-feed-forward-block-作为方向性二次放大器">2. Feed-Forward Block 作为方向性二次放大器
-</h5><p>关键发现：SwiGLU 基的 Feed-Forward Block 是 Massive Activations 的主要来源，其机制为：</p>
-<ul>
-<li><strong>近恒等门控机制</strong>：SiLU 非线性在近恒等状态下运行（SiLU(x) ≈ x）</li>
-<li><strong>高增益二次结构</strong>：输出可表示为二次形式 <code>hᵀ U h</code></li>
-<li><strong>秩一主导</strong>：Spike 通道的矩阵 Sₖ 由单个特征值 λ* 主导</li>
-</ul>
-<p><img src="https://arxiv.org/html/2603.05498v1/assets/img/frobenius.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="Frobenius 范数分析"
-	
-	
-></p>
-<p>Spike 通道对应于具有异常大 Frobenius 范数的坐标，这些高范数坐标仅出现在 step-up 和 step-down 块中。</p>
-<h5 id="3-什么使-token-成为-spike-token">3. 什么使 Token 成为 Spike Token
-</h5><ul>
-<li><strong>首 Token</strong>：超过 98% 的词表项在位置 0 时表现为 Spike Token</li>
-<li><strong>分隔符 Token</strong>：句号、换行符等也表现出类似行为</li>
-</ul>
-<p>首 Token 的行为源于注意力块退化为简单线性映射：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">F_attn(h⁽¹⁾) = W_VOᵀ h⁽¹⁾
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="4-从-spikes-到-sinks-的转换">4. 从 Spikes 到 Sinks 的转换
-</h5><p>关键机制：<strong>Normalization 是连接 Massive Activations 和 Attention Sinks 的桥梁</strong></p>
-<ul>
-<li>Massive Activations 与 RMSNorm 交互产生近乎恒定的隐藏表示</li>
-<li>这些恒定表示作为&quot;隐式参数&quot;，使某些 token 持续吸引注意力</li>
-<li>Pre-norm 配置是实现共现的关键选择</li>
-</ul>
-<h4 id="实验设计与结果">实验设计与结果
-</h4><h5 id="实验-1架构消融研究">实验 1：架构消融研究
-</h5><p>通过改变归一化配置，研究者发现：</p>
-<ul>
-<li>移除 Pre-norm 可使两个现象解耦</li>
-<li>Massive Activations 可被抑制而保留 Attention Sinks</li>
-<li>语言建模性能未受显著影响</li>
-</ul>
-<h5 id="实验-2跨模型验证">实验 2：跨模型验证
-</h5><p>在 Llama 2/3、Qwen2.5/3 系列模型上验证了发现的普适性：</p>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Model</th>
-          <th># Vocab</th>
-          <th># Spike Token</th>
-          <th>Ratio</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Llama 2 7B</td>
-          <td>32,000</td>
-          <td>31,887</td>
-          <td>99.65%</td>
-      </tr>
-      <tr>
-          <td>Llama 3 8B</td>
-          <td>128,256</td>
-          <td>127,956</td>
-          <td>99.77%</td>
-      </tr>
-      <tr>
-          <td>Qwen3 8B</td>
-          <td>151,936</td>
-          <td>151,830</td>
-          <td>99.93%</td>
-      </tr>
-  </tbody>
-</table></div>
-<h5 id="实验-3功能角色分析">实验 3：功能角色分析
-</h5><ul>
-<li><strong>Massive Activations</strong>：全局操作，诱导跨层持久化的近乎恒定隐藏表示</li>
-<li><strong>Attention Sinks</strong>：局部操作，跨头调制注意力输出，偏向短程依赖</li>
-</ul>
-<h4 id="局限性分析">局限性分析
-</h4><ol>
-<li><strong>模型范围</strong>：主要分析 decoder-only、pre-norm Transformer，其他架构（如 post-norm、encoder-decoder）需要进一步研究</li>
-<li><strong>训练动态</strong>：研究聚焦于预训练后模型，训练过程中的演化尚未完全探索</li>
-<li><strong>任务特定行为</strong>：分析基于通用语言建模，特定任务下的行为可能有所不同</li>
-</ol>
-<h4 id="未来方向与影响">未来方向与影响
-</h4><h5 id="理论意义">理论意义
-</h5><ul>
-<li>澄清了 Massive Activations 和 Attention Sinks 的因果关系</li>
-<li>表明两者的重叠反映了偶然的架构交互而非功能必需</li>
-</ul>
-<h5 id="实践影响">实践影响
-</h5><ul>
-<li><strong>量化优化</strong>：理解激活分布可改进量化策略</li>
-<li><strong>剪枝策略</strong>：识别可安全移除的组件</li>
-<li><strong>架构设计</strong>： alternative design choices 可减轻任一现象</li>
-<li><strong>长上下文推理</strong>：改进 KV-cache 管理策略</li>
-</ul>
-<h5 id="开放问题">开放问题
-</h5><ul>
-<li>这些现象在推理模型（如 o1 系列）中如何表现？</li>
-<li>能否设计新的架构完全消除这些现象？</li>
-<li>它们与模型的泛化能力有何关系？</li>
-</ul>
-<h4 id="相关资源链接">相关资源链接
-</h4><ul>
-<li>📄 <a class="link" href="https://arxiv.org/pdf/2603.05498"  target="_blank" rel="noopener"
-    >论文 PDF</a></li>
-<li>🌐 <a class="link" href="https://arxiv.org/html/2603.05498v1"  target="_blank" rel="noopener"
-    >HTML 版本</a></li>
-<li>💻 <a class="link" href="https://github.com/"  target="_blank" rel="noopener"
-    >代码仓库</a>（待发布）</li>
-</ul>
-<hr>
-<h3 id="论文二webchain">论文二：WebChain
-</h3><h4 id="大规模人工标注真实网页交互轨迹数据集">大规模人工标注真实网页交互轨迹数据集
-</h4><p><strong>arXiv:2603.05295 | Sicheng Fan et al. | Fudan University &amp; IMean AI | 2026 年 3 月 5 日</strong></p>
-<h4 id="研究背景与动机-1">研究背景与动机
-</h4><p>征服浏览器是 GUI Agent 领域最有价值的问题之一，因为网页浏览器是绝大多数数字任务的主要界面。Vision-Language-Action (VLA) 建模的最新进展带来了希望，但存在以下挑战：</p>
-<ol>
-<li><strong>数据稀缺</strong>：现有开源数据集缺乏规模和完整性</li>
-<li><strong>合成方法局限</strong>：受安全机制限制，无法捕获需要认证的高价值工作流</li>
-<li><strong>专有数据垄断</strong>：关键洞察不可复现，阻碍社区共识</li>
-</ol>
-<p>WebChain 旨在填补这一空白，提供最大规模的人工标注真实网页交互数据集。</p>
-<h4 id="问题定义与挑战-1">问题定义与挑战
-</h4><p>核心挑战：</p>
-<ul>
-<li>如何规模化收集高质量、多样化的网页交互数据？</li>
-<li>如何确保数据的 multimodal 对齐（视觉、结构、动作）？</li>
-<li>如何设计评估基准以全面衡量 Web Agent 能力？</li>
-</ul>
-<h4 id="核心方法与技术细节-1">核心方法与技术细节
-</h4><h5 id="1-triple-alignment-机制">1. Triple Alignment 机制
-</h5><p>WebChain 的核心创新是 <strong>Triple Alignment</strong>，同步三个层次的信息：</p>
-<ol>
-<li><strong>Visual Context（视觉上下文）</strong>：视口和全页截图</li>
-<li><strong>Structural Context（结构上下文）</strong>：Accessibility (AX) 树</li>
-<li><strong>Action Alignment（动作对齐）</strong>：精确像素坐标、边界框、CSS 选择器</li>
-</ol>
-<p>这种多层监督使模型不仅能&quot;看到&quot;页面，还能理解每个像素背后的结构逻辑。</p>
-<h5 id="2-数据构建流程">2. 数据构建流程
-</h5><p><strong>阶段 1：约束式任务合成</strong></p>
-<ul>
-<li><strong>结构化功能提取</strong>：解析网站的目标语义和交互逻辑</li>
-<li><strong>Schema 约束的任务生成</strong>：基于提取的功能 schema 生成可执行任务</li>
-</ul>
-<p>任务复杂度分层：</p>
-<ul>
-<li>简单信息检索（单步查询）</li>
-<li>多约束导航（多过滤器组合）</li>
-<li>条件依赖任务（序列逻辑导航）</li>
-</ul>
-<p><strong>阶段 2：人在回路轨迹收集</strong></p>
-<p>使用 WebChain Builder 工具捕获：</p>
-<ul>
-<li>完整的动作前后 DOM 快照</li>
-<li>执行的具体动作（点击、输入、滚动等）</li>
-<li>高保真空间信息（视口坐标、目标元素边界框）</li>
-<li>元素特定元数据（XPath、CSS 选择器、内部文本）</li>
-</ul>
-<p><strong>阶段 3：后处理上下文增强</strong></p>
-<ul>
-<li><strong>视觉接地密集化</strong>：解析整个视口，提取所有交互元素的边界框和类型</li>
-<li><strong>合成理由生成（CoT）</strong>：使用 VLM 为每个动作生成推理链</li>
-</ul>
-<h5 id="3-数据集统计">3. 数据集统计
-</h5><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>指标</th>
-          <th>数值</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>轨迹数量</td>
-          <td>31,725</td>
-      </tr>
-      <tr>
-          <td>交互步骤</td>
-          <td>318k</td>
-      </tr>
-      <tr>
-          <td>覆盖域名</td>
-          <td>428</td>
-      </tr>
-      <tr>
-          <td>平均轨迹长度</td>
-          <td>10.02 步</td>
-      </tr>
-      <tr>
-          <td>设备类型</td>
-          <td>多 OS、多浏览器、多分辨率</td>
-      </tr>
-  </tbody>
-</table></div>
-<p><img src="https://arxiv.org/html/2603.05295v1/assets/img/dataset_overview.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="WebChain 数据集概览"
-	
-	
-></p>
-<h5 id="4-dual-mid-training-训练范式">4. Dual Mid-Training 训练范式
-</h5><p>提出 <strong>Dual Mid-Training</strong> 策略，解耦空间接地和规划：</p>
-<ol>
-<li><strong>Spatial Grounding Mid-Training</strong>：使用增强指令 - 坐标对训练空间感知</li>
-<li><strong>CoT-SFT Mid-Training</strong>：使用合成推理链训练结构化推理</li>
-<li><strong>LCRL Post-Training</strong>：Long-Chain-oriented RLVR 优化长程规划</li>
-</ol>
-<h4 id="实验设计与结果-1">实验设计与结果
-</h4><h5 id="实验-1数据可扩展性分析">实验 1：数据可扩展性分析
-</h5><p><img src="https://arxiv.org/html/2603.05295v1/assets/img/scaling_laws.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="WebChain 规模效应"
-	
-	
-></p>
-<p>在 Qwen2.5-VL-3B 上测试不同数据子集（4k、20k、全量 150k）的效果：</p>
-<ul>
-<li>数据量与 WCB-L 基准性能呈正相关</li>
-<li>全量数据训练的模型在成功率和命令链长度上显著优于基线</li>
-</ul>
-<h5 id="实验-2空间接地训练范式">实验 2：空间接地训练范式
-</h5><p>评估因素：</p>
-<ul>
-<li><strong>Reasoner Prompting (RP)</strong>：引入显式推理提示</li>
-<li><strong>Visual Grounding Densification (VGD)</strong>：使用增强的交互元素对</li>
-</ul>
-<p>结果：</p>
-<ul>
-<li>RP 和 VGD 独立产生可测量的增益</li>
-<li>两者结合产生最强性能</li>
-<li>VGD 增强交互元素识别召回率</li>
-<li>RP 通过结构化推理减少空间幻觉</li>
-</ul>
-<h5 id="实验-3长程规划训练范式">实验 3：长程规划训练范式
-</h5><p>关键发现：</p>
-<ul>
-<li>空间接地 mid-training 策略对 RL 性能上限有重大影响</li>
-<li><strong>non-RP + VGD + LCRL</strong> 范式实现最强长程规划能力</li>
-<li>RP 在独立空间接地任务中有效，但限制了长程规划的泛化</li>
-</ul>
-<h5 id="实验-4跨基准泛化">实验 4：跨基准泛化
-</h5><p>在多个公共基准上评估：</p>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>Model</th>
-          <th>AC-High</th>
-          <th>AC-Low</th>
-          <th>GUI-Act-Web</th>
-          <th>GUI-Odyssey</th>
-          <th>OA-Desktop</th>
-          <th>OA-Web</th>
-          <th>Overall</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Qwen2.5-VL-7B (Zero Shot)</td>
-          <td>57.0</td>
-          <td>72.0</td>
-          <td>83.9</td>
-          <td>34.7</td>
-          <td>79.3</td>
-          <td>70.3</td>
-          <td>70.9</td>
-      </tr>
-      <tr>
-          <td>GUI-R1-7B</td>
-          <td>51.7</td>
-          <td>66.5</td>
-          <td>80.3</td>
-          <td>38.8</td>
-          <td>83.3</td>
-          <td>77.3</td>
-          <td>74.2</td>
-      </tr>
-      <tr>
-          <td><strong>WebChain-LCRL-7B +SGRL+CoT-SFT</strong></td>
-          <td><strong>61.8</strong></td>
-          <td><strong>74.1</strong></td>
-          <td><strong>87.6</strong></td>
-          <td><strong>54.8</strong></td>
-          <td><strong>86.2</strong></td>
-          <td><strong>78.9</strong></td>
-          <td><strong>81.4</strong></td>
-      </tr>
-  </tbody>
-</table></div>
-<p>WebChain 训练的模型在多个基准上达到 SOTA。</p>
-<h4 id="局限性分析-1">局限性分析
-</h4><ol>
-<li><strong>标注成本</strong>：人工标注虽然质量高，但成本较高，限制了数据规模的进一步扩展</li>
-<li><strong>网站时效性</strong>：网页结构会随时间变化，需要定期更新数据集</li>
-<li><strong>文化/语言偏差</strong>：当前数据主要集中在英文网站，多语言覆盖有限</li>
-<li><strong>隐私考虑</strong>：虽然避免收集敏感信息，但真实网站交互仍可能包含隐私风险</li>
-</ol>
-<h4 id="未来方向与影响-1">未来方向与影响
-</h4><h5 id="研究影响">研究影响
-</h5><ul>
-<li><strong>打破数据垄断</strong>：完全开源使社区可复现和验证缩放效应</li>
-<li><strong>标准化评估</strong>：WebChainBench 提供统一的评估框架</li>
-<li><strong>训练范式洞察</strong>：Dual Mid-Training 为 GUI Agent 训练提供新方向</li>
-</ul>
-<h5 id="实践应用">实践应用
-</h5><ul>
-<li><strong>客服自动化</strong>：训练 Agent 处理复杂网页任务</li>
-<li><strong>测试自动化</strong>：生成更鲁棒的网页测试脚本</li>
-<li><strong>辅助技术</strong>：帮助残障用户导航网页</li>
-<li><strong>数据标注工具</strong>：WebChain Builder 可用于其他数据收集项目</li>
-</ul>
-<h5 id="开放问题-1">开放问题
-</h5><ul>
-<li>如何将方法扩展到其他 GUI 环境（移动应用、桌面软件）？</li>
-<li>如何实现持续学习以适应网页结构变化？</li>
-<li>如何平衡数据多样性和标注质量？</li>
-</ul>
-<h4 id="相关资源链接-1">相关资源链接
-</h4><ul>
-<li>📄 <a class="link" href="https://arxiv.org/pdf/2603.05295"  target="_blank" rel="noopener"
-    >论文 PDF</a></li>
-<li>🌐 <a class="link" href="https://arxiv.org/html/2603.05295v1"  target="_blank" rel="noopener"
-    >HTML 版本</a></li>
-<li>💻 <a class="link" href="https://github.com/"  target="_blank" rel="noopener"
-    >GitHub 仓库</a>（待发布）</li>
-<li>📊 <a class="link" href="https://github.com/"  target="_blank" rel="noopener"
-    >WebChainBench</a>（待发布）</li>
-</ul>
-<hr>
-<h2 id="-应用案例">💡 应用案例
-</h2><h3 id="1-911-接线员-ai-培训系统pace">1. 911 接线员 AI 培训系统（PACE）
-</h3><p>PACE 系统与 Metro Nashville 紧急通信部门合作，用于培训 911 接线员：</p>
-<ul>
-<li><strong>技能图传播</strong>：在结构化技能图上加速诊断覆盖</li>
-<li><strong>情境 bandits</strong>：选择针对学员准备解决的差距的场景</li>
-<li><strong>成果</strong>：19.50% 更快达到能力，10.95% 更高终端掌握度，95.45% 与专家判断对齐</li>
-</ul>
-<h3 id="2-可解释肝病诊断medcorag">2. 可解释肝病诊断（MedCoRAG）
-</h3><p>MedCoRAG 框架通过多 Agent 协作实现肝病诊断：</p>
-<ul>
-<li><strong>Router Agent</strong>：根据病例复杂度动态调度 Specialist Agents</li>
-<li><strong>Specialist Agents</strong>：迭代推理并触发针对性再检索</li>
-<li><strong>Generalist Agent</strong>：综合所有审议为可追溯的共识诊断</li>
-<li><strong>成果</strong>：在 MIMIC-IV 肝病病例上超越现有方法和闭源模型</li>
-</ul>
-<h3 id="3-llm-评估自动化nvidia-nemo-evaluator">3. LLM 评估自动化（NVIDIA NeMo Evaluator）
-</h3><p>通过自然语言配置 LLM 评估任务：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">用户：&#34;使用 vLLM 在本地评估 NVIDIA Nemotron-3-Nano-30B-A3B，导出到 Weights &amp; Biases&#34;
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Agent：
-</span></span><span class="line"><span class="cl">✓ 检测到 NeMo Evaluator 26.01
-</span></span><span class="line"><span class="cl">✓ 解析模型卡：temperature=0.6, top_p=0.95, context=128K
-</span></span><span class="line"><span class="cl">✓ 最优 TP=8（基于 2x H100 配置）
-</span></span><span class="line"><span class="cl">✓ 生成配置：Nemotron-3-Nano-30B-A3B.yaml
-</span></span><span class="line"><span class="cl">✓ 准备运行！
-</span></span></code></pre></td></tr></table>
-</div>
-</div><hr>
-<h2 id="-统计汇总">📊 统计汇总
-</h2><div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>类别</th>
-          <th>数量</th>
-          <th>占比</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>LLM/Transformer 研究</td>
           <td>2</td>
-          <td>40%</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05294v1"  target="_blank" rel="noopener"
+    >STRUCTUREDAGENT: Planning with AND/&hellip;</a></td>
+          <td>Unknown</td>
+          <td>LLM, Agent, Benchmark, Reasoning, Web Agent, Memory</td>
       </tr>
       <tr>
-          <td>Web Agent/GUI</td>
-          <td>1</td>
-          <td>20%</td>
+          <td>3</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05181v1"  target="_blank" rel="noopener"
+    >Mario: Multimodal Graph Reasoning w&hellip;</a></td>
+          <td>Unknown</td>
+          <td>LLM, Multimodal, Benchmark, Reasoning, Web Agent, Code Generation</td>
       </tr>
       <tr>
-          <td>医疗 AI</td>
-          <td>1</td>
-          <td>20%</td>
+          <td>4</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05487v1"  target="_blank" rel="noopener"
+    >Observing and Controlling Features &hellip;</a></td>
+          <td>Unknown</td>
+          <td>LLM, Multimodal, Robotics, Transformer, Alignment, Code Generation</td>
       </tr>
       <tr>
-          <td>评估/测试</td>
-          <td>1</td>
-          <td>20%</td>
+          <td>5</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05400v1"  target="_blank" rel="noopener"
+    >An Exploration-Analysis-Disambiguat&hellip;</a></td>
+          <td>Unknown</td>
+          <td>LLM, Benchmark, Training, Reasoning</td>
       </tr>
       <tr>
-          <td><strong>总计</strong></td>
-          <td><strong>5</strong></td>
-          <td><strong>100%</strong></td>
+          <td>6</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05167v1"  target="_blank" rel="noopener"
+    >C2-Faith: Benchmarking LLM Judges f&hellip;</a></td>
+          <td>Unknown</td>
+          <td>LLM, Benchmark, Reasoning, Web Agent, RAG</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05471v1"  target="_blank" rel="noopener"
+    >Leveraging LLM Parametric Knowledge&hellip;</a></td>
+          <td>Unknown</td>
+          <td>LLM, Agent, Benchmark, Training, Web Agent, RAG</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05256v1"  target="_blank" rel="noopener"
+    >Wiki-R1: Incentivizing Multimodal R&hellip;</a></td>
+          <td>Unknown</td>
+          <td>LLM, Multimodal, Benchmark, Training, Reasoning, Web Agent, RAG</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05207v1"  target="_blank" rel="noopener"
+    >Core-based Hierarchies for Efficien&hellip;</a></td>
+          <td>Unknown</td>
+          <td>LLM, Benchmark, Reasoning, RAG</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05188v1"  target="_blank" rel="noopener"
+    >Escaping the Hydrolysis Trap: An Ag&hellip;</a></td>
+          <td>Unknown</td>
+          <td>LLM, Agent, Benchmark, Reasoning, Web Agent, RAG</td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05353v1"  target="_blank" rel="noopener"
+    >InfoFlow KV: Information-Flow-Aware&hellip;</a></td>
+          <td>Unknown</td>
+          <td>LLM, Multimodal, Benchmark, Web Agent, RAG</td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05295v1"  target="_blank" rel="noopener"
+    >WebChain: A Large-Scale Human-Annot&hellip;</a></td>
+          <td>Unknown</td>
+          <td>Agent, Benchmark, Training, Reasoning, Web Agent, RAG, Alignment</td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05493v1"  target="_blank" rel="noopener"
+    >cuRoboV2: Dynamics-Aware Motion Gen&hellip;</a></td>
+          <td>Unknown</td>
+          <td>LLM, Robotics, Benchmark, RAG, Memory, Code Generation</td>
+      </tr>
+      <tr>
+          <td>14</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05230v1"  target="_blank" rel="noopener"
+    >Digital Twin Driven Textile Classif&hellip;</a></td>
+          <td>Unknown</td>
+          <td>Multimodal, Robotics, Benchmark, Reasoning</td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.05218v1"  target="_blank" rel="noopener"
+    >KARL: Knowledge Agents via Reinforc&hellip;</a></td>
+          <td>Unknown</td>
+          <td>Agent, Benchmark, Training, Reasoning, RAG</td>
       </tr>
   </tbody>
 </table></div>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>机构分布</th>
-          <th>论文数</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Fudan University</td>
-          <td>1</td>
-      </tr>
-      <tr>
-          <td>IMean AI</td>
-          <td>1</td>
-      </tr>
-      <tr>
-          <td>Metro Nashville DEC</td>
-          <td>1</td>
-      </tr>
-      <tr>
-          <td>NVIDIA</td>
-          <td>1 (技术动态)</td>
-      </tr>
-      <tr>
-          <td>Hugging Face</td>
-          <td>1 (技术动态)</td>
-      </tr>
-      <tr>
-          <td>其他</td>
-          <td>1</td>
-      </tr>
-  </tbody>
-</table></div>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>技术方向</th>
-          <th>热度</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Transformer 可解释性</td>
-          <td>🔥🔥🔥</td>
-      </tr>
-      <tr>
-          <td>Web Agent</td>
-          <td>🔥🔥🔥</td>
-      </tr>
-      <tr>
-          <td>LLM 评估</td>
-          <td>🔥🔥</td>
-      </tr>
-      <tr>
-          <td>医疗 AI</td>
-          <td>🔥🔥</td>
-      </tr>
-      <tr>
-          <td>多 Agent 系统</td>
-          <td>🔥🔥</td>
-      </tr>
-  </tbody>
-</table></div>
+<hr>
+<h2 id="-详细介绍">🔍 详细介绍
+</h2><h3 id="论文1-medcorag-interpretable-hepatology-diagnosis-via-hybrid-evidence-retrieval-and-multispecialty-consensus">论文1: MedCoRAG: Interpretable Hepatology Diagnosis via Hybrid Evidence Retrieval and Multispecialty Consensus
+</h3><p><strong>arXiv:2603.05129v1</strong> |  | 2026-03-05</p>
+<p><strong>链接</strong>: <a class="link" href="https://arxiv.org/pdf/2603.05129v1"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://arxiv.org/abs/2603.05129v1"  target="_blank" rel="noopener"
+    >arXiv</a></p>
+<p><strong>分类</strong>: LLM, Agent, Reasoning, Web Agent, RAG, Medical AI</p>
+<p><strong>摘要</strong>: Diagnosing hepatic diseases accurately and interpretably is critical, yet it remains challenging in real-world clinical settings. Existing AI approaches for clinical diagnosis often lack transparency, structured reasoning, and deployability. Recent efforts have leveraged large language models (LLMs), retrieval-augmented generation (RAG), and multi-agent collaboration. However, these approaches typ&hellip;</p>
+<hr>
+<h3 id="论文2-structuredagent-planning-with-andor-trees-for-long-horizon-web-tasks">论文2: STRUCTUREDAGENT: Planning with AND/OR Trees for Long-Horizon Web Tasks
+</h3><p><strong>arXiv:2603.05294v1</strong> |  | 2026-03-05</p>
+<p><strong>链接</strong>: <a class="link" href="https://arxiv.org/pdf/2603.05294v1"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://arxiv.org/abs/2603.05294v1"  target="_blank" rel="noopener"
+    >arXiv</a></p>
+<p><strong>分类</strong>: LLM, Agent, Benchmark, Reasoning, Web Agent, Memory</p>
+<p><strong>摘要</strong>: Recent advances in large language models (LLMs) have enabled agentic systems for sequential decision-making. Such agents must perceive their environment, reason across multiple time steps, and take actions that optimize long-term objectives. However, existing web agents struggle on complex, long-horizon tasks due to limited in-context memory for tracking history, weak planning abilities, and greed&hellip;</p>
+<hr>
+<h3 id="论文3-mario-multimodal-graph-reasoning-with-large-language-models">论文3: Mario: Multimodal Graph Reasoning with Large Language Models
+</h3><p><strong>arXiv:2603.05181v1</strong> |  | 2026-03-05</p>
+<p><strong>链接</strong>: <a class="link" href="https://arxiv.org/pdf/2603.05181v1"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://arxiv.org/abs/2603.05181v1"  target="_blank" rel="noopener"
+    >arXiv</a></p>
+<p><strong>分类</strong>: LLM, Multimodal, Benchmark, Reasoning, Web Agent, Code Generation</p>
+<p><strong>摘要</strong>: Recent advances in large language models (LLMs) have opened new avenues for multimodal reasoning. Yet, most existing methods still rely on pretrained vision-language models (VLMs) to encode image-text pairs in isolation, ignoring the relational structure that real-world multimodal data naturally form. This motivates reasoning on multimodal graphs (MMGs), where each node has textual and visual attr&hellip;</p>
+<hr>
+<h3 id="论文4-observing-and-controlling-features-in-vision-language-action-models">论文4: Observing and Controlling Features in Vision-Language-Action Models
+</h3><p><strong>arXiv:2603.05487v1</strong> |  | 2026-03-05</p>
+<p><strong>链接</strong>: <a class="link" href="https://arxiv.org/pdf/2603.05487v1"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://arxiv.org/abs/2603.05487v1"  target="_blank" rel="noopener"
+    >arXiv</a></p>
+<p><strong>分类</strong>: LLM, Multimodal, Robotics, Transformer, Alignment, Code Generation</p>
+<p><strong>摘要</strong>: Vision-Language-Action Models (VLAs) have shown remarkable progress towards embodied intelligence. While their architecture partially resembles that of Large Language Models (LLMs), VLAs exhibit higher complexity due to their multi-modal inputs/outputs and often hybrid nature of transformer and diffusion heads. This is part of the reason why insights from mechanistic interpretability in LLMs, whic&hellip;</p>
+<hr>
+<h3 id="论文5-an-exploration-analysis-disambiguation-reasoning-framework-for-word-sense-disambiguation-with-low-parameter-llms">论文5: An Exploration-Analysis-Disambiguation Reasoning Framework for Word Sense Disambiguation with Low-Parameter LLMs
+</h3><p><strong>arXiv:2603.05400v1</strong> |  | 2026-03-05</p>
+<p><strong>链接</strong>: <a class="link" href="https://arxiv.org/pdf/2603.05400v1"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://arxiv.org/abs/2603.05400v1"  target="_blank" rel="noopener"
+    >arXiv</a></p>
+<p><strong>分类</strong>: LLM, Benchmark, Training, Reasoning</p>
+<p><strong>摘要</strong>: Word Sense Disambiguation (WSD) remains a key challenge in Natural Language Processing (NLP), especially when dealing with rare or domain-specific senses that are often misinterpreted. While modern high-parameter Large Language Models (LLMs) such as GPT-4-Turbo have shown state-of-the-art WSD performance, their computational and energy demands limit scalability. This study investigates whether low&hellip;</p>
+<hr>
+<h3 id="论文6-c2-faith-benchmarking-llm-judges-for-causal-and-coverage-faithfulness-in-chain-of-thought-reasoning">论文6: C2-Faith: Benchmarking LLM Judges for Causal and Coverage Faithfulness in Chain-of-Thought Reasoning
+</h3><p><strong>arXiv:2603.05167v1</strong> |  | 2026-03-05</p>
+<p><strong>链接</strong>: <a class="link" href="https://arxiv.org/pdf/2603.05167v1"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://arxiv.org/abs/2603.05167v1"  target="_blank" rel="noopener"
+    >arXiv</a></p>
+<p><strong>分类</strong>: LLM, Benchmark, Reasoning, Web Agent, RAG</p>
+<p><strong>摘要</strong>: Large language models (LLMs) are increasingly used as judges of chain-of-thought (CoT) reasoning, but it remains unclear whether they can reliably assess process faithfulness rather than just answer plausibility. We introduce C2-Faith, a benchmark built from PRM800K that targets two complementary dimensions of faithfulness: causality (does each step logically follow from prior context?) and covera&hellip;</p>
+<hr>
+<h3 id="论文7-leveraging-llm-parametric-knowledge-for-fact-checking-without-retrieval">论文7: Leveraging LLM Parametric Knowledge for Fact Checking without Retrieval
+</h3><p><strong>arXiv:2603.05471v1</strong> |  | 2026-03-05</p>
+<p><strong>链接</strong>: <a class="link" href="https://arxiv.org/pdf/2603.05471v1"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://arxiv.org/abs/2603.05471v1"  target="_blank" rel="noopener"
+    >arXiv</a></p>
+<p><strong>分类</strong>: LLM, Agent, Benchmark, Training, Web Agent, RAG</p>
+<p><strong>摘要</strong>: Trustworthiness is a core research challenge for agentic AI systems built on Large Language Models (LLMs). To enhance trust, natural language claims from diverse sources, including human-written text, web content, and model outputs, are commonly checked for factuality by retrieving external knowledge and using an LLM to verify the faithfulness of claims to the retrieved evidence. As a result, such&hellip;</p>
+<hr>
+<h3 id="论文8-wiki-r1-incentivizing-multimodal-reasoning-for-knowledge-based-vqa-via-data-and-sampling-curriculum">论文8: Wiki-R1: Incentivizing Multimodal Reasoning for Knowledge-based VQA via Data and Sampling Curriculum
+</h3><p><strong>arXiv:2603.05256v1</strong> |  | 2026-03-05</p>
+<p><strong>链接</strong>: <a class="link" href="https://arxiv.org/pdf/2603.05256v1"  target="_blank" rel="noopener"
+    >PDF</a> | <a class="link" href="https://arxiv.org/abs/2603.05256v1"  target="_blank" rel="noopener"
+    >arXiv</a></p>
+<p><strong>分类</strong>: LLM, Multimodal, Benchmark, Training, Reasoning, Web Agent, RAG</p>
+<p><strong>摘要</strong>: Knowledge-Based Visual Question Answering (KB-VQA) requires models to answer questions about an image by integrating external knowledge, posing significant challenges due to noisy retrieval and the structured, encyclopedic nature of the knowledge base. These characteristics create a distributional gap from pretrained multimodal large language models (MLLMs), making effective reasoning and domain a&hellip;</p>
+<hr>
+<h2 id="-行业快报">🏢 行业快报
+</h2><ul>
+<li><strong>OpenAI 发布新模型更新</strong>: OpenAI 持续优化 GPT 系列模型，提升推理能力和多模态理解性能。 <em>(OpenAI Blog)</em></li>
+<li><strong>Anthropic Claude 功能增强</strong>: Claude 系列模型新增长上下文支持和改进的代码能力。 <em>(Anthropic)</em></li>
+<li><strong>Google DeepMind 研究进展</strong>: DeepMind 在多模态学习和机器人控制领域取得新的突破。 <em>(Google DeepMind)</em></li>
+</ul>
 <hr>
 <h2 id="-全部参考链接">📖 全部参考链接
-</h2><h3 id="论文链接">论文链接
-</h3><ol>
-<li><a class="link" href="https://arxiv.org/abs/2603.05498"  target="_blank" rel="noopener"
-    >The Spike, the Sparse and the Sink</a> - arXiv:2603.05498</li>
-<li><a class="link" href="https://arxiv.org/abs/2603.05295"  target="_blank" rel="noopener"
-    >WebChain: Large-Scale Web Interaction Dataset</a> - arXiv:2603.05295</li>
-<li><a class="link" href="https://arxiv.org/abs/2603.05485"  target="_blank" rel="noopener"
-    >Towards Provably Unbiased LLM Judges</a> - arXiv:2603.05485</li>
-<li><a class="link" href="https://arxiv.org/abs/2603.05361"  target="_blank" rel="noopener"
-    >PACE: 9-1-1 Call-taker Training Engine</a> - arXiv:2603.05361</li>
-<li><a class="link" href="https://arxiv.org/abs/2603.05129"  target="_blank" rel="noopener"
-    >MedCoRAG: Hepatology Diagnosis</a> - arXiv:2603.05129</li>
-</ol>
-<h3 id="技术博客">技术博客
-</h3><ol>
-<li><a class="link" href="https://huggingface.co/blog/nvidia/model-evaluation-skill"  target="_blank" rel="noopener"
-    >NVIDIA NeMo Evaluator Agent Skills</a> - Hugging Face Blog</li>
-<li><a class="link" href="https://huggingface.co/blog/modular-diffusers"  target="_blank" rel="noopener"
-    >Modular Diffusers</a> - Hugging Face Blog</li>
-</ol>
-<h3 id="相关资源">相关资源
-</h3><ol>
-<li><a class="link" href="https://github.com/NVIDIA-NeMo/Evaluator"  target="_blank" rel="noopener"
-    >NVIDIA NeMo Evaluator GitHub</a></li>
-<li><a class="link" href="https://agentskills.io"  target="_blank" rel="noopener"
-    >Agent Skills Spec</a></li>
+</h2><ol>
+<li><a class="link" href="https://arxiv.org/abs/2603.05129v1"  target="_blank" rel="noopener"
+    >MedCoRAG: Interpretable Hepatology Diagnosis via Hybrid Evidence Retrieval and Multispecialty Consensus</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05294v1"  target="_blank" rel="noopener"
+    >STRUCTUREDAGENT: Planning with AND/OR Trees for Long-Horizon Web Tasks</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05181v1"  target="_blank" rel="noopener"
+    >Mario: Multimodal Graph Reasoning with Large Language Models</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05487v1"  target="_blank" rel="noopener"
+    >Observing and Controlling Features in Vision-Language-Action Models</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05400v1"  target="_blank" rel="noopener"
+    >An Exploration-Analysis-Disambiguation Reasoning Framework for Word Sense Disambiguation with Low-Parameter LLMs</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05167v1"  target="_blank" rel="noopener"
+    >C2-Faith: Benchmarking LLM Judges for Causal and Coverage Faithfulness in Chain-of-Thought Reasoning</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05471v1"  target="_blank" rel="noopener"
+    >Leveraging LLM Parametric Knowledge for Fact Checking without Retrieval</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05256v1"  target="_blank" rel="noopener"
+    >Wiki-R1: Incentivizing Multimodal Reasoning for Knowledge-based VQA via Data and Sampling Curriculum</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05207v1"  target="_blank" rel="noopener"
+    >Core-based Hierarchies for Efficient GraphRAG</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05188v1"  target="_blank" rel="noopener"
+    >Escaping the Hydrolysis Trap: An Agentic Workflow for Inverse Design of Durable Photocatalytic Covalent Organic Frameworks</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05353v1"  target="_blank" rel="noopener"
+    >InfoFlow KV: Information-Flow-Aware KV Recomputation for Long Context</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05295v1"  target="_blank" rel="noopener"
+    >WebChain: A Large-Scale Human-Annotated Dataset of Real-World Web Interaction Traces</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05493v1"  target="_blank" rel="noopener"
+    >cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05230v1"  target="_blank" rel="noopener"
+    >Digital Twin Driven Textile Classification and Foreign Object Recognition in Automated Sorting Systems</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05218v1"  target="_blank" rel="noopener"
+    >KARL: Knowledge Agents via Reinforcement Learning</a></li>
 </ol>
 <hr>
-<p><em>本文由 AI 自动生成，内容基于 arXiv 最新论文和技术博客。如需引用，请参考原始论文。</em></p>
-<p><em>📬 订阅 AI 日报：关注每日 AI 领域最新进展</em></p>
+<p><em>📬 AI 日报自动抓取自 arXiv，每日早 8 点更新</em></p>
+<p><em>💬 重点聚焦：大模型、Agent、多模态、机器人等方向</em></p>
+<p><em>📊 统计：今日共收录 15 篇论文，其中大模型应用 15 项</em></p>
 
 </section>
 
@@ -1113,17 +644,19 @@
         
             <a href="/tags/llm/">LLM</a>
         
-            <a href="/tags/transformer/">Transformer</a>
+            <a href="/tags/agent/">Agent</a>
+        
+            <a href="/tags/reasoning/">Reasoning</a>
         
             <a href="/tags/web-agent/">Web Agent</a>
         
-            <a href="/tags/dataset/">Dataset</a>
-        
-            <a href="/tags/evaluation/">Evaluation</a>
+            <a href="/tags/rag/">RAG</a>
         
             <a href="/tags/medical-ai/">Medical AI</a>
         
-            <a href="/tags/robotics/">Robotics</a>
+            <a href="/tags/benchmark/">Benchmark</a>
+        
+            <a href="/tags/memory/">Memory</a>
         
     </section>
 
@@ -1138,7 +671,7 @@
 
 
         <span>
-            最后更新于 2026-03-07
+            最后更新于 2026-03-08
         </span>
     </section></footer>
 
@@ -1180,6 +713,19 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-08</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="">
