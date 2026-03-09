@@ -7,20 +7,20 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Sun, 08 Mar 2026 18:16:58 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 09 Mar 2026 08:04:42 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI Daily</title>
+        <link>https://HHjoker.github.io/categories/ai-daily/</link>
+        <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/categories/ai-daily/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Rust-Daily</title>
         <link>https://HHjoker.github.io/categories/rust-daily/</link>
         <pubDate>Sun, 08 Mar 2026 21:00:00 +0800</pubDate>
         
         <guid>https://HHjoker.github.io/categories/rust-daily/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>AI Daily</title>
-        <link>https://HHjoker.github.io/categories/ai-daily/</link>
-        <pubDate>Sun, 08 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/categories/ai-daily/</guid>
         <description></description>
         </item>
         <item>

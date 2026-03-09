@@ -3,10 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://HHjoker.github.io/post/</loc>
-    <lastmod>2026-03-08T22:48:51+08:00</lastmod>
+    <lastmod>2026-03-09T08:04:42+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/agent/</loc>
+    <lastmod>2026-03-09T08:04:42+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/ai/</loc>
+    <lastmod>2026-03-09T08:04:42+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/categories/ai-daily/</loc>
+    <lastmod>2026-03-09T08:04:42+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/</loc>
+    <lastmod>2026-03-09T08:04:42+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/categories/</loc>
-    <lastmod>2026-03-08T18:16:58+08:00</lastmod>
+    <lastmod>2026-03-09T08:04:42+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -23,23 +35,20 @@
                 href="https://HHjoker.github.io/categories/"
                 />
   </url><url>
-    <loc>https://HHjoker.github.io/tags/clone/</loc>
-    <lastmod>2026-03-07T21:02:21+08:00</lastmod>
+    <loc>https://HHjoker.github.io/tags/llm/</loc>
+    <lastmod>2026-03-09T08:04:42+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/tags/move/</loc>
-    <lastmod>2026-03-07T21:02:21+08:00</lastmod>
+    <loc>https://HHjoker.github.io/tags/multimodal/</loc>
+    <lastmod>2026-03-09T08:04:42+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/tags/rust/</loc>
-    <lastmod>2026-03-07T21:02:21+08:00</lastmod>
+    <loc>https://HHjoker.github.io/tags/reasoning/</loc>
+    <lastmod>2026-03-09T08:04:42+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-4%E6%89%80%E6%9C%89%E6%9D%83ownership%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2026-03-07T21:02:21+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/categories/rust-daily/</loc>
-    <lastmod>2026-03-07T21:02:21+08:00</lastmod>
+    <loc>https://HHjoker.github.io/tags/research/</loc>
+    <lastmod>2026-03-09T08:04:42+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/</loc>
-    <lastmod>2026-03-08T18:16:58+08:00</lastmod>
+    <lastmod>2026-03-09T08:04:42+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -56,6 +65,24 @@
                 href="https://HHjoker.github.io/tags/"
                 />
   </url><url>
+    <loc>https://HHjoker.github.io/tags/webagent/</loc>
+    <lastmod>2026-03-09T08:04:42+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/clone/</loc>
+    <lastmod>2026-03-07T21:02:21+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/move/</loc>
+    <lastmod>2026-03-07T21:02:21+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/rust/</loc>
+    <lastmod>2026-03-07T21:02:21+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-4%E6%89%80%E6%9C%89%E6%9D%83ownership%E5%85%A5%E9%97%A8/</loc>
+    <lastmod>2026-03-07T21:02:21+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/categories/rust-daily/</loc>
+    <lastmod>2026-03-07T21:02:21+08:00</lastmod>
+  </url><url>
     <loc>https://HHjoker.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2026-03-07T21:02:21+08:00</lastmod>
   </url><url>
@@ -65,25 +92,7 @@
     <loc>https://HHjoker.github.io/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/</loc>
     <lastmod>2026-03-07T21:02:21+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/tags/agent/</loc>
-    <lastmod>2026-03-08T18:16:58+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/ai/</loc>
-    <lastmod>2026-03-08T08:06:53+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/categories/ai-daily/</loc>
-    <lastmod>2026-03-08T18:16:58+08:00</lastmod>
-  </url><url>
     <loc>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/</loc>
-    <lastmod>2026-03-08T08:06:53+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/llm/</loc>
-    <lastmod>2026-03-08T18:16:58+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/multimodal/</loc>
-    <lastmod>2026-03-08T08:06:53+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/research/</loc>
     <lastmod>2026-03-08T08:06:53+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/p/%E6%AF%8F%E6%97%A5%E5%8A%A8%E9%87%8F%E6%8A%A5%E5%91%8A-2026-03-08/</loc>
@@ -114,9 +123,6 @@
     <lastmod>2026-03-08T18:16:58+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/rag/</loc>
-    <lastmod>2026-03-08T18:16:58+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/reasoning/</loc>
     <lastmod>2026-03-08T18:16:58+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/web-agent/</loc>

@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="AI 日报 | 2026-03-09 每日精选 AI 领域最新研究进展与技术动态\n📌 今日总结 推理模型&quot;表演性思维&quot;被发现：研究者揭示大模型在简单任务上早已确定答案但仍生成冗长推理链，提出注意力探针可实现 80% token 节省 WebChain 数据集发布：31K+ 人工标注真实网页交互轨迹，Triple Alignment 多模态对齐机制推动 Web Agent 研究民主化 LLM 评估去偏新框架：平均偏差有界性 (A-BB) 为 LLM-as-a-Judge 提供可证明的无偏保证，在 Arena-Hard-Auto 上验证有效 移动端个人 Agent 架构：Jagarin 提出三层休眠架构解决移动设备上个人 Agent 的电池与沙盒限制 动态数据选择新范式：重新定义代表性与多样性，实现 2 倍训练加速同时匹配全数据精度 📚 重要论文一览 论文 来源 亮点 链接 Reasoning Theater: Disentangling Model Beliefs from CoT arXiv:2603.05488 揭示推理模型&quot;表演性思维&quot;，探针实现 80% token 节省 PDF WebChain: Large-Scale Human-Annotated Web Dataset arXiv:2603.05295 31K+ 人工标注网页轨迹，Triple Alignment 多模态对齐 PDF Towards Provably Unbiased LLM Judges arXiv:2603.05485 A-BB 框架保证 LLM 评估器偏差有界，61-99% 排名相关性 PDF Jagarin: Hibernating Personal Agents on Mobile arXiv:2603.05069 DAWN+ARIA+ACE 三层架构解决移动端 Agent 持久化难题 PDF Rethinking Representativeness and Diversity arXiv:2603.04981 重新定义动态数据选择，2 倍加速匹配全数据精度 PDF Judge Reliability Harness arXiv:2603.05399 开源库压力测试 LLM 法官可靠性，揭示格式敏感性 PDF UniSTOK: Uniform Inductive Spatio-Temporal Kriging arXiv:2603.05301 双分支输入 + 缺失掩码调制提升时空克里金鲁棒性 PDF PACE: Adaptive Training for 911 Call-takers arXiv:2603.05361 个性化自适应课程引擎加速 19.5% 达标时间 PDF 🚀 技术动态 1. Reasoning Theater：推理模型的&quot;表演性思维&quot;大揭秘 来自前沿研究机构的研究者发表了关于推理模型内部信念与外在推理链不一致性的重要发现：\n">
+<title>AI 日报 | 2026-03-09</title>
+
+<link rel='canonical' href='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/'>
+
+<link rel="stylesheet" href="/scss/style.min.56ea19b05e0cef97d506745ab48006454c875a54299f9f5126e06b47cb25873b.css"><meta property='og:title' content="AI 日报 | 2026-03-09">
+<meta property='og:description' content="AI 日报 | 2026-03-09 每日精选 AI 领域最新研究进展与技术动态\n📌 今日总结 推理模型&quot;表演性思维&quot;被发现：研究者揭示大模型在简单任务上早已确定答案但仍生成冗长推理链，提出注意力探针可实现 80% token 节省 WebChain 数据集发布：31K+ 人工标注真实网页交互轨迹，Triple Alignment 多模态对齐机制推动 Web Agent 研究民主化 LLM 评估去偏新框架：平均偏差有界性 (A-BB) 为 LLM-as-a-Judge 提供可证明的无偏保证，在 Arena-Hard-Auto 上验证有效 移动端个人 Agent 架构：Jagarin 提出三层休眠架构解决移动设备上个人 Agent 的电池与沙盒限制 动态数据选择新范式：重新定义代表性与多样性，实现 2 倍训练加速同时匹配全数据精度 📚 重要论文一览 论文 来源 亮点 链接 Reasoning Theater: Disentangling Model Beliefs from CoT arXiv:2603.05488 揭示推理模型&quot;表演性思维&quot;，探针实现 80% token 节省 PDF WebChain: Large-Scale Human-Annotated Web Dataset arXiv:2603.05295 31K+ 人工标注网页轨迹，Triple Alignment 多模态对齐 PDF Towards Provably Unbiased LLM Judges arXiv:2603.05485 A-BB 框架保证 LLM 评估器偏差有界，61-99% 排名相关性 PDF Jagarin: Hibernating Personal Agents on Mobile arXiv:2603.05069 DAWN+ARIA+ACE 三层架构解决移动端 Agent 持久化难题 PDF Rethinking Representativeness and Diversity arXiv:2603.04981 重新定义动态数据选择，2 倍加速匹配全数据精度 PDF Judge Reliability Harness arXiv:2603.05399 开源库压力测试 LLM 法官可靠性，揭示格式敏感性 PDF UniSTOK: Uniform Inductive Spatio-Temporal Kriging arXiv:2603.05301 双分支输入 + 缺失掩码调制提升时空克里金鲁棒性 PDF PACE: Adaptive Training for 911 Call-takers arXiv:2603.05361 个性化自适应课程引擎加速 19.5% 达标时间 PDF 🚀 技术动态 1. Reasoning Theater：推理模型的&quot;表演性思维&quot;大揭秘 来自前沿研究机构的研究者发表了关于推理模型内部信念与外在推理链不一致性的重要发现：\n">
+<meta property='og:url' content='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/'>
+<meta property='og:site_name' content='HH Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI' /><meta property='article:tag' content='LLM' /><meta property='article:tag' content='Agent' /><meta property='article:tag' content='Multimodal' /><meta property='article:tag' content='Research' /><meta property='article:tag' content='Reasoning' /><meta property='article:tag' content='WebAgent' /><meta property='article:published_time' content='2026-03-09T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-09T08:04:42&#43;08:00'/>
+<meta name="twitter:title" content="AI 日报 | 2026-03-09">
+<meta name="twitter:description" content="AI 日报 | 2026-03-09 每日精选 AI 领域最新研究进展与技术动态\n📌 今日总结 推理模型&quot;表演性思维&quot;被发现：研究者揭示大模型在简单任务上早已确定答案但仍生成冗长推理链，提出注意力探针可实现 80% token 节省 WebChain 数据集发布：31K+ 人工标注真实网页交互轨迹，Triple Alignment 多模态对齐机制推动 Web Agent 研究民主化 LLM 评估去偏新框架：平均偏差有界性 (A-BB) 为 LLM-as-a-Judge 提供可证明的无偏保证，在 Arena-Hard-Auto 上验证有效 移动端个人 Agent 架构：Jagarin 提出三层休眠架构解决移动设备上个人 Agent 的电池与沙盒限制 动态数据选择新范式：重新定义代表性与多样性，实现 2 倍训练加速同时匹配全数据精度 📚 重要论文一览 论文 来源 亮点 链接 Reasoning Theater: Disentangling Model Beliefs from CoT arXiv:2603.05488 揭示推理模型&quot;表演性思维&quot;，探针实现 80% token 节省 PDF WebChain: Large-Scale Human-Annotated Web Dataset arXiv:2603.05295 31K+ 人工标注网页轨迹，Triple Alignment 多模态对齐 PDF Towards Provably Unbiased LLM Judges arXiv:2603.05485 A-BB 框架保证 LLM 评估器偏差有界，61-99% 排名相关性 PDF Jagarin: Hibernating Personal Agents on Mobile arXiv:2603.05069 DAWN+ARIA+ACE 三层架构解决移动端 Agent 持久化难题 PDF Rethinking Representativeness and Diversity arXiv:2603.04981 重新定义动态数据选择，2 倍加速匹配全数据精度 PDF Judge Reliability Harness arXiv:2603.05399 开源库压力测试 LLM 法官可靠性，揭示格式敏感性 PDF UniSTOK: Uniform Inductive Spatio-Temporal Kriging arXiv:2603.05301 双分支输入 + 缺失掩码调制提升时空克里金鲁棒性 PDF PACE: Adaptive Training for 911 Call-takers arXiv:2603.05361 个性化自适应课程引擎加速 19.5% 达标时间 PDF 🚀 技术动态 1. Reasoning Theater：推理模型的&quot;表演性思维&quot;大揭秘 来自前沿研究机构的研究者发表了关于推理模型内部信念与外在推理链不一致性的重要发现：\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_1d1ddc0b6fcd3df4.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">HH Blog</a></h1>
+            <h2 class="site-description">欢迎来到我的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/HHjoker'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://HHjoker.github.io/en/" >English</option>
+                                
+                                    <option value="https://HHjoker.github.io/" selected>中文</option>
+                                
+                                    <option value="https://HHjoker.github.io/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#-今日总结">📌 今日总结</a></li>
+    <li><a href="#-重要论文一览">📚 重要论文一览</a></li>
+    <li><a href="#-技术动态">🚀 技术动态</a>
+      <ol>
+        <li><a href="#1-reasoning-theater推理模型的表演性思维大揭秘">1. Reasoning Theater：推理模型的&quot;表演性思维&quot;大揭秘</a></li>
+        <li><a href="#2-webchainweb-agent-研究的数据民主化里程碑">2. WebChain：Web Agent 研究的数据民主化里程碑</a></li>
+        <li><a href="#3-动态数据选择理论突破">3. 动态数据选择理论突破</a></li>
+      </ol>
+    </li>
+    <li><a href="#-详细介绍深度解读">🔍 详细介绍（深度解读）</a>
+      <ol>
+        <li><a href="#论文一reasoning-theater--推理模型内部信念与外在表达的解耦分析">论文一：Reasoning Theater —— 推理模型内部信念与外在表达的解耦分析</a>
+          <ol>
+            <li><a href="#研究背景与动机">研究背景与动机</a></li>
+            <li><a href="#问题定义与挑战">问题定义与挑战</a></li>
+            <li><a href="#核心方法与技术细节">核心方法与技术细节</a></li>
+            <li><a href="#实验设计与结果">实验设计与结果</a></li>
+            <li><a href="#局限性分析">局限性分析</a></li>
+            <li><a href="#未来方向与影响">未来方向与影响</a></li>
+            <li><a href="#相关链接">相关链接</a></li>
+          </ol>
+        </li>
+        <li><a href="#论文二webchain--web-agent-研究的数据民主化突破">论文二：WebChain —— Web Agent 研究的数据民主化突破</a>
+          <ol>
+            <li><a href="#研究背景与动机-1">研究背景与动机</a></li>
+            <li><a href="#核心方法与技术细节-1">核心方法与技术细节</a></li>
+            <li><a href="#实验设计与结果-1">实验设计与结果</a></li>
+            <li><a href="#局限性分析-1">局限性分析</a></li>
+            <li><a href="#未来方向与影响-1">未来方向与影响</a></li>
+            <li><a href="#相关链接-1">相关链接</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#-应用案例">💡 应用案例</a>
+      <ol>
+        <li><a href="#1-911-接线员培训加速系统-pace">1. 911 接线员培训加速系统 (PACE)</a></li>
+        <li><a href="#2-群聊增强-agent-系统-gcagent">2. 群聊增强 Agent 系统 (GCAgent)</a></li>
+        <li><a href="#3-可解释肝病诊断-medcorag">3. 可解释肝病诊断 (MedCoRAG)</a></li>
+      </ol>
+    </li>
+    <li><a href="#-统计汇总">📊 统计汇总</a></li>
+    <li><a href="#-全部参考链接">📖 全部参考链接</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ai-daily/" >
+                AI Daily
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/">AI 日报 | 2026-03-09</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-03-09</time>
+            </div>
+        
+        <div class="article-lastmod">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time>
+                    2026-03-09
+                </time>
+            </div>
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="ai-日报--2026-03-09">AI 日报 | 2026-03-09
+</h1><blockquote>
+<p>每日精选 AI 领域最新研究进展与技术动态</p></blockquote>
+<h2 id="-今日总结">📌 今日总结
+</h2><ul>
+<li><strong>推理模型&quot;表演性思维&quot;被发现</strong>：研究者揭示大模型在简单任务上早已确定答案但仍生成冗长推理链，提出注意力探针可实现 80% token 节省</li>
+<li><strong>WebChain 数据集发布</strong>：31K+ 人工标注真实网页交互轨迹，Triple Alignment 多模态对齐机制推动 Web Agent 研究民主化</li>
+<li><strong>LLM 评估去偏新框架</strong>：平均偏差有界性 (A-BB) 为 LLM-as-a-Judge 提供可证明的无偏保证，在 Arena-Hard-Auto 上验证有效</li>
+<li><strong>移动端个人 Agent 架构</strong>：Jagarin 提出三层休眠架构解决移动设备上个人 Agent 的电池与沙盒限制</li>
+<li><strong>动态数据选择新范式</strong>：重新定义代表性与多样性，实现 2 倍训练加速同时匹配全数据精度</li>
+</ul>
+<hr>
+<h2 id="-重要论文一览">📚 重要论文一览
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>论文</th>
+          <th>来源</th>
+          <th>亮点</th>
+          <th>链接</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Reasoning Theater: Disentangling Model Beliefs from CoT</td>
+          <td>arXiv:2603.05488</td>
+          <td>揭示推理模型&quot;表演性思维&quot;，探针实现 80% token 节省</td>
+          <td><a class="link" href="https://arxiv.org/pdf/2603.05488"  target="_blank" rel="noopener"
+    >PDF</a></td>
+      </tr>
+      <tr>
+          <td>WebChain: Large-Scale Human-Annotated Web Dataset</td>
+          <td>arXiv:2603.05295</td>
+          <td>31K+ 人工标注网页轨迹，Triple Alignment 多模态对齐</td>
+          <td><a class="link" href="https://arxiv.org/pdf/2603.05295"  target="_blank" rel="noopener"
+    >PDF</a></td>
+      </tr>
+      <tr>
+          <td>Towards Provably Unbiased LLM Judges</td>
+          <td>arXiv:2603.05485</td>
+          <td>A-BB 框架保证 LLM 评估器偏差有界，61-99% 排名相关性</td>
+          <td><a class="link" href="https://arxiv.org/pdf/2603.05485"  target="_blank" rel="noopener"
+    >PDF</a></td>
+      </tr>
+      <tr>
+          <td>Jagarin: Hibernating Personal Agents on Mobile</td>
+          <td>arXiv:2603.05069</td>
+          <td>DAWN+ARIA+ACE 三层架构解决移动端 Agent 持久化难题</td>
+          <td><a class="link" href="https://arxiv.org/pdf/2603.05069"  target="_blank" rel="noopener"
+    >PDF</a></td>
+      </tr>
+      <tr>
+          <td>Rethinking Representativeness and Diversity</td>
+          <td>arXiv:2603.04981</td>
+          <td>重新定义动态数据选择，2 倍加速匹配全数据精度</td>
+          <td><a class="link" href="https://arxiv.org/pdf/2603.04981"  target="_blank" rel="noopener"
+    >PDF</a></td>
+      </tr>
+      <tr>
+          <td>Judge Reliability Harness</td>
+          <td>arXiv:2603.05399</td>
+          <td>开源库压力测试 LLM 法官可靠性，揭示格式敏感性</td>
+          <td><a class="link" href="https://arxiv.org/pdf/2603.05399"  target="_blank" rel="noopener"
+    >PDF</a></td>
+      </tr>
+      <tr>
+          <td>UniSTOK: Uniform Inductive Spatio-Temporal Kriging</td>
+          <td>arXiv:2603.05301</td>
+          <td>双分支输入 + 缺失掩码调制提升时空克里金鲁棒性</td>
+          <td><a class="link" href="https://arxiv.org/pdf/2603.05301"  target="_blank" rel="noopener"
+    >PDF</a></td>
+      </tr>
+      <tr>
+          <td>PACE: Adaptive Training for 911 Call-takers</td>
+          <td>arXiv:2603.05361</td>
+          <td>个性化自适应课程引擎加速 19.5% 达标时间</td>
+          <td><a class="link" href="https://arxiv.org/pdf/2603.05361"  target="_blank" rel="noopener"
+    >PDF</a></td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="-技术动态">🚀 技术动态
+</h2><h3 id="1-reasoning-theater推理模型的表演性思维大揭秘">1. Reasoning Theater：推理模型的&quot;表演性思维&quot;大揭秘
+</h3><p>来自前沿研究机构的研究者发表了关于推理模型内部信念与外在推理链不一致性的重要发现：</p>
+<ul>
+<li><strong>核心发现</strong>：在 MMLU 等简单任务上，模型在推理开始时就已确定答案（探针准确率&gt;90%），但仍生成冗长的&quot;表演性&quot;推理链</li>
+<li><strong>难度依赖</strong>：GPQA-Diamond 等困难任务展现真实推理，探针准确率与推理链同步增长</li>
+<li><strong>实际应用</strong>：校准的注意力探针可实现 95% 置信度早停，节省 80% token 同时保持 97% 原始性能</li>
+<li><strong>开源工具</strong>：可视化平台 reasoning-theater.streamlit.app 可探索 522 条 MMLU 推理轨迹</li>
+</ul>
+<p>该研究对 AI 安全监控提出重要警示：仅依赖文本推理链的监控器可能严重滞后于模型内部状态。</p>
+<h3 id="2-webchainweb-agent-研究的数据民主化里程碑">2. WebChain：Web Agent 研究的数据民主化里程碑
+</h3><p>复旦大学与 IMean AI 联合发布的 WebChain 数据集打破了 Web Agent 领域的数据垄断：</p>
+<ul>
+<li><strong>规模突破</strong>：31,725 条轨迹、318K 步交互，覆盖 428 个真实网站域名</li>
+<li><strong>Triple Alignment</strong>：视觉（截图）、结构（AX 树/DOM）、动作（像素坐标/CSS 选择器）三层精确对齐</li>
+<li><strong>Dual Mid-Training</strong>：解耦空间接地与规划的双阶段中期训练策略</li>
+<li><strong>SOTA 性能</strong>：在 WebChainBench 上达到 81.4% 总体成功率，超越 GUI-R1 等基线</li>
+</ul>
+<p>该数据集的发布将使更多研究者能够进行可复现的大规模 Web Agent 实验。</p>
+<h3 id="3-动态数据选择理论突破">3. 动态数据选择理论突破
+</h3><p>研究者重新思考了动态数据选择中的两个核心概念：</p>
+<ul>
+<li><strong>代表性重新定义</strong>：从局部几何中心性 → 数据集级高频特征因子覆盖度</li>
+<li><strong>多样性重新定义</strong>：从子集内分散度 → 训练过程中逐步纳入互补稀有因子</li>
+<li><strong>技术实现</strong>：稀疏自编码器提取特征因子 + 使用频率惩罚防止样本垄断</li>
+<li><strong>效果验证</strong>：5 个基准测试上 2 倍训练加速，匹配或超越全数据训练精度</li>
+</ul>
+<hr>
+<h2 id="-详细介绍深度解读">🔍 详细介绍（深度解读）
+</h2><h3 id="论文一reasoning-theater--推理模型内部信念与外在表达的解耦分析">论文一：Reasoning Theater —— 推理模型内部信念与外在表达的解耦分析
+</h3><p><strong>来源</strong>：arXiv:2603.05488 | <strong>作者</strong>：Annabel Ma, Siddharth Boppana 等 | <strong>提交时间</strong>：2026-03-05</p>
+<h4 id="研究背景与动机">研究背景与动机
+</h4><p>随着推理模型（如 DeepSeek-R1、GPT-OSS）通过强化学习训练展现出强大的推理能力，其长链式思维（CoT）轨迹被视为安全和可解释性的重要窗口。然而，近期研究表明 CoT 轨迹可能并不忠实于模型的内部推理过程。</p>
+<p>本研究聚焦于&quot;表演性链式思维&quot;（performative CoT）现象：模型在内部已强烈确信最终答案，但仍继续生成看似逐步推理的 token，而不披露其内部信念。理解这一现象对于：</p>
+<ul>
+<li>AI 安全监控（检测恶意意图）</li>
+<li>计算效率优化（早停机制）</li>
+<li>模型可解释性（理解决策过程）</li>
+</ul>
+<p>具有重要意义。</p>
+<h4 id="问题定义与挑战">问题定义与挑战
+</h4><p>核心研究问题：</p>
+<ol>
+<li>模型的最终答案何时在内部被确定？</li>
+<li>外在推理链是否忠实反映内部信念变化？</li>
+<li>能否利用内部信号实现高效早停？</li>
+</ol>
+<p>挑战在于需要：</p>
+<ul>
+<li>在长序列推理过程中追踪内部信念状态</li>
+<li>区分&quot;表演性推理&quot;与&quot;真实推理&quot;</li>
+<li>设计轻量级的内部状态探测方法</li>
+</ul>
+<h4 id="核心方法与技术细节">核心方法与技术细节
+</h4><p><strong>1. 注意力探针（Attention Probes）</strong></p>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure1.png"
+	width="730"
+	height="232"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure1_hu_70e875943dd900ce.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure1_hu_a967d5bbc41b4c59.png 1024w"
+	loading="lazy"
+	
+		alt="推理剧场方法概览"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="314"
+		data-flex-basis="755px"
+	
+></p>
+<p><em>图 1：三种早期解码方法对比。注意力探针在层激活上训练，强制回答在中间 token 注入提示，CoT 监控器分析推理前缀文本。</em></p>
+<p>研究者提出注意力探针，通过注意力加权池化序列激活来预测最终答案：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">z = Wv · H(ℓ) · softmax(Wq · H(ℓ))
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中：</p>
+<ul>
+<li><code>H(ℓ)</code> 是层ℓ的隐藏状态序列</li>
+<li><code>Wq</code> 计算注意力权重</li>
+<li><code>Wv</code> 投影到答案 logits</li>
+</ul>
+<p>关键优势：传统线性探针在长序列上表现接近随机，而注意力探针能动态加权相关 token。</p>
+<p><strong>2. 三种早期解码方法对比</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>方法</th>
+          <th>信息访问</th>
+          <th>计算成本</th>
+          <th>优势</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>注意力探针</td>
+          <td>层激活</td>
+          <td>低（一次前向）</td>
+          <td>直接访问内部状态</td>
+      </tr>
+      <tr>
+          <td>强制回答</td>
+          <td>完整模型</td>
+          <td>中（几次前向）</td>
+          <td>利用模型自身推理</td>
+      </tr>
+      <tr>
+          <td>CoT 监控器</td>
+          <td>仅文本</td>
+          <td>低（黑盒 API）</td>
+          <td>无需内部访问</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>3. 表演性量化</strong></p>
+<p>定义表演性 = 探针/强制回答准确率 - CoT 监控器准确率</p>
+<p>大差距表示模型内部已知答案但未在文本中披露。</p>
+<h4 id="实验设计与结果">实验设计与结果
+</h4><p><strong>表 1：不同任务的表演性率</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>模型</th>
+          <th>数据集</th>
+          <th>探针表演性</th>
+          <th>强制回答表演性</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>DeepSeek-R1 671B</td>
+          <td>MMLU-Redux</td>
+          <td>0.417</td>
+          <td>0.389</td>
+      </tr>
+      <tr>
+          <td>DeepSeek-R1 671B</td>
+          <td>GPQA-Diamond</td>
+          <td>0.012</td>
+          <td>0.008</td>
+      </tr>
+      <tr>
+          <td>GPT-OSS 120B</td>
+          <td>MMLU-Redux</td>
+          <td>0.352</td>
+          <td>0.331</td>
+      </tr>
+      <tr>
+          <td>GPT-OSS 120B</td>
+          <td>GPQA-Diamond</td>
+          <td>0.015</td>
+          <td>0.011</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>MMLU 的表演性率远高于 GPQA-D，表明简单任务上模型更早确定答案。</p>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure2.png"
+	width="634"
+	height="270"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure2_hu_d604699c94fcc234.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure2_hu_c4be77b184b7f7f2.png 1024w"
+	loading="lazy"
+	
+		alt="三种方法准确率对比"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="234"
+		data-flex-basis="563px"
+	
+></p>
+<p><em>图 2：MMLU（左）上探针和强制回答早期准确率远高于 CoT 监控器，表明表演性推理；GPQA-D（右）上三者同步增长，表明真实推理。</em></p>
+<p><strong>表 2：模型大小与表演性关系</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>模型</th>
+          <th>探针早期准确率（前 10%）</th>
+          <th>探针晚期准确率（后 10%）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>DeepSeek-R1 1.5B</td>
+          <td>32%</td>
+          <td>98%</td>
+      </tr>
+      <tr>
+          <td>DeepSeek-R1 7B</td>
+          <td>45%</td>
+          <td>99%</td>
+      </tr>
+      <tr>
+          <td>DeepSeek-R1 14B</td>
+          <td>48%</td>
+          <td>99%</td>
+      </tr>
+      <tr>
+          <td>DeepSeek-R1 32B</td>
+          <td>47%</td>
+          <td>99%</td>
+      </tr>
+      <tr>
+          <td>DeepSeek-R1 671B</td>
+          <td>78%</td>
+          <td>99%</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>大模型在简单任务上更依赖预训练知识，小模型需要更多测试时计算。</p>
+<p><strong>4. 拐点分析：回溯与&quot;顿悟&quot;时刻是否真实？</strong></p>
+<p>研究者使用 CoT 监控器识别三种拐点：回溯、顿悟（&ldquo;aha&quot;时刻）、重新考虑。</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>置信度水平</th>
+          <th>每步拐点数</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>高置信（&gt;90%）</td>
+          <td>0.8%</td>
+      </tr>
+      <tr>
+          <td>低置信（&lt;90%）</td>
+          <td>1.7%</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>低置信响应中拐点出现频率是高一倍，表明拐点通常反映真实不确定性。</p>
+<p><strong>5. 早停应用：80% token 节省</strong></p>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_early_exit.png"
+	width="997"
+	height="924"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_early_exit_hu_fe629c65138c0b8a.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_early_exit_hu_bb2bd1aa328afe50.png 1024w"
+	loading="lazy"
+	
+		alt="早停效果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="107"
+		data-flex-basis="258px"
+	
+></p>
+<p><em>图 7：注意力探针校准曲线（左）接近完美校准；早停准确率与 token 节省（右）显示 95% 置信度下节省 80% token 同时保持 97% 准确率。</em></p>
+<p>关键结果：</p>
+<ul>
+<li>MMLU 上 95% 置信度早停：节省 80% token，保持 97% 原始准确率</li>
+<li>GPQA-D 上 80% 置信度早停：节省 40% token，保持 97% 原始准确率</li>
+</ul>
+<h4 id="局限性分析">局限性分析
+</h4><ol>
+<li><strong>任务覆盖</strong>：仅评估 MMLU 和 GPQA-D，其他领域（数学推理、代码生成）未验证</li>
+<li><strong>模型覆盖</strong>：主要分析 DeepSeek-R1 和 GPT-OSS，其他推理模型（如 o1、Claude）未包含</li>
+<li><strong>探针泛化</strong>：探针在 MMLU 上训练，GPQA-D 上零样本迁移，跨领域泛化能力待验证</li>
+<li><strong>拐点时序</strong>：拐点与信念变化的时序关系复杂，未发现简单局部共现模式</li>
+</ol>
+<h4 id="未来方向与影响">未来方向与影响
+</h4><p><strong>安全影响</strong>：</p>
+<ul>
+<li>CoT 监控器在简单任务上严重滞后，需结合内部探针进行实时监控</li>
+<li>表演性推理可能导致&quot;表面合规但内部违规&quot;的风险</li>
+</ul>
+<p><strong>效率优化</strong>：</p>
+<ul>
+<li>早停机制可大幅降低推理成本，尤其对简单查询</li>
+<li>自适应计算：困难任务分配更多 token，简单任务早停</li>
+</ul>
+<p><strong>理论意义</strong>：</p>
+<ul>
+<li>深化对推理模型内部计算机制的理解</li>
+<li>为&quot;模型何时真正在思考&quot;提供操作化定义</li>
+</ul>
+<h4 id="相关链接">相关链接
+</h4><ul>
+<li><a class="link" href="https://arxiv.org/pdf/2603.05488"  target="_blank" rel="noopener"
+    >论文 PDF</a></li>
+<li><a class="link" href="https://arxiv.org/html/2603.05488v1"  target="_blank" rel="noopener"
+    >HTML 版本</a></li>
+<li><a class="link" href="https://github.com/AskSid/disentangling-computation-from-cot"  target="_blank" rel="noopener"
+    >代码仓库</a></li>
+<li><a class="link" href="https://reasoning-theater.streamlit.app"  target="_blank" rel="noopener"
+    >可视化平台</a></li>
+</ul>
+<hr>
+<h3 id="论文二webchain--web-agent-研究的数据民主化突破">论文二：WebChain —— Web Agent 研究的数据民主化突破
+</h3><p><strong>来源</strong>：arXiv:2603.05295 | <strong>作者</strong>：Sicheng Fan 等（复旦大学，IMean AI）| <strong>提交时间</strong>：2026-03-05</p>
+<h4 id="研究背景与动机-1">研究背景与动机
+</h4><p>征服浏览器是 GUI Agent 领域最有价值的问题之一。然而，当前 Web Agent 研究面临严重的数据瓶颈：</p>
+<ol>
+<li><strong>开源数据集规模不足</strong>：现有开源数据集（如 Mind2Web、WebLINX）缺乏验证模型缩放效应所需的规模</li>
+<li><strong>合成方法的局限</strong>：自动化合成方法无法处理需要认证的高价值任务（如银行、电商结账）</li>
+<li><strong>专有数据垄断</strong>：关键研究依赖专有数据集，导致洞察不可复现</li>
+</ol>
+<p>WebChain 旨在打破这一数据垄断，为社区提供最大规模的人工标注真实网页交互数据集。</p>
+<h4 id="核心方法与技术细节-1">核心方法与技术细节
+</h4><p><strong>1. Triple Alignment 机制</strong></p>
+<p>WebChain 的核心创新是三层精确对齐：</p>
+<ul>
+<li><strong>视觉上下文</strong>：视口和全页截图</li>
+<li><strong>结构上下文</strong>：Accessibility (AX) 树和 HTML DOM</li>
+<li><strong>动作对齐</strong>：精确像素坐标、边界框、CSS 选择器</li>
+</ul>
+<p>这种多模态监督使模型不仅能&quot;看到&quot;页面，还能理解每个像素背后的结构逻辑。</p>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/webchain_figure1.png"
+	width="914"
+	height="514"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/webchain_figure1_hu_bd17e8b975ef7d86.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/webchain_figure1_hu_d24341fc1cb266a3.png 1024w"
+	loading="lazy"
+	
+		alt="WebChain 数据集概览"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<p><em>图 1：WebChain 统计摘要，包括跨网站类别的交互分布、顶级域名交互频率、轨迹复杂度等</em></p>
+<p><strong>2. 可扩展的数据构建流程</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Stage 1: 约束式任务合成
+</span></span><span class="line"><span class="cl">  └─→ 结构化功能提取（领域语义 + 交互逻辑）
+</span></span><span class="line"><span class="cl">  └─→ 模式约束的任务生成
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Stage 2: 人工轨迹收集
+</span></span><span class="line"><span class="cl">  └─→ WebChain Builder 工具
+</span></span><span class="line"><span class="cl">  └─→ 多模态记录（DOM 快照 + 动作 + 空间信息）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Stage 3: 后处理上下文增强
+</span></span><span class="line"><span class="cl">  └─→ 视觉接地密集化（标注所有可交互元素）
+</span></span><span class="line"><span class="cl">  └─→ 合成推理链（CoT 生成）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>3. Dual Mid-Training 策略</strong></p>
+<p>研究者提出了解耦空间接地与规划的双阶段中期训练：</p>
+<ul>
+<li><strong>空间接地中期训练</strong>：专注于像素到坐标的映射</li>
+<li><strong>规划中期训练</strong>：使用 CoT 增强样本进行推理能力训练</li>
+<li><strong>LCRL 后训练</strong>：Long-Chain-oriented RLVR 优化长程规划</li>
+</ul>
+<h4 id="实验设计与结果-1">实验设计与结果
+</h4><p><strong>数据集统计</strong></p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>统计项</th>
+          <th>数值</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>轨迹数量</td>
+          <td>31,725</td>
+      </tr>
+      <tr>
+          <td>交互步数</td>
+          <td>318K</td>
+      </tr>
+      <tr>
+          <td>覆盖域名</td>
+          <td>428</td>
+      </tr>
+      <tr>
+          <td>平均轨迹长度</td>
+          <td>10.02 步</td>
+      </tr>
+      <tr>
+          <td>最长轨迹</td>
+          <td>50+ 步</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>缩放效应分析</strong></p>
+<p><img src="/webchain_scaling.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="数据缩放效应"
+	
+	
+></p>
+<p><em>图 3：WebChain 子集（4K、20K、Full）对 Qwen2.5-VL-3B 在 LCRL 后训练后的成功率影响</em></p>
+<p>研究者观察到数据量与长程规划性能之间的明显正相关，证实 WebChain 的规模对解锁鲁棒的长程规划能力至关重要。</p>
+<p><strong>基准测试结果</strong></p>
+<p>在 WebChainBench 上的关键发现：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>模型</th>
+          <th>AC-High</th>
+          <th>AC-Low</th>
+          <th>GUI-Act-Web</th>
+          <th>总体</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Qwen2.5-VL-7B (Zero Shot)</td>
+          <td>68.6</td>
+          <td>87.0</td>
+          <td>86.5</td>
+          <td>70.9</td>
+      </tr>
+      <tr>
+          <td>GUI-R1-7B</td>
+          <td>71.6</td>
+          <td>85.2</td>
+          <td>90.9</td>
+          <td>74.2</td>
+      </tr>
+      <tr>
+          <td>WebChain-LCRL-7B +CoT-SFT</td>
+          <td>86.7</td>
+          <td>81.1</td>
+          <td>95.5</td>
+          <td>79.0</td>
+      </tr>
+      <tr>
+          <td>WebChain-LCRL-7B +SGRL+CoT-SFT</td>
+          <td><strong>86.2</strong></td>
+          <td><strong>86.2</strong></td>
+          <td><strong>96.3</strong></td>
+          <td><strong>81.4</strong></td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>空间接地研究</strong></p>
+<p>研究者还评估了视觉接地密集化（VGD）和推理器提示（RP）对空间接地任务的影响：</p>
+<ul>
+<li>VGD 通过多样化训练模式提升交互式元素识别召回率</li>
+<li>RP 通过结构化推理减少空间幻觉</li>
+<li>两者结合产生最强性能</li>
+</ul>
+<h4 id="局限性分析-1">局限性分析
+</h4><ol>
+<li><strong>标注成本</strong>：人工标注虽然质量高，但扩展成本较高</li>
+<li><strong>时效性</strong>：网页结构快速变化，数据集需要定期更新</li>
+<li><strong>领域覆盖</strong>：虽然覆盖 428 个域名，但某些垂直领域（如专业软件、政府网站）覆盖有限</li>
+<li><strong>语言限制</strong>：当前主要为英文网站，多语言支持待扩展</li>
+</ol>
+<h4 id="未来方向与影响-1">未来方向与影响
+</h4><p><strong>研究影响</strong>：</p>
+<ul>
+<li>使更多研究者能够进行 Web Agent 的大规模实验</li>
+<li>为验证模型缩放效应提供了必要的数据基础</li>
+<li>推动了 Web Agent 评估的标准化</li>
+</ul>
+<p><strong>实际应用</strong>：</p>
+<ul>
+<li>自动化客服与技术支持</li>
+<li>个人助理执行网页任务</li>
+<li>企业流程自动化</li>
+</ul>
+<h4 id="相关链接-1">相关链接
+</h4><ul>
+<li><a class="link" href="https://arxiv.org/pdf/2603.05295"  target="_blank" rel="noopener"
+    >论文 PDF</a></li>
+<li><a class="link" href="https://arxiv.org/html/2603.05295v1"  target="_blank" rel="noopener"
+    >HTML 版本</a></li>
+<li><a class="link" href="https://webchain.ai"  target="_blank" rel="noopener"
+    >项目主页</a> (待发布)</li>
+</ul>
+<hr>
+<h2 id="-应用案例">💡 应用案例
+</h2><h3 id="1-911-接线员培训加速系统-pace">1. 911 接线员培训加速系统 (PACE)
+</h3><p>PACE 系统通过与纳什维尔紧急通信部门合作，实现了：</p>
+<ul>
+<li><strong>19.50% 更快的达标时间</strong></li>
+<li><strong>10.95% 更高的终端掌握度</strong></li>
+<li><strong>95.45% 与专家教学判断的一致性</strong></li>
+<li><strong>95.08% 的周转时间减少</strong>（从 11.58 分钟降至 34 秒）</li>
+</ul>
+<h3 id="2-群聊增强-agent-系统-gcagent">2. 群聊增强 Agent 系统 (GCAgent)
+</h3><p>在 350 天的真实部署中：</p>
+<ul>
+<li><strong>消息量增加 28.80%</strong></li>
+<li><strong>用户偏好率 51.04%</strong>（相比基础模型）</li>
+<li><strong>平均评分 4.68/5.0</strong></li>
+</ul>
+<h3 id="3-可解释肝病诊断-medcorag">3. 可解释肝病诊断 (MedCoRAG)
+</h3><p>在 MIMIC-IV 肝病案例上：</p>
+<ul>
+<li>超越现有方法和闭源模型</li>
+<li>提供可追溯的诊断共识</li>
+<li>模拟多学科会诊流程</li>
+</ul>
+<hr>
+<h2 id="-统计汇总">📊 统计汇总
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>类别</th>
+          <th>今日论文数</th>
+          <th>主要方向</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>LLM/推理</td>
+          <td>4</td>
+          <td>表演性思维、评估去偏、动态数据选择、法官可靠性</td>
+      </tr>
+      <tr>
+          <td>Agent 系统</td>
+          <td>4</td>
+          <td>Web Agent、群聊 Agent、个人 Agent、医疗 Agent</td>
+      </tr>
+      <tr>
+          <td>多模态</td>
+          <td>2</td>
+          <td>视觉 - 语言 - 动作、网页交互</td>
+      </tr>
+      <tr>
+          <td>时空预测</td>
+          <td>1</td>
+          <td>时空克里金</td>
+      </tr>
+      <tr>
+          <td>应用研究</td>
+          <td>2</td>
+          <td>紧急服务培训、医疗诊断</td>
+      </tr>
+      <tr>
+          <td><strong>总计</strong></td>
+          <td><strong>13+</strong></td>
+          <td><strong>覆盖 AI 全栈</strong></td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="-全部参考链接">📖 全部参考链接
+</h2><ol>
+<li><a class="link" href="https://arxiv.org/abs/2603.05488"  target="_blank" rel="noopener"
+    >Reasoning Theater</a> - 推理模型信念与 CoT 解耦分析</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05295"  target="_blank" rel="noopener"
+    >WebChain Dataset</a> - 大规模网页交互数据集</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05485"  target="_blank" rel="noopener"
+    >Bias-Bounded LLM Judges</a> - LLM 评估去偏框架</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05069"  target="_blank" rel="noopener"
+    >Jagarin Mobile Agents</a> - 移动端休眠 Agent 架构</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.04981"  target="_blank" rel="noopener"
+    >Dynamic Data Selection</a> - 动态数据选择新范式</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05399"  target="_blank" rel="noopener"
+    >Judge Reliability Harness</a> - LLM 法官可靠性测试库</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05301"  target="_blank" rel="noopener"
+    >UniSTOK Spatio-Temporal</a> - 时空克里金框架</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05361"  target="_blank" rel="noopener"
+    >PACE Training System</a> - 自适应培训课程引擎</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05240"  target="_blank" rel="noopener"
+    >GCAgent Group Chat</a> - 群聊对话 Agent 系统</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05129"  target="_blank" rel="noopener"
+    >MedCoRAG Medical Diagnosis</a> - 可解释医疗诊断系统</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05507"  target="_blank" rel="noopener"
+    >Transformer Inpainting</a> - 3D 流媒体修复</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05450"  target="_blank" rel="noopener"
+    >Distributed Partial Information Puzzles</a> - 共同基础构建</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.05414"  target="_blank" rel="noopener"
+    >AI Introspection</a> - AI 内省机制分析</li>
+</ol>
+<hr>
+<p><em>本日报由 AI 自动生成，如需订阅或反馈，请访问项目主页。</em></p>
+<p><em>生成时间：2026-03-09 00:00 UTC</em></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ai/">AI</a>
+        
+            <a href="/tags/llm/">LLM</a>
+        
+            <a href="/tags/agent/">Agent</a>
+        
+            <a href="/tags/multimodal/">Multimodal</a>
+        
+            <a href="/tags/research/">Research</a>
+        
+            <a href="/tags/reasoning/">Reasoning</a>
+        
+            <a href="/tags/webagent/">WebAgent</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2026-03-09
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-08</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-07</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-06</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="HHjoker/HHjoker.github.io"
+    data-repo-id="R_kgDON1Vqng"
+    data-category="Announcements"
+    data-category-id="DIC_kwDON1Vqns4C3qHd"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('preferred_color_scheme');
+            } else {
+                setGiscusTheme('preferred_color_scheme');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 Huang Hao
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+    #TableOfContents > ul ul,
+    #TableOfContents > ul ol,
+    #TableOfContents > ol ul,
+    #TableOfContents > ol ol {
+        display: none;
+    }
+    #TableOfContents > ul .open,
+    #TableOfContents > ol .open {
+        display: block;
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://HHjoker.github.io/icons/backTop.svg);
+    }
+</style>
+
+<script type="text/javascript">
+    
+
+    function initScrollTop() {
+        let rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) {
+            return;
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop
+        rightSideBar.appendChild(btn)
+        
+        window.onscroll = function() {
+            
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    }
+
+    
+
+    function backToTop(){
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    initScrollTop();
+</script>
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    let codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) {
+      return;
+    }
+    codeBlocks.forEach(codeBlock => {
+      
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+        return;
+      }
+      
+      
+      let codeMoreBox = document.createElement('div');
+      codeMoreBox.classList.add('code-more-box');
+      
+      let codeMoreBtn = document.createElement('span');
+      codeMoreBtn.classList.add('code-more-btn');
+      codeMoreBtn.addEventListener('click', () => {
+        codeBlock.classList.add('code-show');
+        codeMoreBox.style.display = 'none';
+        
+        window.dispatchEvent(new Event('resize'))
+      })
+      
+      let img = document.createElement('img');
+      img.classList.add('code-more-img');
+      img.src = "https://HHjoker.github.io/icons/codeMore.ico"
+      
+      codeMoreBtn.appendChild(img);
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox)
+    })
+  }
+  
+  initCodeMoreBox();
+</script>
+
+    </body>
+</html>
