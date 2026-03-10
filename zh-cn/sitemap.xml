@@ -2,11 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-8%E6%89%80%E6%9C%89%E6%9D%83%E7%A7%BB%E5%8A%A8%E4%B8%8E%E5%85%8B%E9%9A%86/</loc>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+  </url><url>
     <loc>https://HHjoker.github.io/post/</loc>
-    <lastmod>2026-03-09T21:30:05+08:00</lastmod>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/categories/</loc>
-    <lastmod>2026-03-09T21:30:05+08:00</lastmod>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -23,20 +26,23 @@
                 href="https://HHjoker.github.io/categories/"
                 />
   </url><url>
-    <loc>https://HHjoker.github.io/tags/ownership/</loc>
-    <lastmod>2026-03-09T21:30:05+08:00</lastmod>
+    <loc>https://HHjoker.github.io/tags/clone/</loc>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/copy/</loc>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/move/</loc>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/rust/</loc>
-    <lastmod>2026-03-09T21:30:05+08:00</lastmod>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-7%E6%89%80%E6%9C%89%E6%9D%83ownership%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2026-03-09T21:30:05+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/categories/rust-daily/</loc>
-    <lastmod>2026-03-09T21:30:05+08:00</lastmod>
+    <loc>https://HHjoker.github.io/categories/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/</loc>
-    <lastmod>2026-03-09T21:30:05+08:00</lastmod>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -53,13 +59,25 @@
                 href="https://HHjoker.github.io/tags/"
                 />
   </url><url>
+    <loc>https://HHjoker.github.io/categories/%E7%AC%AC-2-%E5%91%A8%E6%89%80%E6%9C%89%E6%9D%83%E4%B8%8E%E5%80%9F%E7%94%A8/</loc>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/%E6%89%80%E6%9C%89%E6%9D%83/</loc>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/ownership/</loc>
+    <lastmod>2026-03-09T21:30:05+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-7%E6%89%80%E6%9C%89%E6%9D%83ownership%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2026-03-09T21:30:05+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/categories/rust-daily/</loc>
+    <lastmod>2026-03-09T21:30:05+08:00</lastmod>
+  </url><url>
     <loc>https://HHjoker.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2026-03-09T21:30:05+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</loc>
-    <lastmod>2026-03-09T21:30:05+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/%E6%89%80%E6%9C%89%E6%9D%83/</loc>
     <lastmod>2026-03-09T21:30:05+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/agent/</loc>
@@ -88,12 +106,6 @@
   </url><url>
     <loc>https://HHjoker.github.io/tags/webagent/</loc>
     <lastmod>2026-03-09T14:39:38+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/clone/</loc>
-    <lastmod>2026-03-07T21:02:21+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/move/</loc>
-    <lastmod>2026-03-07T21:02:21+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-4%E6%89%80%E6%9C%89%E6%9D%83ownership%E5%85%A5%E9%97%A8/</loc>
     <lastmod>2026-03-07T21:02:21+08:00</lastmod>
@@ -273,7 +285,7 @@
     <lastmod>2026-03-05T09:35:53+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/post/rust-daily/</loc>
-    <lastmod>2026-03-09T21:02:26+08:00</lastmod>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/categories/test/</loc>
     <lastmod>2025-02-07T19:50:38+08:00</lastmod>
