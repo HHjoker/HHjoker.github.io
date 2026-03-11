@@ -6,10 +6,22 @@
     <lastmod>2026-03-10T21:02:21+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/post/</loc>
-    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+    <lastmod>2026-03-11T10:21:02+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/agent/</loc>
+    <lastmod>2026-03-11T10:21:02+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/ai/</loc>
+    <lastmod>2026-03-11T08:08:18+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/categories/ai-daily/</loc>
+    <lastmod>2026-03-11T08:08:18+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/</loc>
+    <lastmod>2026-03-11T08:08:18+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/categories/</loc>
-    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+    <lastmod>2026-03-11T10:21:02+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -26,23 +38,23 @@
                 href="https://HHjoker.github.io/categories/"
                 />
   </url><url>
-    <loc>https://HHjoker.github.io/tags/clone/</loc>
-    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+    <loc>https://HHjoker.github.io/tags/llm/</loc>
+    <lastmod>2026-03-11T08:08:18+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/tags/copy/</loc>
-    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+    <loc>https://HHjoker.github.io/categories/machine-learning/</loc>
+    <lastmod>2026-03-11T08:08:18+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/tags/move/</loc>
-    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+    <loc>https://HHjoker.github.io/tags/reinforcement-learning/</loc>
+    <lastmod>2026-03-11T08:08:18+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/tags/rust/</loc>
-    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+    <loc>https://HHjoker.github.io/tags/robotics/</loc>
+    <lastmod>2026-03-11T08:08:18+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/categories/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+    <loc>https://HHjoker.github.io/categories/robotics/</loc>
+    <lastmod>2026-03-11T08:08:18+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/</loc>
-    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+    <lastmod>2026-03-11T10:21:02+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -59,11 +71,53 @@
                 href="https://HHjoker.github.io/tags/"
                 />
   </url><url>
+    <loc>https://HHjoker.github.io/tags/vla/</loc>
+    <lastmod>2026-03-11T08:08:18+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/clone/</loc>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/copy/</loc>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/move/</loc>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/rust/</loc>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/categories/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+  </url><url>
     <loc>https://HHjoker.github.io/categories/%E7%AC%AC-2-%E5%91%A8%E6%89%80%E6%9C%89%E6%9D%83%E4%B8%8E%E5%80%9F%E7%94%A8/</loc>
     <lastmod>2026-03-10T21:02:21+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/%E6%89%80%E6%9C%89%E6%9D%83/</loc>
     <lastmod>2026-03-10T21:02:21+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/ai-daily/</loc>
+    <lastmod>2026-03-11T10:21:02+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/categories/ai-%E6%97%A5%E6%8A%A5/</loc>
+    <lastmod>2026-03-11T10:21:02+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/</loc>
+    <lastmod>2026-03-11T10:21:02+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</loc>
+    <lastmod>2026-03-11T10:21:02+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</loc>
+    <lastmod>2026-03-11T10:21:02+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/</loc>
+    <lastmod>2026-03-11T10:21:02+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/categories/%E6%8A%80%E6%9C%AF%E8%A7%A3%E8%AF%BB/</loc>
+    <lastmod>2026-03-11T10:21:02+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/</loc>
+    <lastmod>2026-03-11T10:21:02+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/ownership/</loc>
     <lastmod>2026-03-09T21:30:05+08:00</lastmod>
@@ -80,19 +134,7 @@
     <loc>https://HHjoker.github.io/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2026-03-09T21:30:05+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/tags/agent/</loc>
-    <lastmod>2026-03-09T14:39:38+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/ai/</loc>
-    <lastmod>2026-03-09T14:39:38+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/categories/ai-daily/</loc>
-    <lastmod>2026-03-09T14:39:38+08:00</lastmod>
-  </url><url>
     <loc>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/</loc>
-    <lastmod>2026-03-09T14:39:38+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/llm/</loc>
     <lastmod>2026-03-09T14:39:38+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/multimodal/</loc>
@@ -167,9 +209,6 @@
     <loc>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/</loc>
     <lastmod>2026-03-06T08:04:25+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/tags/robotics/</loc>
-    <lastmod>2026-03-06T08:04:25+08:00</lastmod>
-  </url><url>
     <loc>https://HHjoker.github.io/tags/c&#43;&#43;/</loc>
     <lastmod>2026-03-05T20:26:27+08:00</lastmod>
   </url><url>
@@ -212,16 +251,7 @@
     <loc>https://HHjoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</loc>
     <lastmod>2026-03-05T20:26:27+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/tags/ai-daily/</loc>
-    <lastmod>2026-03-05T10:00:25+08:00</lastmod>
-  </url><url>
     <loc>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-05agent-%E7%9B%AE%E6%A0%87%E6%BC%82%E7%A7%BB%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B624-%E5%B0%8F%E6%97%B6%E6%96%87%E7%94%9F%E5%9B%BE%E8%AE%AD%E7%BB%83%E7%AA%81%E7%A0%B4/</loc>
-    <lastmod>2026-03-05T10:00:25+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</loc>
-    <lastmod>2026-03-05T10:00:25+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</loc>
     <lastmod>2026-03-05T10:00:25+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/</loc>

@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日 AI 领域重点：BEVLM 通过语义蒸馏将 LLM 知识注入 BEV 表示，自动驾驶安全性提升 29%；Schema-Gated 架构解决智能体确定性与灵活性矛盾；LeRobot v0.5.0 支持 Unitree G1 人形机器人；IBM Granite 4.0 1B Speech 登榜 OpenASR 第一">
+<title>AI 日报 | 2026-03-10：BEVLM 语义蒸馏提升自动驾驶安全、Schema-Gated 智能体架构、LeRobot v0.5.0 发布</title>
+
+<link rel='canonical' href='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/'>
+
+<link rel="stylesheet" href="/scss/style.min.56ea19b05e0cef97d506745ab48006454c875a54299f9f5126e06b47cb25873b.css"><meta property='og:title' content="AI 日报 | 2026-03-10：BEVLM 语义蒸馏提升自动驾驶安全、Schema-Gated 智能体架构、LeRobot v0.5.0 发布">
+<meta property='og:description' content="今日 AI 领域重点：BEVLM 通过语义蒸馏将 LLM 知识注入 BEV 表示，自动驾驶安全性提升 29%；Schema-Gated 架构解决智能体确定性与灵活性矛盾；LeRobot v0.5.0 支持 Unitree G1 人形机器人；IBM Granite 4.0 1B Speech 登榜 OpenASR 第一">
+<meta property='og:url' content='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/'>
+<meta property='og:site_name' content='HH Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI Daily' /><meta property='article:tag' content='自动驾驶' /><meta property='article:tag' content='多模态' /><meta property='article:tag' content='机器人' /><meta property='article:tag' content='Agent' /><meta property='article:tag' content='大模型' /><meta property='article:published_time' content='2026-03-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-11T10:21:02&#43;08:00'/>
+<meta name="twitter:title" content="AI 日报 | 2026-03-10：BEVLM 语义蒸馏提升自动驾驶安全、Schema-Gated 智能体架构、LeRobot v0.5.0 发布">
+<meta name="twitter:description" content="今日 AI 领域重点：BEVLM 通过语义蒸馏将 LLM 知识注入 BEV 表示，自动驾驶安全性提升 29%；Schema-Gated 架构解决智能体确定性与灵活性矛盾；LeRobot v0.5.0 支持 Unitree G1 人形机器人；IBM Granite 4.0 1B Speech 登榜 OpenASR 第一">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_1d1ddc0b6fcd3df4.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">HH Blog</a></h1>
+            <h2 class="site-description">欢迎来到我的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/HHjoker'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://HHjoker.github.io/en/" >English</option>
+                                
+                                    <option value="https://HHjoker.github.io/" selected>中文</option>
+                                
+                                    <option value="https://HHjoker.github.io/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#-今日总结">📌 今日总结</a></li>
+    <li><a href="#-重要论文一览">📚 重要论文一览</a></li>
+    <li><a href="#-技术动态">🚀 技术动态</a>
+      <ol>
+        <li><a href="#1-lerobot-v050机器人学习生态大扩张">1. LeRobot v0.5.0：机器人学习生态大扩张</a></li>
+        <li><a href="#2-ibm-granite-40-1b-speech边缘语音新标杆">2. IBM Granite 4.0 1B Speech：边缘语音新标杆</a></li>
+        <li><a href="#3-ulysses-sequence-parallelism百万-token-上下文训练">3. Ulysses Sequence Parallelism：百万 Token 上下文训练</a></li>
+      </ol>
+    </li>
+    <li><a href="#-详细介绍深度解读">🔍 详细介绍（深度解读）</a>
+      <ol>
+        <li><a href="#一bevlm语义蒸馏提升自动驾驶安全">一、BEVLM：语义蒸馏提升自动驾驶安全</a>
+          <ol>
+            <li><a href="#研究背景与动机">研究背景与动机</a></li>
+            <li><a href="#核心方法与技术细节">核心方法与技术细节</a></li>
+            <li><a href="#实验设计与结果">实验设计与结果</a></li>
+            <li><a href="#局限性分析">局限性分析</a></li>
+            <li><a href="#未来方向与影响">未来方向与影响</a></li>
+            <li><a href="#相关资源">相关资源</a></li>
+          </ol>
+        </li>
+        <li><a href="#二schema-gated-orchestration智能体架构新范式">二、Schema-Gated Orchestration：智能体架构新范式</a>
+          <ol>
+            <li><a href="#研究背景与动机-1">研究背景与动机</a></li>
+            <li><a href="#核心方法schema-gated-orchestration">核心方法：Schema-Gated Orchestration</a></li>
+            <li><a href="#系统评估">系统评估</a></li>
+            <li><a href="#局限性分析-1">局限性分析</a></li>
+            <li><a href="#未来方向与影响-1">未来方向与影响</a></li>
+            <li><a href="#相关资源-1">相关资源</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#-应用案例">💡 应用案例</a>
+      <ol>
+        <li><a href="#1-自动驾驶安全关键场景处理">1. 自动驾驶安全关键场景处理</a></li>
+        <li><a href="#2-工业研发工作流自动化">2. 工业研发工作流自动化</a></li>
+        <li><a href="#3-边缘设备语音交互">3. 边缘设备语音交互</a></li>
+      </ol>
+    </li>
+    <li><a href="#-统计汇总">📊 统计汇总</a></li>
+    <li><a href="#-全部参考链接">📖 全部参考链接</a>
+      <ol>
+        <li><a href="#论文">论文</a></li>
+        <li><a href="#技术博客">技术博客</a></li>
+        <li><a href="#代码与模型">代码与模型</a></li>
+        <li><a href="#基准与数据集">基准与数据集</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ai-%E6%97%A5%E6%8A%A5/" >
+                AI 日报
+            </a>
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E8%A7%A3%E8%AF%BB/" >
+                技术解读
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/">AI 日报 | 2026-03-10：BEVLM 语义蒸馏提升自动驾驶安全、Schema-Gated 智能体架构、LeRobot v0.5.0 发布</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            今日 AI 领域重点：BEVLM 通过语义蒸馏将 LLM 知识注入 BEV 表示，自动驾驶安全性提升 29%；Schema-Gated 架构解决智能体确定性与灵活性矛盾；LeRobot v0.5.0 支持 Unitree G1 人形机器人；IBM Granite 4.0 1B Speech 登榜 OpenASR 第一
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-03-10</time>
+            </div>
+        
+        <div class="article-lastmod">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time>
+                    2026-03-11
+                </time>
+            </div>
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="ai-日报--2026-03-10">AI 日报 | 2026-03-10
+</h1><blockquote>
+<p><strong>今日概览</strong>：自动驾驶语义理解突破、智能体架构新范式、机器人学习生态扩张、边缘语音模型新标杆</p></blockquote>
+<hr>
+<h2 id="-今日总结">📌 今日总结
+</h2><ul>
+<li>
+<p><strong>BEVLM 框架</strong>：Mercedes-Benz 与 UC Irvine 提出 BEVLM，首次系统性比较 BEV 表示与多视角图像对 LLM 空间推理的影响，通过语义蒸馏将 LLM 知识注入 BEV 编码器，<strong>封闭环安全评分提升 29%</strong>，碰撞率降低 11.3%</p>
+</li>
+<li>
+<p><strong>Schema-Gated 智能体架构</strong>：Intellegens 等提出 Schema-Gated Orchestration，通过分离对话权威与执行权威，解决科学工作流中确定性与灵活性的矛盾，为可复现的 AI 驱动科研提供新范式</p>
+</li>
+<li>
+<p><strong>LeRobot v0.5.0 发布</strong>：Hugging Face LeRobot 迎来最大规模更新，新增 <strong>Unitree G1 人形机器人支持</strong>、Pi0-FAST 自回归 VLA、Real-Time Chunking 推理优化，支持 Python 3.12+ 与 Transformers v5</p>
+</li>
+<li>
+<p><strong>IBM Granite 4.0 1B Speech</strong>：仅 1B 参数的紧凑语音模型登榜 <strong>OpenASR  leaderboard 第一</strong>，支持 6 种语言，英文转录准确率超越更大规模模型，专为边缘设备设计</p>
+</li>
+<li>
+<p><strong>Ulysses Sequence Parallelism</strong>：Snowflake 的百万 token 上下文训练技术正式集成到 Hugging Face 生态系统，通过 Accelerate、Transformers Trainer、TRL SFTTrainer 实现无缝长序列训练</p>
+</li>
+</ul>
+<hr>
+<h2 id="-重要论文一览">📚 重要论文一览
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>论文</th>
+          <th>机构</th>
+          <th>亮点</th>
+          <th>链接</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>BEVLM: Distilling Semantic Knowledge from LLMs into Bird&rsquo;s-Eye View Representations</strong></td>
+          <td>Mercedes-Benz, UC Irvine</td>
+          <td>BEV 表示提升 LLM 跨视角推理 46%，语义蒸馏提升封闭环驾驶安全 29%</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.06576"  target="_blank" rel="noopener"
+    >arXiv:2603.06576</a></td>
+      </tr>
+      <tr>
+          <td><strong>Talk Freely, Execute Strictly: Schema-Gated Agentic AI for Flexible and Reproducible Scientific Workflows</strong></td>
+          <td>Intellegens, Cavendish Lab</td>
+          <td>提出 Schema-Gated 架构，分离对话与执行权威，解决 AI 智能体确定性 - 灵活性矛盾</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.06394"  target="_blank" rel="noopener"
+    >arXiv:2603.06394</a></td>
+      </tr>
+      <tr>
+          <td><strong>Boosting Deep Reinforcement Learning using Pretraining with Logical Options</strong></td>
+          <td>-</td>
+          <td>提出 H²RL 混合分层 RL，通过逻辑选项预训练引导策略远离短期奖励循环</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.06565"  target="_blank" rel="noopener"
+    >arXiv:2603.06565</a></td>
+      </tr>
+      <tr>
+          <td><strong>Fly360: Omnidirectional Obstacle Avoidance within Drone View</strong></td>
+          <td>-</td>
+          <td>全景无人机全向避障，两阶段感知 - 决策 pipeline，仿真与实机验证</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.06573"  target="_blank" rel="noopener"
+    >arXiv:2603.06573</a></td>
+      </tr>
+      <tr>
+          <td><strong>Ulysses Sequence Parallelism: Training with Million-Token Contexts</strong></td>
+          <td>Snowflake, Hugging Face</td>
+          <td>百万 token 上下文训练技术集成到 HF 生态，支持 Accelerate/Transformers/TRL</td>
+          <td><a class="link" href="https://huggingface.co/blog/ulysses-sp"  target="_blank" rel="noopener"
+    >HF Blog</a></td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="-技术动态">🚀 技术动态
+</h2><h3 id="1-lerobot-v050机器人学习生态大扩张">1. LeRobot v0.5.0：机器人学习生态大扩张
+</h3><p>Hugging Face LeRobot 发布 v0.5.0，这是迄今为止最大规模的更新：</p>
+<ul>
+<li><strong>硬件支持</strong>：首次支持 <strong>Unitree G1 人形机器人</strong>（全身控制、遥操作、 locomotion + manipulation 协同），新增 OpenArm、Earth Rover 移动机器人、OMX 机械臂</li>
+<li><strong>新策略</strong>：Pi0-FAST（自回归 VLA，基于 FAST 动作 tokenization）、Real-Time Chunking（流匹配策略推理优化）、Wall-X（基于 Qwen2.5-VL 的 VLA）、X-VLA（Florence2  backbone）、SARM（阶段感知奖励建模）</li>
+<li><strong>性能提升</strong>：流式视频编码（零等待录制）、10 倍图像训练加速、3 倍编码加速</li>
+<li><strong>EnvHub</strong>：直接从 Hugging Face Hub 加载仿真环境，支持 NVIDIA IsaacLab-Arena</li>
+<li><strong>现代化</strong>：Python 3.12+、Transformers v5、第三方策略插件系统</li>
+</ul>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid.jpg"
+	width="3024"
+	height="3024"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid_hu_9f63aad436629edf.jpg 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid_hu_8780dd2f145a0743.jpg 1024w"
+	loading="lazy"
+	
+		alt="LeRobot Unitree G1 人形机器人"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="100"
+		data-flex-basis="240px"
+	
+></p>
+<p><em>LeRobot v0.5.0 首次支持 Unitree G1 人形机器人，实现全身控制与遥操作</em></p>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-sarm.gif"
+	width="1152"
+	height="648"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-sarm_hu_94e6a23e04a65ab9.gif 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-sarm_hu_b9b86324627d1c26.gif 1024w"
+	loading="lazy"
+	
+		alt="LeRobot SARM 阶段感知奖励建模"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<p><em>SARM 通过阶段感知奖励建模解决长视野任务学习问题</em></p>
+<h3 id="2-ibm-granite-40-1b-speech边缘语音新标杆">2. IBM Granite 4.0 1B Speech：边缘语音新标杆
+</h3><p>IBM 发布 Granite 4.0 1B Speech，仅 1B 参数却登榜 <strong>OpenASR Leaderboard 第一</strong>：</p>
+<ul>
+<li><strong>多语言支持</strong>：英语、法语、德语、西班牙语、葡萄牙语、日语（新增）</li>
+<li><strong>性能</strong>：英文转录 WER 优于更大规模模型，支持推测解码加速推理</li>
+<li><strong>新功能</strong>：日语 ASR、关键词列表偏置（改进名称与首字母缩写识别）</li>
+<li><strong>开源</strong>：Apache 2.0 许可，原生支持 transformers 与 vLLM</li>
+</ul>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/granite-speech-performance.png"
+	width="6191"
+	height="3158"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/granite-speech-performance_hu_ebab12c0effbad9.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/granite-speech-performance_hu_1b47a2950f981aef.png 1024w"
+	loading="lazy"
+	
+		alt="Granite 4.0 1B Speech 性能对比"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="196"
+		data-flex-basis="470px"
+	
+></p>
+<p><em>Granite 4.0 1B Speech 在多个基准上实现竞争性 WER，同时保持极小参数量</em></p>
+<h3 id="3-ulysses-sequence-parallelism百万-token-上下文训练">3. Ulysses Sequence Parallelism：百万 Token 上下文训练
+</h3><p>Snowflake 的 Ulysses Sequence Parallelism 正式集成到 Hugging Face 生态系统：</p>
+<ul>
+<li><strong>原理</strong>：通过注意力头并行化，将序列维度与头维度同时切分到多 GPU</li>
+<li><strong>优势</strong>：相比 Ring Attention，通信量降低 P 倍（P 为并行度），延迟更低</li>
+<li><strong>集成</strong>：Accelerate ParallelismConfig、Transformers Trainer、TRL SFTTrainer 无缝支持</li>
+<li><strong>应用</strong>：文档理解、代码分析、复杂推理、RAG 工作流等长上下文场景</li>
+</ul>
+<hr>
+<h2 id="-详细介绍深度解读">🔍 详细介绍（深度解读）
+</h2><h3 id="一bevlm语义蒸馏提升自动驾驶安全">一、BEVLM：语义蒸馏提升自动驾驶安全
+</h3><h4 id="研究背景与动机">研究背景与动机
+</h4><p>将大语言模型（LLM）集成到自动驾驶系统已成为研究热点，LLM 的强大推理与语义理解能力对于处理复杂决策和长尾场景至关重要。然而，现有方法通常独立地从多视角、多帧图像中提取视觉 token 输入 LLM，导致：</p>
+<ol>
+<li><strong>空间一致性缺失</strong>：各视角独立处理，无法建模动态驾驶环境的空间关系</li>
+<li><strong>计算冗余</strong>：计算成本随帧数线性增长，难以平衡长时程时序信息与效率</li>
+<li><strong>3D 空间推理受限</strong>：LLM 难以从分离的视角 token 中推断准确的 3D 空间关系</li>
+</ol>
+<p>另一方面，鸟瞰图（BEV）表示通过融合多视角、多时步信息到统一的顶视图网格，提供了空间一致的场景表示，已成为现代自动驾驶系统的核心中间表示。但 BEV 编码器通常仅从几何标注任务（如目标检测）学习，<strong>缺乏基础视觉编码器的语义丰富性</strong>，无法利用大规模图像 - 文本预训练的优势。</p>
+<p>BEVLM 旨在 bridging this gap：将空间一致的 BEV 表示与 LLM 的语义推理能力相结合。</p>
+<h4 id="核心方法与技术细节">核心方法与技术细节
+</h4><p>BEVLM 框架包含两个核心贡献：</p>
+<p><strong>1. BEV 表示用于空间推理的系统性研究</strong></p>
+<p>研究者首次系统比较了三种视觉表示对 LLM 空间推理的影响：</p>
+<ul>
+<li><strong>I_ViT</strong>：原始 VLM 的 Vision Transformer 提取的视觉 token</li>
+<li><strong>I_UniAD</strong>：UniAD 图像 backbone 在 BEV 融合前的 token</li>
+<li><strong>B_UniAD</strong>：UniAD 在 BEV 融合后产生的 BEV token</li>
+</ul>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure1-representation.png"
+	width="996"
+	height="364"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure1-representation_hu_44a9603d657385ab.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure1-representation_hu_823c47880219cdc3.png 1024w"
+	loading="lazy"
+	
+		alt="BEVLM 表示对比"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="273"
+		data-flex-basis="656px"
+	
+></p>
+<p><em>图 1：三种视觉表示对比。左：视觉编码器独立处理多视角图像；中：BEV 编码器提供空间一致表示但语义有限；右（本文）：通过语义蒸馏构建语义增强且空间一致的场景表示</em></p>
+<p>实验发现：</p>
+<ul>
+<li><strong>单视角推理</strong>（DriveLM 数据集）：B_UniAD（90.8%）优于 I_ViT（90.3%）和 I_UniAD（89.8%）</li>
+<li><strong>跨视角推理</strong>（Ego3D 数据集）：BEV 表示将多选题准确率提升 <strong>46.0%</strong>，L1 距离误差降低 27.8%</li>
+<li><strong>模型规模效应</strong>：将 LLM 从 1B 扩展到 8B，准确率从 89.8% 提升至 95.3%</li>
+</ul>
+<p><strong>2. 语义蒸馏：从 LLM 到 BEV 编码器的知识迁移</strong></p>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure3-distillation.png"
+	width="898"
+	height="307"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure3-distillation_hu_f3358100272c0647.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure3-distillation_hu_41250666fe665aaf.png 1024w"
+	loading="lazy"
+	
+		alt="BEVLM 语义蒸馏框架"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="292"
+		data-flex-basis="702px"
+	
+></p>
+<p><em>图 3：BEV 语义蒸馏框架。使用共享 BEV 表示同时支持 VQA 和目标检测任务，通过 VQA 任务从 LLM 蒸馏语义知识，同时用检测任务正则化 BEV 空间结构</em></p>
+<p>语义蒸馏的核心思想：</p>
+<ul>
+<li><strong>教师 - 学生框架</strong>：将冻结的 LLM 视为固定语义教师，通过 VQA 任务提供监督信号</li>
+<li><strong>表示蒸馏</strong>：BEV 编码器（学生）学习将语义线索编码到特征网格中，以对齐 LLM 的语义空间</li>
+<li><strong>联合训练</strong>：同时训练 VQA 和原始感知任务（如目标检测），防止空间关系灾难性遗忘</li>
+</ul>
+$$\mathcal{L}_{\text{distill}} \approx \|\text{MLP}(E_\theta(\mathcal{X})) - \mathbf{v}^*\|_2^2$$<p>其中 $\mathbf{v}^*$ 是 LLM 对安全关键查询的理想语义 token 嵌入（如&quot;blocked lane&quot;、&ldquo;unsafe velocity&rdquo;）。</p>
+<h4 id="实验设计与结果">实验设计与结果
+</h4><p><strong>开放环评估（nuScenes）</strong>：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>方法</th>
+          <th>训练</th>
+          <th>L2@1s↓</th>
+          <th>L2@2s↓</th>
+          <th>L2@3s↓</th>
+          <th>Avg.L2↓</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Baseline</td>
+          <td>Det.</td>
+          <td>0.50</td>
+          <td>0.99</td>
+          <td>1.67</td>
+          <td>1.05</td>
+      </tr>
+      <tr>
+          <td>Distilled_1B BEV</td>
+          <td>Det. + Distill</td>
+          <td>0.46</td>
+          <td>0.91</td>
+          <td>1.55</td>
+          <td>0.97</td>
+      </tr>
+      <tr>
+          <td>Distilled_8B BEV</td>
+          <td>Det. + Distill</td>
+          <td>0.48</td>
+          <td>0.94</td>
+          <td>1.59</td>
+          <td>1.00</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>封闭环评估（NeuroNCAP 安全关键场景）</strong>：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>方法</th>
+          <th>NeuroNCAP Score↑</th>
+          <th>Collision Rate↓</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Baseline</td>
+          <td>2.10</td>
+          <td>0.62</td>
+      </tr>
+      <tr>
+          <td>Distilled_1B BEV</td>
+          <td>2.46</td>
+          <td>0.63</td>
+      </tr>
+      <tr>
+          <td>Distilled_8B BEV</td>
+          <td><strong>2.71</strong></td>
+          <td><strong>0.55</strong></td>
+      </tr>
+  </tbody>
+</table></div>
+<p>关键发现：</p>
+<ul>
+<li><strong>8B 蒸馏模型</strong>：NeuroNCAP 评分提升 <strong>29.0%</strong>（vs baseline），碰撞率降低 <strong>11.3%</strong></li>
+<li><strong>教师模型规模效应</strong>：8B LLM 蒸馏优于 1B LLM（+10.2% NeuroNCAP 评分）</li>
+<li><strong>VQA 数据类型</strong>：Behavior 和 Planning 问题对安全提升贡献最大</li>
+</ul>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure4-results.png"
+	width="792"
+	height="278"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure4-results_hu_b248ddc349195845.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure4-results_hu_e389c5119a364b9.png 1024w"
+	loading="lazy"
+	
+		alt="BEVLM 封闭环定性结果"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="284"
+		data-flex-basis="683px"
+	
+></p>
+<p><em>图 4：NeuroNCAP 封闭环定性结果。蒸馏模型在安全关键场景（右转冲突、对向车道入侵）中展现更优决策，成功避免碰撞而 baseline 失败</em></p>
+<h4 id="局限性分析">局限性分析
+</h4><ol>
+<li><strong>数据集限制</strong>：主要使用 DriveLM-nuScenes 数据集，虽已证明有效性，但在更多样化 VQA 数据上的扩展性待验证</li>
+<li><strong>实时性挑战</strong>：当前 LLM 推理延迟仍限制其在端到端控制中的直接应用</li>
+<li><strong>蒸馏成本</strong>：8B LLM 蒸馏需 100 小时（8×A100 80GB），计算成本较高</li>
+</ol>
+<h4 id="未来方向与影响">未来方向与影响
+</h4><ol>
+<li><strong>扩展 VQA 数据</strong>：探索更多样化、语义丰富的 VQA 数据集验证框架扩展性</li>
+<li><strong>LLM 直接控制</strong>：随着 VLA（Vision-Language-Action）模型效率提升，语义增强 BEV 可直接用于 LLM 基于控制</li>
+<li><strong>安全关键场景泛化</strong>：在更多长尾场景验证语义蒸馏的泛化能力</li>
+<li><strong>多模态融合</strong>：结合激光雷达等多传感器信息进一步增强 BEV 表示</li>
+</ol>
+<h4 id="相关资源">相关资源
+</h4><ul>
+<li><strong>论文</strong>：<a class="link" href="https://arxiv.org/abs/2603.06576"  target="_blank" rel="noopener"
+    >arXiv:2603.06576</a></li>
+<li><strong>代码</strong>：待开源（论文提交时未提供）</li>
+<li><strong>数据集</strong>：DriveLM-nuScenes、Ego3D、NeuroNCAP</li>
+</ul>
+<hr>
+<h3 id="二schema-gated-orchestration智能体架构新范式">二、Schema-Gated Orchestration：智能体架构新范式
+</h3><h4 id="研究背景与动机-1">研究背景与动机
+</h4><p>大语言模型现已能够将研究者的自然语言目标转化为可执行计算，但科学工作流要求<strong>确定性、可追溯性和治理</strong>，这些在 LLM 决定执行内容时难以保证。</p>
+<p>通过对 10 个工业研发利益相关者的 18 位专家进行半结构化访谈，研究者发现两个竞争需求：</p>
+<ol>
+<li><strong>执行确定性（Req A）</strong>：计算必须稳定、可重复、基于明确定义的操作</li>
+<li><strong>对话灵活性（Req B）</strong>：研究者需要快速迭代、尝试替代方案、无需重写刚性 pipeline</li>
+</ol>
+<p>现有系统分为两极：</p>
+<ul>
+<li><strong>生成式系统</strong>（如 GitHub Copilot、Claude Code）：最大化灵活性但牺牲可复现性</li>
+<li><strong>工作流系统</strong>（如 Galaxy、Snakemake、Nextflow）：确保可复现性但交互成本高</li>
+</ul>
+<h4 id="核心方法schema-gated-orchestration">核心方法：Schema-Gated Orchestration
+</h4><p>研究者提出 <strong>Schema-Gated Orchestration</strong> 作为解决原则：<strong>schema 成为组合工作流级别的强制执行边界</strong>，除非完整动作（包括跨步依赖）通过机器可检查规范验证，否则不执行任何操作。</p>
+<p><strong>核心架构原则</strong>：</p>
+<ul>
+<li><strong>对话权威</strong>：解释意图、提出候选动作、询问澄清问题、解释选择</li>
+<li><strong>执行权威</strong>：仅通过满足明确机器可读约束的动作选择和运行计算</li>
+</ul>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure2-design-space.png"
+	width="4711"
+	height="3763"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure2-design-space_hu_ccece25d1c1c25db.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure2-design-space_hu_e64feabfa058a061.png 1024w"
+	loading="lazy"
+	
+		alt="Schema-Gated 架构设计空间"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="125"
+		data-flex-basis="300px"
+	
+></p>
+<p><em>图 2：对话式科学工作流架构设计空间。20 个系统在 ED（执行确定性）/CF（对话灵活性）空间中的位置，虚线为经验 Pareto 前沿，Schema-Gated 区域（ED≥3.5, CF≥3.5）仅有 2 个系统</em></p>
+<p><strong>三个操作原则</strong>：</p>
+<ol>
+<li>
+<p><strong>Clarification-before-execution</strong>：由于 schema gate 拒绝不完整或类型错误的调用，缺失字段、类型不匹配和约束违规会转化为对话提示，将静默失败转化为结构化协商</p>
+</li>
+<li>
+<p><strong>Constrained plan-act orchestration</strong>：分离推理与执行。规划模式下模型作为完全智能体推理；行动模式下 schema-gated 不变量适用：无验证不执行</p>
+</li>
+<li>
+<p><strong>从工具级到工作流级 gating</strong>：工具级 schema 验证（OpenAI function calling、Anthropic tool use、MCP）已主流但仅适用于单个调用；Schema-Gated Orchestration 将验证扩展到组合工作流，在执行前对整个多步计划强制执行结构、依赖和类型约束</p>
+</li>
+</ol>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure3-architecture.png"
+	width="4407"
+	height="2492"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure3-architecture_hu_594861ee776df64.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure3-architecture_hu_b092c9feefdbcdd.png 1024w"
+	loading="lazy"
+	
+		alt="Schema-Gated 参考架构"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="176"
+		data-flex-basis="424px"
+	
+></p>
+<p><em>图 3：分离对话权威与执行权威的参考架构。LLM 编排器持有对话权威，执行权威存在于 schema 验证中，每个动作提案在执行前必须通过执行权威 gate</em></p>
+<h4 id="系统评估">系统评估
+</h4><p>研究者使用 ED/CF 轴对 20 个代表性系统进行评分，评分协议：</p>
+<ul>
+<li><strong>15 次独立评分</strong>：跨 3 个 LLM 家族（ChatGPT 5.2、Claude Sonnet 4.6、Gemini 3.1 Pro）</li>
+<li><strong>一致性</strong>：Krippendorff&rsquo;s α = 0.80（ED）和 0.98（CF），显示实质性到近乎完美的模型间一致性</li>
+</ul>
+<p>关键发现：</p>
+<ul>
+<li><strong>经验 Pareto 前沿</strong>：没有系统同时实现高灵活性和高确定性</li>
+<li><strong>Schema-Gated 区域</strong>：仅 2 个系统（OpenAI Assistants strict 模式、Copilot Studio/Power Automate）达到 ED≥3.5 且 CF≥3.5</li>
+<li><strong>收敛趋势</strong>：工具增强系统（ED 不足）和工作流+NL 系统（CF 不足）正 converging toward schema-gated zone</li>
+</ul>
+<h4 id="局限性分析-1">局限性分析
+</h4><ol>
+<li><strong>覆盖成本</strong>：Schema-gated 系统只能执行 registry 表示的内容；缺失工具或工作流需要拒绝或显式创作路径</li>
+<li><strong>对话摩擦</strong>：每次执行前的结构化协商可能减缓高参数工作流的探索</li>
+<li><strong>科学适当性</strong>：Schema 强制执行类型正确参数和结构有效性，但无法确保科学适当性</li>
+<li><strong>Registry 维护</strong>：需要组织承诺进行 schema 设计、验证、版本控制和向后兼容演进</li>
+</ol>
+<h4 id="未来方向与影响-1">未来方向与影响
+</h4><ol>
+<li><strong>模板引导</strong>：使用已验证工作流作为可组合模板，用户通过工具替换或重参数化适应</li>
+<li><strong>LLM 辅助 schema 起草</strong>：模型从现有代码、文档或函数签名生成符合规范的 ToolDefinition</li>
+<li><strong>分层 registry</strong>：允许社区贡献工具与策划工具在明确追溯和审查政策下共存</li>
+<li><strong>联邦生态系统</strong>：扩展 MCP 等协议支持跨工具依赖声明和类型数据契约</li>
+</ol>
+<h4 id="相关资源-1">相关资源
+</h4><ul>
+<li><strong>论文</strong>：<a class="link" href="https://arxiv.org/abs/2603.06394"  target="_blank" rel="noopener"
+    >arXiv:2603.06394</a></li>
+<li><strong>代码</strong>：参考架构实现待开源</li>
+</ul>
+<hr>
+<h2 id="-应用案例">💡 应用案例
+</h2><h3 id="1-自动驾驶安全关键场景处理">1. 自动驾驶安全关键场景处理
+</h3><p>BEVLM 在 NeuroNCAP 基准测试中展示了实际价值：</p>
+<ul>
+<li><strong>右转冲突场景</strong>：ego 车辆右转进入被挖掘机阻塞的车道，蒸馏模型预见阻塞并在后方白色车辆接近前快速变道，baseline 犹豫导致碰撞</li>
+<li><strong>对向车道入侵</strong>：对向车辆在 ego 车道错误行驶，蒸馏模型快速变道至右侧空闲车道避免碰撞，baseline 反应过晚导致事故</li>
+</ul>
+<h3 id="2-工业研发工作流自动化">2. 工业研发工作流自动化
+</h3><p>Schema-Gated 架构适用于：</p>
+<ul>
+<li><strong>材料发现 pipeline</strong>：数据集加载→代理模型训练→逆向设计，schema 验证捕获跨步类型和依赖错误</li>
+<li><strong>药物筛选工作流</strong>：多步骤分子性质预测与优化，确保参数兼容性和数据流正确性</li>
+<li><strong>实验设计自动化</strong>：从自然语言实验设计到可执行工作流的转换，同时保持可追溯性</li>
+</ul>
+<h3 id="3-边缘设备语音交互">3. 边缘设备语音交互
+</h3><p>Granite 4.0 1B Speech 适用于：</p>
+<ul>
+<li><strong>离线语音助手</strong>：资源受限设备上的多语言 ASR</li>
+<li><strong>实时转录</strong>：会议、采访等场景的低延迟转录</li>
+<li><strong>嵌入式翻译</strong>：双向语音翻译（AST）支持跨语言交流</li>
+</ul>
+<hr>
+<h2 id="-统计汇总">📊 统计汇总
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>类别</th>
+          <th>项目</th>
+          <th>关键指标</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>自动驾驶</strong></td>
+          <td>BEVLM 跨视角推理提升</td>
+          <td>+46.0% 准确率</td>
+      </tr>
+      <tr>
+          <td><strong>自动驾驶</strong></td>
+          <td>BEVLM 封闭环安全提升</td>
+          <td>+29.0% NeuroNCAP Score</td>
+      </tr>
+      <tr>
+          <td><strong>自动驾驶</strong></td>
+          <td>BEVLM 碰撞率降低</td>
+          <td>-11.3%</td>
+      </tr>
+      <tr>
+          <td><strong>机器人</strong></td>
+          <td>LeRobot v0.5.0 PR 数量</td>
+          <td>200+ merged PRs</td>
+      </tr>
+      <tr>
+          <td><strong>机器人</strong></td>
+          <td>LeRobot v0.5.0 贡献者</td>
+          <td>50+ new contributors</td>
+      </tr>
+      <tr>
+          <td><strong>机器人</strong></td>
+          <td>LeRobot 训练加速</td>
+          <td>10x 图像训练，3x 编码</td>
+      </tr>
+      <tr>
+          <td><strong>语音</strong></td>
+          <td>Granite 4.0 1B 参数</td>
+          <td>1B（前代一半）</td>
+      </tr>
+      <tr>
+          <td><strong>语音</strong></td>
+          <td>Granite 4.0 支持语言</td>
+          <td>6 种（新增日语）</td>
+      </tr>
+      <tr>
+          <td><strong>语音</strong></td>
+          <td>Granite 4.0 OpenASR 排名</td>
+          <td>#1</td>
+      </tr>
+      <tr>
+          <td><strong>长序列</strong></td>
+          <td>Ulysses SP 通信优化</td>
+          <td>相比 Ring Attention 降低 P 倍</td>
+      </tr>
+      <tr>
+          <td><strong>Agent</strong></td>
+          <td>Schema-Gated 评估系统</td>
+          <td>20 个系统，15 次评分</td>
+      </tr>
+      <tr>
+          <td><strong>Agent</strong></td>
+          <td>Schema-Gated 区域系统</td>
+          <td>2 个（ED≥3.5, CF≥3.5）</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="-全部参考链接">📖 全部参考链接
+</h2><h3 id="论文">论文
+</h3><ol>
+<li><a class="link" href="https://arxiv.org/abs/2603.06576"  target="_blank" rel="noopener"
+    >BEVLM: Distilling Semantic Knowledge from LLMs into Bird&rsquo;s-Eye View Representations</a> - arXiv:2603.06576</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.06394"  target="_blank" rel="noopener"
+    >Talk Freely, Execute Strictly: Schema-Gated Agentic AI for Flexible and Reproducible Scientific Workflows</a> - arXiv:2603.06394</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.06565"  target="_blank" rel="noopener"
+    >Boosting Deep Reinforcement Learning using Pretraining with Logical Options</a> - arXiv:2603.06565</li>
+<li><a class="link" href="https://arxiv.org/abs/2603.06573"  target="_blank" rel="noopener"
+    >Fly360: Omnidirectional Obstacle Avoidance within Drone View</a> - arXiv:2603.06573</li>
+</ol>
+<h3 id="技术博客">技术博客
+</h3><ol start="5">
+<li><a class="link" href="https://huggingface.co/blog/ibm-granite/granite-4-speech"  target="_blank" rel="noopener"
+    >Granite 4.0 1B Speech: Compact, Multilingual, and Built for the Edge</a> - Hugging Face Blog</li>
+<li><a class="link" href="https://huggingface.co/blog/ulysses-sp"  target="_blank" rel="noopener"
+    >Ulysses Sequence Parallelism: Training with Million-Token Contexts</a> - Hugging Face Blog</li>
+<li><a class="link" href="https://huggingface.co/blog/lerobot-release-v050"  target="_blank" rel="noopener"
+    >LeRobot v0.5.0: Scaling Every Dimension</a> - Hugging Face Blog</li>
+</ol>
+<h3 id="代码与模型">代码与模型
+</h3><ol start="8">
+<li><a class="link" href="https://huggingface.co/ibm-granite/granite-4.0-1b-speech"  target="_blank" rel="noopener"
+    >IBM Granite 4.0 1B Speech</a> - Hugging Face</li>
+<li><a class="link" href="https://huggingface.co/spaces/hf-audio/open_asr_leaderboard"  target="_blank" rel="noopener"
+    >OpenASR Leaderboard</a> - Hugging Face Spaces</li>
+<li><a class="link" href="https://huggingface.co/docs/lerobot"  target="_blank" rel="noopener"
+    >LeRobot Documentation</a> - Hugging Face Docs</li>
+<li><a class="link" href="https://huggingface.co/docs/lerobot/unitree_g1"  target="_blank" rel="noopener"
+    >Unitree G1 Integration</a> - LeRobot Docs</li>
+<li><a class="link" href="https://huggingface.co/docs/lerobot/pi0fast"  target="_blank" rel="noopener"
+    >Pi0-FAST Policy</a> - LeRobot Docs</li>
+<li><a class="link" href="https://huggingface.co/docs/lerobot/rtc"  target="_blank" rel="noopener"
+    >Real-Time Chunking</a> - LeRobot Docs</li>
+</ol>
+<h3 id="基准与数据集">基准与数据集
+</h3><ol start="14">
+<li><a class="link" href="https://github.com/OpenDriveLab/DriveLM"  target="_blank" rel="noopener"
+    >DriveLM-nuScenes</a> - GitHub</li>
+<li><a class="link" href="https://github.com/UCSC-VLAA/Ego3D"  target="_blank" rel="noopener"
+    >Ego3D Dataset</a> - GitHub</li>
+<li><a class="link" href="https://github.com/viktorfa/NeuroNCAP"  target="_blank" rel="noopener"
+    >NeuroNCAP Benchmark</a> - GitHub</li>
+</ol>
+<hr>
+<p><em>本文由 AI 助手自动生成，内容基于 2026 年 3 月 9-10 日发布的学术论文、技术博客和开源项目。如需引用或转载，请注明出处。</em></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ai-daily/">AI Daily</a>
+        
+            <a href="/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/">自动驾驶</a>
+        
+            <a href="/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a>
+        
+            <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/">机器人</a>
+        
+            <a href="/tags/agent/">Agent</a>
+        
+            <a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/">大模型</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2026-03-11
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-05agent-%E7%9B%AE%E6%A0%87%E6%BC%82%E7%A7%BB%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B624-%E5%B0%8F%E6%97%B6%E6%96%87%E7%94%9F%E5%9B%BE%E8%AE%AD%E7%BB%83%E7%AA%81%E7%A0%B4/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-05：Agent 目标漂移深度研究、24 小时文生图训练突破</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="HHjoker/HHjoker.github.io"
+    data-repo-id="R_kgDON1Vqng"
+    data-category="Announcements"
+    data-category-id="DIC_kwDON1Vqns4C3qHd"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('preferred_color_scheme');
+            } else {
+                setGiscusTheme('preferred_color_scheme');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 Huang Hao
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+    #TableOfContents > ul ul,
+    #TableOfContents > ul ol,
+    #TableOfContents > ol ul,
+    #TableOfContents > ol ol {
+        display: none;
+    }
+    #TableOfContents > ul .open,
+    #TableOfContents > ol .open {
+        display: block;
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://HHjoker.github.io/icons/backTop.svg);
+    }
+</style>
+
+<script type="text/javascript">
+    
+
+    function initScrollTop() {
+        let rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) {
+            return;
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop
+        rightSideBar.appendChild(btn)
+        
+        window.onscroll = function() {
+            
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    }
+
+    
+
+    function backToTop(){
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    initScrollTop();
+</script>
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    let codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) {
+      return;
+    }
+    codeBlocks.forEach(codeBlock => {
+      
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+        return;
+      }
+      
+      
+      let codeMoreBox = document.createElement('div');
+      codeMoreBox.classList.add('code-more-box');
+      
+      let codeMoreBtn = document.createElement('span');
+      codeMoreBtn.classList.add('code-more-btn');
+      codeMoreBtn.addEventListener('click', () => {
+        codeBlock.classList.add('code-show');
+        codeMoreBox.style.display = 'none';
+        
+        window.dispatchEvent(new Event('resize'))
+      })
+      
+      let img = document.createElement('img');
+      img.classList.add('code-more-img');
+      img.src = "https://HHjoker.github.io/icons/codeMore.ico"
+      
+      codeMoreBtn.appendChild(img);
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox)
+    })
+  }
+  
+  initCodeMoreBox();
+</script>
+
+    </body>
+</html>

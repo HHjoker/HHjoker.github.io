@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>自动驾驶 on HH Blog</title>
+        <link>https://HHjoker.github.io/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/</link>
+        <description>Recent content in 自动驾驶 on HH Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Huang Hao</copyright>
+        <lastBuildDate>Wed, 11 Mar 2026 10:21:02 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI 日报 | 2026-03-10：BEVLM 语义蒸馏提升自动驾驶安全、Schema-Gated 智能体架构、LeRobot v0.5.0 发布</title>
+        <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/</link>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/</guid>
+        <description>&lt;h1 id=&#34;ai-日报--2026-03-10&#34;&gt;AI 日报 | 2026-03-10
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;今日概览&lt;/strong&gt;：自动驾驶语义理解突破、智能体架构新范式、机器人学习生态扩张、边缘语音模型新标杆&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;BEVLM 框架&lt;/strong&gt;：Mercedes-Benz 与 UC Irvine 提出 BEVLM，首次系统性比较 BEV 表示与多视角图像对 LLM 空间推理的影响，通过语义蒸馏将 LLM 知识注入 BEV 编码器，&lt;strong&gt;封闭环安全评分提升 29%&lt;/strong&gt;，碰撞率降低 11.3%&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Schema-Gated 智能体架构&lt;/strong&gt;：Intellegens 等提出 Schema-Gated Orchestration，通过分离对话权威与执行权威，解决科学工作流中确定性与灵活性的矛盾，为可复现的 AI 驱动科研提供新范式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;LeRobot v0.5.0 发布&lt;/strong&gt;：Hugging Face LeRobot 迎来最大规模更新，新增 &lt;strong&gt;Unitree G1 人形机器人支持&lt;/strong&gt;、Pi0-FAST 自回归 VLA、Real-Time Chunking 推理优化，支持 Python 3.12+ 与 Transformers v5&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;IBM Granite 4.0 1B Speech&lt;/strong&gt;：仅 1B 参数的紧凑语音模型登榜 &lt;strong&gt;OpenASR  leaderboard 第一&lt;/strong&gt;，支持 6 种语言，英文转录准确率超越更大规模模型，专为边缘设备设计&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Ulysses Sequence Parallelism&lt;/strong&gt;：Snowflake 的百万 token 上下文训练技术正式集成到 Hugging Face 生态系统，通过 Accelerate、Transformers Trainer、TRL SFTTrainer 实现无缝长序列训练&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-重要论文一览&#34;&gt;📚 重要论文一览
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;论文&lt;/th&gt;
+          &lt;th&gt;机构&lt;/th&gt;
+          &lt;th&gt;亮点&lt;/th&gt;
+          &lt;th&gt;链接&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;BEVLM: Distilling Semantic Knowledge from LLMs into Bird&amp;rsquo;s-Eye View Representations&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Mercedes-Benz, UC Irvine&lt;/td&gt;
+          &lt;td&gt;BEV 表示提升 LLM 跨视角推理 46%，语义蒸馏提升封闭环驾驶安全 29%&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.06576&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.06576&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Talk Freely, Execute Strictly: Schema-Gated Agentic AI for Flexible and Reproducible Scientific Workflows&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Intellegens, Cavendish Lab&lt;/td&gt;
+          &lt;td&gt;提出 Schema-Gated 架构，分离对话与执行权威，解决 AI 智能体确定性 - 灵活性矛盾&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.06394&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.06394&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Boosting Deep Reinforcement Learning using Pretraining with Logical Options&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;提出 H²RL 混合分层 RL，通过逻辑选项预训练引导策略远离短期奖励循环&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.06565&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.06565&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Fly360: Omnidirectional Obstacle Avoidance within Drone View&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;全景无人机全向避障，两阶段感知 - 决策 pipeline，仿真与实机验证&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.06573&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.06573&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Ulysses Sequence Parallelism: Training with Million-Token Contexts&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Snowflake, Hugging Face&lt;/td&gt;
+          &lt;td&gt;百万 token 上下文训练技术集成到 HF 生态，支持 Accelerate/Transformers/TRL&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/ulysses-sp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HF Blog&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-技术动态&#34;&gt;🚀 技术动态
+&lt;/h2&gt;&lt;h3 id=&#34;1-lerobot-v050机器人学习生态大扩张&#34;&gt;1. LeRobot v0.5.0：机器人学习生态大扩张
+&lt;/h3&gt;&lt;p&gt;Hugging Face LeRobot 发布 v0.5.0，这是迄今为止最大规模的更新：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;硬件支持&lt;/strong&gt;：首次支持 &lt;strong&gt;Unitree G1 人形机器人&lt;/strong&gt;（全身控制、遥操作、 locomotion + manipulation 协同），新增 OpenArm、Earth Rover 移动机器人、OMX 机械臂&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;新策略&lt;/strong&gt;：Pi0-FAST（自回归 VLA，基于 FAST 动作 tokenization）、Real-Time Chunking（流匹配策略推理优化）、Wall-X（基于 Qwen2.5-VL 的 VLA）、X-VLA（Florence2  backbone）、SARM（阶段感知奖励建模）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;性能提升&lt;/strong&gt;：流式视频编码（零等待录制）、10 倍图像训练加速、3 倍编码加速&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;EnvHub&lt;/strong&gt;：直接从 Hugging Face Hub 加载仿真环境，支持 NVIDIA IsaacLab-Arena&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;现代化&lt;/strong&gt;：Python 3.12+、Transformers v5、第三方策略插件系统&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid.jpg&#34;
+	width=&#34;3024&#34;
+	height=&#34;3024&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid_hu_9f63aad436629edf.jpg 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid_hu_8780dd2f145a0743.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;LeRobot Unitree G1 人形机器人&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;100&#34;
+		data-flex-basis=&#34;240px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;LeRobot v0.5.0 首次支持 Unitree G1 人形机器人，实现全身控制与遥操作&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-sarm.gif&#34;
+	width=&#34;1152&#34;
+	height=&#34;648&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-sarm_hu_94e6a23e04a65ab9.gif 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-sarm_hu_b9b86324627d1c26.gif 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;LeRobot SARM 阶段感知奖励建模&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;SARM 通过阶段感知奖励建模解决长视野任务学习问题&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-ibm-granite-40-1b-speech边缘语音新标杆&#34;&gt;2. IBM Granite 4.0 1B Speech：边缘语音新标杆
+&lt;/h3&gt;&lt;p&gt;IBM 发布 Granite 4.0 1B Speech，仅 1B 参数却登榜 &lt;strong&gt;OpenASR Leaderboard 第一&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;多语言支持&lt;/strong&gt;：英语、法语、德语、西班牙语、葡萄牙语、日语（新增）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;性能&lt;/strong&gt;：英文转录 WER 优于更大规模模型，支持推测解码加速推理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;新功能&lt;/strong&gt;：日语 ASR、关键词列表偏置（改进名称与首字母缩写识别）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;开源&lt;/strong&gt;：Apache 2.0 许可，原生支持 transformers 与 vLLM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/granite-speech-performance.png&#34;
+	width=&#34;6191&#34;
+	height=&#34;3158&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/granite-speech-performance_hu_ebab12c0effbad9.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/granite-speech-performance_hu_1b47a2950f981aef.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Granite 4.0 1B Speech 性能对比&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;196&#34;
+		data-flex-basis=&#34;470px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Granite 4.0 1B Speech 在多个基准上实现竞争性 WER，同时保持极小参数量&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-ulysses-sequence-parallelism百万-token-上下文训练&#34;&gt;3. Ulysses Sequence Parallelism：百万 Token 上下文训练
+&lt;/h3&gt;&lt;p&gt;Snowflake 的 Ulysses Sequence Parallelism 正式集成到 Hugging Face 生态系统：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;原理&lt;/strong&gt;：通过注意力头并行化，将序列维度与头维度同时切分到多 GPU&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;优势&lt;/strong&gt;：相比 Ring Attention，通信量降低 P 倍（P 为并行度），延迟更低&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;集成&lt;/strong&gt;：Accelerate ParallelismConfig、Transformers Trainer、TRL SFTTrainer 无缝支持&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;应用&lt;/strong&gt;：文档理解、代码分析、复杂推理、RAG 工作流等长上下文场景&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-详细介绍深度解读&#34;&gt;🔍 详细介绍（深度解读）
+&lt;/h2&gt;&lt;h3 id=&#34;一bevlm语义蒸馏提升自动驾驶安全&#34;&gt;一、BEVLM：语义蒸馏提升自动驾驶安全
+&lt;/h3&gt;&lt;h4 id=&#34;研究背景与动机&#34;&gt;研究背景与动机
+&lt;/h4&gt;&lt;p&gt;将大语言模型（LLM）集成到自动驾驶系统已成为研究热点，LLM 的强大推理与语义理解能力对于处理复杂决策和长尾场景至关重要。然而，现有方法通常独立地从多视角、多帧图像中提取视觉 token 输入 LLM，导致：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;空间一致性缺失&lt;/strong&gt;：各视角独立处理，无法建模动态驾驶环境的空间关系&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;计算冗余&lt;/strong&gt;：计算成本随帧数线性增长，难以平衡长时程时序信息与效率&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;3D 空间推理受限&lt;/strong&gt;：LLM 难以从分离的视角 token 中推断准确的 3D 空间关系&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;另一方面，鸟瞰图（BEV）表示通过融合多视角、多时步信息到统一的顶视图网格，提供了空间一致的场景表示，已成为现代自动驾驶系统的核心中间表示。但 BEV 编码器通常仅从几何标注任务（如目标检测）学习，&lt;strong&gt;缺乏基础视觉编码器的语义丰富性&lt;/strong&gt;，无法利用大规模图像 - 文本预训练的优势。&lt;/p&gt;
+&lt;p&gt;BEVLM 旨在 bridging this gap：将空间一致的 BEV 表示与 LLM 的语义推理能力相结合。&lt;/p&gt;
+&lt;h4 id=&#34;核心方法与技术细节&#34;&gt;核心方法与技术细节
+&lt;/h4&gt;&lt;p&gt;BEVLM 框架包含两个核心贡献：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. BEV 表示用于空间推理的系统性研究&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;研究者首次系统比较了三种视觉表示对 LLM 空间推理的影响：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;I_ViT&lt;/strong&gt;：原始 VLM 的 Vision Transformer 提取的视觉 token&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;I_UniAD&lt;/strong&gt;：UniAD 图像 backbone 在 BEV 融合前的 token&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;B_UniAD&lt;/strong&gt;：UniAD 在 BEV 融合后产生的 BEV token&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure1-representation.png&#34;
+	width=&#34;996&#34;
+	height=&#34;364&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure1-representation_hu_44a9603d657385ab.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure1-representation_hu_823c47880219cdc3.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;BEVLM 表示对比&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;273&#34;
+		data-flex-basis=&#34;656px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;图 1：三种视觉表示对比。左：视觉编码器独立处理多视角图像；中：BEV 编码器提供空间一致表示但语义有限；右（本文）：通过语义蒸馏构建语义增强且空间一致的场景表示&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;实验发现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;单视角推理&lt;/strong&gt;（DriveLM 数据集）：B_UniAD（90.8%）优于 I_ViT（90.3%）和 I_UniAD（89.8%）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;跨视角推理&lt;/strong&gt;（Ego3D 数据集）：BEV 表示将多选题准确率提升 &lt;strong&gt;46.0%&lt;/strong&gt;，L1 距离误差降低 27.8%&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;模型规模效应&lt;/strong&gt;：将 LLM 从 1B 扩展到 8B，准确率从 89.8% 提升至 95.3%&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. 语义蒸馏：从 LLM 到 BEV 编码器的知识迁移&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure3-distillation.png&#34;
+	width=&#34;898&#34;
+	height=&#34;307&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure3-distillation_hu_f3358100272c0647.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure3-distillation_hu_41250666fe665aaf.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;BEVLM 语义蒸馏框架&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;292&#34;
+		data-flex-basis=&#34;702px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;图 3：BEV 语义蒸馏框架。使用共享 BEV 表示同时支持 VQA 和目标检测任务，通过 VQA 任务从 LLM 蒸馏语义知识，同时用检测任务正则化 BEV 空间结构&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;语义蒸馏的核心思想：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;教师 - 学生框架&lt;/strong&gt;：将冻结的 LLM 视为固定语义教师，通过 VQA 任务提供监督信号&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;表示蒸馏&lt;/strong&gt;：BEV 编码器（学生）学习将语义线索编码到特征网格中，以对齐 LLM 的语义空间&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;联合训练&lt;/strong&gt;：同时训练 VQA 和原始感知任务（如目标检测），防止空间关系灾难性遗忘&lt;/li&gt;
+&lt;/ul&gt;
+$$\mathcal{L}_{\text{distill}} \approx \|\text{MLP}(E_\theta(\mathcal{X})) - \mathbf{v}^*\|_2^2$$&lt;p&gt;其中 $\mathbf{v}^*$ 是 LLM 对安全关键查询的理想语义 token 嵌入（如&amp;quot;blocked lane&amp;quot;、&amp;ldquo;unsafe velocity&amp;rdquo;）。&lt;/p&gt;
+&lt;h4 id=&#34;实验设计与结果&#34;&gt;实验设计与结果
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;开放环评估（nuScenes）&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;方法&lt;/th&gt;
+          &lt;th&gt;训练&lt;/th&gt;
+          &lt;th&gt;L2@1s↓&lt;/th&gt;
+          &lt;th&gt;L2@2s↓&lt;/th&gt;
+          &lt;th&gt;L2@3s↓&lt;/th&gt;
+          &lt;th&gt;Avg.L2↓&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Baseline&lt;/td&gt;
+          &lt;td&gt;Det.&lt;/td&gt;
+          &lt;td&gt;0.50&lt;/td&gt;
+          &lt;td&gt;0.99&lt;/td&gt;
+          &lt;td&gt;1.67&lt;/td&gt;
+          &lt;td&gt;1.05&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Distilled_1B BEV&lt;/td&gt;
+          &lt;td&gt;Det. + Distill&lt;/td&gt;
+          &lt;td&gt;0.46&lt;/td&gt;
+          &lt;td&gt;0.91&lt;/td&gt;
+          &lt;td&gt;1.55&lt;/td&gt;
+          &lt;td&gt;0.97&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Distilled_8B BEV&lt;/td&gt;
+          &lt;td&gt;Det. + Distill&lt;/td&gt;
+          &lt;td&gt;0.48&lt;/td&gt;
+          &lt;td&gt;0.94&lt;/td&gt;
+          &lt;td&gt;1.59&lt;/td&gt;
+          &lt;td&gt;1.00&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;封闭环评估（NeuroNCAP 安全关键场景）&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;方法&lt;/th&gt;
+          &lt;th&gt;NeuroNCAP Score↑&lt;/th&gt;
+          &lt;th&gt;Collision Rate↓&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Baseline&lt;/td&gt;
+          &lt;td&gt;2.10&lt;/td&gt;
+          &lt;td&gt;0.62&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Distilled_1B BEV&lt;/td&gt;
+          &lt;td&gt;2.46&lt;/td&gt;
+          &lt;td&gt;0.63&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Distilled_8B BEV&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;2.71&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;&lt;strong&gt;0.55&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;关键发现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;8B 蒸馏模型&lt;/strong&gt;：NeuroNCAP 评分提升 &lt;strong&gt;29.0%&lt;/strong&gt;（vs baseline），碰撞率降低 &lt;strong&gt;11.3%&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;教师模型规模效应&lt;/strong&gt;：8B LLM 蒸馏优于 1B LLM（+10.2% NeuroNCAP 评分）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;VQA 数据类型&lt;/strong&gt;：Behavior 和 Planning 问题对安全提升贡献最大&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure4-results.png&#34;
+	width=&#34;792&#34;
+	height=&#34;278&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure4-results_hu_b248ddc349195845.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure4-results_hu_e389c5119a364b9.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;BEVLM 封闭环定性结果&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;284&#34;
+		data-flex-basis=&#34;683px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;图 4：NeuroNCAP 封闭环定性结果。蒸馏模型在安全关键场景（右转冲突、对向车道入侵）中展现更优决策，成功避免碰撞而 baseline 失败&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=&#34;局限性分析&#34;&gt;局限性分析
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;数据集限制&lt;/strong&gt;：主要使用 DriveLM-nuScenes 数据集，虽已证明有效性，但在更多样化 VQA 数据上的扩展性待验证&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实时性挑战&lt;/strong&gt;：当前 LLM 推理延迟仍限制其在端到端控制中的直接应用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;蒸馏成本&lt;/strong&gt;：8B LLM 蒸馏需 100 小时（8×A100 80GB），计算成本较高&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;未来方向与影响&#34;&gt;未来方向与影响
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;扩展 VQA 数据&lt;/strong&gt;：探索更多样化、语义丰富的 VQA 数据集验证框架扩展性&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LLM 直接控制&lt;/strong&gt;：随着 VLA（Vision-Language-Action）模型效率提升，语义增强 BEV 可直接用于 LLM 基于控制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安全关键场景泛化&lt;/strong&gt;：在更多长尾场景验证语义蒸馏的泛化能力&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多模态融合&lt;/strong&gt;：结合激光雷达等多传感器信息进一步增强 BEV 表示&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;相关资源&#34;&gt;相关资源
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;论文&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.06576&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.06576&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;代码&lt;/strong&gt;：待开源（论文提交时未提供）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据集&lt;/strong&gt;：DriveLM-nuScenes、Ego3D、NeuroNCAP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;二schema-gated-orchestration智能体架构新范式&#34;&gt;二、Schema-Gated Orchestration：智能体架构新范式
+&lt;/h3&gt;&lt;h4 id=&#34;研究背景与动机-1&#34;&gt;研究背景与动机
+&lt;/h4&gt;&lt;p&gt;大语言模型现已能够将研究者的自然语言目标转化为可执行计算，但科学工作流要求&lt;strong&gt;确定性、可追溯性和治理&lt;/strong&gt;，这些在 LLM 决定执行内容时难以保证。&lt;/p&gt;
+&lt;p&gt;通过对 10 个工业研发利益相关者的 18 位专家进行半结构化访谈，研究者发现两个竞争需求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;执行确定性（Req A）&lt;/strong&gt;：计算必须稳定、可重复、基于明确定义的操作&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;对话灵活性（Req B）&lt;/strong&gt;：研究者需要快速迭代、尝试替代方案、无需重写刚性 pipeline&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;现有系统分为两极：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;生成式系统&lt;/strong&gt;（如 GitHub Copilot、Claude Code）：最大化灵活性但牺牲可复现性&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工作流系统&lt;/strong&gt;（如 Galaxy、Snakemake、Nextflow）：确保可复现性但交互成本高&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;核心方法schema-gated-orchestration&#34;&gt;核心方法：Schema-Gated Orchestration
+&lt;/h4&gt;&lt;p&gt;研究者提出 &lt;strong&gt;Schema-Gated Orchestration&lt;/strong&gt; 作为解决原则：&lt;strong&gt;schema 成为组合工作流级别的强制执行边界&lt;/strong&gt;，除非完整动作（包括跨步依赖）通过机器可检查规范验证，否则不执行任何操作。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;核心架构原则&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;对话权威&lt;/strong&gt;：解释意图、提出候选动作、询问澄清问题、解释选择&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;执行权威&lt;/strong&gt;：仅通过满足明确机器可读约束的动作选择和运行计算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure2-design-space.png&#34;
+	width=&#34;4711&#34;
+	height=&#34;3763&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure2-design-space_hu_ccece25d1c1c25db.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure2-design-space_hu_e64feabfa058a061.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Schema-Gated 架构设计空间&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;125&#34;
+		data-flex-basis=&#34;300px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;图 2：对话式科学工作流架构设计空间。20 个系统在 ED（执行确定性）/CF（对话灵活性）空间中的位置，虚线为经验 Pareto 前沿，Schema-Gated 区域（ED≥3.5, CF≥3.5）仅有 2 个系统&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;三个操作原则&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Clarification-before-execution&lt;/strong&gt;：由于 schema gate 拒绝不完整或类型错误的调用，缺失字段、类型不匹配和约束违规会转化为对话提示，将静默失败转化为结构化协商&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Constrained plan-act orchestration&lt;/strong&gt;：分离推理与执行。规划模式下模型作为完全智能体推理；行动模式下 schema-gated 不变量适用：无验证不执行&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;从工具级到工作流级 gating&lt;/strong&gt;：工具级 schema 验证（OpenAI function calling、Anthropic tool use、MCP）已主流但仅适用于单个调用；Schema-Gated Orchestration 将验证扩展到组合工作流，在执行前对整个多步计划强制执行结构、依赖和类型约束&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure3-architecture.png&#34;
+	width=&#34;4407&#34;
+	height=&#34;2492&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure3-architecture_hu_594861ee776df64.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure3-architecture_hu_b092c9feefdbcdd.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Schema-Gated 参考架构&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;176&#34;
+		data-flex-basis=&#34;424px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;图 3：分离对话权威与执行权威的参考架构。LLM 编排器持有对话权威，执行权威存在于 schema 验证中，每个动作提案在执行前必须通过执行权威 gate&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=&#34;系统评估&#34;&gt;系统评估
+&lt;/h4&gt;&lt;p&gt;研究者使用 ED/CF 轴对 20 个代表性系统进行评分，评分协议：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;15 次独立评分&lt;/strong&gt;：跨 3 个 LLM 家族（ChatGPT 5.2、Claude Sonnet 4.6、Gemini 3.1 Pro）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;一致性&lt;/strong&gt;：Krippendorff&amp;rsquo;s α = 0.80（ED）和 0.98（CF），显示实质性到近乎完美的模型间一致性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;关键发现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;经验 Pareto 前沿&lt;/strong&gt;：没有系统同时实现高灵活性和高确定性&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Schema-Gated 区域&lt;/strong&gt;：仅 2 个系统（OpenAI Assistants strict 模式、Copilot Studio/Power Automate）达到 ED≥3.5 且 CF≥3.5&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;收敛趋势&lt;/strong&gt;：工具增强系统（ED 不足）和工作流+NL 系统（CF 不足）正 converging toward schema-gated zone&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;局限性分析-1&#34;&gt;局限性分析
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;覆盖成本&lt;/strong&gt;：Schema-gated 系统只能执行 registry 表示的内容；缺失工具或工作流需要拒绝或显式创作路径&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;对话摩擦&lt;/strong&gt;：每次执行前的结构化协商可能减缓高参数工作流的探索&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;科学适当性&lt;/strong&gt;：Schema 强制执行类型正确参数和结构有效性，但无法确保科学适当性&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Registry 维护&lt;/strong&gt;：需要组织承诺进行 schema 设计、验证、版本控制和向后兼容演进&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;未来方向与影响-1&#34;&gt;未来方向与影响
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;模板引导&lt;/strong&gt;：使用已验证工作流作为可组合模板，用户通过工具替换或重参数化适应&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LLM 辅助 schema 起草&lt;/strong&gt;：模型从现有代码、文档或函数签名生成符合规范的 ToolDefinition&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;分层 registry&lt;/strong&gt;：允许社区贡献工具与策划工具在明确追溯和审查政策下共存&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;联邦生态系统&lt;/strong&gt;：扩展 MCP 等协议支持跨工具依赖声明和类型数据契约&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;相关资源-1&#34;&gt;相关资源
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;论文&lt;/strong&gt;：&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.06394&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.06394&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;代码&lt;/strong&gt;：参考架构实现待开源&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-应用案例&#34;&gt;💡 应用案例
+&lt;/h2&gt;&lt;h3 id=&#34;1-自动驾驶安全关键场景处理&#34;&gt;1. 自动驾驶安全关键场景处理
+&lt;/h3&gt;&lt;p&gt;BEVLM 在 NeuroNCAP 基准测试中展示了实际价值：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;右转冲突场景&lt;/strong&gt;：ego 车辆右转进入被挖掘机阻塞的车道，蒸馏模型预见阻塞并在后方白色车辆接近前快速变道，baseline 犹豫导致碰撞&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;对向车道入侵&lt;/strong&gt;：对向车辆在 ego 车道错误行驶，蒸馏模型快速变道至右侧空闲车道避免碰撞，baseline 反应过晚导致事故&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-工业研发工作流自动化&#34;&gt;2. 工业研发工作流自动化
+&lt;/h3&gt;&lt;p&gt;Schema-Gated 架构适用于：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;材料发现 pipeline&lt;/strong&gt;：数据集加载→代理模型训练→逆向设计，schema 验证捕获跨步类型和依赖错误&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;药物筛选工作流&lt;/strong&gt;：多步骤分子性质预测与优化，确保参数兼容性和数据流正确性&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实验设计自动化&lt;/strong&gt;：从自然语言实验设计到可执行工作流的转换，同时保持可追溯性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-边缘设备语音交互&#34;&gt;3. 边缘设备语音交互
+&lt;/h3&gt;&lt;p&gt;Granite 4.0 1B Speech 适用于：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;离线语音助手&lt;/strong&gt;：资源受限设备上的多语言 ASR&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实时转录&lt;/strong&gt;：会议、采访等场景的低延迟转录&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;嵌入式翻译&lt;/strong&gt;：双向语音翻译（AST）支持跨语言交流&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-统计汇总&#34;&gt;📊 统计汇总
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;类别&lt;/th&gt;
+          &lt;th&gt;项目&lt;/th&gt;
+          &lt;th&gt;关键指标&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;自动驾驶&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;BEVLM 跨视角推理提升&lt;/td&gt;
+          &lt;td&gt;+46.0% 准确率&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;自动驾驶&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;BEVLM 封闭环安全提升&lt;/td&gt;
+          &lt;td&gt;+29.0% NeuroNCAP Score&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;自动驾驶&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;BEVLM 碰撞率降低&lt;/td&gt;
+          &lt;td&gt;-11.3%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;机器人&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;LeRobot v0.5.0 PR 数量&lt;/td&gt;
+          &lt;td&gt;200+ merged PRs&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;机器人&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;LeRobot v0.5.0 贡献者&lt;/td&gt;
+          &lt;td&gt;50+ new contributors&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;机器人&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;LeRobot 训练加速&lt;/td&gt;
+          &lt;td&gt;10x 图像训练，3x 编码&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;语音&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Granite 4.0 1B 参数&lt;/td&gt;
+          &lt;td&gt;1B（前代一半）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;语音&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Granite 4.0 支持语言&lt;/td&gt;
+          &lt;td&gt;6 种（新增日语）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;语音&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Granite 4.0 OpenASR 排名&lt;/td&gt;
+          &lt;td&gt;#1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;长序列&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Ulysses SP 通信优化&lt;/td&gt;
+          &lt;td&gt;相比 Ring Attention 降低 P 倍&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Agent&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Schema-Gated 评估系统&lt;/td&gt;
+          &lt;td&gt;20 个系统，15 次评分&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Agent&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Schema-Gated 区域系统&lt;/td&gt;
+          &lt;td&gt;2 个（ED≥3.5, CF≥3.5）&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-全部参考链接&#34;&gt;📖 全部参考链接
+&lt;/h2&gt;&lt;h3 id=&#34;论文&#34;&gt;论文
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.06576&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BEVLM: Distilling Semantic Knowledge from LLMs into Bird&amp;rsquo;s-Eye View Representations&lt;/a&gt; - arXiv:2603.06576&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.06394&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Talk Freely, Execute Strictly: Schema-Gated Agentic AI for Flexible and Reproducible Scientific Workflows&lt;/a&gt; - arXiv:2603.06394&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.06565&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Boosting Deep Reinforcement Learning using Pretraining with Logical Options&lt;/a&gt; - arXiv:2603.06565&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.06573&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Fly360: Omnidirectional Obstacle Avoidance within Drone View&lt;/a&gt; - arXiv:2603.06573&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;技术博客&#34;&gt;技术博客
+&lt;/h3&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/ibm-granite/granite-4-speech&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Granite 4.0 1B Speech: Compact, Multilingual, and Built for the Edge&lt;/a&gt; - Hugging Face Blog&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/ulysses-sp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ulysses Sequence Parallelism: Training with Million-Token Contexts&lt;/a&gt; - Hugging Face Blog&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/lerobot-release-v050&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LeRobot v0.5.0: Scaling Every Dimension&lt;/a&gt; - Hugging Face Blog&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;代码与模型&#34;&gt;代码与模型
+&lt;/h3&gt;&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/ibm-granite/granite-4.0-1b-speech&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;IBM Granite 4.0 1B Speech&lt;/a&gt; - Hugging Face&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/spaces/hf-audio/open_asr_leaderboard&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OpenASR Leaderboard&lt;/a&gt; - Hugging Face Spaces&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/docs/lerobot&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LeRobot Documentation&lt;/a&gt; - Hugging Face Docs&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/docs/lerobot/unitree_g1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Unitree G1 Integration&lt;/a&gt; - LeRobot Docs&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/docs/lerobot/pi0fast&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pi0-FAST Policy&lt;/a&gt; - LeRobot Docs&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/docs/lerobot/rtc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Real-Time Chunking&lt;/a&gt; - LeRobot Docs&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;基准与数据集&#34;&gt;基准与数据集
+&lt;/h3&gt;&lt;ol start=&#34;14&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/OpenDriveLab/DriveLM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;DriveLM-nuScenes&lt;/a&gt; - GitHub&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/UCSC-VLAA/Ego3D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ego3D Dataset&lt;/a&gt; - GitHub&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/viktorfa/NeuroNCAP&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NeuroNCAP Benchmark&lt;/a&gt; - GitHub&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;本文由 AI 助手自动生成，内容基于 2026 年 3 月 9-10 日发布的学术论文、技术博客和开源项目。如需引用或转载，请注明出处。&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

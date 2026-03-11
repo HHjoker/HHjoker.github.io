@@ -7,7 +7,55 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Tue, 10 Mar 2026 21:02:21 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 11 Mar 2026 10:21:02 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Agent</title>
+        <link>https://HHjoker.github.io/tags/agent/</link>
+        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/agent/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>AI</title>
+        <link>https://HHjoker.github.io/tags/ai/</link>
+        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/ai/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>LLM</title>
+        <link>https://HHjoker.github.io/tags/llm/</link>
+        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/llm/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Reinforcement Learning</title>
+        <link>https://HHjoker.github.io/tags/reinforcement-learning/</link>
+        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/reinforcement-learning/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Robotics</title>
+        <link>https://HHjoker.github.io/tags/robotics/</link>
+        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/robotics/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>VLA</title>
+        <link>https://HHjoker.github.io/tags/vla/</link>
+        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/vla/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Clone</title>
         <link>https://HHjoker.github.io/tags/clone/</link>
         <pubDate>Tue, 10 Mar 2026 13:00:00 +0000</pubDate>
@@ -48,6 +96,46 @@
         <description></description>
         </item>
         <item>
+        <title>AI Daily</title>
+        <link>https://HHjoker.github.io/tags/ai-daily/</link>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/ai-daily/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>大模型</title>
+        <link>https://HHjoker.github.io/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</link>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>多模态</title>
+        <link>https://HHjoker.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</link>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>机器人</title>
+        <link>https://HHjoker.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/</link>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>自动驾驶</title>
+        <link>https://HHjoker.github.io/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/</link>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Ownership</title>
         <link>https://HHjoker.github.io/tags/ownership/</link>
         <pubDate>Mon, 09 Mar 2026 21:00:00 +0800</pubDate>
@@ -69,30 +157,6 @@
         <pubDate>Mon, 09 Mar 2026 21:00:00 +0800</pubDate>
         
         <guid>https://HHjoker.github.io/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Agent</title>
-        <link>https://HHjoker.github.io/tags/agent/</link>
-        <pubDate>Mon, 09 Mar 2026 08:00:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/agent/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>AI</title>
-        <link>https://HHjoker.github.io/tags/ai/</link>
-        <pubDate>Mon, 09 Mar 2026 08:00:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/ai/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>LLM</title>
-        <link>https://HHjoker.github.io/tags/llm/</link>
-        <pubDate>Mon, 09 Mar 2026 08:00:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/llm/</guid>
         <description></description>
         </item>
         <item>
@@ -232,14 +296,6 @@
         <description></description>
         </item>
         <item>
-        <title>Robotics</title>
-        <link>https://HHjoker.github.io/tags/robotics/</link>
-        <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/robotics/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>C&#43;&#43;</title>
         <link>https://HHjoker.github.io/tags/c&#43;&#43;/</link>
         <pubDate>Thu, 05 Mar 2026 21:30:00 +0800</pubDate>
@@ -317,30 +373,6 @@
         <pubDate>Thu, 05 Mar 2026 20:30:00 +0800</pubDate>
         
         <guid>https://HHjoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>AI Daily</title>
-        <link>https://HHjoker.github.io/tags/ai-daily/</link>
-        <pubDate>Thu, 05 Mar 2026 08:00:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/ai-daily/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>大模型</title>
-        <link>https://HHjoker.github.io/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</link>
-        <pubDate>Thu, 05 Mar 2026 08:00:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>多模态</title>
-        <link>https://HHjoker.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</link>
-        <pubDate>Thu, 05 Mar 2026 08:00:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</guid>
         <description></description>
         </item>
         <item>

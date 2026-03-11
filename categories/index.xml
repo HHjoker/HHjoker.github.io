@@ -7,7 +7,31 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Tue, 10 Mar 2026 21:02:21 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 11 Mar 2026 10:21:02 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI Daily</title>
+        <link>https://HHjoker.github.io/categories/ai-daily/</link>
+        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/categories/ai-daily/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Machine Learning</title>
+        <link>https://HHjoker.github.io/categories/machine-learning/</link>
+        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/categories/machine-learning/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Robotics</title>
+        <link>https://HHjoker.github.io/categories/robotics/</link>
+        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/categories/robotics/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Rust 每日学习</title>
         <link>https://HHjoker.github.io/categories/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</link>
         <pubDate>Tue, 10 Mar 2026 13:00:00 +0000</pubDate>
@@ -24,19 +48,27 @@
         <description></description>
         </item>
         <item>
+        <title>AI 日报</title>
+        <link>https://HHjoker.github.io/categories/ai-%E6%97%A5%E6%8A%A5/</link>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/categories/ai-%E6%97%A5%E6%8A%A5/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>技术解读</title>
+        <link>https://HHjoker.github.io/categories/%E6%8A%80%E6%9C%AF%E8%A7%A3%E8%AF%BB/</link>
+        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/categories/%E6%8A%80%E6%9C%AF%E8%A7%A3%E8%AF%BB/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Rust-Daily</title>
         <link>https://HHjoker.github.io/categories/rust-daily/</link>
         <pubDate>Mon, 09 Mar 2026 21:00:00 +0800</pubDate>
         
         <guid>https://HHjoker.github.io/categories/rust-daily/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>AI Daily</title>
-        <link>https://HHjoker.github.io/categories/ai-daily/</link>
-        <pubDate>Mon, 09 Mar 2026 08:00:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/categories/ai-daily/</guid>
         <description></description>
         </item>
         <item>

@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="今日 AI 领域重要进展：ACT 智能体批判训练、OfficeQA Pro 企业基准、LeRobot v0.5.0 发布">
+<title>AI 日报 | 2026-03-11</title>
+
+<link rel='canonical' href='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/'>
+
+<link rel="stylesheet" href="/scss/style.min.56ea19b05e0cef97d506745ab48006454c875a54299f9f5126e06b47cb25873b.css"><meta property='og:title' content="AI 日报 | 2026-03-11">
+<meta property='og:description' content="今日 AI 领域重要进展：ACT 智能体批判训练、OfficeQA Pro 企业基准、LeRobot v0.5.0 发布">
+<meta property='og:url' content='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/'>
+<meta property='og:site_name' content='HH Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI' /><meta property='article:tag' content='LLM' /><meta property='article:tag' content='Agent' /><meta property='article:tag' content='Robotics' /><meta property='article:tag' content='VLA' /><meta property='article:tag' content='Reinforcement Learning' /><meta property='article:published_time' content='2026-03-11T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-11T08:08:18&#43;08:00'/>
+<meta name="twitter:title" content="AI 日报 | 2026-03-11">
+<meta name="twitter:description" content="今日 AI 领域重要进展：ACT 智能体批判训练、OfficeQA Pro 企业基准、LeRobot v0.5.0 发布">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_1d1ddc0b6fcd3df4.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">HH Blog</a></h1>
+            <h2 class="site-description">欢迎来到我的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/HHjoker'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://HHjoker.github.io/en/" >English</option>
+                                
+                                    <option value="https://HHjoker.github.io/" selected>中文</option>
+                                
+                                    <option value="https://HHjoker.github.io/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#-今日总结">📌 今日总结</a></li>
+    <li><a href="#-重要论文一览">📚 重要论文一览</a></li>
+    <li><a href="#-技术动态">🚀 技术动态</a>
+      <ol>
+        <li><a href="#1-lerobot-v050机器人学习的里程碑式更新">1. LeRobot v0.5.0：机器人学习的里程碑式更新</a></li>
+        <li><a href="#2-强化学习训练库对比分析">2. 强化学习训练库对比分析</a></li>
+      </ol>
+    </li>
+    <li><a href="#-详细介绍深度解读">🔍 详细介绍（深度解读）</a>
+      <ol>
+        <li><a href="#深度解读-1act---从模仿反思到真正自我反思">深度解读 1：ACT - 从模仿反思到真正自我反思</a>
+          <ol>
+            <li><a href="#研究背景与动机">研究背景与动机</a></li>
+            <li><a href="#核心方法agentic-critical-training-act">核心方法：Agentic Critical Training (ACT)</a></li>
+            <li><a href="#实验设计与结果">实验设计与结果</a></li>
+            <li><a href="#案例分析失败恢复能力">案例分析：失败恢复能力</a></li>
+            <li><a href="#局限性分析">局限性分析</a></li>
+            <li><a href="#未来方向与影响">未来方向与影响</a></li>
+            <li><a href="#相关资源">相关资源</a></li>
+          </ol>
+        </li>
+        <li><a href="#深度解读-2officeqa-pro---企业级-ai-代理的严峻挑战">深度解读 2：OfficeQA Pro - 企业级 AI 代理的严峻挑战</a>
+          <ol>
+            <li><a href="#研究背景">研究背景</a></li>
+            <li><a href="#基准设计">基准设计</a></li>
+            <li><a href="#主要发现">主要发现</a></li>
+            <li><a href="#影响与展望">影响与展望</a></li>
+            <li><a href="#相关资源-1">相关资源</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#-应用案例">💡 应用案例</a>
+      <ol>
+        <li><a href="#1-具身智能---人形机器人学习">1. 具身智能 - 人形机器人学习</a></li>
+        <li><a href="#2-企业文档分析自动化">2. 企业文档分析自动化</a></li>
+        <li><a href="#3-自主智能体部署">3. 自主智能体部署</a></li>
+      </ol>
+    </li>
+    <li><a href="#-统计汇总">📊 统计汇总</a></li>
+    <li><a href="#-全部参考链接">📖 全部参考链接</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ai-daily/" >
+                AI Daily
+            </a>
+        
+            <a href="/categories/machine-learning/" >
+                Machine Learning
+            </a>
+        
+            <a href="/categories/robotics/" >
+                Robotics
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/">AI 日报 | 2026-03-11</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            今日 AI 领域重要进展：ACT 智能体批判训练、OfficeQA Pro 企业基准、LeRobot v0.5.0 发布
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-03-11</time>
+            </div>
+        
+        <div class="article-lastmod">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time>
+                    2026-03-11
+                </time>
+            </div>
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="ai-日报--2026-03-11">AI 日报 | 2026-03-11
+</h1><h2 id="-今日总结">📌 今日总结
+</h2><ul>
+<li><strong>ACT（Agentic Critical Training）</strong>：马里兰大学提出新型强化学习范式，通过让模型自主判断动作质量而非模仿反思文本，在三个智能体基准上平均提升 5.07 个百分点，并展现出强大的 OOD 泛化能力</li>
+<li><strong>OfficeQA Pro 基准发布</strong>：Databricks 推出企业级落地推理基准，基于 100 年美国财政部公报（89,000 页，2600 万数值），前沿模型仅达 34.1% 准确率，揭示企业级 AI 代理仍有巨大提升空间</li>
+<li><strong>LeRobot v0.5.0 重大更新</strong>：Hugging Face 发布最大规模机器人学习框架更新，新增 Unitree G1 人形机器人支持、Pi0-FAST 自回归 VLA、实时分块（RTC）推理加速，以及流式视频编码等性能优化</li>
+<li><strong>世界模型异常检测研究</strong>：揭示 RL 智能体在渐进漂移下的&quot;沸腾青蛙&quot;效应，发现存在尖锐检测阈值，某些环境下智能体在检测器触发前就已崩溃</li>
+</ul>
+<hr>
+<h2 id="-重要论文一览">📚 重要论文一览
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>论文</th>
+          <th>机构</th>
+          <th>亮点</th>
+          <th>链接</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Agentic Critical Training</td>
+          <td>马里兰大学</td>
+          <td>RL 驱动的真正自我反思，平均提升 5.07pp</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.08706"  target="_blank" rel="noopener"
+    >arXiv:2603.08706</a></td>
+      </tr>
+      <tr>
+          <td>OfficeQA Pro: Enterprise Benchmark</td>
+          <td>Databricks</td>
+          <td>100 年财政部公报，前沿模型仅 34.1% 准确率</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.08655"  target="_blank" rel="noopener"
+    >arXiv:2603.08655</a></td>
+      </tr>
+      <tr>
+          <td>The Boiling Frog Threshold</td>
+          <td>独立研究</td>
+          <td>世界模型异常检测的尖锐阈值现象</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.08455"  target="_blank" rel="noopener"
+    >arXiv:2603.08455</a></td>
+      </tr>
+      <tr>
+          <td>LeRobot v0.5.0 Release</td>
+          <td>Hugging Face</td>
+          <td>人形机器人支持 + 新 VLA 策略 + 性能优化</td>
+          <td><a class="link" href="https://huggingface.co/blog/lerobot-release-v050"  target="_blank" rel="noopener"
+    >HF Blog</a></td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="-技术动态">🚀 技术动态
+</h2><h3 id="1-lerobot-v050机器人学习的里程碑式更新">1. LeRobot v0.5.0：机器人学习的里程碑式更新
+</h3><p>Hugging Face 发布 LeRobot 框架 v0.5.0，这是迄今为止最大规模的更新，包含 200+ 合并 PR 和 50+ 新贡献者：</p>
+<p><strong>硬件支持扩展</strong>：</p>
+<ul>
+<li><strong>Unitree G1 人形机器人</strong>：首个完整人形机器人集成，支持行走、操作、遥操作和全身控制（WBC）</li>
+<li><strong>OpenArm &amp; OpenArm Mini</strong>：全新机械臂及遥操作设备，支持双臂配置</li>
+<li><strong>Earth Rover</strong>：首个移动机器人集成，支持户外导航</li>
+<li><strong>CAN 总线电机控制器</strong>：支持 RobStride、Damiao 等专业级执行器</li>
+</ul>
+<p><strong>新策略模型</strong>：</p>
+<ul>
+<li><strong>Pi0-FAST</strong>：基于 Gemma 300M 的自回归 VLA，使用 FAST 动作分词器</li>
+<li><strong>Real-Time Chunking (RTC)</strong>：Physical Intelligence 的推理加速技术，使 flow-matching 策略响应更迅速</li>
+<li><strong>Wall-X</strong>：基于 Qwen2.5-VL 的 VLA，结合 flow-matching 动作预测</li>
+<li><strong>X-VLA</strong>：基于 Microsoft Florence-2 的 VLA 策略</li>
+<li><strong>SARM</strong>：阶段感知奖励建模，解决长程任务学习难题</li>
+</ul>
+<p><strong>性能优化</strong>：</p>
+<ul>
+<li>流式视频编码：消除录制间隔等待时间</li>
+<li>10 倍图像训练加速，3 倍编码加速</li>
+<li>Python 3.12+ 和 Transformers v5 现代化升级</li>
+</ul>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/lerobot_g1_humanoid.jpg"
+	width="3024"
+	height="3024"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/lerobot_g1_humanoid_hu_9f63aad436629edf.jpg 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/lerobot_g1_humanoid_hu_8780dd2f145a0743.jpg 1024w"
+	loading="lazy"
+	
+		alt="LeRobot Unitree G1 人形机器人"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="100"
+		data-flex-basis="240px"
+	
+></p>
+<p><img src="/lerobot_sarm.gif"
+	
+	
+	
+	loading="lazy"
+	
+		alt="LeRobot SARM 阶段感知奖励建模"
+	
+	
+></p>
+<h3 id="2-强化学习训练库对比分析">2. 强化学习训练库对比分析
+</h3><p>Hugging Face 发布对 16 个开源 RL 训练库的深度分析，涵盖异步 RL 训练的最新进展，为研究者提供全面的工具选择指南。</p>
+<hr>
+<h2 id="-详细介绍深度解读">🔍 详细介绍（深度解读）
+</h2><h3 id="深度解读-1act---从模仿反思到真正自我反思">深度解读 1：ACT - 从模仿反思到真正自我反思
+</h3><h4 id="研究背景与动机">研究背景与动机
+</h4><p>将大语言模型训练为自主智能体通常从模仿学习（IL）开始，但这只教会智能体&quot;做什么&quot;，而非&quot;为什么&quot;：智能体从未对比成功动作与次优替代方案，因此缺乏对动作质量的认知。</p>
+<p>最近的 Early Experience 方法尝试通过对比专家动作和替代动作产生的状态来生成反思文本，但训练范式本质上仍是模仿学习：模型模仿预构建的反思文本，而非自主推理。</p>
+<p><strong>核心问题</strong>：如何让智能体发展出真正的自我反思能力，而非仅仅模仿反思行为？</p>
+<h4 id="核心方法agentic-critical-training-act">核心方法：Agentic Critical Training (ACT)
+</h4><p>ACT 提出了一种全新的强化学习范式，核心思想是<strong>训练智能体识别哪个动作更好</strong>，而非模仿预生成的反思文本。</p>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/act_method_figure1.png"
+	width="793"
+	height="446"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/act_method_figure1_hu_19ea8268f1191a03.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/act_method_figure1_hu_205978657d7a7b52.png 1024w"
+	loading="lazy"
+	
+		alt="ACT 方法对比：模仿反思 vs 真正自我反思"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<p><strong>关键创新点</strong>：</p>
+<ol>
+<li>
+<p><strong>数据构建</strong>：对于每个专家状态 - 动作对 (s_i, a_i)，从初始策略π_θ0 采样 K 个候选动作，过滤掉与专家动作相同的候选，构建对比训练样本</p>
+</li>
+<li>
+<p><strong>训练流程</strong>（三阶段）：</p>
+<ul>
+<li><strong>阶段 1 - 数据构建</strong>：从专家演示轨迹中提取状态 - 动作对，采样替代动作构建对比样本</li>
+<li><strong>阶段 2 - 智能体批判训练</strong>：使用 GRPO 训练模型识别两个候选动作中更好的一个，模型必须自主发现导致正确选择的思维链推理</li>
+<li><strong>阶段 3 - RL 动作训练</strong>：在 ACT 增强的模型上进一步进行直接动作生成的 RL 训练</li>
+</ul>
+</li>
+</ol>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/act_pipeline_figure2.png"
+	width="793"
+	height="446"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/act_pipeline_figure2_hu_6e157fd13d0b4ed8.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/act_pipeline_figure2_hu_3cef27721f2b8015.png 1024w"
+	loading="lazy"
+	
+		alt="ACT 训练流程概览"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<p><strong>奖励设计</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">R(s,y) = R_acc(a,a+) + R_adm(a,A_admissible) + R_fmt(y)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>R_acc = 1（动作完全匹配专家动作）</li>
+<li>R_adm = 0.1（动作有效但不匹配专家动作）</li>
+<li>R_fmt = -0.5（响应缺少正确的 action 标签）</li>
+</ul>
+<h4 id="实验设计与结果">实验设计与结果
+</h4><p><strong>基准测试</strong>：</p>
+<ul>
+<li><strong>ALFWorld</strong>：具身家庭任务（导航 + 物体操作）</li>
+<li><strong>WebShop</strong>：基于网页的购物任务</li>
+<li><strong>ScienceWorld</strong>：科学推理任务</li>
+</ul>
+<p><strong>主要结果</strong>（Qwen3-8B）：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>方法</th>
+          <th>ALFWorld (ID)</th>
+          <th>ALFWorld (OOD)</th>
+          <th>WebShop</th>
+          <th>ScienceWorld</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Prompt w/o CoT</td>
+          <td>35.71%</td>
+          <td>27.61%</td>
+          <td>2.80%</td>
+          <td>28.01%</td>
+      </tr>
+      <tr>
+          <td>Prompt w/ CoT</td>
+          <td>56.43%</td>
+          <td>50.00%</td>
+          <td>3.00%</td>
+          <td>25.21%</td>
+      </tr>
+      <tr>
+          <td>Imitation Learning</td>
+          <td>85.71%</td>
+          <td>82.84%</td>
+          <td>28.00%</td>
+          <td>42.80%</td>
+      </tr>
+      <tr>
+          <td>Early Experience</td>
+          <td>87.86%</td>
+          <td>85.82%</td>
+          <td>31.00%</td>
+          <td>45.60%</td>
+      </tr>
+      <tr>
+          <td>RL</td>
+          <td>90.71%</td>
+          <td>84.33%</td>
+          <td>29.40%</td>
+          <td>43.04%</td>
+      </tr>
+      <tr>
+          <td><strong>IL w/ ACT</strong></td>
+          <td><strong>91.43%</strong></td>
+          <td><strong>87.31%</strong></td>
+          <td><strong>31.60%</strong></td>
+          <td><strong>48.69%</strong></td>
+      </tr>
+      <tr>
+          <td><strong>RL w/ ACT</strong></td>
+          <td><strong>92.86%</strong></td>
+          <td><strong>88.06%</strong></td>
+          <td><strong>33.80%</strong></td>
+          <td><strong>50.34%</strong></td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>关键发现</strong>：</p>
+<ul>
+<li>ACT 相比 IL 平均提升 <strong>5.07pp</strong>，相比 RL 平均提升 <strong>4.62pp</strong></li>
+<li>ACT 相比 Early Experience 平均提升 <strong>2.42pp</strong></li>
+<li>OOD 任务上的提升（3.73pp）大于 ID 任务（2.15pp），表明推理能力具有泛化性</li>
+<li>在 MATH-500 和 GPQA-Diamond 等通用推理基准上也有提升，无需任何推理专用训练数据</li>
+</ul>
+<h4 id="案例分析失败恢复能力">案例分析：失败恢复能力
+</h4><p>IL 模型在遇到失败时会无限重复同一动作（超过 30 步），而 ACT 训练的模型能够通过内部推理诊断根本原因（如位置错误），打破循环并发出正确的导航命令。</p>
+<h4 id="局限性分析">局限性分析
+</h4><ol>
+<li>
+<p><strong>数据收集成本</strong>：ACT 需要从策略中收集替代动作来构建对比对，这可能代价较高（尽管研究表明数据可在不同模型规模间迁移）</p>
+</li>
+<li>
+<p><strong>计算资源需求</strong>：两阶段 RL 训练（ACT + 动作训练）需要更多计算资源</p>
+</li>
+<li>
+<p><strong>环境依赖性</strong>：当前评估集中在特定基准上，需要更多真实世界场景验证</p>
+</li>
+</ol>
+<h4 id="未来方向与影响">未来方向与影响
+</h4><ul>
+<li><strong>跨模型数据迁移</strong>：研究表明 ACT 数据可从大模型迁移到小模型，降低数据收集成本</li>
+<li><strong>通用推理提升</strong>：ACT 在通用推理基准上的表现暗示智能体 RL 环境可能是提升通用推理能力的可行路径</li>
+<li><strong>更广泛的智能体应用</strong>：方法可应用于网页导航、科学实验、函数调用等多种智能体场景</li>
+</ul>
+<h4 id="相关资源">相关资源
+</h4><ul>
+<li><strong>项目页面</strong>：<a class="link" href="https://attention-is-all-i-need.github.io/ACT/"  target="_blank" rel="noopener"
+    >https://attention-is-all-i-need.github.io/ACT/</a></li>
+<li><strong>论文</strong>：<a class="link" href="https://arxiv.org/abs/2603.08706"  target="_blank" rel="noopener"
+    >arXiv:2603.08706</a></li>
+<li><strong>代码</strong>：项目页面将提供</li>
+</ul>
+<hr>
+<h3 id="深度解读-2officeqa-pro---企业级-ai-代理的严峻挑战">深度解读 2：OfficeQA Pro - 企业级 AI 代理的严峻挑战
+</h3><h4 id="研究背景">研究背景
+</h4><p>现有基准如 Humanity&rsquo;s Last Exam 和 ARC-AGI-2 主要探测前沿推理能力，但往往与企业实际任务脱节。真实企业工作流需要：</p>
+<ul>
+<li>在大型异构文档语料库中导航</li>
+<li>识别和检索相关材料</li>
+<li>执行落地分析</li>
+</ul>
+<p>这种能力被称为<strong>Grounded Reasoning（落地推理）</strong>。</p>
+<h4 id="基准设计">基准设计
+</h4><p><strong>数据源</strong>：美国财政部公报（1939-1982 年月度，之后季度），包含：</p>
+<ul>
+<li>89,000 页文档</li>
+<li>超过 2600 万个数值</li>
+<li>跨越近 100 年</li>
+</ul>
+<p><strong>问题特点</strong>：</p>
+<ul>
+<li>133 个专业级问题</li>
+<li>11% 需要 3 份以上公报</li>
+<li>22% 需要网络搜索外部值（如历史汇率）</li>
+<li>3% 需要视觉推理（图表）</li>
+<li>62% 需要超越基础算术的数据分析（如线性回归）</li>
+</ul>
+<h4 id="主要发现">主要发现
+</h4><p><strong>前沿模型表现</strong>：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>配置</th>
+          <th>GPT-5.4</th>
+          <th>Claude Opus 4.6</th>
+          <th>Gemini 3.1 Pro</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>仅提示（参数知识）</td>
+          <td>&lt;3%</td>
+          <td>&lt;3%</td>
+          <td>&lt;3%</td>
+      </tr>
+      <tr>
+          <td>+ 网络搜索</td>
+          <td>11.3%</td>
+          <td>~8%</td>
+          <td>~6%</td>
+      </tr>
+      <tr>
+          <td>+ Oracle PDF</td>
+          <td>57.1%</td>
+          <td>36.1%</td>
+          <td>52.6%</td>
+      </tr>
+      <tr>
+          <td>+ Databricks 解析</td>
+          <td><strong>65.4%</strong></td>
+          <td><strong>57.1%</strong></td>
+          <td><strong>56.4%</strong></td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>代理框架表现</strong>（完整语料库 + Databricks 解析）：</p>
+<ul>
+<li>Claude Agent SDK：54.14%</li>
+<li>GPT-5.4 Agent：56.39%</li>
+<li>Gemini CLI：29.32%</li>
+</ul>
+<p><strong>关键洞察</strong>：</p>
+<ol>
+<li><strong>文档解析至关重要</strong>：使用 Databricks ai_parse_document 带来平均 16.1% 的相对性能提升</li>
+<li><strong>检索是主要瓶颈</strong>：即使提供 Oracle 页面，模型仍有 35-44% 的提升空间</li>
+<li><strong>多步推理困难</strong>：单轮 LLM 交互不适合 OfficeQA Pro 所需的搜索和推理能力</li>
+</ol>
+<h4 id="影响与展望">影响与展望
+</h4><p>OfficeQA Pro 揭示了企业级 AI 代理的真实水平：即使在最优配置下，前沿模型也无法超过 60% 准确率。这表明：</p>
+<ul>
+<li>文档解析和理解仍是关键挑战</li>
+<li>多步推理和检索需要更好的代理架构</li>
+<li>企业部署需要谨慎评估和人类监督</li>
+</ul>
+<h4 id="相关资源-1">相关资源
+</h4><ul>
+<li><strong>论文</strong>：<a class="link" href="https://arxiv.org/abs/2603.08655"  target="_blank" rel="noopener"
+    >arXiv:2603.08655</a></li>
+<li><strong>基准</strong>：OfficeQA Pro（包含 Pro 和 Easy 两个版本）</li>
+<li><strong>解析工具</strong>：<a class="link" href="https://www.databricks.com/blog/pdfs-production-announcing-state-art-document-intelligence-databricks"  target="_blank" rel="noopener"
+    >Databricks ai_parse_document</a></li>
+</ul>
+<hr>
+<h2 id="-应用案例">💡 应用案例
+</h2><h3 id="1-具身智能---人形机器人学习">1. 具身智能 - 人形机器人学习
+</h3><p>LeRobot v0.5.0 的 Unitree G1 支持使得研究者能够：</p>
+<ul>
+<li>在仿真环境中训练全身控制策略</li>
+<li>快速原型化人形机器人应用</li>
+<li>利用 EnvHub 共享和复用仿真环境</li>
+</ul>
+<h3 id="2-企业文档分析自动化">2. 企业文档分析自动化
+</h3><p>OfficeQA Pro 揭示的能力缺口正是企业自动化的机会：</p>
+<ul>
+<li>财务报告自动分析</li>
+<li>历史数据趋势提取</li>
+<li>合规性检查与审计支持</li>
+</ul>
+<h3 id="3-自主智能体部署">3. 自主智能体部署
+</h3><p>ACT 方法可直接应用于：</p>
+<ul>
+<li>网页导航自动化（电商、客服）</li>
+<li>科学实验流程自动化</li>
+<li>复杂工具调用场景</li>
+</ul>
+<hr>
+<h2 id="-统计汇总">📊 统计汇总
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>类别</th>
+          <th>今日论文数</th>
+          <th>开源项目</th>
+          <th>基准发布</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>LLM/Agent</td>
+          <td>2</td>
+          <td>1</td>
+          <td>1</td>
+      </tr>
+      <tr>
+          <td>Robotics</td>
+          <td>0</td>
+          <td>1 (LeRobot)</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>Multimodal</td>
+          <td>0</td>
+          <td>2 (Wall-X, X-VLA)</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td><strong>总计</strong></td>
+          <td><strong>2</strong></td>
+          <td><strong>4</strong></td>
+          <td><strong>1</strong></td>
+      </tr>
+  </tbody>
+</table></div>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>性能提升</th>
+          <th>数值</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ACT vs IL</td>
+          <td>+5.07pp</td>
+      </tr>
+      <tr>
+          <td>ACT vs RL</td>
+          <td>+4.62pp</td>
+      </tr>
+      <tr>
+          <td>ACT vs Early Experience</td>
+          <td>+2.42pp</td>
+      </tr>
+      <tr>
+          <td>Databricks 解析增益</td>
+          <td>+16.1%</td>
+      </tr>
+      <tr>
+          <td>LeRobot 训练加速</td>
+          <td>10x</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="-全部参考链接">📖 全部参考链接
+</h2><ol>
+<li><a class="link" href="https://arxiv.org/abs/2603.08706"  target="_blank" rel="noopener"
+    >Agentic Critical Training (arXiv:2603.08706)</a></li>
+<li><a class="link" href="https://attention-is-all-i-need.github.io/ACT/"  target="_blank" rel="noopener"
+    >ACT Project Page</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.08655"  target="_blank" rel="noopener"
+    >OfficeQA Pro (arXiv:2603.08655)</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.08455"  target="_blank" rel="noopener"
+    >The Boiling Frog Threshold (arXiv:2603.08455)</a></li>
+<li><a class="link" href="https://huggingface.co/blog/lerobot-release-v050"  target="_blank" rel="noopener"
+    >LeRobot v0.5.0 Release</a></li>
+<li><a class="link" href="https://huggingface.co/blog/async-rl-training-landscape"  target="_blank" rel="noopener"
+    >Async RL Training Landscape</a></li>
+<li><a class="link" href="https://www.databricks.com/blog/pdfs-production-announcing-state-art-document-intelligence-databricks"  target="_blank" rel="noopener"
+    >Databricks ai_parse_document</a></li>
+</ol>
+<hr>
+<p><em>Generated by AI Daily Bot | 数据来源：arXiv, Hugging Face Blog, 各研究机构</em></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ai/">AI</a>
+        
+            <a href="/tags/llm/">LLM</a>
+        
+            <a href="/tags/agent/">Agent</a>
+        
+            <a href="/tags/robotics/">Robotics</a>
+        
+            <a href="/tags/vla/">VLA</a>
+        
+            <a href="/tags/reinforcement-learning/">Reinforcement Learning</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2026-03-11
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-09</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-08</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-07</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-06</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="HHjoker/HHjoker.github.io"
+    data-repo-id="R_kgDON1Vqng"
+    data-category="Announcements"
+    data-category-id="DIC_kwDON1Vqns4C3qHd"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('preferred_color_scheme');
+            } else {
+                setGiscusTheme('preferred_color_scheme');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 Huang Hao
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+    #TableOfContents > ul ul,
+    #TableOfContents > ul ol,
+    #TableOfContents > ol ul,
+    #TableOfContents > ol ol {
+        display: none;
+    }
+    #TableOfContents > ul .open,
+    #TableOfContents > ol .open {
+        display: block;
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://HHjoker.github.io/icons/backTop.svg);
+    }
+</style>
+
+<script type="text/javascript">
+    
+
+    function initScrollTop() {
+        let rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) {
+            return;
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop
+        rightSideBar.appendChild(btn)
+        
+        window.onscroll = function() {
+            
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    }
+
+    
+
+    function backToTop(){
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    initScrollTop();
+</script>
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    let codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) {
+      return;
+    }
+    codeBlocks.forEach(codeBlock => {
+      
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+        return;
+      }
+      
+      
+      let codeMoreBox = document.createElement('div');
+      codeMoreBox.classList.add('code-more-box');
+      
+      let codeMoreBtn = document.createElement('span');
+      codeMoreBtn.classList.add('code-more-btn');
+      codeMoreBtn.addEventListener('click', () => {
+        codeBlock.classList.add('code-show');
+        codeMoreBox.style.display = 'none';
+        
+        window.dispatchEvent(new Event('resize'))
+      })
+      
+      let img = document.createElement('img');
+      img.classList.add('code-more-img');
+      img.src = "https://HHjoker.github.io/icons/codeMore.ico"
+      
+      codeMoreBtn.appendChild(img);
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox)
+    })
+  }
+  
+  initCodeMoreBox();
+</script>
+
+    </body>
+</html>
