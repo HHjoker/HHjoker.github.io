@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Wed, 11 Mar 2026 08:08:18 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/categories/robotics/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 11 Mar 2026 11:24:17 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/categories/robotics/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>AI 日报 | 2026-03-11</title>
         <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/</link>
         <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
@@ -102,16 +102,7 @@
 		data-flex-basis=&#34;240px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/lerobot_sarm.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;LeRobot SARM 阶段感知奖励建模&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;LeRobot v0.5.0 新增 SARM 阶段感知奖励建模，解决长程任务学习难题&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2-强化学习训练库对比分析&#34;&gt;2. 强化学习训练库对比分析
 &lt;/h3&gt;&lt;p&gt;Hugging Face 发布对 16 个开源 RL 训练库的深度分析，涵盖异步 RL 训练的最新进展，为研究者提供全面的工具选择指南。&lt;/p&gt;
 &lt;hr&gt;
