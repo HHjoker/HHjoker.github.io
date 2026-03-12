@@ -7,7 +7,55 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Wed, 11 Mar 2026 21:01:44 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 12 Mar 2026 08:07:12 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI</title>
+        <link>https://HHjoker.github.io/tags/ai/</link>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/ai/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Diffusion</title>
+        <link>https://HHjoker.github.io/tags/diffusion/</link>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/diffusion/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>LLM</title>
+        <link>https://HHjoker.github.io/tags/llm/</link>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/llm/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Multimodal</title>
+        <link>https://HHjoker.github.io/tags/multimodal/</link>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/multimodal/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Reinforcement Learning</title>
+        <link>https://HHjoker.github.io/tags/reinforcement-learning/</link>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/reinforcement-learning/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Robotics</title>
+        <link>https://HHjoker.github.io/tags/robotics/</link>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/robotics/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Rust</title>
         <link>https://HHjoker.github.io/tags/rust/</link>
         <pubDate>Wed, 11 Mar 2026 21:00:00 +0800</pubDate>
@@ -77,38 +125,6 @@
         <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/agent/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>AI</title>
-        <link>https://HHjoker.github.io/tags/ai/</link>
-        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/ai/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>LLM</title>
-        <link>https://HHjoker.github.io/tags/llm/</link>
-        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/llm/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Reinforcement Learning</title>
-        <link>https://HHjoker.github.io/tags/reinforcement-learning/</link>
-        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/reinforcement-learning/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Robotics</title>
-        <link>https://HHjoker.github.io/tags/robotics/</link>
-        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/robotics/</guid>
         <description></description>
         </item>
         <item>
@@ -197,14 +213,6 @@
         <pubDate>Mon, 09 Mar 2026 21:00:00 +0800</pubDate>
         
         <guid>https://HHjoker.github.io/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Multimodal</title>
-        <link>https://HHjoker.github.io/tags/multimodal/</link>
-        <pubDate>Mon, 09 Mar 2026 08:00:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/multimodal/</guid>
         <description></description>
         </item>
         <item>

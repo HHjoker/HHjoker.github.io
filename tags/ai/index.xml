@@ -7,7 +7,461 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Wed, 11 Mar 2026 11:24:17 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 12 Mar 2026 08:07:12 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI 日报 | 2026-03-12</title>
+        <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/</link>
+        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/</guid>
+        <description>&lt;h1 id=&#34;ai-日报--2026-03-12&#34;&gt;AI 日报 | 2026-03-12
+&lt;/h1&gt;&lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;NVIDIA 发布 Code Concepts 合成数据集&lt;/strong&gt;：1500 万 Python 编程问题，基于概念驱动的数据生成工作流，在 Nemotron-Nano-v3 上实现 HumanEval 6 点提升（73→79）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LeRobot v0.5.0 重大更新&lt;/strong&gt;：支持 Unitree G1 人形机器人、新增 Pi0-FAST 自回归 VLA 策略、实时分块（RTC）推理优化、流式视频编码&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ulysses 序列并行集成至 Hugging Face 生态&lt;/strong&gt;：支持百万 token 上下文训练，从 Accelerate 到 Transformers Trainer 到 TRL 全面支持&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;IBM Granite 4.0 1B Speech 发布&lt;/strong&gt;：紧凑型多语言语音模型，支持 6 种语言，在 OpenASR 排行榜登顶&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Modular Diffusers 推出&lt;/strong&gt;：可组合的扩散模型构建块，支持自定义工作流和 Mellon 可视化集成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-重要论文一览&#34;&gt;📚 重要论文一览
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;标题&lt;/th&gt;
+          &lt;th&gt;来源&lt;/th&gt;
+          &lt;th&gt;亮点&lt;/th&gt;
+          &lt;th&gt;链接&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Code Concepts: A Large-Scale Synthetic Dataset&lt;/td&gt;
+          &lt;td&gt;NVIDIA / Hugging Face&lt;/td&gt;
+          &lt;td&gt;概念驱动合成数据生成，15M Python 问题&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/nvidia/synthetic-code-concepts&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;LeRobot v0.5.0: Scaling Every Dimension&lt;/td&gt;
+          &lt;td&gt;Hugging Face&lt;/td&gt;
+          &lt;td&gt;人形机器人支持、6 种新策略、流式编码&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/lerobot-release-v050&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ulysses Sequence Parallelism&lt;/td&gt;
+          &lt;td&gt;Snowflake / Hugging Face&lt;/td&gt;
+          &lt;td&gt;百万 token 上下文训练，DeepSpeed 后端&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/ulysses-sp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Granite 4.0 1B Speech&lt;/td&gt;
+          &lt;td&gt;IBM&lt;/td&gt;
+          &lt;td&gt;1B 参数多语言 ASR，OpenASR #1&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/ibm-granite/granite-4-speech&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Keep the Tokens Flowing: 16 Open-Source RL Libraries&lt;/td&gt;
+          &lt;td&gt;Hugging Face&lt;/td&gt;
+          &lt;td&gt;异步 RL 训练库对比分析&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/async-rl-training-landscape&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Introducing Modular Diffusers&lt;/td&gt;
+          &lt;td&gt;Hugging Face&lt;/td&gt;
+          &lt;td&gt;可组合扩散模型构建块&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/modular-diffusers&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;-技术动态&#34;&gt;🚀 技术动态
+&lt;/h2&gt;&lt;h3 id=&#34;1-nvidia-code-concepts-数据集发布&#34;&gt;1. NVIDIA Code Concepts 数据集发布
+&lt;/h3&gt;&lt;p&gt;NVIDIA 发布了基于概念驱动的合成数据生成工作流，创建了包含 1500 万 Python 编程问题的 Nemotron-Pretraining-Code-Concepts 数据集。该数据集基于从 HumanEval 提示中提取的 91 个核心编程概念，通过组合和提炼选定概念实现针对性数据生成。在 Nemotron-Nano-v3 最后 100B token 预训练中加入 10B token 的 Code Concepts 数据，实现了 HumanEval 从 73 到 79 的 6 点提升。&lt;/p&gt;
+&lt;h3 id=&#34;2-lerobot-v050-重大更新&#34;&gt;2. LeRobot v0.5.0 重大更新
+&lt;/h3&gt;&lt;p&gt;Hugging Face 的 LeRobot 迎来最大规模更新，包含 200+ 合并 PR 和 50+ 新贡献者。主要更新包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;首次支持 Unitree G1 人形机器人（全身控制、运动、操作、遥操作）&lt;/li&gt;
+&lt;li&gt;新增 Pi0-FAST 自回归 VLA 策略（基于 Gemma 300M 的动作专家）&lt;/li&gt;
+&lt;li&gt;实时分块（RTC）推理技术，显著提升流匹配策略的响应性&lt;/li&gt;
+&lt;li&gt;流式视频编码，消除录制间隔等待时间&lt;/li&gt;
+&lt;li&gt;EnvHub：直接从 Hugging Face Hub 加载仿真环境&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-ulysses-序列并行全面集成&#34;&gt;3. Ulysses 序列并行全面集成
+&lt;/h3&gt;&lt;p&gt;Snowflake 的 Ulysses 序列并行（ALST 协议的一部分）现已集成到 Hugging Face 整个生态系统中，包括 Accelerate、Transformers Trainer 和 TRL 的 SFTTrainer。该技术通过注意力头并行化，将注意力计算分布到多个 GPU 上，支持百万 token 上下文训练。相比 Ring Attention，Ulysses 具有更低的通信复杂度和延迟。&lt;/p&gt;
+&lt;h2 id=&#34;-详细介绍深度解读&#34;&gt;🔍 详细介绍（深度解读）
+&lt;/h2&gt;&lt;h3 id=&#34;1-code-concepts概念驱动的合成数据生成&#34;&gt;1. Code Concepts：概念驱动的合成数据生成
+&lt;/h3&gt;&lt;h4 id=&#34;研究背景与动机&#34;&gt;研究背景与动机
+&lt;/h4&gt;&lt;p&gt;在大规模 LLM 开发中，模型质量的提升不仅依赖于数据数量，更取决于数据质量和特异性。预训练数据集虽然包含海量信息，但往往缺乏针对特定技能（如推理或编程能力）的概念性目标。NVIDIA 团队设计了可扩展的概念驱动合成数据生成工作流，使研究人员能够生成与期望模型能力对齐的数据。&lt;/p&gt;
+&lt;h4 id=&#34;问题定义与挑战&#34;&gt;问题定义与挑战
+&lt;/h4&gt;&lt;p&gt;核心挑战在于：如何系统性地生成针对特定编程概念的高质量训练数据？传统方法依赖于爬取互联网代码，但难以控制概念分布、难度梯度和多样性。&lt;/p&gt;
+&lt;h4 id=&#34;核心方法与技术细节&#34;&gt;核心方法与技术细节
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow.png&#34;
+	width=&#34;960&#34;
+	height=&#34;492&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow_hu_9730faeb2df2a76.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow_hu_e7e2691029525736.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Code Concepts 工作流程&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;195&#34;
+		data-flex-basis=&#34;468px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;工作流程的核心是从大规模标注的 Nemotron-Pretraining-Code-{v1,v2} 数据集中提取的编程知识分类体系。该分类体系编码了数千个分层组织的编程概念，从基本结构（如字符串、递归）到高级算法和数据结构模式。&lt;/p&gt;
+&lt;p&gt;具体步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;概念提取&lt;/strong&gt;：从 HumanEval 基准的分类提示中识别 91 个核心概念&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;概念组合&lt;/strong&gt;：指导性地组合选定概念生成提示&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;数据生成&lt;/strong&gt;：使用 GPT-OSS 120B 生成约 1500 万个合成 Python 编程问题&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;质量验证&lt;/strong&gt;：使用 Python 的 ast.parse 函数验证生成的代码可执行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results.png&#34;
+	width=&#34;2139&#34;
+	height=&#34;1232&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results_hu_c439f37cb5d3c515.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results_hu_672f4d28ba4ffcba.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;问题生成过程&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;173&#34;
+		data-flex-basis=&#34;416px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;实验设计与结果&#34;&gt;实验设计与结果
+&lt;/h4&gt;&lt;p&gt;将 10B token 的 Code Concepts 数据纳入 Nemotron-Nano-v3 最后 100B token 预训练中进行数据消融实验：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HumanEval&lt;/strong&gt;：从 73 提升至 79（+6 点）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;其他基准&lt;/strong&gt;：大多数保持不变&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;定性评估&lt;/strong&gt;：在图算法、集合运算等多种编程概念上表现更强，边缘情况和执行推理处理能力改善&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;局限性分析&#34;&gt;局限性分析
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;目前仅针对 Python 编程，需要扩展到其他编程语言和领域&lt;/li&gt;
+&lt;li&gt;依赖强大的教师模型（GPT-OSS 120B）进行数据生成&lt;/li&gt;
+&lt;li&gt;概念分类体系需要人工维护和扩展&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;未来方向与影响&#34;&gt;未来方向与影响
+&lt;/h4&gt;&lt;p&gt;该数据集验证了更广泛的概念驱动生成工作流，而非一次性产物。通过以 CC-BY-4.0 许可发布数据集和底层分类体系，团队希望社区能够将此方法扩展到其他领域和用例，实现可扩展的针对性 LLM 预训练。&lt;/p&gt;
+&lt;h4 id=&#34;相关资源链接&#34;&gt;相关资源链接
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/datasets/nvidia/Nemotron-Pretraining-Specialized-v1.1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Nemotron-Pretraining-Specialized-v1.1 数据集&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Nemotron-Nano-v3 模型&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/nvidia/synthetic-code-concepts&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;博客文章&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2-lerobot-v050机器人学习的全面扩展&#34;&gt;2. LeRobot v0.5.0：机器人学习的全面扩展
+&lt;/h3&gt;&lt;h4 id=&#34;研究背景与动机-1&#34;&gt;研究背景与动机
+&lt;/h4&gt;&lt;p&gt;LeRobot 是 Hugging Face 的开源机器人学习库，旨在降低机器人 AI 的研究和部署门槛。v0.5.0 是该库迄今为止最大的更新，在硬件支持、策略模型、数据集处理和仿真环境等各个维度都进行了大幅扩展。&lt;/p&gt;
+&lt;h4 id=&#34;核心方法与技术细节-1&#34;&gt;核心方法与技术细节
+&lt;/h4&gt;&lt;h5 id=&#34;硬件支持扩展&#34;&gt;硬件支持扩展
+&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid.jpg&#34;
+	width=&#34;3024&#34;
+	height=&#34;3024&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_9f63aad436629edf.jpg 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_8780dd2f145a0743.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Unitree G1 人形机器人&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;100&#34;
+		data-flex-basis=&#34;240px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Unitree G1 人形机器人&lt;/strong&gt;：这是 LeRobot 首次集成的人形机器人平台，支持：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;运动：在环境中行走、导航和移动&lt;/li&gt;
+&lt;li&gt;操作：执行灵巧的对象操作任务&lt;/li&gt;
+&lt;li&gt;遥操作：通过直观的遥操作界面远程控制 G1&lt;/li&gt;
+&lt;li&gt;全身控制（WBC）：同时协调运动和操作以完成复杂的现实世界任务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其他新增硬件支持：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OpenArm &amp;amp; OpenArm Mini（支持双臂配置）&lt;/li&gt;
+&lt;li&gt;Earth Rover（首个移动机器人集成）&lt;/li&gt;
+&lt;li&gt;OMX Robot（新机械臂）&lt;/li&gt;
+&lt;li&gt;CAN 总线电机控制器支持（RobStride、Damiao）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;新策略模型&#34;&gt;新策略模型
+&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;Pi0-FAST 自回归 VLA&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;基于 FAST（频域动作序列分词）的自回归视觉 - 语言 - 动作模型&lt;/li&gt;
+&lt;li&gt;使用基于 Gemma 300M 的动作专家生成分散化的动作 token&lt;/li&gt;
+&lt;li&gt;支持可配置的温度和最大解码步数&lt;/li&gt;
+&lt;li&gt;与实时分块（RTC）兼容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;实时分块（RTC）&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;来自 Physical Intelligence 的推理时技术&lt;/li&gt;
+&lt;li&gt;持续混合新预测与进行中的动作，而非等待完整动作块完成&lt;/li&gt;
+&lt;li&gt;使流匹配策略的响应性显著提升&lt;/li&gt;
+&lt;li&gt;通过 &lt;code&gt;--policy.rtc_config.enabled=true&lt;/code&gt; 配置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;其他新策略&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Wall-X：基于 Qwen2.5-VL 的 VLA，流匹配动作预测&lt;/li&gt;
+&lt;li&gt;X-VLA：基于 Microsoft Florence-2 的 VLA&lt;/li&gt;
+&lt;li&gt;SARM（阶段感知奖励建模）：针对长视野任务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm.gif&#34;
+	width=&#34;1152&#34;
+	height=&#34;648&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_94e6a23e04a65ab9.gif 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_b9b86324627d1c26.gif 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;SARM 社区演示&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h5 id=&#34;数据集优化&#34;&gt;数据集优化
+&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;流式视频编码&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;实时编码捕获的帧，消除录制间隔等待时间&lt;/li&gt;
+&lt;li&gt;支持硬件编码器自动检测&lt;/li&gt;
+&lt;li&gt;配置示例：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;dataset&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;LeRobotDataset&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;repo_id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;my/dataset&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;fps&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;30&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;video_backend&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;auto&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;streaming_encoding&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;性能提升&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;图像训练速度提升 10 倍&lt;/li&gt;
+&lt;li&gt;编码速度提升 3 倍（并行编码为默认）&lt;/li&gt;
+&lt;li&gt;更好的 CPU 利用率&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;envhub从-hub-加载环境&#34;&gt;EnvHub：从 Hub 加载环境
+&lt;/h5&gt;&lt;p&gt;EnvHub 允许直接从 Hugging Face Hub 加载仿真环境，无需本地安装包：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lerobot-train &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --env.type&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;hub &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --env.hub_path&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;username/my-custom-env&amp;#34;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --policy.type&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;act
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;集成 NVIDIA IsaacLab-Arena，提供 GPU 加速的仿真和大规模并行环境实例。&lt;/p&gt;
+&lt;h4 id=&#34;实验设计与结果-1&#34;&gt;实验设计与结果
+&lt;/h4&gt;&lt;p&gt;v0.5.0 包含 200+ 合并 PR 和 50+ 新贡献者，支持：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python 3.12+ 和 Transformers v5&lt;/li&gt;
+&lt;li&gt;第三方策略插件系统&lt;/li&gt;
+&lt;li&gt;远程 Rerun 可视化&lt;/li&gt;
+&lt;li&gt;文档版本化&lt;/li&gt;
+&lt;li&gt;PyTorch 版本更新支持 NVIDIA Blackwell GPU&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;局限性分析-1&#34;&gt;局限性分析
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;人形机器人控制仍处于早期阶段，需要更多研究和数据&lt;/li&gt;
+&lt;li&gt;某些高级策略（如 Pi0-FAST）需要较高的计算资源&lt;/li&gt;
+&lt;li&gt;仿真到现实的迁移仍需大量实验调优&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;未来方向与影响-1&#34;&gt;未来方向与影响
+&lt;/h4&gt;&lt;p&gt;LeRobot v0.5.0 代表了开源机器人学习的重要里程碑，使人形机器人研究更加普及。通过降低硬件和策略的入门门槛，预计将加速具身智能研究的发展。&lt;/p&gt;
+&lt;h4 id=&#34;相关资源链接-1&#34;&gt;相关资源链接
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/docs/lerobot&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LeRobot v0.5.0 文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/docs/lerobot/unitree_g1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Unitree G1 教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/docs/lerobot/pi0fast&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pi0-FAST 文档&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/papers/2506.07339&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RTC 论文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/docs/lerobot/envhub&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EnvHub 教程&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;3-granite-40-1b-speech紧凑型多语言语音模型&#34;&gt;3. Granite 4.0 1B Speech：紧凑型多语言语音模型
+&lt;/h3&gt;&lt;h4 id=&#34;研究背景与动机-2&#34;&gt;研究背景与动机
+&lt;/h4&gt;&lt;p&gt;IBM 发布了 Granite 4.0 1B Speech，专为资源受限设备上的企业应用设计。该模型在前代 granite-speech-3.3-2b 的基础上，参数量减半但性能提升，支持更多语言。&lt;/p&gt;
+&lt;h4 id=&#34;核心方法与技术细节-2&#34;&gt;核心方法与技术细节
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;参数量&lt;/strong&gt;：仅 1B（前代为 2B）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;支持语言&lt;/strong&gt;：英语、法语、德语、西班牙语、葡萄牙语、日语&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;新功能&lt;/strong&gt;：日语 ASR 支持、关键词列表偏置（改善名称和首字母缩写的识别）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;推理优化&lt;/strong&gt;：通过推测解码实现更快的推理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;实验设计与结果-2&#34;&gt;实验设计与结果
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer.png&#34;
+	width=&#34;6191&#34;
+	height=&#34;3158&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer_hu_ebab12c0effbad9.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer_hu_1b47a2950f981aef.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;WER 性能对比&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;196&#34;
+		data-flex-basis=&#34;470px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;在标准英语 ASR 基准上使用词错误率（WER）评估，Granite 4.0 1B Speech 在多个数据集上实现了具有竞争力的低 WER，同时参数量远少于许多可比模型。该模型最近在 OpenASR 排行榜上排名第 1。&lt;/p&gt;
+&lt;h4 id=&#34;局限性分析-2&#34;&gt;局限性分析
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;主要针对 ASR 和 AST 任务，不支持通用语音对话&lt;/li&gt;
+&lt;li&gt;多语言支持仍有限，未覆盖所有主要语言&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;未来方向与影响-2&#34;&gt;未来方向与影响
+&lt;/h4&gt;&lt;p&gt;该模型展示了小模型在特定任务上实现 SOTA 性能的潜力，适合边缘部署和企业应用。推荐与 Granite Guardian 配对用于需要风险检测的生产部署。&lt;/p&gt;
+&lt;h4 id=&#34;相关资源链接-2&#34;&gt;相关资源链接
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/ibm-granite/granite-4.0-1b-speech&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;模型卡片&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/spaces/hf-audio/open_asr_leaderboard&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OpenASR 排行榜&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/collections/ibm-granite/granite-speech&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Granite Speech 集合&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-应用案例&#34;&gt;💡 应用案例
+&lt;/h2&gt;&lt;h3 id=&#34;1-编程教育-ai-助手&#34;&gt;1. 编程教育 AI 助手
+&lt;/h3&gt;&lt;p&gt;Code Concepts 数据集可用于训练专门针对编程教育的 AI 助手，能够生成针对特定编程概念的练习题，帮助学生系统性地掌握编程技能。&lt;/p&gt;
+&lt;h3 id=&#34;2-人形机器人家庭服务&#34;&gt;2. 人形机器人家庭服务
+&lt;/h3&gt;&lt;p&gt;LeRobot 对 Unitree G1 的支持使得研究者和开发者能够更容易地开发和部署家庭服务机器人应用，如物品整理、清洁辅助等。&lt;/p&gt;
+&lt;h3 id=&#34;3-多语言会议转录&#34;&gt;3. 多语言会议转录
+&lt;/h3&gt;&lt;p&gt;Granite 4.0 1B Speech 的多语言支持使其适合用于国际会议的实时转录系统，可在资源受限的边缘设备上运行。&lt;/p&gt;
+&lt;h3 id=&#34;4-长文档分析系统&#34;&gt;4. 长文档分析系统
+&lt;/h3&gt;&lt;p&gt;Ulysses 序列并行技术使得训练能够处理整本书籍、法律文档或研究论文的模型成为可能，适用于法律、学术等专业领域的文档分析。&lt;/p&gt;
+&lt;h2 id=&#34;-统计汇总&#34;&gt;📊 统计汇总
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;类别&lt;/th&gt;
+          &lt;th&gt;项目&lt;/th&gt;
+          &lt;th&gt;数量/指标&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;数据集&lt;/td&gt;
+          &lt;td&gt;Code Concepts Python 问题&lt;/td&gt;
+          &lt;td&gt;15M&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;数据集&lt;/td&gt;
+          &lt;td&gt;核心编程概念&lt;/td&gt;
+          &lt;td&gt;91&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;模型&lt;/td&gt;
+          &lt;td&gt;HumanEval 提升&lt;/td&gt;
+          &lt;td&gt;+6 点 (73→79)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;机器人&lt;/td&gt;
+          &lt;td&gt;LeRobot 新增支持机器人&lt;/td&gt;
+          &lt;td&gt;5+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;机器人&lt;/td&gt;
+          &lt;td&gt;LeRobot 新增策略&lt;/td&gt;
+          &lt;td&gt;6&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;机器人&lt;/td&gt;
+          &lt;td&gt;LeRobot 合并 PR&lt;/td&gt;
+          &lt;td&gt;200+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;机器人&lt;/td&gt;
+          &lt;td&gt;LeRobot 新贡献者&lt;/td&gt;
+          &lt;td&gt;50+&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;语音&lt;/td&gt;
+          &lt;td&gt;Granite 支持语言&lt;/td&gt;
+          &lt;td&gt;6&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;语音&lt;/td&gt;
+          &lt;td&gt;Granite 参数量&lt;/td&gt;
+          &lt;td&gt;1B&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;语音&lt;/td&gt;
+          &lt;td&gt;OpenASR 排名&lt;/td&gt;
+          &lt;td&gt;#1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;训练&lt;/td&gt;
+          &lt;td&gt;Ulysses 支持上下文长度&lt;/td&gt;
+          &lt;td&gt;百万 token&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;训练&lt;/td&gt;
+          &lt;td&gt;图像训练加速&lt;/td&gt;
+          &lt;td&gt;10x&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;训练&lt;/td&gt;
+          &lt;td&gt;编码加速&lt;/td&gt;
+          &lt;td&gt;3x&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;-全部参考链接&#34;&gt;📖 全部参考链接
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/nvidia/synthetic-code-concepts&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Code Concepts: A Large-Scale Synthetic Dataset&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/lerobot-release-v050&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LeRobot v0.5.0: Scaling Every Dimension&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/ulysses-sp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ulysses Sequence Parallelism&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/ibm-granite/granite-4-speech&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Granite 4.0 1B Speech&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/async-rl-training-landscape&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Keep the Tokens Flowing: 16 Open-Source RL Libraries&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/modular-diffusers&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Introducing Modular Diffusers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/datasets/nvidia/Nemotron-Pretraining-Specialized-v1.1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Nemotron-Pretraining-Specialized-v1.1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/spaces/hf-audio/open_asr_leaderboard&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OpenASR Leaderboard&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/papers/2506.07339&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RTC Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/docs/lerobot&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LeRobot Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;Generated by AI Daily Bot | 数据来源：Hugging Face Blog, arXiv, 官方技术博客&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>AI 日报 | 2026-03-11</title>
         <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/</link>
         <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>

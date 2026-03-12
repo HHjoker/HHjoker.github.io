@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="AI 日报 | 2026-03-12 📌 今日总结 NVIDIA 发布 Code Concepts 合成数据集：1500 万 Python 编程问题，基于概念驱动的数据生成工作流，在 Nemotron-Nano-v3 上实现 HumanEval 6 点提升（73→79） LeRobot v0.5.0 重大更新：支持 Unitree G1 人形机器人、新增 Pi0-FAST 自回归 VLA 策略、实时分块（RTC）推理优化、流式视频编码 Ulysses 序列并行集成至 Hugging Face 生态：支持百万 token 上下文训练，从 Accelerate 到 Transformers Trainer 到 TRL 全面支持 IBM Granite 4.0 1B Speech 发布：紧凑型多语言语音模型，支持 6 种语言，在 OpenASR 排行榜登顶 Modular Diffusers 推出：可组合的扩散模型构建块，支持自定义工作流和 Mellon 可视化集成 📚 重要论文一览 标题 来源 亮点 链接 Code Concepts: A Large-Scale Synthetic Dataset NVIDIA / Hugging Face 概念驱动合成数据生成，15M Python 问题 博客 LeRobot v0.5.0: Scaling Every Dimension Hugging Face 人形机器人支持、6 种新策略、流式编码 博客 Ulysses Sequence Parallelism Snowflake / Hugging Face 百万 token 上下文训练，DeepSpeed 后端 博客 Granite 4.0 1B Speech IBM 1B 参数多语言 ASR，OpenASR #1 博客 Keep the Tokens Flowing: 16 Open-Source RL Libraries Hugging Face 异步 RL 训练库对比分析 博客 Introducing Modular Diffusers Hugging Face 可组合扩散模型构建块 博客 🚀 技术动态 1. NVIDIA Code Concepts 数据集发布 NVIDIA 发布了基于概念驱动的合成数据生成工作流，创建了包含 1500 万 Python 编程问题的 Nemotron-Pretraining-Code-Concepts 数据集。该数据集基于从 HumanEval 提示中提取的 91 个核心编程概念，通过组合和提炼选定概念实现针对性数据生成。在 Nemotron-Nano-v3 最后 100B token 预训练中加入 10B token 的 Code Concepts 数据，实现了 HumanEval 从 73 到 79 的 6 点提升。\n">
+<title>AI 日报 | 2026-03-12</title>
+
+<link rel='canonical' href='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/'>
+
+<link rel="stylesheet" href="/scss/style.min.56ea19b05e0cef97d506745ab48006454c875a54299f9f5126e06b47cb25873b.css"><meta property='og:title' content="AI 日报 | 2026-03-12">
+<meta property='og:description' content="AI 日报 | 2026-03-12 📌 今日总结 NVIDIA 发布 Code Concepts 合成数据集：1500 万 Python 编程问题，基于概念驱动的数据生成工作流，在 Nemotron-Nano-v3 上实现 HumanEval 6 点提升（73→79） LeRobot v0.5.0 重大更新：支持 Unitree G1 人形机器人、新增 Pi0-FAST 自回归 VLA 策略、实时分块（RTC）推理优化、流式视频编码 Ulysses 序列并行集成至 Hugging Face 生态：支持百万 token 上下文训练，从 Accelerate 到 Transformers Trainer 到 TRL 全面支持 IBM Granite 4.0 1B Speech 发布：紧凑型多语言语音模型，支持 6 种语言，在 OpenASR 排行榜登顶 Modular Diffusers 推出：可组合的扩散模型构建块，支持自定义工作流和 Mellon 可视化集成 📚 重要论文一览 标题 来源 亮点 链接 Code Concepts: A Large-Scale Synthetic Dataset NVIDIA / Hugging Face 概念驱动合成数据生成，15M Python 问题 博客 LeRobot v0.5.0: Scaling Every Dimension Hugging Face 人形机器人支持、6 种新策略、流式编码 博客 Ulysses Sequence Parallelism Snowflake / Hugging Face 百万 token 上下文训练，DeepSpeed 后端 博客 Granite 4.0 1B Speech IBM 1B 参数多语言 ASR，OpenASR #1 博客 Keep the Tokens Flowing: 16 Open-Source RL Libraries Hugging Face 异步 RL 训练库对比分析 博客 Introducing Modular Diffusers Hugging Face 可组合扩散模型构建块 博客 🚀 技术动态 1. NVIDIA Code Concepts 数据集发布 NVIDIA 发布了基于概念驱动的合成数据生成工作流，创建了包含 1500 万 Python 编程问题的 Nemotron-Pretraining-Code-Concepts 数据集。该数据集基于从 HumanEval 提示中提取的 91 个核心编程概念，通过组合和提炼选定概念实现针对性数据生成。在 Nemotron-Nano-v3 最后 100B token 预训练中加入 10B token 的 Code Concepts 数据，实现了 HumanEval 从 73 到 79 的 6 点提升。\n">
+<meta property='og:url' content='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/'>
+<meta property='og:site_name' content='HH Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI' /><meta property='article:tag' content='LLM' /><meta property='article:tag' content='Robotics' /><meta property='article:tag' content='Multimodal' /><meta property='article:tag' content='Reinforcement Learning' /><meta property='article:tag' content='Diffusion' /><meta property='article:published_time' content='2026-03-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-12T08:07:12&#43;08:00'/>
+<meta name="twitter:title" content="AI 日报 | 2026-03-12">
+<meta name="twitter:description" content="AI 日报 | 2026-03-12 📌 今日总结 NVIDIA 发布 Code Concepts 合成数据集：1500 万 Python 编程问题，基于概念驱动的数据生成工作流，在 Nemotron-Nano-v3 上实现 HumanEval 6 点提升（73→79） LeRobot v0.5.0 重大更新：支持 Unitree G1 人形机器人、新增 Pi0-FAST 自回归 VLA 策略、实时分块（RTC）推理优化、流式视频编码 Ulysses 序列并行集成至 Hugging Face 生态：支持百万 token 上下文训练，从 Accelerate 到 Transformers Trainer 到 TRL 全面支持 IBM Granite 4.0 1B Speech 发布：紧凑型多语言语音模型，支持 6 种语言，在 OpenASR 排行榜登顶 Modular Diffusers 推出：可组合的扩散模型构建块，支持自定义工作流和 Mellon 可视化集成 📚 重要论文一览 标题 来源 亮点 链接 Code Concepts: A Large-Scale Synthetic Dataset NVIDIA / Hugging Face 概念驱动合成数据生成，15M Python 问题 博客 LeRobot v0.5.0: Scaling Every Dimension Hugging Face 人形机器人支持、6 种新策略、流式编码 博客 Ulysses Sequence Parallelism Snowflake / Hugging Face 百万 token 上下文训练，DeepSpeed 后端 博客 Granite 4.0 1B Speech IBM 1B 参数多语言 ASR，OpenASR #1 博客 Keep the Tokens Flowing: 16 Open-Source RL Libraries Hugging Face 异步 RL 训练库对比分析 博客 Introducing Modular Diffusers Hugging Face 可组合扩散模型构建块 博客 🚀 技术动态 1. NVIDIA Code Concepts 数据集发布 NVIDIA 发布了基于概念驱动的合成数据生成工作流，创建了包含 1500 万 Python 编程问题的 Nemotron-Pretraining-Code-Concepts 数据集。该数据集基于从 HumanEval 提示中提取的 91 个核心编程概念，通过组合和提炼选定概念实现针对性数据生成。在 Nemotron-Nano-v3 最后 100B token 预训练中加入 10B token 的 Code Concepts 数据，实现了 HumanEval 从 73 到 79 的 6 点提升。\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_1d1ddc0b6fcd3df4.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">HH Blog</a></h1>
+            <h2 class="site-description">欢迎来到我的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/HHjoker'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://HHjoker.github.io/en/" >English</option>
+                                
+                                    <option value="https://HHjoker.github.io/" selected>中文</option>
+                                
+                                    <option value="https://HHjoker.github.io/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#-今日总结">📌 今日总结</a></li>
+    <li><a href="#-重要论文一览">📚 重要论文一览</a></li>
+    <li><a href="#-技术动态">🚀 技术动态</a>
+      <ol>
+        <li><a href="#1-nvidia-code-concepts-数据集发布">1. NVIDIA Code Concepts 数据集发布</a></li>
+        <li><a href="#2-lerobot-v050-重大更新">2. LeRobot v0.5.0 重大更新</a></li>
+        <li><a href="#3-ulysses-序列并行全面集成">3. Ulysses 序列并行全面集成</a></li>
+      </ol>
+    </li>
+    <li><a href="#-详细介绍深度解读">🔍 详细介绍（深度解读）</a>
+      <ol>
+        <li><a href="#1-code-concepts概念驱动的合成数据生成">1. Code Concepts：概念驱动的合成数据生成</a>
+          <ol>
+            <li><a href="#研究背景与动机">研究背景与动机</a></li>
+            <li><a href="#问题定义与挑战">问题定义与挑战</a></li>
+            <li><a href="#核心方法与技术细节">核心方法与技术细节</a></li>
+            <li><a href="#实验设计与结果">实验设计与结果</a></li>
+            <li><a href="#局限性分析">局限性分析</a></li>
+            <li><a href="#未来方向与影响">未来方向与影响</a></li>
+            <li><a href="#相关资源链接">相关资源链接</a></li>
+          </ol>
+        </li>
+        <li><a href="#2-lerobot-v050机器人学习的全面扩展">2. LeRobot v0.5.0：机器人学习的全面扩展</a>
+          <ol>
+            <li><a href="#研究背景与动机-1">研究背景与动机</a></li>
+            <li><a href="#核心方法与技术细节-1">核心方法与技术细节</a></li>
+            <li><a href="#实验设计与结果-1">实验设计与结果</a></li>
+            <li><a href="#局限性分析-1">局限性分析</a></li>
+            <li><a href="#未来方向与影响-1">未来方向与影响</a></li>
+            <li><a href="#相关资源链接-1">相关资源链接</a></li>
+          </ol>
+        </li>
+        <li><a href="#3-granite-40-1b-speech紧凑型多语言语音模型">3. Granite 4.0 1B Speech：紧凑型多语言语音模型</a>
+          <ol>
+            <li><a href="#研究背景与动机-2">研究背景与动机</a></li>
+            <li><a href="#核心方法与技术细节-2">核心方法与技术细节</a></li>
+            <li><a href="#实验设计与结果-2">实验设计与结果</a></li>
+            <li><a href="#局限性分析-2">局限性分析</a></li>
+            <li><a href="#未来方向与影响-2">未来方向与影响</a></li>
+            <li><a href="#相关资源链接-2">相关资源链接</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#-应用案例">💡 应用案例</a>
+      <ol>
+        <li><a href="#1-编程教育-ai-助手">1. 编程教育 AI 助手</a></li>
+        <li><a href="#2-人形机器人家庭服务">2. 人形机器人家庭服务</a></li>
+        <li><a href="#3-多语言会议转录">3. 多语言会议转录</a></li>
+        <li><a href="#4-长文档分析系统">4. 长文档分析系统</a></li>
+      </ol>
+    </li>
+    <li><a href="#-统计汇总">📊 统计汇总</a></li>
+    <li><a href="#-全部参考链接">📖 全部参考链接</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ai-daily/" >
+                AI Daily
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/">AI 日报 | 2026-03-12</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-03-12</time>
+            </div>
+        
+        <div class="article-lastmod">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time>
+                    2026-03-12
+                </time>
+            </div>
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="ai-日报--2026-03-12">AI 日报 | 2026-03-12
+</h1><h2 id="-今日总结">📌 今日总结
+</h2><ul>
+<li><strong>NVIDIA 发布 Code Concepts 合成数据集</strong>：1500 万 Python 编程问题，基于概念驱动的数据生成工作流，在 Nemotron-Nano-v3 上实现 HumanEval 6 点提升（73→79）</li>
+<li><strong>LeRobot v0.5.0 重大更新</strong>：支持 Unitree G1 人形机器人、新增 Pi0-FAST 自回归 VLA 策略、实时分块（RTC）推理优化、流式视频编码</li>
+<li><strong>Ulysses 序列并行集成至 Hugging Face 生态</strong>：支持百万 token 上下文训练，从 Accelerate 到 Transformers Trainer 到 TRL 全面支持</li>
+<li><strong>IBM Granite 4.0 1B Speech 发布</strong>：紧凑型多语言语音模型，支持 6 种语言，在 OpenASR 排行榜登顶</li>
+<li><strong>Modular Diffusers 推出</strong>：可组合的扩散模型构建块，支持自定义工作流和 Mellon 可视化集成</li>
+</ul>
+<h2 id="-重要论文一览">📚 重要论文一览
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>标题</th>
+          <th>来源</th>
+          <th>亮点</th>
+          <th>链接</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Code Concepts: A Large-Scale Synthetic Dataset</td>
+          <td>NVIDIA / Hugging Face</td>
+          <td>概念驱动合成数据生成，15M Python 问题</td>
+          <td><a class="link" href="https://huggingface.co/blog/nvidia/synthetic-code-concepts"  target="_blank" rel="noopener"
+    >博客</a></td>
+      </tr>
+      <tr>
+          <td>LeRobot v0.5.0: Scaling Every Dimension</td>
+          <td>Hugging Face</td>
+          <td>人形机器人支持、6 种新策略、流式编码</td>
+          <td><a class="link" href="https://huggingface.co/blog/lerobot-release-v050"  target="_blank" rel="noopener"
+    >博客</a></td>
+      </tr>
+      <tr>
+          <td>Ulysses Sequence Parallelism</td>
+          <td>Snowflake / Hugging Face</td>
+          <td>百万 token 上下文训练，DeepSpeed 后端</td>
+          <td><a class="link" href="https://huggingface.co/blog/ulysses-sp"  target="_blank" rel="noopener"
+    >博客</a></td>
+      </tr>
+      <tr>
+          <td>Granite 4.0 1B Speech</td>
+          <td>IBM</td>
+          <td>1B 参数多语言 ASR，OpenASR #1</td>
+          <td><a class="link" href="https://huggingface.co/blog/ibm-granite/granite-4-speech"  target="_blank" rel="noopener"
+    >博客</a></td>
+      </tr>
+      <tr>
+          <td>Keep the Tokens Flowing: 16 Open-Source RL Libraries</td>
+          <td>Hugging Face</td>
+          <td>异步 RL 训练库对比分析</td>
+          <td><a class="link" href="https://huggingface.co/blog/async-rl-training-landscape"  target="_blank" rel="noopener"
+    >博客</a></td>
+      </tr>
+      <tr>
+          <td>Introducing Modular Diffusers</td>
+          <td>Hugging Face</td>
+          <td>可组合扩散模型构建块</td>
+          <td><a class="link" href="https://huggingface.co/blog/modular-diffusers"  target="_blank" rel="noopener"
+    >博客</a></td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="-技术动态">🚀 技术动态
+</h2><h3 id="1-nvidia-code-concepts-数据集发布">1. NVIDIA Code Concepts 数据集发布
+</h3><p>NVIDIA 发布了基于概念驱动的合成数据生成工作流，创建了包含 1500 万 Python 编程问题的 Nemotron-Pretraining-Code-Concepts 数据集。该数据集基于从 HumanEval 提示中提取的 91 个核心编程概念，通过组合和提炼选定概念实现针对性数据生成。在 Nemotron-Nano-v3 最后 100B token 预训练中加入 10B token 的 Code Concepts 数据，实现了 HumanEval 从 73 到 79 的 6 点提升。</p>
+<h3 id="2-lerobot-v050-重大更新">2. LeRobot v0.5.0 重大更新
+</h3><p>Hugging Face 的 LeRobot 迎来最大规模更新，包含 200+ 合并 PR 和 50+ 新贡献者。主要更新包括：</p>
+<ul>
+<li>首次支持 Unitree G1 人形机器人（全身控制、运动、操作、遥操作）</li>
+<li>新增 Pi0-FAST 自回归 VLA 策略（基于 Gemma 300M 的动作专家）</li>
+<li>实时分块（RTC）推理技术，显著提升流匹配策略的响应性</li>
+<li>流式视频编码，消除录制间隔等待时间</li>
+<li>EnvHub：直接从 Hugging Face Hub 加载仿真环境</li>
+</ul>
+<h3 id="3-ulysses-序列并行全面集成">3. Ulysses 序列并行全面集成
+</h3><p>Snowflake 的 Ulysses 序列并行（ALST 协议的一部分）现已集成到 Hugging Face 整个生态系统中，包括 Accelerate、Transformers Trainer 和 TRL 的 SFTTrainer。该技术通过注意力头并行化，将注意力计算分布到多个 GPU 上，支持百万 token 上下文训练。相比 Ring Attention，Ulysses 具有更低的通信复杂度和延迟。</p>
+<h2 id="-详细介绍深度解读">🔍 详细介绍（深度解读）
+</h2><h3 id="1-code-concepts概念驱动的合成数据生成">1. Code Concepts：概念驱动的合成数据生成
+</h3><h4 id="研究背景与动机">研究背景与动机
+</h4><p>在大规模 LLM 开发中，模型质量的提升不仅依赖于数据数量，更取决于数据质量和特异性。预训练数据集虽然包含海量信息，但往往缺乏针对特定技能（如推理或编程能力）的概念性目标。NVIDIA 团队设计了可扩展的概念驱动合成数据生成工作流，使研究人员能够生成与期望模型能力对齐的数据。</p>
+<h4 id="问题定义与挑战">问题定义与挑战
+</h4><p>核心挑战在于：如何系统性地生成针对特定编程概念的高质量训练数据？传统方法依赖于爬取互联网代码，但难以控制概念分布、难度梯度和多样性。</p>
+<h4 id="核心方法与技术细节">核心方法与技术细节
+</h4><p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow.png"
+	width="960"
+	height="492"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow_hu_9730faeb2df2a76.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow_hu_e7e2691029525736.png 1024w"
+	loading="lazy"
+	
+		alt="Code Concepts 工作流程"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="195"
+		data-flex-basis="468px"
+	
+></p>
+<p>工作流程的核心是从大规模标注的 Nemotron-Pretraining-Code-{v1,v2} 数据集中提取的编程知识分类体系。该分类体系编码了数千个分层组织的编程概念，从基本结构（如字符串、递归）到高级算法和数据结构模式。</p>
+<p>具体步骤：</p>
+<ol>
+<li><strong>概念提取</strong>：从 HumanEval 基准的分类提示中识别 91 个核心概念</li>
+<li><strong>概念组合</strong>：指导性地组合选定概念生成提示</li>
+<li><strong>数据生成</strong>：使用 GPT-OSS 120B 生成约 1500 万个合成 Python 编程问题</li>
+<li><strong>质量验证</strong>：使用 Python 的 ast.parse 函数验证生成的代码可执行</li>
+</ol>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results.png"
+	width="2139"
+	height="1232"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results_hu_c439f37cb5d3c515.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results_hu_672f4d28ba4ffcba.png 1024w"
+	loading="lazy"
+	
+		alt="问题生成过程"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="173"
+		data-flex-basis="416px"
+	
+></p>
+<h4 id="实验设计与结果">实验设计与结果
+</h4><p>将 10B token 的 Code Concepts 数据纳入 Nemotron-Nano-v3 最后 100B token 预训练中进行数据消融实验：</p>
+<ul>
+<li><strong>HumanEval</strong>：从 73 提升至 79（+6 点）</li>
+<li><strong>其他基准</strong>：大多数保持不变</li>
+<li><strong>定性评估</strong>：在图算法、集合运算等多种编程概念上表现更强，边缘情况和执行推理处理能力改善</li>
+</ul>
+<h4 id="局限性分析">局限性分析
+</h4><ul>
+<li>目前仅针对 Python 编程，需要扩展到其他编程语言和领域</li>
+<li>依赖强大的教师模型（GPT-OSS 120B）进行数据生成</li>
+<li>概念分类体系需要人工维护和扩展</li>
+</ul>
+<h4 id="未来方向与影响">未来方向与影响
+</h4><p>该数据集验证了更广泛的概念驱动生成工作流，而非一次性产物。通过以 CC-BY-4.0 许可发布数据集和底层分类体系，团队希望社区能够将此方法扩展到其他领域和用例，实现可扩展的针对性 LLM 预训练。</p>
+<h4 id="相关资源链接">相关资源链接
+</h4><ul>
+<li><a class="link" href="https://huggingface.co/datasets/nvidia/Nemotron-Pretraining-Specialized-v1.1"  target="_blank" rel="noopener"
+    >Nemotron-Pretraining-Specialized-v1.1 数据集</a></li>
+<li><a class="link" href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16"  target="_blank" rel="noopener"
+    >Nemotron-Nano-v3 模型</a></li>
+<li><a class="link" href="https://huggingface.co/blog/nvidia/synthetic-code-concepts"  target="_blank" rel="noopener"
+    >博客文章</a></li>
+</ul>
+<hr>
+<h3 id="2-lerobot-v050机器人学习的全面扩展">2. LeRobot v0.5.0：机器人学习的全面扩展
+</h3><h4 id="研究背景与动机-1">研究背景与动机
+</h4><p>LeRobot 是 Hugging Face 的开源机器人学习库，旨在降低机器人 AI 的研究和部署门槛。v0.5.0 是该库迄今为止最大的更新，在硬件支持、策略模型、数据集处理和仿真环境等各个维度都进行了大幅扩展。</p>
+<h4 id="核心方法与技术细节-1">核心方法与技术细节
+</h4><h5 id="硬件支持扩展">硬件支持扩展
+</h5><p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid.jpg"
+	width="3024"
+	height="3024"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_9f63aad436629edf.jpg 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_8780dd2f145a0743.jpg 1024w"
+	loading="lazy"
+	
+		alt="Unitree G1 人形机器人"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="100"
+		data-flex-basis="240px"
+	
+></p>
+<p><strong>Unitree G1 人形机器人</strong>：这是 LeRobot 首次集成的人形机器人平台，支持：</p>
+<ul>
+<li>运动：在环境中行走、导航和移动</li>
+<li>操作：执行灵巧的对象操作任务</li>
+<li>遥操作：通过直观的遥操作界面远程控制 G1</li>
+<li>全身控制（WBC）：同时协调运动和操作以完成复杂的现实世界任务</li>
+</ul>
+<p>其他新增硬件支持：</p>
+<ul>
+<li>OpenArm &amp; OpenArm Mini（支持双臂配置）</li>
+<li>Earth Rover（首个移动机器人集成）</li>
+<li>OMX Robot（新机械臂）</li>
+<li>CAN 总线电机控制器支持（RobStride、Damiao）</li>
+</ul>
+<h5 id="新策略模型">新策略模型
+</h5><p><strong>Pi0-FAST 自回归 VLA</strong>：</p>
+<ul>
+<li>基于 FAST（频域动作序列分词）的自回归视觉 - 语言 - 动作模型</li>
+<li>使用基于 Gemma 300M 的动作专家生成分散化的动作 token</li>
+<li>支持可配置的温度和最大解码步数</li>
+<li>与实时分块（RTC）兼容</li>
+</ul>
+<p><strong>实时分块（RTC）</strong>：</p>
+<ul>
+<li>来自 Physical Intelligence 的推理时技术</li>
+<li>持续混合新预测与进行中的动作，而非等待完整动作块完成</li>
+<li>使流匹配策略的响应性显著提升</li>
+<li>通过 <code>--policy.rtc_config.enabled=true</code> 配置</li>
+</ul>
+<p><strong>其他新策略</strong>：</p>
+<ul>
+<li>Wall-X：基于 Qwen2.5-VL 的 VLA，流匹配动作预测</li>
+<li>X-VLA：基于 Microsoft Florence-2 的 VLA</li>
+<li>SARM（阶段感知奖励建模）：针对长视野任务</li>
+</ul>
+<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm.gif"
+	width="1152"
+	height="648"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_94e6a23e04a65ab9.gif 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_b9b86324627d1c26.gif 1024w"
+	loading="lazy"
+	
+		alt="SARM 社区演示"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="177"
+		data-flex-basis="426px"
+	
+></p>
+<h5 id="数据集优化">数据集优化
+</h5><p><strong>流式视频编码</strong>：</p>
+<ul>
+<li>实时编码捕获的帧，消除录制间隔等待时间</li>
+<li>支持硬件编码器自动检测</li>
+<li>配置示例：</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">dataset</span> <span class="o">=</span> <span class="n">LeRobotDataset</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">repo_id</span><span class="o">=</span><span class="s2">&#34;my/dataset&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fps</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">video_backend</span><span class="o">=</span><span class="s2">&#34;auto&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">streaming_encoding</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>性能提升</strong>：</p>
+<ul>
+<li>图像训练速度提升 10 倍</li>
+<li>编码速度提升 3 倍（并行编码为默认）</li>
+<li>更好的 CPU 利用率</li>
+</ul>
+<h5 id="envhub从-hub-加载环境">EnvHub：从 Hub 加载环境
+</h5><p>EnvHub 允许直接从 Hugging Face Hub 加载仿真环境，无需本地安装包：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lerobot-train <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --env.type<span class="o">=</span>hub <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --env.hub_path<span class="o">=</span><span class="s2">&#34;username/my-custom-env&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --policy.type<span class="o">=</span>act
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>集成 NVIDIA IsaacLab-Arena，提供 GPU 加速的仿真和大规模并行环境实例。</p>
+<h4 id="实验设计与结果-1">实验设计与结果
+</h4><p>v0.5.0 包含 200+ 合并 PR 和 50+ 新贡献者，支持：</p>
+<ul>
+<li>Python 3.12+ 和 Transformers v5</li>
+<li>第三方策略插件系统</li>
+<li>远程 Rerun 可视化</li>
+<li>文档版本化</li>
+<li>PyTorch 版本更新支持 NVIDIA Blackwell GPU</li>
+</ul>
+<h4 id="局限性分析-1">局限性分析
+</h4><ul>
+<li>人形机器人控制仍处于早期阶段，需要更多研究和数据</li>
+<li>某些高级策略（如 Pi0-FAST）需要较高的计算资源</li>
+<li>仿真到现实的迁移仍需大量实验调优</li>
+</ul>
+<h4 id="未来方向与影响-1">未来方向与影响
+</h4><p>LeRobot v0.5.0 代表了开源机器人学习的重要里程碑，使人形机器人研究更加普及。通过降低硬件和策略的入门门槛，预计将加速具身智能研究的发展。</p>
+<h4 id="相关资源链接-1">相关资源链接
+</h4><ul>
+<li><a class="link" href="https://huggingface.co/docs/lerobot"  target="_blank" rel="noopener"
+    >LeRobot v0.5.0 文档</a></li>
+<li><a class="link" href="https://huggingface.co/docs/lerobot/unitree_g1"  target="_blank" rel="noopener"
+    >Unitree G1 教程</a></li>
+<li><a class="link" href="https://huggingface.co/docs/lerobot/pi0fast"  target="_blank" rel="noopener"
+    >Pi0-FAST 文档</a></li>
+<li><a class="link" href="https://huggingface.co/papers/2506.07339"  target="_blank" rel="noopener"
+    >RTC 论文</a></li>
+<li><a class="link" href="https://huggingface.co/docs/lerobot/envhub"  target="_blank" rel="noopener"
+    >EnvHub 教程</a></li>
+</ul>
+<hr>
+<h3 id="3-granite-40-1b-speech紧凑型多语言语音模型">3. Granite 4.0 1B Speech：紧凑型多语言语音模型
+</h3><h4 id="研究背景与动机-2">研究背景与动机
+</h4><p>IBM 发布了 Granite 4.0 1B Speech，专为资源受限设备上的企业应用设计。该模型在前代 granite-speech-3.3-2b 的基础上，参数量减半但性能提升，支持更多语言。</p>
+<h4 id="核心方法与技术细节-2">核心方法与技术细节
+</h4><ul>
+<li><strong>参数量</strong>：仅 1B（前代为 2B）</li>
+<li><strong>支持语言</strong>：英语、法语、德语、西班牙语、葡萄牙语、日语</li>
+<li><strong>新功能</strong>：日语 ASR 支持、关键词列表偏置（改善名称和首字母缩写的识别）</li>
+<li><strong>推理优化</strong>：通过推测解码实现更快的推理</li>
+</ul>
+<h4 id="实验设计与结果-2">实验设计与结果
+</h4><p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer.png"
+	width="6191"
+	height="3158"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer_hu_ebab12c0effbad9.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer_hu_1b47a2950f981aef.png 1024w"
+	loading="lazy"
+	
+		alt="WER 性能对比"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="196"
+		data-flex-basis="470px"
+	
+></p>
+<p>在标准英语 ASR 基准上使用词错误率（WER）评估，Granite 4.0 1B Speech 在多个数据集上实现了具有竞争力的低 WER，同时参数量远少于许多可比模型。该模型最近在 OpenASR 排行榜上排名第 1。</p>
+<h4 id="局限性分析-2">局限性分析
+</h4><ul>
+<li>主要针对 ASR 和 AST 任务，不支持通用语音对话</li>
+<li>多语言支持仍有限，未覆盖所有主要语言</li>
+</ul>
+<h4 id="未来方向与影响-2">未来方向与影响
+</h4><p>该模型展示了小模型在特定任务上实现 SOTA 性能的潜力，适合边缘部署和企业应用。推荐与 Granite Guardian 配对用于需要风险检测的生产部署。</p>
+<h4 id="相关资源链接-2">相关资源链接
+</h4><ul>
+<li><a class="link" href="https://huggingface.co/ibm-granite/granite-4.0-1b-speech"  target="_blank" rel="noopener"
+    >模型卡片</a></li>
+<li><a class="link" href="https://huggingface.co/spaces/hf-audio/open_asr_leaderboard"  target="_blank" rel="noopener"
+    >OpenASR 排行榜</a></li>
+<li><a class="link" href="https://huggingface.co/collections/ibm-granite/granite-speech"  target="_blank" rel="noopener"
+    >Granite Speech 集合</a></li>
+</ul>
+<h2 id="-应用案例">💡 应用案例
+</h2><h3 id="1-编程教育-ai-助手">1. 编程教育 AI 助手
+</h3><p>Code Concepts 数据集可用于训练专门针对编程教育的 AI 助手，能够生成针对特定编程概念的练习题，帮助学生系统性地掌握编程技能。</p>
+<h3 id="2-人形机器人家庭服务">2. 人形机器人家庭服务
+</h3><p>LeRobot 对 Unitree G1 的支持使得研究者和开发者能够更容易地开发和部署家庭服务机器人应用，如物品整理、清洁辅助等。</p>
+<h3 id="3-多语言会议转录">3. 多语言会议转录
+</h3><p>Granite 4.0 1B Speech 的多语言支持使其适合用于国际会议的实时转录系统，可在资源受限的边缘设备上运行。</p>
+<h3 id="4-长文档分析系统">4. 长文档分析系统
+</h3><p>Ulysses 序列并行技术使得训练能够处理整本书籍、法律文档或研究论文的模型成为可能，适用于法律、学术等专业领域的文档分析。</p>
+<h2 id="-统计汇总">📊 统计汇总
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>类别</th>
+          <th>项目</th>
+          <th>数量/指标</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>数据集</td>
+          <td>Code Concepts Python 问题</td>
+          <td>15M</td>
+      </tr>
+      <tr>
+          <td>数据集</td>
+          <td>核心编程概念</td>
+          <td>91</td>
+      </tr>
+      <tr>
+          <td>模型</td>
+          <td>HumanEval 提升</td>
+          <td>+6 点 (73→79)</td>
+      </tr>
+      <tr>
+          <td>机器人</td>
+          <td>LeRobot 新增支持机器人</td>
+          <td>5+</td>
+      </tr>
+      <tr>
+          <td>机器人</td>
+          <td>LeRobot 新增策略</td>
+          <td>6</td>
+      </tr>
+      <tr>
+          <td>机器人</td>
+          <td>LeRobot 合并 PR</td>
+          <td>200+</td>
+      </tr>
+      <tr>
+          <td>机器人</td>
+          <td>LeRobot 新贡献者</td>
+          <td>50+</td>
+      </tr>
+      <tr>
+          <td>语音</td>
+          <td>Granite 支持语言</td>
+          <td>6</td>
+      </tr>
+      <tr>
+          <td>语音</td>
+          <td>Granite 参数量</td>
+          <td>1B</td>
+      </tr>
+      <tr>
+          <td>语音</td>
+          <td>OpenASR 排名</td>
+          <td>#1</td>
+      </tr>
+      <tr>
+          <td>训练</td>
+          <td>Ulysses 支持上下文长度</td>
+          <td>百万 token</td>
+      </tr>
+      <tr>
+          <td>训练</td>
+          <td>图像训练加速</td>
+          <td>10x</td>
+      </tr>
+      <tr>
+          <td>训练</td>
+          <td>编码加速</td>
+          <td>3x</td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="-全部参考链接">📖 全部参考链接
+</h2><ol>
+<li><a class="link" href="https://huggingface.co/blog/nvidia/synthetic-code-concepts"  target="_blank" rel="noopener"
+    >Code Concepts: A Large-Scale Synthetic Dataset</a></li>
+<li><a class="link" href="https://huggingface.co/blog/lerobot-release-v050"  target="_blank" rel="noopener"
+    >LeRobot v0.5.0: Scaling Every Dimension</a></li>
+<li><a class="link" href="https://huggingface.co/blog/ulysses-sp"  target="_blank" rel="noopener"
+    >Ulysses Sequence Parallelism</a></li>
+<li><a class="link" href="https://huggingface.co/blog/ibm-granite/granite-4-speech"  target="_blank" rel="noopener"
+    >Granite 4.0 1B Speech</a></li>
+<li><a class="link" href="https://huggingface.co/blog/async-rl-training-landscape"  target="_blank" rel="noopener"
+    >Keep the Tokens Flowing: 16 Open-Source RL Libraries</a></li>
+<li><a class="link" href="https://huggingface.co/blog/modular-diffusers"  target="_blank" rel="noopener"
+    >Introducing Modular Diffusers</a></li>
+<li><a class="link" href="https://huggingface.co/datasets/nvidia/Nemotron-Pretraining-Specialized-v1.1"  target="_blank" rel="noopener"
+    >Nemotron-Pretraining-Specialized-v1.1</a></li>
+<li><a class="link" href="https://huggingface.co/spaces/hf-audio/open_asr_leaderboard"  target="_blank" rel="noopener"
+    >OpenASR Leaderboard</a></li>
+<li><a class="link" href="https://huggingface.co/papers/2506.07339"  target="_blank" rel="noopener"
+    >RTC Paper</a></li>
+<li><a class="link" href="https://huggingface.co/docs/lerobot"  target="_blank" rel="noopener"
+    >LeRobot Documentation</a></li>
+</ol>
+<hr>
+<p><em>Generated by AI Daily Bot | 数据来源：Hugging Face Blog, arXiv, 官方技术博客</em></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ai/">AI</a>
+        
+            <a href="/tags/llm/">LLM</a>
+        
+            <a href="/tags/robotics/">Robotics</a>
+        
+            <a href="/tags/multimodal/">Multimodal</a>
+        
+            <a href="/tags/reinforcement-learning/">Reinforcement Learning</a>
+        
+            <a href="/tags/diffusion/">Diffusion</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2026-03-12
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-11</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-09</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-08</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-06</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-07</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="HHjoker/HHjoker.github.io"
+    data-repo-id="R_kgDON1Vqng"
+    data-category="Announcements"
+    data-category-id="DIC_kwDON1Vqns4C3qHd"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('preferred_color_scheme');
+            } else {
+                setGiscusTheme('preferred_color_scheme');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 Huang Hao
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+    #TableOfContents > ul ul,
+    #TableOfContents > ul ol,
+    #TableOfContents > ol ul,
+    #TableOfContents > ol ol {
+        display: none;
+    }
+    #TableOfContents > ul .open,
+    #TableOfContents > ol .open {
+        display: block;
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://HHjoker.github.io/icons/backTop.svg);
+    }
+</style>
+
+<script type="text/javascript">
+    
+
+    function initScrollTop() {
+        let rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) {
+            return;
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop
+        rightSideBar.appendChild(btn)
+        
+        window.onscroll = function() {
+            
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    }
+
+    
+
+    function backToTop(){
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    initScrollTop();
+</script>
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    let codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) {
+      return;
+    }
+    codeBlocks.forEach(codeBlock => {
+      
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+        return;
+      }
+      
+      
+      let codeMoreBox = document.createElement('div');
+      codeMoreBox.classList.add('code-more-box');
+      
+      let codeMoreBtn = document.createElement('span');
+      codeMoreBtn.classList.add('code-more-btn');
+      codeMoreBtn.addEventListener('click', () => {
+        codeBlock.classList.add('code-show');
+        codeMoreBox.style.display = 'none';
+        
+        window.dispatchEvent(new Event('resize'))
+      })
+      
+      let img = document.createElement('img');
+      img.classList.add('code-more-img');
+      img.src = "https://HHjoker.github.io/icons/codeMore.ico"
+      
+      codeMoreBtn.appendChild(img);
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox)
+    })
+  }
+  
+  initCodeMoreBox();
+</script>
+
+    </body>
+</html>
