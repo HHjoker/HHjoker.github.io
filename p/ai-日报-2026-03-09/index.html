@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="AI 日报 | 2026-03-09 每日精选 AI 领域最新研究进展与技术动态\n📌 今日总结 推理模型&quot;表演性思维&quot;被发现：研究者揭示大模型在简单任务上早已确定答案但仍生成冗长推理链，提出注意力探针可实现 80% token 节省 WebChain 数据集发布：31K+ 人工标注真实网页交互轨迹，Triple Alignment 多模态对齐机制推动 Web Agent 研究民主化 LLM 评估去偏新框架：平均偏差有界性 (A-BB) 为 LLM-as-a-Judge 提供可证明的无偏保证，在 Arena-Hard-Auto 上验证有效 移动端个人 Agent 架构：Jagarin 提出三层休眠架构解决移动设备上个人 Agent 的电池与沙盒限制 动态数据选择新范式：重新定义代表性与多样性，实现 2 倍训练加速同时匹配全数据精度 📚 重要论文一览 论文 来源 亮点 链接 Reasoning Theater: Disentangling Model Beliefs from CoT arXiv:2603.05488 揭示推理模型&quot;表演性思维&quot;，探针实现 80% token 节省 PDF WebChain: Large-Scale Human-Annotated Web Dataset arXiv:2603.05295 31K+ 人工标注网页轨迹，Triple Alignment 多模态对齐 PDF Towards Provably Unbiased LLM Judges arXiv:2603.05485 A-BB 框架保证 LLM 评估器偏差有界，61-99% 排名相关性 PDF Jagarin: Hibernating Personal Agents on Mobile arXiv:2603.05069 DAWN+ARIA+ACE 三层架构解决移动端 Agent 持久化难题 PDF Rethinking Representativeness and Diversity arXiv:2603.04981 重新定义动态数据选择，2 倍加速匹配全数据精度 PDF Judge Reliability Harness arXiv:2603.05399 开源库压力测试 LLM 法官可靠性，揭示格式敏感性 PDF UniSTOK: Uniform Inductive Spatio-Temporal Kriging arXiv:2603.05301 双分支输入 + 缺失掩码调制提升时空克里金鲁棒性 PDF PACE: Adaptive Training for 911 Call-takers arXiv:2603.05361 个性化自适应课程引擎加速 19.5% 达标时间 PDF 🚀 技术动态 1. Reasoning Theater：推理模型的&quot;表演性思维&quot;大揭秘 来自前沿研究机构的研究者发表了关于推理模型内部信念与外在推理链不一致性的重要发现：\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="AI 日报 | 2026-03-09 每日精选 AI 领域最新研究进展与技术动态 📌 今日总结 推理模型&amp;quot;表演性思维&amp;quot;被发现：研究者揭示大模型在简单任务上早已确定答案但仍生成冗长推理链，提出注意力探针可实现 80% token 节省 WebChain 数据集发布：31K+ 人工标注真实网页交互轨迹...">
 <title>AI 日报 | 2026-03-09</title>
 
 <link rel='canonical' href='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/'>
 
-<link rel="stylesheet" href="/scss/style.min.56ea19b05e0cef97d506745ab48006454c875a54299f9f5126e06b47cb25873b.css"><meta property='og:title' content="AI 日报 | 2026-03-09">
-<meta property='og:description' content="AI 日报 | 2026-03-09 每日精选 AI 领域最新研究进展与技术动态\n📌 今日总结 推理模型&quot;表演性思维&quot;被发现：研究者揭示大模型在简单任务上早已确定答案但仍生成冗长推理链，提出注意力探针可实现 80% token 节省 WebChain 数据集发布：31K+ 人工标注真实网页交互轨迹，Triple Alignment 多模态对齐机制推动 Web Agent 研究民主化 LLM 评估去偏新框架：平均偏差有界性 (A-BB) 为 LLM-as-a-Judge 提供可证明的无偏保证，在 Arena-Hard-Auto 上验证有效 移动端个人 Agent 架构：Jagarin 提出三层休眠架构解决移动设备上个人 Agent 的电池与沙盒限制 动态数据选择新范式：重新定义代表性与多样性，实现 2 倍训练加速同时匹配全数据精度 📚 重要论文一览 论文 来源 亮点 链接 Reasoning Theater: Disentangling Model Beliefs from CoT arXiv:2603.05488 揭示推理模型&quot;表演性思维&quot;，探针实现 80% token 节省 PDF WebChain: Large-Scale Human-Annotated Web Dataset arXiv:2603.05295 31K+ 人工标注网页轨迹，Triple Alignment 多模态对齐 PDF Towards Provably Unbiased LLM Judges arXiv:2603.05485 A-BB 框架保证 LLM 评估器偏差有界，61-99% 排名相关性 PDF Jagarin: Hibernating Personal Agents on Mobile arXiv:2603.05069 DAWN+ARIA+ACE 三层架构解决移动端 Agent 持久化难题 PDF Rethinking Representativeness and Diversity arXiv:2603.04981 重新定义动态数据选择，2 倍加速匹配全数据精度 PDF Judge Reliability Harness arXiv:2603.05399 开源库压力测试 LLM 法官可靠性，揭示格式敏感性 PDF UniSTOK: Uniform Inductive Spatio-Temporal Kriging arXiv:2603.05301 双分支输入 + 缺失掩码调制提升时空克里金鲁棒性 PDF PACE: Adaptive Training for 911 Call-takers arXiv:2603.05361 个性化自适应课程引擎加速 19.5% 达标时间 PDF 🚀 技术动态 1. Reasoning Theater：推理模型的&quot;表演性思维&quot;大揭秘 来自前沿研究机构的研究者发表了关于推理模型内部信念与外在推理链不一致性的重要发现：\n">
+<link rel="stylesheet" href="/scss/style.min.5caa0083058cdfc89d0c8e69326bb902aecd0db5e8bd671bb459c72d56e97f25.css"><meta property='og:title' content="AI 日报 | 2026-03-09">
+<meta property='og:description' content="AI 日报 | 2026-03-09 每日精选 AI 领域最新研究进展与技术动态 📌 今日总结 推理模型&amp;quot;表演性思维&amp;quot;被发现：研究者揭示大模型在简单任务上早已确定答案但仍生成冗长推理链，提出注意力探针可实现 80% token 节省 WebChain 数据集发布：31K+ 人工标注真实网页交互轨迹...">
 <meta property='og:url' content='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/'>
 <meta property='og:site_name' content='HH Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI' /><meta property='article:tag' content='LLM' /><meta property='article:tag' content='Agent' /><meta property='article:tag' content='Multimodal' /><meta property='article:tag' content='Research' /><meta property='article:tag' content='Reasoning' /><meta property='article:tag' content='WebAgent' /><meta property='article:published_time' content='2026-03-09T08:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-03-09T14:39:38&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI' /><meta property='article:tag' content='LLM' /><meta property='article:tag' content='Agent' /><meta property='article:tag' content='Multimodal' /><meta property='article:tag' content='Research' /><meta property='article:tag' content='Reasoning' /><meta property='article:tag' content='WebAgent' /><meta property='article:published_time' content='2026-03-09T08:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-03-20T21:10:52&#43;08:00'/>
 <meta name="twitter:title" content="AI 日报 | 2026-03-09">
-<meta name="twitter:description" content="AI 日报 | 2026-03-09 每日精选 AI 领域最新研究进展与技术动态\n📌 今日总结 推理模型&quot;表演性思维&quot;被发现：研究者揭示大模型在简单任务上早已确定答案但仍生成冗长推理链，提出注意力探针可实现 80% token 节省 WebChain 数据集发布：31K+ 人工标注真实网页交互轨迹，Triple Alignment 多模态对齐机制推动 Web Agent 研究民主化 LLM 评估去偏新框架：平均偏差有界性 (A-BB) 为 LLM-as-a-Judge 提供可证明的无偏保证，在 Arena-Hard-Auto 上验证有效 移动端个人 Agent 架构：Jagarin 提出三层休眠架构解决移动设备上个人 Agent 的电池与沙盒限制 动态数据选择新范式：重新定义代表性与多样性，实现 2 倍训练加速同时匹配全数据精度 📚 重要论文一览 论文 来源 亮点 链接 Reasoning Theater: Disentangling Model Beliefs from CoT arXiv:2603.05488 揭示推理模型&quot;表演性思维&quot;，探针实现 80% token 节省 PDF WebChain: Large-Scale Human-Annotated Web Dataset arXiv:2603.05295 31K+ 人工标注网页轨迹，Triple Alignment 多模态对齐 PDF Towards Provably Unbiased LLM Judges arXiv:2603.05485 A-BB 框架保证 LLM 评估器偏差有界，61-99% 排名相关性 PDF Jagarin: Hibernating Personal Agents on Mobile arXiv:2603.05069 DAWN+ARIA+ACE 三层架构解决移动端 Agent 持久化难题 PDF Rethinking Representativeness and Diversity arXiv:2603.04981 重新定义动态数据选择，2 倍加速匹配全数据精度 PDF Judge Reliability Harness arXiv:2603.05399 开源库压力测试 LLM 法官可靠性，揭示格式敏感性 PDF UniSTOK: Uniform Inductive Spatio-Temporal Kriging arXiv:2603.05301 双分支输入 + 缺失掩码调制提升时空克里金鲁棒性 PDF PACE: Adaptive Training for 911 Call-takers arXiv:2603.05361 个性化自适应课程引擎加速 19.5% 达标时间 PDF 🚀 技术动态 1. Reasoning Theater：推理模型的&quot;表演性思维&quot;大揭秘 来自前沿研究机构的研究者发表了关于推理模型内部信念与外在推理链不一致性的重要发现：\n">
+<meta name="twitter:description" content="AI 日报 | 2026-03-09 每日精选 AI 领域最新研究进展与技术动态 📌 今日总结 推理模型&amp;quot;表演性思维&amp;quot;被发现：研究者揭示大模型在简单任务上早已确定答案但仍生成冗长推理链，提出注意力探针可实现 80% token 节省 WebChain 数据集发布：31K+ 人工标注真实网页交互轨迹...">
     </head>
     <body class="
     article-page
@@ -56,7 +56,7 @@
                     
                     
                         
-                        <img src="/img/avatar_hu_1d1ddc0b6fcd3df4.png" width="300"
+                        <img src="/img/avatar_hu_1f27e3376f1b4a0e.png" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -332,7 +332,7 @@
     <header class="article-category">
         
             <a href="/categories/ai-daily/" >
-                AI Daily
+                AI-Daily
             </a>
         
     </header>
@@ -375,7 +375,7 @@
 
 
                 <time>
-                    2026-03-09
+                    2026-03-20
                 </time>
             </div>
     </footer>
@@ -391,7 +391,8 @@
     
     <h1 id="ai-日报--2026-03-09">AI 日报 | 2026-03-09
 </h1><blockquote>
-<p>每日精选 AI 领域最新研究进展与技术动态</p></blockquote>
+<p>每日精选 AI 领域最新研究进展与技术动态</p>
+</blockquote>
 <h2 id="-今日总结">📌 今日总结
 </h2><ul>
 <li><strong>推理模型&quot;表演性思维&quot;被发现</strong>：研究者揭示大模型在简单任务上早已确定答案但仍生成冗长推理链，提出注意力探针可实现 80% token 节省</li>
@@ -526,20 +527,6 @@
 </ul>
 <h4 id="核心方法与技术细节">核心方法与技术细节
 </h4><p><strong>1. 注意力探针（Attention Probes）</strong></p>
-<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure1.png"
-	width="730"
-	height="232"
-	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure1_hu_70e875943dd900ce.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure1_hu_a967d5bbc41b4c59.png 1024w"
-	loading="lazy"
-	
-		alt="推理剧场方法概览"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="314"
-		data-flex-basis="755px"
-	
-></p>
 <p><em>图 1：三种早期解码方法对比。注意力探针在层激活上训练，强制回答在中间 token 注入提示，CoT 监控器分析推理前缀文本。</em></p>
 <p>研究者提出注意力探针，通过注意力加权池化序列激活来预测最终答案：</p>
 <div class="highlight"><div class="chroma">
@@ -630,20 +617,6 @@
   </tbody>
 </table></div>
 <p>MMLU 的表演性率远高于 GPQA-D，表明简单任务上模型更早确定答案。</p>
-<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure2.png"
-	width="634"
-	height="270"
-	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure2_hu_d604699c94fcc234.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure2_hu_c4be77b184b7f7f2.png 1024w"
-	loading="lazy"
-	
-		alt="三种方法准确率对比"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="234"
-		data-flex-basis="563px"
-	
-></p>
 <p><em>图 2：MMLU（左）上探针和强制回答早期准确率远高于 CoT 监控器，表明表演性推理；GPQA-D（右）上三者同步增长，表明真实推理。</em></p>
 <p><strong>表 2：模型大小与表演性关系</strong></p>
 <div class="table-wrapper"><table>
@@ -705,20 +678,6 @@
 </table></div>
 <p>低置信响应中拐点出现频率是高一倍，表明拐点通常反映真实不确定性。</p>
 <p><strong>5. 早停应用：80% token 节省</strong></p>
-<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_early_exit.png"
-	width="997"
-	height="924"
-	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_early_exit_hu_fe629c65138c0b8a.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_early_exit_hu_bb2bd1aa328afe50.png 1024w"
-	loading="lazy"
-	
-		alt="早停效果"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="107"
-		data-flex-basis="258px"
-	
-></p>
 <p><em>图 7：注意力探针校准曲线（左）接近完美校准；早停准确率与 token 节省（右）显示 95% 置信度下节省 80% token 同时保持 97% 准确率。</em></p>
 <p>关键结果：</p>
 <ul>
@@ -779,20 +738,6 @@
 <li><strong>动作对齐</strong>：精确像素坐标、边界框、CSS 选择器</li>
 </ul>
 <p>这种多模态监督使模型不仅能&quot;看到&quot;页面，还能理解每个像素背后的结构逻辑。</p>
-<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/webchain_figure1.png"
-	width="914"
-	height="514"
-	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/webchain_figure1_hu_bd17e8b975ef7d86.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/webchain_figure1_hu_d24341fc1cb266a3.png 1024w"
-	loading="lazy"
-	
-		alt="WebChain 数据集概览"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="177"
-		data-flex-basis="426px"
-	
-></p>
 <p><em>图 1：WebChain 统计摘要，包括跨网站类别的交互分布、顶级域名交互频率、轨迹复杂度等</em></p>
 <p><strong>2. 可扩展的数据构建流程</strong></p>
 <div class="highlight"><div class="chroma">
@@ -863,16 +808,6 @@
   </tbody>
 </table></div>
 <p><strong>缩放效应分析</strong></p>
-<p><img src="/webchain_scaling.png"
-	
-	
-	
-	loading="lazy"
-	
-		alt="数据缩放效应"
-	
-	
-></p>
 <p><em>图 3：WebChain 子集（4K、20K、Full）对 Qwen2.5-VL-3B 在 LCRL 后训练后的成功率影响</em></p>
 <p>研究者观察到数据量与长程规划性能之间的明显正相关，证实 WebChain 的规模对解锁鲁棒的长程规划能力至关重要。</p>
 <p><strong>基准测试结果</strong></p>
@@ -1089,7 +1024,7 @@
 
 
         <span>
-            最后更新于 2026-03-09
+            最后更新于 2026-03-20
         </span>
     </section></footer>
 
@@ -1147,12 +1082,12 @@
             
                 
 <article class="">
-    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-20/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">AI 日报 | 2026-03-12</h2>
+            <h2 class="article-title">AI 日报 | 2026-03-20</h2>
         </div>
     </a>
 </article>
@@ -1160,12 +1095,12 @@
             
                 
 <article class="">
-    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-19/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">AI 日报 | 2026-03-11</h2>
+            <h2 class="article-title">AI 日报 | 2026-03-19</h2>
         </div>
     </a>
 </article>
@@ -1173,12 +1108,12 @@
             
                 
 <article class="">
-    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-16/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">AI 日报 | 2026-03-07</h2>
+            <h2 class="article-title">AI 日报 | 2026-03-16</h2>
         </div>
     </a>
 </article>
@@ -1186,12 +1121,12 @@
             
                 
 <article class="">
-    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-15/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">AI 日报 | 2026-03-06</h2>
+            <h2 class="article-title">AI 日报 | 2026-03-15</h2>
         </div>
     </a>
 </article>

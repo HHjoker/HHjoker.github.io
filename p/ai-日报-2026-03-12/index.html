@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="AI 日报 | 2026-03-12 📌 今日总结 NVIDIA 发布 Code Concepts 合成数据集：1500 万 Python 编程问题，基于概念驱动的数据生成工作流，在 Nemotron-Nano-v3 上实现 HumanEval 6 点提升（73→79） LeRobot v0.5.0 重大更新：支持 Unitree G1 人形机器人、新增 Pi0-FAST 自回归 VLA 策略、实时分块（RTC）推理优化、流式视频编码 Ulysses 序列并行集成至 Hugging Face 生态：支持百万 token 上下文训练，从 Accelerate 到 Transformers Trainer 到 TRL 全面支持 IBM Granite 4.0 1B Speech 发布：紧凑型多语言语音模型，支持 6 种语言，在 OpenASR 排行榜登顶 Modular Diffusers 推出：可组合的扩散模型构建块，支持自定义工作流和 Mellon 可视化集成 📚 重要论文一览 标题 来源 亮点 链接 Code Concepts: A Large-Scale Synthetic Dataset NVIDIA / Hugging Face 概念驱动合成数据生成，15M Python 问题 博客 LeRobot v0.5.0: Scaling Every Dimension Hugging Face 人形机器人支持、6 种新策略、流式编码 博客 Ulysses Sequence Parallelism Snowflake / Hugging Face 百万 token 上下文训练，DeepSpeed 后端 博客 Granite 4.0 1B Speech IBM 1B 参数多语言 ASR，OpenASR #1 博客 Keep the Tokens Flowing: 16 Open-Source RL Libraries Hugging Face 异步 RL 训练库对比分析 博客 Introducing Modular Diffusers Hugging Face 可组合扩散模型构建块 博客 🚀 技术动态 1. NVIDIA Code Concepts 数据集发布 NVIDIA 发布了基于概念驱动的合成数据生成工作流，创建了包含 1500 万 Python 编程问题的 Nemotron-Pretraining-Code-Concepts 数据集。该数据集基于从 HumanEval 提示中提取的 91 个核心编程概念，通过组合和提炼选定概念实现针对性数据生成。在 Nemotron-Nano-v3 最后 100B token 预训练中加入 10B token 的 Code Concepts 数据，实现了 HumanEval 从 73 到 79 的 6 点提升。\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="AI 日报 | 2026-03-12 📌 今日总结 NVIDIA 发布 Code Concepts 合成数据集：1500 万 Python 编程问题，基于概念驱动的数据生成工作流，在 Nemotron-Nano-v3 上实现 HumanEval 6 点提升（73→79） LeRobot v0.5.0 重大更新：支持...">
 <title>AI 日报 | 2026-03-12</title>
 
 <link rel='canonical' href='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/'>
 
-<link rel="stylesheet" href="/scss/style.min.56ea19b05e0cef97d506745ab48006454c875a54299f9f5126e06b47cb25873b.css"><meta property='og:title' content="AI 日报 | 2026-03-12">
-<meta property='og:description' content="AI 日报 | 2026-03-12 📌 今日总结 NVIDIA 发布 Code Concepts 合成数据集：1500 万 Python 编程问题，基于概念驱动的数据生成工作流，在 Nemotron-Nano-v3 上实现 HumanEval 6 点提升（73→79） LeRobot v0.5.0 重大更新：支持 Unitree G1 人形机器人、新增 Pi0-FAST 自回归 VLA 策略、实时分块（RTC）推理优化、流式视频编码 Ulysses 序列并行集成至 Hugging Face 生态：支持百万 token 上下文训练，从 Accelerate 到 Transformers Trainer 到 TRL 全面支持 IBM Granite 4.0 1B Speech 发布：紧凑型多语言语音模型，支持 6 种语言，在 OpenASR 排行榜登顶 Modular Diffusers 推出：可组合的扩散模型构建块，支持自定义工作流和 Mellon 可视化集成 📚 重要论文一览 标题 来源 亮点 链接 Code Concepts: A Large-Scale Synthetic Dataset NVIDIA / Hugging Face 概念驱动合成数据生成，15M Python 问题 博客 LeRobot v0.5.0: Scaling Every Dimension Hugging Face 人形机器人支持、6 种新策略、流式编码 博客 Ulysses Sequence Parallelism Snowflake / Hugging Face 百万 token 上下文训练，DeepSpeed 后端 博客 Granite 4.0 1B Speech IBM 1B 参数多语言 ASR，OpenASR #1 博客 Keep the Tokens Flowing: 16 Open-Source RL Libraries Hugging Face 异步 RL 训练库对比分析 博客 Introducing Modular Diffusers Hugging Face 可组合扩散模型构建块 博客 🚀 技术动态 1. NVIDIA Code Concepts 数据集发布 NVIDIA 发布了基于概念驱动的合成数据生成工作流，创建了包含 1500 万 Python 编程问题的 Nemotron-Pretraining-Code-Concepts 数据集。该数据集基于从 HumanEval 提示中提取的 91 个核心编程概念，通过组合和提炼选定概念实现针对性数据生成。在 Nemotron-Nano-v3 最后 100B token 预训练中加入 10B token 的 Code Concepts 数据，实现了 HumanEval 从 73 到 79 的 6 点提升。\n">
+<link rel="stylesheet" href="/scss/style.min.5caa0083058cdfc89d0c8e69326bb902aecd0db5e8bd671bb459c72d56e97f25.css"><meta property='og:title' content="AI 日报 | 2026-03-12">
+<meta property='og:description' content="AI 日报 | 2026-03-12 📌 今日总结 NVIDIA 发布 Code Concepts 合成数据集：1500 万 Python 编程问题，基于概念驱动的数据生成工作流，在 Nemotron-Nano-v3 上实现 HumanEval 6 点提升（73→79） LeRobot v0.5.0 重大更新：支持...">
 <meta property='og:url' content='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/'>
 <meta property='og:site_name' content='HH Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI' /><meta property='article:tag' content='LLM' /><meta property='article:tag' content='Robotics' /><meta property='article:tag' content='Multimodal' /><meta property='article:tag' content='Reinforcement Learning' /><meta property='article:tag' content='Diffusion' /><meta property='article:published_time' content='2026-03-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-12T08:07:12&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI' /><meta property='article:tag' content='LLM' /><meta property='article:tag' content='Robotics' /><meta property='article:tag' content='Multimodal' /><meta property='article:tag' content='Reinforcement Learning' /><meta property='article:tag' content='Diffusion' /><meta property='article:published_time' content='2026-03-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-20T21:10:52&#43;08:00'/>
 <meta name="twitter:title" content="AI 日报 | 2026-03-12">
-<meta name="twitter:description" content="AI 日报 | 2026-03-12 📌 今日总结 NVIDIA 发布 Code Concepts 合成数据集：1500 万 Python 编程问题，基于概念驱动的数据生成工作流，在 Nemotron-Nano-v3 上实现 HumanEval 6 点提升（73→79） LeRobot v0.5.0 重大更新：支持 Unitree G1 人形机器人、新增 Pi0-FAST 自回归 VLA 策略、实时分块（RTC）推理优化、流式视频编码 Ulysses 序列并行集成至 Hugging Face 生态：支持百万 token 上下文训练，从 Accelerate 到 Transformers Trainer 到 TRL 全面支持 IBM Granite 4.0 1B Speech 发布：紧凑型多语言语音模型，支持 6 种语言，在 OpenASR 排行榜登顶 Modular Diffusers 推出：可组合的扩散模型构建块，支持自定义工作流和 Mellon 可视化集成 📚 重要论文一览 标题 来源 亮点 链接 Code Concepts: A Large-Scale Synthetic Dataset NVIDIA / Hugging Face 概念驱动合成数据生成，15M Python 问题 博客 LeRobot v0.5.0: Scaling Every Dimension Hugging Face 人形机器人支持、6 种新策略、流式编码 博客 Ulysses Sequence Parallelism Snowflake / Hugging Face 百万 token 上下文训练，DeepSpeed 后端 博客 Granite 4.0 1B Speech IBM 1B 参数多语言 ASR，OpenASR #1 博客 Keep the Tokens Flowing: 16 Open-Source RL Libraries Hugging Face 异步 RL 训练库对比分析 博客 Introducing Modular Diffusers Hugging Face 可组合扩散模型构建块 博客 🚀 技术动态 1. NVIDIA Code Concepts 数据集发布 NVIDIA 发布了基于概念驱动的合成数据生成工作流，创建了包含 1500 万 Python 编程问题的 Nemotron-Pretraining-Code-Concepts 数据集。该数据集基于从 HumanEval 提示中提取的 91 个核心编程概念，通过组合和提炼选定概念实现针对性数据生成。在 Nemotron-Nano-v3 最后 100B token 预训练中加入 10B token 的 Code Concepts 数据，实现了 HumanEval 从 73 到 79 的 6 点提升。\n">
+<meta name="twitter:description" content="AI 日报 | 2026-03-12 📌 今日总结 NVIDIA 发布 Code Concepts 合成数据集：1500 万 Python 编程问题，基于概念驱动的数据生成工作流，在 Nemotron-Nano-v3 上实现 HumanEval 6 点提升（73→79） LeRobot v0.5.0 重大更新：支持...">
     </head>
     <body class="
     article-page
@@ -56,7 +56,7 @@
                     
                     
                         
-                        <img src="/img/avatar_hu_1d1ddc0b6fcd3df4.png" width="300"
+                        <img src="/img/avatar_hu_1f27e3376f1b4a0e.png" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -343,7 +343,7 @@
     <header class="article-category">
         
             <a href="/categories/ai-daily/" >
-                AI Daily
+                AI-Daily
             </a>
         
     </header>
@@ -386,7 +386,7 @@
 
 
                 <time>
-                    2026-03-12
+                    2026-03-20
                 </time>
             </div>
     </footer>
@@ -485,21 +485,7 @@
 <h4 id="问题定义与挑战">问题定义与挑战
 </h4><p>核心挑战在于：如何系统性地生成针对特定编程概念的高质量训练数据？传统方法依赖于爬取互联网代码，但难以控制概念分布、难度梯度和多样性。</p>
 <h4 id="核心方法与技术细节">核心方法与技术细节
-</h4><p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow.png"
-	width="960"
-	height="492"
-	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow_hu_9730faeb2df2a76.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow_hu_e7e2691029525736.png 1024w"
-	loading="lazy"
-	
-		alt="Code Concepts 工作流程"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="195"
-		data-flex-basis="468px"
-	
-></p>
-<p>工作流程的核心是从大规模标注的 Nemotron-Pretraining-Code-{v1,v2} 数据集中提取的编程知识分类体系。该分类体系编码了数千个分层组织的编程概念，从基本结构（如字符串、递归）到高级算法和数据结构模式。</p>
+</h4><p>工作流程的核心是从大规模标注的 Nemotron-Pretraining-Code-{v1,v2} 数据集中提取的编程知识分类体系。该分类体系编码了数千个分层组织的编程概念，从基本结构（如字符串、递归）到高级算法和数据结构模式。</p>
 <p>具体步骤：</p>
 <ol>
 <li><strong>概念提取</strong>：从 HumanEval 基准的分类提示中识别 91 个核心概念</li>
@@ -507,20 +493,6 @@
 <li><strong>数据生成</strong>：使用 GPT-OSS 120B 生成约 1500 万个合成 Python 编程问题</li>
 <li><strong>质量验证</strong>：使用 Python 的 ast.parse 函数验证生成的代码可执行</li>
 </ol>
-<p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results.png"
-	width="2139"
-	height="1232"
-	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results_hu_c439f37cb5d3c515.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results_hu_672f4d28ba4ffcba.png 1024w"
-	loading="lazy"
-	
-		alt="问题生成过程"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="173"
-		data-flex-basis="416px"
-	
-></p>
 <h4 id="实验设计与结果">实验设计与结果
 </h4><p>将 10B token 的 Code Concepts 数据纳入 Nemotron-Nano-v3 最后 100B token 预训练中进行数据消融实验：</p>
 <ul>
@@ -554,7 +526,7 @@
 </h5><p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid.jpg"
 	width="3024"
 	height="3024"
-	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_9f63aad436629edf.jpg 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_8780dd2f145a0743.jpg 1024w"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_ac8f343b30d7a744.jpg 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_e55aac0a151a9059.jpg 1024w"
 	loading="lazy"
 	
 		alt="Unitree G1 人形机器人"
@@ -603,7 +575,7 @@
 <p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm.gif"
 	width="1152"
 	height="648"
-	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_94e6a23e04a65ab9.gif 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_b9b86324627d1c26.gif 1024w"
+	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_da017c9d62ea3834.gif 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_86138a5a5c31b7e4.gif 1024w"
 	loading="lazy"
 	
 		alt="SARM 社区演示"
@@ -656,9 +628,9 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lerobot-train <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --env.type<span class="o">=</span>hub <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --env.hub_path<span class="o">=</span><span class="s2">&#34;username/my-custom-env&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --policy.type<span class="o">=</span>act
+</span></span></span><span class="line"><span class="cl">  --env.type<span class="o">=</span>hub <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --env.hub_path<span class="o">=</span><span class="s2">&#34;username/my-custom-env&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --policy.type<span class="o">=</span>act
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>集成 NVIDIA IsaacLab-Arena，提供 GPU 加速的仿真和大规模并行环境实例。</p>
@@ -704,21 +676,7 @@
 <li><strong>推理优化</strong>：通过推测解码实现更快的推理</li>
 </ul>
 <h4 id="实验设计与结果-2">实验设计与结果
-</h4><p><img src="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer.png"
-	width="6191"
-	height="3158"
-	srcset="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer_hu_ebab12c0effbad9.png 480w, /p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer_hu_1b47a2950f981aef.png 1024w"
-	loading="lazy"
-	
-		alt="WER 性能对比"
-	
-	
-		class="gallery-image" 
-		data-flex-grow="196"
-		data-flex-basis="470px"
-	
-></p>
-<p>在标准英语 ASR 基准上使用词错误率（WER）评估，Granite 4.0 1B Speech 在多个数据集上实现了具有竞争力的低 WER，同时参数量远少于许多可比模型。该模型最近在 OpenASR 排行榜上排名第 1。</p>
+</h4><p>在标准英语 ASR 基准上使用词错误率（WER）评估，Granite 4.0 1B Speech 在多个数据集上实现了具有竞争力的低 WER，同时参数量远少于许多可比模型。该模型最近在 OpenASR 排行榜上排名第 1。</p>
 <h4 id="局限性分析-2">局限性分析
 </h4><ul>
 <li>主要针对 ASR 和 AST 任务，不支持通用语音对话</li>
@@ -879,7 +837,7 @@
 
 
         <span>
-            最后更新于 2026-03-12
+            最后更新于 2026-03-20
         </span>
     </section></footer>
 
@@ -937,12 +895,12 @@
             
                 
 <article class="">
-    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-19/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">AI 日报 | 2026-03-09</h2>
+            <h2 class="article-title">AI 日报 | 2026-03-19</h2>
         </div>
     </a>
 </article>
@@ -950,12 +908,12 @@
             
                 
 <article class="">
-    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-16/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">AI 日报 | 2026-03-08</h2>
+            <h2 class="article-title">AI 日报 | 2026-03-16</h2>
         </div>
     </a>
 </article>
@@ -963,12 +921,12 @@
             
                 
 <article class="">
-    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-15/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">AI 日报 | 2026-03-06</h2>
+            <h2 class="article-title">AI 日报 | 2026-03-15</h2>
         </div>
     </a>
 </article>
@@ -976,12 +934,12 @@
             
                 
 <article class="">
-    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-14/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">AI 日报 | 2026-03-07</h2>
+            <h2 class="article-title">AI 日报 | 2026-03-14</h2>
         </div>
     </a>
 </article>

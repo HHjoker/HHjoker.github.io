@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="📌 今日概览 学习日期：2026年3月11日\n学习阶段：Day 5 - 引用与借用\n学习时长：2-3 小时\n当前水平：入门\n🎯 今日学习目标 不可变引用 可变引用 借用规则 📚 今日学习内容 1. 不可变引用 这是 Rust 学习的重要部分。让我们深入了解：\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="📌 今日概览 学习日期：2026年3月11日 学习阶段：Day 5 - 引用与借用 学习时长：2-3 小时 当前水平：入门 🎯 今日学习目标 不可变引用 可变引用 借用规则 📚 今日学习内容 1. 不可变引用 这是 Rust 学习的重要部分。让我们深入了解： 核心概念 Rust 的设计理念是零成本抽象和内存安全。这意味...">
 <title>Rust 每日学习 Day 5：引用与借用</title>
 
 <link rel='canonical' href='https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-5%E5%BC%95%E7%94%A8%E4%B8%8E%E5%80%9F%E7%94%A8/'>
 
-<link rel="stylesheet" href="/scss/style.min.56ea19b05e0cef97d506745ab48006454c875a54299f9f5126e06b47cb25873b.css"><meta property='og:title' content="Rust 每日学习 Day 5：引用与借用">
-<meta property='og:description' content="📌 今日概览 学习日期：2026年3月11日\n学习阶段：Day 5 - 引用与借用\n学习时长：2-3 小时\n当前水平：入门\n🎯 今日学习目标 不可变引用 可变引用 借用规则 📚 今日学习内容 1. 不可变引用 这是 Rust 学习的重要部分。让我们深入了解：\n">
+<link rel="stylesheet" href="/scss/style.min.5caa0083058cdfc89d0c8e69326bb902aecd0db5e8bd671bb459c72d56e97f25.css"><meta property='og:title' content="Rust 每日学习 Day 5：引用与借用">
+<meta property='og:description' content="📌 今日概览 学习日期：2026年3月11日 学习阶段：Day 5 - 引用与借用 学习时长：2-3 小时 当前水平：入门 🎯 今日学习目标 不可变引用 可变引用 借用规则 📚 今日学习内容 1. 不可变引用 这是 Rust 学习的重要部分。让我们深入了解： 核心概念 Rust 的设计理念是零成本抽象和内存安全。这意味...">
 <meta property='og:url' content='https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-5%E5%BC%95%E7%94%A8%E4%B8%8E%E5%80%9F%E7%94%A8/'>
 <meta property='og:site_name' content='HH Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Rust' /><meta property='article:tag' content='每日学习' /><meta property='article:tag' content='不可变引用' /><meta property='article:tag' content='可变引用' /><meta property='article:published_time' content='2026-03-11T21:00:00&#43;08:00'/><meta property='article:modified_time' content='2026-03-08T18:16:58&#43;08:00'/>
 <meta name="twitter:title" content="Rust 每日学习 Day 5：引用与借用">
-<meta name="twitter:description" content="📌 今日概览 学习日期：2026年3月11日\n学习阶段：Day 5 - 引用与借用\n学习时长：2-3 小时\n当前水平：入门\n🎯 今日学习目标 不可变引用 可变引用 借用规则 📚 今日学习内容 1. 不可变引用 这是 Rust 学习的重要部分。让我们深入了解：\n">
+<meta name="twitter:description" content="📌 今日概览 学习日期：2026年3月11日 学习阶段：Day 5 - 引用与借用 学习时长：2-3 小时 当前水平：入门 🎯 今日学习目标 不可变引用 可变引用 借用规则 📚 今日学习内容 1. 不可变引用 这是 Rust 学习的重要部分。让我们深入了解： 核心概念 Rust 的设计理念是零成本抽象和内存安全。这意味...">
     </head>
     <body class="
     article-page
@@ -56,7 +56,7 @@
                     
                     
                         
-                        <img src="/img/avatar_hu_1d1ddc0b6fcd3df4.png" width="300"
+                        <img src="/img/avatar_hu_1f27e3376f1b4a0e.png" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -427,19 +427,19 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 借用示例
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 借用示例
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 不可变借用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 可变借用（同一时刻只能有一个）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">r3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">r3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s"> </span><span class="si">{}</span><span class="s"> </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">r1</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="p">,</span><span class="w"> </span><span class="n">r3</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="关键点">关键点
@@ -462,10 +462,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 实用示例
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 在这里练习今天学到的内容
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Practice makes perfect!&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Practice makes perfect!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><hr>

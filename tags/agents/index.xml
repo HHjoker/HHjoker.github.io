@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Fri, 06 Mar 2026 08:04:25 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/agents/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 20 Mar 2026 21:10:52 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/agents/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>AI 日报 | 2026-03-06</title>
         <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/</link>
         <pubDate>Fri, 06 Mar 2026 00:00:00 +0000</pubDate>
@@ -15,7 +15,8 @@
         <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/</guid>
         <description>&lt;h1 id=&#34;ai-日报--2026-03-06&#34;&gt;AI 日报 | 2026-03-06
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;📅 日期：2026 年 3 月 6 日 | 📊 今日论文数：6 篇 | 🔬 重点领域：3D 视觉、机器人学、Agent 系统、个性化 LLM&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;📅 日期：2026 年 3 月 6 日 | 📊 今日论文数：6 篇 | 🔬 重点领域：3D 视觉、机器人学、Agent 系统、个性化 LLM&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
 &lt;/h2&gt;&lt;ul&gt;
@@ -111,21 +112,7 @@
 &lt;/h4&gt;&lt;p&gt;近年来，前馈 Transformer 模型（如 VGGT、π³、DUSt3R）推动了 3D 视觉的快速发展。然而，这些方法依赖全局注意力机制建立几何一致性，导致计算成本随输入图像数量&lt;strong&gt;二次增长&lt;/strong&gt;。对于长序列输入（如数百帧视频），这使得重建时间变得不可接受。&lt;/p&gt;
 &lt;p&gt;另一方面，顺序重建方法虽然降低了计算成本，但往往以牺牲重建质量为代价，且容易积累误差。ZipMap 的核心问题是：&lt;strong&gt;能否同时实现线性时间复杂度和 SOTA 重建质量？&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&#34;核心方法与技术细节&#34;&gt;核心方法与技术细节
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure1.png&#34;
-	width=&#34;997&#34;
-	height=&#34;415&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure1_hu_6686bba63cb9738e.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure1_hu_2ee1b1c2901cd92b.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;ZipMap 方法概述&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;240&#34;
-		data-flex-basis=&#34;576px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;图 1：ZipMap 方法架构。模型采用局部窗口注意力与大型块 TTT 层交替的结构，在单次前向传播中预测相机姿态、深度图和点云，同时将场景信息压缩到 TTT 快速权重中。&lt;/em&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;em&gt;图 1：ZipMap 方法架构。模型采用局部窗口注意力与大型块 TTT 层交替的结构，在单次前向传播中预测相机姿态、深度图和点云，同时将场景信息压缩到 TTT 快速权重中。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;ZipMap 的关键创新在于使用&lt;strong&gt;测试时训练（TTT）层&lt;/strong&gt;替代全局注意力：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -152,21 +139,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;实验设计与结果&#34;&gt;实验设计与结果
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure2.png&#34;
-	width=&#34;997&#34;
-	height=&#34;447&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure2_hu_faa48a183afe0824.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure2_hu_c5fe6c20dd19ac8c.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;ZipMap 性能对比&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;223&#34;
-		data-flex-basis=&#34;535px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;图 2：ZipMap 与基线方法的对比。左图显示运行时间随帧数线性增长，而 VGGT 和π³呈二次增长；右图显示 ZipMap 在姿态估计精度（ATE）上与 SOTA 持平甚至更优。&lt;/em&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;em&gt;图 2：ZipMap 与基线方法的对比。左图显示运行时间随帧数线性增长，而 VGGT 和π³呈二次增长；右图显示 ZipMap 在姿态估计精度（ATE）上与 SOTA 持平甚至更优。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;主要结果&lt;/strong&gt;：&lt;/p&gt;
 &lt;table&gt;
   &lt;thead&gt;
@@ -231,21 +204,7 @@
 &lt;/ol&gt;
 &lt;p&gt;现有仿真框架通常仅支持有限任务和环境，无法系统研究任务多样性、环境变化和 dataset 规模对泛化的影响。RoboCasa365 旨在填补这一空白。&lt;/p&gt;
 &lt;h4 id=&#34;核心方法与框架设计&#34;&gt;核心方法与框架设计
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure1.png&#34;
-	width=&#34;914&#34;
-	height=&#34;487&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure1_hu_dc053ace0ced4972.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure1_hu_c4a8a3d1a3728c6b.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;RoboCasa365 概览&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;187&#34;
-		data-flex-basis=&#34;450px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;图 1：RoboCasa365 框架概览。包含 365 个日常任务、2500 个厨房场景、2000+ 小时演示数据，支持多任务学习、基础模型训练和终身学习基准。&lt;/em&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;em&gt;图 1：RoboCasa365 框架概览。包含 365 个日常任务、2500 个厨房场景、2000+ 小时演示数据，支持多任务学习、基础模型训练和终身学习基准。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;四大核心组件&lt;/strong&gt;：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -281,20 +240,6 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure2.png&#34;
-	width=&#34;914&#34;
-	height=&#34;570&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure2_hu_50622dfcc0a13f6f.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure2_hu_108cde3d2db40b34.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;复合任务示例&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;160&#34;
-		data-flex-basis=&#34;384px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 2：复合任务示例。使用 LLM 生成 60 种高级活动，每种活动包含多个任务蓝图。任务按功能和语义结构组织为 6 个活动族。&lt;/em&gt;&lt;/p&gt;
 &lt;h4 id=&#34;实验设计与结果-1&#34;&gt;实验设计与结果
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;评估设置&lt;/strong&gt;：&lt;/p&gt;
@@ -333,21 +278,7 @@
 &lt;/h4&gt;&lt;p&gt;无人机在 GPS 拒止或通信降级环境中运行时，常丢失相机元数据和遥测信息，导致机载感知系统无法恢复场景的绝对度量尺度。随着 LLM/VLM 被越来越多地用作具身系统的高层规划器，其物理维度推理能力变得至关重要。&lt;/p&gt;
 &lt;p&gt;然而，实验表明：&lt;strong&gt;5 个 SOTA VLM 在面积估计任务中中位误差超过 50%&lt;/strong&gt;，频繁出现数量级偏差。作者将这一现象命名为**&amp;ldquo;空间尺度幻觉&amp;rdquo;**。&lt;/p&gt;
 &lt;h4 id=&#34;核心方法&#34;&gt;核心方法
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/vanguard_figure1.png&#34;
-	width=&#34;793&#34;
-	height=&#34;348&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/vanguard_figure1_hu_23471ddcf8f23215.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/vanguard_figure1_hu_43dd5a5128ce2c3e.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;VANGUARD 系统架构&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;227&#34;
-		data-flex-basis=&#34;546px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;图 1：VANGUARD 系统架构。作为具身 Agent 感知循环中的确定性几何技能，通过 YOLO-OBB 检测车辆、KDE 模态估计、分辨率保护，输出校准的 GSD 和置信度分数。&lt;/em&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;em&gt;图 1：VANGUARD 系统架构。作为具身 Agent 感知循环中的确定性几何技能，通过 YOLO-OBB 检测车辆、KDE 模态估计、分辨率保护，输出校准的 GSD 和置信度分数。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;VANGUARD（Vehicle-ANchored Geometric Understanding And Resolution Determination）的核心观察是：&lt;strong&gt;小型车辆是全球城市场景中最普遍的物体之一，物理长度集中在 4-5 米&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;五阶段流程&lt;/strong&gt;：&lt;/p&gt;
 &lt;ol&gt;

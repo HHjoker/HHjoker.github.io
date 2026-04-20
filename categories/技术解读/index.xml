@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Wed, 11 Mar 2026 10:21:02 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/categories/%E6%8A%80%E6%9C%AF%E8%A7%A3%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 20 Mar 2026 21:10:52 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/categories/%E6%8A%80%E6%9C%AF%E8%A7%A3%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>AI 日报 | 2026-03-10：BEVLM 语义蒸馏提升自动驾驶安全、Schema-Gated 智能体架构、LeRobot v0.5.0 发布</title>
         <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/</link>
         <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
@@ -15,7 +15,8 @@
         <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/</guid>
         <description>&lt;h1 id=&#34;ai-日报--2026-03-10&#34;&gt;AI 日报 | 2026-03-10
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;今日概览&lt;/strong&gt;：自动驾驶语义理解突破、智能体架构新范式、机器人学习生态扩张、边缘语音模型新标杆&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;今日概览&lt;/strong&gt;：自动驾驶语义理解突破、智能体架构新范式、机器人学习生态扩张、边缘语音模型新标杆&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
 &lt;/h2&gt;&lt;ul&gt;
@@ -98,7 +99,7 @@
 &lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid.jpg&#34;
 	width=&#34;3024&#34;
 	height=&#34;3024&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid_hu_9f63aad436629edf.jpg 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid_hu_8780dd2f145a0743.jpg 1024w&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid_hu_ac8f343b30d7a744.jpg 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid_hu_e55aac0a151a9059.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;LeRobot Unitree G1 人形机器人&#34;
@@ -129,20 +130,6 @@
 &lt;li&gt;&lt;strong&gt;新功能&lt;/strong&gt;：日语 ASR、关键词列表偏置（改进名称与首字母缩写识别）&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;开源&lt;/strong&gt;：Apache 2.0 许可，原生支持 transformers 与 vLLM&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/granite-speech-performance.png&#34;
-	width=&#34;6191&#34;
-	height=&#34;3158&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/granite-speech-performance_hu_ebab12c0effbad9.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/granite-speech-performance_hu_1b47a2950f981aef.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Granite 4.0 1B Speech 性能对比&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;196&#34;
-		data-flex-basis=&#34;470px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Granite 4.0 1B Speech 在多个基准上实现竞争性 WER，同时保持极小参数量&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;3-ulysses-sequence-parallelism百万-token-上下文训练&#34;&gt;3. Ulysses Sequence Parallelism：百万 Token 上下文训练
 &lt;/h3&gt;&lt;p&gt;Snowflake 的 Ulysses Sequence Parallelism 正式集成到 Hugging Face 生态系统：&lt;/p&gt;
@@ -173,20 +160,6 @@
 &lt;li&gt;&lt;strong&gt;I_UniAD&lt;/strong&gt;：UniAD 图像 backbone 在 BEV 融合前的 token&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;B_UniAD&lt;/strong&gt;：UniAD 在 BEV 融合后产生的 BEV token&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure1-representation.png&#34;
-	width=&#34;996&#34;
-	height=&#34;364&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure1-representation_hu_44a9603d657385ab.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure1-representation_hu_823c47880219cdc3.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;BEVLM 表示对比&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;273&#34;
-		data-flex-basis=&#34;656px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 1：三种视觉表示对比。左：视觉编码器独立处理多视角图像；中：BEV 编码器提供空间一致表示但语义有限；右（本文）：通过语义蒸馏构建语义增强且空间一致的场景表示&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;实验发现：&lt;/p&gt;
 &lt;ul&gt;
@@ -195,20 +168,6 @@
 &lt;li&gt;&lt;strong&gt;模型规模效应&lt;/strong&gt;：将 LLM 从 1B 扩展到 8B，准确率从 89.8% 提升至 95.3%&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;2. 语义蒸馏：从 LLM 到 BEV 编码器的知识迁移&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure3-distillation.png&#34;
-	width=&#34;898&#34;
-	height=&#34;307&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure3-distillation_hu_f3358100272c0647.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure3-distillation_hu_41250666fe665aaf.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;BEVLM 语义蒸馏框架&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;292&#34;
-		data-flex-basis=&#34;702px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 3：BEV 语义蒸馏框架。使用共享 BEV 表示同时支持 VQA 和目标检测任务，通过 VQA 任务从 LLM 蒸馏语义知识，同时用检测任务正则化 BEV 空间结构&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;语义蒸馏的核心思想：&lt;/p&gt;
 &lt;ul&gt;
@@ -216,6 +175,8 @@
 &lt;li&gt;&lt;strong&gt;表示蒸馏&lt;/strong&gt;：BEV 编码器（学生）学习将语义线索编码到特征网格中，以对齐 LLM 的语义空间&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;联合训练&lt;/strong&gt;：同时训练 VQA 和原始感知任务（如目标检测），防止空间关系灾难性遗忘&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;形式化表述：
+&lt;/p&gt;
 $$\mathcal{L}_{\text{distill}} \approx \|\text{MLP}(E_\theta(\mathcal{X})) - \mathbf{v}^*\|_2^2$$&lt;p&gt;其中 $\mathbf{v}^*$ 是 LLM 对安全关键查询的理想语义 token 嵌入（如&amp;quot;blocked lane&amp;quot;、&amp;ldquo;unsafe velocity&amp;rdquo;）。&lt;/p&gt;
 &lt;h4 id=&#34;实验设计与结果&#34;&gt;实验设计与结果
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;开放环评估（nuScenes）&lt;/strong&gt;：&lt;/p&gt;
@@ -290,20 +251,6 @@ $$\mathcal{L}_{\text{distill}} \approx \|\text{MLP}(E_\theta(\mathcal{X})) - \ma
 &lt;li&gt;&lt;strong&gt;教师模型规模效应&lt;/strong&gt;：8B LLM 蒸馏优于 1B LLM（+10.2% NeuroNCAP 评分）&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;VQA 数据类型&lt;/strong&gt;：Behavior 和 Planning 问题对安全提升贡献最大&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure4-results.png&#34;
-	width=&#34;792&#34;
-	height=&#34;278&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure4-results_hu_b248ddc349195845.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure4-results_hu_e389c5119a364b9.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;BEVLM 封闭环定性结果&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;284&#34;
-		data-flex-basis=&#34;683px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 4：NeuroNCAP 封闭环定性结果。蒸馏模型在安全关键场景（右转冲突、对向车道入侵）中展现更优决策，成功避免碰撞而 baseline 失败&lt;/em&gt;&lt;/p&gt;
 &lt;h4 id=&#34;局限性分析&#34;&gt;局限性分析
 &lt;/h4&gt;&lt;ol&gt;
@@ -346,20 +293,6 @@ $$\mathcal{L}_{\text{distill}} \approx \|\text{MLP}(E_\theta(\mathcal{X})) - \ma
 &lt;li&gt;&lt;strong&gt;对话权威&lt;/strong&gt;：解释意图、提出候选动作、询问澄清问题、解释选择&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;执行权威&lt;/strong&gt;：仅通过满足明确机器可读约束的动作选择和运行计算&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure2-design-space.png&#34;
-	width=&#34;4711&#34;
-	height=&#34;3763&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure2-design-space_hu_ccece25d1c1c25db.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure2-design-space_hu_e64feabfa058a061.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Schema-Gated 架构设计空间&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;125&#34;
-		data-flex-basis=&#34;300px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 2：对话式科学工作流架构设计空间。20 个系统在 ED（执行确定性）/CF（对话灵活性）空间中的位置，虚线为经验 Pareto 前沿，Schema-Gated 区域（ED≥3.5, CF≥3.5）仅有 2 个系统&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;三个操作原则&lt;/strong&gt;：&lt;/p&gt;
 &lt;ol&gt;
@@ -373,20 +306,6 @@ $$\mathcal{L}_{\text{distill}} \approx \|\text{MLP}(E_\theta(\mathcal{X})) - \ma
 &lt;p&gt;&lt;strong&gt;从工具级到工作流级 gating&lt;/strong&gt;：工具级 schema 验证（OpenAI function calling、Anthropic tool use、MCP）已主流但仅适用于单个调用；Schema-Gated Orchestration 将验证扩展到组合工作流，在执行前对整个多步计划强制执行结构、依赖和类型约束&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure3-architecture.png&#34;
-	width=&#34;4407&#34;
-	height=&#34;2492&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure3-architecture_hu_594861ee776df64.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure3-architecture_hu_b092c9feefdbcdd.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Schema-Gated 参考架构&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;176&#34;
-		data-flex-basis=&#34;424px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 3：分离对话权威与执行权威的参考架构。LLM 编排器持有对话权威，执行权威存在于 schema 验证中，每个动作提案在执行前必须通过执行权威 gate&lt;/em&gt;&lt;/p&gt;
 &lt;h4 id=&#34;系统评估&#34;&gt;系统评估
 &lt;/h4&gt;&lt;p&gt;研究者使用 ED/CF 轴对 20 个代表性系统进行评分，评分协议：&lt;/p&gt;

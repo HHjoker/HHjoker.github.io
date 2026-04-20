@@ -7,28 +7,852 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Mon, 16 Mar 2026 21:02:13 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>CLI</title>
-        <link>https://HHjoker.github.io/tags/cli/</link>
-        <pubDate>Mon, 16 Mar 2026 13:00:00 +0000</pubDate>
+        <lastBuildDate>Sun, 19 Apr 2026 21:04:11 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Criterion</title>
+        <link>https://HHjoker.github.io/tags/criterion/</link>
+        <pubDate>Sun, 19 Apr 2026 13:00:00 +0000</pubDate>
         
-        <guid>https://HHjoker.github.io/tags/cli/</guid>
+        <guid>https://HHjoker.github.io/tags/criterion/</guid>
         <description></description>
         </item>
         <item>
         <title>Rust</title>
         <link>https://HHjoker.github.io/tags/rust/</link>
-        <pubDate>Mon, 16 Mar 2026 13:00:00 +0000</pubDate>
+        <pubDate>Sun, 19 Apr 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/rust/</guid>
         <description></description>
         </item>
         <item>
+        <title>测试</title>
+        <link>https://HHjoker.github.io/tags/%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Sun, 19 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%B5%8B%E8%AF%95/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>基准测试</title>
+        <link>https://HHjoker.github.io/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Sun, 19 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>性能测试</title>
+        <link>https://HHjoker.github.io/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Sun, 19 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>性能优化</title>
+        <link>https://HHjoker.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</link>
+        <pubDate>Sun, 19 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>TDD</title>
+        <link>https://HHjoker.github.io/tags/tdd/</link>
+        <pubDate>Sat, 18 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/tdd/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>测试驱动开发</title>
+        <link>https://HHjoker.github.io/tags/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/</link>
+        <pubDate>Sat, 18 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>最佳实践</title>
+        <link>https://HHjoker.github.io/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+        <pubDate>Sat, 18 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Cargo Doc</title>
+        <link>https://HHjoker.github.io/tags/cargo-doc/</link>
+        <pubDate>Fri, 17 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/cargo-doc/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>示例代码</title>
+        <link>https://HHjoker.github.io/tags/%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/</link>
+        <pubDate>Fri, 17 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>文档测试</title>
+        <link>https://HHjoker.github.io/tags/%E6%96%87%E6%A1%A3%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Fri, 17 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%96%87%E6%A1%A3%E6%B5%8B%E8%AF%95/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Mockall</title>
+        <link>https://HHjoker.github.io/tags/mockall/</link>
+        <pubDate>Thu, 16 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/mockall/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Mocking</title>
+        <link>https://HHjoker.github.io/tags/mocking/</link>
+        <pubDate>Thu, 16 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/mocking/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>依赖注入</title>
+        <link>https://HHjoker.github.io/tags/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/</link>
+        <pubDate>Thu, 16 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>参数化测试</title>
+        <link>https://HHjoker.github.io/tags/%E5%8F%82%E6%95%B0%E5%8C%96%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Wed, 15 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%8F%82%E6%95%B0%E5%8C%96%E6%B5%8B%E8%AF%95/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>测试组织</title>
+        <link>https://HHjoker.github.io/tags/%E6%B5%8B%E8%AF%95%E7%BB%84%E7%BB%87/</link>
+        <pubDate>Wed, 15 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%B5%8B%E8%AF%95%E7%BB%84%E7%BB%87/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>覆盖率</title>
+        <link>https://HHjoker.github.io/tags/%E8%A6%86%E7%9B%96%E7%8E%87/</link>
+        <pubDate>Wed, 15 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E8%A6%86%E7%9B%96%E7%8E%87/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Cargo Test</title>
+        <link>https://HHjoker.github.io/tags/cargo-test/</link>
+        <pubDate>Tue, 14 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/cargo-test/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>单元测试</title>
+        <link>https://HHjoker.github.io/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Tue, 14 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>集成测试</title>
+        <link>https://HHjoker.github.io/tags/%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Tue, 14 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E9%9B%86%E6%88%90%E6%B5%8B%E8%AF%95/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>闭包</title>
+        <link>https://HHjoker.github.io/tags/%E9%97%AD%E5%8C%85/</link>
+        <pubDate>Mon, 13 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E9%97%AD%E5%8C%85/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>迭代器</title>
+        <link>https://HHjoker.github.io/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/</link>
+        <pubDate>Mon, 13 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>函数式编程</title>
+        <link>https://HHjoker.github.io/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</link>
+        <pubDate>Mon, 13 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>周总结</title>
+        <link>https://HHjoker.github.io/tags/%E5%91%A8%E6%80%BB%E7%BB%93/</link>
+        <pubDate>Mon, 13 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%91%A8%E6%80%BB%E7%BB%93/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Rayon</title>
+        <link>https://HHjoker.github.io/tags/rayon/</link>
+        <pubDate>Sun, 12 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/rayon/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>并行计算</title>
+        <link>https://HHjoker.github.io/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</link>
+        <pubDate>Sun, 12 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%B9%B6%E8%A1%8C%E8%AE%A1%E7%AE%97/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>学习日志</title>
+        <link>https://HHjoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/</link>
+        <pubDate>Sat, 11 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>CI/CD</title>
+        <link>https://HHjoker.github.io/tags/ci/cd/</link>
+        <pubDate>Thu, 09 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/ci/cd/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>工具生态</title>
+        <link>https://HHjoker.github.io/tags/%E5%B7%A5%E5%85%B7%E7%94%9F%E6%80%81/</link>
+        <pubDate>Thu, 09 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%B7%A5%E5%85%B7%E7%94%9F%E6%80%81/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>E2E</title>
+        <link>https://HHjoker.github.io/tags/e2e/</link>
+        <pubDate>Wed, 08 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/e2e/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Mock</title>
+        <link>https://HHjoker.github.io/tags/mock/</link>
+        <pubDate>Tue, 07 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/mock/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>属性测试</title>
+        <link>https://HHjoker.github.io/tags/%E5%B1%9E%E6%80%A7%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Tue, 07 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%B1%9E%E6%80%A7%E6%B5%8B%E8%AF%95/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>HashMap</title>
+        <link>https://HHjoker.github.io/tags/hashmap/</link>
+        <pubDate>Sun, 05 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/hashmap/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>String</title>
+        <link>https://HHjoker.github.io/tags/string/</link>
+        <pubDate>Sun, 05 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/string/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Vec</title>
+        <link>https://HHjoker.github.io/tags/vec/</link>
+        <pubDate>Sun, 05 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/vec/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>集合类型</title>
+        <link>https://HHjoker.github.io/tags/%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B/</link>
+        <pubDate>Sun, 05 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E9%9B%86%E5%90%88%E7%B1%BB%E5%9E%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>项目</title>
+        <link>https://HHjoker.github.io/tags/%E9%A1%B9%E7%9B%AE/</link>
+        <pubDate>Sun, 05 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E9%A1%B9%E7%9B%AE/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>综合实战</title>
+        <link>https://HHjoker.github.io/tags/%E7%BB%BC%E5%90%88%E5%AE%9E%E6%88%98/</link>
+        <pubDate>Sun, 05 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E7%BB%BC%E5%90%88%E5%AE%9E%E6%88%98/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>&amp;Str</title>
+        <link>https://HHjoker.github.io/tags/str/</link>
+        <pubDate>Sat, 04 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/str/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>字符串</title>
+        <link>https://HHjoker.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+        <pubDate>Sat, 04 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>哈希表</title>
+        <link>https://HHjoker.github.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/</link>
+        <pubDate>Fri, 03 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>向量</title>
+        <link>https://HHjoker.github.io/tags/%E5%90%91%E9%87%8F/</link>
+        <pubDate>Thu, 02 Apr 2026 00:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%90%91%E9%87%8F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Trait</title>
+        <link>https://HHjoker.github.io/tags/trait/</link>
+        <pubDate>Wed, 01 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/trait/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Where 子句</title>
+        <link>https://HHjoker.github.io/tags/where-%E5%AD%90%E5%8F%A5/</link>
+        <pubDate>Wed, 01 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/where-%E5%AD%90%E5%8F%A5/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>泛型</title>
+        <link>https://HHjoker.github.io/tags/%E6%B3%9B%E5%9E%8B/</link>
+        <pubDate>Wed, 01 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%B3%9B%E5%9E%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>关联类型</title>
+        <link>https://HHjoker.github.io/tags/%E5%85%B3%E8%81%94%E7%B1%BB%E5%9E%8B/</link>
+        <pubDate>Wed, 01 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%85%B3%E8%81%94%E7%B1%BB%E5%9E%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>类型约束</title>
+        <link>https://HHjoker.github.io/tags/%E7%B1%BB%E5%9E%8B%E7%BA%A6%E6%9D%9F/</link>
+        <pubDate>Wed, 01 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E7%B1%BB%E5%9E%8B%E7%BA%A6%E6%9D%9F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>学习笔记</title>
+        <link>https://HHjoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Wed, 01 Apr 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>接口</title>
+        <link>https://HHjoker.github.io/tags/%E6%8E%A5%E5%8F%A3/</link>
+        <pubDate>Tue, 31 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%8E%A5%E5%8F%A3/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>类型类</title>
+        <link>https://HHjoker.github.io/tags/%E7%B1%BB%E5%9E%8B%E7%B1%BB/</link>
+        <pubDate>Tue, 31 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E7%B1%BB%E5%9E%8B%E7%B1%BB/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>特征</title>
+        <link>https://HHjoker.github.io/tags/%E7%89%B9%E5%BE%81/</link>
+        <pubDate>Tue, 31 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E7%89%B9%E5%BE%81/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>结构体</title>
+        <link>https://HHjoker.github.io/tags/%E7%BB%93%E6%9E%84%E4%BD%93/</link>
+        <pubDate>Mon, 30 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E7%BB%93%E6%9E%84%E4%BD%93/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>类型参数</title>
+        <link>https://HHjoker.github.io/tags/%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0/</link>
+        <pubDate>Mon, 30 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>枚举</title>
+        <link>https://HHjoker.github.io/tags/%E6%9E%9A%E4%B8%BE/</link>
+        <pubDate>Mon, 30 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%9E%9A%E4%B8%BE/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title> Generics</title>
+        <link>https://HHjoker.github.io/tags/-generics/</link>
+        <pubDate>Sun, 29 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/-generics/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>错误处理</title>
+        <link>https://HHjoker.github.io/tags/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</link>
+        <pubDate>Sat, 28 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>CLI 工具</title>
+        <link>https://HHjoker.github.io/tags/cli-%E5%B7%A5%E5%85%B7/</link>
+        <pubDate>Fri, 27 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/cli-%E5%B7%A5%E5%85%B7/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>实战项目</title>
+        <link>https://HHjoker.github.io/tags/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE/</link>
+        <pubDate>Fri, 27 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>设计模式</title>
+        <link>https://HHjoker.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+        <pubDate>Thu, 26 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Anyhow</title>
+        <link>https://HHjoker.github.io/tags/anyhow/</link>
+        <pubDate>Wed, 25 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/anyhow/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Crate</title>
+        <link>https://HHjoker.github.io/tags/crate/</link>
+        <pubDate>Wed, 25 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/crate/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Thiserror</title>
+        <link>https://HHjoker.github.io/tags/thiserror/</link>
+        <pubDate>Wed, 25 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/thiserror/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Option</title>
+        <link>https://HHjoker.github.io/tags/option/</link>
+        <pubDate>Tue, 24 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/option/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Result</title>
+        <link>https://HHjoker.github.io/tags/result/</link>
+        <pubDate>Tue, 24 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/result/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>模式匹配</title>
+        <link>https://HHjoker.github.io/tags/%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/</link>
+        <pubDate>Tue, 24 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Async</title>
+        <link>https://HHjoker.github.io/tags/async/</link>
+        <pubDate>Mon, 23 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/async/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Await</title>
+        <link>https://HHjoker.github.io/tags/await/</link>
+        <pubDate>Mon, 23 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/await/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Future</title>
+        <link>https://HHjoker.github.io/tags/future/</link>
+        <pubDate>Mon, 23 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/future/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Pin</title>
+        <link>https://HHjoker.github.io/tags/pin/</link>
+        <pubDate>Mon, 23 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/pin/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Unpin</title>
+        <link>https://HHjoker.github.io/tags/unpin/</link>
+        <pubDate>Mon, 23 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/unpin/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>内存安全</title>
+        <link>https://HHjoker.github.io/tags/%E5%86%85%E5%AD%98%E5%AE%89%E5%85%A8/</link>
+        <pubDate>Mon, 23 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%86%85%E5%AD%98%E5%AE%89%E5%85%A8/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>自引用</title>
+        <link>https://HHjoker.github.io/tags/%E8%87%AA%E5%BC%95%E7%94%A8/</link>
+        <pubDate>Mon, 23 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E8%87%AA%E5%BC%95%E7%94%A8/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Select</title>
+        <link>https://HHjoker.github.io/tags/select/</link>
+        <pubDate>Sun, 22 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/select/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Timeout</title>
+        <link>https://HHjoker.github.io/tags/timeout/</link>
+        <pubDate>Sun, 22 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/timeout/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Tokio</title>
+        <link>https://HHjoker.github.io/tags/tokio/</link>
+        <pubDate>Sun, 22 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/tokio/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>取消</title>
+        <link>https://HHjoker.github.io/tags/%E5%8F%96%E6%B6%88/</link>
+        <pubDate>Sun, 22 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%8F%96%E6%B6%88/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>优雅关闭</title>
+        <link>https://HHjoker.github.io/tags/%E4%BC%98%E9%9B%85%E5%85%B3%E9%97%AD/</link>
+        <pubDate>Sun, 22 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E4%BC%98%E9%9B%85%E5%85%B3%E9%97%AD/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Arc</title>
+        <link>https://HHjoker.github.io/tags/arc/</link>
+        <pubDate>Sat, 21 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/arc/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Mutex</title>
+        <link>https://HHjoker.github.io/tags/mutex/</link>
+        <pubDate>Sat, 21 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/mutex/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>RwLock</title>
+        <link>https://HHjoker.github.io/tags/rwlock/</link>
+        <pubDate>Sat, 21 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/rwlock/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>共享状态</title>
+        <link>https://HHjoker.github.io/tags/%E5%85%B1%E4%BA%AB%E7%8A%B6%E6%80%81/</link>
+        <pubDate>Sat, 21 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%85%B1%E4%BA%AB%E7%8A%B6%E6%80%81/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Mpsc</title>
+        <link>https://HHjoker.github.io/tags/mpsc/</link>
+        <pubDate>Fri, 20 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/mpsc/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Stream</title>
+        <link>https://HHjoker.github.io/tags/stream/</link>
+        <pubDate>Fri, 20 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/stream/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>通道</title>
+        <link>https://HHjoker.github.io/tags/%E9%80%9A%E9%81%93/</link>
+        <pubDate>Fri, 20 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E9%80%9A%E9%81%93/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Agent</title>
+        <link>https://HHjoker.github.io/tags/agent/</link>
+        <pubDate>Fri, 20 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/agent/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Alignment</title>
+        <link>https://HHjoker.github.io/tags/alignment/</link>
+        <pubDate>Fri, 20 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/alignment/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Benchmark</title>
+        <link>https://HHjoker.github.io/tags/benchmark/</link>
+        <pubDate>Fri, 20 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/benchmark/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>LLM</title>
+        <link>https://HHjoker.github.io/tags/llm/</link>
+        <pubDate>Fri, 20 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/llm/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Multimodal</title>
+        <link>https://HHjoker.github.io/tags/multimodal/</link>
+        <pubDate>Fri, 20 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/multimodal/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>RAG</title>
+        <link>https://HHjoker.github.io/tags/rag/</link>
+        <pubDate>Fri, 20 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/rag/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Reasoning</title>
+        <link>https://HHjoker.github.io/tags/reasoning/</link>
+        <pubDate>Fri, 20 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/reasoning/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Web Agent</title>
+        <link>https://HHjoker.github.io/tags/web-agent/</link>
+        <pubDate>Fri, 20 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/web-agent/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>异步编程</title>
+        <link>https://HHjoker.github.io/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</link>
+        <pubDate>Thu, 19 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Robotics</title>
+        <link>https://HHjoker.github.io/tags/robotics/</link>
+        <pubDate>Thu, 19 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/robotics/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Training</title>
+        <link>https://HHjoker.github.io/tags/training/</link>
+        <pubDate>Thu, 19 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/training/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>CLI</title>
+        <link>https://HHjoker.github.io/tags/cli/</link>
+        <pubDate>Wed, 18 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/cli/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>待办事项</title>
         <link>https://HHjoker.github.io/tags/%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9/</link>
-        <pubDate>Mon, 16 Mar 2026 13:00:00 +0000</pubDate>
+        <pubDate>Wed, 18 Mar 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>发布</title>
+        <link>https://HHjoker.github.io/tags/%E5%8F%91%E5%B8%83/</link>
+        <pubDate>Wed, 18 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%8F%91%E5%B8%83/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>文档</title>
+        <link>https://HHjoker.github.io/tags/%E6%96%87%E6%A1%A3/</link>
+        <pubDate>Wed, 18 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%96%87%E6%A1%A3/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>AI</title>
+        <link>https://HHjoker.github.io/tags/ai/</link>
+        <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/ai/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>NVIDIA</title>
+        <link>https://HHjoker.github.io/tags/nvidia/</link>
+        <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/nvidia/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>多模态</title>
+        <link>https://HHjoker.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</link>
+        <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>机器人</title>
+        <link>https://HHjoker.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/</link>
+        <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>开源</title>
+        <link>https://HHjoker.github.io/tags/%E5%BC%80%E6%BA%90/</link>
+        <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%BC%80%E6%BA%90/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>代码重构</title>
+        <link>https://HHjoker.github.io/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/</link>
+        <pubDate>Tue, 17 Mar 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/</guid>
         <description></description>
         </item>
         <item>
@@ -40,27 +864,11 @@
         <description></description>
         </item>
         <item>
-        <title>实战项目</title>
-        <link>https://HHjoker.github.io/tags/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE/</link>
-        <pubDate>Mon, 16 Mar 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>数据过滤</title>
         <link>https://HHjoker.github.io/tags/%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4/</link>
         <pubDate>Mon, 16 Mar 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/%E6%95%B0%E6%8D%AE%E8%BF%87%E6%BB%A4/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>学习笔记</title>
-        <link>https://HHjoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-        <pubDate>Mon, 16 Mar 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
         <description></description>
         </item>
         <item>
@@ -88,43 +896,11 @@
         <description></description>
         </item>
         <item>
-        <title>Option</title>
-        <link>https://HHjoker.github.io/tags/option/</link>
-        <pubDate>Sat, 14 Mar 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/option/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>枚举</title>
-        <link>https://HHjoker.github.io/tags/%E6%9E%9A%E4%B8%BE/</link>
-        <pubDate>Sat, 14 Mar 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/%E6%9E%9A%E4%B8%BE/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>模式匹配</title>
-        <link>https://HHjoker.github.io/tags/%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/</link>
-        <pubDate>Sat, 14 Mar 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Struct</title>
         <link>https://HHjoker.github.io/tags/struct/</link>
         <pubDate>Fri, 13 Mar 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/struct/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>结构体</title>
-        <link>https://HHjoker.github.io/tags/%E7%BB%93%E6%9E%84%E4%BD%93/</link>
-        <pubDate>Fri, 13 Mar 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/%E7%BB%93%E6%9E%84%E4%BD%93/</guid>
         <description></description>
         </item>
         <item>
@@ -200,14 +976,6 @@
         <description></description>
         </item>
         <item>
-        <title>AI</title>
-        <link>https://HHjoker.github.io/tags/ai/</link>
-        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/ai/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Diffusion</title>
         <link>https://HHjoker.github.io/tags/diffusion/</link>
         <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
@@ -216,35 +984,11 @@
         <description></description>
         </item>
         <item>
-        <title>LLM</title>
-        <link>https://HHjoker.github.io/tags/llm/</link>
-        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/llm/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Multimodal</title>
-        <link>https://HHjoker.github.io/tags/multimodal/</link>
-        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/multimodal/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Reinforcement Learning</title>
         <link>https://HHjoker.github.io/tags/reinforcement-learning/</link>
         <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/reinforcement-learning/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Robotics</title>
-        <link>https://HHjoker.github.io/tags/robotics/</link>
-        <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/robotics/</guid>
         <description></description>
         </item>
         <item>
@@ -261,22 +1005,6 @@
         <pubDate>Wed, 11 Mar 2026 21:00:00 +0800</pubDate>
         
         <guid>https://HHjoker.github.io/tags/%E5%8F%AF%E5%8F%98%E5%BC%95%E7%94%A8/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>内存安全</title>
-        <link>https://HHjoker.github.io/tags/%E5%86%85%E5%AD%98%E5%AE%89%E5%85%A8/</link>
-        <pubDate>Wed, 11 Mar 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/%E5%86%85%E5%AD%98%E5%AE%89%E5%85%A8/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Agent</title>
-        <link>https://HHjoker.github.io/tags/agent/</link>
-        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/agent/</guid>
         <description></description>
         </item>
         <item>
@@ -328,22 +1056,6 @@
         <description></description>
         </item>
         <item>
-        <title>多模态</title>
-        <link>https://HHjoker.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</link>
-        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>机器人</title>
-        <link>https://HHjoker.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/</link>
-        <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>自动驾驶</title>
         <link>https://HHjoker.github.io/tags/%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6/</link>
         <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
@@ -365,14 +1077,6 @@
         <pubDate>Mon, 09 Mar 2026 21:00:00 +0800</pubDate>
         
         <guid>https://HHjoker.github.io/tags/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Reasoning</title>
-        <link>https://HHjoker.github.io/tags/reasoning/</link>
-        <pubDate>Mon, 09 Mar 2026 08:00:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/reasoning/</guid>
         <description></description>
         </item>
         <item>
@@ -416,14 +1120,6 @@
         <description></description>
         </item>
         <item>
-        <title>Benchmark</title>
-        <link>https://HHjoker.github.io/tags/benchmark/</link>
-        <pubDate>Sat, 07 Mar 2026 08:00:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/benchmark/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Medical AI</title>
         <link>https://HHjoker.github.io/tags/medical-ai/</link>
         <pubDate>Sat, 07 Mar 2026 08:00:00 +0800</pubDate>
@@ -437,22 +1133,6 @@
         <pubDate>Sat, 07 Mar 2026 08:00:00 +0800</pubDate>
         
         <guid>https://HHjoker.github.io/tags/memory/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>RAG</title>
-        <link>https://HHjoker.github.io/tags/rag/</link>
-        <pubDate>Sat, 07 Mar 2026 08:00:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/rag/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Web Agent</title>
-        <link>https://HHjoker.github.io/tags/web-agent/</link>
-        <pubDate>Sat, 07 Mar 2026 08:00:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/web-agent/</guid>
         <description></description>
         </item>
         <item>
@@ -493,14 +1173,6 @@
         <pubDate>Thu, 05 Mar 2026 21:30:00 +0800</pubDate>
         
         <guid>https://HHjoker.github.io/tags/c&#43;&#43;/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>代码重构</title>
-        <link>https://HHjoker.github.io/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/</link>
-        <pubDate>Thu, 05 Mar 2026 21:30:00 +0800</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/</guid>
         <description></description>
         </item>
         <item>

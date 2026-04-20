@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-10%E6%89%80%E6%9C%89%E6%9D%83%E7%9A%84%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8%E6%A8%A1%E5%BC%8F/'>
 
-<link rel="stylesheet" href="/scss/style.min.56ea19b05e0cef97d506745ab48006454c875a54299f9f5126e06b47cb25873b.css"><meta property='og:title' content="Rust 每日学习 Day 10：所有权的实际应用模式">
+<link rel="stylesheet" href="/scss/style.min.5caa0083058cdfc89d0c8e69326bb902aecd0db5e8bd671bb459c72d56e97f25.css"><meta property='og:title' content="Rust 每日学习 Day 10：所有权的实际应用模式">
 <meta property='og:description' content="探索 Rust 所有权在实际代码中的应用模式，包括函数设计、生命周期标注、Rc/RefCell 多所有权场景">
 <meta property='og:url' content='https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-10%E6%89%80%E6%9C%89%E6%9D%83%E7%9A%84%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8%E6%A8%A1%E5%BC%8F/'>
 <meta property='og:site_name' content='HH Blog'>
@@ -56,7 +56,7 @@
                     
                     
                         
-                        <img src="/img/avatar_hu_1d1ddc0b6fcd3df4.png" width="300"
+                        <img src="/img/avatar_hu_1f27e3376f1b4a0e.png" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -287,12 +287,12 @@
             <li><a href="#结构体中的生命周期">结构体中的生命周期</a></li>
           </ol>
         </li>
-        <li><a href="#3-rct---引用计数智能指针">3. Rc<T> - 引用计数智能指针</a>
+        <li><a href="#3-rc---引用计数智能指针">3. Rc - 引用计数智能指针</a>
           <ol>
             <li><a href="#rc-的实际应用图结构">Rc 的实际应用：图结构</a></li>
           </ol>
         </li>
-        <li><a href="#4-refcellt---内部可变性">4. RefCell<T> - 内部可变性</a>
+        <li><a href="#4-refcell---内部可变性">4. RefCell - 内部可变性</a>
           <ol>
             <li><a href="#refcell-与-rc-结合">RefCell 与 Rc 结合</a></li>
           </ol>
@@ -451,17 +451,17 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 函数获取所有权
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eat_string</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">eat_string</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// s 仍然可用，因为函数返回了它
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span><span class="w"> </span><span class="c1">// 输出：hello, world
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span><span class="w"> </span><span class="c1">// 输出：hello, world
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 获取所有权并返回
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">eat_string</span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="n">s</span>: <span class="nb">String</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 获取所有权并返回
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">eat_string</span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="n">s</span>: <span class="nb">String</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">push_str</span><span class="p">(</span><span class="s">&#34;, world&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="w"> </span><span class="c1">// 返回所有权
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="模式二借用不可变引用">模式二：借用（不可变引用）
@@ -492,20 +492,20 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 借用，不转移所有权
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">string_length</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">string_length</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// s 仍然可用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;&#39;</span><span class="si">{}</span><span class="s">&#39; 的长度是 </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">len</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;&#39;</span><span class="si">{}</span><span class="s">&#39; 的长度是 </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">len</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">string_length</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="nb">String</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">string_length</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="nb">String</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 更推荐：使用 &amp;str 切片
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">string_length_better</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 更推荐：使用 &amp;str 切片
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">string_length_better</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="模式三可变借用">模式三：可变借用
@@ -530,14 +530,14 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 可变借用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="n">add_exclamation</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">s</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">add_exclamation</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">s</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span><span class="w"> </span><span class="c1">// 输出：hello!
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">add_exclamation</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">add_exclamation</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">push_str</span><span class="p">(</span><span class="s">&#34;!&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="2-返回引用时的生命周期">2. 返回引用时的生命周期
@@ -569,18 +569,18 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">string2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;xyz&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 需要生命周期标注
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">longest</span><span class="p">(</span><span class="o">&amp;</span><span class="n">string1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">string2</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">longest</span><span class="p">(</span><span class="o">&amp;</span><span class="n">string1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">string2</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;最长的字符串是：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// &#39;a 是生命周期参数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">longest</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// &#39;a 是生命周期参数
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">longest</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">x</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">y</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="生命周期规则">生命周期规则
@@ -617,21 +617,21 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">string2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;world&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// result 的生命周期受限于 string1 和 string2 中较短的那个
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">longest</span><span class="p">(</span><span class="o">&amp;</span><span class="n">string1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">string2</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">longest</span><span class="p">(</span><span class="o">&amp;</span><span class="n">string1</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">string2</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;最长：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// string2 在这里离开作用域
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// result 不能再使用，因为它可能引用了 string2
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 生命周期 &#39;a 表示：返回的引用至少和两个参数活得一样久
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">longest</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 生命周期 &#39;a 表示：返回的引用至少和两个参数活得一样久
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">longest</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">x</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">y</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="结构体中的生命周期">结构体中的生命周期
@@ -655,11 +655,11 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 结构体持有引用时需要生命周期标注
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">ImportantExcerpt</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">ImportantExcerpt</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">part</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">novel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;Call me Ishmael. Some years ago...&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">first_sentence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">novel</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="sc">&#39;.&#39;</span><span class="p">).</span><span class="n">next</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
@@ -668,10 +668,10 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">};</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;摘录：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">.</span><span class="n">part</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="3-rct---引用计数智能指针">3. Rc<T> - 引用计数智能指针
+</div><h3 id="3-rc---引用计数智能指针">3. Rc<T> - 引用计数智能指针
 </h3><p>当需要多个所有者时，使用 <code>Rc&lt;T&gt;</code>（Reference Counted）：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -702,27 +702,27 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">rc</span>::<span class="n">Rc</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Rc 允许多个所有者
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">new</span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">new</span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">));</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// clone 增加引用计数，不是深拷贝
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 三个变量共享同一个 String
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;a: </span><span class="si">{}</span><span class="s">, b: </span><span class="si">{}</span><span class="s">, c: </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;a: </span><span class="si">{}</span><span class="s">, b: </span><span class="si">{}</span><span class="s">, c: </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 引用计数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;引用计数：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">strong_count</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">));</span><span class="w"> </span><span class="c1">// 输出：3
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;引用计数：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">strong_count</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">));</span><span class="w"> </span><span class="c1">// 输出：3
+</span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 当最后一个所有者离开作用域，内存才会被释放
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="nb">drop</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">drop</span><span class="p">(</span><span class="n">b</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;drop b 后计数：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">strong_count</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">));</span><span class="w"> </span><span class="c1">// 输出：2
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">drop</span><span class="p">(</span><span class="n">c</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;drop c 后计数：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">strong_count</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">));</span><span class="w"> </span><span class="c1">// 输出：1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="rc-的实际应用图结构">Rc 的实际应用：图结构
@@ -749,24 +749,24 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">rc</span>::<span class="n">Rc</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">enum</span> <span class="nc">List</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">enum</span> <span class="nc">List</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Cons</span><span class="p">(</span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">Rc</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&gt;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Nil</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">new</span><span class="p">(</span><span class="n">List</span>::<span class="n">Cons</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">new</span><span class="p">(</span><span class="n">List</span>::<span class="n">Cons</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">new</span><span class="p">(</span><span class="n">List</span>::<span class="n">Nil</span><span class="p">)))));</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// b 和 c 共享 a 的所有权
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span>::<span class="n">Cons</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span>::<span class="n">Cons</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">));</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">List</span>::<span class="n">Cons</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">));</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// a 被三个地方引用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;引用计数：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">strong_count</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">));</span><span class="w"> </span><span class="c1">// 输出：3
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;引用计数：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">strong_count</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">));</span><span class="w"> </span><span class="c1">// 输出：3
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="4-refcellt---内部可变性">4. RefCell<T> - 内部可变性
+</div><h3 id="4-refcell---内部可变性">4. RefCell<T> - 内部可变性
 </h3><p><code>RefCell&lt;T&gt;</code> 允许在只有不可变引用时修改内部数据（运行时借用检查）：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -793,23 +793,23 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">cell</span>::<span class="n">RefCell</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RefCell</span>::<span class="n">new</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 不可变借用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">borrowed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">borrow</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;当前值：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">borrowed</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// borrowed 离开作用域，借用结束
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 可变借用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">borrowed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">.</span><span class="n">borrow_mut</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="o">*</span><span class="n">borrowed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;修改后的值：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">data</span><span class="p">.</span><span class="n">borrow</span><span class="p">());</span><span class="w"> </span><span class="c1">// 输出：10
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="refcell-与-rc-结合">RefCell 与 Rc 结合
@@ -836,23 +836,23 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">cell</span>::<span class="n">RefCell</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">rc</span>::<span class="n">Rc</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">rc</span>::<span class="n">Rc</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// Rc 提供多所有权，RefCell 提供内部可变性
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">shared_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">new</span><span class="p">(</span><span class="n">RefCell</span>::<span class="n">new</span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">)));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">shared_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">new</span><span class="p">(</span><span class="n">RefCell</span>::<span class="n">new</span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">)));</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="n">shared_data</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Rc</span>::<span class="n">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="n">shared_data</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 通过任何一个引用都可以修改数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">borrow_mut</span><span class="p">().</span><span class="n">push_str</span><span class="p">(</span><span class="s">&#34;, world&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">a</span><span class="p">.</span><span class="n">borrow_mut</span><span class="p">().</span><span class="n">push_str</span><span class="p">(</span><span class="s">&#34;, world&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;a: </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">borrow</span><span class="p">());</span><span class="w"> </span><span class="c1">// 输出：hello, world
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;b: </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">borrow</span><span class="p">());</span><span class="w"> </span><span class="c1">// 输出：hello, world
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;b: </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">borrow</span><span class="p">());</span><span class="w"> </span><span class="c1">// 输出：hello, world
+</span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 所有引用看到相同的修改
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="5-实际代码中的所有权最佳实践">5. 实际代码中的所有权最佳实践
@@ -871,14 +871,14 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// ❌ 不推荐：不必要的所有权转移
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">process_string</span><span class="p">(</span><span class="n">s</span>: <span class="nb">String</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">process_string</span><span class="p">(</span><span class="n">s</span>: <span class="nb">String</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ✅ 推荐：使用借用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">process_string</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ✅ 推荐：使用借用
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">process_string</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="模式二明确所有权边界">模式二：明确所有权边界
@@ -903,19 +903,19 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 清楚表达函数意图
 </span></span></span><span class="line"><span class="cl"><span class="c1">// 这个函数消耗输入并返回新值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">transform</span><span class="p">(</span><span class="n">input</span>: <span class="nb">String</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">transform</span><span class="p">(</span><span class="n">input</span>: <span class="nb">String</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">input</span><span class="p">.</span><span class="n">to_uppercase</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 这个函数只读取输入
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">analyze</span><span class="p">(</span><span class="n">input</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 这个函数只读取输入
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">analyze</span><span class="p">(</span><span class="n">input</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">input</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 这个函数修改输入
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">modify</span><span class="p">(</span><span class="n">input</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 这个函数修改输入
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">modify</span><span class="p">(</span><span class="n">input</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">input</span><span class="p">.</span><span class="n">push_str</span><span class="p">(</span><span class="s">&#34;!&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="模式三使用-cow-避免不必要的克隆">模式三：使用 Cow 避免不必要的克隆
@@ -947,26 +947,26 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">borrow</span>::<span class="n">Cow</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">add_exclamation</span><span class="p">(</span><span class="n">text</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Cow</span><span class="o">&lt;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">add_exclamation</span><span class="p">(</span><span class="n">text</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Cow</span><span class="o">&lt;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">text</span><span class="p">.</span><span class="n">ends_with</span><span class="p">(</span><span class="sc">&#39;!&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 不需要克隆，直接返回借用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="n">Cow</span>::<span class="n">Borrowed</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Cow</span>::<span class="n">Borrowed</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 需要修改时克隆
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">        </span><span class="n">Cow</span>::<span class="n">Owned</span><span class="p">(</span><span class="fm">format!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">!&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Cow</span>::<span class="n">Owned</span><span class="p">(</span><span class="fm">format!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">!&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">))</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;hello!&#34;</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;hello&#34;</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add_exclamation</span><span class="p">(</span><span class="n">s1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 借用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add_exclamation</span><span class="p">(</span><span class="n">s2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 拥有
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add_exclamation</span><span class="p">(</span><span class="n">s2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 拥有
+</span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">result1</span><span class="p">);</span><span class="w"> </span><span class="c1">// 输出：hello!
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">result2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 输出：hello!
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">result2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 输出：hello!
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="6-综合示例简单的待办事项列表">6. 综合示例：简单的待办事项列表
@@ -1035,21 +1035,21 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">cell</span>::<span class="n">RefCell</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">rc</span>::<span class="n">Rc</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">rc</span>::<span class="n">Rc</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 任务结构
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#[derive(Debug)]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">Task</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 任务结构
+</span></span></span><span class="line"><span class="cl"><span class="cp">#[derive(Debug)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Task</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">description</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">completed</span>: <span class="kt">bool</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 待办列表，支持多所有者和内部可变性
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">TodoList</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 待办列表，支持多所有者和内部可变性
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">TodoList</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">tasks</span>: <span class="nc">RefCell</span><span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Rc</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;&gt;&gt;</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">impl</span><span class="w"> </span><span class="n">TodoList</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="n">TodoList</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">new</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">TodoList</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">tasks</span>: <span class="nc">RefCell</span>::<span class="n">new</span><span class="p">(</span><span class="nb">Vec</span>::<span class="n">new</span><span class="p">()),</span><span class="w">
@@ -1073,9 +1073,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">. </span><span class="si">{}</span><span class="s"> </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="n">task</span><span class="p">.</span><span class="n">description</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">todo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TodoList</span>::<span class="n">new</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">task1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">todo</span><span class="p">.</span><span class="n">add_task</span><span class="p">(</span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;学习 Rust 所有权&#34;</span><span class="p">));</span><span class="w">
@@ -1084,16 +1084,16 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">todo</span><span class="p">.</span><span class="n">list_tasks</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 可以在其他地方持有任务的引用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;任务 1: </span><span class="si">{:?}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">task1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;任务 1: </span><span class="si">{:?}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">task1</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;任务 2: </span><span class="si">{:?}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">task2</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// task1 和 task2 离开作用域后，todo 仍然持有它们的引用
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="nb">drop</span><span class="p">(</span><span class="n">task1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">drop</span><span class="p">(</span><span class="n">task1</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">drop</span><span class="p">(</span><span class="n">task2</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">删除外部引用后：&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">todo</span><span class="p">.</span><span class="n">list_tasks</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="关键概念理解">关键概念理解
@@ -1194,28 +1194,28 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1">//     let s = String::from(&#34;hello&#34;);
 </span></span></span><span class="line"><span class="cl"><span class="c1">//     &amp;s // s 在函数结束时被丢弃
 </span></span></span><span class="line"><span class="cl"><span class="c1">// }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ✅ 正确：返回所有权
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">good</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ✅ 正确：返回所有权
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">good</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ❌ 错误：同时存在可变和不可变引用
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ❌ 错误：同时存在可变和不可变引用
 </span></span></span><span class="line"><span class="cl"><span class="c1">// let mut s = String::from(&#34;hello&#34;);
 </span></span></span><span class="line"><span class="cl"><span class="c1">// let r1 = &amp;s;
 </span></span></span><span class="line"><span class="cl"><span class="c1">// let r2 = &amp;mut s; // 编译错误
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ✅ 正确：使用作用域分离
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ✅ 正确：使用作用域分离
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">r1</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w"> </span><span class="c1">// r1 离开作用域
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w"> </span><span class="c1">// r1 离开作用域
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">r2</span><span class="p">.</span><span class="n">push_str</span><span class="p">(</span><span class="s">&#34;, world&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="练习题">练习题
@@ -1242,7 +1242,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="o">..</span><span class="p">]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="练习-2rc-使用">练习 2：Rc 使用
@@ -1266,12 +1266,12 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">rc</span>::<span class="n">Rc</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">enum</span> <span class="nc">Tree</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">enum</span> <span class="nc">Tree</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Node</span><span class="p">(</span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Rc</span><span class="o">&lt;</span><span class="n">Tree</span><span class="o">&gt;&gt;</span><span class="p">),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Leaf</span><span class="p">(</span><span class="kt">i32</span><span class="p">),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 创建如下结构：
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 创建如下结构：
 </span></span></span><span class="line"><span class="cl"><span class="c1">//     1
 </span></span></span><span class="line"><span class="cl"><span class="c1">//    / \
 </span></span></span><span class="line"><span class="cl"><span class="c1">//   2   3
@@ -1308,11 +1308,11 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">cell</span>::<span class="n">RefCell</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">Counter</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Counter</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">value</span>: <span class="nc">RefCell</span><span class="o">&lt;</span><span class="kt">u32</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">impl</span><span class="w"> </span><span class="n">Counter</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="n">Counter</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">new</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Counter</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">value</span>: <span class="nc">RefCell</span>::<span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w">
@@ -1321,12 +1321,12 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">increment</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 实现这个方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">get</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">u32</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 实现这个方法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="练习-4cow-优化">练习 4：Cow 优化
@@ -1342,7 +1342,7 @@
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">trim_and_lowercase</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">trimmed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">trim</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">trimmed</span><span class="p">.</span><span class="n">to_lowercase</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="练习-5综合设计">练习 5：综合设计
@@ -1489,12 +1489,12 @@
             
                 
 <article class="">
-    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-14%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%AD/">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-30trait-%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Rust 每日学习 Day 14：实战项目 - 命令行待办事项管理器（中）</h2>
+            <h2 class="article-title">Rust 每日学习 Day 30：Trait 高级用法</h2>
         </div>
     </a>
 </article>
@@ -1502,12 +1502,12 @@
             
                 
 <article class="">
-    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-13%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%8A/">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-29trait-%E5%9F%BA%E7%A1%80/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Rust 每日学习 Day 13：实战项目 - 命令行待办事项管理器（上）</h2>
+            <h2 class="article-title">Rust 每日学习 Day 29：Trait 基础</h2>
         </div>
     </a>
 </article>
@@ -1515,12 +1515,12 @@
             
                 
 <article class="">
-    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-12%E6%9E%9A%E4%B8%BEenum%E4%B8%8E%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80/">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-28%E7%BB%93%E6%9E%84%E4%BD%93%E4%B8%8E%E6%9E%9A%E4%B8%BE%E7%9A%84%E6%B3%9B%E5%9E%8B/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Rust 每日学习 Day 12：枚举（Enum）与模式匹配基础</h2>
+            <h2 class="article-title">Rust 每日学习 Day 28：结构体与枚举的泛型</h2>
         </div>
     </a>
 </article>
@@ -1528,12 +1528,12 @@
             
                 
 <article class="">
-    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-11%E7%BB%93%E6%9E%84%E4%BD%93struct%E8%AF%A6%E8%A7%A3/">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-27%E6%B3%9B%E5%9E%8B%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%87%BD%E6%95%B0%E6%B3%9B%E5%9E%8B/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Rust 每日学习 Day 11：结构体（Struct）详解</h2>
+            <h2 class="article-title">Rust 每日学习 Day 27：泛型基础与函数泛型</h2>
         </div>
     </a>
 </article>

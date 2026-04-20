@@ -7,7 +7,548 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Wed, 11 Mar 2026 10:21:02 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 20 Mar 2026 21:10:52 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI 日报 | 2026-03-18: NVIDIA Nemotron 3 Nano 4B 发布，Holotron-12B 智能体突破，LeRobot v0.5.0 重大更新</title>
+        <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-18-nvidia-nemotron-3-nano-4b-%E5%8F%91%E5%B8%83holotron-12b-%E6%99%BA%E8%83%BD%E4%BD%93%E7%AA%81%E7%A0%B4lerobot-v0.5.0-%E9%87%8D%E5%A4%A7%E6%9B%B4%E6%96%B0/</link>
+        <pubDate>Wed, 18 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-18-nvidia-nemotron-3-nano-4b-%E5%8F%91%E5%B8%83holotron-12b-%E6%99%BA%E8%83%BD%E4%BD%93%E7%AA%81%E7%A0%B4lerobot-v0.5.0-%E9%87%8D%E5%A4%A7%E6%9B%B4%E6%96%B0/</guid>
+        <description>&lt;h1 id=&#34;ai-日报--2026-03-18&#34;&gt;AI 日报 | 2026-03-18
+&lt;/h1&gt;&lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;NVIDIA 发布 Nemotron 3 Nano 4B&lt;/strong&gt;：采用混合 Mamba-Transformer 架构的紧凑型模型，仅 4B 参数即可在边缘设备运行，在指令遵循和游戏智能方面达到同尺寸 SOTA&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Holotron-12B 电脑使用智能体&lt;/strong&gt;：基于 Nemotron 架构的多模态智能体，WebVoyager 基准测试达 80.5%，吞吐量比 Holo2-8B 提升 2 倍以上&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OpenSeeker 开源搜索智能体&lt;/strong&gt;：首个完全开源的训练数据和模型，仅用 11.7k 合成样本就在 BrowseComp 上达到 29.5%，超越多个工业级模型&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LeRobot v0.5.0 重大更新&lt;/strong&gt;：新增 Unitree G1 人形机器人支持、Pi0-FAST 自回归 VLA、实时分块推理等 6 项新策略&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ulysses 序列并行训练&lt;/strong&gt;：Hugging Face 生态全面集成，支持百万 token 上下文训练，通信开销比 Ring Attention 低一个数量级&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-重要论文一览&#34;&gt;📚 重要论文一览
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;论文/项目&lt;/th&gt;
+          &lt;th&gt;来源&lt;/th&gt;
+          &lt;th&gt;亮点&lt;/th&gt;
+          &lt;th&gt;链接&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Nemotron 3 Nano 4B&lt;/td&gt;
+          &lt;td&gt;NVIDIA&lt;/td&gt;
+          &lt;td&gt;4B 混合架构模型，边缘部署优化&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HF&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Holotron-12B&lt;/td&gt;
+          &lt;td&gt;H Company&lt;/td&gt;
+          &lt;td&gt;高吞吐量电脑使用智能体，WebVoyager 80.5%&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/Hcompany/holotron-12b&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HF Blog&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;OpenSeeker&lt;/td&gt;
+          &lt;td&gt;上海交大&lt;/td&gt;
+          &lt;td&gt;完全开源搜索智能体，数据 + 模型全公开&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.15594&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.15594&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;LeRobot v0.5.0&lt;/td&gt;
+          &lt;td&gt;Hugging Face&lt;/td&gt;
+          &lt;td&gt;人形机器人支持，6 项新策略，10 倍训练加速&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/lerobot-release-v050&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HF Blog&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Ulysses SP&lt;/td&gt;
+          &lt;td&gt;Snowflake/HF&lt;/td&gt;
+          &lt;td&gt;百万 token 上下文训练，序列并行集成&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/ulysses-sp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HF Blog&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;反事实解释指标研究&lt;/td&gt;
+          &lt;td&gt;比勒菲尔德大学&lt;/td&gt;
+          &lt;td&gt;算法指标与人类感知相关性弱&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.15607&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv:2603.15607&lt;/a&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;-技术动态&#34;&gt;🚀 技术动态
+&lt;/h2&gt;&lt;h3 id=&#34;1-nvidia-nemotron-3-nano-4b边缘-ai-新标准&#34;&gt;1. NVIDIA Nemotron 3 Nano 4B：边缘 AI 新标准
+&lt;/h3&gt;&lt;p&gt;NVIDIA 发布了 Nemotron 3 家族中最紧凑的成员——&lt;strong&gt;Nemotron 3 Nano 4B&lt;/strong&gt;。这款仅 40 亿参数的模型采用混合 Mamba-Transformer 架构，专为边缘设备优化：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;指令遵循&lt;/strong&gt;：在 IFBench 和 IFEval 基准上达到同尺寸 SOTA&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;游戏智能&lt;/strong&gt;：在 Orak 基准（Super Mario、Darkest Dungeon、Stardew Valley）上表现最佳&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;VRAM 效率&lt;/strong&gt;：在低/高 ISL/OSL 设置下 VRAM 占用最低&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;延迟优化&lt;/strong&gt;：高 ISL 设置下 TTFT（首 token 时间）最低&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;模型通过 &lt;strong&gt;Nemotron Elastic&lt;/strong&gt; 框架从 9B 版本剪枝蒸馏而来，支持 FP8 和 Q4_K_M GGUF 量化，在 Jetson Orin Nano 上可达 18 tokens/s。&lt;/p&gt;
+&lt;h3 id=&#34;2-lerobot-v050机器人学习生态大扩张&#34;&gt;2. LeRobot v0.5.0：机器人学习生态大扩张
+&lt;/h3&gt;&lt;p&gt;Hugging Face LeRobot 迎来迄今为止最大更新，超过 200 个 PR 和 50 位新贡献者：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;首个人形机器人支持&lt;/strong&gt;：完整集成 Unitree G1，支持 locomotion、manipulation、teleoperation 和全身控制&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;6 项新策略&lt;/strong&gt;：Pi0-FAST 自回归 VLA、实时分块 (RTC)、Wall-X、X-VLA、SARM、PEFT 支持&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;性能提升&lt;/strong&gt;：流式视频编码消除录制等待，图像训练速度提升 10 倍，编码速度提升 3 倍&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;EnvHub&lt;/strong&gt;：直接从 Hugging Face Hub 加载仿真环境，支持 NVIDIA IsaacLab-Arena&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-openseeker民主化前沿搜索智能体&#34;&gt;3. OpenSeeker：民主化前沿搜索智能体
+&lt;/h3&gt;&lt;p&gt;上海交通大学团队发布了首个&lt;strong&gt;完全开源&lt;/strong&gt;的搜索智能体，包括模型和全部训练数据：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;BrowseComp 29.5%&lt;/strong&gt;：显著超越第二好的开源智能体 DeepDive (15.3%)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;BrowseComp-ZH 48.4%&lt;/strong&gt;：超越阿里巴巴通义千问 DeepResearch (46.7%)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;仅 11.7k 合成样本&lt;/strong&gt;：通过事实基础的 QA 合成和去噪轨迹合成实现&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;完全开源&lt;/strong&gt;：合成方案、训练数据（QA 对和完整轨迹）、模型权重全部公开&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-详细介绍深度解读&#34;&gt;🔍 详细介绍（深度解读）
+&lt;/h2&gt;&lt;h3 id=&#34;一nemotron-3-nano-4b混合架构的边缘-ai-突破&#34;&gt;一、Nemotron 3 Nano 4B：混合架构的边缘 AI 突破
+&lt;/h3&gt;&lt;h4 id=&#34;研究背景与动机&#34;&gt;研究背景与动机
+&lt;/h4&gt;&lt;p&gt;随着大模型在边缘设备部署需求的增长，如何在有限 VRAM 和计算资源下保持高性能成为关键挑战。NVIDIA Nemotron 3 Nano 4B 旨在为 GeForce RTX、Jetson 和 DGX Spark 等设备提供本地对话代理和角色支持，实现更快响应、增强数据隐私和灵活部署。&lt;/p&gt;
+&lt;h4 id=&#34;核心方法与技术细节&#34;&gt;核心方法与技术细节
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;1. Nemotron Elastic 压缩框架&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Nemotron 3 Nano 4B 通过 Nemotron Elastic 框架从 Nemotron Nano 9B v2 压缩而来。与传统剪枝方法不同，Nemotron Elastic 使用端到端训练的路由器进行神经架构搜索：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;路由器决策的剪枝轴&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mamba heads：从 128 减少到 96&lt;/li&gt;
+&lt;li&gt;隐藏维度：从 4480 缩减到 3136&lt;/li&gt;
+&lt;li&gt;FFN 通道：从 15680 剪枝到 12544&lt;/li&gt;
+&lt;li&gt;深度：从 56 层减少到 42 层（21 Mamba + 4 Attention + 17 MLP）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;联合训练策略&lt;/strong&gt;：路由器与模型联合训练，使用辅助损失（针对学生模型尺寸）和原始知识蒸馏损失&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. 两阶段蒸馏精度恢复&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;阶段 1（短上下文 8K）&lt;/strong&gt;：使用 63B token 训练，数据包含 70% 后训练数据和 30% 预训练数据&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;阶段 2（长上下文 49K）&lt;/strong&gt;：扩展上下文到 49K token，训练 150B token 恢复长链推理能力&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3. 多环境强化学习&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;通过 NeMo-RL 进行三阶段 RL 训练：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;单轮指令遵循数据&lt;/li&gt;
+&lt;li&gt;NeMo-Gym 环境（单轮/多轮指令遵循、结构化输出）&lt;/li&gt;
+&lt;li&gt;多轮对话工具调用（Nemotron-RL-Agentic-Conversational-Tool-Use-Pivot-v1）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;实验设计与结果&#34;&gt;实验设计与结果
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;关键性能指标&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;基准&lt;/th&gt;
+          &lt;th&gt;Nemotron 3 Nano 4B&lt;/th&gt;
+          &lt;th&gt;同尺寸最佳竞品&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;IFBench&lt;/td&gt;
+          &lt;td&gt;SOTA&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;IFEval&lt;/td&gt;
+          &lt;td&gt;SOTA&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Orak（游戏智能）&lt;/td&gt;
+          &lt;td&gt;SOTA&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;VRAM 占用&lt;/td&gt;
+          &lt;td&gt;最低&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;TTFT（高 ISL）&lt;/td&gt;
+          &lt;td&gt;最低&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;量化效率&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;FP8 量化：在 DGX Spark 和 Jetson Thor 上延迟和吞吐量提升 1.8 倍，精度恢复 100%&lt;/li&gt;
+&lt;li&gt;Q4_K_M GGUF：在 Jetson Orin Nano 8GB 上达 18 tokens/s，比 9B v2 快 2 倍&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;局限性分析&#34;&gt;局限性分析
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;参数量限制&lt;/strong&gt;：4B 参数虽然适合边缘部署，但在复杂推理任务上仍不如更大模型&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;领域特定优化&lt;/strong&gt;：针对游戏智能和指令遵循优化，通用知识可能不如通用大模型&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;硬件依赖&lt;/strong&gt;：FP8 量化需要 NVIDIA GPU 支持，GGUF 版本虽更通用但性能略低&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;未来方向与影响&#34;&gt;未来方向与影响
+&lt;/h4&gt;&lt;p&gt;Nemotron 3 Nano 4B 为边缘 AI 树立了新标准，预计将推动：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本地游戏 NPC 智能化&lt;/li&gt;
+&lt;li&gt;嵌入式机器人对话系统&lt;/li&gt;
+&lt;li&gt;隐私敏感的边缘推理应用&lt;/li&gt;
+&lt;li&gt;低成本大规模部署的 AI 助手&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;相关链接&#34;&gt;相关链接
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hugging Face 模型页面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2511.16664&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Nemotron Elastic 论文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.jetson-ai-lab.com/models/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Jetson AI Lab 部署指南&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://developer.nvidia.com/rtx/in-game-inferencing&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NVIGI SDK&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;二holotron-12b高吞吐量电脑使用智能体&#34;&gt;二、Holotron-12B：高吞吐量电脑使用智能体
+&lt;/h3&gt;&lt;h4 id=&#34;研究背景与动机-1&#34;&gt;研究背景与动机
+&lt;/h4&gt;&lt;p&gt;当前多模态模型主要优化静态视觉或指令遵循，但电脑使用智能体需要在交互环境中高效感知、决策和行动。Holotron-12B 旨在作为生产级电脑使用智能体的策略模型，处理长上下文、多图像场景，同时在智能体基准上保持高性能。&lt;/p&gt;
+&lt;h4 id=&#34;核心方法与技术细节-1&#34;&gt;核心方法与技术细节
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;1. 混合 SSM 架构的高吞吐量推理&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Holotron-12B 基于 NVIDIA Nemotron-Nano-12B-v2-VL 架构，采用混合状态空间模型 (SSM) 和注意力机制：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SSM 优势&lt;/strong&gt;：与纯 Transformer 相比，SSM 是线性循环模型，每层每序列仅存储常量状态，不随序列长度增长&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;KV Cache 优化&lt;/strong&gt;：传统注意力需要为每个 token 和层存储 K 和 V 激活，而 SSM 避免了这一开销&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;长上下文扩展性&lt;/strong&gt;：避免了全注意力机制的二次计算成本，特别适合多图像和长交互历史的智能体工作负载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. 训练策略&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;两阶段训练：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;监督微调&lt;/strong&gt;：在 H Company 专有的定位和导航数据混合上训练，聚焦屏幕理解、grounding 和 UI 级交互&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;训练规模&lt;/strong&gt;：最终 checkpoint 在约 140 亿 token 上训练&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;实验设计与结果-1&#34;&gt;实验设计与结果
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;WebVoyager 基准测试&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;在真实世界多模态智能体工作负载下评估（长上下文、多高分辨率图像、100 并发请求）：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;模型&lt;/th&gt;
+          &lt;th&gt;GPU&lt;/th&gt;
+          &lt;th&gt;吞吐量 (tokens/s)&lt;/th&gt;
+          &lt;th&gt;WebVoyager&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Holotron-12B&lt;/td&gt;
+          &lt;td&gt;1x H100&lt;/td&gt;
+          &lt;td&gt;8.9k (并发 100)&lt;/td&gt;
+          &lt;td&gt;80.5%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Holo2-8B&lt;/td&gt;
+          &lt;td&gt;1x H100&lt;/td&gt;
+          &lt;td&gt;5.1k (平台期)&lt;/td&gt;
+          &lt;td&gt;&amp;lt;80.5%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Nemotron 基础&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;35.1%&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;关键发现&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Holotron-12B 吞吐量比 Holo2-8B 高 2 倍以上&lt;/li&gt;
+&lt;li&gt;随并发增加持续扩展，而 Holo2-8B 快速达到平台期&lt;/li&gt;
+&lt;li&gt;更有效的 VRAM 利用和更小内存占用，允许在相同硬件上实现更大的有效批量大小&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;定位基准&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;在 OS-World-G、GroundUI 和 WebClick 等定位和 grounding 基准上显著优于基础 Nemotron 模型。&lt;/p&gt;
+&lt;h4 id=&#34;局限性分析-1&#34;&gt;局限性分析
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;分辨率限制&lt;/strong&gt;：当前版本在高分辨率视觉训练方面仍有提升空间&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;领域特定&lt;/strong&gt;：主要针对电脑使用场景优化，通用多模态能力可能不如专用模型&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;依赖 NVIDIA 生态&lt;/strong&gt;：最佳性能需要 vLLM 和 NVIDIA GPU 支持&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;未来方向与影响-1&#34;&gt;未来方向与影响
+&lt;/h4&gt;&lt;p&gt;H Company 计划基于 Nemotron 3 Omni 继续开发下一代多模态模型，目标：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;利用增强的混合 SSM-Attention 和 MoE 架构&lt;/li&gt;
+&lt;li&gt;提升推理能力和多模态精度&lt;/li&gt;
+&lt;li&gt;推动 Holotron 从研究走向商业应用&lt;/li&gt;
+&lt;li&gt;为企业级大规模自主&amp;quot;电脑使用&amp;quot;部署提供高吞吐、低延迟性能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;相关链接-1&#34;&gt;相关链接
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/Hcompany/holotron-12b&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hugging Face 博客&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/Hcompany/Holotron-12B&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Holotron-12B 模型页面&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://nvidia.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NVIDIA Nemotron 3 Omni 公告&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;三openseeker完全开源的前沿搜索智能体&#34;&gt;三、OpenSeeker：完全开源的前沿搜索智能体
+&lt;/h3&gt;&lt;h4 id=&#34;研究背景与动机-2&#34;&gt;研究背景与动机
+&lt;/h4&gt;&lt;p&gt;深度搜索能力已成为前沿大模型智能体的必备能力，但高性能搜索智能体的开发因缺乏透明、高质量的训练数据而被工业巨头垄断。现有开源工作要么只开源模型不开源数据，要么只提供部分数据，要么性能不具竞争力。&lt;/p&gt;
+&lt;p&gt;OpenSeeker 旨在填补这一空白，成为首个&lt;strong&gt;完全开源&lt;/strong&gt;（模型 + 数据）且达到前沿性能的搜索智能体。&lt;/p&gt;
+&lt;h4 id=&#34;核心方法与技术细节-2&#34;&gt;核心方法与技术细节
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;1. 事实基础的可扩展可控 QA 合成&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;核心思想是&amp;quot;逆向工程&amp;quot;推理图：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;图扩展&lt;/strong&gt;：从种子节点出发，通过遍历超链接收集 k 个连接节点，形成局部依赖子图&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实体提取&lt;/strong&gt;：从子图中提取与主题相关的关键实体，组织成实体子图，去除文本噪声&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;问题生成&lt;/strong&gt;：基于实体子图结构生成初始问题，强制要求遍历多条边才能求解&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实体模糊化&lt;/strong&gt;：将具体实体映射为模糊描述，模拟真实用户歧义，防止智能体通过关键词捷径求解&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. 去噪轨迹合成&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;动态上下文去噪&lt;/strong&gt;：在生成过程中，使用辅助 LLM 总结先前的工具响应，为教师 LLM 提供更清晰的上下文&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;训练时解耦&lt;/strong&gt;：监督模型预测专家决策，但条件于原始、嘈杂的历史轨迹，使智能体内在学会&amp;quot;透过噪声看信号&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3. 双重标准验证&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;通过拒绝采样确保合成数据质量：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;难度标准&lt;/strong&gt;：基础模型在闭卷设置下无法正确回答（确保需要外部信息检索）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可解性标准&lt;/strong&gt;：强教师模型能够成功求解（确保逻辑一致性）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;实验设计与结果-2&#34;&gt;实验设计与结果
+&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;基准测试性能&lt;/strong&gt;：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;基准&lt;/th&gt;
+          &lt;th&gt;OpenSeeker&lt;/th&gt;
+          &lt;th&gt;DeepDive&lt;/th&gt;
+          &lt;th&gt;通义 DeepResearch&lt;/th&gt;
+          &lt;th&gt;其他工业模型&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;BrowseComp&lt;/td&gt;
+          &lt;td&gt;29.5%&lt;/td&gt;
+          &lt;td&gt;15.3%&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;20-25%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;BrowseComp-ZH&lt;/td&gt;
+          &lt;td&gt;48.4%&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;46.7%&lt;/td&gt;
+          &lt;td&gt;40-45%&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;xbench-DeepSearch&lt;/td&gt;
+          &lt;td&gt;74.0%&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;WideSearch (item F1)&lt;/td&gt;
+          &lt;td&gt;59.4%&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+          &lt;td&gt;-&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;关键发现&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;仅用 11.7k 合成样本（10.3k 英文 + 1.4k 中文）和简单 SFT&lt;/li&gt;
+&lt;li&gt;单次训练运行，默认超参数，无启发式过滤或调优&lt;/li&gt;
+&lt;li&gt;在 BrowseComp-ZH 上超越阿里巴巴通义千问 DeepResearch（后者经过持续预训练、SFT 和 RL）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;局限性分析-2&#34;&gt;局限性分析
+&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;训练规模&lt;/strong&gt;：仅使用 SFT，未进行 RL 优化，性能仍有提升空间&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;资源限制&lt;/strong&gt;：结果在单次训练中取得，未进行迭代优化&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;语言覆盖&lt;/strong&gt;：中文样本较少（1.4k vs 10.3k 英文），可能影响多语言能力&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;未来方向与影响-2&#34;&gt;未来方向与影响
+&lt;/h4&gt;&lt;p&gt;OpenSeeker 的完全开源策略将：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;降低搜索智能体研究门槛&lt;/li&gt;
+&lt;li&gt;促进学术界和开源社区的协作创新&lt;/li&gt;
+&lt;li&gt;为后续研究提供高质量基线和数据&lt;/li&gt;
+&lt;li&gt;推动更透明、健康的智能体开发生态&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;相关链接-2&#34;&gt;相关链接
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.15594&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv 论文&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/html/2603.15594v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HTML 版本&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/OpenSeeker/OpenSeeker&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GitHub 仓库&lt;/a&gt;（待确认）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-应用案例&#34;&gt;💡 应用案例
+&lt;/h2&gt;&lt;h3 id=&#34;1-边缘游戏-npc-智能对话&#34;&gt;1. 边缘游戏 NPC 智能对话
+&lt;/h3&gt;&lt;p&gt;Nemotron 3 Nano 4B 的 Orak 基准优化使其成为游戏 NPC 的理想选择：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 RTX 4070 上本地运行，无需云端依赖&lt;/li&gt;
+&lt;li&gt;低延迟响应，提升玩家沉浸感&lt;/li&gt;
+&lt;li&gt;NVIGI SDK 支持与图形工作负载并行推理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-大规模电脑使用自动化&#34;&gt;2. 大规模电脑使用自动化
+&lt;/h3&gt;&lt;p&gt;Holotron-12B 的高吞吐量特性适合：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据生成和标注流水线&lt;/li&gt;
+&lt;li&gt;在线强化学习环境&lt;/li&gt;
+&lt;li&gt;企业级 RPA 自动化&lt;/li&gt;
+&lt;li&gt;软件测试和 QA 自动化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-人形机器人全身控制&#34;&gt;3. 人形机器人全身控制
+&lt;/h3&gt;&lt;p&gt;LeRobot v0.5.0 的 Unitree G1 支持开启新应用场景：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;移动操作任务（边行走边抓取）&lt;/li&gt;
+&lt;li&gt;复杂环境导航和交互&lt;/li&gt;
+&lt;li&gt;遥操作训练和数据采集&lt;/li&gt;
+&lt;li&gt;具身智能研究&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-开源搜索智能体定制&#34;&gt;4. 开源搜索智能体定制
+&lt;/h3&gt;&lt;p&gt;OpenSeeker 的完全开源特性使研究者可以：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;针对特定领域微调搜索策略&lt;/li&gt;
+&lt;li&gt;研究和改进数据合成方法&lt;/li&gt;
+&lt;li&gt;开发新的搜索基准和评估方法&lt;/li&gt;
+&lt;li&gt;构建透明、可审计的搜索系统&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-统计汇总&#34;&gt;📊 统计汇总
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;类别&lt;/th&gt;
+          &lt;th&gt;项目数量&lt;/th&gt;
+          &lt;th&gt;关键指标&lt;/th&gt;
+          &lt;th&gt;开源情况&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;大模型&lt;/td&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;Nemotron 3 Nano 4B (4B), Holotron-12B (12B)&lt;/td&gt;
+          &lt;td&gt;权重开源&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;搜索智能体&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;OpenSeeker (BrowseComp 29.5%)&lt;/td&gt;
+          &lt;td&gt;完全开源&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;机器人框架&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;LeRobot v0.5.0 (6 项新策略)&lt;/td&gt;
+          &lt;td&gt;完全开源&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;训练技术&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;Ulysses SP (百万 token 上下文)&lt;/td&gt;
+          &lt;td&gt;完全开源&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;XAI 研究&lt;/td&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;反事实解释指标研究&lt;/td&gt;
+          &lt;td&gt;论文公开&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;性能对比表&#34;&gt;性能对比表
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;模型/方法&lt;/th&gt;
+          &lt;th&gt;参数量&lt;/th&gt;
+          &lt;th&gt;关键基准&lt;/th&gt;
+          &lt;th&gt;性能&lt;/th&gt;
+          &lt;th&gt;硬件需求&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Nemotron 3 Nano 4B&lt;/td&gt;
+          &lt;td&gt;4B&lt;/td&gt;
+          &lt;td&gt;IFBench/IFEval&lt;/td&gt;
+          &lt;td&gt;SOTA&lt;/td&gt;
+          &lt;td&gt;RTX 4070/Jetson&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Holotron-12B&lt;/td&gt;
+          &lt;td&gt;12B&lt;/td&gt;
+          &lt;td&gt;WebVoyager&lt;/td&gt;
+          &lt;td&gt;80.5%&lt;/td&gt;
+          &lt;td&gt;1x H100&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;OpenSeeker&lt;/td&gt;
+          &lt;td&gt;30B (Qwen3)&lt;/td&gt;
+          &lt;td&gt;BrowseComp&lt;/td&gt;
+          &lt;td&gt;29.5%&lt;/td&gt;
+          &lt;td&gt;通用 GPU&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Holo2-8B&lt;/td&gt;
+          &lt;td&gt;8B&lt;/td&gt;
+          &lt;td&gt;WebVoyager&lt;/td&gt;
+          &lt;td&gt;&amp;lt;80.5%&lt;/td&gt;
+          &lt;td&gt;1x H100&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;-全部参考链接&#34;&gt;📖 全部参考链接
+&lt;/h2&gt;&lt;h3 id=&#34;论文与博客&#34;&gt;论文与博客
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/nvidia/nemotron-3-nano-4b&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Nemotron 3 Nano 4B - Hugging Face Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/Hcompany/holotron-12b&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Holotron-12B - Hugging Face Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.15594&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OpenSeeker - arXiv:2603.15594&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/lerobot-release-v050&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LeRobot v0.5.0 - Hugging Face Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/blog/ulysses-sp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Ulysses Sequence Parallelism - Hugging Face Blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.15607&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Do Metrics for Counterfactual Explanations Align with User Perception? - arXiv:2603.15607&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;模型与代码&#34;&gt;模型与代码
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NVIDIA-Nemotron-3-Nano-4B-BF16&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-FP8&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NVIDIA-Nemotron-3-Nano-4B-FP8&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-GGUF&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NVIDIA-Nemotron-3-Nano-4B-GGUF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/Hcompany/Holotron-12B&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Holotron-12B&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/docs/lerobot&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LeRobot v0.5.0 Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;相关资源&#34;&gt;相关资源
+&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2511.16664&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Nemotron Elastic Paper - arXiv:2511.16664&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.jetson-ai-lab.com/models/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Jetson AI Lab&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://developer.nvidia.com/rtx/in-game-inferencing&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NVIGI SDK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/NVIDIA-NeMo/RL&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NeMo-RL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/NVIDIA-NeMo/Gym/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;NeMo-Gym&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;生成时间：2026-03-18 00:00 UTC&lt;/em&gt;
+&lt;em&gt;数据来源：arXiv, Hugging Face Blog, NVIDIA Research&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>AI 日报 | 2026-03-10：BEVLM 语义蒸馏提升自动驾驶安全、Schema-Gated 智能体架构、LeRobot v0.5.0 发布</title>
         <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/</link>
         <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
@@ -15,7 +556,8 @@
         <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/</guid>
         <description>&lt;h1 id=&#34;ai-日报--2026-03-10&#34;&gt;AI 日报 | 2026-03-10
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;今日概览&lt;/strong&gt;：自动驾驶语义理解突破、智能体架构新范式、机器人学习生态扩张、边缘语音模型新标杆&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;今日概览&lt;/strong&gt;：自动驾驶语义理解突破、智能体架构新范式、机器人学习生态扩张、边缘语音模型新标杆&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
 &lt;/h2&gt;&lt;ul&gt;
@@ -98,7 +640,7 @@
 &lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid.jpg&#34;
 	width=&#34;3024&#34;
 	height=&#34;3024&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid_hu_9f63aad436629edf.jpg 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid_hu_8780dd2f145a0743.jpg 1024w&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid_hu_ac8f343b30d7a744.jpg 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/lerobot-g1-humanoid_hu_e55aac0a151a9059.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;LeRobot Unitree G1 人形机器人&#34;
@@ -129,20 +671,6 @@
 &lt;li&gt;&lt;strong&gt;新功能&lt;/strong&gt;：日语 ASR、关键词列表偏置（改进名称与首字母缩写识别）&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;开源&lt;/strong&gt;：Apache 2.0 许可，原生支持 transformers 与 vLLM&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/granite-speech-performance.png&#34;
-	width=&#34;6191&#34;
-	height=&#34;3158&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/granite-speech-performance_hu_ebab12c0effbad9.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/granite-speech-performance_hu_1b47a2950f981aef.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Granite 4.0 1B Speech 性能对比&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;196&#34;
-		data-flex-basis=&#34;470px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Granite 4.0 1B Speech 在多个基准上实现竞争性 WER，同时保持极小参数量&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&#34;3-ulysses-sequence-parallelism百万-token-上下文训练&#34;&gt;3. Ulysses Sequence Parallelism：百万 Token 上下文训练
 &lt;/h3&gt;&lt;p&gt;Snowflake 的 Ulysses Sequence Parallelism 正式集成到 Hugging Face 生态系统：&lt;/p&gt;
@@ -173,20 +701,6 @@
 &lt;li&gt;&lt;strong&gt;I_UniAD&lt;/strong&gt;：UniAD 图像 backbone 在 BEV 融合前的 token&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;B_UniAD&lt;/strong&gt;：UniAD 在 BEV 融合后产生的 BEV token&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure1-representation.png&#34;
-	width=&#34;996&#34;
-	height=&#34;364&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure1-representation_hu_44a9603d657385ab.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure1-representation_hu_823c47880219cdc3.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;BEVLM 表示对比&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;273&#34;
-		data-flex-basis=&#34;656px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 1：三种视觉表示对比。左：视觉编码器独立处理多视角图像；中：BEV 编码器提供空间一致表示但语义有限；右（本文）：通过语义蒸馏构建语义增强且空间一致的场景表示&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;实验发现：&lt;/p&gt;
 &lt;ul&gt;
@@ -195,20 +709,6 @@
 &lt;li&gt;&lt;strong&gt;模型规模效应&lt;/strong&gt;：将 LLM 从 1B 扩展到 8B，准确率从 89.8% 提升至 95.3%&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;2. 语义蒸馏：从 LLM 到 BEV 编码器的知识迁移&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure3-distillation.png&#34;
-	width=&#34;898&#34;
-	height=&#34;307&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure3-distillation_hu_f3358100272c0647.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure3-distillation_hu_41250666fe665aaf.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;BEVLM 语义蒸馏框架&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;292&#34;
-		data-flex-basis=&#34;702px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 3：BEV 语义蒸馏框架。使用共享 BEV 表示同时支持 VQA 和目标检测任务，通过 VQA 任务从 LLM 蒸馏语义知识，同时用检测任务正则化 BEV 空间结构&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;语义蒸馏的核心思想：&lt;/p&gt;
 &lt;ul&gt;
@@ -216,6 +716,8 @@
 &lt;li&gt;&lt;strong&gt;表示蒸馏&lt;/strong&gt;：BEV 编码器（学生）学习将语义线索编码到特征网格中，以对齐 LLM 的语义空间&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;联合训练&lt;/strong&gt;：同时训练 VQA 和原始感知任务（如目标检测），防止空间关系灾难性遗忘&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;形式化表述：
+&lt;/p&gt;
 $$\mathcal{L}_{\text{distill}} \approx \|\text{MLP}(E_\theta(\mathcal{X})) - \mathbf{v}^*\|_2^2$$&lt;p&gt;其中 $\mathbf{v}^*$ 是 LLM 对安全关键查询的理想语义 token 嵌入（如&amp;quot;blocked lane&amp;quot;、&amp;ldquo;unsafe velocity&amp;rdquo;）。&lt;/p&gt;
 &lt;h4 id=&#34;实验设计与结果&#34;&gt;实验设计与结果
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;开放环评估（nuScenes）&lt;/strong&gt;：&lt;/p&gt;
@@ -290,20 +792,6 @@ $$\mathcal{L}_{\text{distill}} \approx \|\text{MLP}(E_\theta(\mathcal{X})) - \ma
 &lt;li&gt;&lt;strong&gt;教师模型规模效应&lt;/strong&gt;：8B LLM 蒸馏优于 1B LLM（+10.2% NeuroNCAP 评分）&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;VQA 数据类型&lt;/strong&gt;：Behavior 和 Planning 问题对安全提升贡献最大&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure4-results.png&#34;
-	width=&#34;792&#34;
-	height=&#34;278&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure4-results_hu_b248ddc349195845.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/bevlm-figure4-results_hu_e389c5119a364b9.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;BEVLM 封闭环定性结果&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;284&#34;
-		data-flex-basis=&#34;683px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 4：NeuroNCAP 封闭环定性结果。蒸馏模型在安全关键场景（右转冲突、对向车道入侵）中展现更优决策，成功避免碰撞而 baseline 失败&lt;/em&gt;&lt;/p&gt;
 &lt;h4 id=&#34;局限性分析&#34;&gt;局限性分析
 &lt;/h4&gt;&lt;ol&gt;
@@ -346,20 +834,6 @@ $$\mathcal{L}_{\text{distill}} \approx \|\text{MLP}(E_\theta(\mathcal{X})) - \ma
 &lt;li&gt;&lt;strong&gt;对话权威&lt;/strong&gt;：解释意图、提出候选动作、询问澄清问题、解释选择&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;执行权威&lt;/strong&gt;：仅通过满足明确机器可读约束的动作选择和运行计算&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure2-design-space.png&#34;
-	width=&#34;4711&#34;
-	height=&#34;3763&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure2-design-space_hu_ccece25d1c1c25db.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure2-design-space_hu_e64feabfa058a061.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Schema-Gated 架构设计空间&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;125&#34;
-		data-flex-basis=&#34;300px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 2：对话式科学工作流架构设计空间。20 个系统在 ED（执行确定性）/CF（对话灵活性）空间中的位置，虚线为经验 Pareto 前沿，Schema-Gated 区域（ED≥3.5, CF≥3.5）仅有 2 个系统&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;三个操作原则&lt;/strong&gt;：&lt;/p&gt;
 &lt;ol&gt;
@@ -373,20 +847,6 @@ $$\mathcal{L}_{\text{distill}} \approx \|\text{MLP}(E_\theta(\mathcal{X})) - \ma
 &lt;p&gt;&lt;strong&gt;从工具级到工作流级 gating&lt;/strong&gt;：工具级 schema 验证（OpenAI function calling、Anthropic tool use、MCP）已主流但仅适用于单个调用；Schema-Gated Orchestration 将验证扩展到组合工作流，在执行前对整个多步计划强制执行结构、依赖和类型约束&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure3-architecture.png&#34;
-	width=&#34;4407&#34;
-	height=&#34;2492&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure3-architecture_hu_594861ee776df64.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/schema-gated-figure3-architecture_hu_b092c9feefdbcdd.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Schema-Gated 参考架构&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;176&#34;
-		data-flex-basis=&#34;424px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 3：分离对话权威与执行权威的参考架构。LLM 编排器持有对话权威，执行权威存在于 schema 验证中，每个动作提案在执行前必须通过执行权威 gate&lt;/em&gt;&lt;/p&gt;
 &lt;h4 id=&#34;系统评估&#34;&gt;系统评估
 &lt;/h4&gt;&lt;p&gt;研究者使用 ED/CF 轴对 20 个代表性系统进行评分，评分协议：&lt;/p&gt;
@@ -631,22 +1091,13 @@ $$\mathcal{L}_{\text{distill}} \approx \|\text{MLP}(E_\theta(\mathcal{X})) - \ma
 &lt;hr&gt;
 &lt;h2 id=&#34;-详细介绍&#34;&gt;🔍 详细介绍
 &lt;/h2&gt;&lt;h3 id=&#34;深度解读-1agent-目标漂移研究&#34;&gt;深度解读 1：Agent 目标漂移研究
-&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/architecture.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Agent 目标漂移实验设计示意图&#34;
-	
-	
-&gt;
-&lt;em&gt;图 1：条件诱导漂移实验设计流程。弱代理在压力下产生漂移轨迹，强代理基于此继续执行，观察是否继承漂移行为。&lt;/em&gt;&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;&lt;em&gt;图 1：条件诱导漂移实验设计流程。弱代理在压力下产生漂移轨迹，强代理基于此继续执行，观察是否继承漂移行为。&lt;/em&gt;&lt;/p&gt;
 &lt;h4 id=&#34;研究背景&#34;&gt;研究背景
 &lt;/h4&gt;&lt;p&gt;随着语言模型在长上下文任务中的广泛应用，&lt;strong&gt;目标漂移&lt;/strong&gt;（Goal Drift）问题日益凸显。代理在执行多轮对话或复杂任务时，往往会逐渐偏离最初设定的目标，导致任务失败或产生意外行为。&lt;/p&gt;
 &lt;p&gt;Prior 研究表明早期模型（如 GPT-3.5、GPT-4）容易受到对抗性提示的影响而偏离目标。然而，随着模型能力提升，一个关键问题尚未解答：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;现代 SOTA 模型（如 GPT-5.x、Claude 3.x 等）是否仍然存在目标漂移问题？如果是，漂移的诱因和机制是什么？&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;现代 SOTA 模型（如 GPT-5.x、Claude 3.x 等）是否仍然存在目标漂移问题？如果是，漂移的诱因和机制是什么？&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;这项研究由 ICLR 2026 Lifelong Agents Workshop 接收，提供了系统性的实证分析。&lt;/p&gt;
 &lt;h4 id=&#34;问题定义与挑战&#34;&gt;问题定义与挑战
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;目标漂移&lt;/strong&gt;定义为：代理在执行过程中，由于上下文压力、对抗性输入或内部状态变化，导致行为偏离原始指定目标的现象。&lt;/p&gt;
@@ -711,17 +1162,7 @@ $$\mathcal{L}_{\text{distill}} \approx \|\text{MLP}(E_\theta(\mathcal{X})) - \ma
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;假设&lt;/strong&gt;：即使强代理本身抗漂移能力强，但在弱代理的漂移轨迹基础上继续执行时，可能会被动继承漂移。&lt;/p&gt;
 &lt;h4 id=&#34;实验结果&#34;&gt;实验结果
 &lt;/h4&gt;&lt;h5 id=&#34;主要发现-1鲁棒性是脆弱的&#34;&gt;主要发现 1：鲁棒性是脆弱的
-&lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/results_comparison.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;不同模型抗漂移能力对比&#34;
-	
-	
-&gt;
-&lt;em&gt;图 2：各模型在直接对抗压力和条件诱导漂移场景下的表现对比。GPT-5.1 在两种场景下均保持稳健。&lt;/em&gt;&lt;/p&gt;
+&lt;/h5&gt;&lt;p&gt;&lt;em&gt;图 2：各模型在直接对抗压力和条件诱导漂移场景下的表现对比。GPT-5.1 在两种场景下均保持稳健。&lt;/em&gt;&lt;/p&gt;
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
@@ -926,24 +1367,18 @@ $$DI = \frac{\text{偏离目标的行为次数}}{\text{总决策次数}} \times 
 &lt;hr&gt;
 &lt;h3 id=&#34;深度解读-224-小时文生图训练突破&#34;&gt;深度解读 2:24 小时文生图训练突破
 &lt;/h3&gt;&lt;h4 id=&#34;研究背景-1&#34;&gt;研究背景
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/prx_training_pipeline.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;PRX 训练流程图&#34;
-	
-	
-&gt;
-&lt;em&gt;图 3：PRX 24 小时训练流程。采用 x-prediction 公式，在像素空间直接训练，无需 VAE。&lt;/em&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;em&gt;图 3：PRX 24 小时训练流程。采用 x-prediction 公式，在像素空间直接训练，无需 VAE。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;扩散模型训练通常成本高昂。早期模型（如 Stable Diffusion）训练需要数千 GPU 小时，成本达数百万美元。这限制了研究和应用的普及。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;核心问题&lt;/strong&gt;：在有限计算预算下，如何最大化文生图模型的训练效率？&lt;/p&gt;
 &lt;p&gt;Photoroom 团队给出了惊人答案：&lt;strong&gt;24 小时，32 块 H200 GPU，$1500 预算&lt;/strong&gt;。&lt;/p&gt;
 &lt;h4 id=&#34;核心技术&#34;&gt;核心技术
 &lt;/h4&gt;&lt;h5 id=&#34;1-x-prediction-公式&#34;&gt;1. X-Prediction 公式
 &lt;/h5&gt;&lt;p&gt;采用 Li and He (2025) 提出的 x-prediction 方法：&lt;/p&gt;
-$$L = \mathbb{E}[\|\epsilon - \epsilon_\theta(x_t, t)\|^2]$$$$L = \mathbb{E}[\|x_0 - D_\theta(x_t, t)\|^2]$$&lt;p&gt;&lt;strong&gt;优势&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;传统扩散&lt;/strong&gt;：预测噪声 ε
+&lt;/p&gt;
+$$L = \mathbb{E}[\|\epsilon - \epsilon_\theta(x_t, t)\|^2]$$&lt;p&gt;&lt;strong&gt;X-Prediction&lt;/strong&gt;：直接预测原始图像 x₀
+&lt;/p&gt;
+$$L = \mathbb{E}[\|x_0 - D_\theta(x_t, t)\|^2]$$&lt;p&gt;&lt;strong&gt;优势&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;支持像素空间直接训练&lt;/li&gt;
 &lt;li&gt;消除 VAE 重构误差&lt;/li&gt;
@@ -962,17 +1397,7 @@ $$L = \mathbb{E}[\|\epsilon - \epsilon_\theta(x_t, t)\|^2]$$$$L = \mathbb{E}[\|x
 &lt;li&gt;&lt;strong&gt;混合精度&lt;/strong&gt;：AMP 加速训练&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;实验结果-1&#34;&gt;实验结果
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/prx_results.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;PRX 与基线模型性能对比&#34;
-	
-	
-&gt;
-&lt;em&gt;图 4：PRX 在 FID 和 CLIP Score 指标上均优于 Stable Diffusion 2.1，同时训练时间和成本降低 90%。&lt;/em&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;em&gt;图 4：PRX 在 FID 和 CLIP Score 指标上均优于 Stable Diffusion 2.1，同时训练时间和成本降低 90%。&lt;/em&gt;&lt;/p&gt;
 &lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;

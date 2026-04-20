@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Thu, 12 Mar 2026 08:07:12 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/diffusion/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 20 Mar 2026 21:10:52 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/diffusion/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>AI 日报 | 2026-03-12</title>
         <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/</link>
         <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
@@ -98,21 +98,7 @@
 &lt;h4 id=&#34;问题定义与挑战&#34;&gt;问题定义与挑战
 &lt;/h4&gt;&lt;p&gt;核心挑战在于：如何系统性地生成针对特定编程概念的高质量训练数据？传统方法依赖于爬取互联网代码，但难以控制概念分布、难度梯度和多样性。&lt;/p&gt;
 &lt;h4 id=&#34;核心方法与技术细节&#34;&gt;核心方法与技术细节
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow.png&#34;
-	width=&#34;960&#34;
-	height=&#34;492&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow_hu_9730faeb2df2a76.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow_hu_e7e2691029525736.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Code Concepts 工作流程&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;195&#34;
-		data-flex-basis=&#34;468px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;工作流程的核心是从大规模标注的 Nemotron-Pretraining-Code-{v1,v2} 数据集中提取的编程知识分类体系。该分类体系编码了数千个分层组织的编程概念，从基本结构（如字符串、递归）到高级算法和数据结构模式。&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;工作流程的核心是从大规模标注的 Nemotron-Pretraining-Code-{v1,v2} 数据集中提取的编程知识分类体系。该分类体系编码了数千个分层组织的编程概念，从基本结构（如字符串、递归）到高级算法和数据结构模式。&lt;/p&gt;
 &lt;p&gt;具体步骤：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;概念提取&lt;/strong&gt;：从 HumanEval 基准的分类提示中识别 91 个核心概念&lt;/li&gt;
@@ -120,20 +106,6 @@
 &lt;li&gt;&lt;strong&gt;数据生成&lt;/strong&gt;：使用 GPT-OSS 120B 生成约 1500 万个合成 Python 编程问题&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;质量验证&lt;/strong&gt;：使用 Python 的 ast.parse 函数验证生成的代码可执行&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results.png&#34;
-	width=&#34;2139&#34;
-	height=&#34;1232&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results_hu_c439f37cb5d3c515.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results_hu_672f4d28ba4ffcba.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;问题生成过程&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;173&#34;
-		data-flex-basis=&#34;416px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;h4 id=&#34;实验设计与结果&#34;&gt;实验设计与结果
 &lt;/h4&gt;&lt;p&gt;将 10B token 的 Code Concepts 数据纳入 Nemotron-Nano-v3 最后 100B token 预训练中进行数据消融实验：&lt;/p&gt;
 &lt;ul&gt;
@@ -167,7 +139,7 @@
 &lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid.jpg&#34;
 	width=&#34;3024&#34;
 	height=&#34;3024&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_9f63aad436629edf.jpg 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_8780dd2f145a0743.jpg 1024w&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_ac8f343b30d7a744.jpg 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_e55aac0a151a9059.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Unitree G1 人形机器人&#34;
@@ -216,7 +188,7 @@
 &lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm.gif&#34;
 	width=&#34;1152&#34;
 	height=&#34;648&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_94e6a23e04a65ab9.gif 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_b9b86324627d1c26.gif 1024w&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_da017c9d62ea3834.gif 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_86138a5a5c31b7e4.gif 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;SARM 社区演示&#34;
@@ -269,9 +241,9 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lerobot-train &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --env.type&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;hub &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --env.hub_path&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;username/my-custom-env&amp;#34;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --policy.type&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;act
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  --env.type&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;hub &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  --env.hub_path&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;username/my-custom-env&amp;#34;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  --policy.type&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;act
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;集成 NVIDIA IsaacLab-Arena，提供 GPU 加速的仿真和大规模并行环境实例。&lt;/p&gt;
@@ -317,21 +289,7 @@
 &lt;li&gt;&lt;strong&gt;推理优化&lt;/strong&gt;：通过推测解码实现更快的推理&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;实验设计与结果-2&#34;&gt;实验设计与结果
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer.png&#34;
-	width=&#34;6191&#34;
-	height=&#34;3158&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer_hu_ebab12c0effbad9.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer_hu_1b47a2950f981aef.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;WER 性能对比&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;196&#34;
-		data-flex-basis=&#34;470px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;在标准英语 ASR 基准上使用词错误率（WER）评估，Granite 4.0 1B Speech 在多个数据集上实现了具有竞争力的低 WER，同时参数量远少于许多可比模型。该模型最近在 OpenASR 排行榜上排名第 1。&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;在标准英语 ASR 基准上使用词错误率（WER）评估，Granite 4.0 1B Speech 在多个数据集上实现了具有竞争力的低 WER，同时参数量远少于许多可比模型。该模型最近在 OpenASR 排行榜上排名第 1。&lt;/p&gt;
 &lt;h4 id=&#34;局限性分析-2&#34;&gt;局限性分析
 &lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;主要针对 ASR 和 AST 任务，不支持通用语音对话&lt;/li&gt;

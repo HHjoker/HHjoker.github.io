@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-14%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%AD/'>
 
-<link rel="stylesheet" href="/scss/style.min.56ea19b05e0cef97d506745ab48006454c875a54299f9f5126e06b47cb25873b.css"><meta property='og:title' content="Rust 每日学习 Day 14：实战项目 - 命令行待办事项管理器（中）">
+<link rel="stylesheet" href="/scss/style.min.5caa0083058cdfc89d0c8e69326bb902aecd0db5e8bd671bb459c72d56e97f25.css"><meta property='og:title' content="Rust 每日学习 Day 14：实战项目 - 命令行待办事项管理器（中）">
 <meta property='og:description' content="继续构建命令行待办事项管理器，实现任务过滤、搜索、统计功能，深入学习枚举匹配与集合操作">
 <meta property='og:url' content='https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-14%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%AD/'>
 <meta property='og:site_name' content='HH Blog'>
@@ -56,7 +56,7 @@
                     
                     
                         
-                        <img src="/img/avatar_hu_1d1ddc0b6fcd3df4.png" width="300"
+                        <img src="/img/avatar_hu_1f27e3376f1b4a0e.png" width="300"
                             height="300" class="site-logo" loading="lazy" alt="Avatar">
                     
                 
@@ -450,28 +450,28 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 任务状态枚举
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="cp">#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">enum</span> <span class="nc">Status</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">enum</span> <span class="nc">Status</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Pending</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Completed</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="sd">/// 任务结构体
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="cp">#[derive(Debug, Clone, Serialize, Deserialize)]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">Task</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 任务结构体
+</span></span></span><span class="line"><span class="cl"><span class="cp">#[derive(Debug, Clone, Serialize, Deserialize)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Task</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">title</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">description</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">status</span>: <span class="nc">Status</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">created_at</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="sd">/// 待办事项列表
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="cp">#[derive(Debug, Serialize, Deserialize)]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">TodoList</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 待办事项列表
+</span></span></span><span class="line"><span class="cl"><span class="cp">#[derive(Debug, Serialize, Deserialize)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">TodoList</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">tasks</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">next_id</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="2-实现任务过滤功能">2. 实现任务过滤功能
@@ -528,7 +528,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 过滤任务列表
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="k">fn</span> <span class="nf">filter_tasks</span><span class="p">(</span><span class="n">todo_list</span>: <span class="kp">&amp;</span><span class="nc">TodoList</span><span class="p">,</span><span class="w"> </span><span class="n">status</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">Status</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="n">Task</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">filter_tasks</span><span class="p">(</span><span class="n">todo_list</span>: <span class="kp">&amp;</span><span class="nc">TodoList</span><span class="p">,</span><span class="w"> </span><span class="n">status</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">Status</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="n">Task</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="n">Status</span>::<span class="n">Pending</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">todo_list</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">filter</span><span class="p">(</span><span class="o">|</span><span class="n">t</span><span class="o">|</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Status</span>::<span class="n">Pending</span><span class="p">).</span><span class="n">collect</span><span class="p">()</span><span class="w">
@@ -540,10 +540,10 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">todo_list</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">collect</span><span class="p">()</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="sd">/// 列出任务（支持过滤）
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="k">fn</span> <span class="nf">list_tasks</span><span class="p">(</span><span class="n">filter</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 列出任务（支持过滤）
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">list_tasks</span><span class="p">(</span><span class="n">filter</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">todo_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_todo_list</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">status_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -573,7 +573,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>关键概念理解</strong>：</p>
@@ -620,7 +620,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 搜索任务
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="k">fn</span> <span class="nf">search_tasks</span><span class="p">(</span><span class="n">query</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">search_tasks</span><span class="p">(</span><span class="n">query</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">todo_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_todo_list</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">query_lower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">query</span><span class="p">.</span><span class="n">to_lowercase</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
@@ -648,7 +648,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>技术要点</strong>：</p>
@@ -704,7 +704,7 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 显示任务统计
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="k">fn</span> <span class="nf">show_stats</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">show_stats</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">todo_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_todo_list</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">todo_list</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">len</span><span class="p">();</span><span class="w">
@@ -714,7 +714,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">pending</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">completed</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 计算完成率
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">completion_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">completion_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">(</span><span class="n">completed</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">f64</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">f64</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100.0</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="mf">0.0</span><span class="w">
@@ -729,7 +729,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;═══════════════════════&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 显示进度条
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">bar_width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">filled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">((</span><span class="n">completed</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">f64</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">f64</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">bar_width</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">f64</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">usize</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bar_width</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">filled</span><span class="p">;</span><span class="w">
@@ -741,7 +741,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="5-完善命令行参数处理">5. 完善命令行参数处理
@@ -854,7 +854,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">env</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">args</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span>::<span class="n">args</span><span class="p">().</span><span class="n">collect</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">args</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -930,10 +930,10 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">eprintln!</span><span class="p">(</span><span class="s">&#34;❌ 发生错误：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="sd">/// 打印帮助信息
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="k">fn</span> <span class="nf">print_help</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 打印帮助信息
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">print_help</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;📋 Todo CLI - 命令行待办事项管理器&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;用法：todo_cli &lt;命令&gt; [参数]&#34;</span><span class="p">);</span><span class="w">
@@ -953,7 +953,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;  todo_cli complete 1&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;  todo_cli search 牛奶&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;  todo_cli stats&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="6-完整代码整合">6. 完整代码整合
@@ -1117,41 +1117,41 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">serde</span>::<span class="p">{</span><span class="n">Deserialize</span><span class="p">,</span><span class="w"> </span><span class="n">Serialize</span><span class="p">};</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">env</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">fs</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span>::<span class="p">{</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">Write</span><span class="p">};</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">path</span>::<span class="n">Path</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">env</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">fs</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">io</span>::<span class="p">{</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">Write</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">path</span>::<span class="n">Path</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="sd">/// 任务状态枚举
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="cp">#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">enum</span> <span class="nc">Status</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 任务状态枚举
+</span></span></span><span class="line"><span class="cl"><span class="cp">#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">enum</span> <span class="nc">Status</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Pending</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Completed</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="sd">/// 任务结构体
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="cp">#[derive(Debug, Clone, Serialize, Deserialize)]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">Task</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 任务结构体
+</span></span></span><span class="line"><span class="cl"><span class="cp">#[derive(Debug, Clone, Serialize, Deserialize)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Task</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">title</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">description</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">status</span>: <span class="nc">Status</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">created_at</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="sd">/// 待办事项列表
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="cp">#[derive(Debug, Serialize, Deserialize)]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">TodoList</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 待办事项列表
+</span></span></span><span class="line"><span class="cl"><span class="cp">#[derive(Debug, Serialize, Deserialize)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">TodoList</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">tasks</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Task</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">next_id</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">const</span><span class="w"> </span><span class="no">TODO_FILE</span>: <span class="kp">&amp;</span><span class="kt">str</span> <span class="o">=</span><span class="w"> </span><span class="s">&#34;todo.json&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">const</span><span class="w"> </span><span class="no">TODO_FILE</span>: <span class="kp">&amp;</span><span class="kt">str</span> <span class="o">=</span><span class="w"> </span><span class="s">&#34;todo.json&#34;</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ... (之前的函数：create_todo_list, load_todo_list, save_todo_list, add_task)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="sd">/// 过滤任务列表
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="k">fn</span> <span class="nf">filter_tasks</span><span class="p">(</span><span class="n">todo_list</span>: <span class="kp">&amp;</span><span class="nc">TodoList</span><span class="p">,</span><span class="w"> </span><span class="n">status</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">Status</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="n">Task</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ... (之前的函数：create_todo_list, load_todo_list, save_todo_list, add_task)
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 过滤任务列表
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">filter_tasks</span><span class="p">(</span><span class="n">todo_list</span>: <span class="kp">&amp;</span><span class="nc">TodoList</span><span class="p">,</span><span class="w"> </span><span class="n">status</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">Status</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="n">Task</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="n">Status</span>::<span class="n">Pending</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">todo_list</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">filter</span><span class="p">(</span><span class="o">|</span><span class="n">t</span><span class="o">|</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Status</span>::<span class="n">Pending</span><span class="p">).</span><span class="n">collect</span><span class="p">()</span><span class="w">
@@ -1161,10 +1161,10 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">todo_list</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">collect</span><span class="p">(),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="sd">/// 列出任务
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="k">fn</span> <span class="nf">list_tasks</span><span class="p">(</span><span class="n">filter</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 列出任务
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">list_tasks</span><span class="p">(</span><span class="n">filter</span>: <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">todo_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_todo_list</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">status_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">filter</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1194,10 +1194,10 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="sd">/// 搜索任务
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="k">fn</span> <span class="nf">search_tasks</span><span class="p">(</span><span class="n">query</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 搜索任务
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">search_tasks</span><span class="p">(</span><span class="n">query</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">todo_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_todo_list</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">query_lower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">query</span><span class="p">.</span><span class="n">to_lowercase</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
@@ -1225,10 +1225,10 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="sd">/// 显示统计
-</span></span></span><span class="line"><span class="cl"><span class="sd"></span><span class="k">fn</span> <span class="nf">show_stats</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 显示统计
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">show_stats</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">todo_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_todo_list</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">todo_list</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">len</span><span class="p">();</span><span class="w">
@@ -1263,13 +1263,13 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// ... (complete_task, delete_task 函数保持不变)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ... (complete_task, delete_task 函数保持不变)
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// ... (上面的 main 函数代码)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="关键概念理解">关键概念理解
@@ -1285,10 +1285,10 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 链式调用示例
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tasks</span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tasks</span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="o">|</span><span class="n">t</span><span class="o">|</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Status</span>::<span class="n">Pending</span><span class="p">)</span><span class="w">  </span><span class="c1">// 过滤
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">t</span><span class="o">|</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">.</span><span class="n">title</span><span class="p">)</span><span class="w">                         </span><span class="c1">// 转换
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">    </span><span class="p">.</span><span class="n">collect</span>::<span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">_</span><span class="o">&gt;&gt;</span><span class="p">();</span><span class="w">                      </span><span class="c1">// 收集
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">t</span><span class="o">|</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">.</span><span class="n">title</span><span class="p">)</span><span class="w">                         </span><span class="c1">// 转换
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">collect</span>::<span class="o">&lt;</span><span class="nb">Vec</span><span class="o">&lt;</span><span class="n">_</span><span class="o">&gt;&gt;</span><span class="p">();</span><span class="w">                      </span><span class="c1">// 收集
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>常用适配器：</p>
@@ -1316,13 +1316,13 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 传统写法
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span><span class="w"> </span><span class="n">desc_lower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">task</span><span class="p">.</span><span class="n">description</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">desc_lower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">match</span><span class="w"> </span><span class="n">task</span><span class="p">.</span><span class="n">description</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Some</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">to_lowercase</span><span class="p">(),</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">(),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">};</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Option 链式写法（更优雅）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span><span class="w"> </span><span class="n">desc_lower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">task</span><span class="p">.</span><span class="n">description</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Option 链式写法（更优雅）
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">desc_lower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">task</span><span class="p">.</span><span class="n">description</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">as_ref</span><span class="p">()</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">d</span><span class="o">|</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">to_lowercase</span><span class="p">())</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">unwrap_or_default</span><span class="p">();</span><span class="w">
@@ -1342,13 +1342,13 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// &amp;TodoList - 借用，不转移所有权
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">fn</span> <span class="nf">filter_tasks</span><span class="p">(</span><span class="n">todo_list</span>: <span class="kp">&amp;</span><span class="nc">TodoList</span><span class="p">,</span><span class="w"> </span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="n">Task</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">filter_tasks</span><span class="p">(</span><span class="n">todo_list</span>: <span class="kp">&amp;</span><span class="nc">TodoList</span><span class="p">,</span><span class="w"> </span><span class="o">..</span><span class="p">.)</span><span class="w"> </span>-&gt; <span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="n">Task</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 返回任务的引用，避免复制
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 使用 iter() 而不是 into_iter()
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">todo_list</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w">  </span><span class="c1">// 借用元素
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">todo_list</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">into_iter</span><span class="p">()</span><span class="w">  </span><span class="c1">// 移动元素（消耗 Vec）
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 使用 iter() 而不是 into_iter()
+</span></span></span><span class="line"><span class="cl"><span class="n">todo_list</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w">  </span><span class="c1">// 借用元素
+</span></span></span><span class="line"><span class="cl"><span class="n">todo_list</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">into_iter</span><span class="p">()</span><span class="w">  </span><span class="c1">// 移动元素（消耗 Vec）
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="练习题">练习题
@@ -1368,13 +1368,13 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="cp">#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">enum</span> <span class="nc">Priority</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">enum</span> <span class="nc">Priority</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Low</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Medium</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">High</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// 修改 Task 结构体，添加 priority 字段
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 修改 Task 结构体，添加 priority 字段
 </span></span></span><span class="line"><span class="cl"><span class="c1">// 实现 filter_by_priority 函数
 </span></span></span></code></pre></td></tr></table>
 </div>
@@ -1431,9 +1431,9 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">colored</span>::<span class="n">Colorize</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;✅ 任务完成&#34;</span><span class="p">.</span><span class="n">green</span><span class="p">());</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;❌ 发生错误&#34;</span><span class="p">.</span><span class="n">red</span><span class="p">());</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;⚠️  警告&#34;</span><span class="p">.</span><span class="n">yellow</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;✅ 任务完成&#34;</span><span class="p">.</span><span class="n">green</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;❌ 发生错误&#34;</span><span class="p">.</span><span class="n">red</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;⚠️  警告&#34;</span><span class="p">.</span><span class="n">yellow</span><span class="p">());</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="明日计划">明日计划
@@ -1577,12 +1577,12 @@
             
                 
 <article class="">
-    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-12%E6%9E%9A%E4%B8%BEenum%E4%B8%8E%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E5%9F%BA%E7%A1%80/">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-16%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E7%AE%A1%E7%90%86%E5%99%A8%E5%AE%8C%E7%BB%93%E7%AF%87/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Rust 每日学习 Day 12：枚举（Enum）与模式匹配基础</h2>
+            <h2 class="article-title">Rust 每日学习 Day 16：实战项目 - 命令行待办事项管理器（完结篇）</h2>
         </div>
     </a>
 </article>
@@ -1590,12 +1590,12 @@
             
                 
 <article class="">
-    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-11%E7%BB%93%E6%9E%84%E4%BD%93struct%E8%AF%A6%E8%A7%A3/">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-15%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%8B/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Rust 每日学习 Day 11：结构体（Struct）详解</h2>
+            <h2 class="article-title">Rust 每日学习 Day 15：实战项目 - 命令行待办事项管理器（下）</h2>
         </div>
     </a>
 </article>
@@ -1603,12 +1603,12 @@
             
                 
 <article class="">
-    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-10%E6%89%80%E6%9C%89%E6%9D%83%E7%9A%84%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8%E6%A8%A1%E5%BC%8F/">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-25%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E7%BB%BC%E5%90%88%E5%AE%9E%E6%88%98/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Rust 每日学习 Day 10：所有权的实际应用模式</h2>
+            <h2 class="article-title">Rust 每日学习 Day 25：错误处理综合实战</h2>
         </div>
     </a>
 </article>
@@ -1616,12 +1616,12 @@
             
                 
 <article class="">
-    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-9%E6%89%80%E6%9C%89%E6%9D%83%E4%B8%8E%E5%80%9F%E7%94%A8%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3/">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-30trait-%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Rust 每日学习 Day 9：所有权与借用（深入理解）</h2>
+            <h2 class="article-title">Rust 每日学习 Day 30：Trait 高级用法</h2>
         </div>
     </a>
 </article>

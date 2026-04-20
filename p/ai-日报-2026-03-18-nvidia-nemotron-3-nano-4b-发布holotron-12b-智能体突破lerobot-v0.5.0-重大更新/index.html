@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="AI 日报 | 2026-03-18 📌 今日总结 NVIDIA 发布 Nemotron 3 Nano 4B：采用混合 Mamba-Transformer 架构的紧凑型模型，仅 4B 参数即可在边缘设备运行，在指令遵循和游戏智能方面达到同尺寸 SOTA Holotron-12B 电脑使用智能体：基于 Nemotron...">
+<title>AI 日报 | 2026-03-18: NVIDIA Nemotron 3 Nano 4B 发布，Holotron-12B 智能体突破，LeRobot v0.5.0 重大更新</title>
+
+<link rel='canonical' href='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-18-nvidia-nemotron-3-nano-4b-%E5%8F%91%E5%B8%83holotron-12b-%E6%99%BA%E8%83%BD%E4%BD%93%E7%AA%81%E7%A0%B4lerobot-v0.5.0-%E9%87%8D%E5%A4%A7%E6%9B%B4%E6%96%B0/'>
+
+<link rel="stylesheet" href="/scss/style.min.5caa0083058cdfc89d0c8e69326bb902aecd0db5e8bd671bb459c72d56e97f25.css"><meta property='og:title' content="AI 日报 | 2026-03-18: NVIDIA Nemotron 3 Nano 4B 发布，Holotron-12B 智能体突破，LeRobot v0.5.0 重大更新">
+<meta property='og:description' content="AI 日报 | 2026-03-18 📌 今日总结 NVIDIA 发布 Nemotron 3 Nano 4B：采用混合 Mamba-Transformer 架构的紧凑型模型，仅 4B 参数即可在边缘设备运行，在指令遵循和游戏智能方面达到同尺寸 SOTA Holotron-12B 电脑使用智能体：基于 Nemotron...">
+<meta property='og:url' content='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-18-nvidia-nemotron-3-nano-4b-%E5%8F%91%E5%B8%83holotron-12b-%E6%99%BA%E8%83%BD%E4%BD%93%E7%AA%81%E7%A0%B4lerobot-v0.5.0-%E9%87%8D%E5%A4%A7%E6%9B%B4%E6%96%B0/'>
+<meta property='og:site_name' content='HH Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='AI' /><meta property='article:tag' content='LLM' /><meta property='article:tag' content='多模态' /><meta property='article:tag' content='机器人' /><meta property='article:tag' content='Agent' /><meta property='article:tag' content='NVIDIA' /><meta property='article:tag' content='开源' /><meta property='article:published_time' content='2026-03-18T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-20T21:10:52&#43;08:00'/>
+<meta name="twitter:title" content="AI 日报 | 2026-03-18: NVIDIA Nemotron 3 Nano 4B 发布，Holotron-12B 智能体突破，LeRobot v0.5.0 重大更新">
+<meta name="twitter:description" content="AI 日报 | 2026-03-18 📌 今日总结 NVIDIA 发布 Nemotron 3 Nano 4B：采用混合 Mamba-Transformer 架构的紧凑型模型，仅 4B 参数即可在边缘设备运行，在指令遵循和游戏智能方面达到同尺寸 SOTA Holotron-12B 电脑使用智能体：基于 Nemotron...">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_1f27e3376f1b4a0e.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">HH Blog</a></h1>
+            <h2 class="site-description">欢迎来到我的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/HHjoker'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://HHjoker.github.io/en/" >English</option>
+                                
+                                    <option value="https://HHjoker.github.io/" selected>中文</option>
+                                
+                                    <option value="https://HHjoker.github.io/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#-今日总结">📌 今日总结</a></li>
+    <li><a href="#-重要论文一览">📚 重要论文一览</a></li>
+    <li><a href="#-技术动态">🚀 技术动态</a>
+      <ol>
+        <li><a href="#1-nvidia-nemotron-3-nano-4b边缘-ai-新标准">1. NVIDIA Nemotron 3 Nano 4B：边缘 AI 新标准</a></li>
+        <li><a href="#2-lerobot-v050机器人学习生态大扩张">2. LeRobot v0.5.0：机器人学习生态大扩张</a></li>
+        <li><a href="#3-openseeker民主化前沿搜索智能体">3. OpenSeeker：民主化前沿搜索智能体</a></li>
+      </ol>
+    </li>
+    <li><a href="#-详细介绍深度解读">🔍 详细介绍（深度解读）</a>
+      <ol>
+        <li><a href="#一nemotron-3-nano-4b混合架构的边缘-ai-突破">一、Nemotron 3 Nano 4B：混合架构的边缘 AI 突破</a>
+          <ol>
+            <li><a href="#研究背景与动机">研究背景与动机</a></li>
+            <li><a href="#核心方法与技术细节">核心方法与技术细节</a></li>
+            <li><a href="#实验设计与结果">实验设计与结果</a></li>
+            <li><a href="#局限性分析">局限性分析</a></li>
+            <li><a href="#未来方向与影响">未来方向与影响</a></li>
+            <li><a href="#相关链接">相关链接</a></li>
+          </ol>
+        </li>
+        <li><a href="#二holotron-12b高吞吐量电脑使用智能体">二、Holotron-12B：高吞吐量电脑使用智能体</a>
+          <ol>
+            <li><a href="#研究背景与动机-1">研究背景与动机</a></li>
+            <li><a href="#核心方法与技术细节-1">核心方法与技术细节</a></li>
+            <li><a href="#实验设计与结果-1">实验设计与结果</a></li>
+            <li><a href="#局限性分析-1">局限性分析</a></li>
+            <li><a href="#未来方向与影响-1">未来方向与影响</a></li>
+            <li><a href="#相关链接-1">相关链接</a></li>
+          </ol>
+        </li>
+        <li><a href="#三openseeker完全开源的前沿搜索智能体">三、OpenSeeker：完全开源的前沿搜索智能体</a>
+          <ol>
+            <li><a href="#研究背景与动机-2">研究背景与动机</a></li>
+            <li><a href="#核心方法与技术细节-2">核心方法与技术细节</a></li>
+            <li><a href="#实验设计与结果-2">实验设计与结果</a></li>
+            <li><a href="#局限性分析-2">局限性分析</a></li>
+            <li><a href="#未来方向与影响-2">未来方向与影响</a></li>
+            <li><a href="#相关链接-2">相关链接</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#-应用案例">💡 应用案例</a>
+      <ol>
+        <li><a href="#1-边缘游戏-npc-智能对话">1. 边缘游戏 NPC 智能对话</a></li>
+        <li><a href="#2-大规模电脑使用自动化">2. 大规模电脑使用自动化</a></li>
+        <li><a href="#3-人形机器人全身控制">3. 人形机器人全身控制</a></li>
+        <li><a href="#4-开源搜索智能体定制">4. 开源搜索智能体定制</a></li>
+      </ol>
+    </li>
+    <li><a href="#-统计汇总">📊 统计汇总</a>
+      <ol>
+        <li><a href="#性能对比表">性能对比表</a></li>
+      </ol>
+    </li>
+    <li><a href="#-全部参考链接">📖 全部参考链接</a>
+      <ol>
+        <li><a href="#论文与博客">论文与博客</a></li>
+        <li><a href="#模型与代码">模型与代码</a></li>
+        <li><a href="#相关资源">相关资源</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ai-%E6%97%A5%E6%8A%A5/" >
+                AI 日报
+            </a>
+        
+            <a href="/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/" >
+                大模型
+            </a>
+        
+            <a href="/categories/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6%E4%B9%A0/" >
+                机器人学习
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-18-nvidia-nemotron-3-nano-4b-%E5%8F%91%E5%B8%83holotron-12b-%E6%99%BA%E8%83%BD%E4%BD%93%E7%AA%81%E7%A0%B4lerobot-v0.5.0-%E9%87%8D%E5%A4%A7%E6%9B%B4%E6%96%B0/">AI 日报 | 2026-03-18: NVIDIA Nemotron 3 Nano 4B 发布，Holotron-12B 智能体突破，LeRobot v0.5.0 重大更新</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-03-18</time>
+            </div>
+        
+        <div class="article-lastmod">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time>
+                    2026-03-20
+                </time>
+            </div>
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="ai-日报--2026-03-18">AI 日报 | 2026-03-18
+</h1><h2 id="-今日总结">📌 今日总结
+</h2><ul>
+<li><strong>NVIDIA 发布 Nemotron 3 Nano 4B</strong>：采用混合 Mamba-Transformer 架构的紧凑型模型，仅 4B 参数即可在边缘设备运行，在指令遵循和游戏智能方面达到同尺寸 SOTA</li>
+<li><strong>Holotron-12B 电脑使用智能体</strong>：基于 Nemotron 架构的多模态智能体，WebVoyager 基准测试达 80.5%，吞吐量比 Holo2-8B 提升 2 倍以上</li>
+<li><strong>OpenSeeker 开源搜索智能体</strong>：首个完全开源的训练数据和模型，仅用 11.7k 合成样本就在 BrowseComp 上达到 29.5%，超越多个工业级模型</li>
+<li><strong>LeRobot v0.5.0 重大更新</strong>：新增 Unitree G1 人形机器人支持、Pi0-FAST 自回归 VLA、实时分块推理等 6 项新策略</li>
+<li><strong>Ulysses 序列并行训练</strong>：Hugging Face 生态全面集成，支持百万 token 上下文训练，通信开销比 Ring Attention 低一个数量级</li>
+</ul>
+<h2 id="-重要论文一览">📚 重要论文一览
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>论文/项目</th>
+          <th>来源</th>
+          <th>亮点</th>
+          <th>链接</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Nemotron 3 Nano 4B</td>
+          <td>NVIDIA</td>
+          <td>4B 混合架构模型，边缘部署优化</td>
+          <td><a class="link" href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16"  target="_blank" rel="noopener"
+    >HF</a></td>
+      </tr>
+      <tr>
+          <td>Holotron-12B</td>
+          <td>H Company</td>
+          <td>高吞吐量电脑使用智能体，WebVoyager 80.5%</td>
+          <td><a class="link" href="https://huggingface.co/blog/Hcompany/holotron-12b"  target="_blank" rel="noopener"
+    >HF Blog</a></td>
+      </tr>
+      <tr>
+          <td>OpenSeeker</td>
+          <td>上海交大</td>
+          <td>完全开源搜索智能体，数据 + 模型全公开</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.15594"  target="_blank" rel="noopener"
+    >arXiv:2603.15594</a></td>
+      </tr>
+      <tr>
+          <td>LeRobot v0.5.0</td>
+          <td>Hugging Face</td>
+          <td>人形机器人支持，6 项新策略，10 倍训练加速</td>
+          <td><a class="link" href="https://huggingface.co/blog/lerobot-release-v050"  target="_blank" rel="noopener"
+    >HF Blog</a></td>
+      </tr>
+      <tr>
+          <td>Ulysses SP</td>
+          <td>Snowflake/HF</td>
+          <td>百万 token 上下文训练，序列并行集成</td>
+          <td><a class="link" href="https://huggingface.co/blog/ulysses-sp"  target="_blank" rel="noopener"
+    >HF Blog</a></td>
+      </tr>
+      <tr>
+          <td>反事实解释指标研究</td>
+          <td>比勒菲尔德大学</td>
+          <td>算法指标与人类感知相关性弱</td>
+          <td><a class="link" href="https://arxiv.org/abs/2603.15607"  target="_blank" rel="noopener"
+    >arXiv:2603.15607</a></td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="-技术动态">🚀 技术动态
+</h2><h3 id="1-nvidia-nemotron-3-nano-4b边缘-ai-新标准">1. NVIDIA Nemotron 3 Nano 4B：边缘 AI 新标准
+</h3><p>NVIDIA 发布了 Nemotron 3 家族中最紧凑的成员——<strong>Nemotron 3 Nano 4B</strong>。这款仅 40 亿参数的模型采用混合 Mamba-Transformer 架构，专为边缘设备优化：</p>
+<ul>
+<li><strong>指令遵循</strong>：在 IFBench 和 IFEval 基准上达到同尺寸 SOTA</li>
+<li><strong>游戏智能</strong>：在 Orak 基准（Super Mario、Darkest Dungeon、Stardew Valley）上表现最佳</li>
+<li><strong>VRAM 效率</strong>：在低/高 ISL/OSL 设置下 VRAM 占用最低</li>
+<li><strong>延迟优化</strong>：高 ISL 设置下 TTFT（首 token 时间）最低</li>
+</ul>
+<p>模型通过 <strong>Nemotron Elastic</strong> 框架从 9B 版本剪枝蒸馏而来，支持 FP8 和 Q4_K_M GGUF 量化，在 Jetson Orin Nano 上可达 18 tokens/s。</p>
+<h3 id="2-lerobot-v050机器人学习生态大扩张">2. LeRobot v0.5.0：机器人学习生态大扩张
+</h3><p>Hugging Face LeRobot 迎来迄今为止最大更新，超过 200 个 PR 和 50 位新贡献者：</p>
+<ul>
+<li><strong>首个人形机器人支持</strong>：完整集成 Unitree G1，支持 locomotion、manipulation、teleoperation 和全身控制</li>
+<li><strong>6 项新策略</strong>：Pi0-FAST 自回归 VLA、实时分块 (RTC)、Wall-X、X-VLA、SARM、PEFT 支持</li>
+<li><strong>性能提升</strong>：流式视频编码消除录制等待，图像训练速度提升 10 倍，编码速度提升 3 倍</li>
+<li><strong>EnvHub</strong>：直接从 Hugging Face Hub 加载仿真环境，支持 NVIDIA IsaacLab-Arena</li>
+</ul>
+<h3 id="3-openseeker民主化前沿搜索智能体">3. OpenSeeker：民主化前沿搜索智能体
+</h3><p>上海交通大学团队发布了首个<strong>完全开源</strong>的搜索智能体，包括模型和全部训练数据：</p>
+<ul>
+<li><strong>BrowseComp 29.5%</strong>：显著超越第二好的开源智能体 DeepDive (15.3%)</li>
+<li><strong>BrowseComp-ZH 48.4%</strong>：超越阿里巴巴通义千问 DeepResearch (46.7%)</li>
+<li><strong>仅 11.7k 合成样本</strong>：通过事实基础的 QA 合成和去噪轨迹合成实现</li>
+<li><strong>完全开源</strong>：合成方案、训练数据（QA 对和完整轨迹）、模型权重全部公开</li>
+</ul>
+<h2 id="-详细介绍深度解读">🔍 详细介绍（深度解读）
+</h2><h3 id="一nemotron-3-nano-4b混合架构的边缘-ai-突破">一、Nemotron 3 Nano 4B：混合架构的边缘 AI 突破
+</h3><h4 id="研究背景与动机">研究背景与动机
+</h4><p>随着大模型在边缘设备部署需求的增长，如何在有限 VRAM 和计算资源下保持高性能成为关键挑战。NVIDIA Nemotron 3 Nano 4B 旨在为 GeForce RTX、Jetson 和 DGX Spark 等设备提供本地对话代理和角色支持，实现更快响应、增强数据隐私和灵活部署。</p>
+<h4 id="核心方法与技术细节">核心方法与技术细节
+</h4><p><strong>1. Nemotron Elastic 压缩框架</strong></p>
+<p>Nemotron 3 Nano 4B 通过 Nemotron Elastic 框架从 Nemotron Nano 9B v2 压缩而来。与传统剪枝方法不同，Nemotron Elastic 使用端到端训练的路由器进行神经架构搜索：</p>
+<ul>
+<li>
+<p><strong>路由器决策的剪枝轴</strong>：</p>
+<ul>
+<li>Mamba heads：从 128 减少到 96</li>
+<li>隐藏维度：从 4480 缩减到 3136</li>
+<li>FFN 通道：从 15680 剪枝到 12544</li>
+<li>深度：从 56 层减少到 42 层（21 Mamba + 4 Attention + 17 MLP）</li>
+</ul>
+</li>
+<li>
+<p><strong>联合训练策略</strong>：路由器与模型联合训练，使用辅助损失（针对学生模型尺寸）和原始知识蒸馏损失</p>
+</li>
+</ul>
+<p><strong>2. 两阶段蒸馏精度恢复</strong></p>
+<ul>
+<li><strong>阶段 1（短上下文 8K）</strong>：使用 63B token 训练，数据包含 70% 后训练数据和 30% 预训练数据</li>
+<li><strong>阶段 2（长上下文 49K）</strong>：扩展上下文到 49K token，训练 150B token 恢复长链推理能力</li>
+</ul>
+<p><strong>3. 多环境强化学习</strong></p>
+<p>通过 NeMo-RL 进行三阶段 RL 训练：</p>
+<ol>
+<li>单轮指令遵循数据</li>
+<li>NeMo-Gym 环境（单轮/多轮指令遵循、结构化输出）</li>
+<li>多轮对话工具调用（Nemotron-RL-Agentic-Conversational-Tool-Use-Pivot-v1）</li>
+</ol>
+<h4 id="实验设计与结果">实验设计与结果
+</h4><p><strong>关键性能指标</strong>：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>基准</th>
+          <th>Nemotron 3 Nano 4B</th>
+          <th>同尺寸最佳竞品</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>IFBench</td>
+          <td>SOTA</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>IFEval</td>
+          <td>SOTA</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>Orak（游戏智能）</td>
+          <td>SOTA</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>VRAM 占用</td>
+          <td>最低</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>TTFT（高 ISL）</td>
+          <td>最低</td>
+          <td>-</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>量化效率</strong>：</p>
+<ul>
+<li>FP8 量化：在 DGX Spark 和 Jetson Thor 上延迟和吞吐量提升 1.8 倍，精度恢复 100%</li>
+<li>Q4_K_M GGUF：在 Jetson Orin Nano 8GB 上达 18 tokens/s，比 9B v2 快 2 倍</li>
+</ul>
+<h4 id="局限性分析">局限性分析
+</h4><ol>
+<li><strong>参数量限制</strong>：4B 参数虽然适合边缘部署，但在复杂推理任务上仍不如更大模型</li>
+<li><strong>领域特定优化</strong>：针对游戏智能和指令遵循优化，通用知识可能不如通用大模型</li>
+<li><strong>硬件依赖</strong>：FP8 量化需要 NVIDIA GPU 支持，GGUF 版本虽更通用但性能略低</li>
+</ol>
+<h4 id="未来方向与影响">未来方向与影响
+</h4><p>Nemotron 3 Nano 4B 为边缘 AI 树立了新标准，预计将推动：</p>
+<ul>
+<li>本地游戏 NPC 智能化</li>
+<li>嵌入式机器人对话系统</li>
+<li>隐私敏感的边缘推理应用</li>
+<li>低成本大规模部署的 AI 助手</li>
+</ul>
+<h4 id="相关链接">相关链接
+</h4><ul>
+<li><a class="link" href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16"  target="_blank" rel="noopener"
+    >Hugging Face 模型页面</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2511.16664"  target="_blank" rel="noopener"
+    >Nemotron Elastic 论文</a></li>
+<li><a class="link" href="https://www.jetson-ai-lab.com/models/"  target="_blank" rel="noopener"
+    >Jetson AI Lab 部署指南</a></li>
+<li><a class="link" href="https://developer.nvidia.com/rtx/in-game-inferencing"  target="_blank" rel="noopener"
+    >NVIGI SDK</a></li>
+</ul>
+<hr>
+<h3 id="二holotron-12b高吞吐量电脑使用智能体">二、Holotron-12B：高吞吐量电脑使用智能体
+</h3><h4 id="研究背景与动机-1">研究背景与动机
+</h4><p>当前多模态模型主要优化静态视觉或指令遵循，但电脑使用智能体需要在交互环境中高效感知、决策和行动。Holotron-12B 旨在作为生产级电脑使用智能体的策略模型，处理长上下文、多图像场景，同时在智能体基准上保持高性能。</p>
+<h4 id="核心方法与技术细节-1">核心方法与技术细节
+</h4><p><strong>1. 混合 SSM 架构的高吞吐量推理</strong></p>
+<p>Holotron-12B 基于 NVIDIA Nemotron-Nano-12B-v2-VL 架构，采用混合状态空间模型 (SSM) 和注意力机制：</p>
+<ul>
+<li><strong>SSM 优势</strong>：与纯 Transformer 相比，SSM 是线性循环模型，每层每序列仅存储常量状态，不随序列长度增长</li>
+<li><strong>KV Cache 优化</strong>：传统注意力需要为每个 token 和层存储 K 和 V 激活，而 SSM 避免了这一开销</li>
+<li><strong>长上下文扩展性</strong>：避免了全注意力机制的二次计算成本，特别适合多图像和长交互历史的智能体工作负载</li>
+</ul>
+<p><strong>2. 训练策略</strong></p>
+<p>两阶段训练：</p>
+<ol>
+<li><strong>监督微调</strong>：在 H Company 专有的定位和导航数据混合上训练，聚焦屏幕理解、grounding 和 UI 级交互</li>
+<li><strong>训练规模</strong>：最终 checkpoint 在约 140 亿 token 上训练</li>
+</ol>
+<h4 id="实验设计与结果-1">实验设计与结果
+</h4><p><strong>WebVoyager 基准测试</strong>：</p>
+<p>在真实世界多模态智能体工作负载下评估（长上下文、多高分辨率图像、100 并发请求）：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>模型</th>
+          <th>GPU</th>
+          <th>吞吐量 (tokens/s)</th>
+          <th>WebVoyager</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Holotron-12B</td>
+          <td>1x H100</td>
+          <td>8.9k (并发 100)</td>
+          <td>80.5%</td>
+      </tr>
+      <tr>
+          <td>Holo2-8B</td>
+          <td>1x H100</td>
+          <td>5.1k (平台期)</td>
+          <td>&lt;80.5%</td>
+      </tr>
+      <tr>
+          <td>Nemotron 基础</td>
+          <td>-</td>
+          <td>-</td>
+          <td>35.1%</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>关键发现</strong>：</p>
+<ul>
+<li>Holotron-12B 吞吐量比 Holo2-8B 高 2 倍以上</li>
+<li>随并发增加持续扩展，而 Holo2-8B 快速达到平台期</li>
+<li>更有效的 VRAM 利用和更小内存占用，允许在相同硬件上实现更大的有效批量大小</li>
+</ul>
+<p><strong>定位基准</strong>：</p>
+<p>在 OS-World-G、GroundUI 和 WebClick 等定位和 grounding 基准上显著优于基础 Nemotron 模型。</p>
+<h4 id="局限性分析-1">局限性分析
+</h4><ol>
+<li><strong>分辨率限制</strong>：当前版本在高分辨率视觉训练方面仍有提升空间</li>
+<li><strong>领域特定</strong>：主要针对电脑使用场景优化，通用多模态能力可能不如专用模型</li>
+<li><strong>依赖 NVIDIA 生态</strong>：最佳性能需要 vLLM 和 NVIDIA GPU 支持</li>
+</ol>
+<h4 id="未来方向与影响-1">未来方向与影响
+</h4><p>H Company 计划基于 Nemotron 3 Omni 继续开发下一代多模态模型，目标：</p>
+<ul>
+<li>利用增强的混合 SSM-Attention 和 MoE 架构</li>
+<li>提升推理能力和多模态精度</li>
+<li>推动 Holotron 从研究走向商业应用</li>
+<li>为企业级大规模自主&quot;电脑使用&quot;部署提供高吞吐、低延迟性能</li>
+</ul>
+<h4 id="相关链接-1">相关链接
+</h4><ul>
+<li><a class="link" href="https://huggingface.co/blog/Hcompany/holotron-12b"  target="_blank" rel="noopener"
+    >Hugging Face 博客</a></li>
+<li><a class="link" href="https://huggingface.co/Hcompany/Holotron-12B"  target="_blank" rel="noopener"
+    >Holotron-12B 模型页面</a></li>
+<li><a class="link" href="https://nvidia.com/"  target="_blank" rel="noopener"
+    >NVIDIA Nemotron 3 Omni 公告</a></li>
+</ul>
+<hr>
+<h3 id="三openseeker完全开源的前沿搜索智能体">三、OpenSeeker：完全开源的前沿搜索智能体
+</h3><h4 id="研究背景与动机-2">研究背景与动机
+</h4><p>深度搜索能力已成为前沿大模型智能体的必备能力，但高性能搜索智能体的开发因缺乏透明、高质量的训练数据而被工业巨头垄断。现有开源工作要么只开源模型不开源数据，要么只提供部分数据，要么性能不具竞争力。</p>
+<p>OpenSeeker 旨在填补这一空白，成为首个<strong>完全开源</strong>（模型 + 数据）且达到前沿性能的搜索智能体。</p>
+<h4 id="核心方法与技术细节-2">核心方法与技术细节
+</h4><p><strong>1. 事实基础的可扩展可控 QA 合成</strong></p>
+<p>核心思想是&quot;逆向工程&quot;推理图：</p>
+<ul>
+<li><strong>图扩展</strong>：从种子节点出发，通过遍历超链接收集 k 个连接节点，形成局部依赖子图</li>
+<li><strong>实体提取</strong>：从子图中提取与主题相关的关键实体，组织成实体子图，去除文本噪声</li>
+<li><strong>问题生成</strong>：基于实体子图结构生成初始问题，强制要求遍历多条边才能求解</li>
+<li><strong>实体模糊化</strong>：将具体实体映射为模糊描述，模拟真实用户歧义，防止智能体通过关键词捷径求解</li>
+</ul>
+<p><strong>2. 去噪轨迹合成</strong></p>
+<ul>
+<li><strong>动态上下文去噪</strong>：在生成过程中，使用辅助 LLM 总结先前的工具响应，为教师 LLM 提供更清晰的上下文</li>
+<li><strong>训练时解耦</strong>：监督模型预测专家决策，但条件于原始、嘈杂的历史轨迹，使智能体内在学会&quot;透过噪声看信号&quot;</li>
+</ul>
+<p><strong>3. 双重标准验证</strong></p>
+<p>通过拒绝采样确保合成数据质量：</p>
+<ul>
+<li><strong>难度标准</strong>：基础模型在闭卷设置下无法正确回答（确保需要外部信息检索）</li>
+<li><strong>可解性标准</strong>：强教师模型能够成功求解（确保逻辑一致性）</li>
+</ul>
+<h4 id="实验设计与结果-2">实验设计与结果
+</h4><p><strong>基准测试性能</strong>：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>基准</th>
+          <th>OpenSeeker</th>
+          <th>DeepDive</th>
+          <th>通义 DeepResearch</th>
+          <th>其他工业模型</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>BrowseComp</td>
+          <td>29.5%</td>
+          <td>15.3%</td>
+          <td>-</td>
+          <td>20-25%</td>
+      </tr>
+      <tr>
+          <td>BrowseComp-ZH</td>
+          <td>48.4%</td>
+          <td>-</td>
+          <td>46.7%</td>
+          <td>40-45%</td>
+      </tr>
+      <tr>
+          <td>xbench-DeepSearch</td>
+          <td>74.0%</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td>WideSearch (item F1)</td>
+          <td>59.4%</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>关键发现</strong>：</p>
+<ul>
+<li>仅用 11.7k 合成样本（10.3k 英文 + 1.4k 中文）和简单 SFT</li>
+<li>单次训练运行，默认超参数，无启发式过滤或调优</li>
+<li>在 BrowseComp-ZH 上超越阿里巴巴通义千问 DeepResearch（后者经过持续预训练、SFT 和 RL）</li>
+</ul>
+<h4 id="局限性分析-2">局限性分析
+</h4><ol>
+<li><strong>训练规模</strong>：仅使用 SFT，未进行 RL 优化，性能仍有提升空间</li>
+<li><strong>资源限制</strong>：结果在单次训练中取得，未进行迭代优化</li>
+<li><strong>语言覆盖</strong>：中文样本较少（1.4k vs 10.3k 英文），可能影响多语言能力</li>
+</ol>
+<h4 id="未来方向与影响-2">未来方向与影响
+</h4><p>OpenSeeker 的完全开源策略将：</p>
+<ul>
+<li>降低搜索智能体研究门槛</li>
+<li>促进学术界和开源社区的协作创新</li>
+<li>为后续研究提供高质量基线和数据</li>
+<li>推动更透明、健康的智能体开发生态</li>
+</ul>
+<h4 id="相关链接-2">相关链接
+</h4><ul>
+<li><a class="link" href="https://arxiv.org/abs/2603.15594"  target="_blank" rel="noopener"
+    >arXiv 论文</a></li>
+<li><a class="link" href="https://arxiv.org/html/2603.15594v1"  target="_blank" rel="noopener"
+    >HTML 版本</a></li>
+<li><a class="link" href="https://github.com/OpenSeeker/OpenSeeker"  target="_blank" rel="noopener"
+    >GitHub 仓库</a>（待确认）</li>
+</ul>
+<hr>
+<h2 id="-应用案例">💡 应用案例
+</h2><h3 id="1-边缘游戏-npc-智能对话">1. 边缘游戏 NPC 智能对话
+</h3><p>Nemotron 3 Nano 4B 的 Orak 基准优化使其成为游戏 NPC 的理想选择：</p>
+<ul>
+<li>在 RTX 4070 上本地运行，无需云端依赖</li>
+<li>低延迟响应，提升玩家沉浸感</li>
+<li>NVIGI SDK 支持与图形工作负载并行推理</li>
+</ul>
+<h3 id="2-大规模电脑使用自动化">2. 大规模电脑使用自动化
+</h3><p>Holotron-12B 的高吞吐量特性适合：</p>
+<ul>
+<li>数据生成和标注流水线</li>
+<li>在线强化学习环境</li>
+<li>企业级 RPA 自动化</li>
+<li>软件测试和 QA 自动化</li>
+</ul>
+<h3 id="3-人形机器人全身控制">3. 人形机器人全身控制
+</h3><p>LeRobot v0.5.0 的 Unitree G1 支持开启新应用场景：</p>
+<ul>
+<li>移动操作任务（边行走边抓取）</li>
+<li>复杂环境导航和交互</li>
+<li>遥操作训练和数据采集</li>
+<li>具身智能研究</li>
+</ul>
+<h3 id="4-开源搜索智能体定制">4. 开源搜索智能体定制
+</h3><p>OpenSeeker 的完全开源特性使研究者可以：</p>
+<ul>
+<li>针对特定领域微调搜索策略</li>
+<li>研究和改进数据合成方法</li>
+<li>开发新的搜索基准和评估方法</li>
+<li>构建透明、可审计的搜索系统</li>
+</ul>
+<h2 id="-统计汇总">📊 统计汇总
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>类别</th>
+          <th>项目数量</th>
+          <th>关键指标</th>
+          <th>开源情况</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>大模型</td>
+          <td>2</td>
+          <td>Nemotron 3 Nano 4B (4B), Holotron-12B (12B)</td>
+          <td>权重开源</td>
+      </tr>
+      <tr>
+          <td>搜索智能体</td>
+          <td>1</td>
+          <td>OpenSeeker (BrowseComp 29.5%)</td>
+          <td>完全开源</td>
+      </tr>
+      <tr>
+          <td>机器人框架</td>
+          <td>1</td>
+          <td>LeRobot v0.5.0 (6 项新策略)</td>
+          <td>完全开源</td>
+      </tr>
+      <tr>
+          <td>训练技术</td>
+          <td>1</td>
+          <td>Ulysses SP (百万 token 上下文)</td>
+          <td>完全开源</td>
+      </tr>
+      <tr>
+          <td>XAI 研究</td>
+          <td>1</td>
+          <td>反事实解释指标研究</td>
+          <td>论文公开</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="性能对比表">性能对比表
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>模型/方法</th>
+          <th>参数量</th>
+          <th>关键基准</th>
+          <th>性能</th>
+          <th>硬件需求</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Nemotron 3 Nano 4B</td>
+          <td>4B</td>
+          <td>IFBench/IFEval</td>
+          <td>SOTA</td>
+          <td>RTX 4070/Jetson</td>
+      </tr>
+      <tr>
+          <td>Holotron-12B</td>
+          <td>12B</td>
+          <td>WebVoyager</td>
+          <td>80.5%</td>
+          <td>1x H100</td>
+      </tr>
+      <tr>
+          <td>OpenSeeker</td>
+          <td>30B (Qwen3)</td>
+          <td>BrowseComp</td>
+          <td>29.5%</td>
+          <td>通用 GPU</td>
+      </tr>
+      <tr>
+          <td>Holo2-8B</td>
+          <td>8B</td>
+          <td>WebVoyager</td>
+          <td>&lt;80.5%</td>
+          <td>1x H100</td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="-全部参考链接">📖 全部参考链接
+</h2><h3 id="论文与博客">论文与博客
+</h3><ol>
+<li><a class="link" href="https://huggingface.co/blog/nvidia/nemotron-3-nano-4b"  target="_blank" rel="noopener"
+    >Nemotron 3 Nano 4B - Hugging Face Blog</a></li>
+<li><a class="link" href="https://huggingface.co/blog/Hcompany/holotron-12b"  target="_blank" rel="noopener"
+    >Holotron-12B - Hugging Face Blog</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.15594"  target="_blank" rel="noopener"
+    >OpenSeeker - arXiv:2603.15594</a></li>
+<li><a class="link" href="https://huggingface.co/blog/lerobot-release-v050"  target="_blank" rel="noopener"
+    >LeRobot v0.5.0 - Hugging Face Blog</a></li>
+<li><a class="link" href="https://huggingface.co/blog/ulysses-sp"  target="_blank" rel="noopener"
+    >Ulysses Sequence Parallelism - Hugging Face Blog</a></li>
+<li><a class="link" href="https://arxiv.org/abs/2603.15607"  target="_blank" rel="noopener"
+    >Do Metrics for Counterfactual Explanations Align with User Perception? - arXiv:2603.15607</a></li>
+</ol>
+<h3 id="模型与代码">模型与代码
+</h3><ol>
+<li><a class="link" href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16"  target="_blank" rel="noopener"
+    >NVIDIA-Nemotron-3-Nano-4B-BF16</a></li>
+<li><a class="link" href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-FP8"  target="_blank" rel="noopener"
+    >NVIDIA-Nemotron-3-Nano-4B-FP8</a></li>
+<li><a class="link" href="https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-GGUF"  target="_blank" rel="noopener"
+    >NVIDIA-Nemotron-3-Nano-4B-GGUF</a></li>
+<li><a class="link" href="https://huggingface.co/Hcompany/Holotron-12B"  target="_blank" rel="noopener"
+    >Holotron-12B</a></li>
+<li><a class="link" href="https://huggingface.co/docs/lerobot"  target="_blank" rel="noopener"
+    >LeRobot v0.5.0 Documentation</a></li>
+</ol>
+<h3 id="相关资源">相关资源
+</h3><ol>
+<li><a class="link" href="https://arxiv.org/abs/2511.16664"  target="_blank" rel="noopener"
+    >Nemotron Elastic Paper - arXiv:2511.16664</a></li>
+<li><a class="link" href="https://www.jetson-ai-lab.com/models/"  target="_blank" rel="noopener"
+    >Jetson AI Lab</a></li>
+<li><a class="link" href="https://developer.nvidia.com/rtx/in-game-inferencing"  target="_blank" rel="noopener"
+    >NVIGI SDK</a></li>
+<li><a class="link" href="https://github.com/NVIDIA-NeMo/RL"  target="_blank" rel="noopener"
+    >NeMo-RL</a></li>
+<li><a class="link" href="https://github.com/NVIDIA-NeMo/Gym/"  target="_blank" rel="noopener"
+    >NeMo-Gym</a></li>
+</ol>
+<hr>
+<p><em>生成时间：2026-03-18 00:00 UTC</em>
+<em>数据来源：arXiv, Hugging Face Blog, NVIDIA Research</em></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ai/">AI</a>
+        
+            <a href="/tags/llm/">LLM</a>
+        
+            <a href="/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a>
+        
+            <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA/">机器人</a>
+        
+            <a href="/tags/agent/">Agent</a>
+        
+            <a href="/tags/nvidia/">NVIDIA</a>
+        
+            <a href="/tags/%E5%BC%80%E6%BA%90/">开源</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2026-03-20
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-10bevlm-%E8%AF%AD%E4%B9%89%E8%92%B8%E9%A6%8F%E6%8F%90%E5%8D%87%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E5%AE%89%E5%85%A8schema-gated-%E6%99%BA%E8%83%BD%E4%BD%93%E6%9E%B6%E6%9E%84lerobot-v0.5.0-%E5%8F%91%E5%B8%83/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-10：BEVLM 语义蒸馏提升自动驾驶安全、Schema-Gated 智能体架构、LeRobot v0.5.0 发布</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-11</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-09</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-08</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ai-%E6%97%A5%E6%8A%A5-2026-03-20/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">AI 日报 | 2026-03-20</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="HHjoker/HHjoker.github.io"
+    data-repo-id="R_kgDON1Vqng"
+    data-category="Announcements"
+    data-category-id="DIC_kwDON1Vqns4C3qHd"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('preferred_color_scheme');
+            } else {
+                setGiscusTheme('preferred_color_scheme');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 Huang Hao
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+    #TableOfContents > ul ul,
+    #TableOfContents > ul ol,
+    #TableOfContents > ol ul,
+    #TableOfContents > ol ol {
+        display: none;
+    }
+    #TableOfContents > ul .open,
+    #TableOfContents > ol .open {
+        display: block;
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://HHjoker.github.io/icons/backTop.svg);
+    }
+</style>
+
+<script type="text/javascript">
+    
+
+    function initScrollTop() {
+        let rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) {
+            return;
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop
+        rightSideBar.appendChild(btn)
+        
+        window.onscroll = function() {
+            
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    }
+
+    
+
+    function backToTop(){
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    initScrollTop();
+</script>
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    let codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) {
+      return;
+    }
+    codeBlocks.forEach(codeBlock => {
+      
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+        return;
+      }
+      
+      
+      let codeMoreBox = document.createElement('div');
+      codeMoreBox.classList.add('code-more-box');
+      
+      let codeMoreBtn = document.createElement('span');
+      codeMoreBtn.classList.add('code-more-btn');
+      codeMoreBtn.addEventListener('click', () => {
+        codeBlock.classList.add('code-show');
+        codeMoreBox.style.display = 'none';
+        
+        window.dispatchEvent(new Event('resize'))
+      })
+      
+      let img = document.createElement('img');
+      img.classList.add('code-more-img');
+      img.src = "https://HHjoker.github.io/icons/codeMore.ico"
+      
+      codeMoreBtn.appendChild(img);
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox)
+    })
+  }
+  
+  initCodeMoreBox();
+</script>
+
+    </body>
+</html>

@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Wed, 11 Mar 2026 11:24:17 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 20 Mar 2026 21:10:52 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>AI 日报 | 2026-03-11</title>
         <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/</link>
         <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
@@ -91,7 +91,7 @@
 &lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/lerobot_g1_humanoid.jpg&#34;
 	width=&#34;3024&#34;
 	height=&#34;3024&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/lerobot_g1_humanoid_hu_9f63aad436629edf.jpg 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/lerobot_g1_humanoid_hu_8780dd2f145a0743.jpg 1024w&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/lerobot_g1_humanoid_hu_ac8f343b30d7a744.jpg 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/lerobot_g1_humanoid_hu_e55aac0a151a9059.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;LeRobot Unitree G1 人形机器人&#34;
@@ -114,20 +114,6 @@
 &lt;p&gt;&lt;strong&gt;核心问题&lt;/strong&gt;：如何让智能体发展出真正的自我反思能力，而非仅仅模仿反思行为？&lt;/p&gt;
 &lt;h4 id=&#34;核心方法agentic-critical-training-act&#34;&gt;核心方法：Agentic Critical Training (ACT)
 &lt;/h4&gt;&lt;p&gt;ACT 提出了一种全新的强化学习范式，核心思想是&lt;strong&gt;训练智能体识别哪个动作更好&lt;/strong&gt;，而非模仿预生成的反思文本。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/act_method_figure1.png&#34;
-	width=&#34;793&#34;
-	height=&#34;446&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/act_method_figure1_hu_19ea8268f1191a03.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/act_method_figure1_hu_205978657d7a7b52.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;ACT 方法对比：模仿反思 vs 真正自我反思&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;177&#34;
-		data-flex-basis=&#34;426px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;关键创新点&lt;/strong&gt;：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -142,20 +128,6 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/act_pipeline_figure2.png&#34;
-	width=&#34;793&#34;
-	height=&#34;446&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/act_pipeline_figure2_hu_6e157fd13d0b4ed8.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-11/act_pipeline_figure2_hu_3cef27721f2b8015.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;ACT 训练流程概览&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;177&#34;
-		data-flex-basis=&#34;426px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;奖励设计&lt;/strong&gt;：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;

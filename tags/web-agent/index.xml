@@ -7,7 +7,333 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Sun, 08 Mar 2026 18:16:58 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/web-agent/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 20 Mar 2026 21:10:52 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/web-agent/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI 日报 | 2026-03-20</title>
+        <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-20/</link>
+        <pubDate>Fri, 20 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-20/</guid>
+        <description>&lt;h1 id=&#34;ai-日报--2026年03月20日星期五&#34;&gt;AI 日报 | 2026年03月20日（星期五）
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;📅 日期：2026年03月20日 | 📊 今日收录：&lt;strong&gt;15 篇论文&lt;/strong&gt; | 🔬 重点领域：LLM、Multimodal、Benchmark | 🚀 大模型应用：15 项&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Loc3R-VLM&lt;/strong&gt; (LLM): Multimodal Large Language Models (MLLMs) have made impressive progress in connecting vision and language, but they still&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AgentVLN&lt;/strong&gt; (Agent): Vision-and-Language Navigation (VLN) requires an embodied agent to ground complex natural-language instructions into lon&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AERR-Nav&lt;/strong&gt; (LLM): Zero-Shot Object Navigation (ZSON) in unknown multi-floor environments presents a significant challenge. Recent methods,&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MALLES&lt;/strong&gt; (LLM): In the real economy, modern decision-making is fundamentally challenged by high-dimensional, multimodal environments, wh&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Feeling the Space&lt;/strong&gt; (LLM): Recent Multimodal Large Language Models (MLLMs) have shown high potential for spatial reasoning within 3D scenes. Howeve&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-大模型应用亮点&#34;&gt;🚀 大模型应用亮点
+&lt;/h2&gt;&lt;h3 id=&#34;loc3r-vlm-language-based-localization-and-3d-reasoning-with-vision-language-models&#34;&gt;Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.18002v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning, RAG, Alignment&lt;/p&gt;
+&lt;p&gt;Multimodal Large Language Models (MLLMs) have made impressive progress in connecting vision and language, but they still struggle with spatial understanding and viewpoint-aware reasoning. Recent efforts aim to augment the input representations with geometric cues rather than explicitly teaching mode&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;agentvln-towards-agentic-vision-and-language-navigation&#34;&gt;AgentVLN: Towards Agentic Vision-and-Language Navigation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17670v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: Agent, Multimodal, Benchmark, Reasoning, Web Agent, Code Generation&lt;/p&gt;
+&lt;p&gt;Vision-and-Language Navigation (VLN) requires an embodied agent to ground complex natural-language instructions into long-horizon navigation in unseen environments. While Vision-Language Models (VLMs) offer strong 2D semantic understanding, current VLN systems remain constrained by limited spatial p&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;aerr-nav-adaptive-exploration-recovery-reminiscing-strategy-for-zero-shot-object-navigation&#34;&gt;AERR-Nav: Adaptive Exploration-Recovery-Reminiscing Strategy for Zero-Shot Object Navigation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17712v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Multimodal, Robotics, Benchmark, Reasoning, Memory&lt;/p&gt;
+&lt;p&gt;Zero-Shot Object Navigation (ZSON) in unknown multi-floor environments presents a significant challenge. Recent methods, mostly based on semantic value greedy waypoint selection, spatial topology-enhanced memory, and Multimodal Large Language Model (MLLM) as a decision-making framework, have led to &amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;-论文一览&#34;&gt;📚 论文一览
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;#&lt;/th&gt;
+          &lt;th&gt;论文&lt;/th&gt;
+          &lt;th&gt;第一作者&lt;/th&gt;
+          &lt;th&gt;领域&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.18002v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Loc3R-VLM: Language-based Localizat&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Reasoning, RAG, Alignment&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17670v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AgentVLN: Towards Agentic Vision-an&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Reasoning, Web Agent, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17712v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AERR-Nav: Adaptive Exploration-Reco&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Robotics, Benchmark, Reasoning, Memory&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17694v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MALLES: A Multi-agent LLMs-based Ec&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Multimodal, Training, RAG, Alignment&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17980v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Feeling the Space: Egomotion-Aware &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17746v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Concept-to-Pixel: Prompt-Free Unive&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Training, RAG, Medical AI, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;7&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17826v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;FailureMem: A Failure-Aware Multimo&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Multimodal, Reasoning, Web Agent, Memory, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17680v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;WeatherReasonSeg: A Benchmark for W&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Reasoning, Web Agent&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17815v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Process Supervision for Chain-of-Th&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Training, Reasoning, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17930v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Interpretable Traffic Responsibilit&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Multimodal, Reasoning&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;11&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17850v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ProbeFlow: Training-Free Adaptive F&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Multimodal, Robotics, Benchmark, Training, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;12&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17831v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RPMS: Enhancing LLM-Based Embodied &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Reasoning, RAG, Memory&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;13&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17781v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Facts as First Class Objects: Knowl&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Reasoning, RAG, Memory&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;14&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17993v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GMT: Goal-Conditioned Multimodal Tr&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Multimodal, Robotics, Benchmark, Transformer, Training, Reasoning, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;15&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17787v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Governed Memory: A Production Archi&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Benchmark, RAG, Memory&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-详细介绍&#34;&gt;🔍 详细介绍
+&lt;/h2&gt;&lt;h3 id=&#34;论文1-loc3r-vlm-language-based-localization-and-3d-reasoning-with-vision-language-models&#34;&gt;论文1: Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.18002v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.18002v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.18002v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning, RAG, Alignment&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal Large Language Models (MLLMs) have made impressive progress in connecting vision and language, but they still struggle with spatial understanding and viewpoint-aware reasoning. Recent efforts aim to augment the input representations with geometric cues rather than explicitly teaching models to reason in 3D space. We introduce Loc3R-VLM, a framework that equips 2D Vision-Language Models &amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文2-agentvln-towards-agentic-vision-and-language-navigation&#34;&gt;论文2: AgentVLN: Towards Agentic Vision-and-Language Navigation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17670v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17670v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17670v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Reasoning, Web Agent, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Vision-and-Language Navigation (VLN) requires an embodied agent to ground complex natural-language instructions into long-horizon navigation in unseen environments. While Vision-Language Models (VLMs) offer strong 2D semantic understanding, current VLN systems remain constrained by limited spatial perception, 2D-3D representation mismatch, and monocular scale ambiguity. In this paper, we propose A&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文3-aerr-nav-adaptive-exploration-recovery-reminiscing-strategy-for-zero-shot-object-navigation&#34;&gt;论文3: AERR-Nav: Adaptive Exploration-Recovery-Reminiscing Strategy for Zero-Shot Object Navigation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17712v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17712v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17712v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Robotics, Benchmark, Reasoning, Memory&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Zero-Shot Object Navigation (ZSON) in unknown multi-floor environments presents a significant challenge. Recent methods, mostly based on semantic value greedy waypoint selection, spatial topology-enhanced memory, and Multimodal Large Language Model (MLLM) as a decision-making framework, have led to improvements. However, these architectures struggle to balance exploration and exploitation for ZSON&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文4-malles-a-multi-agent-llms-based-economic-sandbox-with-consumer-preference-alignment&#34;&gt;论文4: MALLES: A Multi-agent LLMs-based Economic Sandbox with Consumer Preference Alignment
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17694v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17694v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17694v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Multimodal, Training, RAG, Alignment&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: In the real economy, modern decision-making is fundamentally challenged by high-dimensional, multimodal environments, which are further complicated by agent heterogeneity and combinatorial data sparsity. This paper introduces a Multi-Agent Large Language Model-based Economic Sandbox (MALLES), leveraging the inherent generalization capabilities of large-sacle models to establish a unified simulatio&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文5-feeling-the-space-egomotion-aware-video-representation-for-efficient-and-accurate-3d-scene-understanding&#34;&gt;论文5: Feeling the Space: Egomotion-Aware Video Representation for Efficient and Accurate 3D Scene Understanding
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17980v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17980v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17980v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Recent Multimodal Large Language Models (MLLMs) have shown high potential for spatial reasoning within 3D scenes. However, they typically rely on computationally expensive 3D representations like point clouds or reconstructed Bird&amp;rsquo;s-Eye View (BEV) maps, or lack physical grounding to resolve ambiguities in scale and size. This paper significantly enhances MLLMs with egomotion modality data, capture&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文6-concept-to-pixel-prompt-free-universal-medical-image-segmentation&#34;&gt;论文6: Concept-to-Pixel: Prompt-Free Universal Medical Image Segmentation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17746v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17746v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17746v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Training, RAG, Medical AI, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Universal medical image segmentation seeks to use a single foundational model to handle diverse tasks across multiple imaging modalities. However, existing approaches often rely heavily on manual visual prompts or retrieved reference images, which limits their automation and robustness. In addition, naive joint training across modalities often fails to address large domain shifts. To address these&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文7-failuremem-a-failure-aware-multimodal-framework-for-autonomous-software-repair&#34;&gt;论文7: FailureMem: A Failure-Aware Multimodal Framework for Autonomous Software Repair
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17826v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17826v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17826v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Multimodal, Reasoning, Web Agent, Memory, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal Automated Program Repair (MAPR) extends traditional program repair by requiring models to jointly reason over source code, textual issue descriptions, and visual artifacts such as GUI screenshots. While recent LLM-based repair systems have shown promising results, existing approaches face several limitations: rigid workflow pipelines restrict exploration during debugging, visual reasoni&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文8-weatherreasonseg-a-benchmark-for-weather-aware-reasoning-segmentation-in-visual-language-models&#34;&gt;论文8: WeatherReasonSeg: A Benchmark for Weather-Aware Reasoning Segmentation in Visual Language Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17680v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17680v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17680v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning, Web Agent&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Existing vision-language models (VLMs) have demonstrated impressive performance in reasoning-based segmentation. However, current benchmarks are primarily constructed from high-quality images captured under idealized conditions. This raises a critical question: when visual cues are severely degraded by adverse weather conditions such as rain, snow, or fog, can VLMs sustain reliable reasoning segme&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文9-process-supervision-for-chain-of-thought-reasoning-via-monte-carlo-net-information-gain&#34;&gt;论文9: Process Supervision for Chain-of-Thought Reasoning via Monte Carlo Net Information Gain
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17815v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17815v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17815v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Benchmark, Training, Reasoning, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multi-step reasoning improves the capabilities of large language models (LLMs) but increases the risk of errors propagating through intermediate steps. Process reward models (PRMs) mitigate this by scoring each step individually, enabling fine-grained supervision and improved reliability. Existing methods for training PRMs rely on costly human annotations or computationally intensive automatic lab&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文10-interpretable-traffic-responsibility-from-dashcam-video-via-legal-multi-agent-reasoning&#34;&gt;论文10: Interpretable Traffic Responsibility from Dashcam Video via Legal Multi Agent Reasoning
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17930v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17930v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17930v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Multimodal, Reasoning&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: The widespread adoption of dashcams has made video evidence in traffic accidents increasingly abundant, yet transforming &amp;ldquo;what happened in the video&amp;rdquo; into &amp;ldquo;who is responsible under which legal provisions&amp;rdquo; still relies heavily on human experts. Existing ego-view traffic accident studies mainly focus on perception and semantic understanding, while LLM-based legal methods are mostly built on textual &amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文11-probeflow-training-free-adaptive-flow-matching-for-vision-language-action-models&#34;&gt;论文11: ProbeFlow: Training-Free Adaptive Flow Matching for Vision-Language-Action Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17850v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17850v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17850v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Multimodal, Robotics, Benchmark, Training, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Recent Vision-Language-Action (VLA) models equipped with Flow Matching (FM) action heads achieve state-of-the-art performance in complex robot manipulation. However, the multi-step iterative ODE solving required by FM introduces inference latency that precludes responsive physical control. While current acceleration efforts optimize the Vision-Language Model (VLM) backbone, the action head bottlen&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文12-rpms-enhancing-llm-based-embodied-planning-through-rule-augmented-memory-synergy&#34;&gt;论文12: RPMS: Enhancing LLM-Based Embodied Planning through Rule-Augmented Memory Synergy
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17831v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17831v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17831v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Reasoning, RAG, Memory&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: LLM agents often fail in closed-world embodied environments because actions must satisfy strict preconditions &amp;ndash; such as location, inventory, and container states &amp;ndash; and failure feedback is sparse. We identify two structurally coupled failure modes: (P1) invalid action generation and (P2) state drift, each amplifying the other in a degenerative cycle. We present RPMS, a conflict-managed architectu&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文13-facts-as-first-class-objects-knowledge-objects-for-persistent-llm-memory&#34;&gt;论文13: Facts as First Class Objects: Knowledge Objects for Persistent LLM Memory
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17781v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17781v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17781v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Benchmark, Reasoning, RAG, Memory&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Large language models increasingly serve as persistent knowledge workers, with in-context memory - facts stored in the prompt - as the default strategy. We benchmark in-context memory against Knowledge Objects (KOs), discrete hash-addressed tuples with O(1) retrieval. Within the context window, Claude Sonnet 4.5 achieves 100% exact-match accuracy from 10 to 7,000 facts (97.5% of its 200K window). &amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文14-gmt-goal-conditioned-multimodal-transformer-for-6-dof-object-trajectory-synthesis-in-3d-scenes&#34;&gt;论文14: GMT: Goal-Conditioned Multimodal Transformer for 6-DOF Object Trajectory Synthesis in 3D Scenes
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17993v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17993v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17993v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Multimodal, Robotics, Benchmark, Transformer, Training, Reasoning, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Synthesizing controllable 6-DOF object manipulation trajectories in 3D environments is essential for enabling robots to interact with complex scenes, yet remains challenging due to the need for accurate spatial reasoning, physical feasibility, and multimodal scene understanding. Existing approaches often rely on 2D or partial 3D representations, limiting their ability to capture full scene geometr&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文15-governed-memory-a-production-architecture-for-multi-agent-workflows&#34;&gt;论文15: Governed Memory: A Production Architecture for Multi-Agent Workflows
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17787v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17787v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17787v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Benchmark, RAG, Memory&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Enterprise AI deploys dozens of autonomous agent nodes across workflows, each acting on the same entities with no shared memory and no common governance. We identify five structural challenges arising from this memory governance gap: memory silos across agent workflows; governance fragmentation across teams and tools; unstructured memories unusable by downstream systems; redundant context delivery&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-行业快报&#34;&gt;🏢 行业快报
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;OpenAI 发布新模型更新&lt;/strong&gt;: OpenAI 持续优化 GPT 系列模型，提升推理能力和多模态理解性能。 &lt;em&gt;(OpenAI Blog)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anthropic Claude 功能增强&lt;/strong&gt;: Claude 系列模型新增长上下文支持和改进的代码能力。 &lt;em&gt;(Anthropic)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Google DeepMind 研究进展&lt;/strong&gt;: DeepMind 在多模态学习和机器人控制领域取得新的突破。 &lt;em&gt;(Google DeepMind)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-全部参考链接&#34;&gt;📖 全部参考链接
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.18002v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17670v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AgentVLN: Towards Agentic Vision-and-Language Navigation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17712v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AERR-Nav: Adaptive Exploration-Recovery-Reminiscing Strategy for Zero-Shot Object Navigation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17694v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MALLES: A Multi-agent LLMs-based Economic Sandbox with Consumer Preference Alignment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17980v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Feeling the Space: Egomotion-Aware Video Representation for Efficient and Accurate 3D Scene Understanding&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17746v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Concept-to-Pixel: Prompt-Free Universal Medical Image Segmentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17826v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;FailureMem: A Failure-Aware Multimodal Framework for Autonomous Software Repair&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17680v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;WeatherReasonSeg: A Benchmark for Weather-Aware Reasoning Segmentation in Visual Language Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17815v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Process Supervision for Chain-of-Thought Reasoning via Monte Carlo Net Information Gain&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17930v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Interpretable Traffic Responsibility from Dashcam Video via Legal Multi Agent Reasoning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17850v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ProbeFlow: Training-Free Adaptive Flow Matching for Vision-Language-Action Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17831v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RPMS: Enhancing LLM-Based Embodied Planning through Rule-Augmented Memory Synergy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17781v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Facts as First Class Objects: Knowledge Objects for Persistent LLM Memory&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17993v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GMT: Goal-Conditioned Multimodal Transformer for 6-DOF Object Trajectory Synthesis in 3D Scenes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17787v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Governed Memory: A Production Architecture for Multi-Agent Workflows&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;📬 AI 日报自动抓取自 arXiv，每日早 8 点更新&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;💬 重点聚焦：大模型、Agent、多模态、机器人等方向&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;📊 统计：今日共收录 15 篇论文，其中大模型应用 15 项&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>AI 日报 | 2026-03-07</title>
         <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/</link>
         <pubDate>Sat, 07 Mar 2026 08:00:00 +0800</pubDate>
@@ -15,7 +341,8 @@
         <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-07/</guid>
         <description>&lt;h1 id=&#34;ai-日报--2026年03月07日星期六&#34;&gt;AI 日报 | 2026年03月07日（星期六）
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;📅 日期：2026年03月07日 | 📊 今日收录：&lt;strong&gt;15 篇论文&lt;/strong&gt; | 🔬 重点领域：LLM、Agent、Reasoning | 🚀 大模型应用：15 项&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;📅 日期：2026年03月07日 | 📊 今日收录：&lt;strong&gt;15 篇论文&lt;/strong&gt; | 🔬 重点领域：LLM、Agent、Reasoning | 🚀 大模型应用：15 项&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
 &lt;/h2&gt;&lt;ul&gt;

@@ -1,0 +1,2672 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="第 7 周第 4 天，学习 Rust 文档测试与示例测试，让文档代码始终保持可运行状态">
+<title>Rust 每日学习 Day 46：文档测试与示例测试</title>
+
+<link rel='canonical' href='https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-46%E6%96%87%E6%A1%A3%E6%B5%8B%E8%AF%95%E4%B8%8E%E7%A4%BA%E4%BE%8B%E6%B5%8B%E8%AF%95/'>
+
+<link rel="stylesheet" href="/scss/style.min.5caa0083058cdfc89d0c8e69326bb902aecd0db5e8bd671bb459c72d56e97f25.css"><meta property='og:title' content="Rust 每日学习 Day 46：文档测试与示例测试">
+<meta property='og:description' content="第 7 周第 4 天，学习 Rust 文档测试与示例测试，让文档代码始终保持可运行状态">
+<meta property='og:url' content='https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-46%E6%96%87%E6%A1%A3%E6%B5%8B%E8%AF%95%E4%B8%8E%E7%A4%BA%E4%BE%8B%E6%B5%8B%E8%AF%95/'>
+<meta property='og:site_name' content='HH Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Rust' /><meta property='article:tag' content='测试' /><meta property='article:tag' content='文档测试' /><meta property='article:tag' content='示例代码' /><meta property='article:tag' content='cargo doc' /><meta property='article:published_time' content='2026-04-17T13:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-04-17T21:06:28&#43;08:00'/>
+<meta name="twitter:title" content="Rust 每日学习 Day 46：文档测试与示例测试">
+<meta name="twitter:description" content="第 7 周第 4 天，学习 Rust 文档测试与示例测试，让文档代码始终保持可运行状态">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_1f27e3376f1b4a0e.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">HH Blog</a></h1>
+            <h2 class="site-description">欢迎来到我的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/HHjoker'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://HHjoker.github.io/en/" >English</option>
+                                
+                                    <option value="https://HHjoker.github.io/" selected>中文</option>
+                                
+                                    <option value="https://HHjoker.github.io/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#第-7-周学习路线">第 7 周学习路线</a></li>
+    <li><a href="#什么是文档测试">什么是文档测试？</a>
+      <ol>
+        <li><a href="#传统文档的问题">传统文档的问题</a></li>
+        <li><a href="#rust-的解决方案">Rust 的解决方案</a></li>
+      </ol>
+    </li>
+    <li><a href="#文档测试基础">文档测试基础</a>
+      <ol>
+        <li><a href="#基本语法">基本语法</a></li>
+        <li><a href="#运行文档测试">运行文档测试</a></li>
+      </ol>
+    </li>
+    <li><a href="#文档测试的特殊语法">文档测试的特殊语法</a>
+      <ol>
+        <li><a href="#隐藏代码行使用-">隐藏代码行（使用 <code>#</code>）</a></li>
+        <li><a href="#隐藏整个代码块">隐藏整个代码块</a></li>
+        <li><a href="#期待失败的测试">期待失败的测试</a></li>
+        <li><a href="#指定-rust-版本">指定 Rust 版本</a></li>
+      </ol>
+    </li>
+    <li><a href="#完整的文档测试示例">完整的文档测试示例</a>
+      <ol>
+        <li><a href="#示例-1简单的数学函数">示例 1：简单的数学函数</a></li>
+        <li><a href="#示例-2带有-result-的函数">示例 2：带有 Result 的函数</a></li>
+        <li><a href="#示例-3结构体方法">示例 3：结构体方法</a></li>
+      </ol>
+    </li>
+    <li><a href="#文档测试中的常见模式">文档测试中的常见模式</a>
+      <ol>
+        <li><a href="#1-导入处理">1. 导入处理</a></li>
+        <li><a href="#2-多代码块示例">2. 多代码块示例</a></li>
+        <li><a href="#3-条件编译">3. 条件编译</a></li>
+      </ol>
+    </li>
+    <li><a href="#示例测试最佳实践">示例测试最佳实践</a>
+      <ol>
+        <li><a href="#1-示例应该是独立的">1. 示例应该是独立的</a></li>
+        <li><a href="#2-示例应该展示常见用法">2. 示例应该展示常见用法</a></li>
+        <li><a href="#3-示例应该包含边界情况">3. 示例应该包含边界情况</a></li>
+        <li><a href="#4-使用有意义的变量名">4. 使用有意义的变量名</a></li>
+      </ol>
+    </li>
+    <li><a href="#完整项目示例">完整项目示例</a></li>
+    <li><a href="#文档测试的高级技巧">文档测试的高级技巧</a>
+      <ol>
+        <li><a href="#1-使用-setup-和-teardown">1. 使用 <code>setup</code> 和 <code>teardown</code></a></li>
+        <li><a href="#2-测试错误处理">2. 测试错误处理</a></li>
+        <li><a href="#3-展示-api-的演进">3. 展示 API 的演进</a></li>
+      </ol>
+    </li>
+    <li><a href="#关键概念理解">关键概念理解</a>
+      <ol>
+        <li><a href="#1-文档测试-vs-单元测试">1. 文档测试 vs 单元测试</a></li>
+        <li><a href="#2-为什么文档测试重要">2. 为什么文档测试重要？</a></li>
+        <li><a href="#3-文档测试的局限性">3. 文档测试的局限性</a></li>
+      </ol>
+    </li>
+    <li><a href="#练习题">练习题</a>
+      <ol>
+        <li><a href="#练习-1为函数添加文档测试">练习 1：为函数添加文档测试</a></li>
+        <li><a href="#练习-2为结构体编写文档">练习 2：为结构体编写文档</a></li>
+        <li><a href="#练习-3展示错误处理">练习 3：展示错误处理</a></li>
+        <li><a href="#练习-4多步骤示例">练习 4：多步骤示例</a></li>
+        <li><a href="#练习-5完整模块文档">练习 5：完整模块文档</a></li>
+      </ol>
+    </li>
+    <li><a href="#明日计划">明日计划</a></li>
+    <li><a href="#参考资源">参考资源</a></li>
+    <li><a href="#今日感悟">今日感悟</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/" >
+                Rust 每日学习
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-46%E6%96%87%E6%A1%A3%E6%B5%8B%E8%AF%95%E4%B8%8E%E7%A4%BA%E4%BE%8B%E6%B5%8B%E8%AF%95/">Rust 每日学习 Day 46：文档测试与示例测试</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            第 7 周第 4 天，学习 Rust 文档测试与示例测试，让文档代码始终保持可运行状态
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-04-17</time>
+            </div>
+        
+        <div class="article-lastmod">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time>
+                    2026-04-17
+                </time>
+            </div>
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="rust-每日学习-day-46文档测试与示例测试">Rust 每日学习 Day 46：文档测试与示例测试
+</h1><h2 id="今日概览">今日概览
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>项目</th>
+          <th>内容</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>学习日期</td>
+          <td>2026-04-17</td>
+      </tr>
+      <tr>
+          <td>学习阶段</td>
+          <td>第 7 周 - 测试</td>
+      </tr>
+      <tr>
+          <td>今日主题</td>
+          <td>文档测试与示例测试</td>
+      </tr>
+      <tr>
+          <td>预计时长</td>
+          <td>2-3 小时</td>
+      </tr>
+      <tr>
+          <td>难度等级</td>
+          <td>⭐⭐⭐☆☆</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="第-7-周学习路线">第 7 周学习路线
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Day 43: 测试基础（单元测试、集成测试） ✓
+</span></span><span class="line"><span class="cl">Day 44: 测试进阶（参数化测试、测试组织） ✓
+</span></span><span class="line"><span class="cl">Day 45: 测试工具与 Mocking ✓
+</span></span><span class="line"><span class="cl">Day 46: 文档测试与示例测试 ← 今天
+</span></span><span class="line"><span class="cl">Day 47: 测试驱动开发（TDD）实践
+</span></span><span class="line"><span class="cl">Day 48: 性能测试与基准测试
+</span></span><span class="line"><span class="cl">Day 49: 第 7 周总结与测试最佳实践
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="什么是文档测试">什么是文档测试？
+</h2><p>文档测试（Doc Tests）是 Rust 独有的强大功能：<strong>写在文档注释中的代码示例，可以直接作为测试运行</strong>。</p>
+<h3 id="传统文档的问题">传统文档的问题
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 计算两个数的和
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 使用示例：
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let result = add(2, 3);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert_eq!(result, 5);  // 但没人知道这个示例是否真的能运行
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">b</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>问题：文档中的示例代码可能已经过时，但没人知道！</p>
+<h3 id="rust-的解决方案">Rust 的解决方案
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 计算两个数的和
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # Examples
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let result = add(2, 3);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert_eq!(result, 5);  // 这个示例会被 cargo test 自动运行！
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">b</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行 <code>cargo test</code> 时，Rust 会：</p>
+<ol>
+<li>提取所有文档注释中的代码块</li>
+<li>编译并运行它们</li>
+<li>确保示例代码始终有效</li>
+</ol>
+<hr>
+<h2 id="文档测试基础">文档测试基础
+</h2><h3 id="基本语法">基本语法
+</h3><p>文档测试使用 <code>///</code>（单行）或 <code>/** ... */</code>（多行）注释，代码块用三个反引号标记。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 将字符串转换为大写
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # Examples
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// use my_crate::to_uppercase;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let result = to_uppercase(&#34;hello&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert_eq!(result, &#34;HELLO&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">to_uppercase</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">to_uppercase</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="运行文档测试">运行文档测试
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 运行所有测试（包括文档测试）</span>
+</span></span><span class="line"><span class="cl">cargo <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 只运行文档测试</span>
+</span></span><span class="line"><span class="cl">cargo <span class="nb">test</span> --doc
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行特定函数的文档测试</span>
+</span></span><span class="line"><span class="cl">cargo <span class="nb">test</span> --doc to_uppercase
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 生成文档并包含测试结果</span>
+</span></span><span class="line"><span class="cl">cargo doc --open
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="文档测试的特殊语法">文档测试的特殊语法
+</h2><h3 id="隐藏代码行使用-">隐藏代码行（使用 <code>#</code>）
+</h3><p>有时示例需要某些代码才能编译，但这些代码会干扰阅读。用 <code>#</code> 开头隐藏它们：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 计算阶乘
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # Examples
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # fn main() {
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// use my_crate::factorial;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let result = factorial(5);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert_eq!(result, 120);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # }
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span>: <span class="kt">u32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">u32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>#</code> 开头的行在文档中不显示，但会参与编译和测试。</p>
+<h3 id="隐藏整个代码块">隐藏整个代码块
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 内部辅助函数
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```ignore
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// // 这个示例不会运行，只用于展示
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// fn internal_helper() {
+</span></span></span><span class="line"><span class="cl"><span class="sd">///     // 复杂实现
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// }
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>ignore</code> 标记的代码块会被显示但不会运行测试。</p>
+<h3 id="期待失败的测试">期待失败的测试
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 除法函数（除数不能为 0）
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # Examples
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```should_panic
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// use my_crate::divide;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// // 这个测试应该 panic
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// divide(10, 0);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">b</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">panic!</span><span class="p">(</span><span class="s">&#34;Division by zero&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>should_panic</code> 标记表示这个测试预期会 panic。</p>
+<h3 id="指定-rust-版本">指定 Rust 版本
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// ```edition2021
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// use my_crate::new_feature;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// new_feature();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="完整的文档测试示例">完整的文档测试示例
+</h2><h3 id="示例-1简单的数学函数">示例 1：简单的数学函数
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 计算圆的面积
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # Formula
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// `area = π × r²`
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # Examples
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// use my_crate::circle_area;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let area = circle_area(5.0);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert!((area - 78.53981633974483).abs() &lt; 0.0001);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # Panics
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 当半径为负数时会 panic
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```should_panic
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// circle_area(-1.0);  // 半径不能为负
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">circle_area</span><span class="p">(</span><span class="n">radius</span>: <span class="kt">f64</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">f64</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">panic!</span><span class="p">(</span><span class="s">&#34;Radius cannot be negative&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">std</span>::<span class="kt">f64</span>::<span class="n">consts</span>::<span class="no">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="示例-2带有-result-的函数">示例 2：带有 Result 的函数
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 安全除法
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # Examples
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 成功的情况：
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// use my_crate::safe_divide;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let result = safe_divide(10, 2);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert_eq!(result, Ok(5));
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 失败的情况：
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// use my_crate::safe_divide;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let result = safe_divide(10, 0);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert!(result.is_err());
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">safe_divide</span><span class="p">(</span><span class="n">a</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">b</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nb">&#39;static</span><span class="w"> </span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Err</span><span class="p">(</span><span class="s">&#34;Division by zero&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="示例-3结构体方法">示例 3：结构体方法
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 表示一个计数器
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # Examples
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// use my_crate::Counter;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let mut counter = Counter::new();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// counter.increment();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// counter.increment();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert_eq!(counter.value(), 2);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// counter.reset();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert_eq!(counter.value(), 0);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="cp">#[derive(Debug, Default)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Counter</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">value</span>: <span class="kt">u32</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="n">Counter</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 创建新计数器
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// use my_crate::Counter;
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// let counter = Counter::new();
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// assert_eq!(counter.value(), 0);
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">new</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">Self</span>::<span class="n">default</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 增加计数
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// use my_crate::Counter;
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// let mut counter = Counter::new();
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// counter.increment();
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// assert_eq!(counter.value(), 1);
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">increment</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 重置计数器
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// use my_crate::Counter;
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// let mut counter = Counter::new();
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// counter.increment();
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// counter.increment();
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// counter.reset();
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// assert_eq!(counter.value(), 0);
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">reset</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 获取当前值
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// use my_crate::Counter;
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// let counter = Counter::new();
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// assert_eq!(counter.value(), 0);
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">value</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">u32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">value</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="文档测试中的常见模式">文档测试中的常见模式
+</h2><h3 id="1-导入处理">1. 导入处理
+</h3><p>文档测试默认在每个代码块中使用独立的命名空间。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 使用完整路径
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let result = my_crate::my_module::my_function();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 使用 use 导入
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// use my_crate::my_function;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let result = my_function();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 如果是 crate 根目录，可以直接使用
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let result = my_function();  // 在 lib.rs 中
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2-多代码块示例">2. 多代码块示例
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 分步示例
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 第一步：创建对象
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// use my_crate::Builder;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let builder = Builder::new();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 第二步：配置
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # use my_crate::Builder;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # let mut builder = Builder::new();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// builder.set_name(&#34;test&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// builder.set_value(42);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 第三步：构建
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # use my_crate::Builder;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # let mut builder = Builder::new();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # builder.set_name(&#34;test&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # builder.set_value(42);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let result = builder.build();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert!(result.is_ok());
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-条件编译">3. 条件编译
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 仅在特定条件下运行的示例
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```ignore
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// #[cfg(feature = &#34;advanced&#34;)]
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// {
+</span></span></span><span class="line"><span class="cl"><span class="sd">///     // 只有启用 advanced 特性时才运行
+</span></span></span><span class="line"><span class="cl"><span class="sd">///     advanced_operation();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// }
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="示例测试最佳实践">示例测试最佳实践
+</h2><h3 id="1-示例应该是独立的">1. 示例应该是独立的
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// ❌ 不好的示例 - 依赖前面的代码
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let x = 5;  // 第一个代码块
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// println!(&#34;{}&#34;, x);  // 错误！x 未定义
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ✅ 好的示例 - 每个代码块独立
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let x = 5;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// println!(&#34;{}&#34;, x);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2-示例应该展示常见用法">2. 示例应该展示常见用法
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// ❌ 过于复杂的示例
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let result = complex_setup()
+</span></span></span><span class="line"><span class="cl"><span class="sd">///     .and_then(|x| configure(x))
+</span></span></span><span class="line"><span class="cl"><span class="sd">///     .and_then(|x| initialize(x))
+</span></span></span><span class="line"><span class="cl"><span class="sd">///     .unwrap();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ✅ 简单清晰的示例
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let config = Config::new();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let result = config.run();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-示例应该包含边界情况">3. 示例应该包含边界情况
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 解析整数
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// use my_crate::parse_int;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// // 正常情况
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert_eq!(parse_int(&#34;42&#34;), Ok(42));
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// // 边界情况
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert_eq!(parse_int(&#34;0&#34;), Ok(0));
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert_eq!(parse_int(&#34;-1&#34;), Ok(-1));
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// // 错误情况
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert!(parse_int(&#34;not a number&#34;).is_err());
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">parse_int</span><span class="p">(</span><span class="n">s</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">std</span>::<span class="n">num</span>::<span class="n">ParseIntError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">parse</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="4-使用有意义的变量名">4. 使用有意义的变量名
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// ❌ 无意义的名称
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let x = get_user(1);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let y = process(x);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ✅ 有意义的名称
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let user = get_user(1);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let report = process(user);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="完整项目示例">完整项目示例
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span><span class="lnt">258
+</span><span class="lnt">259
+</span><span class="lnt">260
+</span><span class="lnt">261
+</span><span class="lnt">262
+</span><span class="lnt">263
+</span><span class="lnt">264
+</span><span class="lnt">265
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">//! # 一个简单的事件系统
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! 
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! 这个 crate 提供了一个轻量级的事件发布/订阅系统。
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! 
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! ## 快速开始
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! 
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! use event_system::{EventBus, Event};
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! 
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! // 创建事件总线
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! let mut bus = EventBus::new();
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! 
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! // 订阅事件
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! bus.subscribe(&#34;user_login&#34;, |event| {
+</span></span></span><span class="line"><span class="cl"><span class="sd">//!     println!(&#34;User logged in: {:?}&#34;, event);
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! });
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! 
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! // 发布事件
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! bus.publish(&#34;user_login&#34;, Event::new(&#34;alice&#34;));
+</span></span></span><span class="line"><span class="cl"><span class="sd">//! ```
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 表示一个事件
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # Examples
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// use event_system::Event;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let event = Event::new(&#34;user_login&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert_eq!(event.name(), &#34;user_login&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="cp">#[derive(Debug, Clone)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Event</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">name</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">data</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="n">Event</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 创建新事件
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// use event_system::Event;
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// let event = Event::new(&#34;click&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// assert_eq!(event.name(), &#34;click&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">new</span><span class="p">(</span><span class="n">name</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">Self</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">name</span>: <span class="nc">name</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">data</span>: <span class="nb">None</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 添加事件数据
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// use event_system::Event;
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// let event = Event::new(&#34;user_action&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">///     .with_data(&#34;clicked button&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// assert_eq!(event.data(), Some(&#34;clicked button&#34;));
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">with_data</span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">data</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">to_string</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">self</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 获取事件名称
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">name</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="kt">str</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="o">&amp;</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 获取事件数据
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">data</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">as_deref</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 事件处理器类型别名
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">type</span> <span class="nc">EventHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="nb">Fn</span><span class="p">(</span><span class="o">&amp;</span><span class="n">Event</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Send</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Sync</span><span class="o">&gt;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 事件总线
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # Examples
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// use event_system::{EventBus, Event};
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let mut bus = EventBus::new();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// // 订阅
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let handler_id = bus.subscribe(&#34;test&#34;, |event| {
+</span></span></span><span class="line"><span class="cl"><span class="sd">///     println!(&#34;Received: {}&#34;, event.name());
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// });
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// // 发布
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// bus.publish(&#34;test&#34;, Event::new(&#34;hello&#34;));
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// // 取消订阅
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// bus.unsubscribe(handler_id);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">EventBus</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">handlers</span>: <span class="nc">std</span>::<span class="n">collections</span>::<span class="n">HashMap</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="nb">Vec</span><span class="o">&lt;</span><span class="p">(</span><span class="kt">usize</span><span class="p">,</span><span class="w"> </span><span class="n">EventHandler</span><span class="p">)</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">next_id</span>: <span class="kt">usize</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="n">EventBus</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 创建新的事件总线
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// use event_system::EventBus;
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// let bus = EventBus::new();
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">new</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">Self</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">handlers</span>: <span class="nc">std</span>::<span class="n">collections</span>::<span class="n">HashMap</span>::<span class="n">new</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">next_id</span>: <span class="mi">0</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 订阅事件
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 返回订阅 ID，可用于取消订阅
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// use event_system::{EventBus, Event};
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// let mut bus = EventBus::new();
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// let id = bus.subscribe(&#34;user_login&#34;, |event| {
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">///     println!(&#34;User {} logged in&#34;, event.data().unwrap_or(&#34;unknown&#34;));
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// });
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// bus.publish(&#34;user_login&#34;, Event::new(&#34;&#34;).with_data(&#34;alice&#34;));
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">subscribe</span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">event_name</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">handler</span>: <span class="nc">F</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">where</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">F</span>: <span class="nb">Fn</span><span class="p">(</span><span class="o">&amp;</span><span class="n">Event</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Send</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Sync</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">&#39;static</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">next_id</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">next_id</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">handlers</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="n">entry</span><span class="p">(</span><span class="n">event_name</span><span class="p">.</span><span class="n">to_string</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="n">or_insert_with</span><span class="p">(</span><span class="nb">Vec</span>::<span class="n">new</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="n">push</span><span class="p">((</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="nb">Box</span>::<span class="n">new</span><span class="p">(</span><span class="n">handler</span><span class="p">)));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 取消订阅
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// use event_system::{EventBus, Event};
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// let mut bus = EventBus::new();
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// let id = bus.subscribe(&#34;test&#34;, |_| {});
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// bus.unsubscribe(id);
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// // 取消后发布不会调用处理器
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// bus.publish(&#34;test&#34;, Event::new(&#34;&#34;));  // 不会 panic
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">unsubscribe</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">id</span>: <span class="kt">usize</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="n">handlers</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">handlers</span><span class="p">.</span><span class="n">values_mut</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">handlers</span><span class="p">.</span><span class="n">retain</span><span class="p">(</span><span class="o">|</span><span class="p">(</span><span class="n">handler_id</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">)</span><span class="o">|</span><span class="w"> </span><span class="o">*</span><span class="n">handler_id</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">id</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 发布事件
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// use event_system::{EventBus, Event};
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// let mut bus = EventBus::new();
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// let mut received = Vec::new();
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// bus.subscribe(&#34;test&#34;, |event| {
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">///     received.push(event.name().to_string());
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// });
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// bus.publish(&#34;test&#34;, Event::new(&#34;hello&#34;));
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// assert_eq!(received, vec![&#34;hello&#34;]);
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">publish</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">event_name</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">event</span>: <span class="nc">Event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">handlers</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">handlers</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">event_name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">handler</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">handlers</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">handler</span><span class="p">(</span><span class="o">&amp;</span><span class="n">event</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 获取订阅者数量
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// use event_system::EventBus;
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// let mut bus = EventBus::new();
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// assert_eq!(bus.subscriber_count(&#34;test&#34;), 0);
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// bus.subscribe(&#34;test&#34;, |_| {});
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// assert_eq!(bus.subscriber_count(&#34;test&#34;), 1);
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">subscriber_count</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">event_name</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">handlers</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">event_name</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">handlers</span><span class="o">|</span><span class="w"> </span><span class="n">handlers</span><span class="p">.</span><span class="n">len</span><span class="p">())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="n">unwrap_or</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="nb">Default</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">EventBus</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">default</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">Self</span>::<span class="n">new</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#[cfg(test)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">mod</span> <span class="nn">tests</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">use</span><span class="w"> </span><span class="k">super</span>::<span class="o">*</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cp">#[test]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">test_event_creation</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Event</span>::<span class="n">new</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">name</span><span class="p">(),</span><span class="w"> </span><span class="s">&#34;test&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="nb">None</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cp">#[test]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">test_event_with_data</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Event</span>::<span class="n">new</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">).</span><span class="n">with_data</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">event</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cp">#[test]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">test_bus_subscribe_publish</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EventBus</span>::<span class="n">new</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">received</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">bus</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">,</span><span class="w"> </span><span class="o">|</span><span class="n">_</span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">received</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">});</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">bus</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">Event</span>::<span class="n">new</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">assert!</span><span class="p">(</span><span class="n">received</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="cp">#[test]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">test_bus_unsubscribe</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">bus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EventBus</span>::<span class="n">new</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">received</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bus</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">,</span><span class="w"> </span><span class="o">|</span><span class="n">_</span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">received</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">});</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">bus</span><span class="p">.</span><span class="n">unsubscribe</span><span class="p">(</span><span class="n">id</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">bus</span><span class="p">.</span><span class="n">publish</span><span class="p">(</span><span class="s">&#34;test&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">Event</span>::<span class="n">new</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">assert!</span><span class="p">(</span><span class="o">!</span><span class="n">received</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="文档测试的高级技巧">文档测试的高级技巧
+</h2><h3 id="1-使用-setup-和-teardown">1. 使用 <code>setup</code> 和 <code>teardown</code>
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # fn setup() -&gt; Vec&lt;i32&gt; {
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// #     vec![1, 2, 3]
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # }
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # fn teardown(_: Vec&lt;i32&gt;) {
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// #     // 清理
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// # }
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let data = setup();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// assert_eq!(data.len(), 3);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// teardown(data);
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2-测试错误处理">2. 测试错误处理
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// use my_crate::fallible_function;
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// match fallible_function() {
+</span></span></span><span class="line"><span class="cl"><span class="sd">///     Ok(result) =&gt; println!(&#34;Success: {}&#34;, result),
+</span></span></span><span class="line"><span class="cl"><span class="sd">///     Err(e) =&gt; println!(&#34;Error: {}&#34;, e),
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// }
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-展示-api-的演进">3. 展示 API 的演进
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// ```rust,no_run
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// // 旧版本（已废弃）
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// // let result = old_api();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// // 新版本
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// let result = new_api();
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// ```
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="关键概念理解">关键概念理解
+</h2><h3 id="1-文档测试-vs-单元测试">1. 文档测试 vs 单元测试
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>特性</th>
+          <th>文档测试</th>
+          <th>单元测试</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>位置</td>
+          <td>文档注释中</td>
+          <td><code>#[cfg(test)]</code> 模块</td>
+      </tr>
+      <tr>
+          <td>目的</td>
+          <td>展示用法 + 测试</td>
+          <td>验证逻辑</td>
+      </tr>
+      <tr>
+          <td>可见性</td>
+          <td>用户可见</td>
+          <td>内部使用</td>
+      </tr>
+      <tr>
+          <td>运行命令</td>
+          <td><code>cargo test --doc</code></td>
+          <td><code>cargo test --lib</code></td>
+      </tr>
+      <tr>
+          <td>独立性</td>
+          <td>每个代码块独立</td>
+          <td>可以共享状态</td>
+      </tr>
+  </tbody>
+</table></div>
+<h3 id="2-为什么文档测试重要">2. 为什么文档测试重要？
+</h3><ul>
+<li><strong>文档即测试</strong> - 文档不会过时</li>
+<li><strong>测试即文档</strong> - 测试展示正确用法</li>
+<li><strong>用户友好</strong> - 用户可以直接复制示例</li>
+<li><strong>质量保证</strong> - 示例代码始终可运行</li>
+</ul>
+<h3 id="3-文档测试的局限性">3. 文档测试的局限性
+</h3><ul>
+<li>每个代码块独立运行，不能共享状态</li>
+<li>不适合复杂设置</li>
+<li>运行速度比单元测试慢</li>
+<li>调试相对困难</li>
+</ul>
+<hr>
+<h2 id="练习题">练习题
+</h2><h3 id="练习-1为函数添加文档测试">练习 1：为函数添加文档测试
+</h3><p>为以下函数添加完整的文档测试：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 计算斐波那契数列的第 n 项
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span>: <span class="kt">u32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">u32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="mi">0</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="mi">1</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="mi">2</span><span class="o">..=</span><span class="n">n</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="n">temp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">b</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>要求：</p>
+<ul>
+<li>包含基本用法示例</li>
+<li>包含边界情况（n=0, n=1）</li>
+<li>使用 <code>#</code> 隐藏必要的导入</li>
+</ul>
+<h3 id="练习-2为结构体编写文档">练习 2：为结构体编写文档
+</h3><p>为以下结构体和方法编写完整的文档（含测试）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Stack</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">items</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Stack</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">new</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">push</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">item</span>: <span class="nc">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">pop</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Option</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">peek</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Option</span><span class="o">&lt;&amp;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">is_empty</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span> <span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">len</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">usize</span> <span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="练习-3展示错误处理">练习 3：展示错误处理
+</h3><p>为一个可能失败的函数编写文档测试，展示错误处理：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">parse_config</span><span class="p">(</span><span class="n">content</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">Config</span><span class="p">,</span><span class="w"> </span><span class="n">ConfigError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 解析逻辑
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>包含：</p>
+<ul>
+<li>成功解析的示例</li>
+<li>处理错误的示例</li>
+<li>使用 <code>?</code> 运算符的示例</li>
+</ul>
+<h3 id="练习-4多步骤示例">练习 4：多步骤示例
+</h3><p>为一个 Builder 模式的结构体编写分步示例：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">QueryBuilder</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">table</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">columns</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">conditions</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="n">QueryBuilder</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">new</span><span class="p">(</span><span class="n">table</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">select</span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">columns</span>: <span class="kp">&amp;</span><span class="p">[</span><span class="o">&amp;</span><span class="kt">str</span><span class="p">])</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">where_clause</span><span class="p">(</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">condition</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">build</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Query</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="练习-5完整模块文档">练习 5：完整模块文档
+</h3><p>为一个完整模块编写文档（包括模块级文档和所有公开 API）：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 一个简单的日志模块
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">enum</span> <span class="nc">LogLevel</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Debug</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Info</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Warn</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">Error</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">pub</span><span class="w"> </span><span class="k">struct</span> <span class="nc">Logger</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">level</span>: <span class="nc">LogLevel</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">new</span><span class="p">(</span><span class="n">level</span>: <span class="nc">LogLevel</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">debug</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">info</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">warn</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">error</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="明日计划">明日计划
+</h2><p>明天我们将学习<strong>测试驱动开发（TDD）实践</strong>：</p>
+<ul>
+<li>TDD 红 - 绿 - 重构循环</li>
+<li>从测试开始设计 API</li>
+<li>实战：用 TDD 开发一个小功能</li>
+<li>TDD 的优缺点</li>
+<li>何时使用 TDD</li>
+</ul>
+<hr>
+<h2 id="参考资源">参考资源
+</h2><ul>
+<li><a class="link" href="https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html#making-useful-documentation-comments"  target="_blank" rel="noopener"
+    >Rust Book - 文档测试</a></li>
+<li><a class="link" href="https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html"  target="_blank" rel="noopener"
+    >rustdoc - 文档测试语法</a></li>
+<li><a class="link" href="https://doc.rust-lang.org/cargo/commands/cargo-doc.html"  target="_blank" rel="noopener"
+    >cargo doc 命令</a></li>
+<li><a class="link" href="https://doc.rust-lang.org/rust-by-example/testing/doc_testing.html"  target="_blank" rel="noopener"
+    >Rust by Example - 文档测试</a></li>
+</ul>
+<hr>
+<h2 id="今日感悟">今日感悟
+</h2><p>文档测试是 Rust 最优雅的设计之一。今天的核心收获：</p>
+<ol>
+<li>
+<p><strong>文档不应该撒谎</strong> - 文档测试确保示例代码始终可运行，这是对其他语言的降维打击。</p>
+</li>
+<li>
+<p><strong>好文档 = 好 API</strong> - 当你知道示例会被测试时，你会更认真地设计 API。文档测试倒逼 API 设计质量。</p>
+</li>
+<li>
+<p><strong>用户视角</strong> - 写文档测试时，你被迫从用户角度思考：&ldquo;这个 API 怎么用？示例清晰吗？&rdquo;</p>
+</li>
+<li>
+<p><strong>维护成本降低</strong> - 代码变更时，文档测试会立即告诉你示例是否还有效。不再有&quot;文档已过期&quot;的问题。</p>
+</li>
+<li>
+<p><strong>适度原则</strong> - 不是每个函数都需要详细的文档测试。公共 API 必须有，内部函数可以简略。</p>
+</li>
+</ol>
+<p>文档测试让&quot;文档与代码同步&quot;从口号变成了默认行为。这是 Rust 对开发者体验的真正贡献。</p>
+<p>明天进入 TDD 实践，把测试思维提升到设计层面。期待！</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/rust/">Rust</a>
+        
+            <a href="/tags/%E6%B5%8B%E8%AF%95/">测试</a>
+        
+            <a href="/tags/%E6%96%87%E6%A1%A3%E6%B5%8B%E8%AF%95/">文档测试</a>
+        
+            <a href="/tags/%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/">示例代码</a>
+        
+            <a href="/tags/cargo-doc/">Cargo Doc</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2026-04-17
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-48%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E4%B8%8E%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 48：性能测试与基准测试</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-47%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91tdd%E5%AE%9E%E8%B7%B5/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 47：测试驱动开发（TDD）实践</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-45%E6%B5%8B%E8%AF%95%E5%B7%A5%E5%85%B7%E4%B8%8E-mocking/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 45：测试工具与 Mocking</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-44%E6%B5%8B%E8%AF%95%E8%BF%9B%E9%98%B6/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 44：测试进阶</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-43%E6%B5%8B%E8%AF%95%E5%9F%BA%E7%A1%80/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 43：测试基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="HHjoker/HHjoker.github.io"
+    data-repo-id="R_kgDON1Vqng"
+    data-category="Announcements"
+    data-category-id="DIC_kwDON1Vqns4C3qHd"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('preferred_color_scheme');
+            } else {
+                setGiscusTheme('preferred_color_scheme');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 Huang Hao
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+    #TableOfContents > ul ul,
+    #TableOfContents > ul ol,
+    #TableOfContents > ol ul,
+    #TableOfContents > ol ol {
+        display: none;
+    }
+    #TableOfContents > ul .open,
+    #TableOfContents > ol .open {
+        display: block;
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://HHjoker.github.io/icons/backTop.svg);
+    }
+</style>
+
+<script type="text/javascript">
+    
+
+    function initScrollTop() {
+        let rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) {
+            return;
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop
+        rightSideBar.appendChild(btn)
+        
+        window.onscroll = function() {
+            
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    }
+
+    
+
+    function backToTop(){
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    initScrollTop();
+</script>
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    let codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) {
+      return;
+    }
+    codeBlocks.forEach(codeBlock => {
+      
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+        return;
+      }
+      
+      
+      let codeMoreBox = document.createElement('div');
+      codeMoreBox.classList.add('code-more-box');
+      
+      let codeMoreBtn = document.createElement('span');
+      codeMoreBtn.classList.add('code-more-btn');
+      codeMoreBtn.addEventListener('click', () => {
+        codeBlock.classList.add('code-show');
+        codeMoreBox.style.display = 'none';
+        
+        window.dispatchEvent(new Event('resize'))
+      })
+      
+      let img = document.createElement('img');
+      img.classList.add('code-more-img');
+      img.src = "https://HHjoker.github.io/icons/codeMore.ico"
+      
+      codeMoreBtn.appendChild(img);
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox)
+    })
+  }
+  
+  initCodeMoreBox();
+</script>
+
+    </body>
+</html>

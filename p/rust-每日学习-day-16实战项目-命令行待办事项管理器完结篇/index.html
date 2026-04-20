@@ -1,0 +1,2217 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="完成 Todo CLI 项目的最终阶段：性能优化、搜索功能、完善文档、打包发布，并总结 16 天学习历程">
+<title>Rust 每日学习 Day 16：实战项目 - 命令行待办事项管理器（完结篇）</title>
+
+<link rel='canonical' href='https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-16%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E7%AE%A1%E7%90%86%E5%99%A8%E5%AE%8C%E7%BB%93%E7%AF%87/'>
+
+<link rel="stylesheet" href="/scss/style.min.5caa0083058cdfc89d0c8e69326bb902aecd0db5e8bd671bb459c72d56e97f25.css"><meta property='og:title' content="Rust 每日学习 Day 16：实战项目 - 命令行待办事项管理器（完结篇）">
+<meta property='og:description' content="完成 Todo CLI 项目的最终阶段：性能优化、搜索功能、完善文档、打包发布，并总结 16 天学习历程">
+<meta property='og:url' content='https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-16%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E7%AE%A1%E7%90%86%E5%99%A8%E5%AE%8C%E7%BB%93%E7%AF%87/'>
+<meta property='og:site_name' content='HH Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Rust' /><meta property='article:tag' content='实战项目' /><meta property='article:tag' content='CLI' /><meta property='article:tag' content='待办事项' /><meta property='article:tag' content='性能优化' /><meta property='article:tag' content='文档' /><meta property='article:tag' content='发布' /><meta property='article:tag' content='学习笔记' /><meta property='article:published_time' content='2026-03-18T13:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-03-18T21:02:20&#43;08:00'/>
+<meta name="twitter:title" content="Rust 每日学习 Day 16：实战项目 - 命令行待办事项管理器（完结篇）">
+<meta name="twitter:description" content="完成 Todo CLI 项目的最终阶段：性能优化、搜索功能、完善文档、打包发布，并总结 16 天学习历程">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_1f27e3376f1b4a0e.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">HH Blog</a></h1>
+            <h2 class="site-description">欢迎来到我的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/HHjoker'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://HHjoker.github.io/en/" >English</option>
+                                
+                                    <option value="https://HHjoker.github.io/" selected>中文</option>
+                                
+                                    <option value="https://HHjoker.github.io/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#今日目标">今日目标</a></li>
+    <li><a href="#学习内容">学习内容</a>
+      <ol>
+        <li><a href="#1-添加任务搜索功能">1. 添加任务搜索功能</a></li>
+        <li><a href="#2-性能优化">2. 性能优化</a>
+          <ol>
+            <li><a href="#21-延迟加载与缓存">2.1 延迟加载与缓存</a></li>
+            <li><a href="#22-批量操作优化">2.2 批量操作优化</a></li>
+          </ol>
+        </li>
+        <li><a href="#3-完善错误处理与用户提示">3. 完善错误处理与用户提示</a></li>
+        <li><a href="#4-编写帮助文档">4. 编写帮助文档</a></li>
+        <li><a href="#5-项目结构整理">5. 项目结构整理</a></li>
+        <li><a href="#6-readmemd-文档">6. README.md 文档</a></li>
+        <li><a href="#使用-cargo-安装">使用 Cargo 安装</a></li>
+      </ol>
+    </li>
+    <li><a href="#使用">使用</a></li>
+    <li><a href="#数据存储">数据存储</a></li>
+    <li><a href="#构建">构建</a></li>
+    <li><a href="#许可证">许可证</a></li>
+    <li><a href="#完整代码示例">完整代码示例</a></li>
+    <li><a href="#关键概念理解">关键概念理解</a>
+      <ol>
+        <li><a href="#1-模块化设计">1. 模块化设计</a></li>
+        <li><a href="#2-错误传播">2. 错误传播</a></li>
+        <li><a href="#3-所有权与借用">3. 所有权与借用</a></li>
+        <li><a href="#4-生命周期">4. 生命周期</a></li>
+      </ol>
+    </li>
+    <li><a href="#练习题">练习题</a>
+      <ol>
+        <li><a href="#练习-1添加任务过期提醒">练习 1：添加任务过期提醒</a></li>
+        <li><a href="#练习-2添加任务标签系统">练习 2：添加任务标签系统</a></li>
+        <li><a href="#练习-3实现任务依赖">练习 3：实现任务依赖</a></li>
+        <li><a href="#练习-4添加彩色输出">练习 4：添加彩色输出</a></li>
+        <li><a href="#练习-5实现数据导出">练习 5：实现数据导出</a></li>
+      </ol>
+    </li>
+    <li><a href="#明日计划">明日计划</a></li>
+    <li><a href="#参考资源">参考资源</a>
+      <ol>
+        <li><a href="#官方资源">官方资源</a></li>
+        <li><a href="#社区资源">社区资源</a></li>
+        <li><a href="#项目相关">项目相关</a></li>
+      </ol>
+    </li>
+    <li><a href="#今日感悟">今日感悟</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/rust/" >
+                Rust
+            </a>
+        
+            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" >
+                编程语言
+            </a>
+        
+            <a href="/categories/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/" >
+                系统编程
+            </a>
+        
+            <a href="/categories/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE/" >
+                实战项目
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-16%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E7%AE%A1%E7%90%86%E5%99%A8%E5%AE%8C%E7%BB%93%E7%AF%87/">Rust 每日学习 Day 16：实战项目 - 命令行待办事项管理器（完结篇）</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            完成 Todo CLI 项目的最终阶段：性能优化、搜索功能、完善文档、打包发布，并总结 16 天学习历程
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-03-18</time>
+            </div>
+        
+        <div class="article-lastmod">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time>
+                    2026-03-18
+                </time>
+            </div>
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="今日概览">今日概览
+</h2><ul>
+<li><strong>学习日期</strong>：2026 年 3 月 18 日</li>
+<li><strong>学习阶段</strong>：第 16 天 - 实战项目（第 4 天/完结篇）</li>
+<li><strong>今日主题</strong>：命令行待办事项管理器 - 性能优化、文档与发布</li>
+<li><strong>预计时长</strong>：4-5 小时</li>
+<li><strong>难度等级</strong>：⭐⭐⭐⭐⭐</li>
+</ul>
+<h2 id="今日目标">今日目标
+</h2><p>完成 Todo CLI 项目的最后收尾工作：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">✅ 添加任务搜索功能
+</span></span><span class="line"><span class="cl">✅ 性能优化（延迟加载、缓存）
+</span></span><span class="line"><span class="cl">✅ 完善错误处理与用户提示
+</span></span><span class="line"><span class="cl">✅ 编写 README 文档
+</span></span><span class="line"><span class="cl">✅ 生成帮助文档（--help）
+</span></span><span class="line"><span class="cl">✅ 打包发布（cargo build --release）
+</span></span><span class="line"><span class="cl">✅ 16 天学习总结与展望
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="学习内容">学习内容
+</h2><h3 id="1-添加任务搜索功能">1. 添加任务搜索功能
+</h3><p>在之前的基础上，添加全文搜索功能：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 搜索任务（支持标题和描述）
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">search_tasks</span><span class="p">(</span><span class="n">query</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">todo_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_todo_list</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">query_lower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">query</span><span class="p">.</span><span class="n">to_lowercase</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">matching_tasks</span>: <span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="n">Task</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">todo_list</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="o">|</span><span class="n">t</span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">t</span><span class="p">.</span><span class="n">title</span><span class="p">.</span><span class="n">to_lowercase</span><span class="p">().</span><span class="n">contains</span><span class="p">(</span><span class="o">&amp;</span><span class="n">query_lower</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">t</span><span class="p">.</span><span class="n">description</span><span class="p">.</span><span class="n">as_ref</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">d</span><span class="o">|</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">to_lowercase</span><span class="p">().</span><span class="n">contains</span><span class="p">(</span><span class="o">&amp;</span><span class="n">query_lower</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="n">unwrap_or</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">})</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">collect</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">matching_tasks</span><span class="p">.</span><span class="n">is_empty</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;🔍 未找到匹配 </span><span class="se">\&#34;</span><span class="si">{}</span><span class="se">\&#34;</span><span class="s"> 的任务&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">query</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;🔍 找到 </span><span class="si">{}</span><span class="s"> 个匹配的任务：</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">matching_tasks</span><span class="p">.</span><span class="n">len</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">task</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">matching_tasks</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">print_task</span><span class="p">(</span><span class="n">task</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 高级搜索（支持多条件）
+</span></span></span><span class="line"><span class="cl"><span class="cp">#[derive(Debug, Default)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">SearchFilter</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">query</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">status</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="n">Status</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">priority</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="n">Priority</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">date_from</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">date_to</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">advanced_search</span><span class="p">(</span><span class="n">filter</span>: <span class="kp">&amp;</span><span class="nc">SearchFilter</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">todo_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_todo_list</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">results</span>: <span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="n">Task</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">todo_list</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="o">|</span><span class="n">t</span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 文本搜索
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">filter</span><span class="p">.</span><span class="n">query</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="kd">let</span><span class="w"> </span><span class="n">q_lower</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="n">to_lowercase</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="o">!</span><span class="n">t</span><span class="p">.</span><span class="n">title</span><span class="p">.</span><span class="n">to_lowercase</span><span class="p">().</span><span class="n">contains</span><span class="p">(</span><span class="o">&amp;</span><span class="n">q_lower</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                   </span><span class="o">!</span><span class="n">t</span><span class="p">.</span><span class="n">description</span><span class="p">.</span><span class="n">as_ref</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                       </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">d</span><span class="o">|</span><span class="w"> </span><span class="n">d</span><span class="p">.</span><span class="n">to_lowercase</span><span class="p">().</span><span class="n">contains</span><span class="p">(</span><span class="o">&amp;</span><span class="n">q_lower</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                       </span><span class="p">.</span><span class="n">unwrap_or</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 状态过滤
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">status</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">filter</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 优先级过滤
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">priority</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">filter</span><span class="p">.</span><span class="n">priority</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="o">&amp;</span><span class="n">t</span><span class="p">.</span><span class="n">priority</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">priority</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">// 日期范围过滤
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">from</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">filter</span><span class="p">.</span><span class="n">date_from</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">created_at</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">to</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">filter</span><span class="p">.</span><span class="n">date_to</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">created_at</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">})</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">collect</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;📊 找到 </span><span class="si">{}</span><span class="s"> 个匹配的任务：</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">results</span><span class="p">.</span><span class="n">len</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">task</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">print_task</span><span class="p">(</span><span class="n">task</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2-性能优化">2. 性能优化
+</h3><h4 id="21-延迟加载与缓存">2.1 延迟加载与缓存
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">cell</span>::<span class="n">RefCell</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">collections</span>::<span class="n">HashMap</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 带缓存的待办列表管理器
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">TodoManager</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">cache</span>: <span class="nc">RefCell</span><span class="o">&lt;</span><span class="n">HashMap</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">TodoList</span><span class="o">&gt;&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">cache_hits</span>: <span class="nc">RefCell</span><span class="o">&lt;</span><span class="kt">u32</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">cache_misses</span>: <span class="nc">RefCell</span><span class="o">&lt;</span><span class="kt">u32</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="n">TodoManager</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">new</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">TodoManager</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">cache</span>: <span class="nc">RefCell</span>::<span class="n">new</span><span class="p">(</span><span class="n">HashMap</span>::<span class="n">new</span><span class="p">()),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">cache_hits</span>: <span class="nc">RefCell</span>::<span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">cache_misses</span>: <span class="nc">RefCell</span>::<span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 带缓存的加载
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">load_with_cache</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">key</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">TodoList</span><span class="p">,</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 尝试从缓存获取
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Some</span><span class="p">(</span><span class="n">cached</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">cache</span><span class="p">.</span><span class="n">borrow</span><span class="p">().</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="o">*</span><span class="bp">self</span><span class="p">.</span><span class="n">cache_hits</span><span class="p">.</span><span class="n">borrow_mut</span><span class="p">()</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(</span><span class="n">cached</span><span class="p">.</span><span class="n">clone</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 缓存未命中，从文件加载
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="o">*</span><span class="bp">self</span><span class="p">.</span><span class="n">cache_misses</span><span class="p">.</span><span class="n">borrow_mut</span><span class="p">()</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">todo_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_todo_list</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 写入缓存
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">cache</span><span class="p">.</span><span class="n">borrow_mut</span><span class="p">().</span><span class="n">insert</span><span class="p">(</span><span class="n">key</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"> </span><span class="n">todo_list</span><span class="p">.</span><span class="n">clone</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Ok</span><span class="p">(</span><span class="n">todo_list</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 使缓存失效
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">invalidate_cache</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="bp">self</span><span class="p">.</span><span class="n">cache</span><span class="p">.</span><span class="n">borrow_mut</span><span class="p">().</span><span class="n">clear</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="sd">/// 打印缓存统计
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">print_cache_stats</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">hits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="bp">self</span><span class="p">.</span><span class="n">cache_hits</span><span class="p">.</span><span class="n">borrow</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">misses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="bp">self</span><span class="p">.</span><span class="n">cache_misses</span><span class="p">.</span><span class="n">borrow</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hits</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">misses</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">hit_rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">(</span><span class="n">hits</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">f64</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">total</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">f64</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">100.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="mf">0.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;📈 缓存统计：命中 </span><span class="si">{}</span><span class="s"> 次，未命中 </span><span class="si">{}</span><span class="s"> 次，命中率 </span><span class="si">{:.1}</span><span class="s">%&#34;</span><span class="p">,</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">                 </span><span class="n">hits</span><span class="p">,</span><span class="w"> </span><span class="n">misses</span><span class="p">,</span><span class="w"> </span><span class="n">hit_rate</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="22-批量操作优化">2.2 批量操作优化
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 批量添加任务（减少文件 I/O 次数）
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">batch_add_tasks</span><span class="p">(</span><span class="n">tasks</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">NewTask</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">todo_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_todo_list</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">start_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">todo_list</span><span class="p">.</span><span class="n">next_id</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">task</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">tasks</span><span class="p">.</span><span class="n">into_iter</span><span class="p">().</span><span class="n">enumerate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">new_task</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">id</span>: <span class="nc">start_id</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u32</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">title</span>: <span class="nc">task</span><span class="p">.</span><span class="n">title</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">description</span>: <span class="nc">task</span><span class="p">.</span><span class="n">description</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">status</span>: <span class="nc">Status</span>::<span class="n">Pending</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">priority</span>: <span class="nc">task</span><span class="p">.</span><span class="n">priority</span><span class="p">.</span><span class="n">unwrap_or_default</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">created_at</span>: <span class="nc">chrono</span>::<span class="n">Local</span>::<span class="n">now</span><span class="p">().</span><span class="n">format</span><span class="p">(</span><span class="s">&#34;%Y-%m-%d %H:%M:%S&#34;</span><span class="p">).</span><span class="n">to_string</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">updated_at</span>: <span class="nc">chrono</span>::<span class="n">Local</span>::<span class="n">now</span><span class="p">().</span><span class="n">format</span><span class="p">(</span><span class="s">&#34;%Y-%m-%d %H:%M:%S&#34;</span><span class="p">).</span><span class="n">to_string</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">todo_list</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">new_task</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">todo_list</span><span class="p">.</span><span class="n">next_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">start_id</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tasks</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">u32</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">save_todo_list</span><span class="p">(</span><span class="o">&amp;</span><span class="n">todo_list</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;✅ 批量添加 </span><span class="si">{}</span><span class="s"> 个任务成功&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">tasks</span><span class="p">.</span><span class="n">len</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 批量完成任务
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">batch_complete_tasks</span><span class="p">(</span><span class="n">ids</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">u32</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">todo_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">load_todo_list</span><span class="p">()</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">completed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">task</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">todo_list</span><span class="p">.</span><span class="n">tasks</span><span class="p">.</span><span class="n">iter_mut</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">ids</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="o">&amp;</span><span class="n">task</span><span class="p">.</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">task</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Status</span>::<span class="n">Pending</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">task</span><span class="p">.</span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Status</span>::<span class="n">Completed</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">task</span><span class="p">.</span><span class="n">updated_at</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chrono</span>::<span class="n">Local</span>::<span class="n">now</span><span class="p">().</span><span class="n">format</span><span class="p">(</span><span class="s">&#34;%Y-%m-%d %H:%M:%S&#34;</span><span class="p">).</span><span class="n">to_string</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">completed</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">save_todo_list</span><span class="p">(</span><span class="o">&amp;</span><span class="n">todo_list</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;✅ 批量完成 </span><span class="si">{}</span><span class="s"> 个任务&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">completed</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-完善错误处理与用户提示">3. 完善错误处理与用户提示
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 友好的错误类型
+</span></span></span><span class="line"><span class="cl"><span class="cp">#[derive(Debug)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">enum</span> <span class="nc">TodoError</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">FileNotFound</span><span class="p">(</span><span class="nb">String</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">ParseError</span><span class="p">(</span><span class="nb">String</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">TaskNotFound</span><span class="p">(</span><span class="kt">u32</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">InvalidInput</span><span class="p">(</span><span class="nb">String</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">IoError</span><span class="p">(</span><span class="n">std</span>::<span class="n">io</span>::<span class="n">Error</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="n">std</span>::<span class="n">fmt</span>::<span class="n">Display</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">TodoError</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">fmt</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">f</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">std</span>::<span class="n">fmt</span>::<span class="n">Formatter</span><span class="o">&lt;</span><span class="nb">&#39;_</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">std</span>::<span class="n">fmt</span>::<span class="nb">Result</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="bp">self</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">TodoError</span>::<span class="n">FileNotFound</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="fm">write!</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;❌ 文件未找到：{}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">TodoError</span>::<span class="n">ParseError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="fm">write!</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;❌ 解析错误：{}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">TodoError</span>::<span class="n">TaskNotFound</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="fm">write!</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;❌ 任务 #{} 不存在&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">TodoError</span>::<span class="n">InvalidInput</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="fm">write!</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;❌ 无效输入：{}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">TodoError</span>::<span class="n">IoError</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="fm">write!</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;❌ I/O 错误：{}&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="n">std</span>::<span class="n">error</span>::<span class="n">Error</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">TodoError</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="nb">From</span><span class="o">&lt;</span><span class="n">std</span>::<span class="n">io</span>::<span class="n">Error</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">TodoError</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">from</span><span class="p">(</span><span class="n">err</span>: <span class="nc">std</span>::<span class="n">io</span>::<span class="n">Error</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Self</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">TodoError</span>::<span class="n">IoError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="sd">/// 主函数中的错误处理
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">run</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">(),</span><span class="w"> </span><span class="n">TodoError</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">args</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span>::<span class="n">args</span><span class="p">().</span><span class="n">collect</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">args</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">print_help</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">as_str</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;add&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">cmd_add</span><span class="p">(</span><span class="o">&amp;</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">]).</span><span class="n">map_err</span><span class="p">(</span><span class="o">|</span><span class="n">e</span><span class="o">|</span><span class="w"> </span><span class="n">TodoError</span>::<span class="n">InvalidInput</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">to_string</span><span class="p">()))</span><span class="o">?</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;list&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">cmd_list</span><span class="p">(</span><span class="o">&amp;</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">])</span><span class="o">?</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;done&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">cmd_done</span><span class="p">(</span><span class="o">&amp;</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">])</span><span class="o">?</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;search&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">cmd_search</span><span class="p">(</span><span class="o">&amp;</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">])</span><span class="o">?</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;help&#34;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s">&#34;--help&#34;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s">&#34;-h&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">print_help</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">TodoError</span>::<span class="n">InvalidInput</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="fm">format!</span><span class="p">(</span><span class="s">&#34;未知命令：</span><span class="si">{}</span><span class="s">，使用 &#39;todo help&#39; 查看帮助&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">eprintln!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">std</span>::<span class="n">process</span>::<span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="4-编写帮助文档">4. 编写帮助文档
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="sd">/// 打印帮助信息
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">print_help</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="sa">r</span><span class="s">#&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">📝 Todo CLI - 命令行待办事项管理器
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">用法:
+</span></span></span><span class="line"><span class="cl"><span class="s">    todo &lt;命令&gt; [参数]
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">命令:
+</span></span></span><span class="line"><span class="cl"><span class="s">    add &lt;标题&gt; [描述]              添加新任务
+</span></span></span><span class="line"><span class="cl"><span class="s">    list [过滤条件]                列出任务
+</span></span></span><span class="line"><span class="cl"><span class="s">        过滤条件：pending, completed, high, medium, low
+</span></span></span><span class="line"><span class="cl"><span class="s">    done &lt;ID&gt;                      标记任务为完成
+</span></span></span><span class="line"><span class="cl"><span class="s">    edit &lt;ID&gt; &lt;新标题&gt;             编辑任务标题
+</span></span></span><span class="line"><span class="cl"><span class="s">    delete &lt;ID&gt;                    删除任务
+</span></span></span><span class="line"><span class="cl"><span class="s">    search &lt;关键词&gt;                搜索任务
+</span></span></span><span class="line"><span class="cl"><span class="s">    backup                         备份数据
+</span></span></span><span class="line"><span class="cl"><span class="s">    restore                        恢复数据
+</span></span></span><span class="line"><span class="cl"><span class="s">    stats                          显示统计信息
+</span></span></span><span class="line"><span class="cl"><span class="s">    help                           显示此帮助信息
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">示例:
+</span></span></span><span class="line"><span class="cl"><span class="s">    todo add &#34;完成 Rust 学习&#34; &#34;Day 16 的总结&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">    todo list pending
+</span></span></span><span class="line"><span class="cl"><span class="s">    todo list high
+</span></span></span><span class="line"><span class="cl"><span class="s">    todo done 1
+</span></span></span><span class="line"><span class="cl"><span class="s">    todo search &#34;Rust&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">    todo stats
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">配置:
+</span></span></span><span class="line"><span class="cl"><span class="s">    数据文件位置：~/.todo_cli/data.json
+</span></span></span><span class="line"><span class="cl"><span class="s">    备份文件位置：~/.todo_cli/backups/
+</span></span></span><span class="line"><span class="cl"><span class="s">
+</span></span></span><span class="line"><span class="cl"><span class="s">版本：1.0.0
+</span></span></span><span class="line"><span class="cl"><span class="s">作者：Rust Learner
+</span></span></span><span class="line"><span class="cl"><span class="s">&#34;#</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="5-项目结构整理">5. 项目结构整理
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">todo-cli/
+</span></span><span class="line"><span class="cl">├── Cargo.toml
+</span></span><span class="line"><span class="cl">├── README.md
+</span></span><span class="line"><span class="cl">├── LICENSE
+</span></span><span class="line"><span class="cl">├── src/
+</span></span><span class="line"><span class="cl">│   ├── main.rs          # 入口文件
+</span></span><span class="line"><span class="cl">│   ├── lib.rs           # 库入口
+</span></span><span class="line"><span class="cl">│   ├── commands/
+</span></span><span class="line"><span class="cl">│   │   ├── mod.rs
+</span></span><span class="line"><span class="cl">│   │   ├── add.rs
+</span></span><span class="line"><span class="cl">│   │   ├── list.rs
+</span></span><span class="line"><span class="cl">│   │   ├── done.rs
+</span></span><span class="line"><span class="cl">│   │   ├── edit.rs
+</span></span><span class="line"><span class="cl">│   │   ├── delete.rs
+</span></span><span class="line"><span class="cl">│   │   ├── search.rs
+</span></span><span class="line"><span class="cl">│   │   └── stats.rs
+</span></span><span class="line"><span class="cl">│   ├── models/
+</span></span><span class="line"><span class="cl">│   │   ├── mod.rs
+</span></span><span class="line"><span class="cl">│   │   ├── task.rs
+</span></span><span class="line"><span class="cl">│   │   └── todo_list.rs
+</span></span><span class="line"><span class="cl">│   ├── storage/
+</span></span><span class="line"><span class="cl">│   │   ├── mod.rs
+</span></span><span class="line"><span class="cl">│   │   ├── file.rs
+</span></span><span class="line"><span class="cl">│   │   └── backup.rs
+</span></span><span class="line"><span class="cl">│   ├── error.rs         # 错误类型
+</span></span><span class="line"><span class="cl">│   └── utils.rs         # 工具函数
+</span></span><span class="line"><span class="cl">├── tests/
+</span></span><span class="line"><span class="cl">│   ├── integration_tests.rs
+</span></span><span class="line"><span class="cl">│   └── command_tests.rs
+</span></span><span class="line"><span class="cl">└── examples/
+</span></span><span class="line"><span class="cl">    └── basic_usage.rs
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="6-readmemd-文档">6. README.md 文档
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl"><span class="gh"># Todo CLI 📝
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">一个用 Rust 编写的命令行待办事项管理器。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## 特性
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">-</span> ✅ 快速添加、完成、删除任务
+</span></span><span class="line"><span class="cl"><span class="k">-</span> 🔍 全文搜索功能
+</span></span><span class="line"><span class="cl"><span class="k">-</span> 📊 统计信息展示
+</span></span><span class="line"><span class="cl"><span class="k">-</span> 💾 自动备份与恢复
+</span></span><span class="line"><span class="cl"><span class="k">-</span> 🎯 任务优先级系统
+</span></span><span class="line"><span class="cl"><span class="k">-</span> 📁 轻量级 JSON 存储
+</span></span><span class="line"><span class="cl"><span class="k">-</span> 🚀 零依赖运行时（单个二进制文件）
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">## 安装
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="gu">### 从源码编译
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">```bash
+</span></span><span class="line"><span class="cl">git clone https://github.com/yourusername/todo-cli.git
+</span></span><span class="line"><span class="cl">cd todo-cli
+</span></span><span class="line"><span class="cl">cargo build --release
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>二进制文件位于 <code>target/release/todo</code></p>
+<h3 id="使用-cargo-安装">使用 Cargo 安装
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cargo install todo-cli
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="使用">使用
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 添加任务</span>
+</span></span><span class="line"><span class="cl">todo add <span class="s2">&#34;完成 Rust 学习&#34;</span> <span class="s2">&#34;Day 16 的总结&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 列出任务</span>
+</span></span><span class="line"><span class="cl">todo list
+</span></span><span class="line"><span class="cl">todo list pending      <span class="c1"># 只看未完成</span>
+</span></span><span class="line"><span class="cl">todo list completed    <span class="c1"># 只看已完成</span>
+</span></span><span class="line"><span class="cl">todo list high         <span class="c1"># 只看高优先级</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 完成任务</span>
+</span></span><span class="line"><span class="cl">todo <span class="k">done</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 搜索任务</span>
+</span></span><span class="line"><span class="cl">todo search <span class="s2">&#34;Rust&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 查看统计</span>
+</span></span><span class="line"><span class="cl">todo stats
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 帮助</span>
+</span></span><span class="line"><span class="cl">todo <span class="nb">help</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="数据存储">数据存储
+</h2><p>数据存储在 <code>~/.todo_cli/data.json</code></p>
+<p>备份文件存储在 <code>~/.todo_cli/backups/</code></p>
+<h2 id="构建">构建
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 开发构建</span>
+</span></span><span class="line"><span class="cl">cargo build
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 发布构建（优化）</span>
+</span></span><span class="line"><span class="cl">cargo build --release
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 运行测试</span>
+</span></span><span class="line"><span class="cl">cargo <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 生成文档</span>
+</span></span><span class="line"><span class="cl">cargo doc --open
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="许可证">许可证
+</h2><p>MIT License</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">### 7. 打包发布
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">```bash
+</span></span><span class="line"><span class="cl"># 1. 确保所有测试通过
+</span></span><span class="line"><span class="cl">cargo test
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 2. 检查代码格式
+</span></span><span class="line"><span class="cl">cargo fmt --check
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 3. 运行 clippy 检查
+</span></span><span class="line"><span class="cl">cargo clippy -- -D warnings
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 4. 构建发布版本
+</span></span><span class="line"><span class="cl">cargo build --release
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 5. 查看二进制文件大小
+</span></span><span class="line"><span class="cl">ls -lh target/release/todo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 6. （可选）压缩二进制文件
+</span></span><span class="line"><span class="cl">strip target/release/todo
+</span></span><span class="line"><span class="cl">upx target/release/todo  # 如果安装了 upx
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="完整代码示例">完整代码示例
+</h2><p>以下是 <code>main.rs</code> 的完整结构：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">mod</span> <span class="nn">commands</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">mod</span> <span class="nn">models</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">mod</span> <span class="nn">storage</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">mod</span> <span class="nn">error</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">mod</span> <span class="nn">utils</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">env</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">error</span>::<span class="p">{</span><span class="n">TodoError</span><span class="p">,</span><span class="w"> </span><span class="nb">Result</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">run</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">eprintln!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">std</span>::<span class="n">process</span>::<span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">run</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">args</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">env</span>::<span class="n">args</span><span class="p">().</span><span class="n">collect</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">args</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">commands</span>::<span class="n">print_help</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">Ok</span><span class="p">(());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">as_str</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;add&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">commands</span>::<span class="n">add</span>::<span class="n">execute</span><span class="p">(</span><span class="o">&amp;</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">]),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;list&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">commands</span>::<span class="n">list</span>::<span class="n">execute</span><span class="p">(</span><span class="o">&amp;</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">]),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;done&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">commands</span>::<span class="n">done</span>::<span class="n">execute</span><span class="p">(</span><span class="o">&amp;</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">]),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;edit&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">commands</span>::<span class="n">edit</span>::<span class="n">execute</span><span class="p">(</span><span class="o">&amp;</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">]),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;delete&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">commands</span>::<span class="n">delete</span>::<span class="n">execute</span><span class="p">(</span><span class="o">&amp;</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">]),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;search&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">commands</span>::<span class="n">search</span>::<span class="n">execute</span><span class="p">(</span><span class="o">&amp;</span><span class="n">args</span><span class="p">[</span><span class="mi">2</span><span class="o">..</span><span class="p">]),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;backup&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">storage</span>::<span class="n">backup</span>::<span class="n">create_backup</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;restore&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">storage</span>::<span class="n">backup</span>::<span class="n">restore_backup</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;stats&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">commands</span>::<span class="n">stats</span>::<span class="n">execute</span><span class="p">(),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;help&#34;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s">&#34;--help&#34;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s">&#34;-h&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">commands</span>::<span class="n">print_help</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;version&#34;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s">&#34;--version&#34;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s">&#34;-V&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Todo CLI v1.0.0&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nb">Ok</span><span class="p">(())</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nb">Err</span><span class="p">(</span><span class="n">TodoError</span>::<span class="n">InvalidInput</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="fm">format!</span><span class="p">(</span><span class="s">&#34;未知命令：</span><span class="si">{}</span><span class="s">，使用 &#39;todo help&#39; 查看帮助&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">)),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="关键概念理解">关键概念理解
+</h2><h3 id="1-模块化设计">1. 模块化设计
+</h3><p>将代码按功能拆分为多个模块，每个模块负责单一职责：</p>
+<ul>
+<li><code>commands/</code> - 命令处理</li>
+<li><code>models/</code> - 数据模型</li>
+<li><code>storage/</code> - 数据存储</li>
+<li><code>error/</code> - 错误类型</li>
+</ul>
+<h3 id="2-错误传播">2. 错误传播
+</h3><p>使用 <code>Result&lt;T, E&gt;</code> 和 <code>?</code> 操作符优雅地处理错误：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">load_todo_list</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="n">TodoList</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span>::<span class="n">open</span><span class="p">(</span><span class="o">&amp;</span><span class="n">get_data_path</span><span class="p">())</span><span class="o">?</span><span class="p">;</span><span class="w">  </span><span class="c1">// ? 自动传播错误
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">reader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">BufReader</span>::<span class="n">new</span><span class="p">(</span><span class="n">file</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">todo_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">serde_json</span>::<span class="n">from_reader</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span><span class="o">?</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nb">Ok</span><span class="p">(</span><span class="n">todo_list</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-所有权与借用">3. 所有权与借用
+</h3><p>在项目中实践 Rust 的所有权系统：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 获取所有权
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">create_task</span><span class="p">(</span><span class="n">title</span>: <span class="nb">String</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">Task</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 借用引用（不转移所有权）
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">print_task</span><span class="p">(</span><span class="n">task</span>: <span class="kp">&amp;</span><span class="nc">Task</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 可变借用
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">complete_task</span><span class="p">(</span><span class="n">task</span>: <span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="n">Task</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">..</span><span class="p">.</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="4-生命周期">4. 生命周期
+</h3><p>在需要时显式标注生命周期：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">get_title</span><span class="p">(</span><span class="n">task</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="nc">Task</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="na">&#39;a</span> <span class="kt">str</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">&amp;</span><span class="n">task</span><span class="p">.</span><span class="n">title</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="练习题">练习题
+</h2><h3 id="练习-1添加任务过期提醒">练习 1：添加任务过期提醒
+</h3><p>实现一个功能，可以设置任务的截止日期，并在列出任务时显示即将过期的任务。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Task</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// ... 现有字段
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">due_date</span>: <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w">  </span><span class="c1">// 格式：YYYY-MM-DD
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">check_overdue_tasks</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 实现检查过期任务的逻辑
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="练习-2添加任务标签系统">练习 2：添加任务标签系统
+</h3><p>为任务添加标签功能，支持按标签过滤和搜索。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Task</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// ... 现有字段
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">tags</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">filter_by_tag</span><span class="p">(</span><span class="n">tag</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 实现按标签过滤
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="练习-3实现任务依赖">练习 3：实现任务依赖
+</h3><p>支持任务之间的依赖关系，只有当依赖任务完成后，才能完成当前任务。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Task</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// ... 现有字段
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">dependencies</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">u32</span><span class="o">&gt;</span><span class="p">,</span><span class="w">  </span><span class="c1">// 依赖的任务 ID
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">can_complete</span><span class="p">(</span><span class="n">task</span>: <span class="kp">&amp;</span><span class="nc">Task</span><span class="p">,</span><span class="w"> </span><span class="n">todo_list</span>: <span class="kp">&amp;</span><span class="nc">TodoList</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 检查所有依赖是否已完成
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="练习-4添加彩色输出">练习 4：添加彩色输出
+</h3><p>使用 <code>colored</code> crate 为终端输出添加颜色。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># Cargo.toml</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">dependencies</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">colored</span> <span class="p">=</span> <span class="s2">&#34;2.0&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">colored</span>::<span class="o">*</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;✅ 任务已完成&#34;</span><span class="p">.</span><span class="n">green</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;❌ 错误信息&#34;</span><span class="p">.</span><span class="n">red</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;⚠️ 警告信息&#34;</span><span class="p">.</span><span class="n">yellow</span><span class="p">());</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="练习-5实现数据导出">练习 5：实现数据导出
+</h3><p>支持将任务导出为 CSV 或 Markdown 格式。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">export_to_csv</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 导出为 CSV 格式
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">export_to_markdown</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nb">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 导出为 Markdown 格式
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="明日计划">明日计划
+</h2><p>🎉 <strong>16 天 Rust 学习之旅暂告一段落！</strong></p>
+<p>接下来可以：</p>
+<ol>
+<li>
+<p><strong>深入学习方向</strong>：</p>
+<ul>
+<li>async/await 异步编程</li>
+<li>并发编程（线程、通道）</li>
+<li>unsafe Rust 与 FFI</li>
+<li>宏编程</li>
+</ul>
+</li>
+<li>
+<p><strong>进阶项目建议</strong>：</p>
+<ul>
+<li>Web 服务器（使用 actix-web 或 axum）</li>
+<li>系统工具（文件监控、日志分析）</li>
+<li>网络应用（TCP/UDP 服务器）</li>
+<li>游戏开发（使用 bevy 引擎）</li>
+</ul>
+</li>
+<li>
+<p><strong>参与开源</strong>：</p>
+<ul>
+<li>为 Rust 项目贡献代码</li>
+<li>阅读优秀 Rust 项目源码</li>
+<li>参与 Rust 社区讨论</li>
+</ul>
+</li>
+</ol>
+<h2 id="参考资源">参考资源
+</h2><h3 id="官方资源">官方资源
+</h3><ul>
+<li><a class="link" href="https://doc.rust-lang.org/book/"  target="_blank" rel="noopener"
+    >The Rust Programming Language</a></li>
+<li><a class="link" href="https://doc.rust-lang.org/rust-by-example/"  target="_blank" rel="noopener"
+    >Rust by Example</a></li>
+<li><a class="link" href="https://doc.rust-lang.org/std/"  target="_blank" rel="noopener"
+    >Rust Standard Library</a></li>
+<li><a class="link" href="https://doc.rust-lang.org/cargo/"  target="_blank" rel="noopener"
+    >Cargo 文档</a></li>
+</ul>
+<h3 id="社区资源">社区资源
+</h3><ul>
+<li><a class="link" href="https://rustcc.cn/"  target="_blank" rel="noopener"
+    >Rust 中文社区</a></li>
+<li><a class="link" href="https://users.rust-lang.org/"  target="_blank" rel="noopener"
+    >Rust Forum</a></li>
+<li><a class="link" href="https://www.reddit.com/r/rust/"  target="_blank" rel="noopener"
+    >r/rust</a></li>
+</ul>
+<h3 id="项目相关">项目相关
+</h3><ul>
+<li><a class="link" href="https://serde.rs/"  target="_blank" rel="noopener"
+    >serde</a> - 序列化框架</li>
+<li><a class="link" href="https://docs.rs/clap/"  target="_blank" rel="noopener"
+    >clap</a> - 命令行参数解析</li>
+<li><a class="link" href="https://docs.rs/chrono/"  target="_blank" rel="noopener"
+    >chrono</a> - 日期时间处理</li>
+</ul>
+<h2 id="今日感悟">今日感悟
+</h2><p>🌟 <strong>16 天的 Rust 学习之旅</strong></p>
+<p>从第一天对所有权概念的困惑，到今天能够独立完成一个完整的 CLI 项目，这段旅程充满了挑战与收获。</p>
+<p><strong>最大的收获</strong>：</p>
+<ol>
+<li><strong>所有权思维</strong>：从一开始的不适应，到现在能够自然地思考数据的归属和生命周期</li>
+<li><strong>类型系统</strong>：Rust 强大的类型系统在编译期就捕获了大量潜在错误</li>
+<li><strong>错误处理</strong>：Result 和 Option 让错误处理变得优雅且安全</li>
+<li><strong>模块化设计</strong>：学会了如何组织 Rust 项目结构</li>
+</ol>
+<p><strong>遇到的困难</strong>：</p>
+<ul>
+<li>借用检查器的&quot;严格&quot;要求（但现在理解了它的价值）</li>
+<li>生命周期的概念（还需要更多实践）</li>
+<li>异步编程的学习曲线（下一步的目标）</li>
+</ul>
+<p><strong>给初学者的建议</strong>：</p>
+<ol>
+<li>不要害怕编译器错误，它是你的朋友</li>
+<li>多写代码，实践是最好的老师</li>
+<li>阅读优秀项目的源码</li>
+<li>参与社区，提问和分享</li>
+</ol>
+<p><strong>下一步计划</strong>：</p>
+<ul>
+<li>深入学习 async/await</li>
+<li>探索 Web 开发（axum/actix-web）</li>
+<li>学习 Rust 宏系统</li>
+<li>参与开源项目</li>
+</ul>
+<p>Rust 不仅是一门语言，更是一种思维方式。它教会我们如何在追求性能的同时，保证内存安全和并发安全。这段学习之旅只是一个开始，期待在未来的项目中继续探索 Rust 的可能性！</p>
+<hr>
+<p><em>16 天，从 0 到 1，感谢坚持的自己。🦀</em></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/rust/">Rust</a>
+        
+            <a href="/tags/%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE/">实战项目</a>
+        
+            <a href="/tags/cli/">CLI</a>
+        
+            <a href="/tags/%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9/">待办事项</a>
+        
+            <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">性能优化</a>
+        
+            <a href="/tags/%E6%96%87%E6%A1%A3/">文档</a>
+        
+            <a href="/tags/%E5%8F%91%E5%B8%83/">发布</a>
+        
+            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2026-03-18
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-15%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%8B/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 15：实战项目 - 命令行待办事项管理器（下）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-14%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%AD/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 14：实战项目 - 命令行待办事项管理器（中）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-13%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BE%85%E5%8A%9E%E4%BA%8B%E9%A1%B9%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%8A/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 13：实战项目 - 命令行待办事项管理器（上）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-25%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E7%BB%BC%E5%90%88%E5%AE%9E%E6%88%98/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 25：错误处理综合实战</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-30trait-%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 30：Trait 高级用法</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="HHjoker/HHjoker.github.io"
+    data-repo-id="R_kgDON1Vqng"
+    data-category="Announcements"
+    data-category-id="DIC_kwDON1Vqns4C3qHd"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('preferred_color_scheme');
+            } else {
+                setGiscusTheme('preferred_color_scheme');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 Huang Hao
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+    #TableOfContents > ul ul,
+    #TableOfContents > ul ol,
+    #TableOfContents > ol ul,
+    #TableOfContents > ol ol {
+        display: none;
+    }
+    #TableOfContents > ul .open,
+    #TableOfContents > ol .open {
+        display: block;
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://HHjoker.github.io/icons/backTop.svg);
+    }
+</style>
+
+<script type="text/javascript">
+    
+
+    function initScrollTop() {
+        let rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) {
+            return;
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop
+        rightSideBar.appendChild(btn)
+        
+        window.onscroll = function() {
+            
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    }
+
+    
+
+    function backToTop(){
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    initScrollTop();
+</script>
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    let codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) {
+      return;
+    }
+    codeBlocks.forEach(codeBlock => {
+      
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+        return;
+      }
+      
+      
+      let codeMoreBox = document.createElement('div');
+      codeMoreBox.classList.add('code-more-box');
+      
+      let codeMoreBtn = document.createElement('span');
+      codeMoreBtn.classList.add('code-more-btn');
+      codeMoreBtn.addEventListener('click', () => {
+        codeBlock.classList.add('code-show');
+        codeMoreBox.style.display = 'none';
+        
+        window.dispatchEvent(new Event('resize'))
+      })
+      
+      let img = document.createElement('img');
+      img.classList.add('code-more-img');
+      img.src = "https://HHjoker.github.io/icons/codeMore.ico"
+      
+      codeMoreBtn.appendChild(img);
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox)
+    })
+  }
+  
+  initCodeMoreBox();
+</script>
+
+    </body>
+</html>

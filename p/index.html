@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Rust 每周深度学习计划 调整日期：2026 年 3 月 12 日 计划类型：周计划（每周一篇深度内容） 学习节奏：12 周完成核心内容 📋 计划说明 原日计划（112 天）调整为周计划（12 周），每周一个主题，内容更聚焦、更深入。 每周结构： 1 篇核心文章（2000-3000 字） 3-5 个代码示例 2-3...">
+<title></title>
+
+<link rel='canonical' href='https://HHjoker.github.io/p/'>
+
+<link rel="stylesheet" href="/scss/style.min.5caa0083058cdfc89d0c8e69326bb902aecd0db5e8bd671bb459c72d56e97f25.css"><meta property='og:title' content="">
+<meta property='og:description' content="Rust 每周深度学习计划 调整日期：2026 年 3 月 12 日 计划类型：周计划（每周一篇深度内容） 学习节奏：12 周完成核心内容 📋 计划说明 原日计划（112 天）调整为周计划（12 周），每周一个主题，内容更聚焦、更深入。 每周结构： 1 篇核心文章（2000-3000 字） 3-5 个代码示例 2-3...">
+<meta property='og:url' content='https://HHjoker.github.io/p/'>
+<meta property='og:site_name' content='HH Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:modified_time' content='2026-03-18T21:07:05&#43;08:00'/>
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="Rust 每周深度学习计划 调整日期：2026 年 3 月 12 日 计划类型：周计划（每周一篇深度内容） 学习节奏：12 周完成核心内容 📋 计划说明 原日计划（112 天）调整为周计划（12 周），每周一个主题，内容更聚焦、更深入。 每周结构： 1 篇核心文章（2000-3000 字） 3-5 个代码示例 2-3...">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_1f27e3376f1b4a0e.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">HH Blog</a></h1>
+            <h2 class="site-description">欢迎来到我的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/HHjoker'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://HHjoker.github.io/en/" >English</option>
+                                
+                                    <option value="https://HHjoker.github.io/" selected>中文</option>
+                                
+                                    <option value="https://HHjoker.github.io/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#-计划说明">📋 计划说明</a></li>
+    <li><a href="#-12-周学习大纲">📅 12 周学习大纲</a>
+      <ol>
+        <li><a href="#第-1-周rust-入门与环境搭建">第 1 周：Rust 入门与环境搭建</a></li>
+        <li><a href="#第-2-周所有权与借用上">第 2 周：所有权与借用（上）</a></li>
+        <li><a href="#第-3-周所有权与借用下">第 3 周：所有权与借用（下）</a></li>
+        <li><a href="#第-4-周结构体与枚举">第 4 周：结构体与枚举</a></li>
+        <li><a href="#第-5-周错误处理">第 5 周：错误处理</a></li>
+        <li><a href="#第-6-周泛型与-trait">第 6 周：泛型与 Trait</a></li>
+        <li><a href="#第-7-周生命周期">第 7 周：生命周期</a></li>
+        <li><a href="#第-8-周集合类型">第 8 周：集合类型</a></li>
+        <li><a href="#第-9-周闭包与迭代器">第 9 周：闭包与迭代器</a></li>
+        <li><a href="#第-10-周智能指针">第 10 周：智能指针</a></li>
+        <li><a href="#第-11-周并发编程">第 11 周：并发编程</a></li>
+        <li><a href="#第-12-周实战项目">第 12 周：实战项目</a></li>
+      </ol>
+    </li>
+    <li><a href="#-发布计划">📝 发布计划</a></li>
+    <li><a href="#-与日计划的关系">🔄 与日计划的关系</a></li>
+    <li><a href="#-下一步">✅ 下一步</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/"></a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="rust-每周深度学习计划">Rust 每周深度学习计划
+</h1><blockquote>
+<p><strong>调整日期</strong>：2026 年 3 月 12 日<br>
+<strong>计划类型</strong>：周计划（每周一篇深度内容）<br>
+<strong>学习节奏</strong>：12 周完成核心内容</p>
+</blockquote>
+<hr>
+<h2 id="-计划说明">📋 计划说明
+</h2><p>原日计划（112 天）调整为周计划（12 周），每周一个主题，内容更聚焦、更深入。</p>
+<p><strong>每周结构</strong>：</p>
+<ul>
+<li>1 篇核心文章（2000-3000 字）</li>
+<li>3-5 个代码示例</li>
+<li>2-3 个练习题</li>
+<li>推荐资源</li>
+</ul>
+<hr>
+<h2 id="-12-周学习大纲">📅 12 周学习大纲
+</h2><h3 id="第-1-周rust-入门与环境搭建">第 1 周：Rust 入门与环境搭建
+</h3><p><strong>主题</strong>：为什么选择 Rust + 第一个程序</p>
+<p><strong>内容</strong>：</p>
+<ul>
+<li>Rust 的核心特性（内存安全、零成本抽象、并发安全）</li>
+<li>安装 rustup 和 cargo</li>
+<li>Hello World 和 cargo 项目结构</li>
+<li>变量、可变性、基本数据类型</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<ul>
+<li>cargo new 项目</li>
+<li>变量声明与模式匹配</li>
+<li>基本类型操作</li>
+</ul>
+<p><strong>练习</strong>：</p>
+<ol>
+<li>安装 Rust 并运行第一个程序</li>
+<li>创建一个计算器（加减乘除）</li>
+<li>实现温度转换（摄氏度↔华氏度）</li>
+</ol>
+<hr>
+<h3 id="第-2-周所有权与借用上">第 2 周：所有权与借用（上）
+</h3><p><strong>主题</strong>：理解 Rust 的核心——所有权系统</p>
+<p><strong>内容</strong>：</p>
+<ul>
+<li>所有权三规则</li>
+<li>移动语义（Move）</li>
+<li>Clone 与 Copy trait</li>
+<li>作用域与 drop</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<ul>
+<li>所有权转移示例</li>
+<li>clone() vs 移动</li>
+<li>Copy 类型演示</li>
+</ul>
+<p><strong>练习</strong>：</p>
+<ol>
+<li>修复所有编译错误（提供错误代码）</li>
+<li>实现字符串处理函数</li>
+<li>理解何时需要 clone()</li>
+</ol>
+<hr>
+<h3 id="第-3-周所有权与借用下">第 3 周：所有权与借用（下）
+</h3><p><strong>主题</strong>：引用、切片与借用规则</p>
+<p><strong>内容</strong>：</p>
+<ul>
+<li>不可变引用与可变引用</li>
+<li>借用规则（多读一写）</li>
+<li>字符串切片</li>
+<li>悬垂引用</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<ul>
+<li>借用与引用</li>
+<li>字符串切片操作</li>
+<li>函数参数中的切片</li>
+</ul>
+<p><strong>练习</strong>：</p>
+<ol>
+<li>实现字符串单词提取器</li>
+<li>修复借用冲突</li>
+<li>切片操作实践</li>
+</ol>
+<hr>
+<h3 id="第-4-周结构体与枚举">第 4 周：结构体与枚举
+</h3><p><strong>主题</strong>：自定义数据类型</p>
+<p><strong>内容</strong>：</p>
+<ul>
+<li>结构体定义与实例化</li>
+<li>方法实现（impl）</li>
+<li>枚举与模式匹配</li>
+<li>Option 和 Result 简介</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<ul>
+<li>结构体与方法</li>
+<li>match 表达式</li>
+<li>Option 使用场景</li>
+</ul>
+<p><strong>练习</strong>：</p>
+<ol>
+<li>创建学生管理系统</li>
+<li>实现简单的枚举状态机</li>
+<li>使用 Option 处理空值</li>
+</ol>
+<hr>
+<h3 id="第-5-周错误处理">第 5 周：错误处理
+</h3><p><strong>主题</strong>：优雅的 panic 与 Result</p>
+<p><strong>内容</strong>：</p>
+<ul>
+<li>panic! 宏</li>
+<li>Result&lt;T, E&gt; 类型</li>
+<li>? 操作符</li>
+<li>自定义错误类型</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<ul>
+<li>文件读取错误处理</li>
+<li>自定义错误枚举</li>
+<li>错误传播链</li>
+</ul>
+<p><strong>练习</strong>：</p>
+<ol>
+<li>实现带错误处理的配置文件读取</li>
+<li>创建自定义错误类型</li>
+<li>使用 ? 简化错误处理</li>
+</ol>
+<hr>
+<h3 id="第-6-周泛型与-trait">第 6 周：泛型与 Trait
+</h3><p><strong>主题</strong>：抽象与复用</p>
+<p><strong>内容</strong>：</p>
+<ul>
+<li>泛型函数与结构体</li>
+<li>Trait 定义与实现</li>
+<li>Trait Bound</li>
+<li>常用标准库 Trait</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<ul>
+<li>泛型数据结构</li>
+<li>Trait 实现</li>
+<li>where 子句</li>
+</ul>
+<p><strong>练习</strong>：</p>
+<ol>
+<li>实现泛型栈</li>
+<li>为自定义类型实现 Display Trait</li>
+<li>使用 Trait Bound 约束泛型</li>
+</ol>
+<hr>
+<h3 id="第-7-周生命周期">第 7 周：生命周期
+</h3><p><strong>主题</strong>：理解引用的有效期</p>
+<p><strong>内容</strong>：</p>
+<ul>
+<li>生命周期概念</li>
+<li>生命周期标注</li>
+<li>省略规则</li>
+<li>结构体中的生命周期</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<ul>
+<li>生命周期标注示例</li>
+<li>函数返回引用</li>
+<li>结构体生命周期</li>
+</ul>
+<p><strong>练习</strong>：</p>
+<ol>
+<li>修复生命周期错误</li>
+<li>实现带生命周期的结构体</li>
+<li>理解生命周期省略规则</li>
+</ol>
+<hr>
+<h3 id="第-8-周集合类型">第 8 周：集合类型
+</h3><p><strong>主题</strong>：Vec、String、HashMap</p>
+<p><strong>内容</strong>：</p>
+<ul>
+<li>Vec 动态数组</li>
+<li>String 字符串</li>
+<li>HashMap 哈希表</li>
+<li>集合的性能考虑</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<ul>
+<li>Vec 增删改查</li>
+<li>字符串拼接</li>
+<li>HashMap 统计词频</li>
+</ul>
+<p><strong>练习</strong>：</p>
+<ol>
+<li>实现待办事项列表</li>
+<li>词频统计工具</li>
+<li>集合转换与迭代</li>
+</ol>
+<hr>
+<h3 id="第-9-周闭包与迭代器">第 9 周：闭包与迭代器
+</h3><p><strong>主题</strong>：函数式编程特性</p>
+<p><strong>内容</strong>：</p>
+<ul>
+<li>闭包语法与捕获</li>
+<li>Iterator trait</li>
+<li>适配器（map、filter、fold）</li>
+<li>惰性求值</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<ul>
+<li>闭包捕获环境</li>
+<li>迭代器链式调用</li>
+<li>collect() 转换</li>
+</ul>
+<p><strong>练习</strong>：</p>
+<ol>
+<li>实现自定义迭代器</li>
+<li>使用迭代器处理数据</li>
+<li>闭包排序与过滤</li>
+</ol>
+<hr>
+<h3 id="第-10-周智能指针">第 10 周：智能指针
+</h3><p><strong>主题</strong>：Box、Rc、RefCell、Arc、Mutex</p>
+<p><strong>内容</strong>：</p>
+<ul>
+<li>Box 堆分配</li>
+<li>Rc 引用计数</li>
+<li>RefCell 内部可变性</li>
+<li>Arc + Mutex 线程安全</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<ul>
+<li>递归类型用 Box</li>
+<li>Rc 多所有权</li>
+<li>Arc + Mutex 并发</li>
+</ul>
+<p><strong>练习</strong>：</p>
+<ol>
+<li>实现树形数据结构</li>
+<li>多所有者场景</li>
+<li>线程安全计数器</li>
+</ol>
+<hr>
+<h3 id="第-11-周并发编程">第 11 周：并发编程
+</h3><p><strong>主题</strong>：线程、通道、async/await</p>
+<p><strong>内容</strong>：</p>
+<ul>
+<li>创建线程</li>
+<li>消息传递（mpsc）</li>
+<li>async/await 基础</li>
+<li>Tokio 简介</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<ul>
+<li>多线程计算</li>
+<li>通道通信</li>
+<li>异步 HTTP 请求</li>
+</ul>
+<p><strong>练习</strong>：</p>
+<ol>
+<li>并行计算数组和</li>
+<li>生产者 - 消费者模型</li>
+<li>异步文件读取</li>
+</ol>
+<hr>
+<h3 id="第-12-周实战项目">第 12 周：实战项目
+</h3><p><strong>主题</strong>：综合应用</p>
+<p><strong>项目选项</strong>：</p>
+<ol>
+<li><strong>命令行工具</strong>：文件搜索（类似 grep）</li>
+<li><strong>Web 服务</strong>：使用 Axum 构建 REST API</li>
+<li><strong>系统工具</strong>：简单的任务管理器</li>
+</ol>
+<p><strong>内容</strong>：</p>
+<ul>
+<li>项目规划</li>
+<li>代码组织</li>
+<li>测试与文档</li>
+<li>打包发布</li>
+</ul>
+<hr>
+<h2 id="-发布计划">📝 发布计划
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>周次</th>
+          <th>发布日期</th>
+          <th>主题</th>
+          <th>状态</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>第 1 周</td>
+          <td>2026-03-17</td>
+          <td>Rust 入门</td>
+          <td>待发布</td>
+      </tr>
+      <tr>
+          <td>第 2 周</td>
+          <td>2026-03-24</td>
+          <td>所有权（上）</td>
+          <td>待发布</td>
+      </tr>
+      <tr>
+          <td>第 3 周</td>
+          <td>2026-03-31</td>
+          <td>所有权（下）</td>
+          <td>待发布</td>
+      </tr>
+      <tr>
+          <td>第 4 周</td>
+          <td>2026-04-07</td>
+          <td>结构体与枚举</td>
+          <td>待发布</td>
+      </tr>
+      <tr>
+          <td>第 5 周</td>
+          <td>2026-04-14</td>
+          <td>错误处理</td>
+          <td>待发布</td>
+      </tr>
+      <tr>
+          <td>第 6 周</td>
+          <td>2026-04-21</td>
+          <td>泛型与 Trait</td>
+          <td>待发布</td>
+      </tr>
+      <tr>
+          <td>第 7 周</td>
+          <td>2026-04-28</td>
+          <td>生命周期</td>
+          <td>待发布</td>
+      </tr>
+      <tr>
+          <td>第 8 周</td>
+          <td>2026-05-05</td>
+          <td>集合类型</td>
+          <td>待发布</td>
+      </tr>
+      <tr>
+          <td>第 9 周</td>
+          <td>2026-05-12</td>
+          <td>闭包与迭代器</td>
+          <td>待发布</td>
+      </tr>
+      <tr>
+          <td>第 10 周</td>
+          <td>2026-05-19</td>
+          <td>智能指针</td>
+          <td>待发布</td>
+      </tr>
+      <tr>
+          <td>第 11 周</td>
+          <td>2026-05-26</td>
+          <td>并发编程</td>
+          <td>待发布</td>
+      </tr>
+      <tr>
+          <td>第 12 周</td>
+          <td>2026-06-02</td>
+          <td>实战项目</td>
+          <td>待发布</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="-与日计划的关系">🔄 与日计划的关系
+</h2><p>原日计划文件保留作为参考，周计划发布后：</p>
+<ul>
+<li>每周二发布新内容</li>
+<li>每周内容涵盖原 7-10 天的知识点</li>
+<li>更深度、更系统、更适合复习</li>
+</ul>
+<hr>
+<h2 id="-下一步">✅ 下一步
+</h2><ol>
+<li>每周日发布当周学习提醒</li>
+<li>每周二发布正式文章</li>
+<li>周末发布练习题解答</li>
+<li>12 周后汇总成电子书</li>
+</ol>
+<hr>
+<p><em>📚 慢就是快，每周深度学习！</em></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2026-03-18
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="HHjoker/HHjoker.github.io"
+    data-repo-id="R_kgDON1Vqng"
+    data-category="Announcements"
+    data-category-id="DIC_kwDON1Vqns4C3qHd"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('preferred_color_scheme');
+            } else {
+                setGiscusTheme('preferred_color_scheme');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 Huang Hao
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+    #TableOfContents > ul ul,
+    #TableOfContents > ul ol,
+    #TableOfContents > ol ul,
+    #TableOfContents > ol ol {
+        display: none;
+    }
+    #TableOfContents > ul .open,
+    #TableOfContents > ol .open {
+        display: block;
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://HHjoker.github.io/icons/backTop.svg);
+    }
+</style>
+
+<script type="text/javascript">
+    
+
+    function initScrollTop() {
+        let rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) {
+            return;
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop
+        rightSideBar.appendChild(btn)
+        
+        window.onscroll = function() {
+            
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    }
+
+    
+
+    function backToTop(){
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    initScrollTop();
+</script>
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    let codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) {
+      return;
+    }
+    codeBlocks.forEach(codeBlock => {
+      
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+        return;
+      }
+      
+      
+      let codeMoreBox = document.createElement('div');
+      codeMoreBox.classList.add('code-more-box');
+      
+      let codeMoreBtn = document.createElement('span');
+      codeMoreBtn.classList.add('code-more-btn');
+      codeMoreBtn.addEventListener('click', () => {
+        codeBlock.classList.add('code-show');
+        codeMoreBox.style.display = 'none';
+        
+        window.dispatchEvent(new Event('resize'))
+      })
+      
+      let img = document.createElement('img');
+      img.classList.add('code-more-img');
+      img.src = "https://HHjoker.github.io/icons/codeMore.ico"
+      
+      codeMoreBtn.appendChild(img);
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox)
+    })
+  }
+  
+  initCodeMoreBox();
+</script>
+
+    </body>
+</html>

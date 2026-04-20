@@ -7,7 +7,1637 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Thu, 12 Mar 2026 08:07:12 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/multimodal/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 20 Mar 2026 21:10:52 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/multimodal/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>AI 日报 | 2026-03-20</title>
+        <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-20/</link>
+        <pubDate>Fri, 20 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-20/</guid>
+        <description>&lt;h1 id=&#34;ai-日报--2026年03月20日星期五&#34;&gt;AI 日报 | 2026年03月20日（星期五）
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;📅 日期：2026年03月20日 | 📊 今日收录：&lt;strong&gt;15 篇论文&lt;/strong&gt; | 🔬 重点领域：LLM、Multimodal、Benchmark | 🚀 大模型应用：15 项&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Loc3R-VLM&lt;/strong&gt; (LLM): Multimodal Large Language Models (MLLMs) have made impressive progress in connecting vision and language, but they still&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AgentVLN&lt;/strong&gt; (Agent): Vision-and-Language Navigation (VLN) requires an embodied agent to ground complex natural-language instructions into lon&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AERR-Nav&lt;/strong&gt; (LLM): Zero-Shot Object Navigation (ZSON) in unknown multi-floor environments presents a significant challenge. Recent methods,&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MALLES&lt;/strong&gt; (LLM): In the real economy, modern decision-making is fundamentally challenged by high-dimensional, multimodal environments, wh&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Feeling the Space&lt;/strong&gt; (LLM): Recent Multimodal Large Language Models (MLLMs) have shown high potential for spatial reasoning within 3D scenes. Howeve&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-大模型应用亮点&#34;&gt;🚀 大模型应用亮点
+&lt;/h2&gt;&lt;h3 id=&#34;loc3r-vlm-language-based-localization-and-3d-reasoning-with-vision-language-models&#34;&gt;Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.18002v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning, RAG, Alignment&lt;/p&gt;
+&lt;p&gt;Multimodal Large Language Models (MLLMs) have made impressive progress in connecting vision and language, but they still struggle with spatial understanding and viewpoint-aware reasoning. Recent efforts aim to augment the input representations with geometric cues rather than explicitly teaching mode&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;agentvln-towards-agentic-vision-and-language-navigation&#34;&gt;AgentVLN: Towards Agentic Vision-and-Language Navigation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17670v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: Agent, Multimodal, Benchmark, Reasoning, Web Agent, Code Generation&lt;/p&gt;
+&lt;p&gt;Vision-and-Language Navigation (VLN) requires an embodied agent to ground complex natural-language instructions into long-horizon navigation in unseen environments. While Vision-Language Models (VLMs) offer strong 2D semantic understanding, current VLN systems remain constrained by limited spatial p&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;aerr-nav-adaptive-exploration-recovery-reminiscing-strategy-for-zero-shot-object-navigation&#34;&gt;AERR-Nav: Adaptive Exploration-Recovery-Reminiscing Strategy for Zero-Shot Object Navigation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17712v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Multimodal, Robotics, Benchmark, Reasoning, Memory&lt;/p&gt;
+&lt;p&gt;Zero-Shot Object Navigation (ZSON) in unknown multi-floor environments presents a significant challenge. Recent methods, mostly based on semantic value greedy waypoint selection, spatial topology-enhanced memory, and Multimodal Large Language Model (MLLM) as a decision-making framework, have led to &amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;-论文一览&#34;&gt;📚 论文一览
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;#&lt;/th&gt;
+          &lt;th&gt;论文&lt;/th&gt;
+          &lt;th&gt;第一作者&lt;/th&gt;
+          &lt;th&gt;领域&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.18002v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Loc3R-VLM: Language-based Localizat&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Reasoning, RAG, Alignment&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17670v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AgentVLN: Towards Agentic Vision-an&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Reasoning, Web Agent, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17712v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AERR-Nav: Adaptive Exploration-Reco&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Robotics, Benchmark, Reasoning, Memory&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17694v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MALLES: A Multi-agent LLMs-based Ec&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Multimodal, Training, RAG, Alignment&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17980v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Feeling the Space: Egomotion-Aware &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17746v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Concept-to-Pixel: Prompt-Free Unive&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Training, RAG, Medical AI, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;7&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17826v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;FailureMem: A Failure-Aware Multimo&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Multimodal, Reasoning, Web Agent, Memory, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17680v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;WeatherReasonSeg: A Benchmark for W&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Reasoning, Web Agent&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17815v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Process Supervision for Chain-of-Th&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Training, Reasoning, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17930v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Interpretable Traffic Responsibilit&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Multimodal, Reasoning&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;11&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17850v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ProbeFlow: Training-Free Adaptive F&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Multimodal, Robotics, Benchmark, Training, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;12&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17831v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RPMS: Enhancing LLM-Based Embodied &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Reasoning, RAG, Memory&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;13&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17781v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Facts as First Class Objects: Knowl&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Reasoning, RAG, Memory&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;14&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17993v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GMT: Goal-Conditioned Multimodal Tr&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Multimodal, Robotics, Benchmark, Transformer, Training, Reasoning, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;15&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17787v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Governed Memory: A Production Archi&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Benchmark, RAG, Memory&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-详细介绍&#34;&gt;🔍 详细介绍
+&lt;/h2&gt;&lt;h3 id=&#34;论文1-loc3r-vlm-language-based-localization-and-3d-reasoning-with-vision-language-models&#34;&gt;论文1: Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.18002v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.18002v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.18002v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning, RAG, Alignment&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal Large Language Models (MLLMs) have made impressive progress in connecting vision and language, but they still struggle with spatial understanding and viewpoint-aware reasoning. Recent efforts aim to augment the input representations with geometric cues rather than explicitly teaching models to reason in 3D space. We introduce Loc3R-VLM, a framework that equips 2D Vision-Language Models &amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文2-agentvln-towards-agentic-vision-and-language-navigation&#34;&gt;论文2: AgentVLN: Towards Agentic Vision-and-Language Navigation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17670v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17670v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17670v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Reasoning, Web Agent, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Vision-and-Language Navigation (VLN) requires an embodied agent to ground complex natural-language instructions into long-horizon navigation in unseen environments. While Vision-Language Models (VLMs) offer strong 2D semantic understanding, current VLN systems remain constrained by limited spatial perception, 2D-3D representation mismatch, and monocular scale ambiguity. In this paper, we propose A&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文3-aerr-nav-adaptive-exploration-recovery-reminiscing-strategy-for-zero-shot-object-navigation&#34;&gt;论文3: AERR-Nav: Adaptive Exploration-Recovery-Reminiscing Strategy for Zero-Shot Object Navigation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17712v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17712v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17712v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Robotics, Benchmark, Reasoning, Memory&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Zero-Shot Object Navigation (ZSON) in unknown multi-floor environments presents a significant challenge. Recent methods, mostly based on semantic value greedy waypoint selection, spatial topology-enhanced memory, and Multimodal Large Language Model (MLLM) as a decision-making framework, have led to improvements. However, these architectures struggle to balance exploration and exploitation for ZSON&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文4-malles-a-multi-agent-llms-based-economic-sandbox-with-consumer-preference-alignment&#34;&gt;论文4: MALLES: A Multi-agent LLMs-based Economic Sandbox with Consumer Preference Alignment
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17694v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17694v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17694v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Multimodal, Training, RAG, Alignment&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: In the real economy, modern decision-making is fundamentally challenged by high-dimensional, multimodal environments, which are further complicated by agent heterogeneity and combinatorial data sparsity. This paper introduces a Multi-Agent Large Language Model-based Economic Sandbox (MALLES), leveraging the inherent generalization capabilities of large-sacle models to establish a unified simulatio&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文5-feeling-the-space-egomotion-aware-video-representation-for-efficient-and-accurate-3d-scene-understanding&#34;&gt;论文5: Feeling the Space: Egomotion-Aware Video Representation for Efficient and Accurate 3D Scene Understanding
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17980v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17980v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17980v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Recent Multimodal Large Language Models (MLLMs) have shown high potential for spatial reasoning within 3D scenes. However, they typically rely on computationally expensive 3D representations like point clouds or reconstructed Bird&amp;rsquo;s-Eye View (BEV) maps, or lack physical grounding to resolve ambiguities in scale and size. This paper significantly enhances MLLMs with egomotion modality data, capture&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文6-concept-to-pixel-prompt-free-universal-medical-image-segmentation&#34;&gt;论文6: Concept-to-Pixel: Prompt-Free Universal Medical Image Segmentation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17746v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17746v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17746v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Training, RAG, Medical AI, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Universal medical image segmentation seeks to use a single foundational model to handle diverse tasks across multiple imaging modalities. However, existing approaches often rely heavily on manual visual prompts or retrieved reference images, which limits their automation and robustness. In addition, naive joint training across modalities often fails to address large domain shifts. To address these&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文7-failuremem-a-failure-aware-multimodal-framework-for-autonomous-software-repair&#34;&gt;论文7: FailureMem: A Failure-Aware Multimodal Framework for Autonomous Software Repair
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17826v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17826v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17826v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Multimodal, Reasoning, Web Agent, Memory, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal Automated Program Repair (MAPR) extends traditional program repair by requiring models to jointly reason over source code, textual issue descriptions, and visual artifacts such as GUI screenshots. While recent LLM-based repair systems have shown promising results, existing approaches face several limitations: rigid workflow pipelines restrict exploration during debugging, visual reasoni&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文8-weatherreasonseg-a-benchmark-for-weather-aware-reasoning-segmentation-in-visual-language-models&#34;&gt;论文8: WeatherReasonSeg: A Benchmark for Weather-Aware Reasoning Segmentation in Visual Language Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17680v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17680v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17680v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning, Web Agent&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Existing vision-language models (VLMs) have demonstrated impressive performance in reasoning-based segmentation. However, current benchmarks are primarily constructed from high-quality images captured under idealized conditions. This raises a critical question: when visual cues are severely degraded by adverse weather conditions such as rain, snow, or fog, can VLMs sustain reliable reasoning segme&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文9-process-supervision-for-chain-of-thought-reasoning-via-monte-carlo-net-information-gain&#34;&gt;论文9: Process Supervision for Chain-of-Thought Reasoning via Monte Carlo Net Information Gain
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17815v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17815v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17815v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Benchmark, Training, Reasoning, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multi-step reasoning improves the capabilities of large language models (LLMs) but increases the risk of errors propagating through intermediate steps. Process reward models (PRMs) mitigate this by scoring each step individually, enabling fine-grained supervision and improved reliability. Existing methods for training PRMs rely on costly human annotations or computationally intensive automatic lab&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文10-interpretable-traffic-responsibility-from-dashcam-video-via-legal-multi-agent-reasoning&#34;&gt;论文10: Interpretable Traffic Responsibility from Dashcam Video via Legal Multi Agent Reasoning
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17930v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17930v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17930v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Multimodal, Reasoning&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: The widespread adoption of dashcams has made video evidence in traffic accidents increasingly abundant, yet transforming &amp;ldquo;what happened in the video&amp;rdquo; into &amp;ldquo;who is responsible under which legal provisions&amp;rdquo; still relies heavily on human experts. Existing ego-view traffic accident studies mainly focus on perception and semantic understanding, while LLM-based legal methods are mostly built on textual &amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文11-probeflow-training-free-adaptive-flow-matching-for-vision-language-action-models&#34;&gt;论文11: ProbeFlow: Training-Free Adaptive Flow Matching for Vision-Language-Action Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17850v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17850v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17850v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Multimodal, Robotics, Benchmark, Training, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Recent Vision-Language-Action (VLA) models equipped with Flow Matching (FM) action heads achieve state-of-the-art performance in complex robot manipulation. However, the multi-step iterative ODE solving required by FM introduces inference latency that precludes responsive physical control. While current acceleration efforts optimize the Vision-Language Model (VLM) backbone, the action head bottlen&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文12-rpms-enhancing-llm-based-embodied-planning-through-rule-augmented-memory-synergy&#34;&gt;论文12: RPMS: Enhancing LLM-Based Embodied Planning through Rule-Augmented Memory Synergy
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17831v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17831v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17831v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Reasoning, RAG, Memory&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: LLM agents often fail in closed-world embodied environments because actions must satisfy strict preconditions &amp;ndash; such as location, inventory, and container states &amp;ndash; and failure feedback is sparse. We identify two structurally coupled failure modes: (P1) invalid action generation and (P2) state drift, each amplifying the other in a degenerative cycle. We present RPMS, a conflict-managed architectu&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文13-facts-as-first-class-objects-knowledge-objects-for-persistent-llm-memory&#34;&gt;论文13: Facts as First Class Objects: Knowledge Objects for Persistent LLM Memory
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17781v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17781v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17781v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Benchmark, Reasoning, RAG, Memory&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Large language models increasingly serve as persistent knowledge workers, with in-context memory - facts stored in the prompt - as the default strategy. We benchmark in-context memory against Knowledge Objects (KOs), discrete hash-addressed tuples with O(1) retrieval. Within the context window, Claude Sonnet 4.5 achieves 100% exact-match accuracy from 10 to 7,000 facts (97.5% of its 200K window). &amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文14-gmt-goal-conditioned-multimodal-transformer-for-6-dof-object-trajectory-synthesis-in-3d-scenes&#34;&gt;论文14: GMT: Goal-Conditioned Multimodal Transformer for 6-DOF Object Trajectory Synthesis in 3D Scenes
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17993v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17993v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17993v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Multimodal, Robotics, Benchmark, Transformer, Training, Reasoning, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Synthesizing controllable 6-DOF object manipulation trajectories in 3D environments is essential for enabling robots to interact with complex scenes, yet remains challenging due to the need for accurate spatial reasoning, physical feasibility, and multimodal scene understanding. Existing approaches often rely on 2D or partial 3D representations, limiting their ability to capture full scene geometr&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文15-governed-memory-a-production-architecture-for-multi-agent-workflows&#34;&gt;论文15: Governed Memory: A Production Architecture for Multi-Agent Workflows
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.17787v1&lt;/strong&gt; |  | 2026-03-18&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.17787v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17787v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Benchmark, RAG, Memory&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Enterprise AI deploys dozens of autonomous agent nodes across workflows, each acting on the same entities with no shared memory and no common governance. We identify five structural challenges arising from this memory governance gap: memory silos across agent workflows; governance fragmentation across teams and tools; unstructured memories unusable by downstream systems; redundant context delivery&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-行业快报&#34;&gt;🏢 行业快报
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;OpenAI 发布新模型更新&lt;/strong&gt;: OpenAI 持续优化 GPT 系列模型，提升推理能力和多模态理解性能。 &lt;em&gt;(OpenAI Blog)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anthropic Claude 功能增强&lt;/strong&gt;: Claude 系列模型新增长上下文支持和改进的代码能力。 &lt;em&gt;(Anthropic)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Google DeepMind 研究进展&lt;/strong&gt;: DeepMind 在多模态学习和机器人控制领域取得新的突破。 &lt;em&gt;(Google DeepMind)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-全部参考链接&#34;&gt;📖 全部参考链接
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.18002v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Loc3R-VLM: Language-based Localization and 3D Reasoning with Vision-Language Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17670v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AgentVLN: Towards Agentic Vision-and-Language Navigation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17712v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AERR-Nav: Adaptive Exploration-Recovery-Reminiscing Strategy for Zero-Shot Object Navigation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17694v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MALLES: A Multi-agent LLMs-based Economic Sandbox with Consumer Preference Alignment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17980v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Feeling the Space: Egomotion-Aware Video Representation for Efficient and Accurate 3D Scene Understanding&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17746v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Concept-to-Pixel: Prompt-Free Universal Medical Image Segmentation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17826v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;FailureMem: A Failure-Aware Multimodal Framework for Autonomous Software Repair&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17680v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;WeatherReasonSeg: A Benchmark for Weather-Aware Reasoning Segmentation in Visual Language Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17815v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Process Supervision for Chain-of-Thought Reasoning via Monte Carlo Net Information Gain&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17930v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Interpretable Traffic Responsibility from Dashcam Video via Legal Multi Agent Reasoning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17850v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ProbeFlow: Training-Free Adaptive Flow Matching for Vision-Language-Action Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17831v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RPMS: Enhancing LLM-Based Embodied Planning through Rule-Augmented Memory Synergy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17781v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Facts as First Class Objects: Knowledge Objects for Persistent LLM Memory&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17993v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;GMT: Goal-Conditioned Multimodal Transformer for 6-DOF Object Trajectory Synthesis in 3D Scenes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.17787v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Governed Memory: A Production Architecture for Multi-Agent Workflows&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;📬 AI 日报自动抓取自 arXiv，每日早 8 点更新&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;💬 重点聚焦：大模型、Agent、多模态、机器人等方向&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;📊 统计：今日共收录 15 篇论文，其中大模型应用 15 项&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>AI 日报 | 2026-03-19</title>
+        <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-19/</link>
+        <pubDate>Thu, 19 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-19/</guid>
+        <description>&lt;h1 id=&#34;ai-日报--2026年03月19日星期四&#34;&gt;AI 日报 | 2026年03月19日（星期四）
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;📅 日期：2026年03月19日 | 📊 今日收录：&lt;strong&gt;15 篇论文&lt;/strong&gt; | 🔬 重点领域：LLM、Agent、Robotics | 🚀 大模型应用：15 项&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;When Should a Robot Think? Resource-Aware Reasoning via Reinforcement Learning for Embodied Robotic Decision-Making&lt;/strong&gt; (LLM): Embodied robotic systems increasingly rely on large language model (LLM)-based agents to support high-level reasoning, p&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kestrel&lt;/strong&gt; (Agent): Large vision-language models (LVLMs) have become increasingly strong but remain prone to hallucinations in multimodal ta&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Omanic&lt;/strong&gt; (LLM): Reasoning-focused large language models (LLMs) have advanced in many NLP tasks, yet their evaluation remains challenging&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Differential Harm Propensity in Personalized LLM Agents&lt;/strong&gt; (LLM): Large language models (LLMs) are increasingly deployed as tool-using agents, shifting safety concerns from harmful text &amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Chronos&lt;/strong&gt; (LLM): Recent advances in Large Language Models (LLMs) have enabled conversational AI agents to engage in extended multi-turn i&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-大模型应用亮点&#34;&gt;🚀 大模型应用亮点
+&lt;/h2&gt;&lt;h3 id=&#34;when-should-a-robot-think-resource-aware-reasoning-via-reinforcement-learning-for-embodied-robotic-decision-making&#34;&gt;When Should a Robot Think? Resource-Aware Reasoning via Reinforcement Learning for Embodied Robotic Decision-Making
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16673v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Agent, Robotics, Benchmark, Reasoning&lt;/p&gt;
+&lt;p&gt;Embodied robotic systems increasingly rely on large language model (LLM)-based agents to support high-level reasoning, planning, and decision-making during interactions with the environment. However, invoking LLM reasoning introduces substantial computational latency and resource overhead, which can&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;kestrel-grounding-self-refinement-for-lvlm-hallucination-mitigation&#34;&gt;Kestrel: Grounding Self-Refinement for LVLM Hallucination Mitigation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16664v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: Agent, Multimodal, Benchmark, Training, RAG&lt;/p&gt;
+&lt;p&gt;Large vision-language models (LVLMs) have become increasingly strong but remain prone to hallucinations in multimodal tasks, which significantly narrows their deployment. As training these LVLMs to avoid hallucinations becomes prohibitively expensive for larger models, training-free methods offer a &amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;omanic-towards-step-wise-evaluation-of-multi-hop-reasoning-in-large-language-models&#34;&gt;Omanic: Towards Step-wise Evaluation of Multi-hop Reasoning in Large Language Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16654v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Benchmark, Training, Reasoning, RAG, Code Generation&lt;/p&gt;
+&lt;p&gt;Reasoning-focused large language models (LLMs) have advanced in many NLP tasks, yet their evaluation remains challenging: final answers alone do not expose the intermediate reasoning steps, making it difficult to determine whether a model truly reasons correctly and where failures occur, while exist&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;-论文一览&#34;&gt;📚 论文一览
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;#&lt;/th&gt;
+          &lt;th&gt;论文&lt;/th&gt;
+          &lt;th&gt;第一作者&lt;/th&gt;
+          &lt;th&gt;领域&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16673v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;When Should a Robot Think? Resource&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Robotics, Benchmark, Reasoning&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16664v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Kestrel: Grounding Self-Refinement &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Training, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16654v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Omanic: Towards Step-wise Evaluatio&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Training, Reasoning, RAG, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16734v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Differential Harm Propensity in Per&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Benchmark, RAG, Memory&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16862v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Chronos: Temporal-Aware Conversatio&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Benchmark, Reasoning, Web Agent, RAG, Memory&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16600v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Rationale Matters: Learning Transfe&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Multimodal, Training, Web Agent, Alignment, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;7&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16558v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Segmentation-Based Attention Entrop&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Multimodal, Robotics, Benchmark, Training, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16860v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;DreamPlan: Efficient Reinforcement &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Multimodal, Robotics, Training, Reasoning, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16593v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Scalable Inspection Planning via Fl&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Robotics, Benchmark, Reasoning, RAG, Memory, Medical AI, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16733v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;IQuest-Coder-V1 Technical Report&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Training, Reasoning, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;11&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16822v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Surg$Σ$: A Spectrum of Large-Scale &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Reasoning, Web Agent, Medical AI&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;12&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16867v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Efficient Reasoning on the Edge&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Reasoning, Memory&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;13&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16777v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Anticipatory Planning for Multimoda&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Reasoning&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;14&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16790v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;InCoder-32B: Code Foundation Model &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Training, Reasoning, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;15&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16781v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;IOSVLM: A 3D Vision-Language Model &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Training, Web Agent, RAG, Alignment, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-详细介绍&#34;&gt;🔍 详细介绍
+&lt;/h2&gt;&lt;h3 id=&#34;论文1-when-should-a-robot-think-resource-aware-reasoning-via-reinforcement-learning-for-embodied-robotic-decision-making&#34;&gt;论文1: When Should a Robot Think? Resource-Aware Reasoning via Reinforcement Learning for Embodied Robotic Decision-Making
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16673v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16673v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16673v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Robotics, Benchmark, Reasoning&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Embodied robotic systems increasingly rely on large language model (LLM)-based agents to support high-level reasoning, planning, and decision-making during interactions with the environment. However, invoking LLM reasoning introduces substantial computational latency and resource overhead, which can interrupt action execution and reduce system reliability. Excessive reasoning may delay actions, wh&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文2-kestrel-grounding-self-refinement-for-lvlm-hallucination-mitigation&#34;&gt;论文2: Kestrel: Grounding Self-Refinement for LVLM Hallucination Mitigation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16664v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16664v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16664v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Training, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Large vision-language models (LVLMs) have become increasingly strong but remain prone to hallucinations in multimodal tasks, which significantly narrows their deployment. As training these LVLMs to avoid hallucinations becomes prohibitively expensive for larger models, training-free methods offer a cheap and flexible solution to this problem, yet existing approaches based on decoding or tool use o&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文3-omanic-towards-step-wise-evaluation-of-multi-hop-reasoning-in-large-language-models&#34;&gt;论文3: Omanic: Towards Step-wise Evaluation of Multi-hop Reasoning in Large Language Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16654v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16654v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16654v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Benchmark, Training, Reasoning, RAG, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Reasoning-focused large language models (LLMs) have advanced in many NLP tasks, yet their evaluation remains challenging: final answers alone do not expose the intermediate reasoning steps, making it difficult to determine whether a model truly reasons correctly and where failures occur, while existing multi-hop QA benchmarks lack step-level annotations for diagnosing reasoning failures. To addres&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文4-differential-harm-propensity-in-personalized-llm-agents-the-curious-case-of-mental-health-disclosure&#34;&gt;论文4: Differential Harm Propensity in Personalized LLM Agents: The Curious Case of Mental Health Disclosure
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16734v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16734v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16734v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Benchmark, RAG, Memory&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Large language models (LLMs) are increasingly deployed as tool-using agents, shifting safety concerns from harmful text generation to harmful task completion. Deployed systems often condition on user profiles or persistent memory, yet agent safety evaluations typically ignore personalization signals. To address this gap, we investigated how mental health disclosure, a sensitive and realistic user-&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文5-chronos-temporal-aware-conversational-agents-with-structured-event-retrieval-for-long-term-memory&#34;&gt;论文5: Chronos: Temporal-Aware Conversational Agents with Structured Event Retrieval for Long-Term Memory
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16862v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16862v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16862v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Benchmark, Reasoning, Web Agent, RAG, Memory&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Recent advances in Large Language Models (LLMs) have enabled conversational AI agents to engage in extended multi-turn interactions spanning weeks or months. However, existing memory systems struggle to reason over temporally grounded facts and preferences that evolve across months of interaction and lack effective retrieval strategies for multi-hop, time-sensitive queries over long dialogue histo&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文6-rationale-matters-learning-transferable-rubrics-via-proxy-guided-critique-for-vlmreward-models&#34;&gt;论文6: Rationale Matters: Learning Transferable Rubrics via Proxy-Guided Critique for VLMReward Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16600v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16600v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16600v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Multimodal, Training, Web Agent, Alignment, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Generative reward models (GRMs) for vision-language models (VLMs) often evaluate outputs via a three-stage pipeline: rubric generation, criterion-based scoring, and a final verdict. However, the intermediate rubric is rarely optimized directly. Prior work typically either treats rubrics as incidental or relies on expensive LLM-as-judge checks that provide no differentiable signal and limited train&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文7-segmentation-based-attention-entropy-detecting-and-mitigating-object-hallucinations-in-large-vision-language-models&#34;&gt;论文7: Segmentation-Based Attention Entropy: Detecting and Mitigating Object Hallucinations in Large Vision-Language Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16558v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16558v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16558v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Multimodal, Robotics, Benchmark, Training, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Large Vision-Language Models (LVLMs) achieve strong performance on many multimodal tasks, but object hallucinations severely undermine their reliability. Most existing studies focus on the text modality, attributing hallucinations to overly strong language priors and insufficient visual grounding. In contrast, we observe that abnormal attention patterns within the visual modality can also give ris&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文8-dreamplan-efficient-reinforcement-fine-tuning-of-vision-language-planners-via-video-world-models&#34;&gt;论文8: DreamPlan: Efficient Reinforcement Fine-Tuning of Vision-Language Planners via Video World Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16860v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16860v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16860v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Multimodal, Robotics, Training, Reasoning, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Robotic manipulation requires sophisticated commonsense reasoning, a capability naturally possessed by large-scale Vision-Language Models (VLMs). While VLMs show promise as zero-shot planners, their lack of grounded physical understanding often leads to compounding errors and low success rates when deployed in complex real-world environments, particularly for challenging tasks like deformable obje&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文9-scalable-inspection-planning-via-flow-based-mixed-integer-linear-programming&#34;&gt;论文9: Scalable Inspection Planning via Flow-based Mixed Integer Linear Programming
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16593v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16593v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16593v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Robotics, Benchmark, Reasoning, RAG, Memory, Medical AI, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Inspection planning is concerned with computing the shortest robot path to inspect a given set of points of interest (POIs) using the robot&amp;rsquo;s sensors. This problem arises in a wide range of applications from manufacturing to medical robotics. To alleviate the problem&amp;rsquo;s complexity, recent methods rely on sampling-based methods to obtain a more manageable (discrete) graph inspection planning (GIP) p&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文10-iquest-coder-v1-technical-report&#34;&gt;论文10: IQuest-Coder-V1 Technical Report
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16733v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16733v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16733v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Training, Reasoning, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: In this report, we introduce the IQuest-Coder-V1 series-(7B/14B/40B/40B-Loop), a new family of code large language models (LLMs). Moving beyond static code representations, we propose the code-flow multi-stage training paradigm, which captures the dynamic evolution of software logic through different phases of the pipeline. Our models are developed through the evolutionary pipeline, starting with &amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文11-surgσ-a-spectrum-of-large-scale-multimodal-data-and-foundation-models-for-surgical-intelligence&#34;&gt;论文11: Surg$Σ$: A Spectrum of Large-Scale Multimodal Data and Foundation Models for Surgical Intelligence
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16822v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16822v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16822v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Reasoning, Web Agent, Medical AI&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Surgical intelligence has the potential to improve the safety and consistency of surgical care, yet most existing surgical AI frameworks remain task-specific and struggle to generalize across procedures and institutions. Although multimodal foundation models, particularly multimodal large language models, have demonstrated strong cross-task capabilities across various medical domains, their advanc&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文12-efficient-reasoning-on-the-edge&#34;&gt;论文12: Efficient Reasoning on the Edge
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16867v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16867v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16867v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Reasoning, Memory&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Large language models (LLMs) with chain-of-thought reasoning achieve state-of-the-art performance across complex problem-solving tasks, but their verbose reasoning traces and large context requirements make them impractical for edge deployment. These challenges include high token generation costs, large KV-cache footprints, and inefficiencies when distilling reasoning capabilities into smaller mod&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文13-anticipatory-planning-for-multimodal-ai-agents&#34;&gt;论文13: Anticipatory Planning for Multimodal AI Agents
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16777v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16777v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16777v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Reasoning&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Recent advances in multimodal agents have improved computer-use interaction and tool-usage, yet most existing systems remain reactive, optimizing actions in isolation without reasoning about future states or long-term goals. This limits planning coherence and prevents agents from reliably solving high-level, multi-step tasks. We introduce TraceR1, a two-stage reinforcement learning framework that &amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文14-incoder-32b-code-foundation-model-for-industrial-scenarios&#34;&gt;论文14: InCoder-32B: Code Foundation Model for Industrial Scenarios
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16790v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16790v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16790v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Benchmark, Training, Reasoning, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Recent code large language models have achieved remarkable progress on general programming tasks. Nevertheless, their performance degrades significantly in industrial scenarios that require reasoning about hardware semantics, specialized language constructs, and strict resource constraints. To address these challenges, we introduce InCoder-32B (Industrial-Coder-32B), the first 32B-parameter code f&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文15-iosvlm-a-3d-vision-language-model-for-unified-dental-diagnosis-from-intraoral-scans&#34;&gt;论文15: IOSVLM: A 3D Vision-Language Model for Unified Dental Diagnosis from Intraoral Scans
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.16781v1&lt;/strong&gt; |  | 2026-03-17&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.16781v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16781v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Training, Web Agent, RAG, Alignment, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: 3D intraoral scans (IOS) are increasingly adopted in routine dentistry due to abundant geometric evidence, and unified multi-disease diagnosis is desirable for clinical documentation and communication. While recent works introduce dental vision-language models (VLMs) to enable unified diagnosis and report generation on 2D images or multi-view images rendered from IOS, they do not fully leverage na&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-行业快报&#34;&gt;🏢 行业快报
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;OpenAI 发布新模型更新&lt;/strong&gt;: OpenAI 持续优化 GPT 系列模型，提升推理能力和多模态理解性能。 &lt;em&gt;(OpenAI Blog)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anthropic Claude 功能增强&lt;/strong&gt;: Claude 系列模型新增长上下文支持和改进的代码能力。 &lt;em&gt;(Anthropic)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Google DeepMind 研究进展&lt;/strong&gt;: DeepMind 在多模态学习和机器人控制领域取得新的突破。 &lt;em&gt;(Google DeepMind)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-全部参考链接&#34;&gt;📖 全部参考链接
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16673v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;When Should a Robot Think? Resource-Aware Reasoning via Reinforcement Learning for Embodied Robotic Decision-Making&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16664v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Kestrel: Grounding Self-Refinement for LVLM Hallucination Mitigation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16654v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Omanic: Towards Step-wise Evaluation of Multi-hop Reasoning in Large Language Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16734v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Differential Harm Propensity in Personalized LLM Agents: The Curious Case of Mental Health Disclosure&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16862v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Chronos: Temporal-Aware Conversational Agents with Structured Event Retrieval for Long-Term Memory&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16600v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Rationale Matters: Learning Transferable Rubrics via Proxy-Guided Critique for VLMReward Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16558v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Segmentation-Based Attention Entropy: Detecting and Mitigating Object Hallucinations in Large Vision-Language Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16860v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;DreamPlan: Efficient Reinforcement Fine-Tuning of Vision-Language Planners via Video World Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16593v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Scalable Inspection Planning via Flow-based Mixed Integer Linear Programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16733v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;IQuest-Coder-V1 Technical Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16822v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Surg$Σ$: A Spectrum of Large-Scale Multimodal Data and Foundation Models for Surgical Intelligence&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16867v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Efficient Reasoning on the Edge&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16777v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Anticipatory Planning for Multimodal AI Agents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16790v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;InCoder-32B: Code Foundation Model for Industrial Scenarios&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.16781v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;IOSVLM: A 3D Vision-Language Model for Unified Dental Diagnosis from Intraoral Scans&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;📬 AI 日报自动抓取自 arXiv，每日早 8 点更新&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;💬 重点聚焦：大模型、Agent、多模态、机器人等方向&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;📊 统计：今日共收录 15 篇论文，其中大模型应用 15 项&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>AI 日报 | 2026-03-16</title>
+        <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-16/</link>
+        <pubDate>Mon, 16 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-16/</guid>
+        <description>&lt;h1 id=&#34;ai-日报--2026年03月16日星期一&#34;&gt;AI 日报 | 2026年03月16日（星期一）
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;📅 日期：2026年03月16日 | 📊 今日收录：&lt;strong&gt;15 篇论文&lt;/strong&gt; | 🔬 重点领域：LLM、Agent、Multimodal | 🚀 大模型应用：15 项&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;LABSHIELD&lt;/strong&gt; (LLM): Artificial intelligence is increasingly catalyzing scientific automation, with multimodal large language model (MLLM) ag&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OmniStream&lt;/strong&gt; (Agent): Modern visual agents require representations that are general, causal, and physically structured to operate in real-time&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MobileKernelBench&lt;/strong&gt; (LLM): Large language models (LLMs) have demonstrated remarkable capabilities in code generation, yet their potential for gener&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;EgoIntent&lt;/strong&gt; (LLM): Multimodal Large Language Models (MLLMs) have demonstrated remarkable video reasoning capabilities across diverse tasks&amp;hellip;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HomeSafe-Bench&lt;/strong&gt; (Agent): The rapid evolution of embodied agents has accelerated the deployment of household robots in real-world environments. Ho&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-大模型应用亮点&#34;&gt;🚀 大模型应用亮点
+&lt;/h2&gt;&lt;h3 id=&#34;labshield-a-multimodal-benchmark-for-safety-critical-reasoning-and-planning-in-scientific-laboratories&#34;&gt;LABSHIELD: A Multimodal Benchmark for Safety-Critical Reasoning and Planning in Scientific Laboratories
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Agent, Multimodal, Benchmark, Reasoning, RAG&lt;/p&gt;
+&lt;p&gt;Artificial intelligence is increasingly catalyzing scientific automation, with multimodal large language model (MLLM) agents evolving from lab assistants into self-driving lab operators. This transition imposes stringent safety requirements on laboratory environments, where fragile glassware, hazard&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;omnistream-mastering-perception-reconstruction-and-action-in-continuous-streams&#34;&gt;OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: Agent, Multimodal, Robotics, Benchmark, Training, Reasoning, RAG, Alignment&lt;/p&gt;
+&lt;p&gt;Modern visual agents require representations that are general, causal, and physically structured to operate in real-time streaming environments. However, current vision foundation models remain fragmented, specializing narrowly in image semantic perception, offline temporal modeling, or spatial geom&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;mobilekernelbench-can-llms-write-efficient-kernels-for-mobile-devices&#34;&gt;MobileKernelBench: Can LLMs Write Efficient Kernels for Mobile Devices?
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Agent, Benchmark, Training, Reasoning, RAG, Code Generation&lt;/p&gt;
+&lt;p&gt;Large language models (LLMs) have demonstrated remarkable capabilities in code generation, yet their potential for generating kernels specifically for mobile de- vices remains largely unexplored. In this work, we extend the scope of automated kernel generation to the mobile domain to investigate the&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;-论文一览&#34;&gt;📚 论文一览
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;#&lt;/th&gt;
+          &lt;th&gt;论文&lt;/th&gt;
+          &lt;th&gt;第一作者&lt;/th&gt;
+          &lt;th&gt;领域&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LABSHIELD: A Multimodal Benchmark f&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Multimodal, Benchmark, Reasoning, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OmniStream: Mastering Perception, R&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Robotics, Benchmark, Training, Reasoning, RAG, Alignment&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MobileKernelBench: Can LLMs Write E&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Benchmark, Training, Reasoning, RAG, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12147v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EgoIntent: An Egocentric Step-level&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Robotics, Benchmark, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11975v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HomeSafe-Bench: Evaluating Vision-L&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Robotics, Benchmark, Reasoning&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12252v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EndoCoT: Scaling Endogenous Chain-o&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Reasoning, Web Agent, RAG, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;7&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12238v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SceneAssistant: A Visual Feedback A&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Reasoning, RAG, Alignment, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12138v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HATS: Hardness-Aware Trajectory Syn&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Training, Web Agent, Alignment&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12266v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MM-CondChain: A Programmatically Ve&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Multimodal, Benchmark, Reasoning, Web Agent&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12180v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Strategic Navigation or Stochastic &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;11&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12056v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;XSkill: Continual Learning from Exp&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;12&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11915v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CoMMET: To What Extent Can LLMs Per&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Reasoning&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;13&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12262v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Video Streaming Thinking: VideoLLMs&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Training, Reasoning, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;14&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11991v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BTZSC: A Benchmark for Zero-Shot Te&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Training, RAG, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;15&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12226v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Sparking Scientific Creativity via &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-详细介绍&#34;&gt;🔍 详细介绍
+&lt;/h2&gt;&lt;h3 id=&#34;论文1-labshield-a-multimodal-benchmark-for-safety-critical-reasoning-and-planning-in-scientific-laboratories&#34;&gt;论文1: LABSHIELD: A Multimodal Benchmark for Safety-Critical Reasoning and Planning in Scientific Laboratories
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11987v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Multimodal, Benchmark, Reasoning, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Artificial intelligence is increasingly catalyzing scientific automation, with multimodal large language model (MLLM) agents evolving from lab assistants into self-driving lab operators. This transition imposes stringent safety requirements on laboratory environments, where fragile glassware, hazardous substances, and high-precision laboratory equipment render planning errors or misinterpreted ris&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文2-omnistream-mastering-perception-reconstruction-and-action-in-continuous-streams&#34;&gt;论文2: OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12265v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Robotics, Benchmark, Training, Reasoning, RAG, Alignment&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Modern visual agents require representations that are general, causal, and physically structured to operate in real-time streaming environments. However, current vision foundation models remain fragmented, specializing narrowly in image semantic perception, offline temporal modeling, or spatial geometry. This paper introduces OmniStream, a unified streaming visual backbone that effectively perceiv&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文3-mobilekernelbench-can-llms-write-efficient-kernels-for-mobile-devices&#34;&gt;论文3: MobileKernelBench: Can LLMs Write Efficient Kernels for Mobile Devices?
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11935v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Benchmark, Training, Reasoning, RAG, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Large language models (LLMs) have demonstrated remarkable capabilities in code generation, yet their potential for generating kernels specifically for mobile de- vices remains largely unexplored. In this work, we extend the scope of automated kernel generation to the mobile domain to investigate the central question: Can LLMs write efficient kernels for mobile devices? To enable systematic investi&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文4-egointent-an-egocentric-step-level-benchmark-for-understanding-what-why-and-next&#34;&gt;论文4: EgoIntent: An Egocentric Step-level Benchmark for Understanding What, Why, and Next
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12147v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12147v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12147v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Robotics, Benchmark, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal Large Language Models (MLLMs) have demonstrated remarkable video reasoning capabilities across diverse tasks. However, their ability to understand human intent at a fine-grained level in egocentric videos remains largely unexplored. Existing benchmarks focus primarily on episode-level intent reasoning, overlooking the finer granularity of step-level intent understanding. Yet application&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文5-homesafe-bench-evaluating-vision-language-models-on-unsafe-action-detection-for-embodied-agents-in-household-scenarios&#34;&gt;论文5: HomeSafe-Bench: Evaluating Vision-Language Models on Unsafe Action Detection for Embodied Agents in Household Scenarios
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11975v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11975v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11975v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Robotics, Benchmark, Reasoning&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: The rapid evolution of embodied agents has accelerated the deployment of household robots in real-world environments. However, unlike structured industrial settings, household spaces introduce unpredictable safety risks, where system limitations such as perception latency and lack of common sense knowledge can lead to dangerous errors. Current safety evaluations, often restricted to static images,&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文6-endocot-scaling-endogenous-chain-of-thought-reasoning-in-diffusion-models&#34;&gt;论文6: EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12252v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12252v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12252v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning, Web Agent, RAG, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Recently, Multimodal Large Language Models (MLLMs) have been widely integrated into diffusion frameworks primarily as text encoders to tackle complex tasks such as spatial reasoning. However, this paradigm suffers from two critical limitations: (i) MLLMs text encoder exhibits insufficient reasoning depth. Single-step encoding fails to activate the Chain-of-Thought process, which is essential for M&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文7-sceneassistant-a-visual-feedback-agent-for-open-vocabulary-3d-scene-generation&#34;&gt;论文7: SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12238v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12238v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12238v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Reasoning, RAG, Alignment, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Text-to-3D scene generation from natural language is highly desirable for digital content creation. However, existing methods are largely domain-restricted or reliant on predefined spatial relationships, limiting their capacity for unconstrained, open-vocabulary 3D scene synthesis. In this paper, we introduce SceneAssistant, a visual-feedback-driven agent designed for open-vocabulary 3D scene gene&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文8-hats-hardness-aware-trajectory-synthesis-for-gui-agents&#34;&gt;论文8: HATS: Hardness-Aware Trajectory Synthesis for GUI Agents
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12138v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12138v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12138v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Training, Web Agent, Alignment&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Graphical user interface (GUI) agents powered by large vision-language models (VLMs) have shown remarkable potential in automating digital tasks, highlighting the need for high-quality trajectory data to support effective agent training. Yet existing trajectory synthesis pipelines often yield agents that fail to generalize beyond simple interactions. We identify this limitation as stemming from th&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文9-mm-condchain-a-programmatically-verified-benchmark-for-visually-grounded-deep-compositional-reasoning&#34;&gt;论文9: MM-CondChain: A Programmatically Verified Benchmark for Visually Grounded Deep Compositional Reasoning
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12266v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12266v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12266v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Multimodal, Benchmark, Reasoning, Web Agent&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal Large Language Models (MLLMs) are increasingly used to carry out visual workflows such as navigating GUIs, where the next step depends on verified visual compositional conditions (e.g., &amp;ldquo;if a permission dialog appears and the color of the interface is green, click Allow&amp;rdquo;) and the process may branch or terminate early. Yet this capability remains under-evaluated: existing benchmarks focu&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文10-strategic-navigation-or-stochastic-search-how-agents-and-humans-reason-over-document-collections&#34;&gt;论文10: Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12180v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12180v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12180v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal agents offer a promising path to automating complex document-intensive workflows. Yet, a critical question remains: do these agents demonstrate genuine strategic reasoning, or merely stochastic trial-and-error search? To address this, we introduce MADQA, a benchmark of 2,250 human-authored questions grounded in 800 heterogeneous PDF documents. Guided by Classical Test Theory, we design &amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文11-xskill-continual-learning-from-experience-and-skills-in-multimodal-agents&#34;&gt;论文11: XSkill: Continual Learning from Experience and Skills in Multimodal Agents
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12056v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12056v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12056v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal agents can now tackle complex reasoning tasks with diverse tools, yet they still suffer from inefficient tool use and inflexible orchestration in open-ended settings. A central challenge is enabling such agents to continually improve without parameter updates by learning from past trajectories. We identify two complementary forms of reusable knowledge essential for this goal: experience&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文12-commet-to-what-extent-can-llms-perform-theory-of-mind-tasks&#34;&gt;论文12: CoMMET: To What Extent Can LLMs Perform Theory of Mind Tasks?
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11915v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11915v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11915v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Theory of Mind (ToM)-the ability to reason about the mental states of oneself and others-is a cornerstone of human social intelligence. As Large Language Models (LLMs) become ubiquitous in real-world applications, validating their capacity for this level of social reasoning is essential for effective and natural interactions. However, existing benchmarks for assessing ToM in LLMs are limited; most&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文13-video-streaming-thinking-videollms-can-watch-and-think-simultaneously&#34;&gt;论文13: Video Streaming Thinking: VideoLLMs Can Watch and Think Simultaneously
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12262v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12262v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12262v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Benchmark, Training, Reasoning, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Online Video Large Language Models (VideoLLMs) play a critical role in supporting responsive, real-time interaction. Existing methods focus on streaming perception, lacking a synchronized logical reasoning stream. However, directly applying test-time scaling methods incurs unacceptable response latency. To address this trade-off, we propose Video Streaming Thinking (VST), a novel paradigm for stre&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文14-btzsc-a-benchmark-for-zero-shot-text-classification-across-cross-encoders-embedding-models-rerankers-and-llms&#34;&gt;论文14: BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11991v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11991v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11991v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Benchmark, Training, RAG, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Zero-shot text classification (ZSC) offers the promise of eliminating costly task-specific annotation by matching texts directly to human-readable label descriptions. While early approaches have predominantly relied on cross-encoder models fine-tuned for natural language inference (NLI), recent advances in text-embedding models, rerankers, and instruction-tuned large language models (LLMs) have ch&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文15-sparking-scientific-creativity-via-llm-driven-interdisciplinary-inspiration&#34;&gt;论文15: Sparking Scientific Creativity via LLM-Driven Interdisciplinary Inspiration
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12226v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12226v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12226v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Despite interdisciplinary research leading to larger and longer-term impact, most work remains confined to single-domain academic silos. Recent AI-based approaches to scientific discovery show promise for interdisciplinary research, but many prioritize rapidly designing experiments and solutions, bypassing the exploratory, collaborative reasoning processes that drive creative interdisciplinary bre&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-行业快报&#34;&gt;🏢 行业快报
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;OpenAI 发布新模型更新&lt;/strong&gt;: OpenAI 持续优化 GPT 系列模型，提升推理能力和多模态理解性能。 &lt;em&gt;(OpenAI Blog)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anthropic Claude 功能增强&lt;/strong&gt;: Claude 系列模型新增长上下文支持和改进的代码能力。 &lt;em&gt;(Anthropic)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Google DeepMind 研究进展&lt;/strong&gt;: DeepMind 在多模态学习和机器人控制领域取得新的突破。 &lt;em&gt;(Google DeepMind)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-全部参考链接&#34;&gt;📖 全部参考链接
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LABSHIELD: A Multimodal Benchmark for Safety-Critical Reasoning and Planning in Scientific Laboratories&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MobileKernelBench: Can LLMs Write Efficient Kernels for Mobile Devices?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12147v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EgoIntent: An Egocentric Step-level Benchmark for Understanding What, Why, and Next&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11975v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HomeSafe-Bench: Evaluating Vision-Language Models on Unsafe Action Detection for Embodied Agents in Household Scenarios&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12252v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12238v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12138v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HATS: Hardness-Aware Trajectory Synthesis for GUI Agents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12266v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MM-CondChain: A Programmatically Verified Benchmark for Visually Grounded Deep Compositional Reasoning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12180v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12056v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;XSkill: Continual Learning from Experience and Skills in Multimodal Agents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11915v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CoMMET: To What Extent Can LLMs Perform Theory of Mind Tasks?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12262v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Video Streaming Thinking: VideoLLMs Can Watch and Think Simultaneously&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11991v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12226v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Sparking Scientific Creativity via LLM-Driven Interdisciplinary Inspiration&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;📬 AI 日报自动抓取自 arXiv，每日早 8 点更新&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;💬 重点聚焦：大模型、Agent、多模态、机器人等方向&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;📊 统计：今日共收录 15 篇论文，其中大模型应用 15 项&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>AI 日报 | 2026-03-15</title>
+        <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-15/</link>
+        <pubDate>Sun, 15 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-15/</guid>
+        <description>&lt;h1 id=&#34;ai-日报--2026年03月15日星期日&#34;&gt;AI 日报 | 2026年03月15日（星期日）
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;📅 日期：2026年03月15日 | 📊 今日收录：&lt;strong&gt;15 篇论文&lt;/strong&gt; | 🔬 重点领域：LLM、Agent、Multimodal | 🚀 大模型应用：15 项&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;LABSHIELD&lt;/strong&gt; (LLM): Artificial intelligence is increasingly catalyzing scientific automation, with multimodal large language model (MLLM) ag&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OmniStream&lt;/strong&gt; (Agent): Modern visual agents require representations that are general, causal, and physically structured to operate in real-time&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MobileKernelBench&lt;/strong&gt; (LLM): Large language models (LLMs) have demonstrated remarkable capabilities in code generation, yet their potential for gener&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;EgoIntent&lt;/strong&gt; (LLM): Multimodal Large Language Models (MLLMs) have demonstrated remarkable video reasoning capabilities across diverse tasks&amp;hellip;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HomeSafe-Bench&lt;/strong&gt; (Agent): The rapid evolution of embodied agents has accelerated the deployment of household robots in real-world environments. Ho&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-大模型应用亮点&#34;&gt;🚀 大模型应用亮点
+&lt;/h2&gt;&lt;h3 id=&#34;labshield-a-multimodal-benchmark-for-safety-critical-reasoning-and-planning-in-scientific-laboratories&#34;&gt;LABSHIELD: A Multimodal Benchmark for Safety-Critical Reasoning and Planning in Scientific Laboratories
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Agent, Multimodal, Benchmark, Reasoning, RAG&lt;/p&gt;
+&lt;p&gt;Artificial intelligence is increasingly catalyzing scientific automation, with multimodal large language model (MLLM) agents evolving from lab assistants into self-driving lab operators. This transition imposes stringent safety requirements on laboratory environments, where fragile glassware, hazard&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;omnistream-mastering-perception-reconstruction-and-action-in-continuous-streams&#34;&gt;OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: Agent, Multimodal, Robotics, Benchmark, Training, Reasoning, RAG, Alignment&lt;/p&gt;
+&lt;p&gt;Modern visual agents require representations that are general, causal, and physically structured to operate in real-time streaming environments. However, current vision foundation models remain fragmented, specializing narrowly in image semantic perception, offline temporal modeling, or spatial geom&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;mobilekernelbench-can-llms-write-efficient-kernels-for-mobile-devices&#34;&gt;MobileKernelBench: Can LLMs Write Efficient Kernels for Mobile Devices?
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Agent, Benchmark, Training, Reasoning, RAG, Code Generation&lt;/p&gt;
+&lt;p&gt;Large language models (LLMs) have demonstrated remarkable capabilities in code generation, yet their potential for generating kernels specifically for mobile de- vices remains largely unexplored. In this work, we extend the scope of automated kernel generation to the mobile domain to investigate the&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;-论文一览&#34;&gt;📚 论文一览
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;#&lt;/th&gt;
+          &lt;th&gt;论文&lt;/th&gt;
+          &lt;th&gt;第一作者&lt;/th&gt;
+          &lt;th&gt;领域&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LABSHIELD: A Multimodal Benchmark f&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Multimodal, Benchmark, Reasoning, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OmniStream: Mastering Perception, R&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Robotics, Benchmark, Training, Reasoning, RAG, Alignment&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MobileKernelBench: Can LLMs Write E&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Benchmark, Training, Reasoning, RAG, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12147v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EgoIntent: An Egocentric Step-level&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Robotics, Benchmark, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11975v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HomeSafe-Bench: Evaluating Vision-L&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Robotics, Benchmark, Reasoning&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12252v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EndoCoT: Scaling Endogenous Chain-o&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Reasoning, Web Agent, RAG, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;7&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12238v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SceneAssistant: A Visual Feedback A&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Reasoning, RAG, Alignment, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12138v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HATS: Hardness-Aware Trajectory Syn&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Training, Web Agent, Alignment&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12266v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MM-CondChain: A Programmatically Ve&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Multimodal, Benchmark, Reasoning, Web Agent&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12180v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Strategic Navigation or Stochastic &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;11&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12056v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;XSkill: Continual Learning from Exp&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;12&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11915v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CoMMET: To What Extent Can LLMs Per&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Reasoning&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;13&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12262v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Video Streaming Thinking: VideoLLMs&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Training, Reasoning, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;14&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11991v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BTZSC: A Benchmark for Zero-Shot Te&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Training, RAG, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;15&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12226v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Sparking Scientific Creativity via &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-详细介绍&#34;&gt;🔍 详细介绍
+&lt;/h2&gt;&lt;h3 id=&#34;论文1-labshield-a-multimodal-benchmark-for-safety-critical-reasoning-and-planning-in-scientific-laboratories&#34;&gt;论文1: LABSHIELD: A Multimodal Benchmark for Safety-Critical Reasoning and Planning in Scientific Laboratories
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11987v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Multimodal, Benchmark, Reasoning, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Artificial intelligence is increasingly catalyzing scientific automation, with multimodal large language model (MLLM) agents evolving from lab assistants into self-driving lab operators. This transition imposes stringent safety requirements on laboratory environments, where fragile glassware, hazardous substances, and high-precision laboratory equipment render planning errors or misinterpreted ris&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文2-omnistream-mastering-perception-reconstruction-and-action-in-continuous-streams&#34;&gt;论文2: OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12265v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Robotics, Benchmark, Training, Reasoning, RAG, Alignment&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Modern visual agents require representations that are general, causal, and physically structured to operate in real-time streaming environments. However, current vision foundation models remain fragmented, specializing narrowly in image semantic perception, offline temporal modeling, or spatial geometry. This paper introduces OmniStream, a unified streaming visual backbone that effectively perceiv&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文3-mobilekernelbench-can-llms-write-efficient-kernels-for-mobile-devices&#34;&gt;论文3: MobileKernelBench: Can LLMs Write Efficient Kernels for Mobile Devices?
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11935v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Benchmark, Training, Reasoning, RAG, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Large language models (LLMs) have demonstrated remarkable capabilities in code generation, yet their potential for generating kernels specifically for mobile de- vices remains largely unexplored. In this work, we extend the scope of automated kernel generation to the mobile domain to investigate the central question: Can LLMs write efficient kernels for mobile devices? To enable systematic investi&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文4-egointent-an-egocentric-step-level-benchmark-for-understanding-what-why-and-next&#34;&gt;论文4: EgoIntent: An Egocentric Step-level Benchmark for Understanding What, Why, and Next
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12147v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12147v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12147v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Robotics, Benchmark, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal Large Language Models (MLLMs) have demonstrated remarkable video reasoning capabilities across diverse tasks. However, their ability to understand human intent at a fine-grained level in egocentric videos remains largely unexplored. Existing benchmarks focus primarily on episode-level intent reasoning, overlooking the finer granularity of step-level intent understanding. Yet application&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文5-homesafe-bench-evaluating-vision-language-models-on-unsafe-action-detection-for-embodied-agents-in-household-scenarios&#34;&gt;论文5: HomeSafe-Bench: Evaluating Vision-Language Models on Unsafe Action Detection for Embodied Agents in Household Scenarios
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11975v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11975v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11975v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Robotics, Benchmark, Reasoning&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: The rapid evolution of embodied agents has accelerated the deployment of household robots in real-world environments. However, unlike structured industrial settings, household spaces introduce unpredictable safety risks, where system limitations such as perception latency and lack of common sense knowledge can lead to dangerous errors. Current safety evaluations, often restricted to static images,&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文6-endocot-scaling-endogenous-chain-of-thought-reasoning-in-diffusion-models&#34;&gt;论文6: EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12252v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12252v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12252v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning, Web Agent, RAG, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Recently, Multimodal Large Language Models (MLLMs) have been widely integrated into diffusion frameworks primarily as text encoders to tackle complex tasks such as spatial reasoning. However, this paradigm suffers from two critical limitations: (i) MLLMs text encoder exhibits insufficient reasoning depth. Single-step encoding fails to activate the Chain-of-Thought process, which is essential for M&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文7-sceneassistant-a-visual-feedback-agent-for-open-vocabulary-3d-scene-generation&#34;&gt;论文7: SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12238v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12238v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12238v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Reasoning, RAG, Alignment, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Text-to-3D scene generation from natural language is highly desirable for digital content creation. However, existing methods are largely domain-restricted or reliant on predefined spatial relationships, limiting their capacity for unconstrained, open-vocabulary 3D scene synthesis. In this paper, we introduce SceneAssistant, a visual-feedback-driven agent designed for open-vocabulary 3D scene gene&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文8-hats-hardness-aware-trajectory-synthesis-for-gui-agents&#34;&gt;论文8: HATS: Hardness-Aware Trajectory Synthesis for GUI Agents
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12138v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12138v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12138v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Training, Web Agent, Alignment&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Graphical user interface (GUI) agents powered by large vision-language models (VLMs) have shown remarkable potential in automating digital tasks, highlighting the need for high-quality trajectory data to support effective agent training. Yet existing trajectory synthesis pipelines often yield agents that fail to generalize beyond simple interactions. We identify this limitation as stemming from th&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文9-mm-condchain-a-programmatically-verified-benchmark-for-visually-grounded-deep-compositional-reasoning&#34;&gt;论文9: MM-CondChain: A Programmatically Verified Benchmark for Visually Grounded Deep Compositional Reasoning
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12266v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12266v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12266v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Multimodal, Benchmark, Reasoning, Web Agent&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal Large Language Models (MLLMs) are increasingly used to carry out visual workflows such as navigating GUIs, where the next step depends on verified visual compositional conditions (e.g., &amp;ldquo;if a permission dialog appears and the color of the interface is green, click Allow&amp;rdquo;) and the process may branch or terminate early. Yet this capability remains under-evaluated: existing benchmarks focu&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文10-strategic-navigation-or-stochastic-search-how-agents-and-humans-reason-over-document-collections&#34;&gt;论文10: Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12180v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12180v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12180v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal agents offer a promising path to automating complex document-intensive workflows. Yet, a critical question remains: do these agents demonstrate genuine strategic reasoning, or merely stochastic trial-and-error search? To address this, we introduce MADQA, a benchmark of 2,250 human-authored questions grounded in 800 heterogeneous PDF documents. Guided by Classical Test Theory, we design &amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文11-xskill-continual-learning-from-experience-and-skills-in-multimodal-agents&#34;&gt;论文11: XSkill: Continual Learning from Experience and Skills in Multimodal Agents
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12056v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12056v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12056v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal agents can now tackle complex reasoning tasks with diverse tools, yet they still suffer from inefficient tool use and inflexible orchestration in open-ended settings. A central challenge is enabling such agents to continually improve without parameter updates by learning from past trajectories. We identify two complementary forms of reusable knowledge essential for this goal: experience&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文12-commet-to-what-extent-can-llms-perform-theory-of-mind-tasks&#34;&gt;论文12: CoMMET: To What Extent Can LLMs Perform Theory of Mind Tasks?
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11915v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11915v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11915v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Theory of Mind (ToM)-the ability to reason about the mental states of oneself and others-is a cornerstone of human social intelligence. As Large Language Models (LLMs) become ubiquitous in real-world applications, validating their capacity for this level of social reasoning is essential for effective and natural interactions. However, existing benchmarks for assessing ToM in LLMs are limited; most&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文13-video-streaming-thinking-videollms-can-watch-and-think-simultaneously&#34;&gt;论文13: Video Streaming Thinking: VideoLLMs Can Watch and Think Simultaneously
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12262v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12262v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12262v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Benchmark, Training, Reasoning, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Online Video Large Language Models (VideoLLMs) play a critical role in supporting responsive, real-time interaction. Existing methods focus on streaming perception, lacking a synchronized logical reasoning stream. However, directly applying test-time scaling methods incurs unacceptable response latency. To address this trade-off, we propose Video Streaming Thinking (VST), a novel paradigm for stre&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文14-btzsc-a-benchmark-for-zero-shot-text-classification-across-cross-encoders-embedding-models-rerankers-and-llms&#34;&gt;论文14: BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11991v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11991v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11991v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Benchmark, Training, RAG, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Zero-shot text classification (ZSC) offers the promise of eliminating costly task-specific annotation by matching texts directly to human-readable label descriptions. While early approaches have predominantly relied on cross-encoder models fine-tuned for natural language inference (NLI), recent advances in text-embedding models, rerankers, and instruction-tuned large language models (LLMs) have ch&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文15-sparking-scientific-creativity-via-llm-driven-interdisciplinary-inspiration&#34;&gt;论文15: Sparking Scientific Creativity via LLM-Driven Interdisciplinary Inspiration
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12226v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12226v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12226v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Despite interdisciplinary research leading to larger and longer-term impact, most work remains confined to single-domain academic silos. Recent AI-based approaches to scientific discovery show promise for interdisciplinary research, but many prioritize rapidly designing experiments and solutions, bypassing the exploratory, collaborative reasoning processes that drive creative interdisciplinary bre&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-行业快报&#34;&gt;🏢 行业快报
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;OpenAI 发布新模型更新&lt;/strong&gt;: OpenAI 持续优化 GPT 系列模型，提升推理能力和多模态理解性能。 &lt;em&gt;(OpenAI Blog)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anthropic Claude 功能增强&lt;/strong&gt;: Claude 系列模型新增长上下文支持和改进的代码能力。 &lt;em&gt;(Anthropic)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Google DeepMind 研究进展&lt;/strong&gt;: DeepMind 在多模态学习和机器人控制领域取得新的突破。 &lt;em&gt;(Google DeepMind)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-全部参考链接&#34;&gt;📖 全部参考链接
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LABSHIELD: A Multimodal Benchmark for Safety-Critical Reasoning and Planning in Scientific Laboratories&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MobileKernelBench: Can LLMs Write Efficient Kernels for Mobile Devices?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12147v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EgoIntent: An Egocentric Step-level Benchmark for Understanding What, Why, and Next&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11975v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HomeSafe-Bench: Evaluating Vision-Language Models on Unsafe Action Detection for Embodied Agents in Household Scenarios&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12252v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12238v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12138v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HATS: Hardness-Aware Trajectory Synthesis for GUI Agents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12266v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MM-CondChain: A Programmatically Verified Benchmark for Visually Grounded Deep Compositional Reasoning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12180v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12056v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;XSkill: Continual Learning from Experience and Skills in Multimodal Agents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11915v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CoMMET: To What Extent Can LLMs Perform Theory of Mind Tasks?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12262v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Video Streaming Thinking: VideoLLMs Can Watch and Think Simultaneously&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11991v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12226v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Sparking Scientific Creativity via LLM-Driven Interdisciplinary Inspiration&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;📬 AI 日报自动抓取自 arXiv，每日早 8 点更新&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;💬 重点聚焦：大模型、Agent、多模态、机器人等方向&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;📊 统计：今日共收录 15 篇论文，其中大模型应用 15 项&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>AI 日报 | 2026-03-14</title>
+        <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-14/</link>
+        <pubDate>Sat, 14 Mar 2026 08:00:00 +0800</pubDate>
+        
+        <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-14/</guid>
+        <description>&lt;h1 id=&#34;ai-日报--2026年03月14日星期六&#34;&gt;AI 日报 | 2026年03月14日（星期六）
+&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;📅 日期：2026年03月14日 | 📊 今日收录：&lt;strong&gt;15 篇论文&lt;/strong&gt; | 🔬 重点领域：LLM、Agent、Multimodal | 🚀 大模型应用：15 项&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;LABSHIELD&lt;/strong&gt; (LLM): Artificial intelligence is increasingly catalyzing scientific automation, with multimodal large language model (MLLM) ag&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OmniStream&lt;/strong&gt; (Agent): Modern visual agents require representations that are general, causal, and physically structured to operate in real-time&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MobileKernelBench&lt;/strong&gt; (LLM): Large language models (LLMs) have demonstrated remarkable capabilities in code generation, yet their potential for gener&amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;EgoIntent&lt;/strong&gt; (LLM): Multimodal Large Language Models (MLLMs) have demonstrated remarkable video reasoning capabilities across diverse tasks&amp;hellip;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HomeSafe-Bench&lt;/strong&gt; (Agent): The rapid evolution of embodied agents has accelerated the deployment of household robots in real-world environments. Ho&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-大模型应用亮点&#34;&gt;🚀 大模型应用亮点
+&lt;/h2&gt;&lt;h3 id=&#34;labshield-a-multimodal-benchmark-for-safety-critical-reasoning-and-planning-in-scientific-laboratories&#34;&gt;LABSHIELD: A Multimodal Benchmark for Safety-Critical Reasoning and Planning in Scientific Laboratories
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Agent, Multimodal, Benchmark, Reasoning, RAG&lt;/p&gt;
+&lt;p&gt;Artificial intelligence is increasingly catalyzing scientific automation, with multimodal large language model (MLLM) agents evolving from lab assistants into self-driving lab operators. This transition imposes stringent safety requirements on laboratory environments, where fragile glassware, hazard&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;omnistream-mastering-perception-reconstruction-and-action-in-continuous-streams&#34;&gt;OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: Agent, Multimodal, Robotics, Benchmark, Training, Reasoning, RAG, Alignment&lt;/p&gt;
+&lt;p&gt;Modern visual agents require representations that are general, causal, and physically structured to operate in real-time streaming environments. However, current vision foundation models remain fragmented, specializing narrowly in image semantic perception, offline temporal modeling, or spatial geom&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;mobilekernelbench-can-llms-write-efficient-kernels-for-mobile-devices&#34;&gt;MobileKernelBench: Can LLMs Write Efficient Kernels for Mobile Devices?
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;机构&lt;/strong&gt;:&lt;br&gt;
+&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;标签&lt;/strong&gt;: LLM, Agent, Benchmark, Training, Reasoning, RAG, Code Generation&lt;/p&gt;
+&lt;p&gt;Large language models (LLMs) have demonstrated remarkable capabilities in code generation, yet their potential for generating kernels specifically for mobile de- vices remains largely unexplored. In this work, we extend the scope of automated kernel generation to the mobile domain to investigate the&amp;hellip;&lt;/p&gt;
+&lt;h2 id=&#34;-论文一览&#34;&gt;📚 论文一览
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;#&lt;/th&gt;
+          &lt;th&gt;论文&lt;/th&gt;
+          &lt;th&gt;第一作者&lt;/th&gt;
+          &lt;th&gt;领域&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;1&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LABSHIELD: A Multimodal Benchmark f&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Multimodal, Benchmark, Reasoning, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;2&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OmniStream: Mastering Perception, R&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Robotics, Benchmark, Training, Reasoning, RAG, Alignment&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;3&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MobileKernelBench: Can LLMs Write E&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Benchmark, Training, Reasoning, RAG, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12147v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EgoIntent: An Egocentric Step-level&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Robotics, Benchmark, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;5&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11975v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HomeSafe-Bench: Evaluating Vision-L&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Robotics, Benchmark, Reasoning&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12252v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EndoCoT: Scaling Endogenous Chain-o&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Reasoning, Web Agent, RAG, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;7&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12238v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SceneAssistant: A Visual Feedback A&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Reasoning, RAG, Alignment, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;8&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12138v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HATS: Hardness-Aware Trajectory Syn&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Training, Web Agent, Alignment&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;9&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12266v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MM-CondChain: A Programmatically Ve&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Agent, Multimodal, Benchmark, Reasoning, Web Agent&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12180v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Strategic Navigation or Stochastic &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;11&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12056v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;XSkill: Continual Learning from Exp&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;Agent, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;12&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11915v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CoMMET: To What Extent Can LLMs Per&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Multimodal, Benchmark, Reasoning&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;13&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12262v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Video Streaming Thinking: VideoLLMs&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Training, Reasoning, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;14&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11991v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BTZSC: A Benchmark for Zero-Shot Te&amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Benchmark, Training, RAG, Code Generation&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;15&lt;/td&gt;
+          &lt;td&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12226v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Sparking Scientific Creativity via &amp;hellip;&lt;/a&gt;&lt;/td&gt;
+          &lt;td&gt;Unknown&lt;/td&gt;
+          &lt;td&gt;LLM, Reasoning, Web Agent, RAG&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-详细介绍&#34;&gt;🔍 详细介绍
+&lt;/h2&gt;&lt;h3 id=&#34;论文1-labshield-a-multimodal-benchmark-for-safety-critical-reasoning-and-planning-in-scientific-laboratories&#34;&gt;论文1: LABSHIELD: A Multimodal Benchmark for Safety-Critical Reasoning and Planning in Scientific Laboratories
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11987v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Multimodal, Benchmark, Reasoning, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Artificial intelligence is increasingly catalyzing scientific automation, with multimodal large language model (MLLM) agents evolving from lab assistants into self-driving lab operators. This transition imposes stringent safety requirements on laboratory environments, where fragile glassware, hazardous substances, and high-precision laboratory equipment render planning errors or misinterpreted ris&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文2-omnistream-mastering-perception-reconstruction-and-action-in-continuous-streams&#34;&gt;论文2: OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12265v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Robotics, Benchmark, Training, Reasoning, RAG, Alignment&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Modern visual agents require representations that are general, causal, and physically structured to operate in real-time streaming environments. However, current vision foundation models remain fragmented, specializing narrowly in image semantic perception, offline temporal modeling, or spatial geometry. This paper introduces OmniStream, a unified streaming visual backbone that effectively perceiv&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文3-mobilekernelbench-can-llms-write-efficient-kernels-for-mobile-devices&#34;&gt;论文3: MobileKernelBench: Can LLMs Write Efficient Kernels for Mobile Devices?
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11935v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Benchmark, Training, Reasoning, RAG, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Large language models (LLMs) have demonstrated remarkable capabilities in code generation, yet their potential for generating kernels specifically for mobile de- vices remains largely unexplored. In this work, we extend the scope of automated kernel generation to the mobile domain to investigate the central question: Can LLMs write efficient kernels for mobile devices? To enable systematic investi&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文4-egointent-an-egocentric-step-level-benchmark-for-understanding-what-why-and-next&#34;&gt;论文4: EgoIntent: An Egocentric Step-level Benchmark for Understanding What, Why, and Next
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12147v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12147v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12147v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Robotics, Benchmark, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal Large Language Models (MLLMs) have demonstrated remarkable video reasoning capabilities across diverse tasks. However, their ability to understand human intent at a fine-grained level in egocentric videos remains largely unexplored. Existing benchmarks focus primarily on episode-level intent reasoning, overlooking the finer granularity of step-level intent understanding. Yet application&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文5-homesafe-bench-evaluating-vision-language-models-on-unsafe-action-detection-for-embodied-agents-in-household-scenarios&#34;&gt;论文5: HomeSafe-Bench: Evaluating Vision-Language Models on Unsafe Action Detection for Embodied Agents in Household Scenarios
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11975v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11975v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11975v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Robotics, Benchmark, Reasoning&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: The rapid evolution of embodied agents has accelerated the deployment of household robots in real-world environments. However, unlike structured industrial settings, household spaces introduce unpredictable safety risks, where system limitations such as perception latency and lack of common sense knowledge can lead to dangerous errors. Current safety evaluations, often restricted to static images,&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文6-endocot-scaling-endogenous-chain-of-thought-reasoning-in-diffusion-models&#34;&gt;论文6: EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12252v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12252v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12252v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning, Web Agent, RAG, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Recently, Multimodal Large Language Models (MLLMs) have been widely integrated into diffusion frameworks primarily as text encoders to tackle complex tasks such as spatial reasoning. However, this paradigm suffers from two critical limitations: (i) MLLMs text encoder exhibits insufficient reasoning depth. Single-step encoding fails to activate the Chain-of-Thought process, which is essential for M&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文7-sceneassistant-a-visual-feedback-agent-for-open-vocabulary-3d-scene-generation&#34;&gt;论文7: SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12238v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12238v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12238v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Reasoning, RAG, Alignment, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Text-to-3D scene generation from natural language is highly desirable for digital content creation. However, existing methods are largely domain-restricted or reliant on predefined spatial relationships, limiting their capacity for unconstrained, open-vocabulary 3D scene synthesis. In this paper, we introduce SceneAssistant, a visual-feedback-driven agent designed for open-vocabulary 3D scene gene&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文8-hats-hardness-aware-trajectory-synthesis-for-gui-agents&#34;&gt;论文8: HATS: Hardness-Aware Trajectory Synthesis for GUI Agents
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12138v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12138v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12138v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Training, Web Agent, Alignment&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Graphical user interface (GUI) agents powered by large vision-language models (VLMs) have shown remarkable potential in automating digital tasks, highlighting the need for high-quality trajectory data to support effective agent training. Yet existing trajectory synthesis pipelines often yield agents that fail to generalize beyond simple interactions. We identify this limitation as stemming from th&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文9-mm-condchain-a-programmatically-verified-benchmark-for-visually-grounded-deep-compositional-reasoning&#34;&gt;论文9: MM-CondChain: A Programmatically Verified Benchmark for Visually Grounded Deep Compositional Reasoning
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12266v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12266v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12266v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Agent, Multimodal, Benchmark, Reasoning, Web Agent&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal Large Language Models (MLLMs) are increasingly used to carry out visual workflows such as navigating GUIs, where the next step depends on verified visual compositional conditions (e.g., &amp;ldquo;if a permission dialog appears and the color of the interface is green, click Allow&amp;rdquo;) and the process may branch or terminate early. Yet this capability remains under-evaluated: existing benchmarks focu&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文10-strategic-navigation-or-stochastic-search-how-agents-and-humans-reason-over-document-collections&#34;&gt;论文10: Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12180v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12180v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12180v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal agents offer a promising path to automating complex document-intensive workflows. Yet, a critical question remains: do these agents demonstrate genuine strategic reasoning, or merely stochastic trial-and-error search? To address this, we introduce MADQA, a benchmark of 2,250 human-authored questions grounded in 800 heterogeneous PDF documents. Guided by Classical Test Theory, we design &amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文11-xskill-continual-learning-from-experience-and-skills-in-multimodal-agents&#34;&gt;论文11: XSkill: Continual Learning from Experience and Skills in Multimodal Agents
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12056v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12056v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12056v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: Agent, Multimodal, Benchmark, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Multimodal agents can now tackle complex reasoning tasks with diverse tools, yet they still suffer from inefficient tool use and inflexible orchestration in open-ended settings. A central challenge is enabling such agents to continually improve without parameter updates by learning from past trajectories. We identify two complementary forms of reusable knowledge essential for this goal: experience&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文12-commet-to-what-extent-can-llms-perform-theory-of-mind-tasks&#34;&gt;论文12: CoMMET: To What Extent Can LLMs Perform Theory of Mind Tasks?
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11915v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11915v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11915v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Multimodal, Benchmark, Reasoning&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Theory of Mind (ToM)-the ability to reason about the mental states of oneself and others-is a cornerstone of human social intelligence. As Large Language Models (LLMs) become ubiquitous in real-world applications, validating their capacity for this level of social reasoning is essential for effective and natural interactions. However, existing benchmarks for assessing ToM in LLMs are limited; most&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文13-video-streaming-thinking-videollms-can-watch-and-think-simultaneously&#34;&gt;论文13: Video Streaming Thinking: VideoLLMs Can Watch and Think Simultaneously
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12262v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12262v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12262v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Benchmark, Training, Reasoning, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Online Video Large Language Models (VideoLLMs) play a critical role in supporting responsive, real-time interaction. Existing methods focus on streaming perception, lacking a synchronized logical reasoning stream. However, directly applying test-time scaling methods incurs unacceptable response latency. To address this trade-off, we propose Video Streaming Thinking (VST), a novel paradigm for stre&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文14-btzsc-a-benchmark-for-zero-shot-text-classification-across-cross-encoders-embedding-models-rerankers-and-llms&#34;&gt;论文14: BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.11991v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.11991v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11991v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Benchmark, Training, RAG, Code Generation&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Zero-shot text classification (ZSC) offers the promise of eliminating costly task-specific annotation by matching texts directly to human-readable label descriptions. While early approaches have predominantly relied on cross-encoder models fine-tuned for natural language inference (NLI), recent advances in text-embedding models, rerankers, and instruction-tuned large language models (LLMs) have ch&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;论文15-sparking-scientific-creativity-via-llm-driven-interdisciplinary-inspiration&#34;&gt;论文15: Sparking Scientific Creativity via LLM-Driven Interdisciplinary Inspiration
+&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;arXiv:2603.12226v1&lt;/strong&gt; |  | 2026-03-12&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;链接&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/pdf/2603.12226v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;PDF&lt;/a&gt; | &lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12226v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;arXiv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;分类&lt;/strong&gt;: LLM, Reasoning, Web Agent, RAG&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;摘要&lt;/strong&gt;: Despite interdisciplinary research leading to larger and longer-term impact, most work remains confined to single-domain academic silos. Recent AI-based approaches to scientific discovery show promise for interdisciplinary research, but many prioritize rapidly designing experiments and solutions, bypassing the exploratory, collaborative reasoning processes that drive creative interdisciplinary bre&amp;hellip;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-行业快报&#34;&gt;🏢 行业快报
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;OpenAI 发布新模型更新&lt;/strong&gt;: OpenAI 持续优化 GPT 系列模型，提升推理能力和多模态理解性能。 &lt;em&gt;(OpenAI Blog)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anthropic Claude 功能增强&lt;/strong&gt;: Claude 系列模型新增长上下文支持和改进的代码能力。 &lt;em&gt;(Anthropic)&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Google DeepMind 研究进展&lt;/strong&gt;: DeepMind 在多模态学习和机器人控制领域取得新的突破。 &lt;em&gt;(Google DeepMind)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-全部参考链接&#34;&gt;📖 全部参考链接
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11987v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;LABSHIELD: A Multimodal Benchmark for Safety-Critical Reasoning and Planning in Scientific Laboratories&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12265v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11935v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MobileKernelBench: Can LLMs Write Efficient Kernels for Mobile Devices?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12147v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EgoIntent: An Egocentric Step-level Benchmark for Understanding What, Why, and Next&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11975v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HomeSafe-Bench: Evaluating Vision-Language Models on Unsafe Action Detection for Embodied Agents in Household Scenarios&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12252v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EndoCoT: Scaling Endogenous Chain-of-Thought Reasoning in Diffusion Models&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12238v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;SceneAssistant: A Visual Feedback Agent for Open-Vocabulary 3D Scene Generation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12138v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HATS: Hardness-Aware Trajectory Synthesis for GUI Agents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12266v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;MM-CondChain: A Programmatically Verified Benchmark for Visually Grounded Deep Compositional Reasoning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12180v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12056v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;XSkill: Continual Learning from Experience and Skills in Multimodal Agents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11915v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CoMMET: To What Extent Can LLMs Perform Theory of Mind Tasks?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12262v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Video Streaming Thinking: VideoLLMs Can Watch and Think Simultaneously&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.11991v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;BTZSC: A Benchmark for Zero-Shot Text Classification Across Cross-Encoders, Embedding Models, Rerankers and LLMs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://arxiv.org/abs/2603.12226v1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Sparking Scientific Creativity via LLM-Driven Interdisciplinary Inspiration&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;📬 AI 日报自动抓取自 arXiv，每日早 8 点更新&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;💬 重点聚焦：大模型、Agent、多模态、机器人等方向&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;📊 统计：今日共收录 15 篇论文，其中大模型应用 15 项&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>AI 日报 | 2026-03-12</title>
         <link>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/</link>
         <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
@@ -98,21 +1728,7 @@
 &lt;h4 id=&#34;问题定义与挑战&#34;&gt;问题定义与挑战
 &lt;/h4&gt;&lt;p&gt;核心挑战在于：如何系统性地生成针对特定编程概念的高质量训练数据？传统方法依赖于爬取互联网代码，但难以控制概念分布、难度梯度和多样性。&lt;/p&gt;
 &lt;h4 id=&#34;核心方法与技术细节&#34;&gt;核心方法与技术细节
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow.png&#34;
-	width=&#34;960&#34;
-	height=&#34;492&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow_hu_9730faeb2df2a76.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-workflow_hu_e7e2691029525736.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;Code Concepts 工作流程&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;195&#34;
-		data-flex-basis=&#34;468px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;工作流程的核心是从大规模标注的 Nemotron-Pretraining-Code-{v1,v2} 数据集中提取的编程知识分类体系。该分类体系编码了数千个分层组织的编程概念，从基本结构（如字符串、递归）到高级算法和数据结构模式。&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;工作流程的核心是从大规模标注的 Nemotron-Pretraining-Code-{v1,v2} 数据集中提取的编程知识分类体系。该分类体系编码了数千个分层组织的编程概念，从基本结构（如字符串、递归）到高级算法和数据结构模式。&lt;/p&gt;
 &lt;p&gt;具体步骤：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;概念提取&lt;/strong&gt;：从 HumanEval 基准的分类提示中识别 91 个核心概念&lt;/li&gt;
@@ -120,20 +1736,6 @@
 &lt;li&gt;&lt;strong&gt;数据生成&lt;/strong&gt;：使用 GPT-OSS 120B 生成约 1500 万个合成 Python 编程问题&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;质量验证&lt;/strong&gt;：使用 Python 的 ast.parse 函数验证生成的代码可执行&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results.png&#34;
-	width=&#34;2139&#34;
-	height=&#34;1232&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results_hu_c439f37cb5d3c515.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/code-concepts-results_hu_672f4d28ba4ffcba.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;问题生成过程&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;173&#34;
-		data-flex-basis=&#34;416px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;h4 id=&#34;实验设计与结果&#34;&gt;实验设计与结果
 &lt;/h4&gt;&lt;p&gt;将 10B token 的 Code Concepts 数据纳入 Nemotron-Nano-v3 最后 100B token 预训练中进行数据消融实验：&lt;/p&gt;
 &lt;ul&gt;
@@ -167,7 +1769,7 @@
 &lt;/h5&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid.jpg&#34;
 	width=&#34;3024&#34;
 	height=&#34;3024&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_9f63aad436629edf.jpg 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_8780dd2f145a0743.jpg 1024w&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_ac8f343b30d7a744.jpg 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-g1-humanoid_hu_e55aac0a151a9059.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;Unitree G1 人形机器人&#34;
@@ -216,7 +1818,7 @@
 &lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm.gif&#34;
 	width=&#34;1152&#34;
 	height=&#34;648&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_94e6a23e04a65ab9.gif 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_b9b86324627d1c26.gif 1024w&#34;
+	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_da017c9d62ea3834.gif 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/lerobot-sarm_hu_86138a5a5c31b7e4.gif 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;SARM 社区演示&#34;
@@ -269,9 +1871,9 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;lerobot-train &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --env.type&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;hub &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --env.hub_path&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;username/my-custom-env&amp;#34;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;  --policy.type&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;act
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  --env.type&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;hub &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  --env.hub_path&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;username/my-custom-env&amp;#34;&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  --policy.type&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;act
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;集成 NVIDIA IsaacLab-Arena，提供 GPU 加速的仿真和大规模并行环境实例。&lt;/p&gt;
@@ -317,21 +1919,7 @@
 &lt;li&gt;&lt;strong&gt;推理优化&lt;/strong&gt;：通过推测解码实现更快的推理&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;实验设计与结果-2&#34;&gt;实验设计与结果
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer.png&#34;
-	width=&#34;6191&#34;
-	height=&#34;3158&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer_hu_ebab12c0effbad9.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-12/granite-speech-wer_hu_1b47a2950f981aef.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;WER 性能对比&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;196&#34;
-		data-flex-basis=&#34;470px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;在标准英语 ASR 基准上使用词错误率（WER）评估，Granite 4.0 1B Speech 在多个数据集上实现了具有竞争力的低 WER，同时参数量远少于许多可比模型。该模型最近在 OpenASR 排行榜上排名第 1。&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;在标准英语 ASR 基准上使用词错误率（WER）评估，Granite 4.0 1B Speech 在多个数据集上实现了具有竞争力的低 WER，同时参数量远少于许多可比模型。该模型最近在 OpenASR 排行榜上排名第 1。&lt;/p&gt;
 &lt;h4 id=&#34;局限性分析-2&#34;&gt;局限性分析
 &lt;/h4&gt;&lt;ul&gt;
 &lt;li&gt;主要针对 ASR 和 AST 任务，不支持通用语音对话&lt;/li&gt;
@@ -469,7 +2057,8 @@
         <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/</guid>
         <description>&lt;h1 id=&#34;ai-日报--2026-03-09&#34;&gt;AI 日报 | 2026-03-09
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;每日精选 AI 领域最新研究进展与技术动态&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;每日精选 AI 领域最新研究进展与技术动态&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;推理模型&amp;quot;表演性思维&amp;quot;被发现&lt;/strong&gt;：研究者揭示大模型在简单任务上早已确定答案但仍生成冗长推理链，提出注意力探针可实现 80% token 节省&lt;/li&gt;
@@ -604,20 +2193,6 @@
 &lt;/ul&gt;
 &lt;h4 id=&#34;核心方法与技术细节&#34;&gt;核心方法与技术细节
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;1. 注意力探针（Attention Probes）&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure1.png&#34;
-	width=&#34;730&#34;
-	height=&#34;232&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure1_hu_70e875943dd900ce.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure1_hu_a967d5bbc41b4c59.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;推理剧场方法概览&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;314&#34;
-		data-flex-basis=&#34;755px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 1：三种早期解码方法对比。注意力探针在层激活上训练，强制回答在中间 token 注入提示，CoT 监控器分析推理前缀文本。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;研究者提出注意力探针，通过注意力加权池化序列激活来预测最终答案：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -708,20 +2283,6 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;MMLU 的表演性率远高于 GPQA-D，表明简单任务上模型更早确定答案。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure2.png&#34;
-	width=&#34;634&#34;
-	height=&#34;270&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure2_hu_d604699c94fcc234.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_figure2_hu_c4be77b184b7f7f2.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;三种方法准确率对比&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;234&#34;
-		data-flex-basis=&#34;563px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 2：MMLU（左）上探针和强制回答早期准确率远高于 CoT 监控器，表明表演性推理；GPQA-D（右）上三者同步增长，表明真实推理。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;表 2：模型大小与表演性关系&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
@@ -783,20 +2344,6 @@
 &lt;/table&gt;
 &lt;p&gt;低置信响应中拐点出现频率是高一倍，表明拐点通常反映真实不确定性。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;5. 早停应用：80% token 节省&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_early_exit.png&#34;
-	width=&#34;997&#34;
-	height=&#34;924&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_early_exit_hu_fe629c65138c0b8a.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/reasoning_theater_early_exit_hu_bb2bd1aa328afe50.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;早停效果&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;107&#34;
-		data-flex-basis=&#34;258px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 7：注意力探针校准曲线（左）接近完美校准；早停准确率与 token 节省（右）显示 95% 置信度下节省 80% token 同时保持 97% 准确率。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;关键结果：&lt;/p&gt;
 &lt;ul&gt;
@@ -857,20 +2404,6 @@
 &lt;li&gt;&lt;strong&gt;动作对齐&lt;/strong&gt;：精确像素坐标、边界框、CSS 选择器&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;这种多模态监督使模型不仅能&amp;quot;看到&amp;quot;页面，还能理解每个像素背后的结构逻辑。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/webchain_figure1.png&#34;
-	width=&#34;914&#34;
-	height=&#34;514&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/webchain_figure1_hu_bd17e8b975ef7d86.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/webchain_figure1_hu_d24341fc1cb266a3.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;WebChain 数据集概览&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;177&#34;
-		data-flex-basis=&#34;426px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 1：WebChain 统计摘要，包括跨网站类别的交互分布、顶级域名交互频率、轨迹复杂度等&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2. 可扩展的数据构建流程&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -941,16 +2474,6 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;strong&gt;缩放效应分析&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/webchain_scaling.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;数据缩放效应&#34;
-	
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 3：WebChain 子集（4K、20K、Full）对 Qwen2.5-VL-3B 在 LCRL 后训练后的成功率影响&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;研究者观察到数据量与长程规划性能之间的明显正相关，证实 WebChain 的规模对解锁鲁棒的长程规划能力至关重要。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;基准测试结果&lt;/strong&gt;&lt;/p&gt;
@@ -1142,7 +2665,8 @@
         <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/</guid>
         <description>&lt;h1 id=&#34;ai-日报--2026-03-08&#34;&gt;AI 日报 | 2026-03-08
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;每日精选 AI 领域最新研究进展与技术动态&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;每日精选 AI 领域最新研究进展与技术动态&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Transformer 内部机制新发现&lt;/strong&gt;：研究者揭示了&amp;quot;大规模激活&amp;quot;与&amp;quot;注意力汇聚点&amp;quot;的共现机制，发现这是预归一化架构的副产品而非功能必需&lt;/li&gt;
@@ -1254,20 +2778,6 @@
 &lt;h4 id=&#34;核心方法与技术细节&#34;&gt;核心方法与技术细节
 &lt;/h4&gt;&lt;p&gt;研究者通过系统性实验得出了三个核心发现：&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. 归一化是连接两个现象的关键架构组件&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/spike_activation_lifecycle.png&#34;
-	width=&#34;1018&#34;
-	height=&#34;648&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/spike_activation_lifecycle_hu_fed7a05228957034.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/spike_activation_lifecycle_hu_e553fcb3b7bddbb6.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;大规模激活的生命周期&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;157&#34;
-		data-flex-basis=&#34;377px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 1：大规模激活在 Llama 2 7B 和 Qwen3 8B 中随深度的变化。早期模块注入大规模激活，通过网络大部分区域持续存在，最后被晚期模块中和。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;研究发现：&lt;/p&gt;
 &lt;ul&gt;
@@ -1276,20 +2786,6 @@
 &lt;li&gt;&lt;strong&gt;Step-down 模块&lt;/strong&gt;：1 个或几个晚期块注入相反符号的极端值来中和&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;2. 前馈块作为方向性二次放大器&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/quadratic_form_norms.png&#34;
-	width=&#34;996&#34;
-	height=&#34;641&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/quadratic_form_norms_hu_29f5082542a66d59.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/quadratic_form_norms_hu_a26e1839de2ce591.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;二次型范数分析&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;155&#34;
-		data-flex-basis=&#34;372px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 2：Llama 2 7B 中二次型的 Frobenius 范数。尖峰通道对应具有显著更大范数的 U_k 矩阵。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;关键机制：&lt;/p&gt;
 &lt;ul&gt;
@@ -1461,20 +2957,6 @@
 &lt;/ul&gt;
 &lt;h4 id=&#34;实验设计与结果-1&#34;&gt;实验设计与结果
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;数据集统计&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/webchain_dataset_overview.png&#34;
-	width=&#34;914&#34;
-	height=&#34;514&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/webchain_dataset_overview_hu_bd17e8b975ef7d86.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-08/webchain_dataset_overview_hu_d24341fc1cb266a3.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;WebChain 数据集概览&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;177&#34;
-		data-flex-basis=&#34;426px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 1：WebChain 统计摘要，包括跨网站类别的交互分布、顶级域名交互频率、轨迹复杂度等&lt;/em&gt;&lt;/p&gt;
 &lt;table&gt;
   &lt;thead&gt;
@@ -1507,16 +2989,6 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;&lt;strong&gt;缩放效应分析&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/scaling_effects.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;数据缩放效应&#34;
-	
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 2：WebChain 子集（4K、20K、Full）对 Qwen2.5-VL-3B 在 LCRL 后训练后的成功率影响&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;研究者观察到数据量与长程规划性能之间的明显正相关，证实 WebChain 的规模对解锁鲁棒的长程规划能力至关重要。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;基准测试结果&lt;/strong&gt;&lt;/p&gt;
@@ -1689,7 +3161,8 @@
         <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/</guid>
         <description>&lt;h1 id=&#34;ai-日报--2026-03-06&#34;&gt;AI 日报 | 2026-03-06
 &lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;📅 日期：2026 年 3 月 6 日 | 📊 今日论文数：6 篇 | 🔬 重点领域：3D 视觉、机器人学、Agent 系统、个性化 LLM&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;📅 日期：2026 年 3 月 6 日 | 📊 今日论文数：6 篇 | 🔬 重点领域：3D 视觉、机器人学、Agent 系统、个性化 LLM&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
 &lt;/h2&gt;&lt;ul&gt;
@@ -1785,21 +3258,7 @@
 &lt;/h4&gt;&lt;p&gt;近年来，前馈 Transformer 模型（如 VGGT、π³、DUSt3R）推动了 3D 视觉的快速发展。然而，这些方法依赖全局注意力机制建立几何一致性，导致计算成本随输入图像数量&lt;strong&gt;二次增长&lt;/strong&gt;。对于长序列输入（如数百帧视频），这使得重建时间变得不可接受。&lt;/p&gt;
 &lt;p&gt;另一方面，顺序重建方法虽然降低了计算成本，但往往以牺牲重建质量为代价，且容易积累误差。ZipMap 的核心问题是：&lt;strong&gt;能否同时实现线性时间复杂度和 SOTA 重建质量？&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&#34;核心方法与技术细节&#34;&gt;核心方法与技术细节
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure1.png&#34;
-	width=&#34;997&#34;
-	height=&#34;415&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure1_hu_6686bba63cb9738e.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure1_hu_2ee1b1c2901cd92b.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;ZipMap 方法概述&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;240&#34;
-		data-flex-basis=&#34;576px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;图 1：ZipMap 方法架构。模型采用局部窗口注意力与大型块 TTT 层交替的结构，在单次前向传播中预测相机姿态、深度图和点云，同时将场景信息压缩到 TTT 快速权重中。&lt;/em&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;em&gt;图 1：ZipMap 方法架构。模型采用局部窗口注意力与大型块 TTT 层交替的结构，在单次前向传播中预测相机姿态、深度图和点云，同时将场景信息压缩到 TTT 快速权重中。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;ZipMap 的关键创新在于使用&lt;strong&gt;测试时训练（TTT）层&lt;/strong&gt;替代全局注意力：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -1826,21 +3285,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;实验设计与结果&#34;&gt;实验设计与结果
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure2.png&#34;
-	width=&#34;997&#34;
-	height=&#34;447&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure2_hu_faa48a183afe0824.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/zipmap_figure2_hu_c5fe6c20dd19ac8c.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;ZipMap 性能对比&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;223&#34;
-		data-flex-basis=&#34;535px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;图 2：ZipMap 与基线方法的对比。左图显示运行时间随帧数线性增长，而 VGGT 和π³呈二次增长；右图显示 ZipMap 在姿态估计精度（ATE）上与 SOTA 持平甚至更优。&lt;/em&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;em&gt;图 2：ZipMap 与基线方法的对比。左图显示运行时间随帧数线性增长，而 VGGT 和π³呈二次增长；右图显示 ZipMap 在姿态估计精度（ATE）上与 SOTA 持平甚至更优。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;主要结果&lt;/strong&gt;：&lt;/p&gt;
 &lt;table&gt;
   &lt;thead&gt;
@@ -1905,21 +3350,7 @@
 &lt;/ol&gt;
 &lt;p&gt;现有仿真框架通常仅支持有限任务和环境，无法系统研究任务多样性、环境变化和 dataset 规模对泛化的影响。RoboCasa365 旨在填补这一空白。&lt;/p&gt;
 &lt;h4 id=&#34;核心方法与框架设计&#34;&gt;核心方法与框架设计
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure1.png&#34;
-	width=&#34;914&#34;
-	height=&#34;487&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure1_hu_dc053ace0ced4972.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure1_hu_c4a8a3d1a3728c6b.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;RoboCasa365 概览&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;187&#34;
-		data-flex-basis=&#34;450px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;图 1：RoboCasa365 框架概览。包含 365 个日常任务、2500 个厨房场景、2000+ 小时演示数据，支持多任务学习、基础模型训练和终身学习基准。&lt;/em&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;em&gt;图 1：RoboCasa365 框架概览。包含 365 个日常任务、2500 个厨房场景、2000+ 小时演示数据，支持多任务学习、基础模型训练和终身学习基准。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;四大核心组件&lt;/strong&gt;：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -1955,20 +3386,6 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure2.png&#34;
-	width=&#34;914&#34;
-	height=&#34;570&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure2_hu_50622dfcc0a13f6f.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/robocasa_figure2_hu_108cde3d2db40b34.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;复合任务示例&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;160&#34;
-		data-flex-basis=&#34;384px&#34;
-	
-&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;图 2：复合任务示例。使用 LLM 生成 60 种高级活动，每种活动包含多个任务蓝图。任务按功能和语义结构组织为 6 个活动族。&lt;/em&gt;&lt;/p&gt;
 &lt;h4 id=&#34;实验设计与结果-1&#34;&gt;实验设计与结果
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;评估设置&lt;/strong&gt;：&lt;/p&gt;
@@ -2007,21 +3424,7 @@
 &lt;/h4&gt;&lt;p&gt;无人机在 GPS 拒止或通信降级环境中运行时，常丢失相机元数据和遥测信息，导致机载感知系统无法恢复场景的绝对度量尺度。随着 LLM/VLM 被越来越多地用作具身系统的高层规划器，其物理维度推理能力变得至关重要。&lt;/p&gt;
 &lt;p&gt;然而，实验表明：&lt;strong&gt;5 个 SOTA VLM 在面积估计任务中中位误差超过 50%&lt;/strong&gt;，频繁出现数量级偏差。作者将这一现象命名为**&amp;ldquo;空间尺度幻觉&amp;rdquo;**。&lt;/p&gt;
 &lt;h4 id=&#34;核心方法&#34;&gt;核心方法
-&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/vanguard_figure1.png&#34;
-	width=&#34;793&#34;
-	height=&#34;348&#34;
-	srcset=&#34;https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/vanguard_figure1_hu_23471ddcf8f23215.png 480w, https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-06/vanguard_figure1_hu_43dd5a5128ce2c3e.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;VANGUARD 系统架构&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;227&#34;
-		data-flex-basis=&#34;546px&#34;
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;图 1：VANGUARD 系统架构。作为具身 Agent 感知循环中的确定性几何技能，通过 YOLO-OBB 检测车辆、KDE 模态估计、分辨率保护，输出校准的 GSD 和置信度分数。&lt;/em&gt;&lt;/p&gt;
+&lt;/h4&gt;&lt;p&gt;&lt;em&gt;图 1：VANGUARD 系统架构。作为具身 Agent 感知循环中的确定性几何技能，通过 YOLO-OBB 检测车辆、KDE 模态估计、分辨率保护，输出校准的 GSD 和置信度分数。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;VANGUARD（Vehicle-ANchored Geometric Understanding And Resolution Determination）的核心观察是：&lt;strong&gt;小型车辆是全球城市场景中最普遍的物体之一，物理长度集中在 4-5 米&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;五阶段流程&lt;/strong&gt;：&lt;/p&gt;
 &lt;ol&gt;
