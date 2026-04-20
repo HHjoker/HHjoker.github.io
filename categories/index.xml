@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Sun, 19 Apr 2026 21:04:11 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 20 Apr 2026 21:04:23 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Rust 每日学习</title>
         <link>https://HHjoker.github.io/categories/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</link>
-        <pubDate>Sun, 19 Apr 2026 13:00:00 +0000</pubDate>
+        <pubDate>Mon, 20 Apr 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/categories/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</guid>
         <description></description>
@@ -96,7 +96,7 @@
         <description></description>
         </item>
         <item>
-        <title>AI-Daily</title>
+        <title>AI Daily</title>
         <link>https://HHjoker.github.io/categories/ai-daily/</link>
         <pubDate>Fri, 20 Mar 2026 08:00:00 +0800</pubDate>
         
@@ -128,22 +128,6 @@
         <description></description>
         </item>
         <item>
-        <title>Large Language Models</title>
-        <link>https://HHjoker.github.io/categories/large-language-models/</link>
-        <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/categories/large-language-models/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Robotics</title>
-        <link>https://HHjoker.github.io/categories/robotics/</link>
-        <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/categories/robotics/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Rust-Daily</title>
         <link>https://HHjoker.github.io/categories/rust-daily/</link>
         <pubDate>Thu, 12 Mar 2026 21:00:00 +0800</pubDate>
@@ -157,6 +141,14 @@
         <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/categories/machine-learning/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Robotics</title>
+        <link>https://HHjoker.github.io/categories/robotics/</link>
+        <pubDate>Wed, 11 Mar 2026 00:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/categories/robotics/</guid>
         <description></description>
         </item>
         <item>
