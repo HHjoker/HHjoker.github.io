@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="第 8 周开始，深入 Rust 函数式编程核心，学习闭包的语法、捕获环境和三种闭包 trait">
+<title>Rust 每日学习 Day 50：闭包基础</title>
+
+<link rel='canonical' href='https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-50%E9%97%AD%E5%8C%85%E5%9F%BA%E7%A1%80/'>
+
+<link rel="stylesheet" href="/scss/style.min.5caa0083058cdfc89d0c8e69326bb902aecd0db5e8bd671bb459c72d56e97f25.css"><meta property='og:title' content="Rust 每日学习 Day 50：闭包基础">
+<meta property='og:description' content="第 8 周开始，深入 Rust 函数式编程核心，学习闭包的语法、捕获环境和三种闭包 trait">
+<meta property='og:url' content='https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-50%E9%97%AD%E5%8C%85%E5%9F%BA%E7%A1%80/'>
+<meta property='og:site_name' content='HH Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Rust' /><meta property='article:tag' content='闭包' /><meta property='article:tag' content='函数式编程' /><meta property='article:tag' content='Fn' /><meta property='article:tag' content='FnMut' /><meta property='article:tag' content='FnOnce' /><meta property='article:published_time' content='2026-04-21T13:00:00&#43;00:00'/><meta property='article:modified_time' content='2026-04-21T21:04:20&#43;08:00'/>
+<meta name="twitter:title" content="Rust 每日学习 Day 50：闭包基础">
+<meta name="twitter:description" content="第 8 周开始，深入 Rust 函数式编程核心，学习闭包的语法、捕获环境和三种闭包 trait">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_1f27e3376f1b4a0e.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">HH Blog</a></h1>
+            <h2 class="site-description">欢迎来到我的博客</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/HHjoker'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>档案</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://HHjoker.github.io/en/" >English</option>
+                                
+                                    <option value="https://HHjoker.github.io/" selected>中文</option>
+                                
+                                    <option value="https://HHjoker.github.io/ar/" >عربي</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#今日概览">今日概览</a></li>
+    <li><a href="#学习路线图">学习路线图</a></li>
+    <li><a href="#什么是闭包">什么是闭包？</a>
+      <ol>
+        <li><a href="#闭包-vs-普通函数">闭包 vs 普通函数</a></li>
+      </ol>
+    </li>
+    <li><a href="#闭包语法">闭包语法</a>
+      <ol>
+        <li><a href="#基本语法结构">基本语法结构</a></li>
+        <li><a href="#语法示例">语法示例</a></li>
+        <li><a href="#完整示例闭包实战">完整示例：闭包实战</a></li>
+      </ol>
+    </li>
+    <li><a href="#闭包捕获环境">闭包捕获环境</a>
+      <ol>
+        <li><a href="#捕获方式">捕获方式</a></li>
+        <li><a href="#示例-1不可变借用">示例 1：不可变借用</a></li>
+        <li><a href="#示例-2可变借用">示例 2：可变借用</a></li>
+        <li><a href="#示例-3所有权获取">示例 3：所有权获取</a></li>
+        <li><a href="#示例-4捕获多个变量">示例 4：捕获多个变量</a></li>
+      </ol>
+    </li>
+    <li><a href="#move-关键字">move 关键字</a>
+      <ol>
+        <li><a href="#为什么需要-move">为什么需要 move？</a></li>
+        <li><a href="#move-的使用场景">move 的使用场景</a></li>
+      </ol>
+    </li>
+    <li><a href="#闭包作为参数">闭包作为参数</a>
+      <ol>
+        <li><a href="#示例自定义排序">示例：自定义排序</a></li>
+        <li><a href="#示例函数式数据处理">示例：函数式数据处理</a></li>
+        <li><a href="#示例实现高阶函数">示例：实现高阶函数</a></li>
+      </ol>
+    </li>
+    <li><a href="#闭包作为返回值">闭包作为返回值</a></li>
+    <li><a href="#关键概念理解">关键概念理解</a>
+      <ol>
+        <li><a href="#1-闭包的类型">1. 闭包的类型</a></li>
+        <li><a href="#2-闭包与环境的交互">2. 闭包与环境的交互</a></li>
+        <li><a href="#3-闭包的性能">3. 闭包的性能</a></li>
+      </ol>
+    </li>
+    <li><a href="#练习题">练习题</a>
+      <ol>
+        <li><a href="#练习-1实现计算器闭包">练习 1：实现计算器闭包</a></li>
+        <li><a href="#练习-2捕获环境的计数器">练习 2：捕获环境的计数器</a></li>
+        <li><a href="#练习-3过滤和转换">练习 3：过滤和转换</a></li>
+        <li><a href="#练习-4自定义排序">练习 4：自定义排序</a></li>
+        <li><a href="#练习-5闭包工厂">练习 5：闭包工厂</a></li>
+      </ol>
+    </li>
+    <li><a href="#明日计划">明日计划</a></li>
+    <li><a href="#参考资源">参考资源</a>
+      <ol>
+        <li><a href="#官方文档">官方文档</a></li>
+        <li><a href="#深入学习">深入学习</a></li>
+        <li><a href="#实践资源">实践资源</a></li>
+      </ol>
+    </li>
+    <li><a href="#今日感悟">今日感悟</a>
+      <ol>
+        <li><a href="#1-闭包是-rust-函数式编程的基石">1. 闭包是 Rust 函数式编程的基石</a></li>
+        <li><a href="#2-捕获环境既强大又需要谨慎">2. 捕获环境既强大又需要谨慎</a></li>
+        <li><a href="#3-闭包让代码更简洁">3. 闭包让代码更简洁</a></li>
+        <li><a href="#4-类型推断让闭包更易用">4. 类型推断让闭包更易用</a></li>
+        <li><a href="#5-闭包与迭代器是绝配">5. 闭包与迭代器是绝配</a></li>
+        <li><a href="#6-理解闭包的代价">6. 理解闭包的代价</a></li>
+      </ol>
+    </li>
+    <li><a href="#代码练习答案">代码练习答案</a>
+      <ol>
+        <li><a href="#练习-1-答案">练习 1 答案</a></li>
+        <li><a href="#练习-2-答案">练习 2 答案</a></li>
+        <li><a href="#练习-3-答案">练习 3 答案</a></li>
+        <li><a href="#练习-4-答案">练习 4 答案</a></li>
+        <li><a href="#练习-5-答案">练习 5 答案</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/" >
+                Rust 每日学习
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-50%E9%97%AD%E5%8C%85%E5%9F%BA%E7%A1%80/">Rust 每日学习 Day 50：闭包基础</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            第 8 周开始，深入 Rust 函数式编程核心，学习闭包的语法、捕获环境和三种闭包 trait
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2026-04-21</time>
+            </div>
+        
+        <div class="article-lastmod">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time>
+                    2026-04-21
+                </time>
+            </div>
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="rust-每日学习-day-50闭包基础">Rust 每日学习 Day 50：闭包基础
+</h1><h2 id="今日概览">今日概览
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>项目</th>
+          <th>内容</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>学习日期</td>
+          <td>2026-04-21</td>
+      </tr>
+      <tr>
+          <td>学习阶段</td>
+          <td>第 8 周第 1 天</td>
+      </tr>
+      <tr>
+          <td>今日主题</td>
+          <td>闭包基础（语法、捕获环境）</td>
+      </tr>
+      <tr>
+          <td>预计时长</td>
+          <td>2-3 小时</td>
+      </tr>
+      <tr>
+          <td>难度等级</td>
+          <td>⭐⭐⭐⭐☆</td>
+      </tr>
+  </tbody>
+</table></div>
+<hr>
+<h2 id="学习路线图">学习路线图
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">第 8 周：闭包与迭代器
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├── Day 50: 闭包基础（语法、捕获环境） ← 今天
+</span></span><span class="line"><span class="cl">├── Day 51: 闭包进阶（Fn、FnMut、FnOnce）
+</span></span><span class="line"><span class="cl">├── Day 52: 迭代器基础（Iterator trait）
+</span></span><span class="line"><span class="cl">├── Day 53: 迭代器适配器（map、filter、fold 等）
+</span></span><span class="line"><span class="cl">├── Day 54: 迭代器实战（链式调用、性能）
+</span></span><span class="line"><span class="cl">├── Day 55: 闭包与迭代器综合应用
+</span></span><span class="line"><span class="cl">└── Day 56: 第 8 周总结与函数式编程思想
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="什么是闭包">什么是闭包？
+</h2><p><strong>闭包（Closure）</strong> 是一个可以捕获其所在作用域变量的匿名函数。</p>
+<p>简单来说：</p>
+<ul>
+<li>它是一个<strong>函数</strong>（可以调用）</li>
+<li>它是<strong>匿名</strong>的（没有名字）</li>
+<li>它可以<strong>捕获环境</strong>（访问定义它的地方能访问的变量）</li>
+</ul>
+<h3 id="闭包-vs-普通函数">闭包 vs 普通函数
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 普通函数 - 有名字，不能捕获环境
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">add_one</span><span class="p">(</span><span class="n">x</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 闭包 - 匿名，可以捕获环境
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">add_one</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">x</span>: <span class="kt">i32</span><span class="o">|</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 使用
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">result1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add_one</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// 函数调用
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add_one</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// 闭包调用
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="闭包语法">闭包语法
+</h2><h3 id="基本语法结构">基本语法结构
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">closure_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">parameters</span><span class="o">|</span><span class="w"> </span>-&gt; <span class="nc">return_type</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 函数体
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">expression</span><span class="w">  </span><span class="c1">// 最后一行是返回值（无需 return）
+</span></span></span><span class="line"><span class="cl"><span class="p">};</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="语法示例">语法示例
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 示例 1：最简单的闭包
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">hello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;Hello, World!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">hello</span><span class="p">();</span><span class="w">  </span><span class="c1">// 输出：Hello, World!
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 示例 2：带参数的闭包
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">a</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">b</span>: <span class="kt">i32</span><span class="o">|</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// sum = 8
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 示例 3：类型推断（Rust 可以推断参数和返回类型）
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">multiply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">|</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">multiply</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// product = 20
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 示例 4：单行闭包（花括号可省略）
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">x</span>: <span class="kt">i32</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">square</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span><span class="w">  </span><span class="c1">// result = 49
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 示例 5：多行闭包
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">complex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">x</span>: <span class="kt">i32</span><span class="o">|</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">intermediate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">intermediate</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">complex</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">  </span><span class="c1">// value = 20
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="完整示例闭包实战">完整示例：闭包实战
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 1. 无参数闭包
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">greet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;👋 你好，Rust！&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">greet</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 2. 单参数闭包
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">x</span>: <span class="kt">i32</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;5 的两倍是：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">double</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 3. 多参数闭包
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">max</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">a</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">b</span>: <span class="kt">i32</span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;3 和 7 中较大的是：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 4. 带返回类型的闭包
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">divide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">a</span>: <span class="kt">f64</span><span class="p">,</span><span class="w"> </span><span class="n">b</span>: <span class="kt">f64</span><span class="o">|</span><span class="w"> </span>-&gt; <span class="nb">Option</span><span class="o">&lt;</span><span class="kt">f64</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nb">None</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nb">Some</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">divide</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;10 / 2 = </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;除数不能为零&#34;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 5. 闭包作为变量
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">operations</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="nb">Fn</span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Box</span>::<span class="n">new</span><span class="p">(</span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Box</span>::<span class="n">new</span><span class="p">(</span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Box</span>::<span class="n">new</span><span class="p">(</span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">op</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">operations</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">enumerate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;操作 </span><span class="si">{}</span><span class="s"> 的结果：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">op</span><span class="p">(</span><span class="n">value</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>输出：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">👋 你好，Rust！
+</span></span><span class="line"><span class="cl">5 的两倍是：10
+</span></span><span class="line"><span class="cl">3 和 7 中较大的是：7
+</span></span><span class="line"><span class="cl">10 / 2 = 5
+</span></span><span class="line"><span class="cl">操作 1 的结果：6
+</span></span><span class="line"><span class="cl">操作 2 的结果：10
+</span></span><span class="line"><span class="cl">操作 3 的结果：25
+</span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="闭包捕获环境">闭包捕获环境
+</h2><p>闭包最强大的特性是<strong>可以捕获定义它时的环境中的变量</strong>。</p>
+<h3 id="捕获方式">捕获方式
+</h3><p>闭包可以通过三种方式捕获变量：</p>
+<ol>
+<li><strong>不可变借用</strong> (<code>&amp;T</code>) - 只读访问</li>
+<li><strong>可变借用</strong> (<code>&amp;mut T</code>) - 读写访问</li>
+<li><strong>所有权获取</strong> (<code>T</code>) - 移动变量到闭包内部</li>
+</ol>
+<h3 id="示例-1不可变借用">示例 1：不可变借用
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 闭包捕获 x 的不可变引用
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">print_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;x 的值是：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">print_x</span><span class="p">();</span><span class="w">  </span><span class="c1">// 输出：x 的值是：42
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">print_x</span><span class="p">();</span><span class="w">  </span><span class="c1">// 可以多次调用
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// x 仍然可以使用
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;x 仍然是：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="示例-2可变借用">示例 2：可变借用
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 闭包捕获 counter 的可变引用
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">increment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">counter</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;counter = </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">counter</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">increment</span><span class="p">();</span><span class="w">  </span><span class="c1">// 输出：counter = 1
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">increment</span><span class="p">();</span><span class="w">  </span><span class="c1">// 输出：counter = 2
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">increment</span><span class="p">();</span><span class="w">  </span><span class="c1">// 输出：counter = 3
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// counter 已经被修改
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;最终 counter = </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">counter</span><span class="p">);</span><span class="w">  </span><span class="c1">// 输出：最终 counter = 3
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="示例-3所有权获取">示例 3：所有权获取
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;Hello, Rust!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 闭包获取 string 的所有权
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">print_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">move</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">print_string</span><span class="p">();</span><span class="w">  </span><span class="c1">// 输出：Hello, Rust!
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// string 已经移动到闭包中，不能再使用
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// println!(&#34;{}&#34;, string);  // ❌ 编译错误！
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="示例-4捕获多个变量">示例 4：捕获多个变量
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;Alice&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 同时捕获多个变量
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">print_info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;姓名：</span><span class="si">{}</span><span class="s">, 年龄：</span><span class="si">{}</span><span class="s">, 分数：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">age</span><span class="p">,</span><span class="w"> </span><span class="n">score</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">update_score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">print_info</span><span class="p">();</span><span class="w">  </span><span class="c1">// 姓名：Alice, 年龄：25, 分数：100
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">update_score</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">print_info</span><span class="p">();</span><span class="w">  </span><span class="c1">// 姓名：Alice, 年龄：25, 分数：110
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="move-关键字">move 关键字
+</h2><p>使用 <code>move</code> 关键字可以强制闭包获取环境变量的<strong>所有权</strong>。</p>
+<h3 id="为什么需要-move">为什么需要 move？
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// ❌ 问题示例
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">create_greeting</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">impl</span><span class="w"> </span><span class="nb">Fn</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;Hello&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 这个闭包需要 greeting 的所有权
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 但 greeting 在函数结束时会被释放
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">||</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">greeting</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ✅ 正确示例
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">create_greeting</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">impl</span><span class="w"> </span><span class="nb">Fn</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;Hello&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 使用 move 将 greeting 的所有权移动到闭包中
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">move</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">greeting</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">greeting_fn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_greeting</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">greeting_fn</span><span class="p">();</span><span class="w">  </span><span class="c1">// 输出：Hello
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="move-的使用场景">move 的使用场景
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 场景 1：闭包在另一个线程中使用
+</span></span></span><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">thread</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;Hello from main thread!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 必须使用 move，因为新线程需要消息的所有权
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">thread</span>::<span class="n">spawn</span><span class="p">(</span><span class="k">move</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">});</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">handle</span><span class="p">.</span><span class="n">join</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 场景 2：闭包需要存活比创建它的作用域更长
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">create_counter</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">impl</span><span class="w"> </span><span class="nb">FnMut</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 使用 move 将 count 移动到闭包中
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">move</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">count</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">count</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">create_counter</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">counter</span><span class="p">());</span><span class="w">  </span><span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">counter</span><span class="p">());</span><span class="w">  </span><span class="c1">// 2
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">counter</span><span class="p">());</span><span class="w">  </span><span class="c1">// 3
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 场景 3：闭包作为函数返回值
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">make_adder</span><span class="p">(</span><span class="n">x</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">impl</span><span class="w"> </span><span class="nb">Fn</span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">move</span><span class="w"> </span><span class="o">|</span><span class="n">y</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">add_five</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_adder</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">add_five</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span><span class="w">  </span><span class="c1">// 15
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">add_five</span><span class="p">(</span><span class="mi">20</span><span class="p">));</span><span class="w">  </span><span class="c1">// 25
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="闭包作为参数">闭包作为参数
+</h2><p>闭包最常见的用途是作为函数的参数。</p>
+<h3 id="示例自定义排序">示例：自定义排序
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 升序排序
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">numbers</span><span class="p">.</span><span class="n">sort_by</span><span class="p">(</span><span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">|</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="n">b</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;升序：</span><span class="si">{:?}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">numbers</span><span class="p">);</span><span class="w">  </span><span class="c1">// [1, 2, 3, 5, 8, 9]
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 降序排序
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">numbers</span><span class="p">.</span><span class="n">sort_by</span><span class="p">(</span><span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">|</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="n">a</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;降序：</span><span class="si">{:?}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">numbers</span><span class="p">);</span><span class="w">  </span><span class="c1">// [9, 8, 5, 3, 2, 1]
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 自定义排序：偶数在前，奇数在后
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">numbers</span><span class="p">.</span><span class="n">sort_by</span><span class="p">(</span><span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">|</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">a_even</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="n">b_even</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="p">(</span><span class="n">a_even</span><span class="p">,</span><span class="w"> </span><span class="n">b_even</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">(</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">std</span>::<span class="n">cmp</span>::<span class="n">Ordering</span>::<span class="n">Less</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">std</span>::<span class="n">cmp</span>::<span class="n">Ordering</span>::<span class="n">Greater</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="n">b</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">});</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;偶数在前：</span><span class="si">{:?}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">numbers</span><span class="p">);</span><span class="w">  </span><span class="c1">// [2, 8, 1, 3, 5, 9]
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="示例函数式数据处理">示例：函数式数据处理
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 链式调用：过滤偶数 -&gt; 平方 -&gt; 求和
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">sum_of_squares</span>: <span class="kt">i32</span> <span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="o">|&amp;</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">  </span><span class="c1">// 只保留偶数
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w">           </span><span class="c1">// 计算平方
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">sum</span><span class="p">();</span><span class="w">                    </span><span class="c1">// 求和
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;偶数平方和：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">sum_of_squares</span><span class="p">);</span><span class="w">  </span><span class="c1">// 220 (4+16+36+64+100)
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 链式调用：转换 -&gt; 过滤 -&gt; 收集
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="s">&#34;hello&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;world&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;rust&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;closure&#34;</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">long_words</span>: <span class="nb">Vec</span><span class="o">&lt;&amp;</span><span class="kt">str</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">words</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="o">|</span><span class="n">word</span><span class="o">|</span><span class="w"> </span><span class="n">word</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">copied</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">collect</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;长单词：</span><span class="si">{:?}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">long_words</span><span class="p">);</span><span class="w">  </span><span class="c1">// [&#34;hello&#34;, &#34;world&#34;, &#34;closure&#34;]
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="示例实现高阶函数">示例：实现高阶函数
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 接受闭包作为参数的函数
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">apply_operation</span><span class="p">(</span><span class="n">x</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">operation</span>: <span class="kp">&amp;</span><span class="nc">dyn</span><span class="w"> </span><span class="nb">Fn</span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">operation</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 接受多个闭包
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">process_with_both</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">value</span>: <span class="kt">i32</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">transform</span>: <span class="kp">&amp;</span><span class="nc">dyn</span><span class="w"> </span><span class="nb">Fn</span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">validate</span>: <span class="kp">&amp;</span><span class="nc">dyn</span><span class="w"> </span><span class="nb">Fn</span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">Option</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">transform</span><span class="p">(</span><span class="n">value</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">validate</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">None</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 使用 apply_operation
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">doubled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apply_operation</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;5 的两倍：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">doubled</span><span class="p">);</span><span class="w">  </span><span class="c1">// 10
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">squared</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">apply_operation</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;5 的平方：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">squared</span><span class="p">);</span><span class="w">  </span><span class="c1">// 25
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 使用 process_with_both
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">process_with_both</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="mi">10</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="o">&amp;|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="o">&amp;|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">Some</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;结果：</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">value</span><span class="p">),</span><span class="w">  </span><span class="c1">// 30
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nb">None</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;验证失败&#34;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="闭包作为返回值">闭包作为返回值
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 返回闭包的函数
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">make_multiplier</span><span class="p">(</span><span class="n">factor</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">impl</span><span class="w"> </span><span class="nb">Fn</span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">move</span><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">factor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 返回不同类型的闭包
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">make_operation</span><span class="p">(</span><span class="n">operation</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">impl</span><span class="w"> </span><span class="nb">Fn</span><span class="p">(</span><span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">operation</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;add&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">|</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;subtract&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">|</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="s">&#34;multiply&#34;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">|</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">|</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 创建乘法器
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_multiplier</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">triple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_multiplier</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;5 * 2 = </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">double</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span><span class="w">  </span><span class="c1">// 10
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;5 * 3 = </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">triple</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span><span class="w">  </span><span class="c1">// 15
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 创建操作函数
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_operation</span><span class="p">(</span><span class="s">&#34;add&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">subtract</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_operation</span><span class="p">(</span><span class="s">&#34;subtract&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;10 + 5 = </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w">    </span><span class="c1">// 15
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;10 - 5 = </span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">subtract</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w">  </span><span class="c1">// 5
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="关键概念理解">关键概念理解
+</h2><h3 id="1-闭包的类型">1. 闭包的类型
+</h3><p>每个闭包都有唯一的、不可命名的类型。这就是为什么我们通常使用 <code>impl Fn</code> 或 <code>Box&lt;dyn Fn&gt;</code> 来存储闭包。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// ❌ 不能这样写（闭包类型无法命名）
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">closure</span>: <span class="o">???</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ✅ 使用 impl Fn（函数返回类型）
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">make_closure</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">impl</span><span class="w"> </span><span class="nb">Fn</span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ✅ 使用 Box&lt;dyn Fn&gt;（需要堆分配）
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">closure</span>: <span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="nb">Fn</span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Box</span>::<span class="n">new</span><span class="p">(</span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ✅ 使用泛型（函数参数）
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">use_closure</span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="p">(</span><span class="n">f</span>: <span class="nc">F</span><span class="p">,</span><span class="w"> </span><span class="n">value</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span>
+</span></span><span class="line"><span class="cl"><span class="nc">where</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">F</span>: <span class="nb">Fn</span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">f</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2-闭包与环境的交互">2. 闭包与环境的交互
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 闭包捕获环境的方式决定了它能做什么
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 只读取变量 - 可以多次调用
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">read_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">read_x</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">read_x</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 修改变量 - 需要 mut
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">increment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">increment</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">increment</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 获取所有权 - 只能调用一次（对于 FnOnce）
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">consume</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">move</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">consume</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// consume();  // ❌ 错误：string 已被移动
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-闭包的性能">3. 闭包的性能
+</h3><p>闭包在编译时会被转换为结构体，捕获的变量成为结构体的字段。因此：</p>
+<ul>
+<li>闭包的调用开销与普通函数相当</li>
+<li>编译器可以内联闭包调用</li>
+<li>使用 <code>impl Fn</code> 比 <code>Box&lt;dyn Fn&gt;</code> 性能更好（避免堆分配）</li>
+</ul>
+<hr>
+<h2 id="练习题">练习题
+</h2><h3 id="练习-1实现计算器闭包">练习 1：实现计算器闭包
+</h3><p>创建一个闭包，根据传入的操作符执行不同的计算：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 你的代码
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">calculate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">op</span>: <span class="kt">char</span><span class="p">,</span><span class="w"> </span><span class="n">a</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">b</span>: <span class="kt">i32</span><span class="o">|</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// 实现加减乘除
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">calculate</span><span class="p">(</span><span class="sc">&#39;+&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w">  </span><span class="c1">// 15
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">calculate</span><span class="p">(</span><span class="sc">&#39;-&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w">  </span><span class="c1">// 5
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">calculate</span><span class="p">(</span><span class="sc">&#39;*&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w">  </span><span class="c1">// 50
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">calculate</span><span class="p">(</span><span class="sc">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w">  </span><span class="c1">// 2
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="练习-2捕获环境的计数器">练习 2：捕获环境的计数器
+</h3><p>实现一个计数器闭包，每次调用返回递增的数字：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">make_counter</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">impl</span><span class="w"> </span><span class="nb">FnMut</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 你的代码
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">counter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_counter</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">counter</span><span class="p">());</span><span class="w">  </span><span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">counter</span><span class="p">());</span><span class="w">  </span><span class="c1">// 2
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">counter</span><span class="p">());</span><span class="w">  </span><span class="c1">// 3
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="练习-3过滤和转换">练习 3：过滤和转换
+</h3><p>给定一个数字列表，使用闭包完成以下操作：</p>
+<ol>
+<li>过滤出大于 5 的数字</li>
+<li>将这些数字乘以 2</li>
+<li>收集到新的 Vec 中</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 你的代码（使用 filter 和 map）
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">collect</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{:?}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w">  </span><span class="c1">// [14, 18, 22]
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="练习-4自定义排序">练习 4：自定义排序
+</h3><p>有一组学生，包含姓名和分数。使用闭包实现：</p>
+<ol>
+<li>按分数降序排序</li>
+<li>按姓名字母顺序排序</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Student</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">name</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">score</span>: <span class="kt">i32</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span>: <span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;Alice&#34;</span><span class="p">),</span><span class="w"> </span><span class="n">score</span>: <span class="mi">85</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span>: <span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;Bob&#34;</span><span class="p">),</span><span class="w"> </span><span class="n">score</span>: <span class="mi">92</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span>: <span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;Charlie&#34;</span><span class="p">),</span><span class="w"> </span><span class="n">score</span>: <span class="mi">78</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 按分数降序排序
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// students.sort_by(...)
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 按姓名排序
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// students.sort_by(...)
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="练习-5闭包工厂">练习 5：闭包工厂
+</h3><p>实现一个函数，返回一个闭包，该闭包将输入值乘以创建时指定的因子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 你的代码
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">make_multiplier</span><span class="p">(</span><span class="n">factor</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">impl</span><span class="w"> </span><span class="nb">Fn</span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_multiplier</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">triple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_multiplier</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">double</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span><span class="w">  </span><span class="c1">// 10
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">triple</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span><span class="w">  </span><span class="c1">// 15
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">double</span><span class="p">(</span><span class="n">triple</span><span class="p">(</span><span class="mi">5</span><span class="p">)));</span><span class="w">  </span><span class="c1">// 30
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="明日计划">明日计划
+</h2><p><strong>Day 51：闭包进阶（Fn、FnMut、FnOnce）</strong></p>
+<p>明天我们将深入理解闭包的三种 trait：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">┌─────────────────────────────────────────────────────┐
+</span></span><span class="line"><span class="cl">│              闭包的三种 Trait                        │
+</span></span><span class="line"><span class="cl">├─────────────────────────────────────────────────────┤
+</span></span><span class="line"><span class="cl">│                                                     │
+</span></span><span class="line"><span class="cl">│  Fn     - 不可变借用，可多次调用                    │
+</span></span><span class="line"><span class="cl">│           || println!(&#34;{}&#34;, x);                     │
+</span></span><span class="line"><span class="cl">│                                                     │
+</span></span><span class="line"><span class="cl">│  FnMut  - 可变借用，可多次调用                      │
+</span></span><span class="line"><span class="cl">│           || { counter += 1; }                      │
+</span></span><span class="line"><span class="cl">│                                                     │
+</span></span><span class="line"><span class="cl">│  FnOnce - 获取所有权，只能调用一次                  │
+</span></span><span class="line"><span class="cl">│           move || { consume(string); }              │
+</span></span><span class="line"><span class="cl">│                                                     │
+</span></span><span class="line"><span class="cl">│  关系：Fn ⊂ FnMut ⊂ FnOnce                         │
+</span></span><span class="line"><span class="cl">│  (所有 Fn 都是 FnMut，所有 FnMut 都是 FnOnce)        │
+</span></span><span class="line"><span class="cl">└─────────────────────────────────────────────────────┘
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>预习内容：</strong></p>
+<ul>
+<li>理解 Rust trait 系统</li>
+<li>思考：为什么闭包需要三种不同的 trait？</li>
+<li>尝试：什么情况下闭包只能调用一次？</li>
+</ul>
+<hr>
+<h2 id="参考资源">参考资源
+</h2><h3 id="官方文档">官方文档
+</h3><ul>
+<li><a class="link" href="https://doc.rust-lang.org/book/ch13-01-closures.html"  target="_blank" rel="noopener"
+    >Rust Book - 闭包章节</a></li>
+<li><a class="link" href="https://doc.rust-lang.org/rust-by-example/fn/closures.html"  target="_blank" rel="noopener"
+    >Rust by Example - Closures</a></li>
+<li><a class="link" href="https://doc.rust-lang.org/reference/expressions/closure-expr.html"  target="_blank" rel="noopener"
+    >Rust Reference - Closure Expressions</a></li>
+</ul>
+<h3 id="深入学习">深入学习
+</h3><ul>
+<li><a class="link" href="https://huonw.github.io/blog/2016/07/rust-closure-internals/"  target="_blank" rel="noopener"
+    >Rust Closure Internals</a></li>
+<li><a class="link" href="https://stevedonovan.github.io/rust-gentle-intro/7-closures.html"  target="_blank" rel="noopener"
+    >Understanding Rust Closures</a></li>
+</ul>
+<h3 id="实践资源">实践资源
+</h3><ul>
+<li><a class="link" href="https://play.rust-lang.org/"  target="_blank" rel="noopener"
+    >Rust Playground</a> - 在线运行 Rust 代码</li>
+<li><a class="link" href="https://exercism.org/tracks/rust"  target="_blank" rel="noopener"
+    >Exercism Rust Track</a> - 闭包相关练习</li>
+</ul>
+<hr>
+<h2 id="今日感悟">今日感悟
+</h2><h3 id="1-闭包是-rust-函数式编程的基石">1. 闭包是 Rust 函数式编程的基石
+</h3><p>今天学习闭包后，我意识到它是连接命令式和函数式编程的桥梁。闭包让 Rust 能够：</p>
+<ul>
+<li>像函数式语言一样处理数据（map、filter、fold）</li>
+<li>保持系统级语言的性能</li>
+<li>通过类型系统保证安全性</li>
+</ul>
+<h3 id="2-捕获环境既强大又需要谨慎">2. 捕获环境既强大又需要谨慎
+</h3><p>闭包可以捕获环境中的变量，这非常强大，但也需要注意：</p>
+<ul>
+<li>使用 <code>move</code> 时要清楚所有权的转移</li>
+<li>可变借用需要 <code>mut</code>，且闭包也必须是 <code>mut</code></li>
+<li>理解捕获方式对闭包 trait 的影响</li>
+</ul>
+<h3 id="3-闭包让代码更简洁">3. 闭包让代码更简洁
+</h3><p>对比之前的写法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 以前：需要定义单独的函数
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">is_even</span><span class="p">(</span><span class="n">x</span>: <span class="kp">&amp;</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">evens</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">_</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">filter</span><span class="p">(</span><span class="n">is_even</span><span class="p">).</span><span class="n">collect</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 现在：直接用闭包
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">evens</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">_</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="p">.</span><span class="n">iter</span><span class="p">().</span><span class="n">filter</span><span class="p">(</span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">).</span><span class="n">collect</span><span class="p">();</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>闭包让代码更紧凑，逻辑更集中。</p>
+<h3 id="4-类型推断让闭包更易用">4. 类型推断让闭包更易用
+</h3><p>Rust 的类型推断在闭包中表现得很好：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// 不需要写完整的类型
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">add</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">|</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 编译器会根据使用场景推断类型
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">  </span><span class="c1">// i32
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">add</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span><span class="w">  </span><span class="c1">// f64（如果第一次使用是浮点数）
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="5-闭包与迭代器是绝配">5. 闭包与迭代器是绝配
+</h3><p>虽然迭代器是明天的内容，但今天的示例已经展示了它们的配合：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="n">numbers</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">sum</span><span class="p">()</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>这种链式调用让数据处理流程一目了然。</p>
+<h3 id="6-理解闭包的代价">6. 理解闭包的代价
+</h3><p>闭包不是免费的：</p>
+<ul>
+<li>捕获变量会增加闭包的大小</li>
+<li>使用 <code>Box&lt;dyn Fn&gt;</code> 会有堆分配开销</li>
+<li>复杂的捕获可能导致生命周期问题</li>
+</ul>
+<p>但这些代价通常值得，因为闭包带来的代码清晰度和表达力提升更大。</p>
+<hr>
+<h2 id="代码练习答案">代码练习答案
+</h2><h3 id="练习-1-答案">练习 1 答案
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">calculate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">op</span>: <span class="kt">char</span><span class="p">,</span><span class="w"> </span><span class="n">a</span>: <span class="kt">i32</span><span class="p">,</span><span class="w"> </span><span class="n">b</span>: <span class="kt">i32</span><span class="o">|</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">match</span><span class="w"> </span><span class="n">op</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="sc">&#39;+&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="sc">&#39;-&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="sc">&#39;*&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="sc">&#39;/&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="fm">panic!</span><span class="p">(</span><span class="s">&#34;除数不能为零&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">},</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="fm">panic!</span><span class="p">(</span><span class="s">&#34;未知操作符&#34;</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">calculate</span><span class="p">(</span><span class="sc">&#39;+&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">calculate</span><span class="p">(</span><span class="sc">&#39;-&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">calculate</span><span class="p">(</span><span class="sc">&#39;*&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">calculate</span><span class="p">(</span><span class="sc">&#39;/&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="练习-2-答案">练习 2 答案
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">make_counter</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="nc">impl</span><span class="w"> </span><span class="nb">FnMut</span><span class="p">()</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">move</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">count</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">count</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="练习-3-答案">练习 3 答案
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span>: <span class="nb">Vec</span><span class="o">&lt;</span><span class="kt">i32</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numbers</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">iter</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="o">|&amp;</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">copied</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">.</span><span class="n">collect</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&#34;</span><span class="si">{:?}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">);</span><span class="w">  </span><span class="c1">// [14, 18, 22]
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="练习-4-答案">练习 4 答案
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Student</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">name</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">score</span>: <span class="kt">i32</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="fm">vec!</span><span class="p">[</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span>: <span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;Alice&#34;</span><span class="p">),</span><span class="w"> </span><span class="n">score</span>: <span class="mi">85</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span>: <span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;Bob&#34;</span><span class="p">),</span><span class="w"> </span><span class="n">score</span>: <span class="mi">92</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Student</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span>: <span class="nb">String</span>::<span class="n">from</span><span class="p">(</span><span class="s">&#34;Charlie&#34;</span><span class="p">),</span><span class="w"> </span><span class="n">score</span>: <span class="mi">78</span><span class="w"> </span><span class="p">},</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 按分数降序排序
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">students</span><span class="p">.</span><span class="n">sort_by</span><span class="p">(</span><span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">|</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">score</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">.</span><span class="n">score</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// 按姓名排序
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">students</span><span class="p">.</span><span class="n">sort_by</span><span class="p">(</span><span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="o">|</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">name</span><span class="p">.</span><span class="n">cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">b</span><span class="p">.</span><span class="n">name</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="练习-5-答案">练习 5 答案
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">fn</span> <span class="nf">make_multiplier</span><span class="p">(</span><span class="n">factor</span>: <span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nc">impl</span><span class="w"> </span><span class="nb">Fn</span><span class="p">(</span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">i32</span> <span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">move</span><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">factor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><hr>
+<p><strong>第 8 周开始！🚀</strong></p>
+<p>从今天起，我们进入 Rust 函数式编程的核心领域。闭包是理解迭代器、异步编程等高级特性的基础。掌握了闭包，Rust 的世界会更加精彩！</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/rust/">Rust</a>
+        
+            <a href="/tags/%E9%97%AD%E5%8C%85/">闭包</a>
+        
+            <a href="/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">函数式编程</a>
+        
+            <a href="/tags/fn/">Fn</a>
+        
+            <a href="/tags/fnmut/">FnMut</a>
+        
+            <a href="/tags/fnonce/">FnOnce</a>
+        
+    </section>
+
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            最后更新于 2026-04-21
+        </span>
+    </section></footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-42%E7%AC%AC-8-%E5%91%A8%E6%80%BB%E7%BB%93%E4%B8%8E%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 42：第 8 周总结与函数式编程思想</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-39%E9%97%AD%E5%8C%85%E5%9F%BA%E7%A1%80/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 39：闭包基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-40%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%9F%BA%E7%A1%80/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 40：迭代器基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-49%E7%AC%AC-7-%E5%91%A8%E6%80%BB%E7%BB%93%E4%B8%8E%E6%B5%8B%E8%AF%95%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 49：第 7 周总结与测试最佳实践</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-48%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E4%B8%8E%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Rust 每日学习 Day 48：性能测试与基准测试</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script
+    src="https://giscus.app/client.js"
+    data-repo="HHjoker/HHjoker.github.io"
+    data-repo-id="R_kgDON1Vqng"
+    data-category="Announcements"
+    data-category-id="DIC_kwDON1Vqns4C3qHd"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+></script>
+<script>
+    function setGiscusTheme(theme) {
+        let giscus = document.querySelector("iframe.giscus-frame");
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme,
+                        },
+                    },
+                },
+                "https://giscus.app"
+            );
+        }
+    }
+
+    (function () {
+        addEventListener("message", (e) => {
+            if (event.origin !== "https://giscus.app") return;
+            handler();
+        });
+        window.addEventListener("onColorSchemeChange", handler);
+
+        function handler() {
+            if (document.documentElement.dataset.scheme === "light") {
+                setGiscusTheme('preferred_color_scheme');
+            } else {
+                setGiscusTheme('preferred_color_scheme');
+            }
+        }
+    })();
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2024 - 
+        
+        2026 Huang Hao
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+<style>
+    #TableOfContents > ul ul,
+    #TableOfContents > ul ol,
+    #TableOfContents > ol ul,
+    #TableOfContents > ol ol {
+        display: none;
+    }
+    #TableOfContents > ul .open,
+    #TableOfContents > ol .open {
+        display: block;
+    }
+</style>
+
+<script>
+    function initTocHide() {
+        
+        let toc = document.querySelector(".widget--toc");
+        if (!toc) {
+            return;
+        }
+        
+        window.addEventListener('scroll', function() {
+            
+            let openUl = document.querySelectorAll(".open");
+            if (openUl.length > 0) {
+              openUl.forEach((ul) => {
+                ul.classList.remove("open")
+              })
+            }
+            
+            let currentLi = document.querySelector(".active-class");
+            if (!currentLi) {
+                return
+            }
+            
+            if (currentLi.children.length > 1) {
+                currentLi.children[1].classList.add("open")
+            }
+            
+            let ul = currentLi.parentElement;
+            do {
+                ul.classList.add("open");
+                ul = ul.parentElement.parentElement
+            } while (ul !== undefined && (ul.localName === 'ul' || ul.localName === 'ol'))
+        });
+    }
+    initTocHide()
+</script>
+
+<style>
+    #backTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        z-index: 99;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-image: url(https://HHjoker.github.io/icons/backTop.svg);
+    }
+</style>
+
+<script type="text/javascript">
+    
+
+    function initScrollTop() {
+        let rightSideBar = document.querySelector(".right-sidebar");
+        if (!rightSideBar) {
+            return;
+        }
+        
+        let btn = document.createElement("div");
+        btn.id = "backTopBtn";
+        btn.onclick = backToTop
+        rightSideBar.appendChild(btn)
+        
+        window.onscroll = function() {
+            
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+    }
+
+    
+
+    function backToTop(){
+        window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+
+    initScrollTop();
+</script>
+
+<style>
+    .highlight {
+         
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .code-show {
+        max-height: none !important;
+    }
+
+    .code-more-box {
+        width: 100%;
+        padding-top: 78px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#fff));
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .code-more-btn {
+        display: block;
+        margin: auto;
+        width: 44px;
+        height: 22px;
+        background: #f0f0f5;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding-top: 6px;
+        cursor: pointer;
+    }
+
+    .code-more-img {
+        cursor: pointer !important;
+        display: block;
+        margin: auto;
+        width: 22px;
+        height: 16px;
+    }
+</style>
+
+<script>
+  function initCodeMoreBox() {
+    let codeBlocks = document.querySelectorAll(".highlight");
+    if (!codeBlocks) {
+      return;
+    }
+    codeBlocks.forEach(codeBlock => {
+      
+      if (codeBlock.scrollHeight <= codeBlock.clientHeight) {
+        return;
+      }
+      
+      
+      let codeMoreBox = document.createElement('div');
+      codeMoreBox.classList.add('code-more-box');
+      
+      let codeMoreBtn = document.createElement('span');
+      codeMoreBtn.classList.add('code-more-btn');
+      codeMoreBtn.addEventListener('click', () => {
+        codeBlock.classList.add('code-show');
+        codeMoreBox.style.display = 'none';
+        
+        window.dispatchEvent(new Event('resize'))
+      })
+      
+      let img = document.createElement('img');
+      img.classList.add('code-more-img');
+      img.src = "https://HHjoker.github.io/icons/codeMore.ico"
+      
+      codeMoreBtn.appendChild(img);
+      codeMoreBox.appendChild(codeMoreBtn);
+      codeBlock.appendChild(codeMoreBox)
+    })
+  }
+  
+  initCodeMoreBox();
+</script>
+
+    </body>
+</html>
