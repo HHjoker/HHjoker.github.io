@@ -6,7 +6,7 @@
     <lastmod>2026-03-10T21:02:21+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/categories/</loc>
-    <lastmod>2026-04-23T21:05:01+08:00</lastmod>
+    <lastmod>2026-04-24T21:09:17+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -23,23 +23,29 @@
                 href="https://HHjoker.github.io/categories/"
                 />
   </url><url>
-    <loc>https://HHjoker.github.io/tags/iterator/</loc>
-    <lastmod>2026-04-23T21:05:01+08:00</lastmod>
+    <loc>https://HHjoker.github.io/tags/filter/</loc>
+    <lastmod>2026-04-24T21:09:17+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/fold/</loc>
+    <lastmod>2026-04-24T21:09:17+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/map/</loc>
+    <lastmod>2026-04-24T21:09:17+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/post/</loc>
-    <lastmod>2026-04-23T21:05:01+08:00</lastmod>
+    <lastmod>2026-04-24T21:09:17+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/rust/</loc>
-    <lastmod>2026-04-23T21:05:01+08:00</lastmod>
+    <lastmod>2026-04-24T21:09:17+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/categories/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2026-04-23T21:05:01+08:00</lastmod>
+    <lastmod>2026-04-24T21:09:17+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-52%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%9F%BA%E7%A1%80iterator-trait/</loc>
-    <lastmod>2026-04-23T21:05:01+08:00</lastmod>
+    <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-53%E8%BF%AD%E4%BB%A3%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8mapfilterfold-%E7%AD%89/</loc>
+    <lastmod>2026-04-24T21:09:17+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/</loc>
-    <lastmod>2026-04-23T21:05:01+08:00</lastmod>
+    <lastmod>2026-04-24T21:09:17+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -57,12 +63,21 @@
                 />
   </url><url>
     <loc>https://HHjoker.github.io/tags/%E8%BF%AD%E4%BB%A3%E5%99%A8/</loc>
+    <lastmod>2026-04-24T21:09:17+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2026-04-24T21:09:17+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/%E9%80%82%E9%85%8D%E5%99%A8/</loc>
+    <lastmod>2026-04-24T21:09:17+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/iterator/</loc>
+    <lastmod>2026-04-23T21:05:01+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-52%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%9F%BA%E7%A1%80iterator-trait/</loc>
     <lastmod>2026-04-23T21:05:01+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/%E6%83%B0%E6%80%A7%E6%B1%82%E5%80%BC/</loc>
-    <lastmod>2026-04-23T21:05:01+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2026-04-23T21:05:01+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/fn/</loc>
@@ -458,10 +473,10 @@
     <loc>https://HHjoker.github.io/tags/agent/</loc>
     <lastmod>2026-03-20T21:10:52+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/categories/ai-daily/</loc>
+    <loc>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-20/</loc>
     <lastmod>2026-03-20T21:10:52+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-20/</loc>
+    <loc>https://HHjoker.github.io/categories/ai-daily/</loc>
     <lastmod>2026-03-20T21:10:52+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/alignment/</loc>
@@ -858,7 +873,7 @@
     <lastmod>2026-03-05T09:35:53+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/post/rust-daily/</loc>
-    <lastmod>2026-04-23T21:05:01+08:00</lastmod>
+    <lastmod>2026-04-24T21:09:17+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/categories/test/</loc>
     <lastmod>2025-02-07T19:50:38+08:00</lastmod>
