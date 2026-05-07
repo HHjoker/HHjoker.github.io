@@ -7,12 +7,60 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Wed, 06 May 2026 21:12:09 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 07 May 2026 21:05:32 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Async</title>
         <link>https://HHjoker.github.io/tags/async/</link>
-        <pubDate>Wed, 06 May 2026 13:00:00 +0000</pubDate>
+        <pubDate>Thu, 07 May 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/async/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>I/O</title>
+        <link>https://HHjoker.github.io/tags/i/o/</link>
+        <pubDate>Thu, 07 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/i/o/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Rust</title>
+        <link>https://HHjoker.github.io/tags/rust/</link>
+        <pubDate>Thu, 07 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/rust/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>TCP</title>
+        <link>https://HHjoker.github.io/tags/tcp/</link>
+        <pubDate>Thu, 07 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/tcp/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Tokio</title>
+        <link>https://HHjoker.github.io/tags/tokio/</link>
+        <pubDate>Thu, 07 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/tokio/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>UDP</title>
+        <link>https://HHjoker.github.io/tags/udp/</link>
+        <pubDate>Thu, 07 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/udp/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>网络编程</title>
+        <link>https://HHjoker.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</link>
+        <pubDate>Thu, 07 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</guid>
         <description></description>
         </item>
         <item>
@@ -21,14 +69,6 @@
         <pubDate>Wed, 06 May 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/runtime/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Rust</title>
-        <link>https://HHjoker.github.io/tags/rust/</link>
-        <pubDate>Wed, 06 May 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/rust/</guid>
         <description></description>
         </item>
         <item>
@@ -45,14 +85,6 @@
         <pubDate>Wed, 06 May 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/spawn_blocking/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Tokio</title>
-        <link>https://HHjoker.github.io/tags/tokio/</link>
-        <pubDate>Wed, 06 May 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/tokio/</guid>
         <description></description>
         </item>
         <item>
