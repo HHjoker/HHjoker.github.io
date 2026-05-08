@@ -5,11 +5,14 @@
     <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-8%E6%89%80%E6%9C%89%E6%9D%83%E7%A7%BB%E5%8A%A8%E4%B8%8E%E5%85%8B%E9%9A%86/</loc>
     <lastmod>2026-03-10T21:02:21+08:00</lastmod>
   </url><url>
+    <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-65%E5%A4%9A%E4%B8%AA%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86join/select/race/</loc>
+    <lastmod>2026-05-08T21:03:50+08:00</lastmod>
+  </url><url>
     <loc>https://HHjoker.github.io/tags/async/</loc>
-    <lastmod>2026-05-07T21:05:32+08:00</lastmod>
+    <lastmod>2026-05-08T21:03:50+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/categories/</loc>
-    <lastmod>2026-05-07T21:05:32+08:00</lastmod>
+    <lastmod>2026-05-08T21:03:50+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -26,23 +29,26 @@
                 href="https://HHjoker.github.io/categories/"
                 />
   </url><url>
-    <loc>https://HHjoker.github.io/tags/i/o/</loc>
-    <lastmod>2026-05-07T21:05:32+08:00</lastmod>
+    <loc>https://HHjoker.github.io/tags/join/</loc>
+    <lastmod>2026-05-08T21:03:50+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/post/</loc>
-    <lastmod>2026-05-07T21:05:32+08:00</lastmod>
+    <lastmod>2026-05-08T21:03:50+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/race/</loc>
+    <lastmod>2026-05-08T21:03:50+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/rust/</loc>
-    <lastmod>2026-05-07T21:05:32+08:00</lastmod>
+    <lastmod>2026-05-08T21:03:50+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/categories/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2026-05-07T21:05:32+08:00</lastmod>
+    <lastmod>2026-05-08T21:03:50+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-64%E5%BC%82%E6%AD%A5-i/o-%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2026-05-07T21:05:32+08:00</lastmod>
+    <loc>https://HHjoker.github.io/tags/select/</loc>
+    <lastmod>2026-05-08T21:03:50+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/</loc>
-    <lastmod>2026-05-07T21:05:32+08:00</lastmod>
+    <lastmod>2026-05-08T21:03:50+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -59,10 +65,19 @@
                 href="https://HHjoker.github.io/tags/"
                 />
   </url><url>
-    <loc>https://HHjoker.github.io/tags/tcp/</loc>
+    <loc>https://HHjoker.github.io/tags/tokio/</loc>
+    <lastmod>2026-05-08T21:03:50+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/%E5%B9%B6%E5%8F%91/</loc>
+    <lastmod>2026-05-08T21:03:50+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/i/o/</loc>
     <lastmod>2026-05-07T21:05:32+08:00</lastmod>
   </url><url>
-    <loc>https://HHjoker.github.io/tags/tokio/</loc>
+    <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-64%E5%BC%82%E6%AD%A5-i/o-%E4%B8%8E%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2026-05-07T21:05:32+08:00</lastmod>
+  </url><url>
+    <loc>https://HHjoker.github.io/tags/tcp/</loc>
     <lastmod>2026-05-07T21:05:32+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/udp/</loc>
@@ -111,9 +126,6 @@
     <lastmod>2026-05-04T21:05:44+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-61async/await-%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2026-05-04T21:05:44+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/%E5%B9%B6%E5%8F%91/</loc>
     <lastmod>2026-05-04T21:05:44+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</loc>
@@ -489,9 +501,6 @@
     <lastmod>2026-03-23T21:03:20+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/p/rust-%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0-day-20%E4%BB%BB%E5%8A%A1%E5%8F%96%E6%B6%88%E4%B8%8E%E4%BC%98%E9%9B%85%E5%85%B3%E9%97%AD/</loc>
-    <lastmod>2026-03-22T21:03:38+08:00</lastmod>
-  </url><url>
-    <loc>https://HHjoker.github.io/tags/select/</loc>
     <lastmod>2026-03-22T21:03:38+08:00</lastmod>
   </url><url>
     <loc>https://HHjoker.github.io/tags/timeout/</loc>

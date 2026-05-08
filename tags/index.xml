@@ -7,12 +7,60 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Thu, 07 May 2026 21:05:32 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 08 May 2026 21:03:50 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Async</title>
         <link>https://HHjoker.github.io/tags/async/</link>
-        <pubDate>Thu, 07 May 2026 13:00:00 +0000</pubDate>
+        <pubDate>Fri, 08 May 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/async/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Join</title>
+        <link>https://HHjoker.github.io/tags/join/</link>
+        <pubDate>Fri, 08 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/join/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Race</title>
+        <link>https://HHjoker.github.io/tags/race/</link>
+        <pubDate>Fri, 08 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/race/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Rust</title>
+        <link>https://HHjoker.github.io/tags/rust/</link>
+        <pubDate>Fri, 08 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/rust/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Select</title>
+        <link>https://HHjoker.github.io/tags/select/</link>
+        <pubDate>Fri, 08 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/select/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Tokio</title>
+        <link>https://HHjoker.github.io/tags/tokio/</link>
+        <pubDate>Fri, 08 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/tokio/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>并发</title>
+        <link>https://HHjoker.github.io/tags/%E5%B9%B6%E5%8F%91/</link>
+        <pubDate>Fri, 08 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%B9%B6%E5%8F%91/</guid>
         <description></description>
         </item>
         <item>
@@ -24,27 +72,11 @@
         <description></description>
         </item>
         <item>
-        <title>Rust</title>
-        <link>https://HHjoker.github.io/tags/rust/</link>
-        <pubDate>Thu, 07 May 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/rust/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>TCP</title>
         <link>https://HHjoker.github.io/tags/tcp/</link>
         <pubDate>Thu, 07 May 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/tcp/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Tokio</title>
-        <link>https://HHjoker.github.io/tags/tokio/</link>
-        <pubDate>Thu, 07 May 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/tokio/</guid>
         <description></description>
         </item>
         <item>
@@ -149,14 +181,6 @@
         <pubDate>Mon, 04 May 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/await/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>并发</title>
-        <link>https://HHjoker.github.io/tags/%E5%B9%B6%E5%8F%91/</link>
-        <pubDate>Mon, 04 May 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/%E5%B9%B6%E5%8F%91/</guid>
         <description></description>
         </item>
         <item>
@@ -797,14 +821,6 @@
         <pubDate>Mon, 23 Mar 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/%E8%87%AA%E5%BC%95%E7%94%A8/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Select</title>
-        <link>https://HHjoker.github.io/tags/select/</link>
-        <pubDate>Sun, 22 Mar 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/select/</guid>
         <description></description>
         </item>
         <item>
