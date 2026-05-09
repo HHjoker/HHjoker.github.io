@@ -7,12 +7,68 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Fri, 08 May 2026 21:03:50 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 09 May 2026 21:07:29 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Async</title>
         <link>https://HHjoker.github.io/tags/async/</link>
-        <pubDate>Fri, 08 May 2026 13:00:00 +0000</pubDate>
+        <pubDate>Sat, 09 May 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/async/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Axum</title>
+        <link>https://HHjoker.github.io/tags/axum/</link>
+        <pubDate>Sat, 09 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/axum/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>HTTP</title>
+        <link>https://HHjoker.github.io/tags/http/</link>
+        <pubDate>Sat, 09 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/http/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>REST</title>
+        <link>https://HHjoker.github.io/tags/rest/</link>
+        <pubDate>Sat, 09 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/rest/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Rust</title>
+        <link>https://HHjoker.github.io/tags/rust/</link>
+        <pubDate>Sat, 09 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/rust/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Web 开发</title>
+        <link>https://HHjoker.github.io/tags/web-%E5%BC%80%E5%8F%91/</link>
+        <pubDate>Sat, 09 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/web-%E5%BC%80%E5%8F%91/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>路由</title>
+        <link>https://HHjoker.github.io/tags/%E8%B7%AF%E7%94%B1/</link>
+        <pubDate>Sat, 09 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E8%B7%AF%E7%94%B1/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>中间件</title>
+        <link>https://HHjoker.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/</link>
+        <pubDate>Sat, 09 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E4%B8%AD%E9%97%B4%E4%BB%B6/</guid>
         <description></description>
         </item>
         <item>
@@ -29,14 +85,6 @@
         <pubDate>Fri, 08 May 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/race/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Rust</title>
-        <link>https://HHjoker.github.io/tags/rust/</link>
-        <pubDate>Fri, 08 May 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/rust/</guid>
         <description></description>
         </item>
         <item>
