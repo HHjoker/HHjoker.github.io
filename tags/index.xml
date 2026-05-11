@@ -7,10 +7,34 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Sun, 10 May 2026 21:05:55 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 11 May 2026 21:08:14 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>C</title>
+        <link>https://HHjoker.github.io/tags/c/</link>
+        <pubDate>Mon, 11 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/c/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>CStr</title>
+        <link>https://HHjoker.github.io/tags/cstr/</link>
+        <pubDate>Mon, 11 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/cstr/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>CString</title>
+        <link>https://HHjoker.github.io/tags/cstring/</link>
+        <pubDate>Mon, 11 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/cstring/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Extern</title>
         <link>https://HHjoker.github.io/tags/extern/</link>
-        <pubDate>Sun, 10 May 2026 13:00:00 +0000</pubDate>
+        <pubDate>Mon, 11 May 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/extern/</guid>
         <description></description>
@@ -18,9 +42,25 @@
         <item>
         <title>FFI</title>
         <link>https://HHjoker.github.io/tags/ffi/</link>
-        <pubDate>Sun, 10 May 2026 13:00:00 +0000</pubDate>
+        <pubDate>Mon, 11 May 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/ffi/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Rust</title>
+        <link>https://HHjoker.github.io/tags/rust/</link>
+        <pubDate>Mon, 11 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/rust/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>互操作</title>
+        <link>https://HHjoker.github.io/tags/%E4%BA%92%E6%93%8D%E4%BD%9C/</link>
+        <pubDate>Mon, 11 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E4%BA%92%E6%93%8D%E4%BD%9C/</guid>
         <description></description>
         </item>
         <item>
@@ -29,14 +69,6 @@
         <pubDate>Sun, 10 May 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/raw-pointer/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Rust</title>
-        <link>https://HHjoker.github.io/tags/rust/</link>
-        <pubDate>Sun, 10 May 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/rust/</guid>
         <description></description>
         </item>
         <item>
