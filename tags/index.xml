@@ -7,20 +7,68 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Huang Hao</copyright>
-        <lastBuildDate>Sun, 17 May 2026 21:05:24 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>REPL</title>
-        <link>https://HHjoker.github.io/tags/repl/</link>
-        <pubDate>Sun, 17 May 2026 13:00:00 +0000</pubDate>
+        <lastBuildDate>Mon, 18 May 2026 21:04:32 +0800</lastBuildDate><atom:link href="https://HHjoker.github.io/tags/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Async</title>
+        <link>https://HHjoker.github.io/tags/async/</link>
+        <pubDate>Mon, 18 May 2026 13:00:00 +0000</pubDate>
         
-        <guid>https://HHjoker.github.io/tags/repl/</guid>
+        <guid>https://HHjoker.github.io/tags/async/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Async/Await</title>
+        <link>https://HHjoker.github.io/tags/async/await/</link>
+        <pubDate>Mon, 18 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/async/await/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Executor</title>
+        <link>https://HHjoker.github.io/tags/executor/</link>
+        <pubDate>Mon, 18 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/executor/</guid>
         <description></description>
         </item>
         <item>
         <title>Rust</title>
         <link>https://HHjoker.github.io/tags/rust/</link>
-        <pubDate>Sun, 17 May 2026 13:00:00 +0000</pubDate>
+        <pubDate>Mon, 18 May 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/rust/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Tokio</title>
+        <link>https://HHjoker.github.io/tags/tokio/</link>
+        <pubDate>Mon, 18 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/tokio/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>异步编程</title>
+        <link>https://HHjoker.github.io/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</link>
+        <pubDate>Mon, 18 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>运行时</title>
+        <link>https://HHjoker.github.io/tags/%E8%BF%90%E8%A1%8C%E6%97%B6/</link>
+        <pubDate>Mon, 18 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/%E8%BF%90%E8%A1%8C%E6%97%B6/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>REPL</title>
+        <link>https://HHjoker.github.io/tags/repl/</link>
+        <pubDate>Sun, 17 May 2026 13:00:00 +0000</pubDate>
+        
+        <guid>https://HHjoker.github.io/tags/repl/</guid>
         <description></description>
         </item>
         <item>
@@ -248,14 +296,6 @@
         <description></description>
         </item>
         <item>
-        <title>Async</title>
-        <link>https://HHjoker.github.io/tags/async/</link>
-        <pubDate>Sat, 09 May 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/async/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>Axum</title>
         <link>https://HHjoker.github.io/tags/axum/</link>
         <pubDate>Sat, 09 May 2026 13:00:00 +0000</pubDate>
@@ -325,14 +365,6 @@
         <pubDate>Fri, 08 May 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/select/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Tokio</title>
-        <link>https://HHjoker.github.io/tags/tokio/</link>
-        <pubDate>Fri, 08 May 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/tokio/</guid>
         <description></description>
         </item>
         <item>
@@ -461,14 +493,6 @@
         <pubDate>Mon, 04 May 2026 13:00:00 +0000</pubDate>
         
         <guid>https://HHjoker.github.io/tags/await/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>异步编程</title>
-        <link>https://HHjoker.github.io/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</link>
-        <pubDate>Mon, 04 May 2026 13:00:00 +0000</pubDate>
-        
-        <guid>https://HHjoker.github.io/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</guid>
         <description></description>
         </item>
         <item>
