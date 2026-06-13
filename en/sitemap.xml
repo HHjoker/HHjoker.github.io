@@ -5,6 +5,11 @@
     <loc>https://HHjoker.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="en"
+                href="https://HHjoker.github.io/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="zh-cn"
                 href="https://HHjoker.github.io/categories/"
                 />
@@ -13,13 +18,13 @@
                 hreflang="ar"
                 href="https://HHjoker.github.io/ar/categories/"
                 />
+  </url><url>
+    <loc>https://HHjoker.github.io/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://HHjoker.github.io/en/categories/"
+                href="https://HHjoker.github.io/en/"
                 />
-  </url><url>
-    <loc>https://HHjoker.github.io/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -30,13 +35,13 @@
                 hreflang="ar"
                 href="https://HHjoker.github.io/ar/"
                 />
+  </url><url>
+    <loc>https://HHjoker.github.io/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://HHjoker.github.io/en/"
+                href="https://HHjoker.github.io/en/tags/"
                 />
-  </url><url>
-    <loc>https://HHjoker.github.io/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -46,11 +51,6 @@
                 rel="alternate"
                 hreflang="ar"
                 href="https://HHjoker.github.io/ar/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://HHjoker.github.io/en/tags/"
                 />
   </url>
 </urlset>
