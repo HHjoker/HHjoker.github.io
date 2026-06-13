@@ -14,9 +14,11 @@
         
         <guid>https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-09/</guid>
         <description>&lt;h1 id=&#34;ai-日报--2026-03-09&#34;&gt;AI 日报 | 2026-03-09
-&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;每日精选 AI 领域最新研究进展与技术动态&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;/h1&gt;
+    &lt;blockquote&gt;
+        &lt;p&gt;每日精选 AI 领域最新研究进展与技术动态&lt;/p&gt;
+
+    &lt;/blockquote&gt;
 &lt;h2 id=&#34;-今日总结&#34;&gt;📌 今日总结
 &lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;推理模型&amp;quot;表演性思维&amp;quot;被发现&lt;/strong&gt;：研究者揭示大模型在简单任务上早已确定答案但仍生成冗长推理链，提出注意力探针可实现 80% token 节省&lt;/li&gt;

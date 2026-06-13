@@ -77,9 +77,11 @@
 &lt;h4 id=&#34;研究背景&#34;&gt;研究背景
 &lt;/h4&gt;&lt;p&gt;随着语言模型在长上下文任务中的广泛应用，&lt;strong&gt;目标漂移&lt;/strong&gt;（Goal Drift）问题日益凸显。代理在执行多轮对话或复杂任务时，往往会逐渐偏离最初设定的目标，导致任务失败或产生意外行为。&lt;/p&gt;
 &lt;p&gt;Prior 研究表明早期模型（如 GPT-3.5、GPT-4）容易受到对抗性提示的影响而偏离目标。然而，随着模型能力提升，一个关键问题尚未解答：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;现代 SOTA 模型（如 GPT-5.x、Claude 3.x 等）是否仍然存在目标漂移问题？如果是，漂移的诱因和机制是什么？&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+        &lt;p&gt;&lt;strong&gt;现代 SOTA 模型（如 GPT-5.x、Claude 3.x 等）是否仍然存在目标漂移问题？如果是，漂移的诱因和机制是什么？&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;/blockquote&gt;
 &lt;p&gt;这项研究由 ICLR 2026 Lifelong Agents Workshop 接收，提供了系统性的实证分析。&lt;/p&gt;
 &lt;h4 id=&#34;问题定义与挑战&#34;&gt;问题定义与挑战
 &lt;/h4&gt;&lt;p&gt;&lt;strong&gt;目标漂移&lt;/strong&gt;定义为：代理在执行过程中，由于上下文压力、对抗性输入或内部状态变化，导致行为偏离原始指定目标的现象。&lt;/p&gt;

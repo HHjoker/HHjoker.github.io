@@ -1212,9 +1212,11 @@
 			&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;
-&lt;blockquote&gt;
-&lt;p&gt;⚠️ &lt;strong&gt;注意&lt;/strong&gt;: GoogleTest 早期使用 &lt;code&gt;TestCase&lt;/code&gt; 术语，现在推荐使用 &lt;code&gt;TestSuite&lt;/code&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
+
+    &lt;blockquote&gt;
+        &lt;p&gt;⚠️ &lt;strong&gt;注意&lt;/strong&gt;: GoogleTest 早期使用 &lt;code&gt;TestCase&lt;/code&gt; 术语，现在推荐使用 &lt;code&gt;TestSuite&lt;/code&gt;。&lt;/p&gt;
+
+    &lt;/blockquote&gt;
 &lt;h3 id=&#34;核心概念层次&#34;&gt;核心概念层次
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1995,9 +1997,11 @@
 &lt;/div&gt;&lt;hr&gt;
 &lt;h2 id=&#34;最佳实践&#34;&gt;最佳实践
 &lt;/h2&gt;&lt;h3 id=&#34;1-期望值设置时机&#34;&gt;1. 期望值设置时机
-&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;⚠️ &lt;strong&gt;重要&lt;/strong&gt;: gMock 要求在调用 mock 函数&lt;strong&gt;之前&lt;/strong&gt;设置期望值，否则行为未定义。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;/h3&gt;
+    &lt;blockquote&gt;
+        &lt;p&gt;⚠️ &lt;strong&gt;重要&lt;/strong&gt;: gMock 要求在调用 mock 函数&lt;strong&gt;之前&lt;/strong&gt;设置期望值，否则行为未定义。&lt;/p&gt;
+
+    &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1

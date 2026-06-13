@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-05agent-%E7%9B%AE%E6%A0%87%E6%BC%82%E7%A7%BB%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B624-%E5%B0%8F%E6%97%B6%E6%96%87%E7%94%9F%E5%9B%BE%E8%AE%AD%E7%BB%83%E7%AA%81%E7%A0%B4/'>
 
-<link rel="stylesheet" href="/scss/style.min.e39b880ae259544d9cb88856dab303cb14aa498f306bab68abb865c29b4475d4.css"><meta property='og:title' content="AI 日报 | 2026-03-05：Agent 目标漂移深度研究、24 小时文生图训练突破">
+<link rel="stylesheet" href="/scss/style.min.e6ae94f7a4b8417261910c8ecc962e0b21c7d5928f8cedfb5bdfe908c1bda12b.css"><meta property='og:title' content="AI 日报 | 2026-03-05：Agent 目标漂移深度研究、24 小时文生图训练突破">
 <meta property='og:description' content="📌 今日总结 Agent 目标漂移问题：ICLR 2026 研究揭示即使 SOTA 模型在上下文压力下也会偏离原始目标，仅 GPT-5.1 表现稳健 文生图训练效率突破：Photoroom 使用 32 块 H200 GPU、$1500 预算在 24 小时内完成模型训练，无需 VAE 不完全信息游戏基准：Valet 发布...">
 <meta property='og:url' content='https://HHjoker.github.io/p/ai-%E6%97%A5%E6%8A%A5-2026-03-05agent-%E7%9B%AE%E6%A0%87%E6%BC%82%E7%A7%BB%E6%B7%B1%E5%BA%A6%E7%A0%94%E7%A9%B624-%E5%B0%8F%E6%97%B6%E6%96%87%E7%94%9F%E5%9B%BE%E8%AE%AD%E7%BB%83%E7%AA%81%E7%A0%B4/'>
 <meta property='og:site_name' content='HH Blog'>
@@ -40,7 +40,7 @@
     })();
 </script>
 <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
         </span>
@@ -240,7 +240,7 @@
 
 
 
-                        <span>暗色模式</span>
+                        <span></span>
                     </li>
                 
             </ol>
@@ -265,7 +265,7 @@
 
 
         </div>
-        <h2 class="widget-title section-title">目录</h2>
+        <h2 class="widget-title section-title"></h2>
         
         <div class="widget--toc">
             <nav id="TableOfContents">
@@ -467,9 +467,11 @@
 <h4 id="研究背景">研究背景
 </h4><p>随着语言模型在长上下文任务中的广泛应用，<strong>目标漂移</strong>（Goal Drift）问题日益凸显。代理在执行多轮对话或复杂任务时，往往会逐渐偏离最初设定的目标，导致任务失败或产生意外行为。</p>
 <p>Prior 研究表明早期模型（如 GPT-3.5、GPT-4）容易受到对抗性提示的影响而偏离目标。然而，随着模型能力提升，一个关键问题尚未解答：</p>
-<blockquote>
-<p><strong>现代 SOTA 模型（如 GPT-5.x、Claude 3.x 等）是否仍然存在目标漂移问题？如果是，漂移的诱因和机制是什么？</strong></p>
-</blockquote>
+
+    <blockquote>
+        <p><strong>现代 SOTA 模型（如 GPT-5.x、Claude 3.x 等）是否仍然存在目标漂移问题？如果是，漂移的诱因和机制是什么？</strong></p>
+
+    </blockquote>
 <p>这项研究由 ICLR 2026 Lifelong Agents Workshop 接收，提供了系统性的实证分析。</p>
 <h4 id="问题定义与挑战">问题定义与挑战
 </h4><p><strong>目标漂移</strong>定义为：代理在执行过程中，由于上下文压力、对抗性输入或内部状态变化，导致行为偏离原始指定目标的现象。</p>
@@ -964,7 +966,7 @@ $$L = \mathbb{E}[\|x_0 - D_\theta(x_t, t)\|^2]$$<p><strong>优势</strong>：</p
 
 
         <span>
-            最后更新于 2026-06-13
+             2026-06-13
         </span>
     </section></footer>
 
@@ -1003,7 +1005,7 @@ $$L = \mathbb{E}[\|x_0 - D_\theta(x_t, t)\|^2]$$<p><strong>优势</strong>：</p
     
 
 <aside class="related-content--wrapper">
-    <h2 class="section-title">相关文章</h2>
+    <h2 class="section-title"></h2>
     <div class="related-content">
         <div class="flex article-list--tile">
             
@@ -1142,97 +1144,46 @@ $$L = \mathbb{E}[\|x_0 - D_\theta(x_t, t)\|^2]$$<p><strong>优势</strong>：</p
     </section>
     
     <section class="powerby">
-        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
-        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+         <br />
+        
     </section>
 </footer>
 
 
     
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
+
+
+<script type="module">
+    import gallery from '\/ts\/gallery.js';
+
+    const articleContent = document.querySelector('.article-content');
+    const shouldLoad = articleContent && (articleContent.querySelectorAll('figure').length > 0 || articleContent.querySelectorAll('img.gallery-image').length > 0);
     
-    <div class="pswp__bg"></div>
+    if (shouldLoad) {
+        gallery(articleContent);
 
-    
-    <div class="pswp__scroll-wrap">
+        const PhotoSwipeLightbox = (await import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js")).default;
+        const styleHref = "https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.css";
 
-        
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
+        const styleTag = document.createElement('link');
+        styleTag.rel = 'stylesheet';
+        styleTag.href = styleHref;
+        document.head.appendChild(styleTag);
 
-        
-        <div class="pswp__ui pswp__ui--hidden">
+        const lightbox = new PhotoSwipeLightbox({
+            gallerySelector: '.article-content',
+            childSelector: 'figure a.image-link',
+            pswpModule: () => import("https:\/\/cdn.jsdelivr.net\/npm\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js")
+        });
+        lightbox.init();
+    }
+</script>
 
-            <div class="pswp__top-bar">
-
-                
-
-                <div class="pswp__counter"></div>
-
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                <button class="pswp__button pswp__button--share" title="Share"></button>
-
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                
-                
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-            </button>
-
-            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-            </button>
-
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
-                defer
-                >
-            </script><script 
-                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
-                defer
-                >
-            </script><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
-            ><link 
-                rel="stylesheet" 
-                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
-            >
 
             </main>
         </div>
-        <script 
-                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
-                
-                >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+        <script type="text/javascript" src="/ts/main.d00997a2f4a6ce525f496da0c3ae6ad392b0468b8a9024f23309fdfc75c67a35.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
